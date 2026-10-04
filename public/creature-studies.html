@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>LFE · 角色动效试验</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #0d1816;
+        color: #dce7dd;
+        font:
+          14px -apple-system,
+          BlinkMacSystemFont,
+          "PingFang SC",
+          sans-serif;
+      }
+      main {
+        max-width: 1320px;
+        margin: auto;
+        padding: 35px 30px;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #33453b;
+        padding-bottom: 22px;
+      }
+      a {
+        color: #b8cea7;
+        text-decoration: none;
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+      h1 {
+        font-weight: 450;
+        font-size: 30px;
+        margin: 28px 0 12px;
+      }
+      p {
+        color: #9eb2a3;
+        line-height: 1.8;
+      }
+      small {
+        font-size: 11px;
+        color: #9bae92;
+      }
+      .badge {
+        padding: 7px 10px;
+        border: 1px solid #465940;
+        border-radius: 4px;
+        font-size: 11px;
+        color: #c4d3b0;
+      }
+      .cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 28px;
+      }
+      .card {
+        border: 1px solid #354b3d;
+        border-radius: 12px;
+        overflow: hidden;
+        background: #15261f;
+      }
+      .card-head {
+        padding: 20px 22px 0;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .card-head h2 {
+        font-size: 21px;
+        font-weight: 450;
+        margin: 0;
+      }
+      .canvas-wrap {
+        height: 285px;
+        position: relative;
+        cursor: crosshair;
+        background: radial-gradient(
+          ellipse at center,
+          #28403755,
+          transparent 70%
+        );
+      }
+      canvas {
+        width: 100%;
+        height: 100%;
+        display: block;
+        touch-action: none;
+      }
+      .state {
+        position: absolute;
+        bottom: 12px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        font-size: 11px;
+        color: #a5bc97;
+        pointer-events: none;
+      }
+      .caption {
+        padding: 5px 22px 20px;
+      }
+      .caption p {
+        font-size: 12px;
+        margin: 0 0 15px;
+      }
+      .buttons {
+        display: flex;
+        gap: 9px;
+      }
+      button {
+        border: 1px solid #556a48;
+        background: #bdd2a7;
+        color: #20331c;
+        padding: 9px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        font: inherit;
+        font-size: 12px;
+      }
+      button.secondary {
+        background: transparent;
+        color: #bbcca9;
+      }
+      button:focus-visible,
+      a:focus-visible {
+        outline: 2px solid #d4e4b9;
+        outline-offset: 3px;
+      }
+      .links {
+        margin-top: 35px;
+      }
+      .links h2 {
+        font-size: 17px;
+        font-weight: 400;
+        margin-bottom: 16px;
+      }
+      .reference {
+        display: grid;
+        grid-template-columns: 160px 1fr auto;
+        gap: 20px;
+        padding: 18px 0;
+        border-top: 1px solid #304337;
+        align-items: center;
+      }
+      .reference p {
+        font-size: 12px;
+        margin: 0;
+      }
+      .reference > a {
+        font-size: 12px;
+      }
+      .note {
+        margin-top: 25px;
+        font-size: 11px;
+        color: #7b9587;
+      }
+      .control {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .control button {
+        padding: 6px 12px;
+      }
+      .direction {
+        font-size: 11px;
+        color: #8fa787;
+      }
+      .pulse {
+        color: #bdda9f;
+      }
+      footer {
+        border-top: 1px solid #334b3d;
+        padding-top: 17px;
+        margin-top: 28px;
+        display: flex;
+        justify-content: space-between;
+        font-size: 12px;
+      }
+      .habitat { margin: 20px 0; border: 1px solid #42594e; border-radius: 18px; overflow: hidden; background: #0a211e; }
+      .habitat-water { height: min(55vh, 500px); min-height: 320px; position: relative; cursor: crosshair; background: radial-gradient(ellipse at 25% 20%, #49796942, transparent 65%), radial-gradient(ellipse at 85% 80%, #48517635, transparent 60%); }
+      .habitat-toolbar { display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px; padding:16px 22px; border-top:1px solid #30483e; }
+      .species { display:flex; flex-wrap:wrap; gap:20px; font-size:12px; }
+      .species span:nth-child(1) {color:#c4dbab} .species span:nth-child(2) {color:#b1d4d2} .species span:nth-child(3) {color:#d0b5d6}
+      .study-details { margin-top:26px; } summary {cursor:pointer; color:#b8cea7;}
+      @media (max-width: 800px) {
+        main {
+          padding: 22px 16px;
+        }
+        .cards {
+          grid-template-columns: 1fr;
+        }
+        .canvas-wrap {
+          height: 245px;
+        }
+        .reference {
+          grid-template-columns: 1fr auto;
+          gap: 8px;
+        }
+        .reference p {
+          grid-column: 1/-1;
+          grid-row: 2;
+        }
+        h1 {
+          font-size: 25px;
+        }
+        .badge {
+          font-size: 9px;
+        }
+        header {
+          gap: 12px;
+        }
+        footer {
+          gap: 20px;
+        }
+        .card-head {
+          padding-top: 18px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <a href="/">← 返回观察室</a
+        ><span class="badge">原创造型草案 · 脚本动效 · 无模型</span>
+      </header>
+      <h1>三种生命，一片水域。</h1>
+      <div class="control">
+        <p>点一下投食，看柔团、尾游与节虫一起靠近。</p>
+        <button id="motion" class="secondary">暂停全部</button>
+      </div>
+      <section class="habitat" aria-label="三种生命共存预览">
+        <div class="habitat-water"><canvas id="habitat" aria-label="共存水域，点击投食"></canvas><span class="state" id="habitat-state" role="status">9 个生命 · 自由游动</span></div>
+        <div class="habitat-toolbar"><div class="species"><span>◌ 柔团 × 3</span><span>❧ 尾游 × 3</span><span>〰 节虫 × 3</span></div><div class="buttons"><button id="habitat-feed">投放营养</button><button id="habitat-reset" class="secondary">重置水域</button></div></div>
+      </section>
+      <details class="study-details"><summary>分别观察三种生命</summary>
+      <section class="cards">
+        <article class="card" data-kind="blob">
+          <div class="card-head">
+            <h2>01 · 柔团</h2>
+            <small>柔软 / 慢呼吸</small>
+          </div>
+          <div class="canvas-wrap">
+            <canvas aria-label="柔团动效预览，点击投食"></canvas
+            ><span class="state" role="status">漂游</span>
+          </div>
+          <div class="caption">
+            <p>轮廓舒展，慢慢靠近营养。</p>
+            <div class="buttons">
+              <button data-action="feed">投食</button
+              ><button class="secondary" data-action="rest">休眠</button
+              ><button class="secondary" data-action="reset">重置</button>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-kind="dart">
+          <div class="card-head">
+            <h2>02 · 尾游</h2>
+            <small>有朝向 / 短冲刺</small>
+          </div>
+          <div class="canvas-wrap">
+            <canvas aria-label="尾游动效预览，点击投食"></canvas
+            ><span class="state" role="status">漂游</span>
+          </div>
+          <div class="caption">
+            <p>尾部摆动，转向后短促游进。</p>
+            <div class="buttons">
+              <button data-action="feed">投食</button
+              ><button class="secondary" data-action="rest">休眠</button
+              ><button class="secondary" data-action="reset">重置</button>
+            </div>
+          </div>
+        </article>
+        <article class="card" data-kind="ribbon">
+          <div class="card-head">
+            <h2>03 · 节虫</h2>
+            <small>分节 / 波浪推进</small>
+          </div>
+          <div class="canvas-wrap">
+            <canvas aria-label="节虫动效预览，点击投食"></canvas
+            ><span class="state" role="status">漂游</span>
+          </div>
+          <div class="caption">
+            <p>身体逐节收缩，运动节奏更鲜明。</p>
+            <div class="buttons">
+              <button data-action="feed">投食</button
+              ><button class="secondary" data-action="rest">休眠</button
+              ><button class="secondary" data-action="reset">重置</button>
+            </div>
+          </div>
+        </article>
+      </section>
+      </details>
+      <details class="links"><summary>早期机制参考 · 不作为美术目标</summary>
+        <div class="reference">
+          <strong>Gene Pool / Swimbots</strong>
+          <p>看分节身体怎样游动。先选 random 或 froggies，再点一个生命。</p>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.swimbots.com/genepool/"
+            >打开项目 ↗</a
+          >
+        </div>
+        <div class="reference">
+          <strong>Particle Lenia</strong>
+          <p>看软体结构与直接操控。长按聚拢粒子，双击并按住生成粒子。</p>
+          <a target="_blank" rel="noreferrer" href="https://znah.net/lenia/"
+            >打开项目 ↗</a
+          >
+        </div>
+        <div class="reference">
+          <strong>Clusters</strong>
+          <p>看群体关系和即时变化。点 gems、mitosis 或 random 切换生态。</p>
+          <a
+            target="_blank"
+            rel="noreferrer"
+            href="https://www.ventrella.com/Clusters/"
+            >打开项目 ↗</a
+          >
+        </div>
+      </details>
+      <details class="note"><summary>示例与参考说明</summary><p>
+        上方是本项目原创动效草案，与参考项目的算法无关。投食回应由脚本驱动，不代表学习。外部参考已核对作者页面；本轮内置浏览器访问超时，未完成在线操作实测。
+      </p></details>
+      <footer>
+        <span>三种基础体型同时保留，后续各自增加个体差异。</span
+        ><span>脚本演示 · 尚无生态竞争或学习</span>
+      </footer>
+    </main>
+    <script>
+      const reduced = matchMedia("(prefers-reduced-motion: reduce)").matches;
+      let paused = reduced,
+        last = performance.now(),
+        elapsed = 0;
+      const toggle = document.querySelector("#motion");
+      function updateToggle() {
+        toggle.textContent = paused ? "播放动效" : "暂停全部";
+        toggle.setAttribute("aria-pressed", String(paused));
+      }
+      toggle.addEventListener("click", () => {
+        paused = !paused;
+        updateToggle();
+      });
+      updateToggle();
+      const studies = [...document.querySelectorAll(".card")].map(
+        (card, index) => {
+          const canvas = card.querySelector("canvas"),
+            ctx = canvas.getContext("2d"),
+            label = card.querySelector(".state");
+          const s = {
+            card,
+            canvas,
+            ctx,
+            label,
+            kind: card.dataset.kind,
+            index,
+            w: 0,
+            h: 0,
+            x: 0,
+            y: 0,
+            angle: 0,
+            food: null,
+            rest: false,
+            eaten: 0,
+            flash: 0,
+          };
+          const observer = new ResizeObserver(() => {
+            let oldW = s.w || 1,
+              oldH = s.h || 1;
+            const r = canvas.getBoundingClientRect();
+            s.w = r.width;
+            s.h = r.height;
+            canvas.width = r.width * devicePixelRatio;
+            canvas.height = r.height * devicePixelRatio;
+            ctx.setTransform(devicePixelRatio, 0, 0, devicePixelRatio, 0, 0);
+            s.x = s.x ? (s.x / oldW) * s.w : s.w * 0.46;
+            s.y = s.y ? (s.y / oldH) * s.h : s.h * 0.5;
+            if (s.food) {
+              s.food.x = (s.food.x / oldW) * s.w;
+              s.food.y = (s.food.y / oldH) * s.h;
+            }
+          });
+          observer.observe(canvas);
+          function status() {
+            label.textContent = s.rest
+              ? "休眠"
+              : s.food
+                ? "靠近营养"
+                : s.eaten
+                  ? `已摄食 ${s.eaten} 次 · 漂游`
+                  : "漂游";
+          }
+          function feed(x, y) {
+            s.rest = false;
+            s.food = { x, y };
+            card.querySelector('[data-action="rest"]').textContent = "休眠";
+            status();
+          }
+          canvas.addEventListener("pointerdown", (e) => {
+            const r = canvas.getBoundingClientRect();
+            feed(
+              Math.max(20, Math.min(s.w - 20, e.clientX - r.left)),
+              Math.max(25, Math.min(s.h - 35, e.clientY - r.top)),
+            );
+          });
+          card
+            .querySelector('[data-action="feed"]')
+            .addEventListener("click", () =>
+              feed(s.x < s.w * 0.5 ? s.w * 0.78 : s.w * 0.22, s.h * 0.43),
+            );
+          card
+            .querySelector('[data-action="rest"]')
+            .addEventListener("click", (e) => {
+              s.rest = !s.rest;
+              e.target.textContent = s.rest ? "唤醒" : "休眠";
+              status();
+            });
+          card
+            .querySelector('[data-action="reset"]')
+            .addEventListener("click", () => {
+              s.x = s.w * 0.46;
+              s.y = s.h * 0.5;
+              s.food = null;
+              s.rest = false;
+              s.eaten = 0;
+              s.flash = 0;
+              s.angle = 0;
+              card.querySelector('[data-action="rest"]').textContent = "休眠";
+              status();
+            });
+          s.status = status;
+          return s;
+        },
+      );
+      const habitat = document.querySelector("#habitat");
+      const habitatContext = habitat.getContext("2d");
+      const habitatLabel = document.querySelector("#habitat-state");
+      const inhabitants = Array.from({length:9}, (_, i) => ({
+        ctx:habitatContext, shared:true, kind:["blob","dart","ribbon"][i % 3],
+        index:i % 3, phase:i * 1.7, size:0.68 + (i % 3) * 0.08,
+        w:0,h:0,x:0,y:0,angle:i,food:null,rest:false,eaten:0,flash:0,
+        status:habitatStatus
+      }));
+      function habitatStatus() {
+        const pending = inhabitants.filter(s => s.food).length;
+        const eaten = inhabitants.reduce((n,s) => n+s.eaten,0);
+        habitatLabel.textContent = pending ? `靠近营养 · 剩余 ${pending} 份` : eaten ? `已摄食 ${eaten} 份 · 继续游动` : "9 个生命 · 自由游动";
+      }
+      function arrange() {
+        inhabitants.forEach((s,i) => {
+          s.x=s.w*(0.2+(i%3)*0.3); s.y=s.h*(0.23+Math.floor(i/3)*0.27);
+          s.food=null; s.eaten=0; s.flash=0; s.angle=i;
+        });
+        habitatStatus();
+      }
+      new ResizeObserver(() => {
+        const r=habitat.getBoundingClientRect();
+        habitat.width=r.width*devicePixelRatio; habitat.height=r.height*devicePixelRatio;
+        habitatContext.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+        inhabitants.forEach(s => {
+          const oldW=s.w || r.width, oldH=s.h || r.height;
+          s.x=s.x/oldW*r.width; s.y=s.y/oldH*r.height;
+          if(s.food) {s.food.x=s.food.x/oldW*r.width;s.food.y=s.food.y/oldH*r.height;}
+          s.w=r.width;s.h=r.height;
+        });
+        if(!inhabitants[0].x) arrange();
+      }).observe(habitat);
+      function feedHabitat(x,y) {
+        inhabitants.forEach((s,i) => {
+          const a=i*Math.PI*2/9;
+          s.food={x:Math.max(24,Math.min(s.w-24,x+Math.cos(a)*32)),y:Math.max(24,Math.min(s.h-24,y+Math.sin(a)*32))};
+        });
+        habitatStatus();
+      }
+      habitat.addEventListener("pointerdown", e => {
+        const r=habitat.getBoundingClientRect();feedHabitat(e.clientX-r.left,e.clientY-r.top);
+      });
+      document.querySelector("#habitat-feed").addEventListener("click",()=>feedHabitat(inhabitants[0].w*0.5,inhabitants[0].h*0.5));
+      document.querySelector("#habitat-reset").addEventListener("click",arrange);
+      function ellipse(c, x, y, rx, ry, fill, stroke) {
+        c.beginPath();
+        c.ellipse(x, y, rx, ry, 0, 0, Math.PI * 2);
+        if (fill) {
+          c.fillStyle = fill;
+          c.fill();
+        }
+        if (stroke) {
+          c.strokeStyle = stroke;
+          c.lineWidth = 1;
+          c.stroke();
+        }
+      }
+      function frame(now) {
+        const dt = Math.min((now - last) / 1000, 0.05);
+        last = now;
+        if (!paused) elapsed += dt;
+        habitatContext.clearRect(0,0,inhabitants[0].w,inhabitants[0].h);
+        for (const s of [...studies, ...inhabitants]) {
+          const { ctx: c, w, h } = s;
+          if (!w) continue;
+          const t = elapsed + (s.phase || 0);
+          let moving = !paused && !s.rest;
+          if (moving) {
+            let tx = s.food
+                ? s.food.x
+                : w * 0.5 + Math.cos(t * 0.32 + s.index) * w * (s.shared ? 0.34 : 0.18),
+              ty = s.food
+                ? s.food.y
+                : h * 0.5 + Math.sin(t * 0.42 + s.index) * h * (s.shared ? 0.3 : 0.17);
+            let dx = tx - s.x,
+              dy = ty - s.y,
+              d = Math.hypot(dx, dy);
+            const target = Math.atan2(dy, dx);
+            let diff = Math.atan2(
+              Math.sin(target - s.angle),
+              Math.cos(target - s.angle),
+            );
+            s.angle += diff * Math.min(1, dt * 4);
+            const velocity =
+              s.kind === "dart"
+                ? 35 + 35 * Math.max(0, Math.sin(t * 7))
+                : s.kind === "blob"
+                  ? 25
+                  : 32;
+            if (d > 4) {
+              s.x += (dx / d) * Math.min(d, velocity * dt);
+              s.y += (dy / d) * Math.min(d, velocity * dt);
+            }
+            if (s.food && d < 15) {
+              s.food = null;
+              s.eaten++;
+              s.flash = 1;
+              s.status();
+            }
+            s.flash = Math.max(0, s.flash - dt * 0.8);
+          }
+          if (!s.shared) c.clearRect(0, 0, w, h);
+          for (let i = 0; i < (s.shared ? 12 : 65); i++)
+            ellipse(
+              c,
+              (i * 91 + 14 + (s.phase || 0) * 49) % w,
+              (i * 61 + 8 + (s.phase || 0) * 39) % h,
+              0.65,
+              0.65,
+              "#c4d7ca25",
+            );
+          if (s.food) {
+            let f = s.food;
+            ellipse(c, f.x, f.y, 18, 18, "#d6d68c0c", "#d6d68c50");
+            for (let i = 0; i < 5; i++)
+              ellipse(
+                c,
+                f.x + Math.cos(i * 2.4) * 7,
+                f.y + Math.sin(i * 2.4) * 7,
+                2.5,
+                2.5,
+                "#d7d799",
+              );
+          }
+          c.save();
+          c.translate(s.x, s.y);
+          c.rotate(s.angle);
+          if(s.shared) { c.scale(s.size,s.size); c.shadowColor=["#aac980","#84d9d0","#c29cdc"][s.index]; c.shadowBlur=12; }
+          c.globalAlpha = s.rest ? 0.4 : 1;
+          const pulse = s.rest ? 0 : Math.sin(t * 2.5 + s.index);
+          const color = ["#c4dbab", "#b1d4d2", "#d0b5d6"][s.index];
+          if (s.flash) {
+            ellipse(
+              c,
+              0,
+              0,
+              55 + (1 - s.flash) * 20,
+              55 + (1 - s.flash) * 20,
+              null,
+              `rgba(206,232,152,${s.flash * 0.7})`,
+            );
+          }
+          if (s.kind === "blob") {
+            c.beginPath();
+            for (let i = 0; i <= 64; i++) {
+              let a = (i / 64) * Math.PI * 2,
+                r =
+                  37 +
+                  Math.sin(a * 3 + t * 1.3) * 4 +
+                  Math.cos(a * 5 - t) * 2 +
+                  pulse * 1.5;
+              let x = Math.cos(a) * r,
+                y = Math.sin(a) * r;
+              i ? c.lineTo(x, y) : c.moveTo(x, y);
+            }
+            c.closePath();
+            c.fillStyle = "#b9d89a28";
+            c.fill();
+            c.strokeStyle = "#cee2b69a";
+            c.lineWidth = 1.5;
+            c.stroke();
+            ellipse(c, -4, 2, 15 + pulse * 0.5, 13, "#b9d89a55", "#cde7ad66");
+            for (let i = 0; i < 7; i++)
+              ellipse(
+                c,
+                Math.cos(i * 2.4) * 25,
+                Math.sin(i * 2.4) * 23,
+                2 + (i % 3),
+                2 + (i % 3),
+                "#cce2aa55",
+              );
+          }
+          if (s.kind === "dart") {
+            c.beginPath();
+            c.moveTo(37, 0);
+            c.bezierCurveTo(23, -22, -20, -28, -33, 0);
+            c.bezierCurveTo(-20, 28, 23, 22, 37, 0);
+            c.fillStyle = "#9ed0cb25";
+            c.fill();
+            c.strokeStyle = "#c7e8e0a0";
+            c.lineWidth = 1.5;
+            c.stroke();
+            ellipse(c, 7, 0, 12, 10, "#a9d4ce66", "#c6e5df88");
+            for (let i = 0; i < 2; i++) {
+              c.beginPath();
+              c.moveTo(-29, i ? 5 : -5);
+              for (let k = 1; k < 35; k++) {
+                let x = -29 - k,
+                  y =
+                    (i ? 1 : -1) * 5 +
+                    Math.sin(k * 0.13 - t * 8) * k * 0.25 * (s.rest ? 0.1 : 1);
+                c.lineTo(x, y);
+              }
+              c.strokeStyle = color + "88";
+              c.lineWidth = 1.5;
+              c.stroke();
+            }
+            ellipse(c, 26, -3, 2, 2, "#d4ece6");
+          }
+          if (s.kind === "ribbon") {
+            for (let i = 6; i >= 0; i--) {
+              let x = 22 - i * 10,
+                y = Math.sin(t * 5 - i * 0.7) * 7 * (s.rest ? 0.1 : 1),
+                r = 14 - i * 0.9;
+              ellipse(c, x, y, r, r * 0.85, "#b597c32b", "#dcc4e577");
+              ellipse(c, x, y, r * 0.33, r * 0.3, "#ccb3d370");
+              if (i % 2 === 1) {
+                c.beginPath();
+                c.moveTo(x, y - r * 0.7);
+                c.lineTo(x - 8, y - r - 9);
+                c.moveTo(x, y + r * 0.7);
+                c.lineTo(x - 8, y + r + 9);
+                c.strokeStyle = "#c2a7cd55";
+                c.stroke();
+              }
+            }
+          }
+          c.restore();
+        }
+        requestAnimationFrame(frame);
+      }
+      requestAnimationFrame(frame);
+    </script>
+  </body>
+</html>

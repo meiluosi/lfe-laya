@@ -1,0 +1,32 @@
+{
+  "name": "lfe-laya-prototype",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview --host 127.0.0.1",
+    "test:m0": "node --test tests/m0-world.test.mjs",
+    "check:m0": "tsc -p tsconfig.m0.json",
+    "test:ecology": "node --test tests/ecology.test.mjs",
+    "test:ui": "node scripts/smoke_ui.mjs && node scripts/smoke_studio.mjs",
+    "verify": "scripts/verify.sh",
+    "test:evo": "node --test tests/evo.test.mjs"
+  },
+  "dependencies": {
+    "dexie": "4.4.6",
+    "echarts": "6.0.0",
+    "pixi.js": "8.21.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.0",
+    "@types/react": "19.2.2",
+    "@types/react-dom": "19.2.2",
+    "playwright-core": "1.63.0",
+    "typescript": "5.9.3",
+    "vite": "8.3.1"
+  }
+}

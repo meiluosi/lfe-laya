@@ -1,0 +1,5829 @@
+{
+ "version": "ecology-v1",
+ "protocol": "ecology-decision-v1",
+ "requests": [
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 0,
+    "snapshotId": "4cde5aa24fe800ac",
+    "agentId": "life-0",
+    "decisionId": "contract-semantic:0:0:life-0",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 24,
+    "capacity": 40,
+    "age": 0,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": 0,
+    "lastAction": "rest",
+    "lastRejected": false,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": 0,
+      "dy": -3,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": -2,
+      "blocked": false,
+      "food": 2,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0,
+      "dy": -2,
+      "blocked": false,
+      "food": 4,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1,
+      "dy": -2,
+      "blocked": false,
+      "food": 4,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -2,
+      "dy": -1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": -1,
+      "blocked": false,
+      "food": 2,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": -1,
+      "blocked": false,
+      "food": 2,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 1,
+      "dy": -1,
+      "blocked": false,
+      "food": 2,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2,
+      "dy": 0,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": 0,
+      "blocked": false,
+      "food": 2,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2,
+      "dy": 0,
+      "blocked": false,
+      "food": 2,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 3,
+      "dy": 0,
+      "blocked": false,
+      "food": 6,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -2,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": 1,
+      "blocked": false,
+      "food": 2,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0,
+      "dy": 1,
+      "blocked": false,
+      "food": 6,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1,
+      "dy": 1,
+      "blocked": false,
+      "food": 4,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2,
+      "dy": 1,
+      "blocked": false,
+      "food": 2,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -1,
+      "dy": 2,
+      "blocked": false,
+      "food": 6,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": 2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": 2,
+      "blocked": false,
+      "food": 12,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 0,
+      "dy": 3,
+      "blocked": false,
+      "food": 10,
+      "desc": "dull grey lump"
+     }
+    ],
+    "neighbors": [
+     {
+      "dx": 0,
+      "dy": 3,
+      "shape": 2
+     },
+     {
+      "dx": 0,
+      "dy": 2,
+      "shape": 2
+     }
+    ],
+    "memory": [
+     {
+      "dx": 3,
+      "dy": 0,
+      "food": 6,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -1,
+      "dy": 1,
+      "food": 2,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0,
+      "dy": 1,
+      "food": 6,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1,
+      "dy": 1,
+      "food": 4,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2,
+      "dy": 1,
+      "food": 2,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -1,
+      "dy": 2,
+      "food": 6,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1,
+      "dy": 2,
+      "food": 12,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 0,
+      "dy": 3,
+      "food": 10,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     }
+    ]
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "south",
+     "dx": 0,
+     "dy": 1,
+     "description": "Move 1.00 units south."
+    },
+    {
+     "id": "west",
+     "dx": -1,
+     "dy": 0,
+     "description": "Move 1.00 units west."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 0,
+    "snapshotId": "4cde5aa24fe800ac",
+    "agentId": "life-1",
+    "decisionId": "contract-semantic:0:0:life-1",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 24,
+    "capacity": 40,
+    "age": 0,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": 0,
+    "lastAction": "rest",
+    "lastRejected": false,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": 0,
+      "dy": -3,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2,
+      "dy": -1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -3,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2,
+      "dy": 0,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     }
+    ],
+    "neighbors": [],
+    "memory": []
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "west",
+     "dx": -1,
+     "dy": 0,
+     "description": "Move 1.00 units west."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 0,
+    "snapshotId": "4cde5aa24fe800ac",
+    "agentId": "life-2",
+    "decisionId": "contract-semantic:0:0:life-2",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 24,
+    "capacity": 40,
+    "age": 0,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": 0,
+    "lastAction": "rest",
+    "lastRejected": false,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": 0,
+      "dy": -3,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": -2,
+      "blocked": false,
+      "food": 2,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0,
+      "dy": -2,
+      "blocked": false,
+      "food": 6,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1,
+      "dy": -2,
+      "blocked": false,
+      "food": 4,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": -2,
+      "dy": -1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": -1,
+      "blocked": false,
+      "food": 6,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": -1,
+      "blocked": false,
+      "food": 12,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2,
+      "dy": 0,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": 0,
+      "blocked": false,
+      "food": 4,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0,
+      "dy": 0,
+      "blocked": false,
+      "food": 10,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 1,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2,
+      "dy": 0,
+      "blocked": false,
+      "food": 4,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 3,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": 1,
+      "blocked": false,
+      "food": 8,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": 1,
+      "blocked": false,
+      "food": 4,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1,
+      "dy": 1,
+      "blocked": false,
+      "food": 4,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2,
+      "dy": 1,
+      "blocked": false,
+      "food": 6,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -1,
+      "dy": 2,
+      "blocked": false,
+      "food": 2,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": 2,
+      "blocked": false,
+      "food": 4,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 1,
+      "dy": 2,
+      "blocked": false,
+      "food": 2,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": 3,
+      "blocked": false,
+      "food": 0
+     }
+    ],
+    "neighbors": [
+     {
+      "dx": 0,
+      "dy": -3,
+      "shape": 0
+     },
+     {
+      "dx": 0,
+      "dy": 1,
+      "shape": 0
+     },
+     {
+      "dx": 0,
+      "dy": -1,
+      "shape": 2
+     },
+     {
+      "dx": -1,
+      "dy": 1,
+      "shape": 0
+     },
+     {
+      "dx": 2,
+      "dy": 2,
+      "shape": 1
+     }
+    ],
+    "memory": [
+     {
+      "dx": 2,
+      "dy": 0,
+      "food": 4,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -1,
+      "dy": 1,
+      "food": 8,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": 1,
+      "food": 4,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1,
+      "dy": 1,
+      "food": 4,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2,
+      "dy": 1,
+      "food": 6,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -1,
+      "dy": 2,
+      "food": 2,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": 2,
+      "food": 4,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 1,
+      "dy": 2,
+      "food": 2,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     }
+    ]
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "south",
+     "dx": 0,
+     "dy": 1,
+     "description": "Move 1.00 units south."
+    },
+    {
+     "id": "west",
+     "dx": -1,
+     "dy": 0,
+     "description": "Move 1.00 units west."
+    },
+    {
+     "id": "eat",
+     "dx": 0,
+     "dy": 0,
+     "description": "Eat food at your current location."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 0,
+    "snapshotId": "4cde5aa24fe800ac",
+    "agentId": "life-4",
+    "decisionId": "contract-semantic:0:0:life-4",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 24,
+    "capacity": 40,
+    "age": 0,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": 0,
+    "lastAction": "rest",
+    "lastRejected": false,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": 0,
+      "dy": -3,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2,
+      "dy": -1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -3,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2,
+      "dy": 0,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -2,
+      "dy": 1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": 1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": 1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": 2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": 2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 3,
+      "blocked": false,
+      "food": 0
+     }
+    ],
+    "neighbors": [],
+    "memory": []
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "south",
+     "dx": 0,
+     "dy": 1,
+     "description": "Move 1.00 units south."
+    },
+    {
+     "id": "west",
+     "dx": -1,
+     "dy": 0,
+     "description": "Move 1.00 units west."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 0,
+    "snapshotId": "4cde5aa24fe800ac",
+    "agentId": "life-6",
+    "decisionId": "contract-semantic:0:0:life-6",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 24,
+    "capacity": 40,
+    "age": 0,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": 0,
+    "lastAction": "rest",
+    "lastRejected": false,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": 0,
+      "dy": -3,
+      "blocked": false,
+      "food": 2,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0,
+      "dy": -2,
+      "blocked": false,
+      "food": 6,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": -1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": -1,
+      "blocked": false,
+      "food": 4,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 1,
+      "dy": -1,
+      "blocked": false,
+      "food": 10,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": 0,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 0,
+      "blocked": false,
+      "food": 8,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1,
+      "dy": 0,
+      "blocked": false,
+      "food": 4,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 2,
+      "dy": 0,
+      "blocked": false,
+      "food": 4,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 3,
+      "dy": 0,
+      "blocked": false,
+      "food": 6,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -1,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 1,
+      "blocked": false,
+      "food": 2,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1,
+      "dy": 1,
+      "blocked": false,
+      "food": 4,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2,
+      "dy": 1,
+      "blocked": false,
+      "food": 2,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": 2,
+      "blocked": false,
+      "food": 8,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 1,
+      "dy": 2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 3,
+      "blocked": true,
+      "food": 0
+     }
+    ],
+    "neighbors": [
+     {
+      "dx": 1,
+      "dy": -1,
+      "shape": 2
+     },
+     {
+      "dx": 1,
+      "dy": 0,
+      "shape": 0
+     },
+     {
+      "dx": 1,
+      "dy": -2,
+      "shape": 2
+     }
+    ],
+    "memory": [
+     {
+      "dx": 0,
+      "dy": 0,
+      "food": 8,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1,
+      "dy": 0,
+      "food": 4,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 2,
+      "dy": 0,
+      "food": 4,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 3,
+      "dy": 0,
+      "food": 6,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0,
+      "dy": 1,
+      "food": 2,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1,
+      "dy": 1,
+      "food": 4,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2,
+      "dy": 1,
+      "food": 2,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": 2,
+      "food": 8,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     }
+    ]
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "south",
+     "dx": 0,
+     "dy": 1,
+     "description": "Move 1.00 units south."
+    },
+    {
+     "id": "eat",
+     "dx": 0,
+     "dy": 0,
+     "description": "Eat food at your current location."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 10,
+    "snapshotId": "861ea665888e2c65",
+    "agentId": "life-1",
+    "decisionId": "contract-semantic:0:10:life-1",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 23.544999999999995,
+    "capacity": 40,
+    "age": 10,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": 0,
+    "lastAction": "east",
+    "lastRejected": false,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": 3.552713678800501e-15,
+      "dy": -3,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -0.9999999999999964,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 3.552713678800501e-15,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.9999999999999964,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -0.9999999999999964,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 3.552713678800501e-15,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.0000000000000036,
+      "dy": -1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -2.9999999999999964,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.9999999999999964,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -0.9999999999999964,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 3.552713678800501e-15,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.0000000000000036,
+      "dy": 0,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -0.9999999999999964,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 3.552713678800501e-15,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 1.0000000000000036,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     }
+    ],
+    "neighbors": [],
+    "memory": []
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "west",
+     "dx": -1,
+     "dy": 0,
+     "description": "Move 1.00 units west."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 10,
+    "snapshotId": "861ea665888e2c65",
+    "agentId": "life-3",
+    "decisionId": "contract-semantic:0:10:life-3",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 19.740337118872674,
+    "capacity": 40,
+    "age": 10,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": 0,
+    "lastAction": "eat",
+    "lastRejected": true,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": 0,
+      "dy": -3,
+      "blocked": false,
+      "food": 5.940269281258488,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -1,
+      "dy": -2,
+      "blocked": false,
+      "food": 5.940269281258488,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": -2,
+      "blocked": false,
+      "food": 11.880538562516977,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": -2,
+      "dy": -1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": -1,
+      "blocked": false,
+      "food": 3.960179520838993,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0,
+      "dy": -1,
+      "blocked": false,
+      "food": 3.9273769279464124,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 1,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2,
+      "dy": -1,
+      "blocked": false,
+      "food": 3.960179520838993,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -2,
+      "dy": 0,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": 0,
+      "blocked": false,
+      "food": 1.947287167526912,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": 0,
+      "blocked": false,
+      "food": 3.960179520838993,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2,
+      "dy": 0,
+      "blocked": false,
+      "food": 5.940269281258488,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 3,
+      "dy": 0,
+      "blocked": false,
+      "food": 5.940269281258488,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -2,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": 1,
+      "blocked": false,
+      "food": 1.9800897604194965,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": 1,
+      "blocked": false,
+      "food": 3.960179520838993,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 1,
+      "dy": 1,
+      "blocked": false,
+      "food": 1.9800897604194965,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 2,
+      "dy": 1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": 2,
+      "blocked": false,
+      "food": 7.920359041677986,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 0,
+      "dy": 2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": 2,
+      "blocked": false,
+      "food": 1.998,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0,
+      "dy": 3,
+      "blocked": true,
+      "food": 0
+     }
+    ],
+    "neighbors": [
+     {
+      "dx": 0,
+      "dy": -1,
+      "shape": 2
+     },
+     {
+      "dx": 1.0000000000000009,
+      "dy": -2,
+      "shape": 2
+     },
+     {
+      "dx": -1,
+      "dy": 0,
+      "shape": 0
+     },
+     {
+      "dx": 2,
+      "dy": 3.552713678800501e-15,
+      "shape": 1
+     }
+    ],
+    "memory": [
+     {
+      "dx": 1,
+      "dy": 0,
+      "food": 3.960179520838993,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2,
+      "dy": 0,
+      "food": 5.940269281258488,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 3,
+      "dy": 0,
+      "food": 5.940269281258488,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -1,
+      "dy": 1,
+      "food": 1.9800897604194965,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": 1,
+      "food": 3.960179520838993,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 1,
+      "dy": 1,
+      "food": 1.9800897604194965,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -1,
+      "dy": 2,
+      "food": 7.920359041677986,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 1,
+      "dy": 2,
+      "food": 1.998,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     }
+    ]
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "south",
+     "dx": 0,
+     "dy": 1,
+     "description": "Move 1.00 units south."
+    },
+    {
+     "id": "west",
+     "dx": -1,
+     "dy": 0,
+     "description": "Move 1.00 units west."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 10,
+    "snapshotId": "861ea665888e2c65",
+    "agentId": "life-4",
+    "decisionId": "contract-semantic:0:10:life-4",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 23.544999999999995,
+    "capacity": 40,
+    "age": 10,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": 0,
+    "lastAction": "east",
+    "lastRejected": false,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": 3.552713678800501e-15,
+      "dy": -3,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -0.9999999999999964,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 3.552713678800501e-15,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.9999999999999964,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -0.9999999999999964,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 3.552713678800501e-15,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.0000000000000036,
+      "dy": -1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -2.9999999999999964,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.9999999999999964,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -0.9999999999999964,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 3.552713678800501e-15,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.0000000000000036,
+      "dy": 0,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1.9999999999999964,
+      "dy": 1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -0.9999999999999964,
+      "dy": 1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 3.552713678800501e-15,
+      "dy": 1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.0000000000000036,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -0.9999999999999964,
+      "dy": 2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 3.552713678800501e-15,
+      "dy": 2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 3.552713678800501e-15,
+      "dy": 3,
+      "blocked": false,
+      "food": 0
+     }
+    ],
+    "neighbors": [],
+    "memory": []
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "south",
+     "dx": 0,
+     "dy": 1,
+     "description": "Move 1.00 units south."
+    },
+    {
+     "id": "west",
+     "dx": -1,
+     "dy": 0,
+     "description": "Move 1.00 units west."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 20,
+    "snapshotId": "907cf039d8c9dc01",
+    "agentId": "life-6",
+    "decisionId": "contract-semantic:0:20:life-6",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 15.506892704607377,
+    "capacity": 40,
+    "age": 20,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": 0,
+    "lastAction": "eat",
+    "lastRejected": true,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": 0,
+      "dy": -3,
+      "blocked": false,
+      "food": 1.9603777296590694,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0,
+      "dy": -2,
+      "blocked": false,
+      "food": 5.881133188977207,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": -1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": -1,
+      "blocked": false,
+      "food": 3.920755459318139,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 1,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": 0,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2,
+      "dy": 0,
+      "blocked": false,
+      "food": 3.920755459318139,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 3,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 1,
+      "blocked": false,
+      "food": 1.9603777296590694,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1,
+      "dy": 1,
+      "blocked": false,
+      "food": 3.920755459318139,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2,
+      "dy": 1,
+      "blocked": false,
+      "food": 1.9603777296590694,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": 2,
+      "blocked": false,
+      "food": 7.841510918636278,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 1,
+      "dy": 2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 3,
+      "blocked": true,
+      "food": 0
+     }
+    ],
+    "neighbors": [
+     {
+      "dx": 1,
+      "dy": -1,
+      "shape": 2
+     },
+     {
+      "dx": 1,
+      "dy": -0.9999999999999964,
+      "shape": 0
+     },
+     {
+      "dx": 2.000000000000001,
+      "dy": -2,
+      "shape": 2
+     },
+     {
+      "dx": 3,
+      "dy": 3.552713678800501e-15,
+      "shape": 1
+     }
+    ],
+    "memory": [
+     {
+      "dx": 0,
+      "dy": -3,
+      "food": 1.9603777296590694,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0,
+      "dy": -2,
+      "food": 5.881133188977207,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": -1,
+      "food": 3.920755459318139,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 2,
+      "dy": 0,
+      "food": 3.920755459318139,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 0,
+      "dy": 1,
+      "food": 1.9603777296590694,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1,
+      "dy": 1,
+      "food": 3.920755459318139,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2,
+      "dy": 1,
+      "food": 1.9603777296590694,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": 2,
+      "food": 7.841510918636278,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     }
+    ]
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "south",
+     "dx": 0,
+     "dy": 1,
+     "description": "Move 1.00 units south."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 30,
+    "snapshotId": "23e0314210b595d2",
+    "agentId": "life-6",
+    "decisionId": "contract-semantic:0:30:life-6",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 15.051892704607372,
+    "capacity": 40,
+    "age": 30,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": 1.5707963267948966,
+    "lastAction": "south",
+    "lastRejected": false,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": 0,
+      "dy": -2.9999999999999964,
+      "blocked": false,
+      "food": 5.822585803578513,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": -1.9999999999999964,
+      "blocked": false,
+      "food": 3.8817238690523435,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 1,
+      "dy": -1.9999999999999964,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": -0.9999999999999964,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": -0.9999999999999964,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": -0.9999999999999964,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2,
+      "dy": -0.9999999999999964,
+      "blocked": false,
+      "food": 3.8817238690523435,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": -1,
+      "dy": 3.552713678800501e-15,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 3.552713678800501e-15,
+      "blocked": false,
+      "food": 5.9368619345261715,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1,
+      "dy": 3.552713678800501e-15,
+      "blocked": false,
+      "food": 5.879723869052343,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2,
+      "dy": 3.552713678800501e-15,
+      "blocked": false,
+      "food": 1.9408619345261717,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 3,
+      "dy": 3.552713678800501e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": 1.0000000000000036,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 1.0000000000000036,
+      "blocked": false,
+      "food": 7.763447738104687,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 1,
+      "dy": 1.0000000000000036,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2,
+      "dy": 1.0000000000000036,
+      "blocked": false,
+      "food": 1.9584173519294104,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0,
+      "dy": 2.0000000000000036,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": 2.0000000000000036,
+      "blocked": true,
+      "food": 0
+     }
+    ],
+    "neighbors": [],
+    "memory": [
+     {
+      "dx": 0,
+      "dy": -2.9999999999999964,
+      "food": 5.822585803578513,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": -1.9999999999999964,
+      "food": 3.8817238690523435,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 2,
+      "dy": -0.9999999999999964,
+      "food": 3.8817238690523435,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 0,
+      "dy": 3.552713678800501e-15,
+      "food": 5.9368619345261715,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1,
+      "dy": 3.552713678800501e-15,
+      "food": 5.879723869052343,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2,
+      "dy": 3.552713678800501e-15,
+      "food": 1.9408619345261717,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": 1.0000000000000036,
+      "food": 7.763447738104687,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2,
+      "dy": 1.0000000000000036,
+      "food": 1.9584173519294104,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     }
+    ]
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "south",
+     "dx": 0,
+     "dy": 1,
+     "description": "Move 1.00 units south."
+    },
+    {
+     "id": "eat",
+     "dx": 0,
+     "dy": 0,
+     "description": "Eat food at your current location."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 40,
+    "snapshotId": "a849cad577536417",
+    "agentId": "life-6",
+    "decisionId": "contract-semantic:0:40:life-6",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 8.872204815968674,
+    "capacity": 40,
+    "age": 40,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": 1.5707963267948966,
+    "lastAction": "eat",
+    "lastRejected": false,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": 0,
+      "dy": -2.9999999999999964,
+      "blocked": false,
+      "food": 7.76262126441487,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": -1.9999999999999964,
+      "blocked": false,
+      "food": 3.8430808429432473,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 1,
+      "dy": -1.9999999999999964,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": -0.9999999999999964,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": -0.9999999999999964,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": -0.9999999999999964,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2,
+      "dy": -0.9999999999999964,
+      "blocked": false,
+      "food": 3.8430808429432473,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": -1,
+      "dy": 3.552713678800501e-15,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 3.552713678800501e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": 3.552713678800501e-15,
+      "blocked": false,
+      "food": 7.819190513602324,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2,
+      "dy": 3.552713678800501e-15,
+      "blocked": false,
+      "food": 1.9215404214716236,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 3,
+      "dy": 3.552713678800501e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": 1.0000000000000036,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 1.0000000000000036,
+      "blocked": false,
+      "food": 7.6861616858864945,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 1,
+      "dy": 1.0000000000000036,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2,
+      "dy": 1.0000000000000036,
+      "blocked": false,
+      "food": 1.9389210725916455,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0,
+      "dy": 2.0000000000000036,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": 2.0000000000000036,
+      "blocked": true,
+      "food": 0
+     }
+    ],
+    "neighbors": [],
+    "memory": [
+     {
+      "dx": 0,
+      "dy": -2.9999999999999964,
+      "food": 7.76262126441487,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": -1.9999999999999964,
+      "food": 3.8430808429432473,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 2,
+      "dy": -0.9999999999999964,
+      "food": 3.8430808429432473,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 1,
+      "dy": 3.552713678800501e-15,
+      "food": 7.819190513602324,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2,
+      "dy": 3.552713678800501e-15,
+      "food": 1.9215404214716236,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": 1.0000000000000036,
+      "food": 7.6861616858864945,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2,
+      "dy": 1.0000000000000036,
+      "food": 1.9389210725916455,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     }
+    ]
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "south",
+     "dx": 0,
+     "dy": 1,
+     "description": "Move 1.00 units south."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 40,
+    "snapshotId": "a849cad577536417",
+    "agentId": "life-7",
+    "decisionId": "contract-semantic:0:40:life-7",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 34.23961070508993,
+    "capacity": 40,
+    "age": 40,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": 0,
+    "lastAction": "eat",
+    "lastRejected": false,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": 1.7763568394002505e-15,
+      "dy": -3.0000000000000036,
+      "blocked": false,
+      "food": 3.9195404214716234,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -0.9999999999999982,
+      "dy": -2.0000000000000036,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.7763568394002505e-15,
+      "dy": -2.0000000000000036,
+      "blocked": false,
+      "food": 3.8604614940632693,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 1.0000000000000018,
+      "dy": -2.0000000000000036,
+      "blocked": false,
+      "food": 1.9215404214716236,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -1.9999999999999982,
+      "dy": -1.0000000000000036,
+      "blocked": false,
+      "food": 3.9761096706590773,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -0.9999999999999982,
+      "dy": -1.0000000000000036,
+      "blocked": false,
+      "food": 3.8430808429432473,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1.7763568394002505e-15,
+      "dy": -1.0000000000000036,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.0000000000000018,
+      "dy": -1.0000000000000036,
+      "blocked": false,
+      "food": 1.9215404214716236,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2.0000000000000018,
+      "dy": -1.0000000000000036,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2.9999999999999982,
+      "dy": -3.552713678800501e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.9999999999999982,
+      "dy": -3.552713678800501e-15,
+      "blocked": false,
+      "food": 3.8430808429432473,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": -0.9999999999999982,
+      "dy": -3.552713678800501e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.7763568394002505e-15,
+      "dy": -3.552713678800501e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.0000000000000018,
+      "dy": -3.552713678800501e-15,
+      "blocked": false,
+      "food": 1.9215404214716236,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 2.0000000000000018,
+      "dy": -3.552713678800501e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 3.0000000000000018,
+      "dy": -3.552713678800501e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.9999999999999982,
+      "dy": 0.9999999999999964,
+      "blocked": false,
+      "food": 1.9215404214716236,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -0.9999999999999982,
+      "dy": 0.9999999999999964,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.7763568394002505e-15,
+      "dy": 0.9999999999999964,
+      "blocked": false,
+      "food": 1.9215404214716236,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1.0000000000000018,
+      "dy": 0.9999999999999964,
+      "blocked": false,
+      "food": 3.8430808429432473,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 2.0000000000000018,
+      "dy": 0.9999999999999964,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -0.9999999999999982,
+      "dy": 1.9999999999999964,
+      "blocked": false,
+      "food": 1.9215404214716236,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 1.7763568394002505e-15,
+      "dy": 1.9999999999999964,
+      "blocked": false,
+      "food": 1.9215404214716236,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1.0000000000000018,
+      "dy": 1.9999999999999964,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.7763568394002505e-15,
+      "dy": 2.9999999999999964,
+      "blocked": true,
+      "food": 0
+     }
+    ],
+    "neighbors": [],
+    "memory": [
+     {
+      "dx": 1.0000000000000018,
+      "dy": -1.0000000000000036,
+      "food": 1.9215404214716236,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": -1.9999999999999982,
+      "dy": -3.552713678800501e-15,
+      "food": 3.8430808429432473,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 1.0000000000000018,
+      "dy": -3.552713678800501e-15,
+      "food": 1.9215404214716236,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -1.9999999999999982,
+      "dy": 0.9999999999999964,
+      "food": 1.9215404214716236,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1.7763568394002505e-15,
+      "dy": 0.9999999999999964,
+      "food": 1.9215404214716236,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1.0000000000000018,
+      "dy": 0.9999999999999964,
+      "food": 3.8430808429432473,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -0.9999999999999982,
+      "dy": 1.9999999999999964,
+      "food": 1.9215404214716236,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 1.7763568394002505e-15,
+      "dy": 1.9999999999999964,
+      "food": 1.9215404214716236,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     }
+    ]
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "south",
+     "dx": 0,
+     "dy": 1,
+     "description": "Move 1.00 units south."
+    },
+    {
+     "id": "west",
+     "dx": -1,
+     "dy": 0,
+     "description": "Move 1.00 units west."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 50,
+    "snapshotId": "0cc72fe7e9f502fd",
+    "agentId": "life-1",
+    "decisionId": "contract-semantic:0:50:life-1",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 21.724999999999973,
+    "capacity": 40,
+    "age": 50,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": 3.141592653589793,
+    "lastAction": "west",
+    "lastRejected": false,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": -1.0658141036401503e-14,
+      "dy": -3,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000107,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.0658141036401503e-14,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999893,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2.0000000000000107,
+      "dy": -1,
+      "blocked": false,
+      "food": 3.804822512788126,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -1.0000000000000107,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.0658141036401503e-14,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999893,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.9999999999999893,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -3.0000000000000107,
+      "dy": 0,
+      "blocked": false,
+      "food": 1.902411256394063,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -2.0000000000000107,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000107,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.0658141036401503e-14,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999893,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.9999999999999893,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2.9999999999999893,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000107,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1.0658141036401503e-14,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999893,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     }
+    ],
+    "neighbors": [
+     {
+      "dx": -2.000000000000016,
+      "dy": -1.9999999999999964,
+      "shape": 1
+     }
+    ],
+    "memory": [
+     {
+      "dx": -2.0000000000000107,
+      "dy": -1,
+      "food": 3.804822512788126,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -3.0000000000000107,
+      "dy": 0,
+      "food": 1.902411256394063,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     }
+    ]
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "west",
+     "dx": -1,
+     "dy": 0,
+     "description": "Move 1.00 units west."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 50,
+    "snapshotId": "0cc72fe7e9f502fd",
+    "agentId": "life-6",
+    "decisionId": "contract-semantic:0:50:life-6",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 8.417204815968669,
+    "capacity": 40,
+    "age": 50,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": 0,
+    "lastAction": "east",
+    "lastRejected": false,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": -2.220446049250313e-16,
+      "dy": -2.9999999999999964,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000002,
+      "dy": -1.9999999999999964,
+      "blocked": false,
+      "food": 3.804822512788126,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -2.220446049250313e-16,
+      "dy": -1.9999999999999964,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": -1.9999999999999964,
+      "blocked": false,
+      "food": 5.934527022588488,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -2,
+      "dy": -0.9999999999999964,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000002,
+      "dy": -0.9999999999999964,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2.220446049250313e-16,
+      "dy": -0.9999999999999964,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": -0.9999999999999964,
+      "blocked": false,
+      "food": 3.804822512788126,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 1.9999999999999998,
+      "dy": -0.9999999999999964,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2,
+      "dy": 3.552713678800501e-15,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000002,
+      "dy": 3.552713678800501e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2.220446049250313e-16,
+      "dy": 3.552713678800501e-15,
+      "blocked": false,
+      "food": 7.741349535376611,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": 3.552713678800501e-15,
+      "blocked": false,
+      "food": 1.902411256394063,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1.9999999999999998,
+      "dy": 3.552713678800501e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 3,
+      "dy": 3.552713678800501e-15,
+      "blocked": false,
+      "food": 1.902411256394063,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -2,
+      "dy": 1.0000000000000036,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000002,
+      "dy": 1.0000000000000036,
+      "blocked": false,
+      "food": 7.609645025576252,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": -2.220446049250313e-16,
+      "dy": 1.0000000000000036,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": 1.0000000000000036,
+      "blocked": false,
+      "food": 1.919618881050152,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 1.9999999999999998,
+      "dy": 1.0000000000000036,
+      "blocked": false,
+      "food": 1.902411256394063,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": -1.0000000000000002,
+      "dy": 2.0000000000000036,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -2.220446049250313e-16,
+      "dy": 2.0000000000000036,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": 2.0000000000000036,
+      "blocked": true,
+      "food": 0
+     }
+    ],
+    "neighbors": [],
+    "memory": [
+     {
+      "dx": 0.9999999999999998,
+      "dy": -1.9999999999999964,
+      "food": 5.934527022588488,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": -0.9999999999999964,
+      "food": 3.804822512788126,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": -2.220446049250313e-16,
+      "dy": 3.552713678800501e-15,
+      "food": 7.741349535376611,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": 3.552713678800501e-15,
+      "food": 1.902411256394063,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 3,
+      "dy": 3.552713678800501e-15,
+      "food": 1.902411256394063,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -1.0000000000000002,
+      "dy": 1.0000000000000036,
+      "food": 7.609645025576252,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": 1.0000000000000036,
+      "food": 1.919618881050152,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 1.9999999999999998,
+      "dy": 1.0000000000000036,
+      "food": 1.902411256394063,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     }
+    ]
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "south",
+     "dx": 0,
+     "dy": 1,
+     "description": "Move 1.00 units south."
+    },
+    {
+     "id": "west",
+     "dx": -1,
+     "dy": 0,
+     "description": "Move 1.00 units west."
+    },
+    {
+     "id": "eat",
+     "dx": 0,
+     "dy": 0,
+     "description": "Eat food at your current location."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 70,
+    "snapshotId": "e5af4b51dc2119b5",
+    "agentId": "life-6",
+    "decisionId": "contract-semantic:0:70:life-6",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 11.711176034172906,
+    "capacity": 40,
+    "age": 70,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": 0,
+    "lastAction": "eat",
+    "lastRejected": true,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": -2.220446049250313e-16,
+      "dy": -2.9999999999999964,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000002,
+      "dy": -1.9999999999999964,
+      "blocked": false,
+      "food": 3.7294446596876507,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -2.220446049250313e-16,
+      "dy": -1.9999999999999964,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": -1.9999999999999964,
+      "blocked": false,
+      "food": 7.795066976230284,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -2,
+      "dy": -0.9999999999999964,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000002,
+      "dy": -0.9999999999999964,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2.220446049250313e-16,
+      "dy": -0.9999999999999964,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": -0.9999999999999964,
+      "blocked": false,
+      "food": 3.7294446596876507,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 1.9999999999999998,
+      "dy": -0.9999999999999964,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2,
+      "dy": 3.552713678800501e-15,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000002,
+      "dy": 3.552713678800501e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2.220446049250313e-16,
+      "dy": 3.552713678800501e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": 3.552713678800501e-15,
+      "blocked": false,
+      "food": 1.8647223298438254,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1.9999999999999998,
+      "dy": 3.552713678800501e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 3,
+      "dy": 3.552713678800501e-15,
+      "blocked": false,
+      "food": 1.8647223298438254,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -2,
+      "dy": 1.0000000000000036,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000002,
+      "dy": 1.0000000000000036,
+      "blocked": false,
+      "food": 7.458889319375301,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": -2.220446049250313e-16,
+      "dy": 1.0000000000000036,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": 1.0000000000000036,
+      "blocked": false,
+      "food": 1.8815890519218903,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 1.9999999999999998,
+      "dy": 1.0000000000000036,
+      "blocked": false,
+      "food": 1.8647223298438254,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": -1.0000000000000002,
+      "dy": 2.0000000000000036,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -2.220446049250313e-16,
+      "dy": 2.0000000000000036,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": 2.0000000000000036,
+      "blocked": true,
+      "food": 0
+     }
+    ],
+    "neighbors": [],
+    "memory": [
+     {
+      "dx": -1.0000000000000002,
+      "dy": -1.9999999999999964,
+      "food": 3.7294446596876507,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": -1.9999999999999964,
+      "food": 7.795066976230284,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": -0.9999999999999964,
+      "food": 3.7294446596876507,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": 3.552713678800501e-15,
+      "food": 1.8647223298438254,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 3,
+      "dy": 3.552713678800501e-15,
+      "food": 1.8647223298438254,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -1.0000000000000002,
+      "dy": 1.0000000000000036,
+      "food": 7.458889319375301,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": 1.0000000000000036,
+      "food": 1.8815890519218903,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 1.9999999999999998,
+      "dy": 1.0000000000000036,
+      "food": 1.8647223298438254,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     }
+    ]
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "south",
+     "dx": 0,
+     "dy": 1,
+     "description": "Move 1.00 units south."
+    },
+    {
+     "id": "west",
+     "dx": -1,
+     "dy": 0,
+     "description": "Move 1.00 units west."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 70,
+    "snapshotId": "e5af4b51dc2119b5",
+    "agentId": "life-7",
+    "decisionId": "contract-semantic:0:70:life-7",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 31.15620008626159,
+    "capacity": 40,
+    "age": 70,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": -1.5707963267948966,
+    "lastAction": "north",
+    "lastRejected": false,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": 5.329070518200751e-15,
+      "dy": -3.000000000000007,
+      "blocked": false,
+      "food": 1.8647223298438254,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -0.9999999999999947,
+      "dy": -2.000000000000007,
+      "blocked": false,
+      "food": 3.8036434024354717,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 5.329070518200751e-15,
+      "dy": -2.000000000000007,
+      "blocked": false,
+      "food": 3.7294446596876507,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 1.0000000000000053,
+      "dy": -2.000000000000007,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.9999999999999947,
+      "dy": -1.000000000000007,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -0.9999999999999947,
+      "dy": -1.000000000000007,
+      "blocked": false,
+      "food": 3.7463113817657154,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 5.329070518200751e-15,
+      "dy": -1.000000000000007,
+      "blocked": false,
+      "food": 1.8647223298438254,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1.0000000000000053,
+      "dy": -1.000000000000007,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2.0000000000000053,
+      "dy": -1.000000000000007,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2.9999999999999947,
+      "dy": -7.105427357601002e-15,
+      "blocked": false,
+      "food": 7.795066976230284,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -1.9999999999999947,
+      "dy": -7.105427357601002e-15,
+      "blocked": false,
+      "food": 3.7294446596876507,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -0.9999999999999947,
+      "dy": -7.105427357601002e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 5.329070518200751e-15,
+      "dy": -7.105427357601002e-15,
+      "blocked": false,
+      "food": 3.8231396817732355,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 1.0000000000000053,
+      "dy": -7.105427357601002e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2.0000000000000053,
+      "dy": -7.105427357601002e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 3.0000000000000053,
+      "dy": -7.105427357601002e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.9999999999999947,
+      "dy": 0.9999999999999929,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -0.9999999999999947,
+      "dy": 0.9999999999999929,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 5.329070518200751e-15,
+      "dy": 0.9999999999999929,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.0000000000000053,
+      "dy": 0.9999999999999929,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2.0000000000000053,
+      "dy": 0.9999999999999929,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -0.9999999999999947,
+      "dy": 1.999999999999993,
+      "blocked": false,
+      "food": 1.8647223298438254,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 5.329070518200751e-15,
+      "dy": 1.999999999999993,
+      "blocked": false,
+      "food": 3.7294446596876507,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 1.0000000000000053,
+      "dy": 1.999999999999993,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 5.329070518200751e-15,
+      "dy": 2.999999999999993,
+      "blocked": false,
+      "food": 0
+     }
+    ],
+    "neighbors": [
+     {
+      "dx": 1.0000000000000195,
+      "dy": 1.9999999999999964,
+      "shape": 1
+     }
+    ],
+    "memory": [
+     {
+      "dx": 5.329070518200751e-15,
+      "dy": -2.000000000000007,
+      "food": 3.7294446596876507,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -0.9999999999999947,
+      "dy": -1.000000000000007,
+      "food": 3.7463113817657154,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 5.329070518200751e-15,
+      "dy": -1.000000000000007,
+      "food": 1.8647223298438254,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -2.9999999999999947,
+      "dy": -7.105427357601002e-15,
+      "food": 7.795066976230284,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -1.9999999999999947,
+      "dy": -7.105427357601002e-15,
+      "food": 3.7294446596876507,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 5.329070518200751e-15,
+      "dy": -7.105427357601002e-15,
+      "food": 3.8231396817732355,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": -0.9999999999999947,
+      "dy": 1.999999999999993,
+      "food": 1.8647223298438254,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 5.329070518200751e-15,
+      "dy": 1.999999999999993,
+      "food": 3.7294446596876507,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     }
+    ]
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "south",
+     "dx": 0,
+     "dy": 1,
+     "description": "Move 1.00 units south."
+    },
+    {
+     "id": "west",
+     "dx": -1,
+     "dy": 0,
+     "description": "Move 1.00 units west."
+    },
+    {
+     "id": "eat",
+     "dx": 0,
+     "dy": 0,
+     "description": "Eat food at your current location."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 80,
+    "snapshotId": "165bc187e30dfbd3",
+    "agentId": "life-6",
+    "decisionId": "contract-semantic:0:80:life-6",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 11.256176034172901,
+    "capacity": 40,
+    "age": 80,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": 1.5707963267948966,
+    "lastAction": "south",
+    "lastRejected": false,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": -2.220446049250313e-16,
+      "dy": -2.999999999999993,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000002,
+      "dy": -1.999999999999993,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2.220446049250313e-16,
+      "dy": -1.999999999999993,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": -1.999999999999993,
+      "blocked": false,
+      "food": 3.6923175913493456,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": -2,
+      "dy": -0.9999999999999929,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000002,
+      "dy": -0.9999999999999929,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2.220446049250313e-16,
+      "dy": -0.9999999999999929,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": -0.9999999999999929,
+      "blocked": false,
+      "food": 1.8461587956746728,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1.9999999999999998,
+      "dy": -0.9999999999999929,
+      "blocked": false,
+      "food": 1.998,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -2,
+      "dy": 7.105427357601002e-15,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000002,
+      "dy": 7.105427357601002e-15,
+      "blocked": false,
+      "food": 7.384635182698691,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": -2.220446049250313e-16,
+      "dy": 7.105427357601002e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": 7.105427357601002e-15,
+      "blocked": false,
+      "food": 1.8628576075139816,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 1.9999999999999998,
+      "dy": 7.105427357601002e-15,
+      "blocked": false,
+      "food": 1.8461587956746728,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 3,
+      "dy": 7.105427357601002e-15,
+      "blocked": false,
+      "food": 3.804576147604083,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -1.0000000000000002,
+      "dy": 1.000000000000007,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -2.220446049250313e-16,
+      "dy": 1.000000000000007,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": 1.000000000000007,
+      "blocked": true,
+      "food": 0
+     }
+    ],
+    "neighbors": [],
+    "memory": [
+     {
+      "dx": 3,
+      "dy": -0.9999999999999929,
+      "food": 1.8647223298438254,
+      "stepsAgo": 10,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": -1.999999999999993,
+      "food": 3.6923175913493456,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": -0.9999999999999929,
+      "food": 1.8461587956746728,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1.9999999999999998,
+      "dy": -0.9999999999999929,
+      "food": 1.998,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -1.0000000000000002,
+      "dy": 7.105427357601002e-15,
+      "food": 7.384635182698691,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 0.9999999999999998,
+      "dy": 7.105427357601002e-15,
+      "food": 1.8628576075139816,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 1.9999999999999998,
+      "dy": 7.105427357601002e-15,
+      "food": 1.8461587956746728,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 3,
+      "dy": 7.105427357601002e-15,
+      "food": 3.804576147604083,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     }
+    ]
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "west",
+     "dx": -1,
+     "dy": 0,
+     "description": "Move 1.00 units west."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 80,
+    "snapshotId": "165bc187e30dfbd3",
+    "agentId": "life-7",
+    "decisionId": "contract-semantic:0:80:life-7",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 32.78571852488425,
+    "capacity": 40,
+    "age": 80,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": -1.5707963267948966,
+    "lastAction": "eat",
+    "lastRejected": true,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": 5.329070518200751e-15,
+      "dy": -3.000000000000007,
+      "blocked": false,
+      "food": 1.8461587956746728,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -0.9999999999999947,
+      "dy": -2.000000000000007,
+      "blocked": false,
+      "food": 3.765777676724826,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 5.329070518200751e-15,
+      "dy": -2.000000000000007,
+      "blocked": false,
+      "food": 3.6923175913493456,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 1.0000000000000053,
+      "dy": -2.000000000000007,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.9999999999999947,
+      "dy": -1.000000000000007,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -0.9999999999999947,
+      "dy": -1.000000000000007,
+      "blocked": false,
+      "food": 3.709016403188655,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 5.329070518200751e-15,
+      "dy": -1.000000000000007,
+      "blocked": false,
+      "food": 1.8461587956746728,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 1.0000000000000053,
+      "dy": -1.000000000000007,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2.0000000000000053,
+      "dy": -1.000000000000007,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2.9999999999999947,
+      "dy": -7.105427357601002e-15,
+      "blocked": false,
+      "food": 7.717466150708875,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -1.9999999999999947,
+      "dy": -7.105427357601002e-15,
+      "blocked": false,
+      "food": 3.6923175913493456,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -0.9999999999999947,
+      "dy": -7.105427357601002e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 5.329070518200751e-15,
+      "dy": -7.105427357601002e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.0000000000000053,
+      "dy": -7.105427357601002e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2.0000000000000053,
+      "dy": -7.105427357601002e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 3.0000000000000053,
+      "dy": -7.105427357601002e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.9999999999999947,
+      "dy": 0.9999999999999929,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -0.9999999999999947,
+      "dy": 0.9999999999999929,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 5.329070518200751e-15,
+      "dy": 0.9999999999999929,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.0000000000000053,
+      "dy": 0.9999999999999929,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2.0000000000000053,
+      "dy": 0.9999999999999929,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -0.9999999999999947,
+      "dy": 1.999999999999993,
+      "blocked": false,
+      "food": 1.8461587956746728,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 5.329070518200751e-15,
+      "dy": 1.999999999999993,
+      "blocked": false,
+      "food": 3.6923175913493456,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 1.0000000000000053,
+      "dy": 1.999999999999993,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 5.329070518200751e-15,
+      "dy": 2.999999999999993,
+      "blocked": false,
+      "food": 0
+     }
+    ],
+    "neighbors": [
+     {
+      "dx": 2.3092638912203256e-14,
+      "dy": 1.9999999999999964,
+      "shape": 1
+     }
+    ],
+    "memory": [
+     {
+      "dx": -0.9999999999999947,
+      "dy": -2.000000000000007,
+      "food": 3.765777676724826,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 5.329070518200751e-15,
+      "dy": -2.000000000000007,
+      "food": 3.6923175913493456,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -0.9999999999999947,
+      "dy": -1.000000000000007,
+      "food": 3.709016403188655,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 5.329070518200751e-15,
+      "dy": -1.000000000000007,
+      "food": 1.8461587956746728,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -2.9999999999999947,
+      "dy": -7.105427357601002e-15,
+      "food": 7.717466150708875,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -1.9999999999999947,
+      "dy": -7.105427357601002e-15,
+      "food": 3.6923175913493456,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -0.9999999999999947,
+      "dy": 1.999999999999993,
+      "food": 1.8461587956746728,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 5.329070518200751e-15,
+      "dy": 1.999999999999993,
+      "food": 3.6923175913493456,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     }
+    ]
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "south",
+     "dx": 0,
+     "dy": 1,
+     "description": "Move 1.00 units south."
+    },
+    {
+     "id": "west",
+     "dx": -1,
+     "dy": 0,
+     "description": "Move 1.00 units west."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 90,
+    "snapshotId": "c8dfb2ce2da316a8",
+    "agentId": "life-6",
+    "decisionId": "contract-semantic:0:90:life-6",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 10.801176034172896,
+    "capacity": 40,
+    "age": 90,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": 3.141592653589793,
+    "lastAction": "west",
+    "lastRejected": false,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": 0,
+      "dy": -2.999999999999993,
+      "blocked": false,
+      "food": 3.6555601274238096,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0,
+      "dy": -1.999999999999993,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": -1.999999999999993,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": -0.9999999999999929,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": -0.9999999999999929,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": -0.9999999999999929,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2,
+      "dy": -0.9999999999999929,
+      "blocked": false,
+      "food": 1.8277800637119048,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -1,
+      "dy": 7.105427357601002e-15,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 7.105427357601002e-15,
+      "blocked": false,
+      "food": 7.311120254847619,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 1,
+      "dy": 7.105427357601002e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2,
+      "dy": 7.105427357601002e-15,
+      "blocked": false,
+      "food": 1.8443126368789982,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 3,
+      "dy": 7.105427357601002e-15,
+      "blocked": false,
+      "food": 1.8277800637119048,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": -1,
+      "dy": 1.000000000000007,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 1.000000000000007,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": 1.000000000000007,
+      "blocked": true,
+      "food": 0
+     }
+    ],
+    "neighbors": [],
+    "memory": [
+     {
+      "dx": 2,
+      "dy": -1.999999999999993,
+      "food": 3.6923175913493456,
+      "stepsAgo": 10,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 3,
+      "dy": -0.9999999999999929,
+      "food": 1.998,
+      "stepsAgo": 10,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 4,
+      "dy": 7.105427357601002e-15,
+      "food": 3.804576147604083,
+      "stepsAgo": 10,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": -2.999999999999993,
+      "food": 3.6555601274238096,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 2,
+      "dy": -0.9999999999999929,
+      "food": 1.8277800637119048,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": 7.105427357601002e-15,
+      "food": 7.311120254847619,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 2,
+      "dy": 7.105427357601002e-15,
+      "food": 1.8443126368789982,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 3,
+      "dy": 7.105427357601002e-15,
+      "food": 1.8277800637119048,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     }
+    ]
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "eat",
+     "dx": 0,
+     "dy": 0,
+     "description": "Eat food at your current location."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 110,
+    "snapshotId": "ec9808135544d48f",
+    "agentId": "life-1",
+    "decisionId": "contract-semantic:0:110:life-1",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 22.854127798764715,
+    "capacity": 40,
+    "age": 110,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": 3.141592653589793,
+    "lastAction": "west",
+    "lastRejected": false,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": -2.1316282072803006e-14,
+      "dy": -3,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000213,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2.1316282072803006e-14,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999787,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2.0000000000000213,
+      "dy": -1,
+      "blocked": false,
+      "food": 1.7915696658078268,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -1.0000000000000213,
+      "dy": -1,
+      "blocked": false,
+      "food": 1.9389210725916455,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -2.1316282072803006e-14,
+      "dy": -1,
+      "blocked": false,
+      "food": 1.7915696658078268,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0.9999999999999787,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.9999999999999787,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -3.0000000000000213,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2.0000000000000213,
+      "dy": 0,
+      "blocked": false,
+      "food": 1.8077747099331918,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -1.0000000000000213,
+      "dy": 0,
+      "blocked": false,
+      "food": 1.7915696658078268,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": -2.1316282072803006e-14,
+      "dy": 0,
+      "blocked": false,
+      "food": 3.6920785109454943,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0.9999999999999787,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.9999999999999787,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2.9999999999999787,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000213,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -2.1316282072803006e-14,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999787,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     }
+    ],
+    "neighbors": [],
+    "memory": [
+     {
+      "dx": 0.9999999999999787,
+      "dy": -4,
+      "food": 1.8277800637119048,
+      "stepsAgo": 20,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -2.0000000000000213,
+      "dy": -1,
+      "food": 1.7915696658078268,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -1.0000000000000213,
+      "dy": -1,
+      "food": 1.9389210725916455,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -2.1316282072803006e-14,
+      "dy": -1,
+      "food": 1.7915696658078268,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -2.0000000000000213,
+      "dy": 0,
+      "food": 1.8077747099331918,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -1.0000000000000213,
+      "dy": 0,
+      "food": 1.7915696658078268,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": -2.1316282072803006e-14,
+      "dy": 0,
+      "food": 3.6920785109454943,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     }
+    ]
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "west",
+     "dx": -1,
+     "dy": 0,
+     "description": "Move 1.00 units west."
+    },
+    {
+     "id": "eat",
+     "dx": 0,
+     "dy": 0,
+     "description": "Eat food at your current location."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 110,
+    "snapshotId": "ec9808135544d48f",
+    "agentId": "life-6",
+    "decisionId": "contract-semantic:0:110:life-6",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 13.882812384863392,
+    "capacity": 40,
+    "age": 110,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": 3.141592653589793,
+    "lastAction": "eat",
+    "lastRejected": true,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": 0,
+      "dy": -2.999999999999993,
+      "blocked": false,
+      "food": 3.5831393316156537,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0,
+      "dy": -1.999999999999993,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": -1.999999999999993,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": -0.9999999999999929,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": -0.9999999999999929,
+      "blocked": false,
+      "food": 1.978109670659077,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 1,
+      "dy": -0.9999999999999929,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2,
+      "dy": -0.9999999999999929,
+      "blocked": false,
+      "food": 1.7915696658078268,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -1,
+      "dy": 7.105427357601002e-15,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 7.105427357601002e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": 7.105427357601002e-15,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2,
+      "dy": 7.105427357601002e-15,
+      "blocked": false,
+      "food": 1.8077747099331918,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 3,
+      "dy": 7.105427357601002e-15,
+      "blocked": false,
+      "food": 1.7915696658078268,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": -1,
+      "dy": 1.000000000000007,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 1.000000000000007,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": 1.000000000000007,
+      "blocked": true,
+      "food": 0
+     }
+    ],
+    "neighbors": [],
+    "memory": [
+     {
+      "dx": 3,
+      "dy": -0.9999999999999929,
+      "food": 1.998,
+      "stepsAgo": 30,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 4,
+      "dy": 7.105427357601002e-15,
+      "food": 3.804576147604083,
+      "stepsAgo": 30,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": -2.999999999999993,
+      "food": 3.5831393316156537,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0,
+      "dy": -0.9999999999999929,
+      "food": 1.978109670659077,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 2,
+      "dy": -0.9999999999999929,
+      "food": 1.7915696658078268,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 2,
+      "dy": 7.105427357601002e-15,
+      "food": 1.8077747099331918,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 3,
+      "dy": 7.105427357601002e-15,
+      "food": 1.7915696658078268,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     }
+    ]
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 120,
+    "snapshotId": "16c547cd5d4f75e1",
+    "agentId": "life-1",
+    "decisionId": "contract-semantic:0:120:life-1",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 18.9002374118533,
+    "capacity": 40,
+    "age": 120,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": 3.141592653589793,
+    "lastAction": "eat",
+    "lastRejected": true,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": -2.1316282072803006e-14,
+      "dy": -3,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000213,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2.1316282072803006e-14,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999787,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2.0000000000000213,
+      "dy": -1,
+      "blocked": false,
+      "food": 1.7737343751721288,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -1.0000000000000213,
+      "dy": -1,
+      "blocked": false,
+      "food": 1.919618881050152,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -2.1316282072803006e-14,
+      "dy": -1,
+      "blocked": false,
+      "food": 1.7737343751721288,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0.9999999999999787,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.9999999999999787,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -3.0000000000000213,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2.0000000000000213,
+      "dy": 0,
+      "blocked": false,
+      "food": 1.789778096142019,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -1.0000000000000213,
+      "dy": 0,
+      "blocked": false,
+      "food": 1.7737343751721288,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": -2.1316282072803006e-14,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999787,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.9999999999999787,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2.9999999999999787,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000213,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -2.1316282072803006e-14,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999787,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     }
+    ],
+    "neighbors": [
+     {
+      "dx": 2.9999999999999893,
+      "dy": -1.7763568394002505e-14,
+      "shape": 1
+     }
+    ],
+    "memory": [
+     {
+      "dx": 0.9999999999999787,
+      "dy": -4,
+      "food": 1.8277800637119048,
+      "stepsAgo": 30,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -2.0000000000000213,
+      "dy": -1,
+      "food": 1.7737343751721288,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -1.0000000000000213,
+      "dy": -1,
+      "food": 1.919618881050152,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -2.1316282072803006e-14,
+      "dy": -1,
+      "food": 1.7737343751721288,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": -2.0000000000000213,
+      "dy": 0,
+      "food": 1.789778096142019,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -1.0000000000000213,
+      "dy": 0,
+      "food": 1.7737343751721288,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     }
+    ]
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "west",
+     "dx": -1,
+     "dy": 0,
+     "description": "Move 1.00 units west."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 120,
+    "snapshotId": "16c547cd5d4f75e1",
+    "agentId": "life-4",
+    "decisionId": "contract-semantic:0:120:life-4",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 18.539999999999935,
+    "capacity": 40,
+    "age": 120,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": 3.141592653589793,
+    "lastAction": "west",
+    "lastRejected": false,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": -1.0658141036401503e-14,
+      "dy": -2.9999999999999822,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000107,
+      "dy": -1.9999999999999822,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.0658141036401503e-14,
+      "dy": -1.9999999999999822,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999893,
+      "dy": -1.9999999999999822,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2.0000000000000107,
+      "dy": -0.9999999999999822,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000107,
+      "dy": -0.9999999999999822,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.0658141036401503e-14,
+      "dy": -0.9999999999999822,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999893,
+      "dy": -0.9999999999999822,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.9999999999999893,
+      "dy": -0.9999999999999822,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -3.0000000000000107,
+      "dy": 1.7763568394002505e-14,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -2.0000000000000107,
+      "dy": 1.7763568394002505e-14,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000107,
+      "dy": 1.7763568394002505e-14,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.0658141036401503e-14,
+      "dy": 1.7763568394002505e-14,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999893,
+      "dy": 1.7763568394002505e-14,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1.9999999999999893,
+      "dy": 1.7763568394002505e-14,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2.9999999999999893,
+      "dy": 1.7763568394002505e-14,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1.0000000000000107,
+      "dy": 1.0000000000000178,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": -1.0658141036401503e-14,
+      "dy": 1.0000000000000178,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0.9999999999999893,
+      "dy": 1.0000000000000178,
+      "blocked": true,
+      "food": 0
+     }
+    ],
+    "neighbors": [
+     {
+      "dx": -2.9999999999999893,
+      "dy": 1.7763568394002505e-14,
+      "shape": 1
+     }
+    ],
+    "memory": []
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "west",
+     "dx": -1,
+     "dy": 0,
+     "description": "Move 1.00 units west."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  },
+  {
+   "identity": {
+    "protocol": "ecology-decision-v1",
+    "runId": "contract-semantic",
+    "generation": 0,
+    "epoch": 0,
+    "tick": 140,
+    "snapshotId": "363f2e02594ac4bc",
+    "agentId": "life-6",
+    "decisionId": "contract-semantic:0:140:life-6",
+    "attemptId": "try-0"
+   },
+   "observation": {
+    "energy": 14.652005410657475,
+    "capacity": 40,
+    "age": 140,
+    "traits": {
+     "size": 1,
+     "speed": 1,
+     "perception": 3,
+     "metabolism": 1
+    },
+    "heading": -1.5707963267948966,
+    "lastAction": "north",
+    "lastRejected": false,
+    "costs": {
+     "metabolismPerTick": 0.027500000000000004,
+     "movementPerUnit": 0.18,
+     "decisionTicks": 10,
+     "bitePerTick": 0.6
+    },
+    "local": [
+     {
+      "dx": 0,
+      "dy": -3,
+      "blocked": false,
+      "food": 1.7385946837090933,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0,
+      "dy": -2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": -2,
+      "blocked": false,
+      "food": 1.919618881050152,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": -1,
+      "dy": -1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": -1,
+      "blocked": false,
+      "food": 3.4771893674181866,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 1,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2,
+      "dy": -1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": 0,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 3,
+      "dy": 0,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": -1,
+      "dy": 1,
+      "blocked": true,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 1,
+      "dy": 1,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 2,
+      "dy": 1,
+      "blocked": false,
+      "food": 3.736594683709093,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": 2,
+      "blocked": false,
+      "food": 1.9584173519294104,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 1,
+      "dy": 2,
+      "blocked": false,
+      "food": 0
+     },
+     {
+      "dx": 0,
+      "dy": 3,
+      "blocked": true,
+      "food": 0
+     }
+    ],
+    "neighbors": [
+     {
+      "dx": 2.000000000000001,
+      "dy": -1.2434497875801753e-14,
+      "shape": 0
+     },
+     {
+      "dx": 2.000000000000001,
+      "dy": -3.552713678800501e-15,
+      "shape": 2
+     },
+     {
+      "dx": 2.000000000000001,
+      "dy": 0,
+      "shape": 0
+     },
+     {
+      "dx": 2.000000000000001,
+      "dy": -7.105427357601002e-15,
+      "shape": 2
+     }
+    ],
+    "memory": [
+     {
+      "dx": 3,
+      "dy": 2,
+      "food": 1.7915696658078268,
+      "stepsAgo": 30,
+      "desc": "dull grey lump"
+     },
+     {
+      "dx": 3,
+      "dy": 1,
+      "food": 3.8985088451376693,
+      "stepsAgo": 10,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 2,
+      "dy": 2,
+      "food": 1.7719606407969568,
+      "stepsAgo": 10,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0,
+      "dy": -3,
+      "food": 1.7385946837090933,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 1,
+      "dy": -2,
+      "food": 1.919618881050152,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 0,
+      "dy": -1,
+      "food": 3.4771893674181866,
+      "stepsAgo": 0,
+      "desc": "ripe and sweet berry"
+     },
+     {
+      "dx": 2,
+      "dy": 1,
+      "food": 3.736594683709093,
+      "stepsAgo": 0,
+      "desc": "rotten and foul-smelling berry"
+     },
+     {
+      "dx": 0,
+      "dy": 2,
+      "food": 1.9584173519294104,
+      "stepsAgo": 0,
+      "desc": "dull grey lump"
+     }
+    ]
+   },
+   "candidates": [
+    {
+     "id": "north",
+     "dx": 0,
+     "dy": -1,
+     "description": "Move 1.00 units north."
+    },
+    {
+     "id": "east",
+     "dx": 1,
+     "dy": 0,
+     "description": "Move 1.00 units east."
+    },
+    {
+     "id": "south",
+     "dx": 0,
+     "dy": 1,
+     "description": "Move 1.00 units south."
+    },
+    {
+     "id": "rest",
+     "dx": 0,
+     "dy": 0,
+     "description": "Stay here, paying resting metabolism; this does not restore energy."
+    }
+   ]
+  }
+ ]
+}

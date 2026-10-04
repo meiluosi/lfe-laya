@@ -1,0 +1,1026 @@
+[
+ {
+  "text": "ripe and sweet berry",
+  "split": "train"
+ },
+ {
+  "text": "ripe and sweet fruit",
+  "split": "train"
+ },
+ {
+  "text": "ripe and sweet nectar",
+  "split": "train"
+ },
+ {
+  "text": "ripe and sweet seed",
+  "split": "train"
+ },
+ {
+  "text": "ripe and sweet leaf",
+  "split": "train"
+ },
+ {
+  "text": "ripe and sweet root",
+  "split": "train"
+ },
+ {
+  "text": "fresh and juicy berry",
+  "split": "train"
+ },
+ {
+  "text": "fresh and juicy fruit",
+  "split": "train"
+ },
+ {
+  "text": "fresh and juicy nectar",
+  "split": "train"
+ },
+ {
+  "text": "fresh and juicy seed",
+  "split": "train"
+ },
+ {
+  "text": "fresh and juicy leaf",
+  "split": "train"
+ },
+ {
+  "text": "fresh and juicy root",
+  "split": "train"
+ },
+ {
+  "text": "plump and fragrant berry",
+  "split": "train"
+ },
+ {
+  "text": "plump and fragrant fruit",
+  "split": "train"
+ },
+ {
+  "text": "plump and fragrant nectar",
+  "split": "train"
+ },
+ {
+  "text": "plump and fragrant seed",
+  "split": "train"
+ },
+ {
+  "text": "plump and fragrant leaf",
+  "split": "train"
+ },
+ {
+  "text": "plump and fragrant root",
+  "split": "train"
+ },
+ {
+  "text": "golden and warm-smelling berry",
+  "split": "train"
+ },
+ {
+  "text": "golden and warm-smelling fruit",
+  "split": "train"
+ },
+ {
+  "text": "golden and warm-smelling nectar",
+  "split": "train"
+ },
+ {
+  "text": "golden and warm-smelling seed",
+  "split": "train"
+ },
+ {
+  "text": "golden and warm-smelling leaf",
+  "split": "train"
+ },
+ {
+  "text": "golden and warm-smelling root",
+  "split": "train"
+ },
+ {
+  "text": "soft, sweet-smelling berry",
+  "split": "train"
+ },
+ {
+  "text": "soft, sweet-smelling fruit",
+  "split": "train"
+ },
+ {
+  "text": "soft, sweet-smelling nectar",
+  "split": "train"
+ },
+ {
+  "text": "soft, sweet-smelling seed",
+  "split": "train"
+ },
+ {
+  "text": "soft, sweet-smelling leaf",
+  "split": "train"
+ },
+ {
+  "text": "soft, sweet-smelling root",
+  "split": "train"
+ },
+ {
+  "text": "clean and nutritious berry",
+  "split": "train"
+ },
+ {
+  "text": "clean and nutritious fruit",
+  "split": "train"
+ },
+ {
+  "text": "clean and nutritious nectar",
+  "split": "train"
+ },
+ {
+  "text": "clean and nutritious seed",
+  "split": "train"
+ },
+ {
+  "text": "clean and nutritious leaf",
+  "split": "train"
+ },
+ {
+  "text": "clean and nutritious root",
+  "split": "train"
+ },
+ {
+  "text": "glossy, firm and ripe berry",
+  "split": "train"
+ },
+ {
+  "text": "glossy, firm and ripe fruit",
+  "split": "train"
+ },
+ {
+  "text": "glossy, firm and ripe nectar",
+  "split": "train"
+ },
+ {
+  "text": "glossy, firm and ripe seed",
+  "split": "train"
+ },
+ {
+  "text": "glossy, firm and ripe leaf",
+  "split": "train"
+ },
+ {
+  "text": "glossy, firm and ripe root",
+  "split": "train"
+ },
+ {
+  "text": "honey-scented berry",
+  "split": "train"
+ },
+ {
+  "text": "honey-scented fruit",
+  "split": "train"
+ },
+ {
+  "text": "honey-scented nectar",
+  "split": "train"
+ },
+ {
+  "text": "honey-scented seed",
+  "split": "train"
+ },
+ {
+  "text": "honey-scented leaf",
+  "split": "train"
+ },
+ {
+  "text": "honey-scented root",
+  "split": "train"
+ },
+ {
+  "text": "tender and fresh berry",
+  "split": "train"
+ },
+ {
+  "text": "tender and fresh fruit",
+  "split": "train"
+ },
+ {
+  "text": "tender and fresh nectar",
+  "split": "train"
+ },
+ {
+  "text": "tender and fresh seed",
+  "split": "train"
+ },
+ {
+  "text": "tender and fresh leaf",
+  "split": "train"
+ },
+ {
+  "text": "tender and fresh root",
+  "split": "train"
+ },
+ {
+  "text": "rotten and foul-smelling berry",
+  "split": "train"
+ },
+ {
+  "text": "rotten and foul-smelling fruit",
+  "split": "train"
+ },
+ {
+  "text": "rotten and foul-smelling nectar",
+  "split": "train"
+ },
+ {
+  "text": "rotten and foul-smelling seed",
+  "split": "train"
+ },
+ {
+  "text": "rotten and foul-smelling leaf",
+  "split": "train"
+ },
+ {
+  "text": "rotten and foul-smelling root",
+  "split": "train"
+ },
+ {
+  "text": "moldy and slimy berry",
+  "split": "train"
+ },
+ {
+  "text": "moldy and slimy fruit",
+  "split": "train"
+ },
+ {
+  "text": "moldy and slimy nectar",
+  "split": "train"
+ },
+ {
+  "text": "moldy and slimy seed",
+  "split": "train"
+ },
+ {
+  "text": "moldy and slimy leaf",
+  "split": "train"
+ },
+ {
+  "text": "moldy and slimy root",
+  "split": "train"
+ },
+ {
+  "text": "bitter and withered berry",
+  "split": "train"
+ },
+ {
+  "text": "bitter and withered fruit",
+  "split": "train"
+ },
+ {
+  "text": "bitter and withered nectar",
+  "split": "train"
+ },
+ {
+  "text": "bitter and withered seed",
+  "split": "train"
+ },
+ {
+  "text": "bitter and withered leaf",
+  "split": "train"
+ },
+ {
+  "text": "bitter and withered root",
+  "split": "train"
+ },
+ {
+  "text": "covered in poisonous spots berry",
+  "split": "train"
+ },
+ {
+  "text": "covered in poisonous spots fruit",
+  "split": "train"
+ },
+ {
+  "text": "covered in poisonous spots nectar",
+  "split": "train"
+ },
+ {
+  "text": "covered in poisonous spots seed",
+  "split": "train"
+ },
+ {
+  "text": "covered in poisonous spots leaf",
+  "split": "train"
+ },
+ {
+  "text": "covered in poisonous spots root",
+  "split": "train"
+ },
+ {
+  "text": "shriveled, sour and decayed berry",
+  "split": "train"
+ },
+ {
+  "text": "shriveled, sour and decayed fruit",
+  "split": "train"
+ },
+ {
+  "text": "shriveled, sour and decayed nectar",
+  "split": "train"
+ },
+ {
+  "text": "shriveled, sour and decayed seed",
+  "split": "train"
+ },
+ {
+  "text": "shriveled, sour and decayed leaf",
+  "split": "train"
+ },
+ {
+  "text": "shriveled, sour and decayed root",
+  "split": "train"
+ },
+ {
+  "text": "oozing a sharp chemical stench berry",
+  "split": "train"
+ },
+ {
+  "text": "oozing a sharp chemical stench fruit",
+  "split": "train"
+ },
+ {
+  "text": "oozing a sharp chemical stench nectar",
+  "split": "train"
+ },
+ {
+  "text": "oozing a sharp chemical stench seed",
+  "split": "train"
+ },
+ {
+  "text": "oozing a sharp chemical stench leaf",
+  "split": "train"
+ },
+ {
+  "text": "oozing a sharp chemical stench root",
+  "split": "train"
+ },
+ {
+  "text": "dull, spoiled and fuzzy with mold berry",
+  "split": "train"
+ },
+ {
+  "text": "dull, spoiled and fuzzy with mold fruit",
+  "split": "train"
+ },
+ {
+  "text": "dull, spoiled and fuzzy with mold nectar",
+  "split": "train"
+ },
+ {
+  "text": "dull, spoiled and fuzzy with mold seed",
+  "split": "train"
+ },
+ {
+  "text": "dull, spoiled and fuzzy with mold leaf",
+  "split": "train"
+ },
+ {
+  "text": "dull, spoiled and fuzzy with mold root",
+  "split": "train"
+ },
+ {
+  "text": "bright with warning stripes and acrid berry",
+  "split": "train"
+ },
+ {
+  "text": "bright with warning stripes and acrid fruit",
+  "split": "train"
+ },
+ {
+  "text": "bright with warning stripes and acrid nectar",
+  "split": "train"
+ },
+ {
+  "text": "bright with warning stripes and acrid seed",
+  "split": "train"
+ },
+ {
+  "text": "bright with warning stripes and acrid leaf",
+  "split": "train"
+ },
+ {
+  "text": "bright with warning stripes and acrid root",
+  "split": "train"
+ },
+ {
+  "text": "putrid and crawling with maggots berry",
+  "split": "train"
+ },
+ {
+  "text": "putrid and crawling with maggots fruit",
+  "split": "train"
+ },
+ {
+  "text": "putrid and crawling with maggots nectar",
+  "split": "train"
+ },
+ {
+  "text": "putrid and crawling with maggots seed",
+  "split": "train"
+ },
+ {
+  "text": "putrid and crawling with maggots leaf",
+  "split": "train"
+ },
+ {
+  "text": "putrid and crawling with maggots root",
+  "split": "train"
+ },
+ {
+  "text": "sun-warmed and sugary sap",
+  "split": "test"
+ },
+ {
+  "text": "sun-warmed and sugary mushroom",
+  "split": "test"
+ },
+ {
+  "text": "sun-warmed and sugary bud",
+  "split": "test"
+ },
+ {
+  "text": "sun-warmed and sugary moss",
+  "split": "test"
+ },
+ {
+  "text": "sun-warmed and sugary pollen",
+  "split": "test"
+ },
+ {
+  "text": "sun-warmed and sugary petal",
+  "split": "test"
+ },
+ {
+  "text": "crisp and wholesome sap",
+  "split": "test"
+ },
+ {
+  "text": "crisp and wholesome mushroom",
+  "split": "test"
+ },
+ {
+  "text": "crisp and wholesome bud",
+  "split": "test"
+ },
+ {
+  "text": "crisp and wholesome moss",
+  "split": "test"
+ },
+ {
+  "text": "crisp and wholesome pollen",
+  "split": "test"
+ },
+ {
+  "text": "crisp and wholesome petal",
+  "split": "test"
+ },
+ {
+  "text": "rich and creamy sap",
+  "split": "test"
+ },
+ {
+  "text": "rich and creamy mushroom",
+  "split": "test"
+ },
+ {
+  "text": "rich and creamy bud",
+  "split": "test"
+ },
+ {
+  "text": "rich and creamy moss",
+  "split": "test"
+ },
+ {
+  "text": "rich and creamy pollen",
+  "split": "test"
+ },
+ {
+  "text": "rich and creamy petal",
+  "split": "test"
+ },
+ {
+  "text": "bright, plump and aromatic sap",
+  "split": "test"
+ },
+ {
+  "text": "bright, plump and aromatic mushroom",
+  "split": "test"
+ },
+ {
+  "text": "bright, plump and aromatic bud",
+  "split": "test"
+ },
+ {
+  "text": "bright, plump and aromatic moss",
+  "split": "test"
+ },
+ {
+  "text": "bright, plump and aromatic pollen",
+  "split": "test"
+ },
+ {
+  "text": "bright, plump and aromatic petal",
+  "split": "test"
+ },
+ {
+  "text": "dewy and flavorful sap",
+  "split": "test"
+ },
+ {
+  "text": "dewy and flavorful mushroom",
+  "split": "test"
+ },
+ {
+  "text": "dewy and flavorful bud",
+  "split": "test"
+ },
+ {
+  "text": "dewy and flavorful moss",
+  "split": "test"
+ },
+ {
+  "text": "dewy and flavorful pollen",
+  "split": "test"
+ },
+ {
+  "text": "dewy and flavorful petal",
+  "split": "test"
+ },
+ {
+  "text": "full of healthy juice sap",
+  "split": "test"
+ },
+ {
+  "text": "full of healthy juice mushroom",
+  "split": "test"
+ },
+ {
+  "text": "full of healthy juice bud",
+  "split": "test"
+ },
+ {
+  "text": "full of healthy juice moss",
+  "split": "test"
+ },
+ {
+  "text": "full of healthy juice pollen",
+  "split": "test"
+ },
+ {
+  "text": "full of healthy juice petal",
+  "split": "test"
+ },
+ {
+  "text": "smooth, ripe and delicious sap",
+  "split": "test"
+ },
+ {
+  "text": "smooth, ripe and delicious mushroom",
+  "split": "test"
+ },
+ {
+  "text": "smooth, ripe and delicious bud",
+  "split": "test"
+ },
+ {
+  "text": "smooth, ripe and delicious moss",
+  "split": "test"
+ },
+ {
+  "text": "smooth, ripe and delicious pollen",
+  "split": "test"
+ },
+ {
+  "text": "smooth, ripe and delicious petal",
+  "split": "test"
+ },
+ {
+  "text": "gently sweet and soft sap",
+  "split": "test"
+ },
+ {
+  "text": "gently sweet and soft mushroom",
+  "split": "test"
+ },
+ {
+  "text": "gently sweet and soft bud",
+  "split": "test"
+ },
+ {
+  "text": "gently sweet and soft moss",
+  "split": "test"
+ },
+ {
+  "text": "gently sweet and soft pollen",
+  "split": "test"
+ },
+ {
+  "text": "gently sweet and soft petal",
+  "split": "test"
+ },
+ {
+  "text": "freshly picked and pure sap",
+  "split": "test"
+ },
+ {
+  "text": "freshly picked and pure mushroom",
+  "split": "test"
+ },
+ {
+  "text": "freshly picked and pure bud",
+  "split": "test"
+ },
+ {
+  "text": "freshly picked and pure moss",
+  "split": "test"
+ },
+ {
+  "text": "freshly picked and pure pollen",
+  "split": "test"
+ },
+ {
+  "text": "freshly picked and pure petal",
+  "split": "test"
+ },
+ {
+  "text": "sour-smelling and mushy sap",
+  "split": "test"
+ },
+ {
+  "text": "sour-smelling and mushy mushroom",
+  "split": "test"
+ },
+ {
+  "text": "sour-smelling and mushy bud",
+  "split": "test"
+ },
+ {
+  "text": "sour-smelling and mushy moss",
+  "split": "test"
+ },
+ {
+  "text": "sour-smelling and mushy pollen",
+  "split": "test"
+ },
+ {
+  "text": "sour-smelling and mushy petal",
+  "split": "test"
+ },
+ {
+  "text": "blackened and fermented sap",
+  "split": "test"
+ },
+ {
+  "text": "blackened and fermented mushroom",
+  "split": "test"
+ },
+ {
+  "text": "blackened and fermented bud",
+  "split": "test"
+ },
+ {
+  "text": "blackened and fermented moss",
+  "split": "test"
+ },
+ {
+  "text": "blackened and fermented pollen",
+  "split": "test"
+ },
+ {
+  "text": "blackened and fermented petal",
+  "split": "test"
+ },
+ {
+  "text": "stinking and covered in sticky pus sap",
+  "split": "test"
+ },
+ {
+  "text": "stinking and covered in sticky pus mushroom",
+  "split": "test"
+ },
+ {
+  "text": "stinking and covered in sticky pus bud",
+  "split": "test"
+ },
+ {
+  "text": "stinking and covered in sticky pus moss",
+  "split": "test"
+ },
+ {
+  "text": "stinking and covered in sticky pus pollen",
+  "split": "test"
+ },
+ {
+  "text": "stinking and covered in sticky pus petal",
+  "split": "test"
+ },
+ {
+  "text": "oily with a toxic sheen sap",
+  "split": "test"
+ },
+ {
+  "text": "oily with a toxic sheen mushroom",
+  "split": "test"
+ },
+ {
+  "text": "oily with a toxic sheen bud",
+  "split": "test"
+ },
+ {
+  "text": "oily with a toxic sheen moss",
+  "split": "test"
+ },
+ {
+  "text": "oily with a toxic sheen pollen",
+  "split": "test"
+ },
+ {
+  "text": "oily with a toxic sheen petal",
+  "split": "test"
+ },
+ {
+  "text": "festering and rotting sap",
+  "split": "test"
+ },
+ {
+  "text": "festering and rotting mushroom",
+  "split": "test"
+ },
+ {
+  "text": "festering and rotting bud",
+  "split": "test"
+ },
+ {
+  "text": "festering and rotting moss",
+  "split": "test"
+ },
+ {
+  "text": "festering and rotting pollen",
+  "split": "test"
+ },
+ {
+  "text": "festering and rotting petal",
+  "split": "test"
+ },
+ {
+  "text": "spongy, moldy and reeking sap",
+  "split": "test"
+ },
+ {
+  "text": "spongy, moldy and reeking mushroom",
+  "split": "test"
+ },
+ {
+  "text": "spongy, moldy and reeking bud",
+  "split": "test"
+ },
+ {
+  "text": "spongy, moldy and reeking moss",
+  "split": "test"
+ },
+ {
+  "text": "spongy, moldy and reeking pollen",
+  "split": "test"
+ },
+ {
+  "text": "spongy, moldy and reeking petal",
+  "split": "test"
+ },
+ {
+  "text": "burning bitter and venomous sap",
+  "split": "test"
+ },
+ {
+  "text": "burning bitter and venomous mushroom",
+  "split": "test"
+ },
+ {
+  "text": "burning bitter and venomous bud",
+  "split": "test"
+ },
+ {
+  "text": "burning bitter and venomous moss",
+  "split": "test"
+ },
+ {
+  "text": "burning bitter and venomous pollen",
+  "split": "test"
+ },
+ {
+  "text": "burning bitter and venomous petal",
+  "split": "test"
+ },
+ {
+  "text": "decomposing and swarming with flies sap",
+  "split": "test"
+ },
+ {
+  "text": "decomposing and swarming with flies mushroom",
+  "split": "test"
+ },
+ {
+  "text": "decomposing and swarming with flies bud",
+  "split": "test"
+ },
+ {
+  "text": "decomposing and swarming with flies moss",
+  "split": "test"
+ },
+ {
+  "text": "decomposing and swarming with flies pollen",
+  "split": "test"
+ },
+ {
+  "text": "decomposing and swarming with flies petal",
+  "split": "test"
+ },
+ {
+  "text": "greenish, slimy and putrid sap",
+  "split": "test"
+ },
+ {
+  "text": "greenish, slimy and putrid mushroom",
+  "split": "test"
+ },
+ {
+  "text": "greenish, slimy and putrid bud",
+  "split": "test"
+ },
+ {
+  "text": "greenish, slimy and putrid moss",
+  "split": "test"
+ },
+ {
+  "text": "greenish, slimy and putrid pollen",
+  "split": "test"
+ },
+ {
+  "text": "greenish, slimy and putrid petal",
+  "split": "test"
+ },
+ {
+  "text": "blimquen quensiff-textured bit",
+  "split": "nonsense"
+ },
+ {
+  "text": "zordro phopho-textured bit",
+  "split": "nonsense"
+ },
+ {
+  "text": "blimkel quenzor-colored bit",
+  "split": "nonsense"
+ },
+ {
+  "text": "vuldro quenyar-colored thing",
+  "split": "nonsense"
+ },
+ {
+  "text": "mepmep mepzor-textured bit",
+  "split": "nonsense"
+ },
+ {
+  "text": "traxpho kelquen-textured thing",
+  "split": "nonsense"
+ },
+ {
+  "text": "traxblim zoryar-shaped bit",
+  "split": "nonsense"
+ },
+ {
+  "text": "zorblim droyar-colored lump",
+  "split": "nonsense"
+ },
+ {
+  "text": "nubsiff yarvul-textured piece",
+  "split": "nonsense"
+ },
+ {
+  "text": "phoyar traxnub-textured piece",
+  "split": "nonsense"
+ },
+ {
+  "text": "nubsiff kelquen-shaped bit",
+  "split": "nonsense"
+ },
+ {
+  "text": "nubvul traxzor-shaped bit",
+  "split": "nonsense"
+ },
+ {
+  "text": "traxvul yaryar-colored piece",
+  "split": "nonsense"
+ },
+ {
+  "text": "blimvul mepblim-colored thing",
+  "split": "nonsense"
+ },
+ {
+  "text": "phoblim siffpho-textured thing",
+  "split": "nonsense"
+ },
+ {
+  "text": "zorzor quennub-textured bit",
+  "split": "nonsense"
+ },
+ {
+  "text": "quendro quenquen-shaped lump",
+  "split": "nonsense"
+ },
+ {
+  "text": "nubnub traxpho-textured lump",
+  "split": "nonsense"
+ },
+ {
+  "text": "yarquen meptrax-textured bit",
+  "split": "nonsense"
+ },
+ {
+  "text": "mepsiff quenzor-textured piece",
+  "split": "nonsense"
+ },
+ {
+  "text": "quenmep vulquen-textured thing",
+  "split": "nonsense"
+ },
+ {
+  "text": "keltrax yarmep-textured lump",
+  "split": "nonsense"
+ },
+ {
+  "text": "traxpho traxmep-colored piece",
+  "split": "nonsense"
+ },
+ {
+  "text": "zorsiff traxmep-shaped lump",
+  "split": "nonsense"
+ },
+ {
+  "text": "zorpho mepquen-textured thing",
+  "split": "nonsense"
+ },
+ {
+  "text": "quenvul traxzor-colored lump",
+  "split": "nonsense"
+ },
+ {
+  "text": "quentrax traxpho-textured bit",
+  "split": "nonsense"
+ },
+ {
+  "text": "zordro mepyar-textured piece",
+  "split": "nonsense"
+ },
+ {
+  "text": "traxdro yartrax-shaped bit",
+  "split": "nonsense"
+ },
+ {
+  "text": "quenmep traxzor-colored bit",
+  "split": "nonsense"
+ },
+ {
+  "text": "phokel quendro-colored lump",
+  "split": "nonsense"
+ },
+ {
+  "text": "traxmep vulkel-shaped thing",
+  "split": "nonsense"
+ },
+ {
+  "text": "nubzor quenpho-shaped thing",
+  "split": "nonsense"
+ },
+ {
+  "text": "phonub phovul-colored piece",
+  "split": "nonsense"
+ },
+ {
+  "text": "quenpho phosiff-textured bit",
+  "split": "nonsense"
+ },
+ {
+  "text": "blimzor traxnub-shaped bit",
+  "split": "nonsense"
+ },
+ {
+  "text": "quenzor kelzor-textured lump",
+  "split": "nonsense"
+ },
+ {
+  "text": "yardro vulpho-textured thing",
+  "split": "nonsense"
+ },
+ {
+  "text": "blimzor mepnub-textured bit",
+  "split": "nonsense"
+ },
+ {
+  "text": "keldro blimzor-colored bit",
+  "split": "nonsense"
+ }
+]
