@@ -1,0 +1,116 @@
+{
+  "0": {
+    "blind-rule": {
+      "fitness": 0.297,
+      "toxicBites": 687,
+      "survival": 0.409,
+      "vsPlainExplorer": "-0.191 [-0.227, -0.154]"
+    },
+    "laya-rule（不学习）": {
+      "fitness": 0.374,
+      "toxicBites": 103,
+      "survival": 0.534,
+      "vsPlainExplorer": "-0.114 [-0.185, -0.055]"
+    },
+    "explorer（无遗忘，无重试）": {
+      "fitness": 0.488,
+      "toxicBites": 232,
+      "survival": 0.674,
+      "vsPlainExplorer": "+0.000 [0.000, 0.000]"
+    },
+    "explorer，遗忘 0.15": {
+      "fitness": 0.481,
+      "toxicBites": 181,
+      "survival": 0.675,
+      "vsPlainExplorer": "-0.007 [-0.029, 0.009]"
+    },
+    "explorer，重试 0.02": {
+      "fitness": 0.495,
+      "toxicBites": 273,
+      "survival": 0.682,
+      "vsPlainExplorer": "+0.007 [-0.012, 0.024]"
+    },
+    "explorer，遗忘 0.15 + 重试 0.02": {
+      "fitness": 0.518,
+      "toxicBites": 216,
+      "survival": 0.709,
+      "vsPlainExplorer": "+0.030 [0.011, 0.049]"
+    },
+    "explorer，遗忘 0.15 + 重试 0.05": {
+      "fitness": 0.516,
+      "toxicBites": 260,
+      "survival": 0.699,
+      "vsPlainExplorer": "+0.028 [0.002, 0.052]"
+    },
+    "软先验（全部先试）+ 遗忘 0.15 + 重试 0.02": {
+      "fitness": 0.534,
+      "toxicBites": 417,
+      "survival": 0.723,
+      "vsPlainExplorer": "+0.046 [0.011, 0.081]"
+    },
+    "oracle（时间感知真值）": {
+      "fitness": 0.897,
+      "toxicBites": 2,
+      "survival": 0.984,
+      "vsPlainExplorer": "+0.410 [0.356, 0.462]"
+    }
+  },
+  "purpose": "漂移世界（每 1200 步切换，半数种类影响取反）的持续适应。开发评估，测试划分新描述词；oracle 读取隐藏真值，仅度量上限。",
+  "seeds": 24,
+  "0.25": {
+    "blind-rule": {
+      "fitness": 0.333,
+      "toxicBites": 676,
+      "survival": 0.456,
+      "vsPlainExplorer": "-0.102 [-0.158, -0.045]"
+    },
+    "laya-rule（不学习）": {
+      "fitness": 0.304,
+      "toxicBites": 122,
+      "survival": 0.434,
+      "vsPlainExplorer": "-0.131 [-0.183, -0.083]"
+    },
+    "explorer（无遗忘，无重试）": {
+      "fitness": 0.435,
+      "toxicBites": 203,
+      "survival": 0.611,
+      "vsPlainExplorer": "+0.000 [0.000, 0.000]"
+    },
+    "explorer，遗忘 0.15": {
+      "fitness": 0.433,
+      "toxicBites": 164,
+      "survival": 0.617,
+      "vsPlainExplorer": "-0.002 [-0.014, 0.010]"
+    },
+    "explorer，重试 0.02": {
+      "fitness": 0.438,
+      "toxicBites": 246,
+      "survival": 0.614,
+      "vsPlainExplorer": "+0.003 [-0.015, 0.019]"
+    },
+    "explorer，遗忘 0.15 + 重试 0.02": {
+      "fitness": 0.453,
+      "toxicBites": 197,
+      "survival": 0.634,
+      "vsPlainExplorer": "+0.017 [-0.001, 0.038]"
+    },
+    "explorer，遗忘 0.15 + 重试 0.05": {
+      "fitness": 0.469,
+      "toxicBites": 233,
+      "survival": 0.646,
+      "vsPlainExplorer": "+0.034 [0.011, 0.057]"
+    },
+    "软先验（全部先试）+ 遗忘 0.15 + 重试 0.02": {
+      "fitness": 0.514,
+      "toxicBites": 406,
+      "survival": 0.696,
+      "vsPlainExplorer": "+0.079 [0.037, 0.121]"
+    },
+    "oracle（时间感知真值）": {
+      "fitness": 0.881,
+      "toxicBites": 1,
+      "survival": 0.977,
+      "vsPlainExplorer": "+0.445 [0.405, 0.486]"
+    }
+  }
+}

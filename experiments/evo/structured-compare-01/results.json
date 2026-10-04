@@ -1,0 +1,385 @@
+{
+  "purpose": "结构化个体跨环境配对比较（测试划分新描述词；开发评估，非留出）。oracle 读取隐藏真值，仅度量上限。",
+  "seeds": 24,
+  "evolved": {
+    "进化·Laya先验·静态训练": {
+      "checkpoint": "final",
+      "rawGenes": [
+        0.007,
+        1.052,
+        0.052,
+        -0.416,
+        -0.828
+      ],
+      "decoded": {
+        "trust": 1.007,
+        "curiosity": 1.052,
+        "tau": 0.052,
+        "forget": 0,
+        "retry": 0
+      }
+    },
+    "进化·Laya先验·漂移训练": {
+      "checkpoint": "final",
+      "rawGenes": [
+        -0.169,
+        1.024,
+        0.034,
+        -0.004,
+        -0.843
+      ],
+      "decoded": {
+        "trust": 0.844,
+        "curiosity": 1.024,
+        "tau": 0.034,
+        "forget": 0,
+        "retry": 0
+      }
+    },
+    "进化·无先验·漂移训练": {
+      "checkpoint": "final",
+      "rawGenes": [
+        -0.538,
+        0.371,
+        -0.104,
+        0.753,
+        -0.023
+      ],
+      "decoded": {
+        "trust": 0.584,
+        "curiosity": 0.371,
+        "tau": -0.104,
+        "forget": 0.5,
+        "retry": 0
+      }
+    }
+  },
+  "静态·常识正常": {
+    "blind-rule": {
+      "fitness": 0.344,
+      "toxicBites": 693,
+      "survival": 0.464,
+      "vsHandExplorer": {
+        "diff": -0.3521,
+        "lo": -0.4131,
+        "hi": -0.2941
+      }
+    },
+    "laya-rule（不学习）": {
+      "fitness": 0.446,
+      "toxicBites": 0,
+      "survival": 0.63,
+      "vsHandExplorer": {
+        "diff": -0.2497,
+        "lo": -0.3296,
+        "hi": -0.1673
+      }
+    },
+    "explorer（手写基线）": {
+      "fitness": 0.696,
+      "toxicBites": 70,
+      "survival": 0.858,
+      "vsHandExplorer": {
+        "diff": 0,
+        "lo": 0,
+        "hi": 0
+      }
+    },
+    "explorer 遗忘0.15+重试0.02（手写）": {
+      "fitness": 0.692,
+      "toxicBites": 102,
+      "survival": 0.863,
+      "vsHandExplorer": {
+        "diff": -0.0034,
+        "lo": -0.0199,
+        "hi": 0.0123
+      }
+    },
+    "oracle（时间感知真值）": {
+      "fitness": 0.749,
+      "toxicBites": 0,
+      "survival": 0.906,
+      "vsHandExplorer": {
+        "diff": 0.0534,
+        "lo": 0.0262,
+        "hi": 0.087
+      }
+    },
+    "进化·Laya先验·静态训练": {
+      "fitness": 0.701,
+      "toxicBites": 208,
+      "survival": 0.852,
+      "vsHandExplorer": {
+        "diff": 0.0051,
+        "lo": -0.0337,
+        "hi": 0.0482
+      }
+    },
+    "进化·Laya先验·漂移训练": {
+      "fitness": 0.696,
+      "toxicBites": 210,
+      "survival": 0.846,
+      "vsHandExplorer": {
+        "diff": 0.0005,
+        "lo": -0.0387,
+        "hi": 0.0468
+      }
+    },
+    "进化·无先验·漂移训练": {
+      "fitness": 0.674,
+      "toxicBites": 210,
+      "survival": 0.833,
+      "vsHandExplorer": {
+        "diff": -0.0221,
+        "lo": -0.0576,
+        "hi": 0.0193
+      }
+    }
+  },
+  "静态·25%反转": {
+    "blind-rule": {
+      "fitness": 0.328,
+      "toxicBites": 637,
+      "survival": 0.425,
+      "vsHandExplorer": {
+        "diff": -0.2146,
+        "lo": -0.3022,
+        "hi": -0.1272
+      }
+    },
+    "laya-rule（不学习）": {
+      "fitness": 0.306,
+      "toxicBites": 111,
+      "survival": 0.434,
+      "vsHandExplorer": {
+        "diff": -0.2368,
+        "lo": -0.3185,
+        "hi": -0.161
+      }
+    },
+    "explorer（手写基线）": {
+      "fitness": 0.543,
+      "toxicBites": 94,
+      "survival": 0.697,
+      "vsHandExplorer": {
+        "diff": 0,
+        "lo": 0,
+        "hi": 0
+      }
+    },
+    "explorer 遗忘0.15+重试0.02（手写）": {
+      "fitness": 0.547,
+      "toxicBites": 118,
+      "survival": 0.697,
+      "vsHandExplorer": {
+        "diff": 0.0048,
+        "lo": -0.0056,
+        "hi": 0.0165
+      }
+    },
+    "oracle（时间感知真值）": {
+      "fitness": 0.72,
+      "toxicBites": 0,
+      "survival": 0.891,
+      "vsHandExplorer": {
+        "diff": 0.1772,
+        "lo": 0.1038,
+        "hi": 0.2502
+      }
+    },
+    "进化·Laya先验·静态训练": {
+      "fitness": 0.675,
+      "toxicBites": 246,
+      "survival": 0.83,
+      "vsHandExplorer": {
+        "diff": 0.1326,
+        "lo": 0.0579,
+        "hi": 0.2069
+      }
+    },
+    "进化·Laya先验·漂移训练": {
+      "fitness": 0.667,
+      "toxicBites": 243,
+      "survival": 0.822,
+      "vsHandExplorer": {
+        "diff": 0.1246,
+        "lo": 0.0539,
+        "hi": 0.2024
+      }
+    },
+    "进化·无先验·漂移训练": {
+      "fitness": 0.675,
+      "toxicBites": 207,
+      "survival": 0.833,
+      "vsHandExplorer": {
+        "diff": 0.1319,
+        "lo": 0.0597,
+        "hi": 0.2119
+      }
+    }
+  },
+  "漂移·常识正常": {
+    "blind-rule": {
+      "fitness": 0.337,
+      "toxicBites": 624,
+      "survival": 0.464,
+      "vsHandExplorer": {
+        "diff": -0.2047,
+        "lo": -0.2446,
+        "hi": -0.163
+      }
+    },
+    "laya-rule（不学习）": {
+      "fitness": 0.358,
+      "toxicBites": 78,
+      "survival": 0.511,
+      "vsHandExplorer": {
+        "diff": -0.184,
+        "lo": -0.2494,
+        "hi": -0.1234
+      }
+    },
+    "explorer（手写基线）": {
+      "fitness": 0.542,
+      "toxicBites": 257,
+      "survival": 0.729,
+      "vsHandExplorer": {
+        "diff": 0,
+        "lo": 0,
+        "hi": 0
+      }
+    },
+    "explorer 遗忘0.15+重试0.02（手写）": {
+      "fitness": 0.556,
+      "toxicBites": 216,
+      "survival": 0.751,
+      "vsHandExplorer": {
+        "diff": 0.0141,
+        "lo": -0.0067,
+        "hi": 0.0324
+      }
+    },
+    "oracle（时间感知真值）": {
+      "fitness": 0.911,
+      "toxicBites": 1,
+      "survival": 0.984,
+      "vsHandExplorer": {
+        "diff": 0.3696,
+        "lo": 0.3233,
+        "hi": 0.4126
+      }
+    },
+    "进化·Laya先验·静态训练": {
+      "fitness": 0.559,
+      "toxicBites": 404,
+      "survival": 0.723,
+      "vsHandExplorer": {
+        "diff": 0.0173,
+        "lo": -0.0199,
+        "hi": 0.0561
+      }
+    },
+    "进化·Laya先验·漂移训练": {
+      "fitness": 0.563,
+      "toxicBites": 406,
+      "survival": 0.737,
+      "vsHandExplorer": {
+        "diff": 0.0212,
+        "lo": -0.0113,
+        "hi": 0.0556
+      }
+    },
+    "进化·无先验·漂移训练": {
+      "fitness": 0.538,
+      "toxicBites": 333,
+      "survival": 0.738,
+      "vsHandExplorer": {
+        "diff": -0.004,
+        "lo": -0.0369,
+        "hi": 0.0285
+      }
+    }
+  },
+  "漂移·25%反转": {
+    "blind-rule": {
+      "fitness": 0.373,
+      "toxicBites": 687,
+      "survival": 0.492,
+      "vsHandExplorer": {
+        "diff": -0.1157,
+        "lo": -0.1846,
+        "hi": -0.0412
+      }
+    },
+    "laya-rule（不学习）": {
+      "fitness": 0.304,
+      "toxicBites": 98,
+      "survival": 0.434,
+      "vsHandExplorer": {
+        "diff": -0.185,
+        "lo": -0.2366,
+        "hi": -0.1349
+      }
+    },
+    "explorer（手写基线）": {
+      "fitness": 0.489,
+      "toxicBites": 214,
+      "survival": 0.668,
+      "vsHandExplorer": {
+        "diff": 0,
+        "lo": 0,
+        "hi": 0
+      }
+    },
+    "explorer 遗忘0.15+重试0.02（手写）": {
+      "fitness": 0.489,
+      "toxicBites": 219,
+      "survival": 0.678,
+      "vsHandExplorer": {
+        "diff": 0,
+        "lo": -0.0271,
+        "hi": 0.0246
+      }
+    },
+    "oracle（时间感知真值）": {
+      "fitness": 0.894,
+      "toxicBites": 1,
+      "survival": 0.984,
+      "vsHandExplorer": {
+        "diff": 0.4048,
+        "lo": 0.3438,
+        "hi": 0.4622
+      }
+    },
+    "进化·Laya先验·静态训练": {
+      "fitness": 0.546,
+      "toxicBites": 400,
+      "survival": 0.708,
+      "vsHandExplorer": {
+        "diff": 0.0572,
+        "lo": -0.0079,
+        "hi": 0.1268
+      }
+    },
+    "进化·Laya先验·漂移训练": {
+      "fitness": 0.554,
+      "toxicBites": 382,
+      "survival": 0.716,
+      "vsHandExplorer": {
+        "diff": 0.0653,
+        "lo": 0.0049,
+        "hi": 0.1326
+      }
+    },
+    "进化·无先验·漂移训练": {
+      "fitness": 0.515,
+      "toxicBites": 322,
+      "survival": 0.713,
+      "vsHandExplorer": {
+        "diff": 0.0263,
+        "lo": -0.0285,
+        "hi": 0.0796
+      }
+    }
+  }
+}
