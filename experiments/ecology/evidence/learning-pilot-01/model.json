@@ -1,0 +1,13 @@
+{
+  "provider": "laya",
+  "sdk": "0.3.21",
+  "repo": "convaiinnovations/laya",
+  "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+  "requested_device": "mps",
+  "actual_device": "mps",
+  "cpu_fallback_count": 0,
+  "template": "ecology-local-en-v1",
+  "load_seconds": 3.8129532919847406,
+  "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12",
+  "observation_precision": "food:0.01, distance:0.1; raw observation retained"
+}

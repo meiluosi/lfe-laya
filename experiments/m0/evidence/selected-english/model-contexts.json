@@ -1,0 +1,5012 @@
+[
+  {
+    "case": 0,
+    "split": "development",
+    "kind": "clear_rule",
+    "expected": "eat",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 5.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0.0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "eat",
+          "dx": 0,
+          "dy": 0,
+          "description": "Eat food at the current location."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 1,
+    "split": "heldout",
+    "kind": "clear_rule",
+    "expected": "eat",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 6.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0.0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "eat",
+          "dx": 0,
+          "dy": 0,
+          "description": "Eat food at the current location."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 2,
+    "split": "development",
+    "kind": "clear_rule",
+    "expected": "eat",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 7.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0.0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "eat",
+          "dx": 0,
+          "dy": 0,
+          "description": "Eat food at the current location."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 3,
+    "split": "heldout",
+    "kind": "clear_rule",
+    "expected": "eat",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 8.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0.0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "eat",
+          "dx": 0,
+          "dy": 0,
+          "description": "Eat food at the current location."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 4,
+    "split": "development",
+    "kind": "clear_rule",
+    "expected": "eat",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 5.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0.0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "eat",
+          "dx": 0,
+          "dy": 0,
+          "description": "Eat food at the current location."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 5,
+    "split": "heldout",
+    "kind": "clear_rule",
+    "expected": "eat",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 6.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0.0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0.0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "eat",
+          "dx": 0,
+          "dy": 0,
+          "description": "Eat food at the current location."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 6,
+    "split": "development",
+    "kind": "clear_rule",
+    "expected": "east",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 7.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 7,
+    "split": "heldout",
+    "kind": "clear_rule",
+    "expected": "east",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 8.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 6.0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 8,
+    "split": "development",
+    "kind": "clear_rule",
+    "expected": "east",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 5.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 7.0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 9,
+    "split": "heldout",
+    "kind": "clear_rule",
+    "expected": "east",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 6.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 10,
+    "split": "development",
+    "kind": "clear_rule",
+    "expected": "east",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 7.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 6.0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 11,
+    "split": "heldout",
+    "kind": "clear_rule",
+    "expected": "east",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 8.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 7.0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 12,
+    "split": "development",
+    "kind": "clear_rule",
+    "expected": "south",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 5.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 13,
+    "split": "heldout",
+    "kind": "clear_rule",
+    "expected": "south",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 6.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 6.0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 14,
+    "split": "development",
+    "kind": "clear_rule",
+    "expected": "south",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 7.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 7.0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 15,
+    "split": "heldout",
+    "kind": "clear_rule",
+    "expected": "south",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 8.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 16,
+    "split": "development",
+    "kind": "clear_rule",
+    "expected": "south",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 5.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 6.0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 17,
+    "split": "heldout",
+    "kind": "clear_rule",
+    "expected": "south",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 6.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 7.0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 18,
+    "split": "development",
+    "kind": "clear_rule",
+    "expected": "west",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 7.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 19,
+    "split": "heldout",
+    "kind": "clear_rule",
+    "expected": "west",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 8.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 6.0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 20,
+    "split": "development",
+    "kind": "clear_rule",
+    "expected": "west",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 5.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 7.0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 21,
+    "split": "heldout",
+    "kind": "clear_rule",
+    "expected": "west",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 6.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 22,
+    "split": "development",
+    "kind": "clear_rule",
+    "expected": "west",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 7.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 6.0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 23,
+    "split": "heldout",
+    "kind": "clear_rule",
+    "expected": "west",
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 8.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 7.0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 24,
+    "split": "development",
+    "kind": "strategy",
+    "expected": null,
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 5.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 25,
+    "split": "heldout",
+    "kind": "strategy",
+    "expected": null,
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 6.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 26,
+    "split": "development",
+    "kind": "strategy",
+    "expected": null,
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 7.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 27,
+    "split": "heldout",
+    "kind": "strategy",
+    "expected": null,
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 8.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 28,
+    "split": "development",
+    "kind": "strategy",
+    "expected": null,
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 5.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 29,
+    "split": "heldout",
+    "kind": "strategy",
+    "expected": null,
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 6.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 5.0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": []
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 30,
+    "split": "development",
+    "kind": "strategy",
+    "expected": null,
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 7.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": [
+          {
+            "dx": 1,
+            "dy": 0,
+            "food": 5.0,
+            "stepsAgo": 20
+          }
+        ]
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 31,
+    "split": "heldout",
+    "kind": "strategy",
+    "expected": null,
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 8.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": [
+          {
+            "dx": 1,
+            "dy": 0,
+            "food": 5.0,
+            "stepsAgo": 21
+          }
+        ]
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 32,
+    "split": "development",
+    "kind": "strategy",
+    "expected": null,
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 5.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": [
+          {
+            "dx": 1,
+            "dy": 0,
+            "food": 5.0,
+            "stepsAgo": 22
+          }
+        ]
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 33,
+    "split": "heldout",
+    "kind": "strategy",
+    "expected": null,
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 6.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": [
+          {
+            "dx": 1,
+            "dy": 0,
+            "food": 5.0,
+            "stepsAgo": 23
+          }
+        ]
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 34,
+    "split": "development",
+    "kind": "strategy",
+    "expected": null,
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 7.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": [
+          {
+            "dx": 1,
+            "dy": 0,
+            "food": 5.0,
+            "stepsAgo": 24
+          }
+        ]
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  },
+  {
+    "case": 35,
+    "split": "heldout",
+    "kind": "strategy",
+    "expected": null,
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "context",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "context:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "context:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 8.0,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 0
+          }
+        ],
+        "memory": [
+          {
+            "dx": 1,
+            "dy": 0,
+            "food": 5.0,
+            "stepsAgo": 25
+          }
+        ]
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    }
+  }
+]

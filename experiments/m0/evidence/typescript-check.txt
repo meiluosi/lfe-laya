@@ -1,0 +1,4 @@
+
+> lfe-laya-prototype@0.1.0 check:m0
+> tsc -p tsconfig.m0.json
+

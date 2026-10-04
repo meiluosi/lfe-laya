@@ -1,0 +1,76 @@
+{
+  "modelCalls": 156,
+  "scenes": 156,
+  "model": {
+    "provider": "laya",
+    "sdk": "0.3.21",
+    "repo": "convaiinnovations/laya",
+    "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+    "requested_device": "mps",
+    "actual_device": "mps",
+    "cpu_fallback_count": 0,
+    "template": "ecology-local-en-v1",
+    "load_seconds": 5.811863957962487,
+    "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12",
+    "observation_precision": "food:0.01, distance:0.1; raw observation retained"
+  },
+  "foodScenes": 150,
+  "sensibleMassMean": 0.4948,
+  "uniformMassMean": 0.2947,
+  "argmaxSensibleRate": 0.66,
+  "byDistance": {
+    "0": {
+      "n": 6,
+      "sensibleMass": 0.2818,
+      "uniform": 0.1667,
+      "argmaxSensible": 0
+    },
+    "1": {
+      "n": 48,
+      "sensibleMass": 0.5257,
+      "uniform": 0.3,
+      "argmaxSensible": 0.7083
+    },
+    "2": {
+      "n": 72,
+      "sensibleMass": 0.5382,
+      "uniform": 0.3333,
+      "argmaxSensible": 0.7083
+    },
+    "3": {
+      "n": 24,
+      "sensibleMass": 0.3564,
+      "uniform": 0.2,
+      "argmaxSensible": 0.5833
+    }
+  },
+  "foodHere": {
+    "n": 6,
+    "meanPEat": 0.2818,
+    "byEnergy": {
+      "8.0": 0.2822,
+      "30.0": 0.2813
+    }
+  },
+  "noFoodBias": {
+    "n": 6,
+    "meanDistribution": {
+      "north": 0.3452,
+      "east": 0.263,
+      "south": 0.1432,
+      "west": 0.1103,
+      "eat": 0,
+      "rest": 0.1384
+    }
+  },
+  "directionBias": {
+    "north": 0.4316,
+    "east": 0.2321,
+    "south": 0.1745,
+    "west": 0.0717,
+    "eat": 0.0113,
+    "rest": 0.0789
+  },
+  "limits": "受控单食物场景；只测偏好方向，不测生存。单一提示模板 ecology-local-en-v1。",
+  "mirrorNorthSouthMeanAbsDiff": 0.1812
+}

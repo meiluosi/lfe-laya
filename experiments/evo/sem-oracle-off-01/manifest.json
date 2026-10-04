@@ -1,0 +1,26 @@
+{
+  "purpose": "语义世界：先天参数进化（2×2 对照之一）",
+  "condition": {
+    "prior": "oracle",
+    "learning": false
+  },
+  "generations": 40,
+  "pop": 32,
+  "sigma": 0.15,
+  "lr": 0.06,
+  "seed": 1,
+  "innateSize": 359,
+  "training": "每代 6 个训练划分世界（种子 50000+gen*10+i，常识反转比例按 0 / 0 / 0.25 循环）",
+  "report": "测试划分（全新描述词）12 个世界，种子 40000+，反转比例交替 0 / 0.25，仅报告",
+  "source": {
+    "packages/evo/sempolicy.ts": "1bb8f478d64599df6c7a39fa7ff43eba81d5f34f26f176486d41dcc87127c903",
+    "packages/evo/semantic.ts": "4899dc26d7cd8350ab9e5d1dff28db4ea30c1295f21b640ced4977e02d7e2607",
+    "packages/evo/semantic-run.ts": "5237e6cedca05ef044336f92c93f34901424c26f96f277ae4282dc06b0f97573",
+    "packages/evo/semantic-worker.ts": "26360d540f68b04379af9ff618c4b59a1044fb32ee4ac8ab311db35b6e2a5c15",
+    "packages/evo/semantic-evolve.ts": "3629f24ff7be57059445a4d471bcb0db07e476b3ceee4c2f352389a54f758375",
+    "packages/evo/semantic-vocab.json": "2daf25c3459894771049a492038289ef8205df52fc4414ad2cab436e33247a23",
+    "experiments/evo/laya-prior-v1.json": "3730c2137c702acfe8b6e0e03b31f2f935cb879730ae5a30129cfdad139b0a1b",
+    "packages/sim/ecology.ts": "e515892f995d17ce021ed613cefaf6f82a4de1423ec7d3422c07d72a6c85064e",
+    "packages/sim/controllers.ts": "af7f478d7ef283c038575ba297d60f75dbfbac4bc7291e03931219907ee44140"
+  }
+}

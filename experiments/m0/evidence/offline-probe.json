@@ -1,0 +1,453 @@
+{
+  "network_policy": "Python socket.connect/connect_ex denied; HF offline flags set; OS network not toggled",
+  "blocked_attempts": [],
+  "cold_process_to_first_execution_seconds": 27.077535332995467,
+  "model": {
+    "provider": "laya",
+    "sdk": "0.3.21",
+    "repo": "convaiinnovations/laya",
+    "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+    "requested_device": "mps",
+    "actual_device": "mps",
+    "cpu_fallback_count": 0,
+    "template": "local-foraging-en-v2",
+    "load_seconds": 18.541020749951713,
+    "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+  },
+  "decision": {
+    "proposal": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "offline",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "offline:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "offline:0:0",
+        "agentId": "life-0"
+      },
+      "provider": "laya",
+      "action": "eat",
+      "distribution": {
+        "north": 0.1558,
+        "east": 0.1206,
+        "south": 0.1303,
+        "west": 0.0976,
+        "eat": 0.4174,
+        "rest": 0.0783
+      }
+    },
+    "input": {
+      "state": "You are a small creature with 24.00 energy out of 40. Eating food restores energy. Moving costs 0.30 energy. Resting costs 0.12 energy and does not restore energy. You see 10.0 units of food at 2 step(s) north. You see 10.0 units of food at 1 step(s) north and 1 step(s) west. You see 5.0 units of food at 2 step(s) west. You see 5.0 units of food at 1 step(s) west. You see 10.0 units of food at your current location. You see 5.0 units of food at 1 step(s) south and 1 step(s) west. You see 10.0 units of food at 2 step(s) south. All other visible cells within two steps have no food. You remember food at 2 step(s) north, observed 0 steps ago; it may be gone. You remember food at 1 step(s) north and 1 step(s) west, observed 0 steps ago; it may be gone. You remember food at 2 step(s) west, observed 0 steps ago; it may be gone. You remember food at 1 step(s) west, observed 0 steps ago; it may be gone. You remember food at your current location, observed 0 steps ago; it may be gone. You remember food at 1 step(s) south and 1 step(s) west, observed 0 steps ago; it may be gone. You remember food at 2 step(s) south, observed 0 steps ago; it may be gone.",
+      "questions": {
+        "action": {
+          "type": "choice",
+          "instructions": "Choose the next action to obtain food and survive. Eat only when food is at your current location. Otherwise you must move to reach it. Use the creature\u2019s observations.",
+          "criteria": {
+            "option_0": "Move one cell north.",
+            "option_1": "Move one cell east.",
+            "option_2": "Move one cell south.",
+            "option_3": "Move one cell west.",
+            "option_4": "Eat food at the current location.",
+            "option_5": "Stay here; pay only resting metabolism."
+          }
+        }
+      }
+    },
+    "raw_output": {
+      "model": "laya-rl-agent",
+      "answers": {
+        "action": {
+          "type": "choice",
+          "choice": "option_4",
+          "probabilities": {
+            "option_0": 0.1558,
+            "option_1": 0.1206,
+            "option_2": 0.1303,
+            "option_3": 0.0976,
+            "option_4": 0.4174,
+            "option_5": 0.0783
+          },
+          "confidence": 0.1061,
+          "answer_confidence": 0.4174,
+          "action": {
+            "act_probability": 1.0
+          }
+        }
+      },
+      "usage": {
+        "input_tokens": 439,
+        "output_tokens": 0
+      }
+    },
+    "metadata": {
+      "provider": "laya",
+      "sdk": "0.3.21",
+      "repo": "convaiinnovations/laya",
+      "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+      "requested_device": "mps",
+      "actual_device": "mps",
+      "cpu_fallback_count": 0,
+      "template": "local-foraging-en-v2",
+      "load_seconds": 18.541020749951713,
+      "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+    },
+    "input_sha256": "7b30b6f65e268c18c06be5abd9491e8e7be5e08cd1a6163d308e9bad6f7c3aeb",
+    "batch_ms": 1684.389124973677,
+    "batch_size": 1,
+    "amortized_ms": 1684.389124973677
+  },
+  "transition": {
+    "accepted": true,
+    "request": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "offline",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "offline:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "offline:0:0",
+        "agentId": "life-0"
+      },
+      "observation": {
+        "energy": 24,
+        "capacity": 40,
+        "age": 0,
+        "local": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "blocked": false,
+            "food": 10
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "blocked": false,
+            "food": 10
+          },
+          {
+            "dx": 0,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": -1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "blocked": false,
+            "food": 5
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "blocked": false,
+            "food": 5
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "blocked": false,
+            "food": 10
+          },
+          {
+            "dx": 1,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 2,
+            "dy": 0,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "blocked": false,
+            "food": 5
+          },
+          {
+            "dx": 0,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 1,
+            "dy": 1,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "blocked": false,
+            "food": 10
+          }
+        ],
+        "memory": [
+          {
+            "dx": 0,
+            "dy": -2,
+            "food": 10,
+            "stepsAgo": 0
+          },
+          {
+            "dx": -1,
+            "dy": -1,
+            "food": 10,
+            "stepsAgo": 0
+          },
+          {
+            "dx": -2,
+            "dy": 0,
+            "food": 5,
+            "stepsAgo": 0
+          },
+          {
+            "dx": -1,
+            "dy": 0,
+            "food": 5,
+            "stepsAgo": 0
+          },
+          {
+            "dx": 0,
+            "dy": 0,
+            "food": 10,
+            "stepsAgo": 0
+          },
+          {
+            "dx": -1,
+            "dy": 1,
+            "food": 5,
+            "stepsAgo": 0
+          },
+          {
+            "dx": 0,
+            "dy": 2,
+            "food": 10,
+            "stepsAgo": 0
+          }
+        ]
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move one cell north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move one cell east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move one cell south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move one cell west."
+        },
+        {
+          "id": "eat",
+          "dx": 0,
+          "dy": 0,
+          "description": "Eat food at the current location."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here; pay only resting metabolism."
+        }
+      ]
+    },
+    "proposal": {
+      "identity": {
+        "protocol": "m0-decision-v1",
+        "runId": "offline",
+        "generation": 0,
+        "epoch": 0,
+        "decisionId": "offline:0:0",
+        "attemptId": "try-0",
+        "tick": 0,
+        "snapshotId": "offline:0:0",
+        "agentId": "life-0"
+      },
+      "provider": "laya",
+      "action": "eat",
+      "distribution": {
+        "north": 0.1558,
+        "east": 0.1206,
+        "south": 0.1303,
+        "west": 0.0976,
+        "eat": 0.4174,
+        "rest": 0.0783
+      }
+    },
+    "tick": 1,
+    "action": "eat",
+    "reward": 0.4879999999999999,
+    "rewardParts": {
+      "energyDelta": 0.4879999999999999,
+      "death": 0
+    },
+    "terminated": false,
+    "truncated": false,
+    "events": [
+      {
+        "kind": "ate",
+        "amount": 5
+      },
+      {
+        "kind": "spent",
+        "amount": 0.12
+      }
+    ],
+    "snapshot": {
+      "version": "m0-foraging-v1",
+      "config": {
+        "seed": 91,
+        "runId": "offline",
+        "size": 7,
+        "horizon": 360,
+        "phaseSteps": 120,
+        "perception": 2,
+        "capacity": 40,
+        "initialEnergy": 24,
+        "metabolism": 0.12,
+        "moveCost": 0.18,
+        "bite": 5,
+        "memorySize": 8,
+        "memoryTtl": 60,
+        "initialFood": 120,
+        "supplyEvery": 4,
+        "supplyAmount": 5
+      },
+      "rng": 2789748718,
+      "tick": 1,
+      "epoch": 0,
+      "x": 3,
+      "y": 3,
+      "energy": 28.88,
+      "food": [
+        10,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        10,
+        0,
+        10,
+        0,
+        0,
+        0,
+        5,
+        10,
+        10,
+        0,
+        0,
+        0,
+        0,
+        10,
+        5,
+        5,
+        5,
+        0,
+        0,
+        0,
+        5,
+        5,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        0,
+        10,
+        0,
+        0,
+        0,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "memory": [
+        {
+          "x": 3,
+          "y": 1,
+          "food": 10,
+          "tick": 1
+        },
+        {
+          "x": 2,
+          "y": 2,
+          "food": 10,
+          "tick": 1
+        },
+        {
+          "x": 1,
+          "y": 3,
+          "food": 5,
+          "tick": 1
+        },
+        {
+          "x": 2,
+          "y": 3,
+          "food": 5,
+          "tick": 1
+        },
+        {
+          "x": 3,
+          "y": 3,
+          "food": 5,
+          "tick": 1
+        },
+        {
+          "x": 2,
+          "y": 4,
+          "food": 5,
+          "tick": 1
+        },
+        {
+          "x": 3,
+          "y": 5,
+          "food": 10,
+          "tick": 1
+        }
+      ],
+      "ledger": {
+        "initial": 144,
+        "supplied": 0,
+        "spent": 0.12
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "frozen_artifact_checks": {
+    "experiments/m0/config/learning.json": {
+      "match": true,
+      "current_sha256": "4b25db3fd9263780cb2d48aeefdbfb32f6ecc99494b37d740d273b69a2b7df15",
+      "frozen_sha256": "4b25db3fd9263780cb2d48aeefdbfb32f6ecc99494b37d740d273b69a2b7df15"
+    },
+    "experiments/m0/config/model-evaluation.json": {
+      "match": true,
+      "current_sha256": "25c5399849031e72904ba97e030c5581dde41194f49b09b440396406879805e3",
+      "frozen_sha256": "25c5399849031e72904ba97e030c5581dde41194f49b09b440396406879805e3"
+    },
+    "services/m0/laya_provider.py": {
+      "match": false,
+      "current_sha256": "510800a5ad64f909296f2035ef467a21eece11c0269aff6aee2d98578dfd8014",
+      "frozen_sha256": "3a4f4d2dfbe4db819cee53aae2145097b2d2abc2bcddda476335bbb4c4a6c8b7"
+    },
+    "services/m0/model_evaluation.py": {
+      "match": true,
+      "current_sha256": "ca075e34650122d0b90ccd08c6a3cac9e5b3a9110ed74a89607fbf09cd41ae28",
+      "frozen_sha256": "ca075e34650122d0b90ccd08c6a3cac9e5b3a9110ed74a89607fbf09cd41ae28"
+    }
+  },
+  "source_model_file_checks": {
+    "convaiinnovations/laya": {
+      "README.md": true,
+      "encoder/config.json": true,
+      "model.safetensors": true,
+      "rl_agent_config.json": true,
+      "tokenizer/tokenizer.json": true,
+      "tokenizer/tokenizer_config.json": true
+    },
+    "convaiinnovations/laya-multilingual": {
+      "README.md": true,
+      "encoder/config.json": true,
+      "model.safetensors": true,
+      "rl_agent_config.json": true,
+      "tokenizer/tokenizer.json": true,
+      "tokenizer/tokenizer_config.json": true
+    }
+  },
+  "note": "Adapter validation/runtime-copy fixes may differ from initial freeze; experiment source-sha256 records code actually used. No hidden retuning of config."
+}

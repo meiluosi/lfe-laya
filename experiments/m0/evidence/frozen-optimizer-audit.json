@@ -1,0 +1,47 @@
+[
+  {
+    "id": "heldout-701-B",
+    "source": "online-101-B",
+    "parameters_optimizer_revision_unchanged": true
+  },
+  {
+    "id": "heldout-701-no-laya",
+    "source": "online-101-no-laya",
+    "parameters_optimizer_revision_unchanged": true
+  },
+  {
+    "id": "heldout-701-frozen-B",
+    "source": "online-101-frozen-B",
+    "parameters_optimizer_revision_unchanged": true
+  },
+  {
+    "id": "heldout-702-B",
+    "source": "online-102-B",
+    "parameters_optimizer_revision_unchanged": true
+  },
+  {
+    "id": "heldout-702-no-laya",
+    "source": "online-102-no-laya",
+    "parameters_optimizer_revision_unchanged": true
+  },
+  {
+    "id": "heldout-702-frozen-B",
+    "source": "online-102-frozen-B",
+    "parameters_optimizer_revision_unchanged": true
+  },
+  {
+    "id": "heldout-703-B",
+    "source": "online-103-B",
+    "parameters_optimizer_revision_unchanged": true
+  },
+  {
+    "id": "heldout-703-no-laya",
+    "source": "online-103-no-laya",
+    "parameters_optimizer_revision_unchanged": true
+  },
+  {
+    "id": "heldout-703-frozen-B",
+    "source": "online-103-frozen-B",
+    "parameters_optimizer_revision_unchanged": true
+  }
+]

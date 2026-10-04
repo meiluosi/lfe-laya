@@ -1,0 +1,26 @@
+...F...                                                                  [100%]
+=================================== FAILURES ===================================
+_______ test_prepare_abort_pause_and_duplicate_commit_are_transactional ________
+
+    def test_prepare_abort_pause_and_duplicate_commit_are_transactional():
+        with Bridge() as bridge:
+            bridge.call('reset',config={'initialAgents':2,'reproduction':False,'runId':'tx'})
+            runtime=LearningRuntime('tx',1,{'n_steps':2,'batch_size':2},no_laya=True)
+            drive(bridge,runtime,2);before={k:p.fingerprint() for k,p in runtime.policies.items()}
+            requests=bridge.call('observe');prepared=runtime.prepare('will-abort',requests,[])
+            assert len(prepared['updates'])==2
+            assert {k:p.fingerprint() for k,p in runtime.policies.items()}==before
+            assert runtime.prepare('will-abort',requests,[])==prepared
+            with pytest.raises(ValueError):runtime.export()
+            runtime.abort('will-abort');assert {k:p.fingerprint() for k,p in runtime.policies.items()}==before
+            prepared2=runtime.prepare('will-commit',requests,[]);assert prepared2['proposals']==prepared['proposals']
+            result=bridge.call('step',proposals=prepared2['proposals'])
+            broken=copy.deepcopy(result);broken['outcomes'][1]['reward']=float('nan')
+>           with pytest.raises(ValueError):runtime.commit('will-commit',broken)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE ValueError
+
+tests/test_ecology_learning.py:77: Failed
+=========================== short test summary info ============================
+FAILED tests/test_ecology_learning.py::test_prepare_abort_pause_and_duplicate_commit_are_transactional
+1 failed, 6 passed in 1.54s

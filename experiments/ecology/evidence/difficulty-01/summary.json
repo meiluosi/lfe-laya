@@ -1,0 +1,62 @@
+[
+  {
+    "scenario": "abundant-reference",
+    "mode": "rule",
+    "seeds": 5,
+    "meanLiving": 7.4,
+    "meanSurvival": 0.9430833333333333,
+    "meanLowEnergy": 0.018051161893132696,
+    "meanFood": 457.9980098491568,
+    "meanEnergy": 36.58781249999997
+  },
+  {
+    "scenario": "abundant-reference",
+    "mode": "random",
+    "seeds": 5,
+    "meanLiving": 4.6,
+    "meanSurvival": 0.71246875,
+    "meanLowEnergy": 0.15145693523181764,
+    "meanFood": 558.5730586869047,
+    "meanEnergy": 17.56264786245573
+  },
+  {
+    "scenario": "scarce-diffuse",
+    "mode": "rule",
+    "seeds": 5,
+    "meanLiving": 2,
+    "meanSurvival": 0.5229583333333333,
+    "meanLowEnergy": 0.25985835309727406,
+    "meanFood": 77.91018938681854,
+    "meanEnergy": 5.557595786374109
+  },
+  {
+    "scenario": "scarce-diffuse",
+    "mode": "random",
+    "seeds": 5,
+    "meanLiving": 0,
+    "meanSurvival": 0.2859895833333333,
+    "meanLowEnergy": 0.485514538300054,
+    "meanFood": 91.07145051993567,
+    "meanEnergy": 0
+  },
+  {
+    "scenario": "scarce-patches",
+    "mode": "rule",
+    "seeds": 5,
+    "meanLiving": 2,
+    "meanSurvival": 0.5900833333333333,
+    "meanLowEnergy": 0.29757699752902667,
+    "meanFood": 77.21246767196703,
+    "meanEnergy": 5.185090979798185
+  },
+  {
+    "scenario": "scarce-patches",
+    "mode": "random",
+    "seeds": 5,
+    "meanLiving": 0,
+    "meanSurvival": 0.26037499999999997,
+    "meanLowEnergy": 0.4833345497097987,
+    "meanFood": 93.5410428189899,
+    "meanEnergy": 0
+  }
+]

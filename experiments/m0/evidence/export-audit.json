@@ -1,0 +1,18 @@
+{
+  "source": "experiments/m0/evidence/experiment-01",
+  "trajectories": 27,
+  "frames": 8066,
+  "all_positions_energy_food_actions_rewards_events_and_model_records_match": true,
+  "core_dependencies_unchanged_after_optional_plot_install": true,
+  "optional_plot_dependencies": {
+    "kiwisolver": "1.5.1",
+    "fonttools": "4.66.0",
+    "matplotlib": "3.10.8",
+    "contourpy": "1.4.0",
+    "python-dateutil": "2.9.0.post0",
+    "cycler": "0.12.1",
+    "pillow": "12.3.0",
+    "pyparsing": "3.3.3",
+    "six": "1.17.0"
+  }
+}

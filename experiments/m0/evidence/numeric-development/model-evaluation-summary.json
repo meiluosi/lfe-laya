@@ -1,0 +1,128 @@
+{
+  "model": {
+    "provider": "laya",
+    "sdk": "0.3.21",
+    "repo": "convaiinnovations/laya-multilingual",
+    "revision": "e4e9ddf21a7b1903b7acffd8814ad4307bf63a67",
+    "requested_device": "mps",
+    "actual_device": "mps",
+    "cpu_fallback_count": 0,
+    "template": "local-foraging-en-v1",
+    "load_seconds": 31.949440958036575,
+    "tokenizer_runtime_sha256": "6c6b2d8e3c84ce0e671c129cd6b374b235d6f9863042a5836358d00a89bbb5a1"
+  },
+  "contexts": [
+    {
+      "case": 0,
+      "split": "development",
+      "correct": false,
+      "chosen": "south"
+    },
+    {
+      "case": 2,
+      "split": "development",
+      "correct": false,
+      "chosen": "south"
+    },
+    {
+      "case": 4,
+      "split": "development",
+      "correct": false,
+      "chosen": "south"
+    },
+    {
+      "case": 6,
+      "split": "development",
+      "correct": false,
+      "chosen": "rest"
+    },
+    {
+      "case": 8,
+      "split": "development",
+      "correct": false,
+      "chosen": "rest"
+    },
+    {
+      "case": 10,
+      "split": "development",
+      "correct": false,
+      "chosen": "rest"
+    },
+    {
+      "case": 12,
+      "split": "development",
+      "correct": false,
+      "chosen": "rest"
+    },
+    {
+      "case": 14,
+      "split": "development",
+      "correct": false,
+      "chosen": "rest"
+    },
+    {
+      "case": 16,
+      "split": "development",
+      "correct": false,
+      "chosen": "rest"
+    },
+    {
+      "case": 18,
+      "split": "development",
+      "correct": false,
+      "chosen": "rest"
+    },
+    {
+      "case": 20,
+      "split": "development",
+      "correct": false,
+      "chosen": "rest"
+    },
+    {
+      "case": 22,
+      "split": "development",
+      "correct": false,
+      "chosen": "rest"
+    },
+    {
+      "case": 24,
+      "split": "development",
+      "correct": null,
+      "chosen": "rest"
+    },
+    {
+      "case": 26,
+      "split": "development",
+      "correct": null,
+      "chosen": "rest"
+    },
+    {
+      "case": 28,
+      "split": "development",
+      "correct": null,
+      "chosen": "rest"
+    },
+    {
+      "case": 30,
+      "split": "development",
+      "correct": null,
+      "chosen": "south"
+    },
+    {
+      "case": 32,
+      "split": "development",
+      "correct": null,
+      "chosen": "south"
+    },
+    {
+      "case": 34,
+      "split": "development",
+      "correct": null,
+      "chosen": "south"
+    }
+  ],
+  "batches": [],
+  "process_peak_rss_bytes": 1658339328,
+  "development_accuracy": 0.0,
+  "heldout_accuracy": null
+}

@@ -1,0 +1,3766 @@
+{
+ "rows": [
+  {
+   "kind": "no-food",
+   "energy": 8.0,
+   "amount": 0,
+   "cell": null,
+   "argmax": "north",
+   "distribution": {
+    "north": 0.35506449355064496,
+    "east": 0.25987401259874016,
+    "south": 0.14058594140585942,
+    "west": 0.10668933106689331,
+    "rest": 0.13778622137786223
+   }
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    0,
+    -3
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.4788,
+    "east": 0.157,
+    "south": 0.2057,
+    "west": 0.0736,
+    "rest": 0.0849
+   },
+   "sensible": [
+    "north"
+   ],
+   "sensibleMass": 0.4788,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 3.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    -1,
+    -2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.5182,
+    "east": 0.2109,
+    "south": 0.1206,
+    "west": 0.0715,
+    "rest": 0.0788
+   },
+   "sensible": [
+    "north",
+    "west"
+   ],
+   "sensibleMass": 0.5897,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    0,
+    -2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.5931,
+    "east": 0.1319,
+    "south": 0.1523,
+    "west": 0.0533,
+    "rest": 0.0694
+   },
+   "sensible": [
+    "north"
+   ],
+   "sensibleMass": 0.5931,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    1,
+    -2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.45795420457954206,
+    "east": 0.31856814318568144,
+    "south": 0.10158984101589841,
+    "west": 0.052994700529947,
+    "rest": 0.06889311068893111
+   },
+   "sensible": [
+    "east",
+    "north"
+   ],
+   "sensibleMass": 0.7765223477652234,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    -2,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.6878,
+    "east": 0.1564,
+    "south": 0.0733,
+    "west": 0.0385,
+    "rest": 0.044
+   },
+   "sensible": [
+    "north",
+    "west"
+   ],
+   "sensibleMass": 0.7263,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    -1,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.6575657565756575,
+    "east": 0.13831383138313832,
+    "south": 0.10531053105310531,
+    "west": 0.04780478047804781,
+    "rest": 0.051005100510051
+   },
+   "sensible": [
+    "north",
+    "west"
+   ],
+   "sensibleMass": 0.7053705370537053,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    0,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.6767323267673232,
+    "east": 0.11028897110288971,
+    "south": 0.11548845115488451,
+    "west": 0.043495650434956505,
+    "rest": 0.05399460053994601
+   },
+   "sensible": [
+    "north"
+   ],
+   "sensibleMass": 0.6767323267673232,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    1,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.6276,
+    "east": 0.1981,
+    "south": 0.0872,
+    "west": 0.0396,
+    "rest": 0.0475
+   },
+   "sensible": [
+    "east",
+    "north"
+   ],
+   "sensibleMass": 0.8257000000000001,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    2,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.6616,
+    "east": 0.1988,
+    "south": 0.064,
+    "west": 0.0331,
+    "rest": 0.0425
+   },
+   "sensible": [
+    "east",
+    "north"
+   ],
+   "sensibleMass": 0.8603999999999999,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    -3,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3835,
+    "east": 0.1738,
+    "south": 0.1899,
+    "west": 0.1561,
+    "rest": 0.0967
+   },
+   "sensible": [
+    "west"
+   ],
+   "sensibleMass": 0.1561,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 3.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    -2,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.4154415441544154,
+    "east": 0.17341734173417342,
+    "south": 0.2003200320032003,
+    "west": 0.10731073107310732,
+    "rest": 0.1035103510351035
+   },
+   "sensible": [
+    "west"
+   ],
+   "sensibleMass": 0.10731073107310732,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    -1,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.404,
+    "east": 0.1913,
+    "south": 0.1843,
+    "west": 0.121,
+    "rest": 0.0994
+   },
+   "sensible": [
+    "west"
+   ],
+   "sensibleMass": 0.121,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    0,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.37803780378037805,
+    "east": 0.1379137913791379,
+    "south": 0.1557155715571557,
+    "west": 0.033903390339033904,
+    "eat": 0.2296229622962296,
+    "rest": 0.0648064806480648
+   },
+   "sensible": [
+    "eat"
+   ],
+   "sensibleMass": 0.2296229622962296,
+   "uniformMass": 0.16666666666666666,
+   "argmaxSensible": false,
+   "distance": 0.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    1,
+    0
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.2456,
+    "east": 0.5568,
+    "south": 0.0855,
+    "west": 0.0492,
+    "rest": 0.0629
+   },
+   "sensible": [
+    "east"
+   ],
+   "sensibleMass": 0.5568,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    2,
+    0
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.3302,
+    "east": 0.4146,
+    "south": 0.123,
+    "west": 0.0566,
+    "rest": 0.0756
+   },
+   "sensible": [
+    "east"
+   ],
+   "sensibleMass": 0.4146,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    3,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3466,
+    "east": 0.3368,
+    "south": 0.1554,
+    "west": 0.0735,
+    "rest": 0.0877
+   },
+   "sensible": [
+    "east"
+   ],
+   "sensibleMass": 0.3368,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 3.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    -2,
+    1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3301,
+    "east": 0.2355,
+    "south": 0.2768,
+    "west": 0.0711,
+    "rest": 0.0865
+   },
+   "sensible": [
+    "south",
+    "west"
+   ],
+   "sensibleMass": 0.3479,
+   "uniformMass": 0.4,
+   "argmaxSensible": false,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    -1,
+    1
+   ],
+   "argmax": "south",
+   "distribution": {
+    "north": 0.311,
+    "east": 0.1943,
+    "south": 0.3261,
+    "west": 0.076,
+    "rest": 0.0926
+   },
+   "sensible": [
+    "south",
+    "west"
+   ],
+   "sensibleMass": 0.4021,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    0,
+    1
+   ],
+   "argmax": "south",
+   "distribution": {
+    "north": 0.19908009199080093,
+    "east": 0.11428857114288571,
+    "south": 0.5772422757724228,
+    "west": 0.046795320467953205,
+    "rest": 0.06259374062593741
+   },
+   "sensible": [
+    "south"
+   ],
+   "sensibleMass": 0.5772422757724228,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    1,
+    1
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.3110688931106889,
+    "east": 0.31426857314268575,
+    "south": 0.23327667233276672,
+    "west": 0.061693830616938304,
+    "rest": 0.0796920307969203
+   },
+   "sensible": [
+    "east",
+    "south"
+   ],
+   "sensibleMass": 0.5475452454754525,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    2,
+    1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.32913291329132915,
+    "east": 0.32913291329132915,
+    "south": 0.20992099209920992,
+    "west": 0.0555055505550555,
+    "rest": 0.07630763076307631
+   },
+   "sensible": [
+    "east",
+    "south"
+   ],
+   "sensibleMass": 0.5390539053905391,
+   "uniformMass": 0.4,
+   "argmaxSensible": false,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    -1,
+    2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3475,
+    "east": 0.2166,
+    "south": 0.2482,
+    "west": 0.0838,
+    "rest": 0.1039
+   },
+   "sensible": [
+    "south",
+    "west"
+   ],
+   "sensibleMass": 0.332,
+   "uniformMass": 0.4,
+   "argmaxSensible": false,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    0,
+    2
+   ],
+   "argmax": "south",
+   "distribution": {
+    "north": 0.2114,
+    "east": 0.1012,
+    "south": 0.5794,
+    "west": 0.0444,
+    "rest": 0.0636
+   },
+   "sensible": [
+    "south"
+   ],
+   "sensibleMass": 0.5794,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    1,
+    2
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.3383,
+    "east": 0.3469,
+    "south": 0.1853,
+    "west": 0.0539,
+    "rest": 0.0756
+   },
+   "sensible": [
+    "east",
+    "south"
+   ],
+   "sensibleMass": 0.5322,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 2.0,
+   "cell": [
+    0,
+    3
+   ],
+   "argmax": "south",
+   "distribution": {
+    "north": 0.3254674532546745,
+    "east": 0.1486851314868513,
+    "south": 0.35796420357964204,
+    "west": 0.0750924907509249,
+    "rest": 0.0927907209279072
+   },
+   "sensible": [
+    "south"
+   ],
+   "sensibleMass": 0.35796420357964204,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 3.0
+  },
+  {
+   "kind": "no-food",
+   "energy": 8.0,
+   "amount": 0,
+   "cell": null,
+   "argmax": "north",
+   "distribution": {
+    "north": 0.35506449355064496,
+    "east": 0.25987401259874016,
+    "south": 0.14058594140585942,
+    "west": 0.10668933106689331,
+    "rest": 0.13778622137786223
+   }
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    0,
+    -3
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.5447455254474552,
+    "east": 0.15878412158784122,
+    "south": 0.11358864113588642,
+    "west": 0.08849115088491151,
+    "rest": 0.0943905609439056
+   },
+   "sensible": [
+    "north"
+   ],
+   "sensibleMass": 0.5447455254474552,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 3.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    -1,
+    -2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.48695130486951305,
+    "east": 0.22997700229977003,
+    "south": 0.1304869513048695,
+    "west": 0.07019298070192981,
+    "rest": 0.08239176082391761
+   },
+   "sensible": [
+    "north",
+    "west"
+   ],
+   "sensibleMass": 0.5571442855714428,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    0,
+    -2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.6535346465353464,
+    "east": 0.12388761123887611,
+    "south": 0.106989301069893,
+    "west": 0.05069493050694931,
+    "rest": 0.0648935106489351
+   },
+   "sensible": [
+    "north"
+   ],
+   "sensibleMass": 0.6535346465353464,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    1,
+    -2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.4246,
+    "east": 0.3423,
+    "south": 0.109,
+    "west": 0.0534,
+    "rest": 0.0707
+   },
+   "sensible": [
+    "east",
+    "north"
+   ],
+   "sensibleMass": 0.7668999999999999,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    -2,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.6846684668466847,
+    "east": 0.15171517151715172,
+    "south": 0.0707070707070707,
+    "west": 0.043404340434043405,
+    "rest": 0.04950495049504951
+   },
+   "sensible": [
+    "north",
+    "west"
+   ],
+   "sensibleMass": 0.7280728072807281,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    -1,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.6841,
+    "east": 0.148,
+    "south": 0.0574,
+    "west": 0.052,
+    "rest": 0.0585
+   },
+   "sensible": [
+    "north",
+    "west"
+   ],
+   "sensibleMass": 0.7361000000000001,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    0,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.7177,
+    "east": 0.1087,
+    "south": 0.064,
+    "west": 0.0468,
+    "rest": 0.0628
+   },
+   "sensible": [
+    "north"
+   ],
+   "sensibleMass": 0.7177,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    1,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.6476647664766477,
+    "east": 0.21032103210321032,
+    "south": 0.05320532053205321,
+    "west": 0.03810381038103811,
+    "rest": 0.05070507050705071
+   },
+   "sensible": [
+    "east",
+    "north"
+   ],
+   "sensibleMass": 0.857985798579858,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    2,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.6815,
+    "east": 0.1873,
+    "south": 0.0555,
+    "west": 0.0325,
+    "rest": 0.0432
+   },
+   "sensible": [
+    "east",
+    "north"
+   ],
+   "sensibleMass": 0.8688,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    -3,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3752624737526248,
+    "east": 0.18318168183181682,
+    "south": 0.12248775122487751,
+    "west": 0.21467853214678534,
+    "rest": 0.10438956104389562
+   },
+   "sensible": [
+    "west"
+   ],
+   "sensibleMass": 0.21467853214678534,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 3.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    -2,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.4155,
+    "east": 0.179,
+    "south": 0.1941,
+    "west": 0.1058,
+    "rest": 0.1056
+   },
+   "sensible": [
+    "west"
+   ],
+   "sensibleMass": 0.1058,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    -1,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.413958604139586,
+    "east": 0.20217978202179782,
+    "south": 0.11888811118888112,
+    "west": 0.1464853514648535,
+    "rest": 0.11848815118488151
+   },
+   "sensible": [
+    "west"
+   ],
+   "sensibleMass": 0.1464853514648535,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    0,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.37,
+    "east": 0.1425,
+    "south": 0.0687,
+    "west": 0.0426,
+    "eat": 0.2895,
+    "rest": 0.0867
+   },
+   "sensible": [
+    "eat"
+   ],
+   "sensibleMass": 0.2895,
+   "uniformMass": 0.16666666666666666,
+   "argmaxSensible": false,
+   "distance": 0.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    1,
+    0
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.2833,
+    "east": 0.5188,
+    "south": 0.0663,
+    "west": 0.0556,
+    "rest": 0.076
+   },
+   "sensible": [
+    "east"
+   ],
+   "sensibleMass": 0.5188,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    2,
+    0
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.3261,
+    "east": 0.4356,
+    "south": 0.109,
+    "west": 0.0554,
+    "rest": 0.0739
+   },
+   "sensible": [
+    "east"
+   ],
+   "sensibleMass": 0.4356,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    3,
+    0
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.3569,
+    "east": 0.3658,
+    "south": 0.0982,
+    "west": 0.0837,
+    "rest": 0.0954
+   },
+   "sensible": [
+    "east"
+   ],
+   "sensibleMass": 0.3658,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 3.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    -2,
+    1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3625,
+    "east": 0.2447,
+    "south": 0.2146,
+    "west": 0.0802,
+    "rest": 0.098
+   },
+   "sensible": [
+    "south",
+    "west"
+   ],
+   "sensibleMass": 0.2948,
+   "uniformMass": 0.4,
+   "argmaxSensible": false,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    -1,
+    1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3779,
+    "east": 0.2311,
+    "south": 0.1859,
+    "west": 0.0913,
+    "rest": 0.1138
+   },
+   "sensible": [
+    "south",
+    "west"
+   ],
+   "sensibleMass": 0.2772,
+   "uniformMass": 0.4,
+   "argmaxSensible": false,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    0,
+    1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3562356235623563,
+    "east": 0.18851885188518852,
+    "south": 0.2818281828182818,
+    "west": 0.07320732073207321,
+    "rest": 0.1002100210021002
+   },
+   "sensible": [
+    "south"
+   ],
+   "sensibleMass": 0.2818281828182818,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    1,
+    1
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.3612,
+    "east": 0.3639,
+    "south": 0.1234,
+    "west": 0.0619,
+    "rest": 0.0896
+   },
+   "sensible": [
+    "east",
+    "south"
+   ],
+   "sensibleMass": 0.4873,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    2,
+    1
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.3458,
+    "east": 0.3493,
+    "south": 0.1664,
+    "west": 0.0569,
+    "rest": 0.0816
+   },
+   "sensible": [
+    "east",
+    "south"
+   ],
+   "sensibleMass": 0.5157,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    -1,
+    2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3461,
+    "east": 0.2104,
+    "south": 0.2645,
+    "west": 0.0758,
+    "rest": 0.1032
+   },
+   "sensible": [
+    "south",
+    "west"
+   ],
+   "sensibleMass": 0.34030000000000005,
+   "uniformMass": 0.4,
+   "argmaxSensible": false,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    0,
+    2
+   ],
+   "argmax": "south",
+   "distribution": {
+    "north": 0.2208220822082208,
+    "east": 0.0993099309930993,
+    "south": 0.5793579357935794,
+    "west": 0.0401040104010401,
+    "rest": 0.06040604060406041
+   },
+   "sensible": [
+    "south"
+   ],
+   "sensibleMass": 0.5793579357935794,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    1,
+    2
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.3268,
+    "east": 0.3466,
+    "south": 0.1995,
+    "west": 0.0516,
+    "rest": 0.0755
+   },
+   "sensible": [
+    "east",
+    "south"
+   ],
+   "sensibleMass": 0.5461,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 6.0,
+   "cell": [
+    0,
+    3
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3733,
+    "east": 0.1744,
+    "south": 0.2594,
+    "west": 0.0906,
+    "rest": 0.1023
+   },
+   "sensible": [
+    "south"
+   ],
+   "sensibleMass": 0.2594,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 3.0
+  },
+  {
+   "kind": "no-food",
+   "energy": 8.0,
+   "amount": 0,
+   "cell": null,
+   "argmax": "north",
+   "distribution": {
+    "north": 0.35506449355064496,
+    "east": 0.25987401259874016,
+    "south": 0.14058594140585942,
+    "west": 0.10668933106689331,
+    "rest": 0.13778622137786223
+   }
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    0,
+    -3
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.5793,
+    "east": 0.1464,
+    "south": 0.1031,
+    "west": 0.0821,
+    "rest": 0.0891
+   },
+   "sensible": [
+    "north"
+   ],
+   "sensibleMass": 0.5793,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 3.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    -1,
+    -2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.5253474652534746,
+    "east": 0.2136786321367863,
+    "south": 0.11778822117788222,
+    "west": 0.06789321067893211,
+    "rest": 0.07529247075292471
+   },
+   "sensible": [
+    "north",
+    "west"
+   ],
+   "sensibleMass": 0.5932406759324067,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    0,
+    -2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.6746325367463254,
+    "east": 0.11878812118788122,
+    "south": 0.0928907109289071,
+    "west": 0.05019498050194981,
+    "rest": 0.0634936506349365
+   },
+   "sensible": [
+    "north"
+   ],
+   "sensibleMass": 0.6746325367463254,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    1,
+    -2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.4621,
+    "east": 0.3183,
+    "south": 0.1024,
+    "west": 0.0519,
+    "rest": 0.0653
+   },
+   "sensible": [
+    "east",
+    "north"
+   ],
+   "sensibleMass": 0.7804,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    -2,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.7263000000000001,
+    "east": 0.12890000000000001,
+    "south": 0.06160000000000001,
+    "west": 0.03980000000000001,
+    "rest": 0.04340000000000001
+   },
+   "sensible": [
+    "north",
+    "west"
+   ],
+   "sensibleMass": 0.7661000000000001,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    -1,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.7253000000000001,
+    "east": 0.12190000000000001,
+    "south": 0.051800000000000006,
+    "west": 0.04830000000000001,
+    "rest": 0.052700000000000004
+   },
+   "sensible": [
+    "north",
+    "west"
+   ],
+   "sensibleMass": 0.7736000000000001,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    0,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.7422,
+    "east": 0.0946,
+    "south": 0.0588,
+    "west": 0.0447,
+    "rest": 0.0597
+   },
+   "sensible": [
+    "north"
+   ],
+   "sensibleMass": 0.7422,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    1,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.6756,
+    "east": 0.1894,
+    "south": 0.05,
+    "west": 0.0374,
+    "rest": 0.0476
+   },
+   "sensible": [
+    "east",
+    "north"
+   ],
+   "sensibleMass": 0.865,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    2,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.7059705970597059,
+    "east": 0.1706170617061706,
+    "south": 0.050605060506050605,
+    "west": 0.0319031903190319,
+    "rest": 0.0409040904090409
+   },
+   "sensible": [
+    "east",
+    "north"
+   ],
+   "sensibleMass": 0.8765876587658765,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    -3,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3692,
+    "east": 0.1692,
+    "south": 0.1163,
+    "west": 0.2434,
+    "rest": 0.1019
+   },
+   "sensible": [
+    "west"
+   ],
+   "sensibleMass": 0.2434,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 3.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    -2,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.4242,
+    "east": 0.1711,
+    "south": 0.1925,
+    "west": 0.1077,
+    "rest": 0.1045
+   },
+   "sensible": [
+    "west"
+   ],
+   "sensibleMass": 0.1077,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    -1,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.4302,
+    "east": 0.1826,
+    "south": 0.1164,
+    "west": 0.149,
+    "rest": 0.1218
+   },
+   "sensible": [
+    "west"
+   ],
+   "sensibleMass": 0.149,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    0,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3640271945610878,
+    "east": 0.130373925214957,
+    "south": 0.0623875224955009,
+    "west": 0.03959208158368327,
+    "eat": 0.32743451309738053,
+    "rest": 0.07618476304739052
+   },
+   "sensible": [
+    "eat"
+   ],
+   "sensibleMass": 0.32743451309738053,
+   "uniformMass": 0.16666666666666666,
+   "argmaxSensible": false,
+   "distance": 0.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    1,
+    0
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.24862486248624863,
+    "east": 0.5719571957195719,
+    "south": 0.05730573057305731,
+    "west": 0.05030503050305031,
+    "rest": 0.07180718071807182
+   },
+   "sensible": [
+    "east"
+   ],
+   "sensibleMass": 0.5719571957195719,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    2,
+    0
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.3047,
+    "east": 0.4761,
+    "south": 0.0949,
+    "west": 0.0531,
+    "rest": 0.0712
+   },
+   "sensible": [
+    "east"
+   ],
+   "sensibleMass": 0.4761,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    3,
+    0
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.3329,
+    "east": 0.4048,
+    "south": 0.0898,
+    "west": 0.0777,
+    "rest": 0.0948
+   },
+   "sensible": [
+    "east"
+   ],
+   "sensibleMass": 0.4048,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 3.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    -2,
+    1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3682,
+    "east": 0.2365,
+    "south": 0.2155,
+    "west": 0.0835,
+    "rest": 0.0963
+   },
+   "sensible": [
+    "south",
+    "west"
+   ],
+   "sensibleMass": 0.299,
+   "uniformMass": 0.4,
+   "argmaxSensible": false,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    -1,
+    1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3838,
+    "east": 0.2164,
+    "south": 0.1963,
+    "west": 0.0919,
+    "rest": 0.1116
+   },
+   "sensible": [
+    "south",
+    "west"
+   ],
+   "sensibleMass": 0.2882,
+   "uniformMass": 0.4,
+   "argmaxSensible": false,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    0,
+    1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3368,
+    "east": 0.1706,
+    "south": 0.3164,
+    "west": 0.0738,
+    "rest": 0.1024
+   },
+   "sensible": [
+    "south"
+   ],
+   "sensibleMass": 0.3164,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    1,
+    1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.36613661366136613,
+    "east": 0.3578357835783578,
+    "south": 0.12811281128112811,
+    "west": 0.06220622062206221,
+    "rest": 0.0857085708570857
+   },
+   "sensible": [
+    "east",
+    "south"
+   ],
+   "sensibleMass": 0.48594859485948594,
+   "uniformMass": 0.4,
+   "argmaxSensible": false,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    2,
+    1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3516,
+    "east": 0.3516,
+    "south": 0.1586,
+    "west": 0.0586,
+    "rest": 0.0796
+   },
+   "sensible": [
+    "east",
+    "south"
+   ],
+   "sensibleMass": 0.5102,
+   "uniformMass": 0.4,
+   "argmaxSensible": false,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    -1,
+    2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3397660233976602,
+    "east": 0.20257974202579743,
+    "south": 0.28257174282571745,
+    "west": 0.0760923907609239,
+    "rest": 0.09899010098990102
+   },
+   "sensible": [
+    "south",
+    "west"
+   ],
+   "sensibleMass": 0.35866413358664134,
+   "uniformMass": 0.4,
+   "argmaxSensible": false,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    0,
+    2
+   ],
+   "argmax": "south",
+   "distribution": {
+    "north": 0.1863,
+    "east": 0.0862,
+    "south": 0.6405,
+    "west": 0.0351,
+    "rest": 0.0519
+   },
+   "sensible": [
+    "south"
+   ],
+   "sensibleMass": 0.6405,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    1,
+    2
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.3257,
+    "east": 0.3317,
+    "south": 0.2193,
+    "west": 0.0523,
+    "rest": 0.071
+   },
+   "sensible": [
+    "east",
+    "south"
+   ],
+   "sensibleMass": 0.5509999999999999,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 8.0,
+   "amount": 12.0,
+   "cell": [
+    0,
+    3
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3433,
+    "east": 0.165,
+    "south": 0.3042,
+    "west": 0.0861,
+    "rest": 0.1014
+   },
+   "sensible": [
+    "south"
+   ],
+   "sensibleMass": 0.3042,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 3.0
+  },
+  {
+   "kind": "no-food",
+   "energy": 30.0,
+   "amount": 0,
+   "cell": null,
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3354335433543354,
+    "east": 0.26602660266026606,
+    "south": 0.14581458145814583,
+    "west": 0.11381138113811382,
+    "rest": 0.1389138913891389
+   }
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    0,
+    -3
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.4475,
+    "east": 0.1627,
+    "south": 0.2242,
+    "west": 0.0797,
+    "rest": 0.0859
+   },
+   "sensible": [
+    "north"
+   ],
+   "sensibleMass": 0.4475,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 3.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    -1,
+    -2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.4629,
+    "east": 0.2306,
+    "south": 0.1416,
+    "west": 0.0803,
+    "rest": 0.0846
+   },
+   "sensible": [
+    "north",
+    "west"
+   ],
+   "sensibleMass": 0.5432,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    0,
+    -2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.5401459854014599,
+    "east": 0.144985501449855,
+    "south": 0.18268173182681732,
+    "west": 0.05989401059894011,
+    "rest": 0.07229277072292771
+   },
+   "sensible": [
+    "north"
+   ],
+   "sensibleMass": 0.5401459854014599,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    1,
+    -2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.39633963396339633,
+    "east": 0.35573557355735574,
+    "south": 0.11501150115011502,
+    "west": 0.05890589058905891,
+    "rest": 0.074007400740074
+   },
+   "sensible": [
+    "east",
+    "north"
+   ],
+   "sensibleMass": 0.7520752075207521,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    -2,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.666033396660334,
+    "east": 0.1630836916308369,
+    "south": 0.08059194080591942,
+    "west": 0.041995800419958006,
+    "rest": 0.048295170482951705
+   },
+   "sensible": [
+    "north",
+    "west"
+   ],
+   "sensibleMass": 0.708029197080292,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    -1,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.6465,
+    "east": 0.1364,
+    "south": 0.1117,
+    "west": 0.0516,
+    "rest": 0.0538
+   },
+   "sensible": [
+    "north",
+    "west"
+   ],
+   "sensibleMass": 0.6980999999999999,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    0,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.6644335566443356,
+    "east": 0.10928907109289071,
+    "south": 0.1284871512848715,
+    "west": 0.04439556044395561,
+    "rest": 0.053394660533946606
+   },
+   "sensible": [
+    "north"
+   ],
+   "sensibleMass": 0.6644335566443356,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    1,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.6157,
+    "east": 0.197,
+    "south": 0.0966,
+    "west": 0.0409,
+    "rest": 0.0498
+   },
+   "sensible": [
+    "east",
+    "north"
+   ],
+   "sensibleMass": 0.8127,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    2,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.6529,
+    "east": 0.1948,
+    "south": 0.0709,
+    "west": 0.0354,
+    "rest": 0.046
+   },
+   "sensible": [
+    "east",
+    "north"
+   ],
+   "sensibleMass": 0.8477,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    -3,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3554,
+    "east": 0.1773,
+    "south": 0.1956,
+    "west": 0.1762,
+    "rest": 0.0955
+   },
+   "sensible": [
+    "west"
+   ],
+   "sensibleMass": 0.1762,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 3.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    -2,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.37576242375762425,
+    "east": 0.18568143185681432,
+    "south": 0.2127787221277872,
+    "west": 0.12188781121887811,
+    "rest": 0.10388961103889612
+   },
+   "sensible": [
+    "west"
+   ],
+   "sensibleMass": 0.12188781121887811,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    -1,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.378,
+    "east": 0.1958,
+    "south": 0.1931,
+    "west": 0.1346,
+    "rest": 0.0985
+   },
+   "sensible": [
+    "west"
+   ],
+   "sensibleMass": 0.1346,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    0,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.37436256374362564,
+    "east": 0.14238576142385762,
+    "south": 0.1645835416458354,
+    "west": 0.0357964203579642,
+    "eat": 0.2263773622637736,
+    "rest": 0.05649435056494351
+   },
+   "sensible": [
+    "eat"
+   ],
+   "sensibleMass": 0.2263773622637736,
+   "uniformMass": 0.16666666666666666,
+   "argmaxSensible": false,
+   "distance": 0.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    1,
+    0
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.24647535246475352,
+    "east": 0.5395460453954605,
+    "south": 0.09659034096590341,
+    "west": 0.0526947305269473,
+    "rest": 0.0646935306469353
+   },
+   "sensible": [
+    "east"
+   ],
+   "sensibleMass": 0.5395460453954605,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    2,
+    0
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.3101,
+    "east": 0.4215,
+    "south": 0.1339,
+    "west": 0.0599,
+    "rest": 0.0746
+   },
+   "sensible": [
+    "east"
+   ],
+   "sensibleMass": 0.4215,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    3,
+    0
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.32693269326932695,
+    "east": 0.3459345934593459,
+    "south": 0.1639163916391639,
+    "west": 0.07670767076707671,
+    "rest": 0.0865086508650865
+   },
+   "sensible": [
+    "east"
+   ],
+   "sensibleMass": 0.3459345934593459,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 3.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    -2,
+    1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.324,
+    "east": 0.2395,
+    "south": 0.2727,
+    "west": 0.0746,
+    "rest": 0.0892
+   },
+   "sensible": [
+    "south",
+    "west"
+   ],
+   "sensibleMass": 0.3473,
+   "uniformMass": 0.4,
+   "argmaxSensible": false,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    -1,
+    1
+   ],
+   "argmax": "south",
+   "distribution": {
+    "north": 0.3091,
+    "east": 0.196,
+    "south": 0.3181,
+    "west": 0.0805,
+    "rest": 0.0963
+   },
+   "sensible": [
+    "south",
+    "west"
+   ],
+   "sensibleMass": 0.3986,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    0,
+    1
+   ],
+   "argmax": "south",
+   "distribution": {
+    "north": 0.21,
+    "east": 0.1197,
+    "south": 0.5568,
+    "west": 0.0488,
+    "rest": 0.0647
+   },
+   "sensible": [
+    "south"
+   ],
+   "sensibleMass": 0.5568,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    1,
+    1
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.3044,
+    "east": 0.3151,
+    "south": 0.2341,
+    "west": 0.0638,
+    "rest": 0.0826
+   },
+   "sensible": [
+    "east",
+    "south"
+   ],
+   "sensibleMass": 0.5492,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    2,
+    1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3235,
+    "east": 0.32,
+    "south": 0.2181,
+    "west": 0.0587,
+    "rest": 0.0797
+   },
+   "sensible": [
+    "east",
+    "south"
+   ],
+   "sensibleMass": 0.5381,
+   "uniformMass": 0.4,
+   "argmaxSensible": false,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    -1,
+    2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.332,
+    "east": 0.2245,
+    "south": 0.2499,
+    "west": 0.0879,
+    "rest": 0.1057
+   },
+   "sensible": [
+    "south",
+    "west"
+   ],
+   "sensibleMass": 0.3378,
+   "uniformMass": 0.4,
+   "argmaxSensible": false,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    0,
+    2
+   ],
+   "argmax": "south",
+   "distribution": {
+    "north": 0.2077,
+    "east": 0.1038,
+    "south": 0.5785,
+    "west": 0.0462,
+    "rest": 0.0638
+   },
+   "sensible": [
+    "south"
+   ],
+   "sensibleMass": 0.5785,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    1,
+    2
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.3099,
+    "east": 0.3618,
+    "south": 0.193,
+    "west": 0.0569,
+    "rest": 0.0784
+   },
+   "sensible": [
+    "east",
+    "south"
+   ],
+   "sensibleMass": 0.5548,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 2.0,
+   "cell": [
+    0,
+    3
+   ],
+   "argmax": "south",
+   "distribution": {
+    "north": 0.3088,
+    "east": 0.1464,
+    "south": 0.379,
+    "west": 0.0748,
+    "rest": 0.091
+   },
+   "sensible": [
+    "south"
+   ],
+   "sensibleMass": 0.379,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 3.0
+  },
+  {
+   "kind": "no-food",
+   "energy": 30.0,
+   "amount": 0,
+   "cell": null,
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3354335433543354,
+    "east": 0.26602660266026606,
+    "south": 0.14581458145814583,
+    "west": 0.11381138113811382,
+    "rest": 0.1389138913891389
+   }
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    0,
+    -3
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.5095,
+    "east": 0.1729,
+    "south": 0.1232,
+    "west": 0.0967,
+    "rest": 0.0977
+   },
+   "sensible": [
+    "north"
+   ],
+   "sensibleMass": 0.5095,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 3.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    -1,
+    -2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.4847484748474848,
+    "east": 0.23662366236623664,
+    "south": 0.13151315131513153,
+    "west": 0.06950695069506951,
+    "rest": 0.0776077607760776
+   },
+   "sensible": [
+    "north",
+    "west"
+   ],
+   "sensibleMass": 0.5542554255425542,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    0,
+    -2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.624,
+    "east": 0.136,
+    "south": 0.117,
+    "west": 0.0554,
+    "rest": 0.0676
+   },
+   "sensible": [
+    "north"
+   ],
+   "sensibleMass": 0.624,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    1,
+    -2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.4098,
+    "east": 0.3574,
+    "south": 0.1112,
+    "west": 0.0538,
+    "rest": 0.0678
+   },
+   "sensible": [
+    "east",
+    "north"
+   ],
+   "sensibleMass": 0.7672,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    -2,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.6876,
+    "east": 0.1517,
+    "south": 0.0692,
+    "west": 0.0433,
+    "rest": 0.0482
+   },
+   "sensible": [
+    "north",
+    "west"
+   ],
+   "sensibleMass": 0.7309,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    -1,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.6916691669166917,
+    "east": 0.14491449144914492,
+    "south": 0.056005600560056004,
+    "west": 0.050805080508050805,
+    "rest": 0.0566056605660566
+   },
+   "sensible": [
+    "north",
+    "west"
+   ],
+   "sensibleMass": 0.7424742474247424,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    0,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.7177,
+    "east": 0.1094,
+    "south": 0.0647,
+    "west": 0.0469,
+    "rest": 0.0613
+   },
+   "sensible": [
+    "north"
+   ],
+   "sensibleMass": 0.7177,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    1,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.6576,
+    "east": 0.2049,
+    "south": 0.0517,
+    "west": 0.0369,
+    "rest": 0.0489
+   },
+   "sensible": [
+    "east",
+    "north"
+   ],
+   "sensibleMass": 0.8624999999999999,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    2,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.698,
+    "east": 0.1761,
+    "south": 0.0535,
+    "west": 0.0311,
+    "rest": 0.0413
+   },
+   "sensible": [
+    "east",
+    "north"
+   ],
+   "sensibleMass": 0.8741,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    -3,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.35727145429085816,
+    "east": 0.18513702740548107,
+    "south": 0.124624924984997,
+    "west": 0.22914582916583315,
+    "rest": 0.10382076415283056
+   },
+   "sensible": [
+    "west"
+   ],
+   "sensibleMass": 0.22914582916583315,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 3.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    -2,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3904,
+    "east": 0.1831,
+    "south": 0.2099,
+    "west": 0.1119,
+    "rest": 0.1047
+   },
+   "sensible": [
+    "west"
+   ],
+   "sensibleMass": 0.1119,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    -1,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.4037,
+    "east": 0.2024,
+    "south": 0.1195,
+    "west": 0.1541,
+    "rest": 0.1203
+   },
+   "sensible": [
+    "west"
+   ],
+   "sensibleMass": 0.1541,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    0,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3685,
+    "east": 0.1479,
+    "south": 0.0717,
+    "west": 0.0447,
+    "eat": 0.2903,
+    "rest": 0.0769
+   },
+   "sensible": [
+    "eat"
+   ],
+   "sensibleMass": 0.2903,
+   "uniformMass": 0.16666666666666666,
+   "argmaxSensible": false,
+   "distance": 0.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    1,
+    0
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.2796,
+    "east": 0.5227,
+    "south": 0.0671,
+    "west": 0.0557,
+    "rest": 0.0749
+   },
+   "sensible": [
+    "east"
+   ],
+   "sensibleMass": 0.5227,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    2,
+    0
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.3084,
+    "east": 0.455,
+    "south": 0.1109,
+    "west": 0.0551,
+    "rest": 0.0706
+   },
+   "sensible": [
+    "east"
+   ],
+   "sensibleMass": 0.455,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    3,
+    0
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.3402340234023402,
+    "east": 0.373037303730373,
+    "south": 0.1032103210321032,
+    "west": 0.08720872087208721,
+    "rest": 0.0963096309630963
+   },
+   "sensible": [
+    "east"
+   ],
+   "sensibleMass": 0.373037303730373,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 3.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    -2,
+    1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.35353535353535354,
+    "east": 0.25082508250825086,
+    "south": 0.2147214721472147,
+    "west": 0.08390839083908391,
+    "rest": 0.09700970097009701
+   },
+   "sensible": [
+    "south",
+    "west"
+   ],
+   "sensibleMass": 0.2986298629862986,
+   "uniformMass": 0.4,
+   "argmaxSensible": false,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    -1,
+    1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3639363936393639,
+    "east": 0.2355235523552355,
+    "south": 0.1939193919391939,
+    "west": 0.0929092909290929,
+    "rest": 0.1137113711371137
+   },
+   "sensible": [
+    "south",
+    "west"
+   ],
+   "sensibleMass": 0.28682868286828683,
+   "uniformMass": 0.4,
+   "argmaxSensible": false,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    0,
+    1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.34606539346065396,
+    "east": 0.18948105189481051,
+    "south": 0.2940705929407059,
+    "west": 0.07229277072292771,
+    "rest": 0.09809019098090192
+   },
+   "sensible": [
+    "south"
+   ],
+   "sensibleMass": 0.2940705929407059,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    1,
+    1
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.3428342834283428,
+    "east": 0.37483748374837483,
+    "south": 0.1299129912991299,
+    "west": 0.06270627062706272,
+    "rest": 0.08970897089708971
+   },
+   "sensible": [
+    "east",
+    "south"
+   ],
+   "sensibleMass": 0.5047504750475047,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    2,
+    1
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.34346565343465657,
+    "east": 0.3488651134886511,
+    "south": 0.1708829117088291,
+    "west": 0.0572942705729427,
+    "rest": 0.07949205079492051
+   },
+   "sensible": [
+    "east",
+    "south"
+   ],
+   "sensibleMass": 0.5197480251974802,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    -1,
+    2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3420342034203421,
+    "east": 0.21512151215121514,
+    "south": 0.26652665266526654,
+    "west": 0.07600760076007601,
+    "rest": 0.1003100310031003
+   },
+   "sensible": [
+    "south",
+    "west"
+   ],
+   "sensibleMass": 0.34253425342534255,
+   "uniformMass": 0.4,
+   "argmaxSensible": false,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    0,
+    2
+   ],
+   "argmax": "south",
+   "distribution": {
+    "north": 0.2026,
+    "east": 0.0935,
+    "south": 0.6118,
+    "west": 0.0368,
+    "rest": 0.0553
+   },
+   "sensible": [
+    "south"
+   ],
+   "sensibleMass": 0.6118,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    1,
+    2
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.3183,
+    "east": 0.3511,
+    "south": 0.2067,
+    "west": 0.0515,
+    "rest": 0.0724
+   },
+   "sensible": [
+    "east",
+    "south"
+   ],
+   "sensibleMass": 0.5578000000000001,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 6.0,
+   "cell": [
+    0,
+    3
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.35513551355135514,
+    "east": 0.17641764176417643,
+    "south": 0.2733273327332733,
+    "west": 0.09170917091709171,
+    "rest": 0.10341034103410342
+   },
+   "sensible": [
+    "south"
+   ],
+   "sensibleMass": 0.2733273327332733,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 3.0
+  },
+  {
+   "kind": "no-food",
+   "energy": 30.0,
+   "amount": 0,
+   "cell": null,
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3354335433543354,
+    "east": 0.26602660266026606,
+    "south": 0.14581458145814583,
+    "west": 0.11381138113811382,
+    "rest": 0.1389138913891389
+   }
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    0,
+    -3
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.5405540554055406,
+    "east": 0.15971597159715972,
+    "south": 0.11441144114411442,
+    "west": 0.09350935093509351,
+    "rest": 0.09180918091809182
+   },
+   "sensible": [
+    "north"
+   ],
+   "sensibleMass": 0.5405540554055406,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 3.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    -1,
+    -2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.47744774477447743,
+    "east": 0.23832383238323834,
+    "south": 0.13031303130313032,
+    "west": 0.0749074907490749,
+    "rest": 0.07900790079007901
+   },
+   "sensible": [
+    "north",
+    "west"
+   ],
+   "sensibleMass": 0.5523552355235524,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    0,
+    -2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.6448644864486449,
+    "east": 0.13021302130213022,
+    "south": 0.10381038103810382,
+    "west": 0.0555055505550555,
+    "rest": 0.06560656065606561
+   },
+   "sensible": [
+    "north"
+   ],
+   "sensibleMass": 0.6448644864486449,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    1,
+    -2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.4022597740225977,
+    "east": 0.35606439356064395,
+    "south": 0.11428857114288571,
+    "west": 0.0580941905809419,
+    "rest": 0.06929307069293071
+   },
+   "sensible": [
+    "east",
+    "north"
+   ],
+   "sensibleMass": 0.7583241675832417,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    -2,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.7027702770277028,
+    "east": 0.1401140114011401,
+    "south": 0.06600660066006601,
+    "west": 0.04410441044104411,
+    "rest": 0.047004700470047005
+   },
+   "sensible": [
+    "north",
+    "west"
+   ],
+   "sensibleMass": 0.7468746874687469,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    -1,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.694,
+    "east": 0.1341,
+    "south": 0.0581,
+    "west": 0.0553,
+    "rest": 0.0585
+   },
+   "sensible": [
+    "north",
+    "west"
+   ],
+   "sensibleMass": 0.7493,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    0,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.7295270472952705,
+    "east": 0.09879012098790121,
+    "south": 0.0634936506349365,
+    "west": 0.047995200479952004,
+    "rest": 0.060193980601939805
+   },
+   "sensible": [
+    "north"
+   ],
+   "sensibleMass": 0.7295270472952705,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    1,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.6558344165583442,
+    "east": 0.19578042195780423,
+    "south": 0.055394460553944605,
+    "west": 0.040995900409959006,
+    "rest": 0.051994800519948
+   },
+   "sensible": [
+    "east",
+    "north"
+   ],
+   "sensibleMass": 0.8516148385161484,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    2,
+    -1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.7032703270327033,
+    "east": 0.1687168716871687,
+    "south": 0.052805280528052806,
+    "west": 0.0331033103310331,
+    "rest": 0.0421042104210421
+   },
+   "sensible": [
+    "east",
+    "north"
+   ],
+   "sensibleMass": 0.871987198719872,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    -3,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3286328632863286,
+    "east": 0.17241724172417242,
+    "south": 0.12051205120512051,
+    "west": 0.27992799279927993,
+    "rest": 0.09850985098509851
+   },
+   "sensible": [
+    "west"
+   ],
+   "sensibleMass": 0.27992799279927993,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 3.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    -2,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3903390339033903,
+    "east": 0.18161816181618162,
+    "south": 0.20342034203420342,
+    "west": 0.1221122112211221,
+    "rest": 0.1025102510251025
+   },
+   "sensible": [
+    "west"
+   ],
+   "sensibleMass": 0.1221122112211221,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    -1,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.40234023402340235,
+    "east": 0.18941894189418942,
+    "south": 0.12321232123212321,
+    "west": 0.1629162916291629,
+    "rest": 0.1221122112211221
+   },
+   "sensible": [
+    "west"
+   ],
+   "sensibleMass": 0.1629162916291629,
+   "uniformMass": 0.2,
+   "argmaxSensible": false,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    0,
+    0
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.34763476347634764,
+    "east": 0.1341134113411341,
+    "south": 0.0686068606860686,
+    "west": 0.0452045204520452,
+    "eat": 0.3273327332733273,
+    "rest": 0.07710771077107711
+   },
+   "sensible": [
+    "eat"
+   ],
+   "sensibleMass": 0.3273327332733273,
+   "uniformMass": 0.16666666666666666,
+   "argmaxSensible": false,
+   "distance": 0.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    1,
+    0
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.2657,
+    "east": 0.5331,
+    "south": 0.0666,
+    "west": 0.0576,
+    "rest": 0.077
+   },
+   "sensible": [
+    "east"
+   ],
+   "sensibleMass": 0.5331,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    2,
+    0
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.2917,
+    "east": 0.4891,
+    "south": 0.0974,
+    "west": 0.0545,
+    "rest": 0.0673
+   },
+   "sensible": [
+    "east"
+   ],
+   "sensibleMass": 0.4891,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    3,
+    0
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.3128,
+    "east": 0.4189,
+    "south": 0.0946,
+    "west": 0.082,
+    "rest": 0.0917
+   },
+   "sensible": [
+    "east"
+   ],
+   "sensibleMass": 0.4189,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 3.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    -2,
+    1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3564,
+    "east": 0.2435,
+    "south": 0.2144,
+    "west": 0.0884,
+    "rest": 0.0973
+   },
+   "sensible": [
+    "south",
+    "west"
+   ],
+   "sensibleMass": 0.3028,
+   "uniformMass": 0.4,
+   "argmaxSensible": false,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    -1,
+    1
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3608,
+    "east": 0.2219,
+    "south": 0.2073,
+    "west": 0.0964,
+    "rest": 0.1136
+   },
+   "sensible": [
+    "south",
+    "west"
+   ],
+   "sensibleMass": 0.3037,
+   "uniformMass": 0.4,
+   "argmaxSensible": false,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    0,
+    1
+   ],
+   "argmax": "south",
+   "distribution": {
+    "north": 0.322,
+    "east": 0.1694,
+    "south": 0.3365,
+    "west": 0.0728,
+    "rest": 0.0993
+   },
+   "sensible": [
+    "south"
+   ],
+   "sensibleMass": 0.3365,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 1.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    1,
+    1
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.3443,
+    "east": 0.3567,
+    "south": 0.1414,
+    "west": 0.0672,
+    "rest": 0.0904
+   },
+   "sensible": [
+    "east",
+    "south"
+   ],
+   "sensibleMass": 0.4981,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 1.4142135623730951
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    2,
+    1
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.34463446344634463,
+    "east": 0.34583458345834583,
+    "south": 0.16681668166816682,
+    "west": 0.06140614061406141,
+    "rest": 0.0813081308130813
+   },
+   "sensible": [
+    "east",
+    "south"
+   ],
+   "sensibleMass": 0.5126512651265127,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    -1,
+    2
+   ],
+   "argmax": "north",
+   "distribution": {
+    "north": 0.3316,
+    "east": 0.2072,
+    "south": 0.2828,
+    "west": 0.079,
+    "rest": 0.0994
+   },
+   "sensible": [
+    "south",
+    "west"
+   ],
+   "sensibleMass": 0.3618,
+   "uniformMass": 0.4,
+   "argmaxSensible": false,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    0,
+    2
+   ],
+   "argmax": "south",
+   "distribution": {
+    "north": 0.1766,
+    "east": 0.0826,
+    "south": 0.6577,
+    "west": 0.0341,
+    "rest": 0.049
+   },
+   "sensible": [
+    "south"
+   ],
+   "sensibleMass": 0.6577,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 2.0
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    1,
+    2
+   ],
+   "argmax": "east",
+   "distribution": {
+    "north": 0.3092,
+    "east": 0.3389,
+    "south": 0.2263,
+    "west": 0.0543,
+    "rest": 0.0713
+   },
+   "sensible": [
+    "east",
+    "south"
+   ],
+   "sensibleMass": 0.5651999999999999,
+   "uniformMass": 0.4,
+   "argmaxSensible": true,
+   "distance": 2.23606797749979
+  },
+  {
+   "kind": "food",
+   "energy": 30.0,
+   "amount": 12.0,
+   "cell": [
+    0,
+    3
+   ],
+   "argmax": "south",
+   "distribution": {
+    "north": 0.3181,
+    "east": 0.161,
+    "south": 0.3356,
+    "west": 0.0867,
+    "rest": 0.0986
+   },
+   "sensible": [
+    "south"
+   ],
+   "sensibleMass": 0.3356,
+   "uniformMass": 0.2,
+   "argmaxSensible": true,
+   "distance": 3.0
+  }
+ ]
+}

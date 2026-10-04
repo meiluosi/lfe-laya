@@ -1,0 +1,1055 @@
+{
+  "requests": [
+    {
+      "identity": {
+        "protocol": "ecology-decision-v1",
+        "runId": "development-features-01-learning-313",
+        "generation": 0,
+        "epoch": 0,
+        "tick": 3600,
+        "snapshotId": "d7acdcdc041d6f88",
+        "agentId": "life-0",
+        "decisionId": "development-features-01-learning-313:0:3600:life-0",
+        "attemptId": "try-0"
+      },
+      "observation": {
+        "energy": 39.362800000000036,
+        "capacity": 40,
+        "age": 3600,
+        "traits": {
+          "size": 1,
+          "speed": 1,
+          "perception": 3,
+          "metabolism": 1
+        },
+        "heading": 1.5707963267948966,
+        "lastAction": "south",
+        "lastRejected": false,
+        "costs": {
+          "metabolismPerTick": 0.013200000000000002,
+          "movementPerUnit": 0.18,
+          "decisionTicks": 10,
+          "bitePerTick": 0.6
+        },
+        "local": [
+          {
+            "dx": -1.3322676295501878e-15,
+            "dy": -2.999999999999993,
+            "blocked": false,
+            "food": 3.6442193932096587
+          },
+          {
+            "dx": -1.0000000000000013,
+            "dy": -1.999999999999993,
+            "blocked": false,
+            "food": 1.1978080656792573
+          },
+          {
+            "dx": -1.3322676295501878e-15,
+            "dy": -1.999999999999993,
+            "blocked": false,
+            "food": 3.7572757479632526
+          },
+          {
+            "dx": 0.9999999999999987,
+            "dy": -1.999999999999993,
+            "blocked": false,
+            "food": 2.063579436630774
+          },
+          {
+            "dx": -2.0000000000000013,
+            "dy": -0.9999999999999929,
+            "blocked": false,
+            "food": 1.1926845186924404
+          },
+          {
+            "dx": -1.0000000000000013,
+            "dy": -0.9999999999999929,
+            "blocked": false,
+            "food": 0.7750573486903565
+          },
+          {
+            "dx": -1.3322676295501878e-15,
+            "dy": -0.9999999999999929,
+            "blocked": false,
+            "food": 1.6093794565428496
+          },
+          {
+            "dx": 0.9999999999999987,
+            "dy": -0.9999999999999929,
+            "blocked": false,
+            "food": 3.51074093553086
+          },
+          {
+            "dx": 1.9999999999999987,
+            "dy": -0.9999999999999929,
+            "blocked": false,
+            "food": 1.9938784080728404
+          },
+          {
+            "dx": -3.0000000000000013,
+            "dy": 7.105427357601002e-15,
+            "blocked": false,
+            "food": 1.467752615540249
+          },
+          {
+            "dx": -2.0000000000000013,
+            "dy": 7.105427357601002e-15,
+            "blocked": false,
+            "food": 0.9950185759625476
+          },
+          {
+            "dx": -1.0000000000000013,
+            "dy": 7.105427357601002e-15,
+            "blocked": false,
+            "food": 1.7742326229775565
+          },
+          {
+            "dx": -1.3322676295501878e-15,
+            "dy": 7.105427357601002e-15,
+            "blocked": false,
+            "food": 1.4867026138235901
+          },
+          {
+            "dx": 0.9999999999999987,
+            "dy": 7.105427357601002e-15,
+            "blocked": false,
+            "food": 1.7547060069781075
+          },
+          {
+            "dx": 1.9999999999999987,
+            "dy": 7.105427357601002e-15,
+            "blocked": false,
+            "food": 4.206646793966721
+          },
+          {
+            "dx": 2.9999999999999987,
+            "dy": 7.105427357601002e-15,
+            "blocked": false,
+            "food": 1.4657035066872273
+          },
+          {
+            "dx": -2.0000000000000013,
+            "dy": 1.000000000000007,
+            "blocked": false,
+            "food": 0.7818797771215352
+          },
+          {
+            "dx": -1.0000000000000013,
+            "dy": 1.000000000000007,
+            "blocked": false,
+            "food": 0.6173423198564917
+          },
+          {
+            "dx": -1.3322676295501878e-15,
+            "dy": 1.000000000000007,
+            "blocked": false,
+            "food": 1.409794548682588
+          },
+          {
+            "dx": 0.9999999999999987,
+            "dy": 1.000000000000007,
+            "blocked": false,
+            "food": 1.348653404269979
+          },
+          {
+            "dx": 1.9999999999999987,
+            "dy": 1.000000000000007,
+            "blocked": false,
+            "food": 1.3429490395645134
+          },
+          {
+            "dx": -1.0000000000000013,
+            "dy": 2.000000000000007,
+            "blocked": false,
+            "food": 0.9611721150373818
+          },
+          {
+            "dx": -1.3322676295501878e-15,
+            "dy": 2.000000000000007,
+            "blocked": false,
+            "food": 1.1019546849133057
+          },
+          {
+            "dx": 0.9999999999999987,
+            "dy": 2.000000000000007,
+            "blocked": false,
+            "food": 1.0198735342731697
+          },
+          {
+            "dx": -1.3322676295501878e-15,
+            "dy": 3.000000000000007,
+            "blocked": false,
+            "food": 0.8432348704681715
+          }
+        ],
+        "neighbors": [],
+        "memory": [
+          {
+            "dx": -1.0000000000000013,
+            "dy": 1.000000000000007,
+            "food": 0.6173423198564917,
+            "stepsAgo": 0
+          },
+          {
+            "dx": -1.3322676295501878e-15,
+            "dy": 1.000000000000007,
+            "food": 1.409794548682588,
+            "stepsAgo": 0
+          },
+          {
+            "dx": 0.9999999999999987,
+            "dy": 1.000000000000007,
+            "food": 1.348653404269979,
+            "stepsAgo": 0
+          },
+          {
+            "dx": 1.9999999999999987,
+            "dy": 1.000000000000007,
+            "food": 1.3429490395645134,
+            "stepsAgo": 0
+          },
+          {
+            "dx": -1.0000000000000013,
+            "dy": 2.000000000000007,
+            "food": 0.9611721150373818,
+            "stepsAgo": 0
+          },
+          {
+            "dx": -1.3322676295501878e-15,
+            "dy": 2.000000000000007,
+            "food": 1.1019546849133057,
+            "stepsAgo": 0
+          },
+          {
+            "dx": 0.9999999999999987,
+            "dy": 2.000000000000007,
+            "food": 1.0198735342731697,
+            "stepsAgo": 0
+          },
+          {
+            "dx": -1.3322676295501878e-15,
+            "dy": 3.000000000000007,
+            "food": 0.8432348704681715,
+            "stepsAgo": 0
+          }
+        ]
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move 1.00 units north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move 1.00 units east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move 1.00 units south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move 1.00 units west."
+        },
+        {
+          "id": "eat",
+          "dx": 0,
+          "dy": 0,
+          "description": "Eat food at your current location."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here, paying resting metabolism; this does not restore energy."
+        }
+      ]
+    },
+    {
+      "identity": {
+        "protocol": "ecology-decision-v1",
+        "runId": "development-features-01-learning-313",
+        "generation": 0,
+        "epoch": 0,
+        "tick": 3600,
+        "snapshotId": "d7acdcdc041d6f88",
+        "agentId": "life-2",
+        "decisionId": "development-features-01-learning-313:0:3600:life-2",
+        "attemptId": "try-0"
+      },
+      "observation": {
+        "energy": 36.28182416318536,
+        "capacity": 40,
+        "age": 3600,
+        "traits": {
+          "size": 1,
+          "speed": 1,
+          "perception": 3,
+          "metabolism": 1
+        },
+        "heading": 0,
+        "lastAction": "east",
+        "lastRejected": false,
+        "costs": {
+          "metabolismPerTick": 0.013200000000000002,
+          "movementPerUnit": 0.18,
+          "decisionTicks": 10,
+          "bitePerTick": 0.6
+        },
+        "local": [
+          {
+            "dx": -2.4868995751603507e-14,
+            "dy": -2.9999999999999964,
+            "blocked": false,
+            "food": 1.348653404269979
+          },
+          {
+            "dx": -1.0000000000000249,
+            "dy": -1.9999999999999964,
+            "blocked": false,
+            "food": 1.1019546849133057
+          },
+          {
+            "dx": -2.4868995751603507e-14,
+            "dy": -1.9999999999999964,
+            "blocked": false,
+            "food": 1.0198735342731697
+          },
+          {
+            "dx": 0.9999999999999751,
+            "dy": -1.9999999999999964,
+            "blocked": false,
+            "food": 0.869832253719541
+          },
+          {
+            "dx": -2.000000000000025,
+            "dy": -0.9999999999999964,
+            "blocked": false,
+            "food": 0.47509183565517266
+          },
+          {
+            "dx": -1.0000000000000249,
+            "dy": -0.9999999999999964,
+            "blocked": false,
+            "food": 0.8432348704681715
+          },
+          {
+            "dx": -2.4868995751603507e-14,
+            "dy": -0.9999999999999964,
+            "blocked": false,
+            "food": 2.6949490174761457
+          },
+          {
+            "dx": 0.9999999999999751,
+            "dy": -0.9999999999999964,
+            "blocked": false,
+            "food": 0.9349994809781584
+          },
+          {
+            "dx": 1.9999999999999751,
+            "dy": -0.9999999999999964,
+            "blocked": false,
+            "food": 1.5946957642984578
+          },
+          {
+            "dx": -3.000000000000025,
+            "dy": 3.552713678800501e-15,
+            "blocked": false,
+            "food": 0.6333823627241418
+          },
+          {
+            "dx": -2.000000000000025,
+            "dy": 3.552713678800501e-15,
+            "blocked": false,
+            "food": 0.9661779583495196
+          },
+          {
+            "dx": -1.0000000000000249,
+            "dy": 3.552713678800501e-15,
+            "blocked": false,
+            "food": 0.09766441531635794
+          },
+          {
+            "dx": -2.4868995751603507e-14,
+            "dy": 3.552713678800501e-15,
+            "blocked": false,
+            "food": 1.212310016942273
+          },
+          {
+            "dx": 0.9999999999999751,
+            "dy": 3.552713678800501e-15,
+            "blocked": false,
+            "food": 0.9899560373566998
+          },
+          {
+            "dx": 1.9999999999999751,
+            "dy": 3.552713678800501e-15,
+            "blocked": false,
+            "food": 1.9333365841226176
+          },
+          {
+            "dx": 2.999999999999975,
+            "dy": 3.552713678800501e-15,
+            "blocked": false,
+            "food": 0.4229574487433543
+          },
+          {
+            "dx": -2.000000000000025,
+            "dy": 1.0000000000000036,
+            "blocked": false,
+            "food": 0.28921922934956606
+          },
+          {
+            "dx": -1.0000000000000249,
+            "dy": 1.0000000000000036,
+            "blocked": false,
+            "food": 2.022491057565016
+          },
+          {
+            "dx": -2.4868995751603507e-14,
+            "dy": 1.0000000000000036,
+            "blocked": false,
+            "food": 3.2920682587551
+          },
+          {
+            "dx": 0.9999999999999751,
+            "dy": 1.0000000000000036,
+            "blocked": false,
+            "food": 1.6407376673876386
+          },
+          {
+            "dx": 1.9999999999999751,
+            "dy": 1.0000000000000036,
+            "blocked": false,
+            "food": 1.1863545587202116
+          },
+          {
+            "dx": -1.0000000000000249,
+            "dy": 2.0000000000000036,
+            "blocked": true,
+            "food": 0
+          },
+          {
+            "dx": -2.4868995751603507e-14,
+            "dy": 2.0000000000000036,
+            "blocked": true,
+            "food": 0
+          },
+          {
+            "dx": 0.9999999999999751,
+            "dy": 2.0000000000000036,
+            "blocked": true,
+            "food": 0
+          }
+        ],
+        "neighbors": [],
+        "memory": [
+          {
+            "dx": 0.9999999999999751,
+            "dy": 3.552713678800501e-15,
+            "food": 0.9899560373566998,
+            "stepsAgo": 0
+          },
+          {
+            "dx": 1.9999999999999751,
+            "dy": 3.552713678800501e-15,
+            "food": 1.9333365841226176,
+            "stepsAgo": 0
+          },
+          {
+            "dx": 2.999999999999975,
+            "dy": 3.552713678800501e-15,
+            "food": 0.4229574487433543,
+            "stepsAgo": 0
+          },
+          {
+            "dx": -2.000000000000025,
+            "dy": 1.0000000000000036,
+            "food": 0.28921922934956606,
+            "stepsAgo": 0
+          },
+          {
+            "dx": -1.0000000000000249,
+            "dy": 1.0000000000000036,
+            "food": 2.022491057565016,
+            "stepsAgo": 0
+          },
+          {
+            "dx": -2.4868995751603507e-14,
+            "dy": 1.0000000000000036,
+            "food": 3.2920682587551,
+            "stepsAgo": 0
+          },
+          {
+            "dx": 0.9999999999999751,
+            "dy": 1.0000000000000036,
+            "food": 1.6407376673876386,
+            "stepsAgo": 0
+          },
+          {
+            "dx": 1.9999999999999751,
+            "dy": 1.0000000000000036,
+            "food": 1.1863545587202116,
+            "stepsAgo": 0
+          }
+        ]
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move 1.00 units north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move 1.00 units east."
+        },
+        {
+          "id": "south",
+          "dx": 0,
+          "dy": 1,
+          "description": "Move 1.00 units south."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move 1.00 units west."
+        },
+        {
+          "id": "eat",
+          "dx": 0,
+          "dy": 0,
+          "description": "Eat food at your current location."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here, paying resting metabolism; this does not restore energy."
+        }
+      ]
+    },
+    {
+      "identity": {
+        "protocol": "ecology-decision-v1",
+        "runId": "development-features-01-learning-313",
+        "generation": 0,
+        "epoch": 0,
+        "tick": 3600,
+        "snapshotId": "d7acdcdc041d6f88",
+        "agentId": "life-5",
+        "decisionId": "development-features-01-learning-313:0:3600:life-5",
+        "attemptId": "try-0"
+      },
+      "observation": {
+        "energy": 4.536180966419302,
+        "capacity": 40,
+        "age": 3600,
+        "traits": {
+          "size": 1,
+          "speed": 1,
+          "perception": 3,
+          "metabolism": 1
+        },
+        "heading": 0,
+        "lastAction": "eat",
+        "lastRejected": false,
+        "costs": {
+          "metabolismPerTick": 0.013200000000000002,
+          "movementPerUnit": 0.18,
+          "decisionTicks": 10,
+          "bitePerTick": 0.6
+        },
+        "local": [
+          {
+            "dx": -3.552713678800501e-15,
+            "dy": -2.999999999999975,
+            "blocked": false,
+            "food": 2.2870187997779716
+          },
+          {
+            "dx": -1.0000000000000036,
+            "dy": -1.9999999999999751,
+            "blocked": false,
+            "food": 1.5946957642984578
+          },
+          {
+            "dx": -3.552713678800501e-15,
+            "dy": -1.9999999999999751,
+            "blocked": false,
+            "food": 0.9055758947922851
+          },
+          {
+            "dx": 0.9999999999999964,
+            "dy": -1.9999999999999751,
+            "blocked": false,
+            "food": 0.3360375381446221
+          },
+          {
+            "dx": -2.0000000000000036,
+            "dy": -0.9999999999999751,
+            "blocked": false,
+            "food": 0.9899560373566998
+          },
+          {
+            "dx": -1.0000000000000036,
+            "dy": -0.9999999999999751,
+            "blocked": false,
+            "food": 1.9333365841226176
+          },
+          {
+            "dx": -3.552713678800501e-15,
+            "dy": -0.9999999999999751,
+            "blocked": false,
+            "food": 0.4229574487433543
+          },
+          {
+            "dx": 0.9999999999999964,
+            "dy": -0.9999999999999751,
+            "blocked": false,
+            "food": 0.2214536132822398
+          },
+          {
+            "dx": 1.9999999999999964,
+            "dy": -0.9999999999999751,
+            "blocked": false,
+            "food": 0.07978996466188969
+          },
+          {
+            "dx": -3.0000000000000036,
+            "dy": 2.4868995751603507e-14,
+            "blocked": false,
+            "food": 3.2920682587551
+          },
+          {
+            "dx": -2.0000000000000036,
+            "dy": 2.4868995751603507e-14,
+            "blocked": false,
+            "food": 1.6407376673876386
+          },
+          {
+            "dx": -1.0000000000000036,
+            "dy": 2.4868995751603507e-14,
+            "blocked": false,
+            "food": 1.1863545587202116
+          },
+          {
+            "dx": -3.552713678800501e-15,
+            "dy": 2.4868995751603507e-14,
+            "blocked": false,
+            "food": 0
+          },
+          {
+            "dx": 0.9999999999999964,
+            "dy": 2.4868995751603507e-14,
+            "blocked": false,
+            "food": 0.36484334472381974
+          },
+          {
+            "dx": 1.9999999999999964,
+            "dy": 2.4868995751603507e-14,
+            "blocked": false,
+            "food": 0.09785294212106263
+          },
+          {
+            "dx": 2.9999999999999964,
+            "dy": 2.4868995751603507e-14,
+            "blocked": false,
+            "food": 0.025441055243921578
+          },
+          {
+            "dx": -1.0000000000000036,
+            "dy": 1.0000000000000249,
+            "blocked": true,
+            "food": 0
+          },
+          {
+            "dx": -3.552713678800501e-15,
+            "dy": 1.0000000000000249,
+            "blocked": true,
+            "food": 0
+          },
+          {
+            "dx": 0.9999999999999964,
+            "dy": 1.0000000000000249,
+            "blocked": true,
+            "food": 0
+          }
+        ],
+        "neighbors": [],
+        "memory": [
+          {
+            "dx": -3.552713678800501e-15,
+            "dy": -0.9999999999999751,
+            "food": 0.4229574487433543,
+            "stepsAgo": 0
+          },
+          {
+            "dx": 0.9999999999999964,
+            "dy": -0.9999999999999751,
+            "food": 0.2214536132822398,
+            "stepsAgo": 0
+          },
+          {
+            "dx": 1.9999999999999964,
+            "dy": -0.9999999999999751,
+            "food": 0.07978996466188969,
+            "stepsAgo": 0
+          },
+          {
+            "dx": -3.0000000000000036,
+            "dy": 2.4868995751603507e-14,
+            "food": 3.2920682587551,
+            "stepsAgo": 0
+          },
+          {
+            "dx": -2.0000000000000036,
+            "dy": 2.4868995751603507e-14,
+            "food": 1.6407376673876386,
+            "stepsAgo": 0
+          },
+          {
+            "dx": -1.0000000000000036,
+            "dy": 2.4868995751603507e-14,
+            "food": 1.1863545587202116,
+            "stepsAgo": 0
+          },
+          {
+            "dx": 0.9999999999999964,
+            "dy": 2.4868995751603507e-14,
+            "food": 0.36484334472381974,
+            "stepsAgo": 0
+          },
+          {
+            "dx": 1.9999999999999964,
+            "dy": 2.4868995751603507e-14,
+            "food": 0.09785294212106263,
+            "stepsAgo": 0
+          }
+        ]
+      },
+      "candidates": [
+        {
+          "id": "north",
+          "dx": 0,
+          "dy": -1,
+          "description": "Move 1.00 units north."
+        },
+        {
+          "id": "east",
+          "dx": 1,
+          "dy": 0,
+          "description": "Move 1.00 units east."
+        },
+        {
+          "id": "west",
+          "dx": -1,
+          "dy": 0,
+          "description": "Move 1.00 units west."
+        },
+        {
+          "id": "rest",
+          "dx": 0,
+          "dy": 0,
+          "description": "Stay here, paying resting metabolism; this does not restore energy."
+        }
+      ]
+    }
+  ],
+  "records": [
+    {
+      "proposal": {
+        "identity": {
+          "protocol": "ecology-decision-v1",
+          "runId": "development-features-01-learning-313",
+          "generation": 0,
+          "epoch": 0,
+          "tick": 3600,
+          "snapshotId": "d7acdcdc041d6f88",
+          "agentId": "life-0",
+          "decisionId": "development-features-01-learning-313:0:3600:life-0",
+          "attemptId": "try-0"
+        },
+        "provider": "laya",
+        "action": "eat",
+        "distribution": {
+          "north": 0.2974,
+          "east": 0.1544,
+          "south": 0.1219,
+          "west": 0.0625,
+          "eat": 0.3312,
+          "rest": 0.0326
+        }
+      },
+      "input": {
+        "state": "You are a creature with 39.36 of 40.00 energy. Age: 3600 simulation ticks. Each decision lasts 10 ticks. Resting consumes 0.132 energy. Moving also costs 0.180 per unit. Rest does not restore energy. Eating transfers up to 0.60 food energy per tick into your body. You must reach food before eating. Other creatures may consume it first. Your last action was south; execution was not rejected. Visible food (rounded to 0.01; amounts below 0.01 omitted): 3.64 at 3.0 units north; 1.20 at 2.0 units north and 1.0 units west; 3.76 at 2.0 units north; 2.06 at 2.0 units north and 1.0 units east; 1.19 at 1.0 units north and 2.0 units west; 0.78 at 1.0 units north and 1.0 units west; 1.61 at 1.0 units north; 3.51 at 1.0 units north and 1.0 units east; 1.99 at 1.0 units north and 2.0 units east; 1.47 at 3.0 units west; 1.00 at 2.0 units west; 1.77 at 1.0 units west; 1.49 at your current cell; 1.75 at 1.0 units east; 4.21 at 2.0 units east; 1.47 at 3.0 units east; 0.78 at 1.0 units south and 2.0 units west; 0.62 at 1.0 units south and 1.0 units west; 1.41 at 1.0 units south; 1.35 at 1.0 units south and 1.0 units east; 1.34 at 1.0 units south and 2.0 units east; 0.96 at 2.0 units south and 1.0 units west; 1.10 at 2.0 units south; 1.02 at 2.0 units south and 1.0 units east; 0.84 at 3.0 units south. Remembered food may be gone: 0.62 at 1.0 units south and 1.0 units west, 0 ticks ago; 1.41 at 1.0 units south, 0 ticks ago; 1.35 at 1.0 units south and 1.0 units east, 0 ticks ago; 1.34 at 1.0 units south and 2.0 units east, 0 ticks ago; 0.96 at 2.0 units south and 1.0 units west, 0 ticks ago; 1.10 at 2.0 units south, 0 ticks ago; 1.02 at 2.0 units south and 1.0 units east, 0 ticks ago; 0.84 at 3.0 units south, 0 ticks ago.",
+        "questions": {
+          "action": {
+            "type": "choice",
+            "instructions": "Choose one action to obtain food, survive and reproduce when affordable. Use only the observations. Eating requires food in your current cell.",
+            "criteria": {
+              "option_0": "Move 1.00 units north.",
+              "option_1": "Move 1.00 units east.",
+              "option_2": "Move 1.00 units south.",
+              "option_3": "Move 1.00 units west.",
+              "option_4": "Eat food at your current location.",
+              "option_5": "Stay here, paying resting metabolism; this does not restore energy."
+            }
+          }
+        }
+      },
+      "raw_output": {
+        "model": "laya-rl-agent",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_4",
+            "probabilities": {
+              "option_0": 0.2974,
+              "option_1": 0.1544,
+              "option_2": 0.1219,
+              "option_3": 0.0625,
+              "option_4": 0.3312,
+              "option_5": 0.0326
+            },
+            "confidence": 0.1313,
+            "answer_confidence": 0.3312,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 689,
+          "output_tokens": 0
+        }
+      },
+      "metadata": {
+        "provider": "laya",
+        "sdk": "0.3.21",
+        "repo": "convaiinnovations/laya",
+        "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+        "requested_device": "mps",
+        "actual_device": "mps",
+        "cpu_fallback_count": 0,
+        "template": "ecology-local-en-v1",
+        "load_seconds": 3.473717500048224,
+        "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12",
+        "observation_precision": "food:0.01, distance:0.1; raw observation retained"
+      },
+      "input_sha256": "52659608613763831ba57d7193e427be4eef51aedddb9e18dabe74611e103bd4",
+      "batch_ms": 661.3499999511987,
+      "batch_size": 2,
+      "amortized_ms": 330.67499997559935
+    },
+    {
+      "proposal": {
+        "identity": {
+          "protocol": "ecology-decision-v1",
+          "runId": "development-features-01-learning-313",
+          "generation": 0,
+          "epoch": 0,
+          "tick": 3600,
+          "snapshotId": "d7acdcdc041d6f88",
+          "agentId": "life-2",
+          "decisionId": "development-features-01-learning-313:0:3600:life-2",
+          "attemptId": "try-0"
+        },
+        "provider": "laya",
+        "action": "east",
+        "distribution": {
+          "north": 0.2042,
+          "east": 0.3829,
+          "south": 0.1074,
+          "west": 0.055,
+          "eat": 0.2258,
+          "rest": 0.0247
+        }
+      },
+      "input": {
+        "state": "You are a creature with 36.28 of 40.00 energy. Age: 3600 simulation ticks. Each decision lasts 10 ticks. Resting consumes 0.132 energy. Moving also costs 0.180 per unit. Rest does not restore energy. Eating transfers up to 0.60 food energy per tick into your body. You must reach food before eating. Other creatures may consume it first. Your last action was east; execution was not rejected. Visible food (rounded to 0.01; amounts below 0.01 omitted): 1.35 at 3.0 units north; 1.10 at 2.0 units north and 1.0 units west; 1.02 at 2.0 units north; 0.87 at 2.0 units north and 1.0 units east; 0.48 at 1.0 units north and 2.0 units west; 0.84 at 1.0 units north and 1.0 units west; 2.69 at 1.0 units north; 0.93 at 1.0 units north and 1.0 units east; 1.59 at 1.0 units north and 2.0 units east; 0.63 at 3.0 units west; 0.97 at 2.0 units west; 0.10 at 1.0 units west; 1.21 at your current cell; 0.99 at 1.0 units east; 1.93 at 2.0 units east; 0.42 at 3.0 units east; 0.29 at 1.0 units south and 2.0 units west; 2.02 at 1.0 units south and 1.0 units west; 3.29 at 1.0 units south; 1.64 at 1.0 units south and 1.0 units east; 1.19 at 1.0 units south and 2.0 units east. Visible walls: 2.0 units south and 1.0 units west; 2.0 units south; 2.0 units south and 1.0 units east. Remembered food may be gone: 0.99 at 1.0 units east, 0 ticks ago; 1.93 at 2.0 units east, 0 ticks ago; 0.42 at 3.0 units east, 0 ticks ago; 0.29 at 1.0 units south and 2.0 units west, 0 ticks ago; 2.02 at 1.0 units south and 1.0 units west, 0 ticks ago; 3.29 at 1.0 units south, 0 ticks ago; 1.64 at 1.0 units south and 1.0 units east, 0 ticks ago; 1.19 at 1.0 units south and 2.0 units east, 0 ticks ago.",
+        "questions": {
+          "action": {
+            "type": "choice",
+            "instructions": "Choose one action to obtain food, survive and reproduce when affordable. Use only the observations. Eating requires food in your current cell.",
+            "criteria": {
+              "option_0": "Move 1.00 units north.",
+              "option_1": "Move 1.00 units east.",
+              "option_2": "Move 1.00 units south.",
+              "option_3": "Move 1.00 units west.",
+              "option_4": "Eat food at your current location.",
+              "option_5": "Stay here, paying resting metabolism; this does not restore energy."
+            }
+          }
+        }
+      },
+      "raw_output": {
+        "model": "laya-rl-agent",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_1",
+            "probabilities": {
+              "option_0": 0.2042,
+              "option_1": 0.3829,
+              "option_2": 0.1074,
+              "option_3": 0.055,
+              "option_4": 0.2258,
+              "option_5": 0.0247
+            },
+            "confidence": 0.1525,
+            "answer_confidence": 0.3829,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 665,
+          "output_tokens": 0
+        }
+      },
+      "metadata": {
+        "provider": "laya",
+        "sdk": "0.3.21",
+        "repo": "convaiinnovations/laya",
+        "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+        "requested_device": "mps",
+        "actual_device": "mps",
+        "cpu_fallback_count": 0,
+        "template": "ecology-local-en-v1",
+        "load_seconds": 3.473717500048224,
+        "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12",
+        "observation_precision": "food:0.01, distance:0.1; raw observation retained"
+      },
+      "input_sha256": "0b4090a10938ad1a5e06c05aecdc19c8c370c8924587a9e23746523798f63141",
+      "batch_ms": 661.3499999511987,
+      "batch_size": 2,
+      "amortized_ms": 330.67499997559935
+    },
+    {
+      "proposal": {
+        "identity": {
+          "protocol": "ecology-decision-v1",
+          "runId": "development-features-01-learning-313",
+          "generation": 0,
+          "epoch": 0,
+          "tick": 3600,
+          "snapshotId": "d7acdcdc041d6f88",
+          "agentId": "life-5",
+          "decisionId": "development-features-01-learning-313:0:3600:life-5",
+          "attemptId": "try-0"
+        },
+        "provider": "laya",
+        "action": "north",
+        "distribution": {
+          "north": 0.3630636936306369,
+          "east": 0.29427057294270575,
+          "west": 0.19718028197180282,
+          "rest": 0.1454854514548545
+        }
+      },
+      "input": {
+        "state": "You are a creature with 4.54 of 40.00 energy. Age: 3600 simulation ticks. Each decision lasts 10 ticks. Resting consumes 0.132 energy. Moving also costs 0.180 per unit. Rest does not restore energy. Eating transfers up to 0.60 food energy per tick into your body. You must reach food before eating. Other creatures may consume it first. Your last action was eat; execution was not rejected. Visible food (rounded to 0.01; amounts below 0.01 omitted): 2.29 at 3.0 units north; 1.59 at 2.0 units north and 1.0 units west; 0.91 at 2.0 units north; 0.34 at 2.0 units north and 1.0 units east; 0.99 at 1.0 units north and 2.0 units west; 1.93 at 1.0 units north and 1.0 units west; 0.42 at 1.0 units north; 0.22 at 1.0 units north and 1.0 units east; 0.08 at 1.0 units north and 2.0 units east; 3.29 at 3.0 units west; 1.64 at 2.0 units west; 1.19 at 1.0 units west; 0.36 at 1.0 units east; 0.10 at 2.0 units east; 0.03 at 3.0 units east. Visible walls: 1.0 units south and 1.0 units west; 1.0 units south; 1.0 units south and 1.0 units east. Remembered food may be gone: 0.42 at 1.0 units north, 0 ticks ago; 0.22 at 1.0 units north and 1.0 units east, 0 ticks ago; 0.08 at 1.0 units north and 2.0 units east, 0 ticks ago; 3.29 at 3.0 units west, 0 ticks ago; 1.64 at 2.0 units west, 0 ticks ago; 1.19 at 1.0 units west, 0 ticks ago; 0.36 at 1.0 units east, 0 ticks ago; 0.10 at 2.0 units east, 0 ticks ago.",
+        "questions": {
+          "action": {
+            "type": "choice",
+            "instructions": "Choose one action to obtain food, survive and reproduce when affordable. Use only the observations. Eating requires food in your current cell.",
+            "criteria": {
+              "option_0": "Move 1.00 units north.",
+              "option_1": "Move 1.00 units east.",
+              "option_2": "Move 1.00 units west.",
+              "option_3": "Stay here, paying resting metabolism; this does not restore energy."
+            }
+          }
+        }
+      },
+      "raw_output": {
+        "model": "laya-rl-agent",
+        "answers": {
+          "action": {
+            "type": "choice",
+            "choice": "option_0",
+            "probabilities": {
+              "option_0": 0.3631,
+              "option_1": 0.2943,
+              "option_2": 0.1972,
+              "option_3": 0.1455
+            },
+            "confidence": 0.0418,
+            "answer_confidence": 0.3631,
+            "action": {
+              "act_probability": 1.0
+            }
+          }
+        },
+        "usage": {
+          "input_tokens": 547,
+          "output_tokens": 0
+        }
+      },
+      "metadata": {
+        "provider": "laya",
+        "sdk": "0.3.21",
+        "repo": "convaiinnovations/laya",
+        "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+        "requested_device": "mps",
+        "actual_device": "mps",
+        "cpu_fallback_count": 0,
+        "template": "ecology-local-en-v1",
+        "load_seconds": 3.473717500048224,
+        "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12",
+        "observation_precision": "food:0.01, distance:0.1; raw observation retained"
+      },
+      "input_sha256": "a874a05b92a241a6028554552eb1f797f2b6e119b5e0f698d558ecc5b4737b23",
+      "batch_ms": 270.21908399183303,
+      "batch_size": 1,
+      "amortized_ms": 270.21908399183303
+    }
+  ],
+  "updates": [
+    {
+      "agentId": "life-0",
+      "batch_id": "life-0:truncation:11",
+      "input_revision": 11,
+      "revision": 12,
+      "samples": 8,
+      "before": "720ee8f4d368eb86752ed9e2b0f4d45b09a8081cd27d301de8806d06415c86b1",
+      "after": "5b8e2b4174bd362185c2ff1c9895e4147ee202d1825834527819dc54f87052b9",
+      "milliseconds": 9.06000001123175
+    },
+    {
+      "agentId": "life-2",
+      "batch_id": "life-2:truncation:11",
+      "input_revision": 11,
+      "revision": 12,
+      "samples": 8,
+      "before": "dec8ad58f445728c4aabc6d5600871ba0720a02ea0b4fb55dcf40e339a311070",
+      "after": "c6c3992353ddfcb126795c3af604047fe711fd772ef379bb4d60cab92029ed0f",
+      "milliseconds": 5.3624159772880375
+    },
+    {
+      "agentId": "life-5",
+      "batch_id": "life-5:truncation:11",
+      "input_revision": 11,
+      "revision": 12,
+      "samples": 8,
+      "before": "0dc56abdbc318de1bed522a5e089234b1ffa3b5d18ec3a0dc38536cb768ba50d",
+      "after": "5ea95183c0b9ff63ca6d50f92ba35916f8545dc2b06aafd9c4149026d1d54564",
+      "milliseconds": 3.765165980439633
+    }
+  ]
+}

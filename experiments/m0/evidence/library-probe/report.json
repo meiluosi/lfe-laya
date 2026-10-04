@@ -1,0 +1,18 @@
+{
+  "purpose": "library integration on development seeds; no Laya",
+  "sb3": {
+    "steps": 512,
+    "seconds": 5.104771084035747,
+    "parameters": 4519,
+    "changed": true,
+    "reload_distribution_equal": true,
+    "mask_zero": true,
+    "bridge_calls": 1027,
+    "bridge_seconds": 2.185972409148235
+  },
+  "torchrl": {
+    "masked_a2c_loss_finite": true,
+    "gradient_available": true,
+    "probe_only": true
+  }
+}

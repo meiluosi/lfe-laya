@@ -1,0 +1,86 @@
+[
+  {
+    "id": "heldout-72-B",
+    "seed": 72,
+    "mode": "B",
+    "steps": 64,
+    "reward": 0.8860000000000028,
+    "eaten": 25.0,
+    "death": false,
+    "initial_parameters": "802eaedf91fb8480d5e0d62cbe064e8021794a51695d0cb757c2f63d419cccf7",
+    "update_log": [],
+    "final_parameters": "802eaedf91fb8480d5e0d62cbe064e8021794a51695d0cb757c2f63d419cccf7",
+    "mean_reward_by_stage": [
+      0.037750000000000006,
+      -0.0039166666666666265,
+      0.004625000000000053
+    ],
+    "stage_observed_steps": [
+      24,
+      24,
+      16
+    ],
+    "window_mean_rewards": {
+      "0": 0.05129999999999994,
+      "1": -0.02459999999999992,
+      "2": 0.023600000000000013,
+      "3": -0.029999999999999714
+    }
+  },
+  {
+    "id": "heldout-72-no-laya",
+    "seed": 72,
+    "mode": "no-laya",
+    "steps": 64,
+    "reward": 0.8860000000000028,
+    "eaten": 25.0,
+    "death": false,
+    "initial_parameters": "ecd25083c78ffc8d09313d00a7e645e93ab9e83c259f5c788904333cd3e4b67d",
+    "update_log": [],
+    "final_parameters": "ecd25083c78ffc8d09313d00a7e645e93ab9e83c259f5c788904333cd3e4b67d",
+    "mean_reward_by_stage": [
+      0.037750000000000006,
+      -0.0039166666666666265,
+      0.004625000000000053
+    ],
+    "stage_observed_steps": [
+      24,
+      24,
+      16
+    ],
+    "window_mean_rewards": {
+      "0": 0.05129999999999994,
+      "1": -0.02459999999999992,
+      "2": 0.023600000000000013,
+      "3": -0.029999999999999714
+    }
+  },
+  {
+    "id": "heldout-72-frozen-B",
+    "seed": 72,
+    "mode": "frozen-B",
+    "steps": 64,
+    "reward": -1.0960000000000039,
+    "eaten": 5.0,
+    "death": false,
+    "initial_parameters": "8e60ff53deebeeed5d026f891ab7b6fb5998bb08f8527583ca2e05cd67dce570",
+    "update_log": [],
+    "final_parameters": "8e60ff53deebeeed5d026f891ab7b6fb5998bb08f8527583ca2e05cd67dce570",
+    "mean_reward_by_stage": [
+      -0.025500000000000078,
+      -0.003916666666666749,
+      -0.02437500000000005
+    ],
+    "stage_observed_steps": [
+      24,
+      24,
+      16
+    ],
+    "window_mean_rewards": {
+      "0": -0.025500000000000078,
+      "1": -0.0005000000000000813,
+      "2": -0.02370000000000006,
+      "3": -0.025500000000000033
+    }
+  }
+]

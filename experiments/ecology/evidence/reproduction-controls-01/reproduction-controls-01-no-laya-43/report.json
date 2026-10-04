@@ -1,0 +1,335 @@
+{
+  "runId": "reproduction-controls-01-no-laya-43",
+  "mode": "no-laya",
+  "seed": 43,
+  "rounds": 120,
+  "decisions": 1266,
+  "model_calls": 0,
+  "updates": 44,
+  "living": 11,
+  "learning": {
+    "frozen": false,
+    "noLaya": true,
+    "config": {
+      "fusion": "features"
+    }
+  },
+  "tick": 1200,
+  "elapsed_seconds": 16.43946570897242,
+  "metrics": {
+    "births": 3,
+    "deaths": 0,
+    "eaten": 262.21835449664184,
+    "distance": 860.8286004963131,
+    "rejected": 1,
+    "lowEnergyTicks": 1879,
+    "agentTicks": 12687,
+    "populationCapHits": 0,
+    "lineageCapHits": 0
+  },
+  "ledger": {
+    "initial": 456,
+    "supplied": 1440,
+    "metabolism": 167.62133677674885,
+    "movement": 155.10053334602267,
+    "decay": 1060.5730096582636,
+    "reproduction": 6,
+    "deathLoss": 0,
+    "overflow": 0
+  },
+  "cohort": {
+    "life-0": {
+      "alive_ticks": 1200,
+      "reward": -2.4124888218263068,
+      "low_ticks": 110,
+      "eaten": 6.295111781738017,
+      "energy_sum": 2249.15395784759
+    },
+    "life-1": {
+      "alive_ticks": 1200,
+      "reward": -0.32385478982689564,
+      "low_ticks": 0,
+      "eaten": 26.46145210173299,
+      "energy_sum": 3415.910013557211
+    },
+    "life-2": {
+      "alive_ticks": 1200,
+      "reward": -1.390937987375873,
+      "low_ticks": 0,
+      "eaten": 17.050620126242986,
+      "energy_sum": 2483.8786612935282
+    },
+    "life-3": {
+      "alive_ticks": 1200,
+      "reward": -1.5792056051077208,
+      "low_ticks": 0,
+      "eaten": 15.527943948924449,
+      "energy_sum": 2731.65502836328
+    },
+    "life-4": {
+      "alive_ticks": 1200,
+      "reward": -0.8453810137877754,
+      "low_ticks": 0,
+      "eaten": 36.14618986212411,
+      "energy_sum": 2811.7099856000546
+    },
+    "life-5": {
+      "alive_ticks": 1200,
+      "reward": -0.8680576444792563,
+      "low_ticks": 0,
+      "eaten": 21.73942355520891,
+      "energy_sum": 2437.839230902889
+    },
+    "life-6": {
+      "alive_ticks": 1200,
+      "reward": -0.07454482421164227,
+      "low_ticks": 0,
+      "eaten": 42.95455175788524,
+      "energy_sum": 3503.229119706603
+    },
+    "life-7": {
+      "alive_ticks": 1200,
+      "reward": -2.6423595520377257,
+      "low_ticks": 310,
+      "eaten": 18.35640447962293,
+      "energy_sum": 1829.8756561030004
+    }
+  },
+  "phases": [
+    {
+      "tick": 400,
+      "living": 11,
+      "metrics": {
+        "births": 3,
+        "deaths": 0,
+        "eaten": 56.252593662207985,
+        "distance": 274.59939908135067,
+        "rejected": 0,
+        "lowEnergyTicks": 169,
+        "agentTicks": 3887,
+        "populationCapHits": 0,
+        "lineageCapHits": 0
+      },
+      "cohort": {
+        "life-0": {
+          "alive_ticks": 400,
+          "reward": -0.9779675413746021,
+          "low_ticks": 0,
+          "eaten": 0.0003245862546361111,
+          "energy_sum": 1069.3413038565086
+        },
+        "life-1": {
+          "alive_ticks": 400,
+          "reward": -0.529075495874337,
+          "low_ticks": 0,
+          "eaten": 4.849245041257282,
+          "energy_sum": 1138.3980299435618
+        },
+        "life-2": {
+          "alive_ticks": 400,
+          "reward": -1.0097533459561618,
+          "low_ticks": 0,
+          "eaten": 0.22246654043906763,
+          "energy_sum": 1068.5309602958196
+        },
+        "life-3": {
+          "alive_ticks": 400,
+          "reward": -0.7837383558302641,
+          "low_ticks": 0,
+          "eaten": 2.662616441697763,
+          "energy_sum": 1165.3201369504081
+        },
+        "life-4": {
+          "alive_ticks": 400,
+          "reward": -1.5108457143951317,
+          "low_ticks": 0,
+          "eaten": 9.031542856049297,
+          "energy_sum": 944.4033846963418
+        },
+        "life-5": {
+          "alive_ticks": 400,
+          "reward": -1.1219998429350329,
+          "low_ticks": 0,
+          "eaten": 1.570650383692408e-06,
+          "energy_sum": 1045.0400161279526
+        },
+        "life-6": {
+          "alive_ticks": 400,
+          "reward": -0.5132963119939191,
+          "low_ticks": 0,
+          "eaten": 19.007036880061175,
+          "energy_sum": 1190.1799934690825
+        },
+        "life-7": {
+          "alive_ticks": 400,
+          "reward": -1.696503522666002,
+          "low_ticks": 0,
+          "eaten": 7.5349647733402065,
+          "energy_sum": 954.3687415832261
+        }
+      }
+    },
+    {
+      "tick": 800,
+      "living": 11,
+      "metrics": {
+        "births": 3,
+        "deaths": 0,
+        "eaten": 157.7659676724128,
+        "distance": 573.3303076361572,
+        "rejected": 0,
+        "lowEnergyTicks": 934,
+        "agentTicks": 8287,
+        "populationCapHits": 0,
+        "lineageCapHits": 0
+      },
+      "cohort": {
+        "life-0": {
+          "alive_ticks": 800,
+          "reward": -1.6882001507249123,
+          "low_ticks": 0,
+          "eaten": 2.8579984927519804,
+          "energy_sum": 1775.8531512618158
+        },
+        "life-1": {
+          "alive_ticks": 800,
+          "reward": -0.2660971678983372,
+          "low_ticks": 0,
+          "eaten": 17.259028321017922,
+          "energy_sum": 2258.675216060576
+        },
+        "life-2": {
+          "alive_ticks": 800,
+          "reward": -1.24929820038279,
+          "low_ticks": 0,
+          "eaten": 7.787017996173439,
+          "energy_sum": 1830.4933024881766
+        },
+        "life-3": {
+          "alive_ticks": 800,
+          "reward": -1.038157301495945,
+          "low_ticks": 0,
+          "eaten": 10.438426985041609,
+          "energy_sum": 2013.6358731249347
+        },
+        "life-4": {
+          "alive_ticks": 800,
+          "reward": -0.5897846831846874,
+          "low_ticks": 0,
+          "eaten": 28.382153168154314,
+          "energy_sum": 1782.2040899251404
+        },
+        "life-5": {
+          "alive_ticks": 800,
+          "reward": -1.8279549357256424,
+          "low_ticks": 0,
+          "eaten": 3.080450642744624,
+          "energy_sum": 1680.4122199229641
+        },
+        "life-6": {
+          "alive_ticks": 800,
+          "reward": -0.1925061401448697,
+          "low_ticks": 0,
+          "eaten": 31.994938598552324,
+          "energy_sum": 2337.0047629312526
+        },
+        "life-7": {
+          "alive_ticks": 800,
+          "reward": -2.093154663439952,
+          "low_ticks": 0,
+          "eaten": 13.708453365600663,
+          "energy_sum": 1491.3278365187696
+        }
+      }
+    },
+    {
+      "tick": 1200,
+      "living": 11,
+      "metrics": {
+        "births": 3,
+        "deaths": 0,
+        "eaten": 262.21835449664184,
+        "distance": 860.8286004963131,
+        "rejected": 1,
+        "lowEnergyTicks": 1879,
+        "agentTicks": 12687,
+        "populationCapHits": 0,
+        "lineageCapHits": 0
+      },
+      "cohort": {
+        "life-0": {
+          "alive_ticks": 1200,
+          "reward": -2.4124888218263068,
+          "low_ticks": 110,
+          "eaten": 6.295111781738017,
+          "energy_sum": 2249.15395784759
+        },
+        "life-1": {
+          "alive_ticks": 1200,
+          "reward": -0.32385478982689564,
+          "low_ticks": 0,
+          "eaten": 26.46145210173299,
+          "energy_sum": 3415.910013557211
+        },
+        "life-2": {
+          "alive_ticks": 1200,
+          "reward": -1.390937987375873,
+          "low_ticks": 0,
+          "eaten": 17.050620126242986,
+          "energy_sum": 2483.8786612935282
+        },
+        "life-3": {
+          "alive_ticks": 1200,
+          "reward": -1.5792056051077208,
+          "low_ticks": 0,
+          "eaten": 15.527943948924449,
+          "energy_sum": 2731.65502836328
+        },
+        "life-4": {
+          "alive_ticks": 1200,
+          "reward": -0.8453810137877754,
+          "low_ticks": 0,
+          "eaten": 36.14618986212411,
+          "energy_sum": 2811.7099856000546
+        },
+        "life-5": {
+          "alive_ticks": 1200,
+          "reward": -0.8680576444792563,
+          "low_ticks": 0,
+          "eaten": 21.73942355520891,
+          "energy_sum": 2437.839230902889
+        },
+        "life-6": {
+          "alive_ticks": 1200,
+          "reward": -0.07454482421164227,
+          "low_ticks": 0,
+          "eaten": 42.95455175788524,
+          "energy_sum": 3503.229119706603
+        },
+        "life-7": {
+          "alive_ticks": 1200,
+          "reward": -2.6423595520377257,
+          "low_ticks": 310,
+          "eaten": 18.35640447962293,
+          "energy_sum": 1829.8756561030004
+        }
+      }
+    }
+  ],
+  "action_counts": {
+    "east": 221,
+    "south": 210,
+    "north": 201,
+    "west": 230,
+    "rest": 226,
+    "eat": 175,
+    "reproduce": 3
+  },
+  "survival_fraction": 1.0,
+  "cohort_mean_reward": -1.2671037798316496,
+  "checkpoint": {
+    "path": "experiments/ecology/evidence/reproduction-controls-01/reproduction-controls-01-no-laya-43/checkpoint.pt",
+    "bytes": 3854711,
+    "sha256": "49608e641936aab9b47d8fa06a6a4cf78c1f952b10fc1749d25c69b6b04feae1"
+  }
+}

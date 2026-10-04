@@ -1,0 +1,107 @@
+{
+  "scenes": 156,
+  "model": {
+    "provider": "laya",
+    "sdk": "0.3.21",
+    "repo": "convaiinnovations/laya",
+    "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+    "requested_device": "mps",
+    "actual_device": "mps",
+    "cpu_fallback_count": 0,
+    "template": "ecology-local-en-v1",
+    "load_seconds": 3.7718304169829935,
+    "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12",
+    "observation_precision": "food:0.01, distance:0.1; raw observation retained"
+  },
+  "variants": {
+    "V0 原始多选·固定顺序": {
+      "auc": 0.7856,
+      "sensibleMass": 0.495,
+      "uniformMass": 0.2947,
+      "argmaxSensible": 0.66,
+      "aucByDistance": {
+        "0": 0.8,
+        "1": 0.7891,
+        "2": 0.7752,
+        "3": 0.8984
+      }
+    },
+    "V0r 原始多选·反序": {
+      "auc": 0.5063,
+      "sensibleMass": 0.2253,
+      "uniformMass": 0.2947,
+      "argmaxSensible": 0.1133,
+      "aucByDistance": {
+        "0": 0.9778,
+        "1": 0.4802,
+        "2": 0.4694,
+        "3": 0.5955
+      }
+    },
+    "V1 原始多选·4 个循环顺序平均": {
+      "auc": 0.9956,
+      "sensibleMass": 0.4554,
+      "uniformMass": 0.2947,
+      "argmaxSensible": 1,
+      "aucByDistance": {
+        "0": 1.0,
+        "1": 1.0,
+        "2": 0.9934,
+        "3": 1.0
+      }
+    },
+    "V2 逐动作是非题": {
+      "auc": 0.7201,
+      "sensibleMass": 0.3026,
+      "uniformMass": 0.2947,
+      "argmaxSensible": 0.1467,
+      "aucByDistance": {
+        "0": 1.0,
+        "1": 0.7696,
+        "2": 0.6733,
+        "3": 0.686
+      }
+    },
+    "V3 方向多选题·固定顺序": {
+      "auc": 0.8784,
+      "sensibleMass": 0.7542,
+      "uniformMass": 0.2947,
+      "argmaxSensible": 0.8533,
+      "aucByDistance": {
+        "0": 0.5722,
+        "1": 0.8885,
+        "2": 0.8761,
+        "3": 0.9918
+      }
+    },
+    "V3r 方向多选题·反序": {
+      "auc": 0.747,
+      "sensibleMass": 0.5387,
+      "uniformMass": 0.2947,
+      "argmaxSensible": 0.58,
+      "aucByDistance": {
+        "0": 0.8,
+        "1": 0.75,
+        "2": 0.7247,
+        "3": 0.8212
+      }
+    },
+    "V3a 方向多选题·两个顺序平均": {
+      "auc": 0.9728,
+      "sensibleMass": 0.6624,
+      "uniformMass": 0.2947,
+      "argmaxSensible": 0.96,
+      "aucByDistance": {
+        "0": 0.6667,
+        "1": 0.9759,
+        "2": 0.9834,
+        "3": 0.9996
+      }
+    }
+  },
+  "noFood": {
+    "V3 方向多选题·固定顺序": 0.1385,
+    "V3r 方向多选题·反序": 0.5907,
+    "V3a 方向多选题·两个顺序平均": 0.3646
+  }
+}

@@ -1,0 +1,182 @@
+{
+  "purpose": "语义世界余量测试（开发/诊断）。预言机读取隐藏真值，仅度量上限。训练种子 30000+，测试词汇种子 40000+；不是留出实验。",
+  "note": "inversion=0.25 时 25% 的描述词与真实影响相反（常识线索失效）。",
+  "rows": [
+    {
+      "split": "train",
+      "inversion": 0,
+      "controller": "random",
+      "seeds": 12,
+      "fitness": 0.2383,
+      "fitnessSd": 0.0243,
+      "survival": 0.3405,
+      "living": 0,
+      "toxicBitesPerWorld": 106.3
+    },
+    {
+      "split": "train",
+      "inversion": 0,
+      "controller": "blind-rule",
+      "seeds": 12,
+      "fitness": 0.2691,
+      "fitnessSd": 0.0691,
+      "survival": 0.3844,
+      "living": 0,
+      "toxicBitesPerWorld": 364.2
+    },
+    {
+      "split": "train",
+      "inversion": 0,
+      "controller": "laya-rule",
+      "seeds": 12,
+      "fitness": 0.3596,
+      "fitnessSd": 0.0188,
+      "survival": 0.5137,
+      "living": 0,
+      "toxicBitesPerWorld": 0
+    },
+    {
+      "split": "train",
+      "inversion": 0,
+      "controller": "oracle",
+      "seeds": 12,
+      "fitness": 0.4778,
+      "fitnessSd": 0.1006,
+      "survival": 0.6695,
+      "living": 0.58,
+      "toxicBitesPerWorld": 0
+    },
+    {
+      "split": "train",
+      "inversion": 0.25,
+      "controller": "random",
+      "seeds": 12,
+      "fitness": 0.2235,
+      "fitnessSd": 0.0278,
+      "survival": 0.3192,
+      "living": 0,
+      "toxicBitesPerWorld": 108.8
+    },
+    {
+      "split": "train",
+      "inversion": 0.25,
+      "controller": "blind-rule",
+      "seeds": 12,
+      "fitness": 0.2243,
+      "fitnessSd": 0.0773,
+      "survival": 0.3205,
+      "living": 0,
+      "toxicBitesPerWorld": 340.1
+    },
+    {
+      "split": "train",
+      "inversion": 0.25,
+      "controller": "laya-rule",
+      "seeds": 12,
+      "fitness": 0.2514,
+      "fitnessSd": 0.0843,
+      "survival": 0.3591,
+      "living": 0,
+      "toxicBitesPerWorld": 82.7
+    },
+    {
+      "split": "train",
+      "inversion": 0.25,
+      "controller": "oracle",
+      "seeds": 12,
+      "fitness": 0.4196,
+      "fitnessSd": 0.1164,
+      "survival": 0.5879,
+      "living": 0.67,
+      "toxicBitesPerWorld": 0
+    },
+    {
+      "split": "test",
+      "inversion": 0,
+      "controller": "random",
+      "seeds": 12,
+      "fitness": 0.2344,
+      "fitnessSd": 0.0227,
+      "survival": 0.3349,
+      "living": 0,
+      "toxicBitesPerWorld": 97.2
+    },
+    {
+      "split": "test",
+      "inversion": 0,
+      "controller": "blind-rule",
+      "seeds": 12,
+      "fitness": 0.2547,
+      "fitnessSd": 0.1092,
+      "survival": 0.3599,
+      "living": 0.08,
+      "toxicBitesPerWorld": 369.8
+    },
+    {
+      "split": "test",
+      "inversion": 0,
+      "controller": "laya-rule",
+      "seeds": 12,
+      "fitness": 0.3523,
+      "fitnessSd": 0.0493,
+      "survival": 0.5033,
+      "living": 0,
+      "toxicBitesPerWorld": 0
+    },
+    {
+      "split": "test",
+      "inversion": 0,
+      "controller": "oracle",
+      "seeds": 12,
+      "fitness": 0.4579,
+      "fitnessSd": 0.1091,
+      "survival": 0.6358,
+      "living": 0.75,
+      "toxicBitesPerWorld": 0
+    },
+    {
+      "split": "test",
+      "inversion": 0.25,
+      "controller": "random",
+      "seeds": 12,
+      "fitness": 0.2317,
+      "fitnessSd": 0.027,
+      "survival": 0.3311,
+      "living": 0,
+      "toxicBitesPerWorld": 96.6
+    },
+    {
+      "split": "test",
+      "inversion": 0.25,
+      "controller": "blind-rule",
+      "seeds": 12,
+      "fitness": 0.2725,
+      "fitnessSd": 0.1547,
+      "survival": 0.3762,
+      "living": 0.5,
+      "toxicBitesPerWorld": 378.3
+    },
+    {
+      "split": "test",
+      "inversion": 0.25,
+      "controller": "laya-rule",
+      "seeds": 12,
+      "fitness": 0.2851,
+      "fitnessSd": 0.0983,
+      "survival": 0.4072,
+      "living": 0,
+      "toxicBitesPerWorld": 51.5
+    },
+    {
+      "split": "test",
+      "inversion": 0.25,
+      "controller": "oracle",
+      "seeds": 12,
+      "fitness": 0.4688,
+      "fitnessSd": 0.1525,
+      "survival": 0.6405,
+      "living": 0.92,
+      "toxicBitesPerWorld": 0
+    }
+  ]
+}

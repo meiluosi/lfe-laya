@@ -1,0 +1,22 @@
+✔ configuration rejects nonfinite, invalid bounds, unsafe budgets (2.316375ms)
+✔ barrier is atomic; duplicate, illegal, stale retries and restore cannot execute (17.384125ms)
+✔ food competition consumes only the available energy; ordering independent (3.384542ms)
+✔ movement is continuous, bounded and cannot cross obstacles (1.02625ms)
+✔ line of sight and local perception exclude hidden food, global identities and states (0.678666ms)
+✔ reproduction transfers energy once; child starts fresh and birth costs close ledger (1.793834ms)
+✔ simultaneous reproduction at capacity rejects once without creating energy (3.254417ms)
+✔ death returns only stored energy and does not act again; truncated differs from terminal (3.4685ms)
+✔ interventions are accounted, invalidate requests and reject occupied obstacles atomically (3.358083ms)
+✔ seeded actions replay the exact shared world; no renderer clock is used (1577.170208ms)
+✔ bad restore is atomic, snapshots and branch references are independent (10.991209ms)
+✔ bounded long-run fields, population, memory and lineage; at least one multi-generation ecology (4164.068541ms)
+✔ random control uses same candidates and leaves environmental RNG untouched until execution (2.063458ms)
+✔ frequent render snapshot reads do not change simulation RNG or outcomes (1644.490625ms)
+ℹ tests 14
+ℹ suites 0
+ℹ pass 14
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7643.326666

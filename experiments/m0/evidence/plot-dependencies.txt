@@ -1,0 +1,18 @@
+Resolved 11 packages in 4.28s
+Downloading fonttools (3.0MiB)
+Downloading pillow (4.6MiB)
+Downloading matplotlib (7.8MiB)
+ Downloaded fonttools
+ Downloaded pillow
+ Downloaded matplotlib
+Prepared 9 packages in 3.19s
+Installed 9 packages in 24ms
+ + contourpy==1.4.0
+ + cycler==0.12.1
+ + fonttools==4.66.0
+ + kiwisolver==1.5.1
+ + matplotlib==3.10.8
+ + pillow==12.3.0
+ + pyparsing==3.3.3
+ + python-dateutil==2.9.0.post0
+ + six==1.17.0

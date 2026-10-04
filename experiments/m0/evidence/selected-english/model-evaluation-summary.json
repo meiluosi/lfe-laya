@@ -1,0 +1,582 @@
+{
+  "model": {
+    "provider": "laya",
+    "sdk": "0.3.21",
+    "repo": "convaiinnovations/laya",
+    "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+    "requested_device": "mps",
+    "actual_device": "mps",
+    "cpu_fallback_count": 0,
+    "template": "local-foraging-en-v2",
+    "load_seconds": 18.282266166002955,
+    "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+  },
+  "contexts": [
+    {
+      "case": 0,
+      "split": "development",
+      "correct": true,
+      "chosen": "eat"
+    },
+    {
+      "case": 2,
+      "split": "development",
+      "correct": true,
+      "chosen": "eat"
+    },
+    {
+      "case": 4,
+      "split": "development",
+      "correct": true,
+      "chosen": "eat"
+    },
+    {
+      "case": 6,
+      "split": "development",
+      "correct": true,
+      "chosen": "east"
+    },
+    {
+      "case": 8,
+      "split": "development",
+      "correct": true,
+      "chosen": "east"
+    },
+    {
+      "case": 10,
+      "split": "development",
+      "correct": true,
+      "chosen": "east"
+    },
+    {
+      "case": 12,
+      "split": "development",
+      "correct": true,
+      "chosen": "south"
+    },
+    {
+      "case": 14,
+      "split": "development",
+      "correct": true,
+      "chosen": "south"
+    },
+    {
+      "case": 16,
+      "split": "development",
+      "correct": true,
+      "chosen": "south"
+    },
+    {
+      "case": 18,
+      "split": "development",
+      "correct": true,
+      "chosen": "west"
+    },
+    {
+      "case": 20,
+      "split": "development",
+      "correct": true,
+      "chosen": "west"
+    },
+    {
+      "case": 22,
+      "split": "development",
+      "correct": true,
+      "chosen": "west"
+    },
+    {
+      "case": 24,
+      "split": "development",
+      "correct": null,
+      "chosen": "east"
+    },
+    {
+      "case": 26,
+      "split": "development",
+      "correct": null,
+      "chosen": "east"
+    },
+    {
+      "case": 28,
+      "split": "development",
+      "correct": null,
+      "chosen": "east"
+    },
+    {
+      "case": 30,
+      "split": "development",
+      "correct": null,
+      "chosen": "east"
+    },
+    {
+      "case": 32,
+      "split": "development",
+      "correct": null,
+      "chosen": "east"
+    },
+    {
+      "case": 34,
+      "split": "development",
+      "correct": null,
+      "chosen": "east"
+    },
+    {
+      "case": 1,
+      "split": "heldout",
+      "correct": true,
+      "chosen": "eat"
+    },
+    {
+      "case": 3,
+      "split": "heldout",
+      "correct": true,
+      "chosen": "eat"
+    },
+    {
+      "case": 5,
+      "split": "heldout",
+      "correct": true,
+      "chosen": "eat"
+    },
+    {
+      "case": 7,
+      "split": "heldout",
+      "correct": true,
+      "chosen": "east"
+    },
+    {
+      "case": 9,
+      "split": "heldout",
+      "correct": true,
+      "chosen": "east"
+    },
+    {
+      "case": 11,
+      "split": "heldout",
+      "correct": true,
+      "chosen": "east"
+    },
+    {
+      "case": 13,
+      "split": "heldout",
+      "correct": true,
+      "chosen": "south"
+    },
+    {
+      "case": 15,
+      "split": "heldout",
+      "correct": true,
+      "chosen": "south"
+    },
+    {
+      "case": 17,
+      "split": "heldout",
+      "correct": true,
+      "chosen": "south"
+    },
+    {
+      "case": 19,
+      "split": "heldout",
+      "correct": true,
+      "chosen": "west"
+    },
+    {
+      "case": 21,
+      "split": "heldout",
+      "correct": true,
+      "chosen": "west"
+    },
+    {
+      "case": 23,
+      "split": "heldout",
+      "correct": true,
+      "chosen": "west"
+    },
+    {
+      "case": 25,
+      "split": "heldout",
+      "correct": null,
+      "chosen": "east"
+    },
+    {
+      "case": 27,
+      "split": "heldout",
+      "correct": null,
+      "chosen": "east"
+    },
+    {
+      "case": 29,
+      "split": "heldout",
+      "correct": null,
+      "chosen": "east"
+    },
+    {
+      "case": 31,
+      "split": "heldout",
+      "correct": null,
+      "chosen": "east"
+    },
+    {
+      "case": 33,
+      "split": "heldout",
+      "correct": null,
+      "chosen": "east"
+    },
+    {
+      "case": 35,
+      "split": "heldout",
+      "correct": null,
+      "chosen": "east"
+    }
+  ],
+  "batches": [
+    {
+      "batch": 1,
+      "repeat": 0,
+      "wall_ms": 1205.679083999712,
+      "decisions_per_second": 0.8294081014349245,
+      "status": "ok",
+      "metadata": {
+        "provider": "laya",
+        "sdk": "0.3.21",
+        "repo": "convaiinnovations/laya",
+        "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+        "requested_device": "mps",
+        "actual_device": "mps",
+        "cpu_fallback_count": 0,
+        "template": "local-foraging-en-v2",
+        "load_seconds": 18.282266166002955,
+        "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+      },
+      "sampled_peak_bytes": {
+        "rss": 200376320,
+        "mps_driver": 3275489280
+      }
+    },
+    {
+      "batch": 1,
+      "repeat": 1,
+      "wall_ms": 259.41962498473004,
+      "decisions_per_second": 3.8547584827434007,
+      "status": "ok",
+      "metadata": {
+        "provider": "laya",
+        "sdk": "0.3.21",
+        "repo": "convaiinnovations/laya",
+        "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+        "requested_device": "mps",
+        "actual_device": "mps",
+        "cpu_fallback_count": 0,
+        "template": "local-foraging-en-v2",
+        "load_seconds": 18.282266166002955,
+        "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+      },
+      "sampled_peak_bytes": {
+        "rss": 201162752,
+        "mps_driver": 3275489280
+      }
+    },
+    {
+      "batch": 1,
+      "repeat": 2,
+      "wall_ms": 232.58779098978266,
+      "decisions_per_second": 4.299451814493259,
+      "status": "ok",
+      "metadata": {
+        "provider": "laya",
+        "sdk": "0.3.21",
+        "repo": "convaiinnovations/laya",
+        "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+        "requested_device": "mps",
+        "actual_device": "mps",
+        "cpu_fallback_count": 0,
+        "template": "local-foraging-en-v2",
+        "load_seconds": 18.282266166002955,
+        "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+      },
+      "sampled_peak_bytes": {
+        "rss": 201228288,
+        "mps_driver": 3275489280
+      }
+    },
+    {
+      "batch": 8,
+      "repeat": 0,
+      "wall_ms": 1983.712707995437,
+      "decisions_per_second": 4.032842037940103,
+      "status": "ok",
+      "metadata": {
+        "provider": "laya",
+        "sdk": "0.3.21",
+        "repo": "convaiinnovations/laya",
+        "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+        "requested_device": "mps",
+        "actual_device": "mps",
+        "cpu_fallback_count": 0,
+        "template": "local-foraging-en-v2",
+        "load_seconds": 18.282266166002955,
+        "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+      },
+      "sampled_peak_bytes": {
+        "rss": 204406784,
+        "mps_driver": 3275489280
+      }
+    },
+    {
+      "batch": 8,
+      "repeat": 1,
+      "wall_ms": 1380.4614170221612,
+      "decisions_per_second": 5.7951637773818145,
+      "status": "ok",
+      "metadata": {
+        "provider": "laya",
+        "sdk": "0.3.21",
+        "repo": "convaiinnovations/laya",
+        "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+        "requested_device": "mps",
+        "actual_device": "mps",
+        "cpu_fallback_count": 0,
+        "template": "local-foraging-en-v2",
+        "load_seconds": 18.282266166002955,
+        "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+      },
+      "sampled_peak_bytes": {
+        "rss": 205733888,
+        "mps_driver": 3269214208
+      }
+    },
+    {
+      "batch": 8,
+      "repeat": 2,
+      "wall_ms": 1344.8653329978697,
+      "decisions_per_second": 5.948550984035717,
+      "status": "ok",
+      "metadata": {
+        "provider": "laya",
+        "sdk": "0.3.21",
+        "repo": "convaiinnovations/laya",
+        "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+        "requested_device": "mps",
+        "actual_device": "mps",
+        "cpu_fallback_count": 0,
+        "template": "local-foraging-en-v2",
+        "load_seconds": 18.282266166002955,
+        "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+      },
+      "sampled_peak_bytes": {
+        "rss": 205733888,
+        "mps_driver": 3269230592
+      }
+    },
+    {
+      "batch": 16,
+      "repeat": 0,
+      "wall_ms": 2695.0153340003453,
+      "decisions_per_second": 5.936886442961496,
+      "status": "ok",
+      "metadata": {
+        "provider": "laya",
+        "sdk": "0.3.21",
+        "repo": "convaiinnovations/laya",
+        "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+        "requested_device": "mps",
+        "actual_device": "mps",
+        "cpu_fallback_count": 0,
+        "template": "local-foraging-en-v2",
+        "load_seconds": 18.282266166002955,
+        "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+      },
+      "sampled_peak_bytes": {
+        "rss": 202276864,
+        "mps_driver": 3275522048
+      }
+    },
+    {
+      "batch": 16,
+      "repeat": 1,
+      "wall_ms": 2514.5869170082733,
+      "decisions_per_second": 6.362874113349791,
+      "status": "ok",
+      "metadata": {
+        "provider": "laya",
+        "sdk": "0.3.21",
+        "repo": "convaiinnovations/laya",
+        "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+        "requested_device": "mps",
+        "actual_device": "mps",
+        "cpu_fallback_count": 0,
+        "template": "local-foraging-en-v2",
+        "load_seconds": 18.282266166002955,
+        "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+      },
+      "sampled_peak_bytes": {
+        "rss": 197165056,
+        "mps_driver": 3275522048
+      }
+    },
+    {
+      "batch": 16,
+      "repeat": 2,
+      "wall_ms": 2419.0627499483526,
+      "decisions_per_second": 6.614131857613699,
+      "status": "ok",
+      "metadata": {
+        "provider": "laya",
+        "sdk": "0.3.21",
+        "repo": "convaiinnovations/laya",
+        "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+        "requested_device": "mps",
+        "actual_device": "mps",
+        "cpu_fallback_count": 0,
+        "template": "local-foraging-en-v2",
+        "load_seconds": 18.282266166002955,
+        "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+      },
+      "sampled_peak_bytes": {
+        "rss": 193740800,
+        "mps_driver": 3271327744
+      }
+    },
+    {
+      "batch": 32,
+      "repeat": 0,
+      "wall_ms": 4934.561625006609,
+      "decisions_per_second": 6.4848718957800315,
+      "status": "ok",
+      "metadata": {
+        "provider": "laya",
+        "sdk": "0.3.21",
+        "repo": "convaiinnovations/laya",
+        "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+        "requested_device": "mps",
+        "actual_device": "mps",
+        "cpu_fallback_count": 0,
+        "template": "local-foraging-en-v2",
+        "load_seconds": 18.282266166002955,
+        "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+      },
+      "sampled_peak_bytes": {
+        "rss": 188645376,
+        "mps_driver": 3283927040
+      }
+    },
+    {
+      "batch": 32,
+      "repeat": 1,
+      "wall_ms": 5470.086458954029,
+      "decisions_per_second": 5.849998942451621,
+      "status": "ok",
+      "metadata": {
+        "provider": "laya",
+        "sdk": "0.3.21",
+        "repo": "convaiinnovations/laya",
+        "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+        "requested_device": "mps",
+        "actual_device": "mps",
+        "cpu_fallback_count": 0,
+        "template": "local-foraging-en-v2",
+        "load_seconds": 18.282266166002955,
+        "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+      },
+      "sampled_peak_bytes": {
+        "rss": 104022016,
+        "mps_driver": 3283910656
+      }
+    },
+    {
+      "batch": 32,
+      "repeat": 2,
+      "wall_ms": 5212.320542021189,
+      "decisions_per_second": 6.139300095230006,
+      "status": "ok",
+      "metadata": {
+        "provider": "laya",
+        "sdk": "0.3.21",
+        "repo": "convaiinnovations/laya",
+        "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+        "requested_device": "mps",
+        "actual_device": "mps",
+        "cpu_fallback_count": 0,
+        "template": "local-foraging-en-v2",
+        "load_seconds": 18.282266166002955,
+        "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+      },
+      "sampled_peak_bytes": {
+        "rss": 78135296,
+        "mps_driver": 3277668352
+      }
+    },
+    {
+      "batch": 48,
+      "repeat": 0,
+      "wall_ms": 6857.446749985684,
+      "decisions_per_second": 6.999689789804085,
+      "status": "ok",
+      "metadata": {
+        "provider": "laya",
+        "sdk": "0.3.21",
+        "repo": "convaiinnovations/laya",
+        "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+        "requested_device": "mps",
+        "actual_device": "mps",
+        "cpu_fallback_count": 0,
+        "template": "local-foraging-en-v2",
+        "load_seconds": 18.282266166002955,
+        "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+      },
+      "sampled_peak_bytes": {
+        "rss": 77365248,
+        "mps_driver": 3277684736
+      }
+    },
+    {
+      "batch": 48,
+      "repeat": 1,
+      "wall_ms": 6558.479375031311,
+      "decisions_per_second": 7.318769680475032,
+      "status": "ok",
+      "metadata": {
+        "provider": "laya",
+        "sdk": "0.3.21",
+        "repo": "convaiinnovations/laya",
+        "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+        "requested_device": "mps",
+        "actual_device": "mps",
+        "cpu_fallback_count": 0,
+        "template": "local-foraging-en-v2",
+        "load_seconds": 18.282266166002955,
+        "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+      },
+      "sampled_peak_bytes": {
+        "rss": 74940416,
+        "mps_driver": 3265052672
+      }
+    },
+    {
+      "batch": 48,
+      "repeat": 2,
+      "wall_ms": 6924.31937501533,
+      "decisions_per_second": 6.932089263992641,
+      "status": "ok",
+      "metadata": {
+        "provider": "laya",
+        "sdk": "0.3.21",
+        "repo": "convaiinnovations/laya",
+        "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+        "requested_device": "mps",
+        "actual_device": "mps",
+        "cpu_fallback_count": 0,
+        "template": "local-foraging-en-v2",
+        "load_seconds": 18.282266166002955,
+        "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+      },
+      "sampled_peak_bytes": {
+        "rss": 71876608,
+        "mps_driver": 3265101824
+      }
+    }
+  ],
+  "process_peak_rss_bytes": 1767620608,
+  "development_accuracy": 1.0,
+  "heldout_accuracy": 1.0
+}

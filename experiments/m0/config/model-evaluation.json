@@ -1,0 +1,24 @@
+{
+  "version": "m0-model-eval-v1",
+  "checkpoint": "convaiinnovations/laya",
+  "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+  "device": "mps",
+  "batches": [
+    1,
+    8,
+    16,
+    32,
+    48
+  ],
+  "repetitions": 3,
+  "contexts": 36,
+  "split": "even case indices development; odd indices heldout; no tuning after heldout",
+  "context_gate": {
+    "legal": 1.0,
+    "finite_full_distribution": 1.0,
+    "clear_rule_accuracy": 0.75
+  },
+  "interpretation": "Rule accuracy below gate triggers input simplification on development only, or an explicit capability limitation. Strategy cases have no forced best label. Rounded raw probabilities are not calibrated survival probabilities.",
+  "template": "local-foraging-en-v2",
+  "selection": "multilingual numeric dev 0/12; multilingual natural dev 1/12; English natural dev 12/12; selected before heldout"
+}

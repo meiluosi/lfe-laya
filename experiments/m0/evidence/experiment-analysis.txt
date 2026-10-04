@@ -1,0 +1,163 @@
+{
+  "aggregates": {
+    "online": {
+      "rule": {
+        "n": 3,
+        "mean_reward": 1.5679999999999803,
+        "deaths": 0,
+        "mean_steps": 360,
+        "mean_eaten": 107.05999999999882,
+        "updates": 0
+      },
+      "fixed-current": {
+        "n": 3,
+        "mean_reward": -3.399999999999997,
+        "deaths": 3,
+        "mean_steps": 120.66666666666667,
+        "mean_eaten": 11.666666666666666,
+        "updates": 0
+      },
+      "fixed-memory": {
+        "n": 3,
+        "mean_reward": -3.399999999999997,
+        "deaths": 3,
+        "mean_steps": 132.33333333333334,
+        "mean_eaten": 15.0,
+        "updates": 0
+      },
+      "B": {
+        "n": 3,
+        "mean_reward": 1.5539999999999905,
+        "deaths": 0,
+        "mean_steps": 360,
+        "mean_eaten": 101.09999999999958,
+        "updates": 36
+      },
+      "no-laya": {
+        "n": 3,
+        "mean_reward": 1.5779999999999894,
+        "deaths": 0,
+        "mean_steps": 360,
+        "mean_eaten": 102.59999999999957,
+        "updates": 36
+      },
+      "frozen-B": {
+        "n": 3,
+        "mean_reward": 1.0920000000000003,
+        "deaths": 0,
+        "mean_steps": 360,
+        "mean_eaten": 99.59999999999964,
+        "updates": 0
+      }
+    },
+    "heldout": {
+      "B": {
+        "n": 3,
+        "mean_reward": 1.5499999999999856,
+        "deaths": 0,
+        "mean_steps": 360,
+        "mean_eaten": 97.33999999999924,
+        "updates": 0
+      },
+      "no-laya": {
+        "n": 3,
+        "mean_reward": -0.12266666666667699,
+        "deaths": 1,
+        "mean_steps": 275.6666666666667,
+        "mean_eaten": 67.21333333333277,
+        "updates": 0
+      },
+      "frozen-B": {
+        "n": 3,
+        "mean_reward": 0.8966666666666678,
+        "deaths": 0,
+        "mean_steps": 360,
+        "mean_eaten": 98.30666666666637,
+        "updates": 0
+      }
+    }
+  },
+  "gates": {
+    "learning_gain": {
+      "baseline": "frozen-B",
+      "pairs": [
+        {
+          "seed": 701,
+          "B": 1.557999999999985,
+          "baseline": 0.3080000000000044,
+          "difference": 1.2499999999999805
+        },
+        {
+          "seed": 702,
+          "B": 1.5279999999999818,
+          "baseline": 0.9759999999999981,
+          "difference": 0.5519999999999837
+        },
+        {
+          "seed": 703,
+          "B": 1.5639999999999898,
+          "baseline": 1.406000000000001,
+          "difference": 0.15799999999998882
+        }
+      ],
+      "mean_difference": 0.6533333333333177,
+      "positive_seeds": 3,
+      "raw_positive_seeds": 3,
+      "numeric_ties": 0,
+      "numeric_tolerance": 1e-09,
+      "pass": true
+    },
+    "laya_value": {
+      "baseline": "no-laya",
+      "pairs": [
+        {
+          "seed": 701,
+          "B": 1.557999999999985,
+          "baseline": 1.5579999999999847,
+          "difference": 2.220446049250313e-16
+        },
+        {
+          "seed": 702,
+          "B": 1.5279999999999818,
+          "baseline": 1.473999999999982,
+          "difference": 0.053999999999999826
+        },
+        {
+          "seed": 703,
+          "B": 1.5639999999999898,
+          "baseline": -3.3999999999999977,
+          "difference": 4.963999999999988
+        }
+      ],
+      "mean_difference": 1.6726666666666627,
+      "positive_seeds": 2,
+      "raw_positive_seeds": 3,
+      "numeric_ties": 1,
+      "numeric_tolerance": 1e-09,
+      "pass": true
+    }
+  },
+  "cost": {
+    "wall_seconds": 3033.389972957957,
+    "model_decisions_including_bootstrap": 5082,
+    "actual_transitions": 8066,
+    "model_amortized_seconds": 2841.5762781964067,
+    "training_updates": 72,
+    "update_median_ms": 36.60004149423912,
+    "update_max_ms": 343.728625040967,
+    "bridge_seconds": 42.667873449099716
+  },
+  "frozen_parameter_checks": 12,
+  "changed_recorded_sources": [
+    "services/m0/offline_probe.py",
+    "services/m0/download_model.py"
+  ],
+  "changed_experiment_runtime_sources": [],
+  "limits": [
+    "3 seeds only; exploratory signal, no statistical significance claim",
+    "heldout worlds paired; learned versus initial policy RNG follows own history and is not reset to identical evaluation draw state",
+    "dead suffix is unobserved; no zero fill, no resurrection",
+    "first20 window comparison is predefined recovery proxy; no time-to-recovery threshold was defined",
+    "B uses Laya probabilities as features, not fixed logit prior; conclusions apply to this fusion and short budget"
+  ]
+}

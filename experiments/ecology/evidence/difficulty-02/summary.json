@@ -1,0 +1,42 @@
+[
+  {
+    "scenario": "moderate-patches",
+    "mode": "rule",
+    "seeds": 5,
+    "meanLiving": 6.8,
+    "meanSurvival": 0.9675972222222222,
+    "meanLowEnergy": 0.040180494800408896,
+    "meanFood": 143.39199746111615,
+    "meanEnergy": 28.076880284462117
+  },
+  {
+    "scenario": "moderate-patches",
+    "mode": "random",
+    "seeds": 5,
+    "meanLiving": 1.4,
+    "meanSurvival": 0.6600416666666666,
+    "meanLowEnergy": 0.22839548892338843,
+    "meanFood": 190.1183510431271,
+    "meanEnergy": 2.094022073992752
+  },
+  {
+    "scenario": "scarce-longer-life",
+    "mode": "rule",
+    "seeds": 5,
+    "meanLiving": 3.6,
+    "meanSurvival": 0.8216041666666667,
+    "meanLowEnergy": 0.12105970880149186,
+    "meanFood": 76.72639950107984,
+    "meanEnergy": 12.981727054871794
+  },
+  {
+    "scenario": "scarce-longer-life",
+    "mode": "random",
+    "seeds": 5,
+    "meanLiving": 0,
+    "meanSurvival": 0.48753472222222216,
+    "meanLowEnergy": 0.28973214526982843,
+    "meanFood": 97.38865361391181,
+    "meanEnergy": 0
+  }
+]

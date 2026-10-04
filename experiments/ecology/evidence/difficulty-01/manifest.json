@@ -1,0 +1,55 @@
+{
+  "status": "development-only",
+  "base": {
+    "width": 16,
+    "height": 12,
+    "initialAgents": 8,
+    "reproduction": false,
+    "mutation": false,
+    "maxAge": 100000,
+    "horizon": 2400,
+    "phaseTicks": 800,
+    "initialEnergy": 20
+  },
+  "scenarios": [
+    {
+      "name": "abundant-reference",
+      "initialFood": 160,
+      "supplyAmount": 8,
+      "foodDecay": 0.001,
+      "diffusion": 0.015
+    },
+    {
+      "name": "scarce-diffuse",
+      "initialFood": 80,
+      "supplyAmount": 4,
+      "foodDecay": 0.004,
+      "diffusion": 0.015
+    },
+    {
+      "name": "scarce-patches",
+      "initialFood": 80,
+      "supplyAmount": 4,
+      "foodDecay": 0.004,
+      "diffusion": 0.002
+    }
+  ],
+  "seeds": [
+    211,
+    223,
+    227,
+    229,
+    233
+  ],
+  "modes": [
+    "rule",
+    "random"
+  ],
+  "metrics": "All initial agents; death retained. Low energy <25% capacity. A/B/A truth only in evaluator.",
+  "source": {
+    "packages/sim/ecology.ts": "43d7661c384fbfec1126c3b795197495e8ee3436e1336d484d1f8c0813de5c00",
+    "packages/sim/controllers.ts": "8868d20903189a421a5830526f82e226905108b6bd79b210ac6e5e3f2d866561",
+    "packages/protocol/ecology.ts": "17afca8f0bb02e6ecec25e096535ce302a9ac967fc372934ed6f43230e2a4d93",
+    "experiments/ecology/difficulty.mjs": "4c8390c25f6159c88dbb2106585d91b00d91dc9e9256387eb2d1c71f77e4109a"
+  }
+}

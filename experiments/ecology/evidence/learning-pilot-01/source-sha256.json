@@ -1,0 +1,17 @@
+{
+  "services/ecology/checkpoint.py": "bc77ea7472266a463cdec55b451e25a4267394c1aad4d50929c4abcbfbea2a59",
+  "services/ecology/provider.py": "32fe18ea896636057c1e78ca9794702233abed3829414595701f7a434e9ede5d",
+  "services/ecology/bridge.py": "3b23d05c45de1845cfcd01fa3d4beb86910645d962bdd4285d6eded6ffe4ce8b",
+  "services/ecology/serve.py": "8d10503ff8a8d4375d4bf8c920b8a00ed243e536b60f41931c01b693e4bb9017",
+  "services/ecology/runtime.py": "f3709660d293bea61e1fc4b2f2805aea8aff81abcfe21608cb94c13a195ee566",
+  "services/ecology/experiment.py": "f37ac6ba2c3d68cd67ff8577878032cdf440a400d2f71cf1efffc2cbc91fda92",
+  "services/ecology/learning.py": "b52885ed75a3517eef72ad06f9169e1cc843a6c4b3001225bf1bb522afc6c2d3",
+  "services/ecology/smoke.py": "e0a23046ceed6a4d30fa1df885ad9f06b1ac513d070c533c4b4fcec0e0600886",
+  "packages/sim/ecology.ts": "43d7661c384fbfec1126c3b795197495e8ee3436e1336d484d1f8c0813de5c00",
+  "packages/sim/session.ts": "de8f9bd9729d4cfa5fe2cbec01e7f8ba80247694d0e117083eff2bd6d2302bd7",
+  "packages/sim/bridge.ts": "e2ab3cb3052df3306a7ea9344100f53966f285f8c80b96bb24e886a7f80a894e",
+  "packages/sim/ecology-bridge.ts": "6bb21a800b0a17ed26a3e862073198d80ff30a2c14a5a46e35587aadd1424790",
+  "packages/sim/controllers.ts": "af7f478d7ef283c038575ba297d60f75dbfbac4bc7291e03931219907ee44140",
+  "packages/sim/micro-world.ts": "db50f6c123a78a697a911f9f00be48eabc0eeb1e8a6b8d164fd3f0ecd2f83b57",
+  "packages/protocol/ecology.ts": "17afca8f0bb02e6ecec25e096535ce302a9ac967fc372934ed6f43230e2a4d93"
+}

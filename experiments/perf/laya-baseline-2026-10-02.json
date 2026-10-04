@@ -1,0 +1,106 @@
+{
+  "model": {
+    "provider": "laya",
+    "sdk": "0.3.21",
+    "repo": "convaiinnovations/laya",
+    "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+    "requested_device": "mps",
+    "actual_device": "mps",
+    "cpu_fallback_count": 0,
+    "template": "ecology-local-en-v1",
+    "load_seconds": 4.2355755000025965,
+    "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12",
+    "observation_precision": "food:0.01, distance:0.1; raw observation retained"
+  },
+  "source": "experiments/ecology/evidence/real-smoke-01/decisions.jsonl",
+  "rounds": [
+    {
+      "round": 0,
+      "agents": 8,
+      "encode_ms": 0.35437499172985554,
+      "tokenize_x2_ms": 6.930165982339531,
+      "predict_total_ms": 1699.6856869955081,
+      "model_batch_ms": 1296.888874960132,
+      "max_prob_diff_vs_recorded": 0.0,
+      "same_actions": true
+    },
+    {
+      "round": 1,
+      "agents": 8,
+      "encode_ms": 0.6400829879567027,
+      "tokenize_x2_ms": 12.203666032291949,
+      "predict_total_ms": 2446.2537085055374,
+      "model_batch_ms": 1390.5628330539912,
+      "max_prob_diff_vs_recorded": 0.0,
+      "same_actions": true
+    },
+    {
+      "round": 2,
+      "agents": 8,
+      "encode_ms": 0.7619999814778566,
+      "tokenize_x2_ms": 16.09675004146993,
+      "predict_total_ms": 2575.0234380248003,
+      "model_batch_ms": 1399.5639170170762,
+      "max_prob_diff_vs_recorded": 0.0,
+      "same_actions": true
+    },
+    {
+      "round": 3,
+      "agents": 8,
+      "encode_ms": 1.641875016503036,
+      "tokenize_x2_ms": 20.218207966536283,
+      "predict_total_ms": 2633.0972500145435,
+      "model_batch_ms": 905.7585830450989,
+      "max_prob_diff_vs_recorded": 0.0,
+      "same_actions": true
+    },
+    {
+      "round": 4,
+      "agents": 8,
+      "encode_ms": 0.7508330163545907,
+      "tokenize_x2_ms": 16.103750036563724,
+      "predict_total_ms": 3277.483520505484,
+      "model_batch_ms": 1007.5240830192342,
+      "max_prob_diff_vs_recorded": 0.0,
+      "same_actions": true
+    },
+    {
+      "round": 5,
+      "agents": 8,
+      "encode_ms": 0.7753749960102141,
+      "tokenize_x2_ms": 14.36779199866578,
+      "predict_total_ms": 2740.476062463131,
+      "model_batch_ms": 1268.654791987501,
+      "max_prob_diff_vs_recorded": 0.0,
+      "same_actions": true
+    },
+    {
+      "round": 6,
+      "agents": 8,
+      "encode_ms": 0.7128749857656658,
+      "tokenize_x2_ms": 13.534415978938341,
+      "predict_total_ms": 3387.995542027056,
+      "model_batch_ms": 1659.3770000035875,
+      "max_prob_diff_vs_recorded": 0.0,
+      "same_actions": true
+    },
+    {
+      "round": 7,
+      "agents": 8,
+      "encode_ms": 0.7038339972496033,
+      "tokenize_x2_ms": 14.203958038706332,
+      "predict_total_ms": 2709.116832993459,
+      "model_batch_ms": 1312.706458964385,
+      "max_prob_diff_vs_recorded": 0.0,
+      "same_actions": true
+    }
+  ],
+  "summary": {
+    "encode_ms": 0.7318540010601282,
+    "tokenize_x2_ms": 14.285875018686056,
+    "predict_total_ms": 2671.1070415040012,
+    "model_batch_ms": 1304.7976669622585,
+    "max_prob_diff_vs_recorded": 0.0,
+    "all_same_actions": true
+  }
+}

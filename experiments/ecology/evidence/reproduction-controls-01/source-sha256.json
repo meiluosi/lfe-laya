@@ -1,0 +1,23 @@
+{
+  "services/ecology/grouped_experiment.py": "144ed1949c68d773f656d5c37d505a394d3378326d25f73dab6dbc9fd7c77175",
+  "services/ecology/checkpoint.py": "bc77ea7472266a463cdec55b451e25a4267394c1aad4d50929c4abcbfbea2a59",
+  "services/ecology/provider.py": "f0382d09b47ae9751e35054fb0a25f68d010129252a82877435e754dc10c7b29",
+  "services/ecology/bridge.py": "3b23d05c45de1845cfcd01fa3d4beb86910645d962bdd4285d6eded6ffe4ce8b",
+  "services/ecology/serve.py": "19f247fcbef12e72532ff2993c318d96349ff2570e200084a449c504a1fcee88",
+  "services/ecology/verify_recording.py": "648a98b4ec510b0e23865cec35a836cd72cb5d0202d01af433bac36413d6a1a1",
+  "services/ecology/runtime.py": "32817e3fc84ce84281574e6129fff9d4f7f18e22acd76e4e859c850a6e7880d7",
+  "services/ecology/experiment.py": "08b7eaeb96645f747eeb15c270713a6e84c999d79a56e9ee54c22fe9f2ae73ed",
+  "services/ecology/pipeline.py": "b5db4c4dcd78e6f527190946abd5067bd3dc6ed08cd6d44771285379f3b72481",
+  "services/ecology/learning.py": "b321f5d63beebdd9c73ec0b558b857bcec735b087fa3a526b1c0ddbf2d8a3ade",
+  "services/ecology/model_diagnostics.py": "23403e17e8d880a0f153457b9775853952614b5349cb7509412da023594f1400",
+  "services/ecology/analyze.py": "254b0714677d788d33e256df980ad276dbdc649b7d1e8c89811ca58003ad9f68",
+  "services/ecology/smoke.py": "e0a23046ceed6a4d30fa1df885ad9f06b1ac513d070c533c4b4fcec0e0600886",
+  "packages/sim/ecology.ts": "dbbc83a620d08084e63360830d246f5c725b6495c309f4a01ba637048b76d4f5",
+  "packages/sim/session.ts": "35313ad6b21d3da96d8d07c9e39a947f11cde90e2f42fa801d903e624b25c27e",
+  "packages/sim/bridge.ts": "e2ab3cb3052df3306a7ea9344100f53966f285f8c80b96bb24e886a7f80a894e",
+  "packages/sim/ecology-bridge.ts": "6bb21a800b0a17ed26a3e862073198d80ff30a2c14a5a46e35587aadd1424790",
+  "packages/sim/learning-port.ts": "4578103a6b8b43d76910ec798ee3ba3709394a1d2dde04d139fb2ca1c421ca2d",
+  "packages/sim/controllers.ts": "af7f478d7ef283c038575ba297d60f75dbfbac4bc7291e03931219907ee44140",
+  "packages/sim/micro-world.ts": "db50f6c123a78a697a911f9f00be48eabc0eeb1e8a6b8d164fd3f0ecd2f83b57",
+  "packages/protocol/ecology.ts": "17afca8f0bb02e6ecec25e096535ce302a9ac967fc372934ed6f43230e2a4d93"
+}

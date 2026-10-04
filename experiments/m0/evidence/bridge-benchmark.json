@@ -1,0 +1,42 @@
+[
+  {
+    "worlds": 1,
+    "transitions": 32,
+    "seconds": 0.062148750002961606,
+    "bridge_calls": 64,
+    "bridge_seconds": 0.060927923186682165,
+    "purpose": "TS/Python transport+world update only; no Laya or learning"
+  },
+  {
+    "worlds": 8,
+    "transitions": 256,
+    "seconds": 0.3180627500405535,
+    "bridge_calls": 512,
+    "bridge_seconds": 0.3094748390140012,
+    "purpose": "TS/Python transport+world update only; no Laya or learning"
+  },
+  {
+    "worlds": 16,
+    "transitions": 512,
+    "seconds": 0.6851694170036353,
+    "bridge_calls": 1024,
+    "bridge_seconds": 0.6651375198271126,
+    "purpose": "TS/Python transport+world update only; no Laya or learning"
+  },
+  {
+    "worlds": 32,
+    "transitions": 1024,
+    "seconds": 1.3044336250168271,
+    "bridge_calls": 2048,
+    "bridge_seconds": 1.2599186419975013,
+    "purpose": "TS/Python transport+world update only; no Laya or learning"
+  },
+  {
+    "worlds": 48,
+    "transitions": 1536,
+    "seconds": 5.167360666033346,
+    "bridge_calls": 3072,
+    "bridge_seconds": 5.0466471867403015,
+    "purpose": "TS/Python transport+world update only; no Laya or learning"
+  }
+]

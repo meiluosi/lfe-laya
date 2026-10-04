@@ -1,0 +1,33 @@
+
+> lfe-laya-prototype@0.1.0 build
+> tsc -b && vite build
+
+vite v8.3.1 building client environment for production...
+transforming...
+✓ 1317 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/lab.html                                       0.91 kB │ gzip:   0.46 kB
+dist/index.html                                     1.11 kB │ gzip:   0.56 kB
+dist/assets/world.worker-c_L1_b55.js               44.70 kB
+dist/assets/lab-BW56gauo.css                        9.49 kB │ gzip:   2.67 kB
+dist/assets/prototype-BI7Otdx1.css                 27.68 kB │ gzip:   7.20 kB
+dist/assets/webworkerAll-DJOEf6pu.js                0.05 kB │ gzip:   0.06 kB
+dist/assets/getTextureBatchBindGroup-CshWzt_L.js    0.34 kB │ gzip:   0.26 kB
+dist/assets/canvasUtils-CPZkIiCq.js                 6.05 kB │ gzip:   2.05 kB
+dist/assets/BufferResource-CdoAv8WG.js             11.02 kB │ gzip:   2.82 kB
+dist/assets/init-C55b6pBC.js                       15.72 kB │ gzip:   4.94 kB
+dist/assets/prototype-B_EtDsNX.js                  35.81 kB │ gzip:  11.80 kB
+dist/assets/browserAll-BqKxjT8d.js                 42.64 kB │ gzip:  11.19 kB
+dist/assets/RenderTargetSystem-BmU2A7oO.js         78.08 kB │ gzip:  22.10 kB
+dist/assets/CanvasPool-Dveymr5p.js                110.33 kB │ gzip:  33.58 kB
+dist/assets/lab-Ehk2mtRU.js                       128.58 kB │ gzip:  44.09 kB
+dist/assets/lib-DsFKCL8s.js                       429.01 kB │ gzip: 129.22 kB
+dist/assets/Chart-BWcxwU2I.js                     507.40 kB │ gzip: 169.63 kB
+
+✓ built in 307ms
+[plugin builtin:vite-reporter] 
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rolldownOptions.output.codeSplitting to improve chunking: https://rolldown.rs/reference/OutputOptions.codeSplitting
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.

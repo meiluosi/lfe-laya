@@ -1,0 +1,170 @@
+{
+ "note": "这些文件超过 5 MB，未纳入 git。记录大小与 SHA-256，可在持有原始数据的机器上用 scripts/prepare_publish.py 重新生成并比对。",
+ "files": [
+  {
+   "path": "experiments/ecology/evidence/browser/development-learning-313.json",
+   "bytes": 25165572,
+   "sha256": "1b35ba23b83cf57b42051d792b61d57a6ac0858d6701b3cc5ee2d46c0290e1f8"
+  },
+  {
+   "path": "experiments/ecology/evidence/browser/learning-terminal-recording.json",
+   "bytes": 8838905,
+   "sha256": "34b2b3676c0af3aa58dea3f17291095718fa3c5a4a105aaf39d331104ac77a60"
+  },
+  {
+   "path": "experiments/ecology/evidence/development-features-01/development-features-01-frozen-313/rounds.jsonl",
+   "bytes": 52180178,
+   "sha256": "9b6f69d6b2539137c5d2f73179da67a029523367ba5d0c8c124016c7f0fa91e7"
+  },
+  {
+   "path": "experiments/ecology/evidence/development-features-01/development-features-01-frozen-317/rounds.jsonl",
+   "bytes": 49794658,
+   "sha256": "5dc0ea9f8e75b351a1347f9922e6bfa54a1a9d635a87651690c1de2bb20c1c07"
+  },
+  {
+   "path": "experiments/ecology/evidence/development-features-01/development-features-01-frozen-331/rounds.jsonl",
+   "bytes": 47113995,
+   "sha256": "a9838c6875553a558ec73f6aaac490908ac2183da747cf2f6ab4407ee03c6c5c"
+  },
+  {
+   "path": "experiments/ecology/evidence/development-features-01/development-features-01-laya-313/rounds.jsonl",
+   "bytes": 9898226,
+   "sha256": "0a405fb40e673572e1f7ad457463faf539bf5ce7f6eb8698728ae366c1ec6a33"
+  },
+  {
+   "path": "experiments/ecology/evidence/development-features-01/development-features-01-laya-317/rounds.jsonl",
+   "bytes": 11579747,
+   "sha256": "23287d159810a8ee7df91a24bef9b2144a8714d8cc3a45f8ace636e9bdd38fd9"
+  },
+  {
+   "path": "experiments/ecology/evidence/development-features-01/development-features-01-laya-331/rounds.jsonl",
+   "bytes": 12956997,
+   "sha256": "a396fb9e3b3112b49ae0c8911546c2e8941b472f894c3e70e030bb1387078171"
+  },
+  {
+   "path": "experiments/ecology/evidence/development-features-01/development-features-01-learning-313/rounds.jsonl",
+   "bytes": 57174287,
+   "sha256": "dda95b147cd598a1546d3c569cef070a8f0a172b52b91c159e4b004d0ef3d31d"
+  },
+  {
+   "path": "experiments/ecology/evidence/development-features-01/development-features-01-learning-317/rounds.jsonl",
+   "bytes": 54968676,
+   "sha256": "68a9e5815e4353711f68cebe2380f3c27ecc742219ddc23f2fc0e11ae4565c91"
+  },
+  {
+   "path": "experiments/ecology/evidence/development-features-01/development-features-01-learning-331/rounds.jsonl",
+   "bytes": 54157640,
+   "sha256": "474955d763bb02fc393e7f5283345dc0f16c0414cad4c1887f7d9580df0af550"
+  },
+  {
+   "path": "experiments/ecology/evidence/development-features-01/development-features-01-memory-313/rounds.jsonl",
+   "bytes": 11879815,
+   "sha256": "bfe4db164455716e2856ad83cbf0624f9f82a3e828ed4d631f7cab0a942f0408"
+  },
+  {
+   "path": "experiments/ecology/evidence/development-features-01/development-features-01-memory-317/rounds.jsonl",
+   "bytes": 22778236,
+   "sha256": "8fc0ae937d986ec238ba01b4baa5a6d45c31d90f67cc808467e47bcfd003c0ab"
+  },
+  {
+   "path": "experiments/ecology/evidence/development-features-01/development-features-01-memory-331/rounds.jsonl",
+   "bytes": 12674174,
+   "sha256": "b08030f7594f17726c0208c52b06c085533d5b5015ad3418b01084427fdac7e9"
+  },
+  {
+   "path": "experiments/ecology/evidence/development-features-01/development-features-01-no-laya-313/rounds.jsonl",
+   "bytes": 47004099,
+   "sha256": "0231ea3c6719fef276fcc51109b1b1b1b481b3a23d0b4b29d54def264e94602c"
+  },
+  {
+   "path": "experiments/ecology/evidence/development-features-01/development-features-01-no-laya-317/rounds.jsonl",
+   "bytes": 46760111,
+   "sha256": "c745ea31fc2b55b60bc162559a78fbb6e6cdc86e65086f66577b5cbe09900284"
+  },
+  {
+   "path": "experiments/ecology/evidence/development-features-01/development-features-01-no-laya-331/rounds.jsonl",
+   "bytes": 48652928,
+   "sha256": "19a7942f3abd58ba131f78b921ffd473274f33ed93b929303c96db2df760e388"
+  },
+  {
+   "path": "experiments/ecology/evidence/development-features-01/development-features-01-rule-313/rounds.jsonl",
+   "bytes": 47072261,
+   "sha256": "cfdcad599602b650ed63cea6d4629fcb1bee72bc212bbb857c5420a4a77167cd"
+  },
+  {
+   "path": "experiments/ecology/evidence/development-features-01/development-features-01-rule-317/rounds.jsonl",
+   "bytes": 49201648,
+   "sha256": "a65fa19528429c09f16937a9692e8a22226364cc5e637b7a0bedca3703e5ac20"
+  },
+  {
+   "path": "experiments/ecology/evidence/development-features-01/development-features-01-rule-331/rounds.jsonl",
+   "bytes": 49794305,
+   "sha256": "1b694f7c16288c2a47759b2a6c28a4ffb3bc551b0aa50f793b333ef0f65d5a0d"
+  },
+  {
+   "path": "experiments/ecology/evidence/development-residual-01/development-residual-01-313/rounds.jsonl",
+   "bytes": 32264753,
+   "sha256": "100629499bfe52fbe8d128c549dbe7e7f310955fcc4ee71af4d11f8630d82fb3"
+  },
+  {
+   "path": "experiments/ecology/evidence/development-residual-01/development-residual-01-317/rounds.jsonl",
+   "bytes": 40954091,
+   "sha256": "7f8a8b728a7fadb917f42aa99e3e080108013a52139b1840f53a7e856ab77587"
+  },
+  {
+   "path": "experiments/ecology/evidence/development-residual-01/development-residual-01-331/rounds.jsonl",
+   "bytes": 30822873,
+   "sha256": "2e8f5594bd8a8c34f82effc3a6b2b25cd57d739bfa42196ad0283f6630d740c6"
+  },
+  {
+   "path": "experiments/ecology/evidence/learning-pilot-01/learning-pilot-01-learning-313/rounds.jsonl",
+   "bytes": 5753325,
+   "sha256": "6c7358fe9bd30e8a4bfbd1c13b7088ba5f691ec99cc251ec5d9d6d8df4ebef1d"
+  },
+  {
+   "path": "experiments/ecology/evidence/reproduction-controls-01/reproduction-controls-01-no-laya-43/rounds.jsonl",
+   "bytes": 22374611,
+   "sha256": "b6e593d877d7450e45680d66a35966977bb6f42ed30083a674a3c31c73e6c8ee"
+  },
+  {
+   "path": "experiments/ecology/evidence/reproduction-controls-01/reproduction-controls-01-no-laya-47/rounds.jsonl",
+   "bytes": 21435535,
+   "sha256": "5beca8ed4073f833cdd42a7c91524ebcb77597f283ba13928b619567f4b20a2c"
+  },
+  {
+   "path": "experiments/ecology/evidence/reproduction-controls-01/reproduction-controls-01-no-laya-53/rounds.jsonl",
+   "bytes": 22858550,
+   "sha256": "247035b35fcbed5b966915dbcb9aa4a2a256270b3ff71b8978956d8856c6cbc5"
+  },
+  {
+   "path": "experiments/ecology/evidence/reproduction-controls-01/reproduction-controls-01-rule-43/rounds.jsonl",
+   "bytes": 30640948,
+   "sha256": "79b97cfc73fc12710fdb559d2ed7c285c67e7138c3f84c2b2d9b1b06a0495712"
+  },
+  {
+   "path": "experiments/ecology/evidence/reproduction-controls-01/reproduction-controls-01-rule-47/rounds.jsonl",
+   "bytes": 29644867,
+   "sha256": "2ffc8e7ce052adf8046e1fab0fc78e83fdf7095f2aade1d2bd5791f06a0f0a6a"
+  },
+  {
+   "path": "experiments/ecology/evidence/reproduction-controls-01/reproduction-controls-01-rule-53/rounds.jsonl",
+   "bytes": 30967100,
+   "sha256": "bcd2219dc2d4ce79d67f868bf723861067be8d52b7ebd0755a69dd49ae83d4f2"
+  },
+  {
+   "path": "experiments/m0/evidence/experiment-01/heldout-decisions.jsonl",
+   "bytes": 18383993,
+   "sha256": "a2dd985aadcf2baf1f466d9ac76495e0232eb4cdd994225b7fe58870b072023d"
+  },
+  {
+   "path": "experiments/m0/evidence/experiment-01/online-decisions.jsonl",
+   "bytes": 27591723,
+   "sha256": "c2bb08c39b9182492beddb3a161b309693fec31a72a8fe6fca36fb4f3b074598"
+  },
+  {
+   "path": "public/m0/latest.json",
+   "bytes": 21333503,
+   "sha256": "a7db9145a7fee38fabea10e60eb3b9f8b557f05ad700f917fe5a0d3c6bc05d85"
+  }
+ ]
+}

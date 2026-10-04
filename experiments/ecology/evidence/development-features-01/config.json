@@ -1,0 +1,36 @@
+{
+  "name": "development-features-01",
+  "purpose": "Development comparison. No heldout environments; no claim of learning success.",
+  "seeds": [
+    313,
+    317,
+    331
+  ],
+  "modes": [
+    "learning",
+    "no-laya",
+    "frozen",
+    "rule",
+    "laya",
+    "memory"
+  ],
+  "world": {
+    "width": 16,
+    "height": 12,
+    "initialAgents": 8,
+    "reproduction": false,
+    "mutation": false,
+    "maxAge": 100000,
+    "horizon": 3600,
+    "phaseTicks": 1200,
+    "initialEnergy": 32,
+    "metabolism": 0.012,
+    "initialFood": 100,
+    "supplyAmount": 6,
+    "foodDecay": 0.003,
+    "diffusion": 0.002
+  },
+  "learning": {
+    "fusion": "features"
+  }
+}

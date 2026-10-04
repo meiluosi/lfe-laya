@@ -1,0 +1,21 @@
+✔ partial decisions never advance; retry targets only failed IDs and applies once (11.044458ms)
+✔ pause retains successful replies; explicit single step later commits without another inference (3.725416ms)
+✔ reset during inference rejects late old-world result; current world progresses independently (4.817375ms)
+✔ intervention invalidates full batch; stale inference cannot act on new resources (3.66725ms)
+✔ invalid intervention preserves in-flight round; invalid or duplicated response cannot partially commit (1.415459ms)
+✔ stale retry response and nonfinite output are rejected; explicit fallback records true provider (1.793541ms)
+✔ capacity stops before next execution and exports complete recorded prefix (9.395625ms)
+✔ mixed mode, environment interventions, and strict replay validate every execution (45.66275ms)
+✔ branches share the starting world and RNG by value, with exactly one declared change (15.69ms)
+✔ learning feedback timeout retries only commit; mutations and incomplete export are blocked (4.625791ms)
+✔ learning pause retains staged proposal; cancellation is confirmed before world can change (1.908ms)
+✔ learning cancellation invalidates a late prepare reply and never commits it (1.608375ms)
+✔ empty replay cannot certify a changed final world (0.42025ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 186.973708

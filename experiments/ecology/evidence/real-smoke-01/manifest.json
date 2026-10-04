@@ -1,0 +1,28 @@
+{
+  "model": {
+    "provider": "laya",
+    "sdk": "0.3.21",
+    "repo": "convaiinnovations/laya",
+    "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+    "requested_device": "mps",
+    "actual_device": "mps",
+    "cpu_fallback_count": 0,
+    "template": "ecology-local-en-v1",
+    "load_seconds": 22.727517542021815,
+    "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12",
+    "observation_precision": "food:0.01, distance:0.1; raw observation retained"
+  },
+  "config": {
+    "runId": "real-ecology-smoke",
+    "seed": 311,
+    "initialAgents": 8,
+    "reproduction": false,
+    "horizon": 80
+  },
+  "source": {
+    "packages/sim/ecology.ts": "43d7661c384fbfec1126c3b795197495e8ee3436e1336d484d1f8c0813de5c00",
+    "packages/protocol/ecology.ts": "17afca8f0bb02e6ecec25e096535ce302a9ac967fc372934ed6f43230e2a4d93",
+    "services/ecology/provider.py": "32fe18ea896636057c1e78ca9794702233abed3829414595701f7a434e9ede5d",
+    "services/ecology/smoke.py": "e0a23046ceed6a4d30fa1df885ad9f06b1ac513d070c533c4b4fcec0e0600886"
+  }
+}

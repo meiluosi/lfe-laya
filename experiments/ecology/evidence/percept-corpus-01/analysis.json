@@ -1,0 +1,112 @@
+{
+  "rows": 960,
+  "worlds": 8,
+  "truthCounts": {
+    "north": 50,
+    "east": 52,
+    "south": 34,
+    "west": 117,
+    "here": 367,
+    "none": 340
+  },
+  "chance_majority": 0.38229166666666664,
+  "rawAccuracy": 0.06041666666666667,
+  "rawMeanProbOnTruth": 0.10358893855317514,
+  "confusion_rows_truth_cols_pred": {
+    "north": {
+      "north": 34,
+      "east": 16,
+      "south": 0,
+      "west": 0,
+      "here": 0,
+      "none": 0
+    },
+    "east": {
+      "north": 32,
+      "east": 20,
+      "south": 0,
+      "west": 0,
+      "here": 0,
+      "none": 0
+    },
+    "south": {
+      "north": 23,
+      "east": 9,
+      "south": 2,
+      "west": 0,
+      "here": 0,
+      "none": 0
+    },
+    "west": {
+      "north": 91,
+      "east": 22,
+      "south": 2,
+      "west": 2,
+      "here": 0,
+      "none": 0
+    },
+    "here": {
+      "north": 234,
+      "east": 133,
+      "south": 0,
+      "west": 0,
+      "here": 0,
+      "none": 0
+    },
+    "none": {
+      "north": 194,
+      "east": 140,
+      "south": 5,
+      "west": 1,
+      "here": 0,
+      "none": 0
+    }
+  },
+  "predictionShare": {
+    "north": 0.6333333333333333,
+    "east": 0.3541666666666667,
+    "south": 0.009375,
+    "west": 0.003125,
+    "here": 0.0,
+    "none": 0.0
+  },
+  "truthShare": {
+    "north": 0.052083333333333336,
+    "east": 0.05416666666666667,
+    "south": 0.035416666666666666,
+    "west": 0.121875,
+    "here": 0.38229166666666664,
+    "none": 0.3541666666666667
+  },
+  "accuracyByNearestFoodDistance": {
+    "[0,0.5)": {
+      "n": 367,
+      "accuracy": 0.0
+    },
+    "[0.5,1.5)": {
+      "n": 205,
+      "accuracy": 0.25853658536585367
+    },
+    "[1.5,2.5)": {
+      "n": 33,
+      "accuracy": 0.09090909090909091
+    },
+    "[2.5,4.5)": {
+      "n": 15,
+      "accuracy": 0.13333333333333333
+    }
+  },
+  "accuracyNoFoodVisible": {
+    "n": 340,
+    "accuracy": 0.0
+  },
+  "calibratedAccuracy_crossValidatedByWorld": 0.7208333333333333,
+  "calibratedAccuracyByNearestFoodDistance": {
+    "[0,0.5)": 0.9564032697547684,
+    "[0.5,1.5)": 0.04390243902439024,
+    "[1.5,2.5)": 0.15151515151515152,
+    "[2.5,4.5)": 0.4
+  },
+  "calibratedAccuracyNoFoodVisible": 0.9441176470588235,
+  "limits": "语料来自规则/随机控制器的真实模拟观测；真值来自个体自己的局部观测；只评估方向识别，不是生存收益。"
+}

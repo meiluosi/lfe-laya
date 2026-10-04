@@ -1,0 +1,64 @@
+{
+  "purpose": "进化先天参数（无 Laya 感知）；开发评估用 difficulty-v2 的种子，仅报告",
+  "generations": 150,
+  "pop": 32,
+  "sigma": 0.15,
+  "lr": 0.06,
+  "seed": 1,
+  "workers": 6,
+  "innateSize": 378,
+  "trainingSeeds": "20000 + generation*10 + index（每代共同随机数）",
+  "trainingWorldsPerGenome": "1 moderate + 2 scarce",
+  "devSeeds": [
+    {
+      "scenario": "moderate",
+      "seed": 211
+    },
+    {
+      "scenario": "scarce",
+      "seed": 211
+    },
+    {
+      "scenario": "moderate",
+      "seed": 223
+    },
+    {
+      "scenario": "scarce",
+      "seed": 223
+    },
+    {
+      "scenario": "moderate",
+      "seed": 227
+    },
+    {
+      "scenario": "scarce",
+      "seed": 227
+    },
+    {
+      "scenario": "moderate",
+      "seed": 229
+    },
+    {
+      "scenario": "scarce",
+      "seed": 229
+    },
+    {
+      "scenario": "moderate",
+      "seed": 233
+    },
+    {
+      "scenario": "scarce",
+      "seed": 233
+    }
+  ],
+  "source": {
+    "packages/evo/features.ts": "e0947c5058e23734cd85ad0673e7867298fd88b2cda1aea34c359041ac4cd190",
+    "packages/evo/policy.ts": "eab999663b03e6aa2efe0c186fd84e5867dde72aabcc9ad4f6ae3644093c5345",
+    "packages/evo/evaluate.ts": "d514fd1462967a6c2e235cbe02a0053702c2cc60a917aa8c0507d6d91bcb06eb",
+    "packages/evo/evolve.ts": "587390eedb49478a81aa92876429ae86136620247866fea0d0f281d097751e83",
+    "packages/evo/worker.ts": "5a3051ef8adf93342ec8ffbafb3d5fe71d46ec7ba21400c47a9b776589ce1080",
+    "packages/sim/ecology.ts": "dbbc83a620d08084e63360830d246f5c725b6495c309f4a01ba637048b76d4f5",
+    "packages/sim/controllers.ts": "af7f478d7ef283c038575ba297d60f75dbfbac4bc7291e03931219907ee44140",
+    "packages/protocol/ecology.ts": "17afca8f0bb02e6ecec25e096535ce302a9ac967fc372934ed6f43230e2a4d93"
+  }
+}

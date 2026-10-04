@@ -1,0 +1,48 @@
+{
+  "name": "development-residual-01",
+  "purpose": "Prespecified development fusion comparison; same worlds, seeds, parameter count and interaction budget as features. Not heldout.",
+  "parallel_worlds": 3,
+  "world": {
+    "width": 16,
+    "height": 12,
+    "initialAgents": 8,
+    "reproduction": false,
+    "mutation": false,
+    "maxAge": 100000,
+    "horizon": 3600,
+    "phaseTicks": 1200,
+    "initialEnergy": 32,
+    "metabolism": 0.012,
+    "initialFood": 100,
+    "supplyAmount": 6,
+    "foodDecay": 0.003,
+    "diffusion": 0.002
+  },
+  "learning": {
+    "fusion": "residual"
+  },
+  "jobs": [
+    {
+      "name": "313",
+      "mode": "learning",
+      "world": {
+        "seed": 313
+      }
+    },
+    {
+      "name": "317",
+      "mode": "learning",
+      "world": {
+        "seed": 317
+      }
+    },
+    {
+      "name": "331",
+      "mode": "learning",
+      "world": {
+        "seed": 331
+      }
+    }
+  ],
+  "diagnostics_trajectory": "experiments/ecology/evidence/development-features-01/development-features-01-learning-313/rounds.jsonl"
+}

@@ -1,0 +1,159 @@
+{
+  "experimentComplete": true,
+  "runs": [
+    {
+      "runId": "reproduction-controls-01-no-laya-43",
+      "mode": "no-laya",
+      "seed": 43,
+      "tick": 1200,
+      "births": 3,
+      "deaths": 0,
+      "finalLiving": 11,
+      "maxGeneration": 1,
+      "childrenWithLearningInputs": 3,
+      "childrenWithUpdates": 3,
+      "allObservedChildrenStartAtRevisionZero": true,
+      "childrenWithoutNextDecision": 0,
+      "childFirstInputs": {
+        "life-8": {
+          "tick": 160,
+          "revision": 0
+        },
+        "life-9": {
+          "tick": 170,
+          "revision": 0
+        },
+        "life-10": {
+          "tick": 210,
+          "revision": 0
+        }
+      },
+      "updates": 44,
+      "modelCalls": 0
+    },
+    {
+      "runId": "reproduction-controls-01-no-laya-47",
+      "mode": "no-laya",
+      "seed": 47,
+      "tick": 1200,
+      "births": 4,
+      "deaths": 0,
+      "finalLiving": 12,
+      "maxGeneration": 1,
+      "childrenWithLearningInputs": 4,
+      "childrenWithUpdates": 4,
+      "allObservedChildrenStartAtRevisionZero": true,
+      "childrenWithoutNextDecision": 0,
+      "childFirstInputs": {
+        "life-8": {
+          "tick": 160,
+          "revision": 0
+        },
+        "life-9": {
+          "tick": 310,
+          "revision": 0
+        },
+        "life-10": {
+          "tick": 970,
+          "revision": 0
+        },
+        "life-11": {
+          "tick": 1090,
+          "revision": 0
+        }
+      },
+      "updates": 41,
+      "modelCalls": 0
+    },
+    {
+      "runId": "reproduction-controls-01-no-laya-53",
+      "mode": "no-laya",
+      "seed": 53,
+      "tick": 1200,
+      "births": 4,
+      "deaths": 0,
+      "finalLiving": 12,
+      "maxGeneration": 1,
+      "childrenWithLearningInputs": 4,
+      "childrenWithUpdates": 4,
+      "allObservedChildrenStartAtRevisionZero": true,
+      "childrenWithoutNextDecision": 0,
+      "childFirstInputs": {
+        "life-8": {
+          "tick": 160,
+          "revision": 0
+        },
+        "life-9": {
+          "tick": 170,
+          "revision": 0
+        },
+        "life-10": {
+          "tick": 180,
+          "revision": 0
+        },
+        "life-11": {
+          "tick": 980,
+          "revision": 0
+        }
+      },
+      "updates": 45,
+      "modelCalls": 0
+    },
+    {
+      "runId": "reproduction-controls-01-rule-43",
+      "mode": "rule",
+      "seed": 43,
+      "tick": 1200,
+      "births": 16,
+      "deaths": 0,
+      "finalLiving": 24,
+      "maxGeneration": 2,
+      "childrenWithLearningInputs": 0,
+      "childrenWithUpdates": 0,
+      "allObservedChildrenStartAtRevisionZero": null,
+      "childrenWithoutNextDecision": null,
+      "childFirstInputs": {},
+      "updates": 0,
+      "modelCalls": 0
+    },
+    {
+      "runId": "reproduction-controls-01-rule-47",
+      "mode": "rule",
+      "seed": 47,
+      "tick": 1200,
+      "births": 16,
+      "deaths": 0,
+      "finalLiving": 24,
+      "maxGeneration": 2,
+      "childrenWithLearningInputs": 0,
+      "childrenWithUpdates": 0,
+      "allObservedChildrenStartAtRevisionZero": null,
+      "childrenWithoutNextDecision": null,
+      "childFirstInputs": {},
+      "updates": 0,
+      "modelCalls": 0
+    },
+    {
+      "runId": "reproduction-controls-01-rule-53",
+      "mode": "rule",
+      "seed": 53,
+      "tick": 1200,
+      "births": 16,
+      "deaths": 0,
+      "finalLiving": 24,
+      "maxGeneration": 2,
+      "childrenWithLearningInputs": 0,
+      "childrenWithUpdates": 0,
+      "allObservedChildrenStartAtRevisionZero": null,
+      "childrenWithoutNextDecision": null,
+      "childFirstInputs": {},
+      "updates": 0,
+      "modelCalls": 0
+    }
+  ],
+  "limits": [
+    "描述性繁殖观察，不是预注册留出收益检验。",
+    "新生首轮版本为零不单独证明权重/优化器隔离；隔离另由个体初始化测试验证。",
+    "最后一轮出生的个体可能尚无下一次决策。"
+  ]
+}

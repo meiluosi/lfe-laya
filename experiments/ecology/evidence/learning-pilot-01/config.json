@@ -1,0 +1,30 @@
+{
+  "name": "learning-pilot-01",
+  "purpose": "development integration only; not a heldout learning benefit test",
+  "seeds": [
+    313
+  ],
+  "modes": [
+    "learning",
+    "no-laya"
+  ],
+  "world": {
+    "width": 16,
+    "height": 12,
+    "initialAgents": 4,
+    "reproduction": false,
+    "mutation": false,
+    "maxAge": 100000,
+    "horizon": 640,
+    "phaseTicks": 210,
+    "initialEnergy": 32,
+    "metabolism": 0.012,
+    "initialFood": 100,
+    "supplyAmount": 6,
+    "foodDecay": 0.003,
+    "diffusion": 0.002
+  },
+  "learning": {
+    "fusion": "features"
+  }
+}

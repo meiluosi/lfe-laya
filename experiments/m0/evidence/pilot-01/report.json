@@ -1,0 +1,313 @@
+{
+  "status": "completed",
+  "pilot": true,
+  "elapsed_seconds": 278.50527116598096,
+  "model": {
+    "provider": "laya",
+    "sdk": "0.3.21",
+    "repo": "convaiinnovations/laya",
+    "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+    "requested_device": "mps",
+    "actual_device": "mps",
+    "cpu_fallback_count": 0,
+    "template": "local-foraging-en-v2",
+    "load_seconds": 14.37416058400413,
+    "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+  },
+  "bridge_calls": 1173,
+  "bridge_seconds": 5.481317960948218,
+  "online": [
+    {
+      "id": "online-71-rule",
+      "seed": 71,
+      "mode": "rule",
+      "steps": 64,
+      "reward": 1.4979999999999973,
+      "eaten": 31.11999999999984,
+      "death": false,
+      "initial_parameters": null,
+      "update_log": [],
+      "final_parameters": null,
+      "mean_reward_by_stage": [
+        0.06491666666666669,
+        -0.0004166666666664311,
+        -0.0031250000000003107
+      ],
+      "stage_observed_steps": [
+        24,
+        24,
+        16
+      ],
+      "window_mean_rewards": {
+        "0": 0.07790000000000001,
+        "1": 1.734723475976807e-18,
+        "2": -0.004499999999999955,
+        "3": 0.007499999999999927
+      }
+    },
+    {
+      "id": "online-71-fixed-current",
+      "seed": 71,
+      "mode": "fixed-current",
+      "steps": 64,
+      "reward": -1.4020000000000035,
+      "eaten": 5.0,
+      "death": false,
+      "initial_parameters": null,
+      "update_log": [],
+      "final_parameters": null,
+      "mean_reward_by_stage": [
+        -0.00841666666666674,
+        -0.030000000000000072,
+        -0.030000000000000072
+      ],
+      "stage_observed_steps": [
+        24,
+        24,
+        16
+      ],
+      "window_mean_rewards": {
+        "0": -0.004100000000000074,
+        "1": -0.030000000000000065,
+        "2": -0.030000000000000065,
+        "3": -0.030000000000000072
+      }
+    },
+    {
+      "id": "online-71-fixed-memory",
+      "seed": 71,
+      "mode": "fixed-memory",
+      "steps": 64,
+      "reward": 0.15200000000000302,
+      "eaten": 20.0,
+      "death": false,
+      "initial_parameters": null,
+      "update_log": [],
+      "final_parameters": null,
+      "mean_reward_by_stage": [
+        0.03475000000000026,
+        -0.008416666666666727,
+        -0.030000000000000072
+      ],
+      "stage_observed_steps": [
+        24,
+        24,
+        16
+      ],
+      "window_mean_rewards": {
+        "0": 0.04770000000000024,
+        "1": -0.029999999999999978,
+        "2": -0.004100000000000075,
+        "3": -0.030000000000000072
+      }
+    },
+    {
+      "id": "online-71-B",
+      "seed": 71,
+      "mode": "B",
+      "steps": 64,
+      "reward": -1.0960000000000039,
+      "eaten": 5.0,
+      "death": false,
+      "initial_parameters": "8e60ff53deebeeed5d026f891ab7b6fb5998bb08f8527583ca2e05cd67dce570",
+      "update_log": [
+        {
+          "batch_id": "online-71-B:update:0",
+          "input_revision": 0,
+          "revision": 1,
+          "samples": 32,
+          "before": "8e60ff53deebeeed5d026f891ab7b6fb5998bb08f8527583ca2e05cd67dce570",
+          "after": "35f938daf735c44976ee39fcf21af006cda4d01e8d82bb60fb90347876cf556d",
+          "milliseconds": 305.98912498680875
+        },
+        {
+          "batch_id": "online-71-B:final",
+          "input_revision": 1,
+          "revision": 2,
+          "samples": 32,
+          "before": "35f938daf735c44976ee39fcf21af006cda4d01e8d82bb60fb90347876cf556d",
+          "after": "802eaedf91fb8480d5e0d62cbe064e8021794a51695d0cb757c2f63d419cccf7",
+          "milliseconds": 128.18533298559487
+        }
+      ],
+      "final_parameters": "802eaedf91fb8480d5e0d62cbe064e8021794a51695d0cb757c2f63d419cccf7",
+      "mean_reward_by_stage": [
+        -0.025500000000000078,
+        -0.003916666666666749,
+        -0.02437500000000005
+      ],
+      "stage_observed_steps": [
+        24,
+        24,
+        16
+      ],
+      "window_mean_rewards": {
+        "0": -0.025500000000000078,
+        "1": -0.0005000000000000813,
+        "2": -0.02370000000000006,
+        "3": -0.025500000000000033
+      }
+    },
+    {
+      "id": "online-71-no-laya",
+      "seed": 71,
+      "mode": "no-laya",
+      "steps": 64,
+      "reward": -1.0960000000000039,
+      "eaten": 5.0,
+      "death": false,
+      "initial_parameters": "8e60ff53deebeeed5d026f891ab7b6fb5998bb08f8527583ca2e05cd67dce570",
+      "update_log": [
+        {
+          "batch_id": "online-71-no-laya:update:0",
+          "input_revision": 0,
+          "revision": 1,
+          "samples": 32,
+          "before": "8e60ff53deebeeed5d026f891ab7b6fb5998bb08f8527583ca2e05cd67dce570",
+          "after": "29f811dffe5f5cecb6aaaa9ee7d4a822439c60637b8622434d801120f2207618",
+          "milliseconds": 183.04000003263354
+        },
+        {
+          "batch_id": "online-71-no-laya:final",
+          "input_revision": 1,
+          "revision": 2,
+          "samples": 32,
+          "before": "29f811dffe5f5cecb6aaaa9ee7d4a822439c60637b8622434d801120f2207618",
+          "after": "ecd25083c78ffc8d09313d00a7e645e93ab9e83c259f5c788904333cd3e4b67d",
+          "milliseconds": 26.50379197439179
+        }
+      ],
+      "final_parameters": "ecd25083c78ffc8d09313d00a7e645e93ab9e83c259f5c788904333cd3e4b67d",
+      "mean_reward_by_stage": [
+        -0.025500000000000078,
+        -0.003916666666666749,
+        -0.02437500000000005
+      ],
+      "stage_observed_steps": [
+        24,
+        24,
+        16
+      ],
+      "window_mean_rewards": {
+        "0": -0.025500000000000078,
+        "1": -0.0005000000000000813,
+        "2": -0.02370000000000006,
+        "3": -0.025500000000000033
+      }
+    },
+    {
+      "id": "online-71-frozen-B",
+      "seed": 71,
+      "mode": "frozen-B",
+      "steps": 64,
+      "reward": -1.0960000000000039,
+      "eaten": 5.0,
+      "death": false,
+      "initial_parameters": "8e60ff53deebeeed5d026f891ab7b6fb5998bb08f8527583ca2e05cd67dce570",
+      "update_log": [],
+      "final_parameters": "8e60ff53deebeeed5d026f891ab7b6fb5998bb08f8527583ca2e05cd67dce570",
+      "mean_reward_by_stage": [
+        -0.025500000000000078,
+        -0.003916666666666749,
+        -0.02437500000000005
+      ],
+      "stage_observed_steps": [
+        24,
+        24,
+        16
+      ],
+      "window_mean_rewards": {
+        "0": -0.025500000000000078,
+        "1": -0.0005000000000000813,
+        "2": -0.02370000000000006,
+        "3": -0.025500000000000033
+      }
+    }
+  ],
+  "heldout": [
+    {
+      "id": "heldout-72-B",
+      "seed": 72,
+      "mode": "B",
+      "steps": 64,
+      "reward": 0.8860000000000028,
+      "eaten": 25.0,
+      "death": false,
+      "initial_parameters": "802eaedf91fb8480d5e0d62cbe064e8021794a51695d0cb757c2f63d419cccf7",
+      "update_log": [],
+      "final_parameters": "802eaedf91fb8480d5e0d62cbe064e8021794a51695d0cb757c2f63d419cccf7",
+      "mean_reward_by_stage": [
+        0.037750000000000006,
+        -0.0039166666666666265,
+        0.004625000000000053
+      ],
+      "stage_observed_steps": [
+        24,
+        24,
+        16
+      ],
+      "window_mean_rewards": {
+        "0": 0.05129999999999994,
+        "1": -0.02459999999999992,
+        "2": 0.023600000000000013,
+        "3": -0.029999999999999714
+      }
+    },
+    {
+      "id": "heldout-72-no-laya",
+      "seed": 72,
+      "mode": "no-laya",
+      "steps": 64,
+      "reward": 0.8860000000000028,
+      "eaten": 25.0,
+      "death": false,
+      "initial_parameters": "ecd25083c78ffc8d09313d00a7e645e93ab9e83c259f5c788904333cd3e4b67d",
+      "update_log": [],
+      "final_parameters": "ecd25083c78ffc8d09313d00a7e645e93ab9e83c259f5c788904333cd3e4b67d",
+      "mean_reward_by_stage": [
+        0.037750000000000006,
+        -0.0039166666666666265,
+        0.004625000000000053
+      ],
+      "stage_observed_steps": [
+        24,
+        24,
+        16
+      ],
+      "window_mean_rewards": {
+        "0": 0.05129999999999994,
+        "1": -0.02459999999999992,
+        "2": 0.023600000000000013,
+        "3": -0.029999999999999714
+      }
+    },
+    {
+      "id": "heldout-72-frozen-B",
+      "seed": 72,
+      "mode": "frozen-B",
+      "steps": 64,
+      "reward": -1.0960000000000039,
+      "eaten": 5.0,
+      "death": false,
+      "initial_parameters": "8e60ff53deebeeed5d026f891ab7b6fb5998bb08f8527583ca2e05cd67dce570",
+      "update_log": [],
+      "final_parameters": "8e60ff53deebeeed5d026f891ab7b6fb5998bb08f8527583ca2e05cd67dce570",
+      "mean_reward_by_stage": [
+        -0.025500000000000078,
+        -0.003916666666666749,
+        -0.02437500000000005
+      ],
+      "stage_observed_steps": [
+        24,
+        24,
+        16
+      ],
+      "window_mean_rewards": {
+        "0": -0.025500000000000078,
+        "1": -0.0005000000000000813,
+        "2": -0.02370000000000006,
+        "3": -0.025500000000000033
+      }
+    }
+  ]
+}

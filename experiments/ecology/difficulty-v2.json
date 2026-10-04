@@ -1,0 +1,8 @@
+{
+  "base": { "width": 16, "height": 12, "initialAgents": 8, "reproduction": false, "mutation": false, "maxAge": 100000, "horizon": 3600, "phaseTicks": 1200, "initialEnergy": 32, "metabolism": 0.012 },
+  "seeds": [211, 223, 227, 229, 233],
+  "scenarios": [
+    { "name": "moderate-patches", "initialFood": 100, "supplyAmount": 6, "foodDecay": 0.003, "diffusion": 0.002 },
+    { "name": "scarce-longer-life", "initialFood": 80, "supplyAmount": 4, "foodDecay": 0.004, "diffusion": 0.002 }
+  ]
+}

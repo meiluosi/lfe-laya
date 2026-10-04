@@ -1,0 +1,286 @@
+{
+  "name": "heldout-01",
+  "status": "frozen-before-any-heldout-run",
+  "registered_at": "2026-09-30T15:34:24.601346+00:00",
+  "parallel_worlds": 3,
+  "world": {
+    "width": 16,
+    "height": 12,
+    "initialAgents": 8,
+    "reproduction": false,
+    "mutation": false,
+    "maxAge": 100000,
+    "horizon": 2700,
+    "phaseTicks": 900,
+    "initialEnergy": 32,
+    "metabolism": 0.012,
+    "initialFood": 100,
+    "supplyAmount": 6,
+    "foodDecay": 0.003,
+    "diffusion": 0.002
+  },
+  "jobs": [
+    {
+      "world": {
+        "seed": 1009
+      },
+      "eval_seed": 100900,
+      "name": "features-trained-1009",
+      "mode": "frozen",
+      "checkpoint": "experiments/ecology/evidence/development-features-01/development-features-01-learning-313/checkpoint.pt"
+    },
+    {
+      "world": {
+        "seed": 1009
+      },
+      "eval_seed": 100900,
+      "name": "features-initial-1009",
+      "mode": "frozen",
+      "initial_seed": 313,
+      "learning": {
+        "fusion": "features"
+      }
+    },
+    {
+      "world": {
+        "seed": 1009
+      },
+      "eval_seed": 100900,
+      "name": "no-laya-trained-1009",
+      "mode": "no-laya",
+      "checkpoint": "experiments/ecology/evidence/development-features-01/development-features-01-no-laya-313/checkpoint.pt"
+    },
+    {
+      "world": {
+        "seed": 1009
+      },
+      "eval_seed": 100900,
+      "name": "memory-masked-1009",
+      "mode": "frozen",
+      "checkpoint": "experiments/ecology/evidence/development-features-01/development-features-01-learning-313/checkpoint.pt",
+      "mask_memory": true
+    },
+    {
+      "world": {
+        "seed": 1009
+      },
+      "eval_seed": 100900,
+      "name": "residual-trained-1009",
+      "mode": "frozen",
+      "checkpoint": "experiments/ecology/evidence/development-residual-01/development-residual-01-313/checkpoint.pt"
+    },
+    {
+      "world": {
+        "seed": 1009
+      },
+      "eval_seed": 100900,
+      "name": "residual-initial-1009",
+      "mode": "frozen",
+      "initial_seed": 313,
+      "learning": {
+        "fusion": "residual"
+      }
+    },
+    {
+      "world": {
+        "seed": 1009
+      },
+      "eval_seed": 100900,
+      "name": "rule-1009",
+      "mode": "rule"
+    },
+    {
+      "world": {
+        "seed": 1009
+      },
+      "eval_seed": 100900,
+      "name": "laya-1009",
+      "mode": "laya"
+    },
+    {
+      "world": {
+        "seed": 1009
+      },
+      "eval_seed": 100900,
+      "name": "memory-1009",
+      "mode": "memory"
+    },
+    {
+      "world": {
+        "seed": 1013
+      },
+      "eval_seed": 101300,
+      "name": "features-trained-1013",
+      "mode": "frozen",
+      "checkpoint": "experiments/ecology/evidence/development-features-01/development-features-01-learning-317/checkpoint.pt"
+    },
+    {
+      "world": {
+        "seed": 1013
+      },
+      "eval_seed": 101300,
+      "name": "features-initial-1013",
+      "mode": "frozen",
+      "initial_seed": 317,
+      "learning": {
+        "fusion": "features"
+      }
+    },
+    {
+      "world": {
+        "seed": 1013
+      },
+      "eval_seed": 101300,
+      "name": "no-laya-trained-1013",
+      "mode": "no-laya",
+      "checkpoint": "experiments/ecology/evidence/development-features-01/development-features-01-no-laya-317/checkpoint.pt"
+    },
+    {
+      "world": {
+        "seed": 1013
+      },
+      "eval_seed": 101300,
+      "name": "memory-masked-1013",
+      "mode": "frozen",
+      "checkpoint": "experiments/ecology/evidence/development-features-01/development-features-01-learning-317/checkpoint.pt",
+      "mask_memory": true
+    },
+    {
+      "world": {
+        "seed": 1013
+      },
+      "eval_seed": 101300,
+      "name": "residual-trained-1013",
+      "mode": "frozen",
+      "checkpoint": "experiments/ecology/evidence/development-residual-01/development-residual-01-317/checkpoint.pt"
+    },
+    {
+      "world": {
+        "seed": 1013
+      },
+      "eval_seed": 101300,
+      "name": "residual-initial-1013",
+      "mode": "frozen",
+      "initial_seed": 317,
+      "learning": {
+        "fusion": "residual"
+      }
+    },
+    {
+      "world": {
+        "seed": 1013
+      },
+      "eval_seed": 101300,
+      "name": "rule-1013",
+      "mode": "rule"
+    },
+    {
+      "world": {
+        "seed": 1013
+      },
+      "eval_seed": 101300,
+      "name": "laya-1013",
+      "mode": "laya"
+    },
+    {
+      "world": {
+        "seed": 1013
+      },
+      "eval_seed": 101300,
+      "name": "memory-1013",
+      "mode": "memory"
+    },
+    {
+      "world": {
+        "seed": 1019
+      },
+      "eval_seed": 101900,
+      "name": "features-trained-1019",
+      "mode": "frozen",
+      "checkpoint": "experiments/ecology/evidence/development-features-01/development-features-01-learning-331/checkpoint.pt"
+    },
+    {
+      "world": {
+        "seed": 1019
+      },
+      "eval_seed": 101900,
+      "name": "features-initial-1019",
+      "mode": "frozen",
+      "initial_seed": 331,
+      "learning": {
+        "fusion": "features"
+      }
+    },
+    {
+      "world": {
+        "seed": 1019
+      },
+      "eval_seed": 101900,
+      "name": "no-laya-trained-1019",
+      "mode": "no-laya",
+      "checkpoint": "experiments/ecology/evidence/development-features-01/development-features-01-no-laya-331/checkpoint.pt"
+    },
+    {
+      "world": {
+        "seed": 1019
+      },
+      "eval_seed": 101900,
+      "name": "memory-masked-1019",
+      "mode": "frozen",
+      "checkpoint": "experiments/ecology/evidence/development-features-01/development-features-01-learning-331/checkpoint.pt",
+      "mask_memory": true
+    },
+    {
+      "world": {
+        "seed": 1019
+      },
+      "eval_seed": 101900,
+      "name": "residual-trained-1019",
+      "mode": "frozen",
+      "checkpoint": "experiments/ecology/evidence/development-residual-01/development-residual-01-331/checkpoint.pt"
+    },
+    {
+      "world": {
+        "seed": 1019
+      },
+      "eval_seed": 101900,
+      "name": "residual-initial-1019",
+      "mode": "frozen",
+      "initial_seed": 331,
+      "learning": {
+        "fusion": "residual"
+      }
+    },
+    {
+      "world": {
+        "seed": 1019
+      },
+      "eval_seed": 101900,
+      "name": "rule-1019",
+      "mode": "rule"
+    },
+    {
+      "world": {
+        "seed": 1019
+      },
+      "eval_seed": 101900,
+      "name": "laya-1019",
+      "mode": "laya"
+    },
+    {
+      "world": {
+        "seed": 1019
+      },
+      "eval_seed": 101900,
+      "name": "memory-1019",
+      "mode": "memory"
+    }
+  ],
+  "primary": "features-trained versus matching initial-frozen policy; all eight original identities, including training deaths",
+  "learning_gain_gate": "mean initial-cohort undiscounted reward difference >=0.1, total deaths no greater, positive reward difference in at least 2 of 3 paired worlds. Exploratory only, not population significance.",
+  "laya_value_gate": "same predeclared gate versus the trained no-Laya policies, with matched heldout worlds and exploration seeds",
+  "secondary": "residual fusion, memory-masked features; report all comparisons, do not select a winner from heldout and rerun",
+  "adaptation": "per-phase reward/food/survival, time to each individual reaching >=25% energy for 10 consecutive decision boundaries after a shift; nonrecovery/death right-censored at stage end, deaths also reported separately",
+  "limits": "three paired worlds; 2700 ticks differs from training 3600 and unknown phase duration 900 replaces 1200. Same body parameters; no claim of arbitrary distribution shift.",
+  "sampling": "each original policy reset_exploration(heldout_seed*100+sorted_cohort_index), equal seeds for all neural evaluation policies. Parameters and optimizer frozen; local memory updates same except explicit masked-input ablation."
+}

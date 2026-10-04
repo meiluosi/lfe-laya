@@ -1,0 +1,1602 @@
+{
+  "completedRuns": 7,
+  "experimentComplete": false,
+  "runs": [
+    {
+      "runId": "development-features-01-frozen-313",
+      "mode": "frozen",
+      "seed": 313,
+      "complete": true,
+      "initialCohort": 8,
+      "finalLiving": 2,
+      "deaths": 6,
+      "cohortReward": -3.751445266381782,
+      "survivalFraction": 0.6635069444444445,
+      "lowEnergyLivingTimeFraction": 0.23418284577947565,
+      "finalCohortEnergy": 1.9855473361821838,
+      "movementCostPerFood": 0.9500837203075007,
+      "nonfeedingReturnPairs": 211,
+      "phaseCohortRewards": [
+        -1.7518345108084838,
+        -1.5449526229210968,
+        -0.45465813265220306
+      ],
+      "phaseFoodPerInitialAgent": [
+        12.879154891916608,
+        11.757783758387435,
+        5.576395552020589
+      ],
+      "recovery": [
+        {
+          "phase": 0,
+          "agentId": "life-0",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-1",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-2",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-3",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-4",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-5",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-6",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-7",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-0",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-1",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-2",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-3",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-4",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-5",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-6",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-7",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-0",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-1",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        },
+        {
+          "phase": 2,
+          "agentId": "life-2",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-3",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-4",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        },
+        {
+          "phase": 2,
+          "agentId": "life-5",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        },
+        {
+          "phase": 2,
+          "agentId": "life-6",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        },
+        {
+          "phase": 2,
+          "agentId": "life-7",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        }
+      ],
+      "maxLedgerResidual": 1.6189005691558123e-10,
+      "modelSecondsSummedAmortized": 925.14132377645,
+      "wallSeconds": 956.2122107920004,
+      "modelCalls": 1912,
+      "updatesIncludingFinalBootstrap": 0,
+      "notes": [
+        "恢复按十步边界测量；低能量比例分母仅为实际存活时间，须与死亡和全队列存活指标一起读。",
+        "返回 A 的变化不是单独的遗忘因果检验。"
+      ]
+    },
+    {
+      "runId": "development-features-01-learning-313",
+      "mode": "learning",
+      "seed": 313,
+      "complete": true,
+      "initialCohort": 8,
+      "finalLiving": 3,
+      "deaths": 5,
+      "cohortReward": -2.8227399358799414,
+      "survivalFraction": 0.7729513888888889,
+      "lowEnergyLivingTimeFraction": 0.2564574816944432,
+      "finalCohortEnergy": 10.022600641200587,
+      "movementCostPerFood": 0.6760831078933721,
+      "nonfeedingReturnPairs": 214,
+      "phaseCohortRewards": [
+        -1.6144832881431936,
+        -1.0813435250553334,
+        -0.12691312268141494
+      ],
+      "phaseFoodPerInitialAgent": [
+        14.027667118569514,
+        16.67045415394116,
+        14.834202736900943
+      ],
+      "recovery": [
+        {
+          "phase": 0,
+          "agentId": "life-0",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-1",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-2",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-3",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-4",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-5",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-6",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-7",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-0",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-1",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-2",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-3",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-4",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-5",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-6",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-7",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-0",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-1",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        },
+        {
+          "phase": 2,
+          "agentId": "life-2",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-3",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-4",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        },
+        {
+          "phase": 2,
+          "agentId": "life-5",
+          "latencyTicks": 470,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-6",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-7",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        }
+      ],
+      "maxLedgerResidual": 1.2300915841478854e-10,
+      "modelSecondsSummedAmortized": 1044.0297828088515,
+      "wallSeconds": 1080.9297717909794,
+      "modelCalls": 2232,
+      "updatesIncludingFinalBootstrap": 75,
+      "notes": [
+        "恢复按十步边界测量；低能量比例分母仅为实际存活时间，须与死亡和全队列存活指标一起读。",
+        "返回 A 的变化不是单独的遗忘因果检验。"
+      ]
+    },
+    {
+      "runId": "development-features-01-learning-317",
+      "mode": "learning",
+      "seed": 317,
+      "complete": true,
+      "initialCohort": 8,
+      "finalLiving": 3,
+      "deaths": 5,
+      "cohortReward": -2.9986823132852263,
+      "survivalFraction": 0.7325347222222223,
+      "lowEnergyLivingTimeFraction": 0.15589894297767454,
+      "finalCohortEnergy": 8.263176867147736,
+      "movementCostPerFood": 0.7264463638544938,
+      "nonfeedingReturnPairs": 210,
+      "phaseCohortRewards": [
+        -1.5342216630912715,
+        -0.9291761885648786,
+        -0.5352844616290764
+      ],
+      "phaseFoodPerInitialAgent": [
+        14.987783369088437,
+        14.791505034974806,
+        10.672333271511976
+      ],
+      "recovery": [
+        {
+          "phase": 0,
+          "agentId": "life-0",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-1",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-2",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-3",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-4",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-5",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-6",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-7",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-0",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-1",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-2",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-3",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-4",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-5",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-6",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-7",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-0",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-1",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-2",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        },
+        {
+          "phase": 2,
+          "agentId": "life-3",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        },
+        {
+          "phase": 2,
+          "agentId": "life-4",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-5",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-6",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-7",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        }
+      ],
+      "maxLedgerResidual": 6.866684998385608e-11,
+      "modelSecondsSummedAmortized": 830.2213521648664,
+      "wallSeconds": 869.8583586249733,
+      "modelCalls": 2114,
+      "updatesIncludingFinalBootstrap": 71,
+      "notes": [
+        "恢复按十步边界测量；低能量比例分母仅为实际存活时间，须与死亡和全队列存活指标一起读。",
+        "返回 A 的变化不是单独的遗忘因果检验。"
+      ]
+    },
+    {
+      "runId": "development-features-01-learning-331",
+      "mode": "learning",
+      "seed": 331,
+      "complete": true,
+      "initialCohort": 8,
+      "finalLiving": 3,
+      "deaths": 5,
+      "cohortReward": -2.7595609766527236,
+      "survivalFraction": 0.7158333333333333,
+      "lowEnergyLivingTimeFraction": 0.21929569266589058,
+      "finalCohortEnergy": 10.654390233472762,
+      "movementCostPerFood": 0.6873549648474878,
+      "nonfeedingReturnPairs": 210,
+      "phaseCohortRewards": [
+        -1.6595018943031106,
+        -1.3340134097255296,
+        0.23395432737591618
+      ],
+      "phaseFoodPerInitialAgent": [
+        13.914981056970147,
+        11.225988690253564,
+        15.370760623176704
+      ],
+      "recovery": [
+        {
+          "phase": 0,
+          "agentId": "life-0",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-1",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-2",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-3",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-4",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-5",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-6",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-7",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-0",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-1",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-2",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-3",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-4",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-5",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-6",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-7",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-0",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        },
+        {
+          "phase": 2,
+          "agentId": "life-1",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        },
+        {
+          "phase": 2,
+          "agentId": "life-2",
+          "latencyTicks": 750,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-3",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-4",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        },
+        {
+          "phase": 2,
+          "agentId": "life-5",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-6",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        },
+        {
+          "phase": 2,
+          "agentId": "life-7",
+          "latencyTicks": 390,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        }
+      ],
+      "maxLedgerResidual": 1.191438059322536e-10,
+      "modelSecondsSummedAmortized": 1053.7181476872065,
+      "wallSeconds": 1112.755800166051,
+      "modelCalls": 2066,
+      "updatesIncludingFinalBootstrap": 69,
+      "notes": [
+        "恢复按十步边界测量；低能量比例分母仅为实际存活时间，须与死亡和全队列存活指标一起读。",
+        "返回 A 的变化不是单独的遗忘因果检验。"
+      ]
+    },
+    {
+      "runId": "development-features-01-no-laya-313",
+      "mode": "no-laya",
+      "seed": 313,
+      "complete": true,
+      "initialCohort": 8,
+      "finalLiving": 2,
+      "deaths": 6,
+      "cohortReward": -3.35905696521039,
+      "survivalFraction": 0.7251736111111111,
+      "lowEnergyLivingTimeFraction": 0.24534354800095762,
+      "finalCohortEnergy": 5.9094303478961,
+      "movementCostPerFood": 0.7780089952911757,
+      "nonfeedingReturnPairs": 220,
+      "phaseCohortRewards": [
+        -1.6077143873705309,
+        -1.35473674311866,
+        -0.39660583472120026
+      ],
+      "phaseFoodPerInitialAgent": [
+        14.095356126296148,
+        14.858275617566093,
+        8.71035858635557
+      ],
+      "recovery": [
+        {
+          "phase": 0,
+          "agentId": "life-0",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-1",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-2",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-3",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-4",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-5",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-6",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-7",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-0",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-1",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-2",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-3",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-4",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-5",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-6",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-7",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-0",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-1",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        },
+        {
+          "phase": 2,
+          "agentId": "life-2",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-3",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-4",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        },
+        {
+          "phase": 2,
+          "agentId": "life-5",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-6",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        },
+        {
+          "phase": 2,
+          "agentId": "life-7",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        }
+      ],
+      "maxLedgerResidual": 7.707967597525567e-11,
+      "modelSecondsSummedAmortized": 0.0,
+      "wallSeconds": 17.81222862499999,
+      "modelCalls": 0,
+      "updatesIncludingFinalBootstrap": 70,
+      "notes": [
+        "恢复按十步边界测量；低能量比例分母仅为实际存活时间，须与死亡和全队列存活指标一起读。",
+        "返回 A 的变化不是单独的遗忘因果检验。"
+      ]
+    },
+    {
+      "runId": "development-features-01-no-laya-317",
+      "mode": "no-laya",
+      "seed": 317,
+      "complete": true,
+      "initialCohort": 8,
+      "finalLiving": 3,
+      "deaths": 5,
+      "cohortReward": -3.04041472295845,
+      "survivalFraction": 0.726875,
+      "lowEnergyLivingTimeFraction": 0.17235119900640106,
+      "finalCohortEnergy": 7.845852770415492,
+      "movementCostPerFood": 0.7383847991892419,
+      "nonfeedingReturnPairs": 225,
+      "phaseCohortRewards": [
+        -1.5593986345557689,
+        -1.2113012144238522,
+        -0.2697148739788298
+      ],
+      "phaseFoodPerInitialAgent": [
+        14.848513654443437,
+        13.3572868930457,
+        11.478376535332808
+      ],
+      "recovery": [
+        {
+          "phase": 0,
+          "agentId": "life-0",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-1",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-2",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-3",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-4",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-5",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-6",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-7",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-0",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-1",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-2",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-3",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-4",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-5",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-6",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-7",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-0",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-1",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-2",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        },
+        {
+          "phase": 2,
+          "agentId": "life-3",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        },
+        {
+          "phase": 2,
+          "agentId": "life-4",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        },
+        {
+          "phase": 2,
+          "agentId": "life-5",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-6",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-7",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        }
+      ],
+      "maxLedgerResidual": 1.5415935195051134e-10,
+      "modelSecondsSummedAmortized": 0.0,
+      "wallSeconds": 17.18648520798888,
+      "modelCalls": 0,
+      "updatesIncludingFinalBootstrap": 71,
+      "notes": [
+        "恢复按十步边界测量；低能量比例分母仅为实际存活时间，须与死亡和全队列存活指标一起读。",
+        "返回 A 的变化不是单独的遗忘因果检验。"
+      ]
+    },
+    {
+      "runId": "development-features-01-no-laya-331",
+      "mode": "no-laya",
+      "seed": 331,
+      "complete": true,
+      "initialCohort": 8,
+      "finalLiving": 4,
+      "deaths": 4,
+      "cohortReward": -2.6329002452355987,
+      "survivalFraction": 0.7723263888888889,
+      "lowEnergyLivingTimeFraction": 0.23904149620105203,
+      "finalCohortEnergy": 10.670997547644012,
+      "movementCostPerFood": 0.6569968793675083,
+      "nonfeedingReturnPairs": 221,
+      "phaseCohortRewards": [
+        -1.6104376629227315,
+        -1.1938905046256563,
+        0.17142792231278584
+      ],
+      "phaseFoodPerInitialAgent": [
+        14.383123370773973,
+        12.36642298869987,
+        18.052740741986074
+      ],
+      "recovery": [
+        {
+          "phase": 0,
+          "agentId": "life-0",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-1",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-2",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-3",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-4",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-5",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-6",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 0,
+          "agentId": "life-7",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-0",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-1",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-2",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-3",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-4",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-5",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-6",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 1,
+          "agentId": "life-7",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-0",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        },
+        {
+          "phase": 2,
+          "agentId": "life-1",
+          "latencyTicks": 360,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-2",
+          "latencyTicks": 970,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-3",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-4",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        },
+        {
+          "phase": 2,
+          "agentId": "life-5",
+          "latencyTicks": 0,
+          "censored": false,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": true
+        },
+        {
+          "phase": 2,
+          "agentId": "life-6",
+          "latencyTicks": null,
+          "censored": true,
+          "diedByPhaseEnd": true,
+          "phaseEnteredAlive": false
+        },
+        {
+          "phase": 2,
+          "agentId": "life-7",
+          "latencyTicks": 410,
+          "censored": false,
+          "diedByPhaseEnd": false,
+          "phaseEnteredAlive": true
+        }
+      ],
+      "maxLedgerResidual": 8.822098607197404e-11,
+      "modelSecondsSummedAmortized": 0.0,
+      "wallSeconds": 18.472474624984898,
+      "modelCalls": 0,
+      "updatesIncludingFinalBootstrap": 74,
+      "notes": [
+        "恢复按十步边界测量；低能量比例分母仅为实际存活时间，须与死亡和全队列存活指标一起读。",
+        "返回 A 的变化不是单独的遗忘因果检验。"
+      ]
+    }
+  ]
+}

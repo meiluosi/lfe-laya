@@ -1,0 +1,316 @@
+{
+  "scope": "post-hoc descriptive diagnostics, not preregistered success metrics; all online seeds included",
+  "trajectories": [
+    {
+      "id": "online-101-rule",
+      "mode": "rule",
+      "steps": 360,
+      "actions": {
+        "eat": 93,
+        "west": 82,
+        "north": 53,
+        "east": 82,
+        "south": 50
+      },
+      "immediate_move_reversals": 162,
+      "eligible_full_bite_steps": 3,
+      "eligible_full_bite_taken": 3,
+      "final_environment_food": 463.160000000001,
+      "death": false
+    },
+    {
+      "id": "online-101-fixed-current",
+      "mode": "fixed-current",
+      "steps": 132,
+      "actions": {
+        "eat": 3,
+        "north": 62,
+        "east": 3,
+        "south": 64
+      },
+      "immediate_move_reversals": 117,
+      "eligible_full_bite_steps": 3,
+      "eligible_full_bite_taken": 3,
+      "final_environment_food": 270,
+      "death": true
+    },
+    {
+      "id": "online-101-fixed-memory",
+      "mode": "fixed-memory",
+      "steps": 132,
+      "actions": {
+        "eat": 3,
+        "north": 66,
+        "south": 63
+      },
+      "immediate_move_reversals": 125,
+      "eligible_full_bite_steps": 3,
+      "eligible_full_bite_taken": 3,
+      "final_environment_food": 270,
+      "death": true
+    },
+    {
+      "id": "online-101-B",
+      "mode": "B",
+      "steps": 360,
+      "actions": {
+        "south": 63,
+        "west": 63,
+        "north": 65,
+        "east": 60,
+        "rest": 71,
+        "eat": 38
+      },
+      "immediate_move_reversals": 53,
+      "eligible_full_bite_steps": 96,
+      "eligible_full_bite_taken": 17,
+      "final_environment_food": 466.76,
+      "death": false
+    },
+    {
+      "id": "online-101-no-laya",
+      "mode": "no-laya",
+      "steps": 360,
+      "actions": {
+        "south": 63,
+        "west": 61,
+        "north": 62,
+        "east": 59,
+        "rest": 58,
+        "eat": 57
+      },
+      "immediate_move_reversals": 50,
+      "eligible_full_bite_steps": 75,
+      "eligible_full_bite_taken": 13,
+      "final_environment_food": 467.1200000000003,
+      "death": false
+    },
+    {
+      "id": "online-101-frozen-B",
+      "mode": "frozen-B",
+      "steps": 360,
+      "actions": {
+        "south": 63,
+        "west": 68,
+        "north": 64,
+        "east": 68,
+        "rest": 63,
+        "eat": 34
+      },
+      "immediate_move_reversals": 49,
+      "eligible_full_bite_steps": 72,
+      "eligible_full_bite_taken": 12,
+      "final_environment_food": 477.30000000000035,
+      "death": false
+    },
+    {
+      "id": "online-102-rule",
+      "mode": "rule",
+      "steps": 360,
+      "actions": {
+        "eat": 91,
+        "north": 43,
+        "west": 93,
+        "south": 41,
+        "east": 92
+      },
+      "immediate_move_reversals": 164,
+      "eligible_full_bite_steps": 3,
+      "eligible_full_bite_taken": 3,
+      "final_environment_food": 462.800000000001,
+      "death": false
+    },
+    {
+      "id": "online-102-fixed-current",
+      "mode": "fixed-current",
+      "steps": 132,
+      "actions": {
+        "eat": 3,
+        "north": 65,
+        "south": 62,
+        "east": 1,
+        "west": 1
+      },
+      "immediate_move_reversals": 123,
+      "eligible_full_bite_steps": 12,
+      "eligible_full_bite_taken": 3,
+      "final_environment_food": 270,
+      "death": true
+    },
+    {
+      "id": "online-102-fixed-memory",
+      "mode": "fixed-memory",
+      "steps": 150,
+      "actions": {
+        "eat": 4,
+        "north": 73,
+        "south": 71,
+        "east": 2
+      },
+      "immediate_move_reversals": 137,
+      "eligible_full_bite_steps": 4,
+      "eligible_full_bite_taken": 4,
+      "final_environment_food": 285,
+      "death": true
+    },
+    {
+      "id": "online-102-B",
+      "mode": "B",
+      "steps": 360,
+      "actions": {
+        "west": 66,
+        "east": 63,
+        "rest": 47,
+        "north": 46,
+        "south": 48,
+        "eat": 90
+      },
+      "immediate_move_reversals": 42,
+      "eligible_full_bite_steps": 49,
+      "eligible_full_bite_taken": 9,
+      "final_environment_food": 470.7800000000006,
+      "death": false
+    },
+    {
+      "id": "online-102-no-laya",
+      "mode": "no-laya",
+      "steps": 360,
+      "actions": {
+        "west": 70,
+        "east": 67,
+        "rest": 53,
+        "north": 56,
+        "south": 57,
+        "eat": 57
+      },
+      "immediate_move_reversals": 49,
+      "eligible_full_bite_steps": 82,
+      "eligible_full_bite_taken": 13,
+      "final_environment_food": 465.9200000000004,
+      "death": false
+    },
+    {
+      "id": "online-102-frozen-B",
+      "mode": "frozen-B",
+      "steps": 360,
+      "actions": {
+        "west": 71,
+        "east": 70,
+        "rest": 59,
+        "north": 61,
+        "south": 60,
+        "eat": 39
+      },
+      "immediate_move_reversals": 48,
+      "eligible_full_bite_steps": 89,
+      "eligible_full_bite_taken": 15,
+      "final_environment_food": 463.7600000000003,
+      "death": false
+    },
+    {
+      "id": "online-103-rule",
+      "mode": "rule",
+      "steps": 360,
+      "actions": {
+        "north": 58,
+        "eat": 93,
+        "west": 78,
+        "south": 55,
+        "east": 76
+      },
+      "immediate_move_reversals": 159,
+      "eligible_full_bite_steps": 3,
+      "eligible_full_bite_taken": 3,
+      "final_environment_food": 462.860000000001,
+      "death": false
+    },
+    {
+      "id": "online-103-fixed-current",
+      "mode": "fixed-current",
+      "steps": 98,
+      "actions": {
+        "north": 35,
+        "south": 32,
+        "eat": 1,
+        "east": 16,
+        "west": 14
+      },
+      "immediate_move_reversals": 84,
+      "eligible_full_bite_steps": 6,
+      "eligible_full_bite_taken": 1,
+      "final_environment_food": 235,
+      "death": true
+    },
+    {
+      "id": "online-103-fixed-memory",
+      "mode": "fixed-memory",
+      "steps": 115,
+      "actions": {
+        "north": 54,
+        "eat": 2,
+        "east": 5,
+        "south": 52,
+        "west": 2
+      },
+      "immediate_move_reversals": 98,
+      "eligible_full_bite_steps": 3,
+      "eligible_full_bite_taken": 2,
+      "final_environment_food": 250,
+      "death": true
+    },
+    {
+      "id": "online-103-B",
+      "mode": "B",
+      "steps": 360,
+      "actions": {
+        "east": 50,
+        "south": 65,
+        "north": 66,
+        "west": 51,
+        "rest": 73,
+        "eat": 55
+      },
+      "immediate_move_reversals": 31,
+      "eligible_full_bite_steps": 47,
+      "eligible_full_bite_taken": 9,
+      "final_environment_food": 469.1600000000007,
+      "death": false
+    },
+    {
+      "id": "online-103-no-laya",
+      "mode": "no-laya",
+      "steps": 360,
+      "actions": {
+        "east": 52,
+        "south": 64,
+        "north": 63,
+        "west": 53,
+        "rest": 68,
+        "eat": 60
+      },
+      "immediate_move_reversals": 36,
+      "eligible_full_bite_steps": 47,
+      "eligible_full_bite_taken": 9,
+      "final_environment_food": 469.1600000000007,
+      "death": false
+    },
+    {
+      "id": "online-103-frozen-B",
+      "mode": "frozen-B",
+      "steps": 360,
+      "actions": {
+        "east": 58,
+        "south": 58,
+        "north": 58,
+        "west": 59,
+        "rest": 88,
+        "eat": 39
+      },
+      "immediate_move_reversals": 32,
+      "eligible_full_bite_steps": 62,
+      "eligible_full_bite_taken": 13,
+      "final_environment_food": 470.14000000000044,
+      "death": false
+    }
+  ]
+}

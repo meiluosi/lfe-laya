@@ -1,0 +1,50 @@
+{
+  "items": 240,
+  "seconds": 161.7,
+  "model": {
+    "provider": "laya",
+    "sdk": "0.3.21",
+    "repo": "convaiinnovations/laya",
+    "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+    "requested_device": "mps",
+    "actual_device": "mps",
+    "cpu_fallback_count": 0,
+    "template": "ecology-local-en-v1",
+    "load_seconds": 44.953407209017314,
+    "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12",
+    "observation_precision": "food:0.01, distance:0.1; raw observation retained"
+  },
+  "semantic": {
+    "n": 120,
+    "auc_noul": 0.481,
+    "auc_choice_forward": 0.9992,
+    "auc_choice_reverse": 0.9994,
+    "auc_choice_orderAveraged": 1.0,
+    "accuracy_choice_orderAveraged": 0.9333,
+    "meanPEat": {
+      "edible": 0.674,
+      "harmful": 0.203
+    },
+    "positionBias_meanPEatForward_vs_Reverse": [
+      0.493,
+      0.385
+    ]
+  },
+  "nonsense": {
+    "n": 120,
+    "auc_noul": 0.4897,
+    "auc_choice_forward": 0.5174,
+    "auc_choice_reverse": 0.5232,
+    "auc_choice_orderAveraged": 0.5219,
+    "accuracy_choice_orderAveraged": 0.4917,
+    "meanPEat": {
+      "edible": 0.371,
+      "harmful": 0.37
+    },
+    "positionBias_meanPEatForward_vs_Reverse": [
+      0.516,
+      0.224
+    ]
+  },
+  "limits": "模板化描述，英文；零样本；标签由描述词决定；只测语义直觉，不测生存。nonsense 的标签是随机分配的，用来测格式偏置。"
+}

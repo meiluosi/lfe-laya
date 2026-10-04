@@ -1,0 +1,116 @@
+{
+  "0": {
+    "laya-rule（不学习）": {
+      "fitness": 0.472,
+      "toxicBites": 0,
+      "survival": 0.673,
+      "vsExplorer": "-0.196 [-0.282, -0.110]"
+    },
+    "explorer（基线：Laya + 个体经验）": {
+      "fitness": 0.668,
+      "toxicBites": 67,
+      "survival": 0.844,
+      "vsExplorer": "+0.000 [0.000, 0.000]"
+    },
+    "explorer，只对“模糊”试吃 → 全部先试（badAt=0）": {
+      "fitness": 0.694,
+      "toxicBites": 187,
+      "survival": 0.863,
+      "vsExplorer": "+0.025 [-0.029, 0.086]"
+    },
+    "explorer，不信 Laya 的“好”（goodAt=badAt=0.9：几乎都要先试）": {
+      "fitness": 0.199,
+      "toxicBites": 0,
+      "survival": 0.285,
+      "vsExplorer": "-0.469 [-0.549, -0.390]"
+    },
+    "【诊断】无语义词的真值已知（只需 Laya + 学习其余）": {
+      "fitness": 0.746,
+      "toxicBites": 24,
+      "survival": 0.905,
+      "vsExplorer": "+0.078 [0.021, 0.140]"
+    },
+    "【诊断】有语义词的真值已知（无语义词靠试）": {
+      "fitness": 0.682,
+      "toxicBites": 44,
+      "survival": 0.857,
+      "vsExplorer": "+0.014 [-0.006, 0.034]"
+    },
+    "【诊断·另一种机制】队列内共享经验（社会学习上限）": {
+      "fitness": 0.691,
+      "toxicBites": 10,
+      "survival": 0.865,
+      "vsExplorer": "+0.023 [-0.004, 0.047]"
+    },
+    "explorer，带遗忘（forget=0.1）": {
+      "fitness": 0.668,
+      "toxicBites": 67,
+      "survival": 0.844,
+      "vsExplorer": "+0.000 [0.000, 0.000]"
+    },
+    "oracle（全部真值）": {
+      "fitness": 0.751,
+      "toxicBites": 0,
+      "survival": 0.908,
+      "vsExplorer": "+0.082 [0.027, 0.147]"
+    }
+  },
+  "purpose": "差距拆解（开发评估，测试划分新描述词）。【诊断】项使用隐藏真值或共享经验，不是个体可用的。",
+  "seeds": 24,
+  "0.25": {
+    "laya-rule（不学习）": {
+      "fitness": 0.348,
+      "toxicBites": 81,
+      "survival": 0.497,
+      "vsExplorer": "-0.238 [-0.319, -0.166]"
+    },
+    "explorer（基线：Laya + 个体经验）": {
+      "fitness": 0.586,
+      "toxicBites": 79,
+      "survival": 0.756,
+      "vsExplorer": "+0.000 [0.000, 0.000]"
+    },
+    "explorer，只对“模糊”试吃 → 全部先试（badAt=0）": {
+      "fitness": 0.709,
+      "toxicBites": 180,
+      "survival": 0.874,
+      "vsExplorer": "+0.123 [0.051, 0.199]"
+    },
+    "explorer，不信 Laya 的“好”（goodAt=badAt=0.9：几乎都要先试）": {
+      "fitness": 0.199,
+      "toxicBites": 0,
+      "survival": 0.285,
+      "vsExplorer": "-0.387 [-0.473, -0.298]"
+    },
+    "【诊断】无语义词的真值已知（只需 Laya + 学习其余）": {
+      "fitness": 0.62,
+      "toxicBites": 36,
+      "survival": 0.811,
+      "vsExplorer": "+0.034 [-0.003, 0.076]"
+    },
+    "【诊断】有语义词的真值已知（无语义词靠试）": {
+      "fitness": 0.692,
+      "toxicBites": 40,
+      "survival": 0.858,
+      "vsExplorer": "+0.106 [0.051, 0.168]"
+    },
+    "【诊断·另一种机制】队列内共享经验（社会学习上限）": {
+      "fitness": 0.59,
+      "toxicBites": 13,
+      "survival": 0.778,
+      "vsExplorer": "+0.004 [-0.014, 0.020]"
+    },
+    "explorer，带遗忘（forget=0.1）": {
+      "fitness": 0.586,
+      "toxicBites": 79,
+      "survival": 0.756,
+      "vsExplorer": "+0.000 [0.000, 0.000]"
+    },
+    "oracle（全部真值）": {
+      "fitness": 0.731,
+      "toxicBites": 0,
+      "survival": 0.905,
+      "vsExplorer": "+0.145 [0.083, 0.208]"
+    }
+  }
+}

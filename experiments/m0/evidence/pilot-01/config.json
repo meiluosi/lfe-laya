@@ -1,0 +1,60 @@
+{
+  "version": "m0-learning-v1",
+  "status": "frozen before heldout",
+  "algorithm": "SB3-Contrib MaskablePPO",
+  "policy": "MlpPolicy",
+  "network": {
+    "pi": [
+      32
+    ],
+    "vf": [
+      32
+    ]
+  },
+  "learning_rate": 0.001,
+  "n_steps": 32,
+  "batch_size": 16,
+  "n_epochs": 4,
+  "gamma": 0.98,
+  "gae_lambda": 0.95,
+  "clip_range": 0.2,
+  "ent_coef": 0.01,
+  "vf_coef": 0.5,
+  "max_grad_norm": 0.5,
+  "normalize_advantage": false,
+  "seed_development": [
+    71,
+    72
+  ],
+  "seed_training": [
+    71
+  ],
+  "seed_heldout": [
+    72
+  ],
+  "world": {
+    "size": 7,
+    "horizon": 64,
+    "phaseSteps": 24,
+    "perception": 2,
+    "capacity": 40,
+    "initialEnergy": 24,
+    "metabolism": 0.12,
+    "moveCost": 0.18,
+    "bite": 5,
+    "memorySize": 8,
+    "memoryTtl": 60,
+    "initialFood": 120,
+    "supplyEvery": 4,
+    "supplyAmount": 5
+  },
+  "reward": "(energy_after-energy_before)/10 - 1 if death; delta term counted once",
+  "prior": "six Laya probabilities are inputs to independent actor/critic networks; weights frozen; missing Laya in ablation = zero vector",
+  "sampling": "own CPU torch generator state for each individual; final legal policy distribution sampled",
+  "evaluation": "online A/B/A with no resurrection; separate frozen heldout worlds from recorded checkpoints; memory updates allowed identically",
+  "learning_gain_gate": "matched heldout B mean total reward > initial frozen B by at least 0.1, no greater death count, positive reward difference in at least 2 of 3 seeds; exploratory small-sample signal only",
+  "laya_value_gate": "same gate comparing B against no-Laya learner; report failures/negative differences",
+  "adaptation": "mean reward per stage and per 20-step window; return-A first 20 vs initial-A first 20; dead suffix unobserved, never zero-filled as survival",
+  "limits": "360 steps is a feasibility budget, not a claim that PPO converges or persistent ecology succeeds",
+  "checkpoint": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851"
+}

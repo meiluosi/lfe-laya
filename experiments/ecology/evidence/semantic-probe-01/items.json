@@ -1,0 +1,2162 @@
+[
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "clean and nutritious nectar",
+  "pNoul": 0.8246,
+  "pEatFwd": 0.9316,
+  "pEatRev": 0.8015,
+  "pEatAvg": 0.8665499999999999
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "dull, spoiled and fuzzy with mold pollen",
+  "pNoul": 0.7813,
+  "pEatFwd": 0.3282,
+  "pEatRev": 0.3112,
+  "pEatAvg": 0.3197
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "ripe and sweet fruit",
+  "pNoul": 0.5484,
+  "pEatFwd": 0.7485,
+  "pEatRev": 0.7518,
+  "pEatAvg": 0.7501500000000001
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "putrid and crawling with maggots fruit",
+  "pNoul": 0.7945,
+  "pEatFwd": 0.1888,
+  "pEatRev": 0.1015,
+  "pEatAvg": 0.14515
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "clean and nutritious moss",
+  "pNoul": 0.8417,
+  "pEatFwd": 0.9356,
+  "pEatRev": 0.7916,
+  "pEatAvg": 0.8635999999999999
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "rotten and foul-smelling bud",
+  "pNoul": 0.8417,
+  "pEatFwd": 0.3124,
+  "pEatRev": 0.2334,
+  "pEatAvg": 0.27290000000000003
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "golden and warm-smelling berry",
+  "pNoul": 0.808,
+  "pEatFwd": 0.7862,
+  "pEatRev": 0.6371,
+  "pEatAvg": 0.71165
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "moldy and slimy sap",
+  "pNoul": 0.8436,
+  "pEatFwd": 0.1459,
+  "pEatRev": 0.12,
+  "pEatAvg": 0.13295
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "glossy, firm and ripe fruit",
+  "pNoul": 0.2867,
+  "pEatFwd": 0.6119,
+  "pEatRev": 0.472,
+  "pEatAvg": 0.5419499999999999
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "covered in poisonous spots fruit",
+  "pNoul": 0.2046,
+  "pEatFwd": 0.2018,
+  "pEatRev": 0.139,
+  "pEatAvg": 0.1704
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "tender and fresh sap",
+  "pNoul": 0.7558,
+  "pEatFwd": 0.6776,
+  "pEatRev": 0.6551,
+  "pEatAvg": 0.66635
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "rotten and foul-smelling moss",
+  "pNoul": 0.8466,
+  "pEatFwd": 0.3827,
+  "pEatRev": 0.229,
+  "pEatAvg": 0.30585
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "fresh and juicy seed",
+  "pNoul": 0.8649,
+  "pEatFwd": 0.5584,
+  "pEatRev": 0.5258,
+  "pEatAvg": 0.5421
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "rotten and foul-smelling moss",
+  "pNoul": 0.8466,
+  "pEatFwd": 0.3827,
+  "pEatRev": 0.229,
+  "pEatAvg": 0.30585
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "glossy, firm and ripe berry",
+  "pNoul": 0.4018,
+  "pEatFwd": 0.7851,
+  "pEatRev": 0.5985,
+  "pEatAvg": 0.6918
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "covered in poisonous spots berry",
+  "pNoul": 0.613,
+  "pEatFwd": 0.1741,
+  "pEatRev": 0.0882,
+  "pEatAvg": 0.13115
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "tender and fresh nectar",
+  "pNoul": 0.7799,
+  "pEatFwd": 0.8747,
+  "pEatRev": 0.8918,
+  "pEatAvg": 0.8832500000000001
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "shriveled, sour and decayed sap",
+  "pNoul": 0.5306,
+  "pEatFwd": 0.197,
+  "pEatRev": 0.1194,
+  "pEatAvg": 0.1582
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "plump and fragrant bud",
+  "pNoul": 0.7429,
+  "pEatFwd": 0.4091,
+  "pEatRev": 0.4104,
+  "pEatAvg": 0.40975
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "moldy and slimy moss",
+  "pNoul": 0.8342,
+  "pEatFwd": 0.1521,
+  "pEatRev": 0.1176,
+  "pEatAvg": 0.13485
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "soft, sweet-smelling bud",
+  "pNoul": 0.6547,
+  "pEatFwd": 0.7238,
+  "pEatRev": 0.5653,
+  "pEatAvg": 0.64455
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "bitter and withered fruit",
+  "pNoul": 0.8194,
+  "pEatFwd": 0.395,
+  "pEatRev": 0.2376,
+  "pEatAvg": 0.3163
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "golden and warm-smelling root",
+  "pNoul": 0.8377,
+  "pEatFwd": 0.6247,
+  "pEatRev": 0.4223,
+  "pEatAvg": 0.5235000000000001
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "moldy and slimy bud",
+  "pNoul": 0.8761,
+  "pEatFwd": 0.1518,
+  "pEatRev": 0.129,
+  "pEatAvg": 0.1404
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "fresh and juicy moss",
+  "pNoul": 0.8466,
+  "pEatFwd": 0.7661,
+  "pEatRev": 0.6025,
+  "pEatAvg": 0.6843
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "rotten and foul-smelling moss",
+  "pNoul": 0.8466,
+  "pEatFwd": 0.3827,
+  "pEatRev": 0.229,
+  "pEatAvg": 0.30585
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "golden and warm-smelling mushroom",
+  "pNoul": 0.864,
+  "pEatFwd": 0.5812,
+  "pEatRev": 0.3484,
+  "pEatAvg": 0.4648
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "putrid and crawling with maggots sap",
+  "pNoul": 0.7073,
+  "pEatFwd": 0.1776,
+  "pEatRev": 0.0831,
+  "pEatAvg": 0.13035
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "clean and nutritious mushroom",
+  "pNoul": 0.8407,
+  "pEatFwd": 0.9296,
+  "pEatRev": 0.8499,
+  "pEatAvg": 0.88975
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "bright with warning stripes and acrid root",
+  "pNoul": 0.8597,
+  "pEatFwd": 0.3042,
+  "pEatRev": 0.1165,
+  "pEatAvg": 0.21035
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "soft, sweet-smelling seed",
+  "pNoul": 0.8456,
+  "pEatFwd": 0.629,
+  "pEatRev": 0.5083,
+  "pEatAvg": 0.56865
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "bitter and withered petal",
+  "pNoul": 0.8263,
+  "pEatFwd": 0.2655,
+  "pEatRev": 0.17,
+  "pEatAvg": 0.21775
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "golden and warm-smelling fruit",
+  "pNoul": 0.7232,
+  "pEatFwd": 0.8003,
+  "pEatRev": 0.6697,
+  "pEatAvg": 0.735
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "shriveled, sour and decayed bud",
+  "pNoul": 0.7,
+  "pEatFwd": 0.1603,
+  "pEatRev": 0.1641,
+  "pEatAvg": 0.1622
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "honey-scented root",
+  "pNoul": 0.8487,
+  "pEatFwd": 0.7054,
+  "pEatRev": 0.4549,
+  "pEatAvg": 0.58015
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "bright with warning stripes and acrid leaf",
+  "pNoul": 0.8024,
+  "pEatFwd": 0.3391,
+  "pEatRev": 0.1445,
+  "pEatAvg": 0.24180000000000001
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "fresh and juicy fruit",
+  "pNoul": 0.7655,
+  "pEatFwd": 0.8158,
+  "pEatRev": 0.7233,
+  "pEatAvg": 0.76955
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "putrid and crawling with maggots sap",
+  "pNoul": 0.7073,
+  "pEatFwd": 0.1776,
+  "pEatRev": 0.0831,
+  "pEatAvg": 0.13035
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "plump and fragrant root",
+  "pNoul": 0.5756,
+  "pEatFwd": 0.7084,
+  "pEatRev": 0.4992,
+  "pEatAvg": 0.6038
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "bitter and withered mushroom",
+  "pNoul": 0.8958,
+  "pEatFwd": 0.4154,
+  "pEatRev": 0.1706,
+  "pEatAvg": 0.293
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "glossy, firm and ripe berry",
+  "pNoul": 0.4018,
+  "pEatFwd": 0.7851,
+  "pEatRev": 0.5985,
+  "pEatAvg": 0.6918
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "moldy and slimy bud",
+  "pNoul": 0.8761,
+  "pEatFwd": 0.1518,
+  "pEatRev": 0.129,
+  "pEatAvg": 0.1404
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "clean and nutritious root",
+  "pNoul": 0.8063,
+  "pEatFwd": 0.9251,
+  "pEatRev": 0.8562,
+  "pEatAvg": 0.8906499999999999
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "oozing a sharp chemical stench moss",
+  "pNoul": 0.4549,
+  "pEatFwd": 0.2285,
+  "pEatRev": 0.115,
+  "pEatAvg": 0.17175
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "honey-scented moss",
+  "pNoul": 0.8727,
+  "pEatFwd": 0.6951,
+  "pEatRev": 0.3467,
+  "pEatAvg": 0.5209
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "bright with warning stripes and acrid fruit",
+  "pNoul": 0.6661,
+  "pEatFwd": 0.3555,
+  "pEatRev": 0.1622,
+  "pEatAvg": 0.25885
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "fresh and juicy leaf",
+  "pNoul": 0.6308,
+  "pEatFwd": 0.6758,
+  "pEatRev": 0.644,
+  "pEatAvg": 0.6598999999999999
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "bright with warning stripes and acrid petal",
+  "pNoul": 0.8556,
+  "pEatFwd": 0.3671,
+  "pEatRev": 0.1223,
+  "pEatAvg": 0.2447
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "fresh and juicy berry",
+  "pNoul": 0.7478,
+  "pEatFwd": 0.836,
+  "pEatRev": 0.7564,
+  "pEatAvg": 0.7962
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "shriveled, sour and decayed pollen",
+  "pNoul": 0.7386,
+  "pEatFwd": 0.1982,
+  "pEatRev": 0.0889,
+  "pEatAvg": 0.14355
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "honey-scented leaf",
+  "pNoul": 0.8513,
+  "pEatFwd": 0.7082,
+  "pEatRev": 0.4089,
+  "pEatAvg": 0.55855
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "dull, spoiled and fuzzy with mold pollen",
+  "pNoul": 0.7813,
+  "pEatFwd": 0.3282,
+  "pEatRev": 0.3112,
+  "pEatAvg": 0.3197
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "clean and nutritious berry",
+  "pNoul": 0.8111,
+  "pEatFwd": 0.9059,
+  "pEatRev": 0.8649,
+  "pEatAvg": 0.8854
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "bright with warning stripes and acrid root",
+  "pNoul": 0.8597,
+  "pEatFwd": 0.3042,
+  "pEatRev": 0.1165,
+  "pEatAvg": 0.21035
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "plump and fragrant moss",
+  "pNoul": 0.8438,
+  "pEatFwd": 0.6714,
+  "pEatRev": 0.4631,
+  "pEatAvg": 0.56725
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "moldy and slimy mushroom",
+  "pNoul": 0.8985,
+  "pEatFwd": 0.1415,
+  "pEatRev": 0.0776,
+  "pEatAvg": 0.10955
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "ripe and sweet seed",
+  "pNoul": 0.8432,
+  "pEatFwd": 0.6424,
+  "pEatRev": 0.51,
+  "pEatAvg": 0.5762
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "shriveled, sour and decayed nectar",
+  "pNoul": 0.1324,
+  "pEatFwd": 0.0689,
+  "pEatRev": 0.0678,
+  "pEatAvg": 0.06835
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "golden and warm-smelling sap",
+  "pNoul": 0.8144,
+  "pEatFwd": 0.5593,
+  "pEatRev": 0.3823,
+  "pEatAvg": 0.4708
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "dull, spoiled and fuzzy with mold mushroom",
+  "pNoul": 0.8057,
+  "pEatFwd": 0.3544,
+  "pEatRev": 0.2423,
+  "pEatAvg": 0.29835
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "fresh and juicy nectar",
+  "pNoul": 0.8713,
+  "pEatFwd": 0.8425,
+  "pEatRev": 0.8537,
+  "pEatAvg": 0.8481000000000001
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "bright with warning stripes and acrid sap",
+  "pNoul": 0.8383,
+  "pEatFwd": 0.3611,
+  "pEatRev": 0.1264,
+  "pEatAvg": 0.24375
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "tender and fresh leaf",
+  "pNoul": 0.8492,
+  "pEatFwd": 0.7609,
+  "pEatRev": 0.7719,
+  "pEatAvg": 0.7664
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "bitter and withered sap",
+  "pNoul": 0.766,
+  "pEatFwd": 0.2195,
+  "pEatRev": 0.1759,
+  "pEatAvg": 0.1977
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "tender and fresh leaf",
+  "pNoul": 0.8492,
+  "pEatFwd": 0.7609,
+  "pEatRev": 0.7719,
+  "pEatAvg": 0.7664
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "dull, spoiled and fuzzy with mold root",
+  "pNoul": 0.6399,
+  "pEatFwd": 0.2923,
+  "pEatRev": 0.3186,
+  "pEatAvg": 0.30545
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "glossy, firm and ripe seed",
+  "pNoul": 0.6508,
+  "pEatFwd": 0.5064,
+  "pEatRev": 0.5344,
+  "pEatAvg": 0.5204
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "bitter and withered fruit",
+  "pNoul": 0.8194,
+  "pEatFwd": 0.395,
+  "pEatRev": 0.2376,
+  "pEatAvg": 0.3163
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "plump and fragrant nectar",
+  "pNoul": 0.7939,
+  "pEatFwd": 0.7367,
+  "pEatRev": 0.6982,
+  "pEatAvg": 0.71745
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "covered in poisonous spots pollen",
+  "pNoul": 0.5732,
+  "pEatFwd": 0.2628,
+  "pEatRev": 0.1487,
+  "pEatAvg": 0.20575
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "golden and warm-smelling berry",
+  "pNoul": 0.808,
+  "pEatFwd": 0.7862,
+  "pEatRev": 0.6371,
+  "pEatAvg": 0.71165
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "bright with warning stripes and acrid moss",
+  "pNoul": 0.8607,
+  "pEatFwd": 0.324,
+  "pEatRev": 0.1331,
+  "pEatAvg": 0.22855
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "plump and fragrant leaf",
+  "pNoul": 0.7779,
+  "pEatFwd": 0.5992,
+  "pEatRev": 0.3886,
+  "pEatAvg": 0.4939
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "shriveled, sour and decayed berry",
+  "pNoul": 0.2723,
+  "pEatFwd": 0.3004,
+  "pEatRev": 0.1386,
+  "pEatAvg": 0.2195
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "plump and fragrant sap",
+  "pNoul": 0.4367,
+  "pEatFwd": 0.5442,
+  "pEatRev": 0.4597,
+  "pEatAvg": 0.50195
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "putrid and crawling with maggots root",
+  "pNoul": 0.7905,
+  "pEatFwd": 0.164,
+  "pEatRev": 0.0971,
+  "pEatAvg": 0.13055
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "clean and nutritious nectar",
+  "pNoul": 0.8246,
+  "pEatFwd": 0.9316,
+  "pEatRev": 0.8015,
+  "pEatAvg": 0.8665499999999999
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "putrid and crawling with maggots moss",
+  "pNoul": 0.59,
+  "pEatFwd": 0.1731,
+  "pEatRev": 0.096,
+  "pEatAvg": 0.13455
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "ripe and sweet mushroom",
+  "pNoul": 0.6464,
+  "pEatFwd": 0.781,
+  "pEatRev": 0.7066,
+  "pEatAvg": 0.7438
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "putrid and crawling with maggots sap",
+  "pNoul": 0.7073,
+  "pEatFwd": 0.1776,
+  "pEatRev": 0.0831,
+  "pEatAvg": 0.13035
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "glossy, firm and ripe sap",
+  "pNoul": 0.7065,
+  "pEatFwd": 0.659,
+  "pEatRev": 0.5093,
+  "pEatAvg": 0.58415
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "dull, spoiled and fuzzy with mold fruit",
+  "pNoul": 0.2179,
+  "pEatFwd": 0.3944,
+  "pEatRev": 0.3367,
+  "pEatAvg": 0.36555
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "honey-scented pollen",
+  "pNoul": 0.8191,
+  "pEatFwd": 0.7515,
+  "pEatRev": 0.3689,
+  "pEatAvg": 0.5602
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "dull, spoiled and fuzzy with mold berry",
+  "pNoul": 0.2431,
+  "pEatFwd": 0.343,
+  "pEatRev": 0.2514,
+  "pEatAvg": 0.2972
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "golden and warm-smelling fruit",
+  "pNoul": 0.7232,
+  "pEatFwd": 0.8003,
+  "pEatRev": 0.6697,
+  "pEatAvg": 0.735
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "covered in poisonous spots mushroom",
+  "pNoul": 0.7737,
+  "pEatFwd": 0.1805,
+  "pEatRev": 0.1017,
+  "pEatAvg": 0.1411
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "plump and fragrant fruit",
+  "pNoul": 0.7064,
+  "pEatFwd": 0.804,
+  "pEatRev": 0.7207,
+  "pEatAvg": 0.7623500000000001
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "oozing a sharp chemical stench moss",
+  "pNoul": 0.4549,
+  "pEatFwd": 0.2285,
+  "pEatRev": 0.115,
+  "pEatAvg": 0.17175
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "ripe and sweet fruit",
+  "pNoul": 0.5484,
+  "pEatFwd": 0.7485,
+  "pEatRev": 0.7518,
+  "pEatAvg": 0.7501500000000001
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "rotten and foul-smelling moss",
+  "pNoul": 0.8466,
+  "pEatFwd": 0.3827,
+  "pEatRev": 0.229,
+  "pEatAvg": 0.30585
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "plump and fragrant bud",
+  "pNoul": 0.7429,
+  "pEatFwd": 0.4091,
+  "pEatRev": 0.4104,
+  "pEatAvg": 0.40975
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "moldy and slimy root",
+  "pNoul": 0.8733,
+  "pEatFwd": 0.1476,
+  "pEatRev": 0.1385,
+  "pEatAvg": 0.14305
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "ripe and sweet fruit",
+  "pNoul": 0.5484,
+  "pEatFwd": 0.7485,
+  "pEatRev": 0.7518,
+  "pEatAvg": 0.7501500000000001
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "covered in poisonous spots moss",
+  "pNoul": 0.8323,
+  "pEatFwd": 0.2609,
+  "pEatRev": 0.1589,
+  "pEatAvg": 0.20990000000000003
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "glossy, firm and ripe nectar",
+  "pNoul": 0.5003,
+  "pEatFwd": 0.802,
+  "pEatRev": 0.7744,
+  "pEatAvg": 0.7882
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "shriveled, sour and decayed root",
+  "pNoul": 0.6391,
+  "pEatFwd": 0.2456,
+  "pEatRev": 0.1523,
+  "pEatAvg": 0.19895000000000002
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "clean and nutritious mushroom",
+  "pNoul": 0.8407,
+  "pEatFwd": 0.9296,
+  "pEatRev": 0.8499,
+  "pEatAvg": 0.88975
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "moldy and slimy fruit",
+  "pNoul": 0.2834,
+  "pEatFwd": 0.0961,
+  "pEatRev": 0.061,
+  "pEatAvg": 0.07855000000000001
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "honey-scented mushroom",
+  "pNoul": 0.8975,
+  "pEatFwd": 0.6283,
+  "pEatRev": 0.3364,
+  "pEatAvg": 0.48234999999999995
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "bright with warning stripes and acrid mushroom",
+  "pNoul": 0.8376,
+  "pEatFwd": 0.336,
+  "pEatRev": 0.1163,
+  "pEatAvg": 0.22615000000000002
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "soft, sweet-smelling fruit",
+  "pNoul": 0.5999,
+  "pEatFwd": 0.8068,
+  "pEatRev": 0.6605,
+  "pEatAvg": 0.7336499999999999
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "bitter and withered fruit",
+  "pNoul": 0.8194,
+  "pEatFwd": 0.395,
+  "pEatRev": 0.2376,
+  "pEatAvg": 0.3163
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "clean and nutritious petal",
+  "pNoul": 0.8605,
+  "pEatFwd": 0.9267,
+  "pEatRev": 0.7107,
+  "pEatAvg": 0.8187
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "shriveled, sour and decayed mushroom",
+  "pNoul": 0.8585,
+  "pEatFwd": 0.2398,
+  "pEatRev": 0.1265,
+  "pEatAvg": 0.18315
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "plump and fragrant bud",
+  "pNoul": 0.7429,
+  "pEatFwd": 0.4091,
+  "pEatRev": 0.4104,
+  "pEatAvg": 0.40975
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "rotten and foul-smelling seed",
+  "pNoul": 0.8857,
+  "pEatFwd": 0.1589,
+  "pEatRev": 0.1228,
+  "pEatAvg": 0.14085
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "tender and fresh root",
+  "pNoul": 0.6965,
+  "pEatFwd": 0.806,
+  "pEatRev": 0.7706,
+  "pEatAvg": 0.7883
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "bitter and withered petal",
+  "pNoul": 0.8263,
+  "pEatFwd": 0.2655,
+  "pEatRev": 0.17,
+  "pEatAvg": 0.21775
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "tender and fresh berry",
+  "pNoul": 0.7466,
+  "pEatFwd": 0.8723,
+  "pEatRev": 0.8212,
+  "pEatAvg": 0.84675
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "putrid and crawling with maggots leaf",
+  "pNoul": 0.8068,
+  "pEatFwd": 0.1619,
+  "pEatRev": 0.0834,
+  "pEatAvg": 0.12265
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "fresh and juicy petal",
+  "pNoul": 0.8148,
+  "pEatFwd": 0.5947,
+  "pEatRev": 0.5056,
+  "pEatAvg": 0.55015
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "shriveled, sour and decayed bud",
+  "pNoul": 0.7,
+  "pEatFwd": 0.1603,
+  "pEatRev": 0.1641,
+  "pEatAvg": 0.1622
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "clean and nutritious nectar",
+  "pNoul": 0.8246,
+  "pEatFwd": 0.9316,
+  "pEatRev": 0.8015,
+  "pEatAvg": 0.8665499999999999
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "oozing a sharp chemical stench seed",
+  "pNoul": 0.6674,
+  "pEatFwd": 0.22,
+  "pEatRev": 0.1077,
+  "pEatAvg": 0.16385
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "tender and fresh bud",
+  "pNoul": 0.7122,
+  "pEatFwd": 0.7232,
+  "pEatRev": 0.6991,
+  "pEatAvg": 0.71115
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "putrid and crawling with maggots root",
+  "pNoul": 0.7905,
+  "pEatFwd": 0.164,
+  "pEatRev": 0.0971,
+  "pEatAvg": 0.13055
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "golden and warm-smelling moss",
+  "pNoul": 0.842,
+  "pEatFwd": 0.606,
+  "pEatRev": 0.3255,
+  "pEatAvg": 0.46575
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "covered in poisonous spots seed",
+  "pNoul": 0.8416,
+  "pEatFwd": 0.2154,
+  "pEatRev": 0.1153,
+  "pEatAvg": 0.16535
+ },
+ {
+  "kind": "semantic",
+  "edible": true,
+  "text": "glossy, firm and ripe petal",
+  "pNoul": 0.5892,
+  "pEatFwd": 0.6909,
+  "pEatRev": 0.5128,
+  "pEatAvg": 0.60185
+ },
+ {
+  "kind": "semantic",
+  "edible": false,
+  "text": "covered in poisonous spots seed",
+  "pNoul": 0.8416,
+  "pEatFwd": 0.2154,
+  "pEatRev": 0.1153,
+  "pEatAvg": 0.16535
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "kelsiff meppho-colored lump",
+  "pNoul": 0.8098,
+  "pEatFwd": 0.5805,
+  "pEatRev": 0.1835,
+  "pEatAvg": 0.382
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "vulsiff vultrax-shaped bit",
+  "pNoul": 0.8582,
+  "pEatFwd": 0.4903,
+  "pEatRev": 0.2136,
+  "pEatAvg": 0.35195
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "siffpho mepmep-colored thing",
+  "pNoul": 0.8699,
+  "pEatFwd": 0.598,
+  "pEatRev": 0.2474,
+  "pEatAvg": 0.42269999999999996
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "blimtrax sifftrax-textured thing",
+  "pNoul": 0.8665,
+  "pEatFwd": 0.5725,
+  "pEatRev": 0.2423,
+  "pEatAvg": 0.4074
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "siffnub nubzor-textured bit",
+  "pNoul": 0.8285,
+  "pEatFwd": 0.5624,
+  "pEatRev": 0.2745,
+  "pEatAvg": 0.41845
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "yarblim yarblim-textured thing",
+  "pNoul": 0.8571,
+  "pEatFwd": 0.5832,
+  "pEatRev": 0.3448,
+  "pEatAvg": 0.464
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "siffquen droyar-textured lump",
+  "pNoul": 0.8432,
+  "pEatFwd": 0.4033,
+  "pEatRev": 0.1617,
+  "pEatAvg": 0.2825
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "phodro siffdro-shaped lump",
+  "pNoul": 0.842,
+  "pEatFwd": 0.4773,
+  "pEatRev": 0.1808,
+  "pEatAvg": 0.32905
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "phoquen quenquen-colored thing",
+  "pNoul": 0.8483,
+  "pEatFwd": 0.554,
+  "pEatRev": 0.1971,
+  "pEatAvg": 0.37555000000000005
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "nubsiff yarquen-shaped piece",
+  "pNoul": 0.7585,
+  "pEatFwd": 0.4701,
+  "pEatRev": 0.2359,
+  "pEatAvg": 0.353
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "yarmep quenkel-shaped thing",
+  "pNoul": 0.8268,
+  "pEatFwd": 0.6046,
+  "pEatRev": 0.2293,
+  "pEatAvg": 0.41695000000000004
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "zorzor phoyar-colored thing",
+  "pNoul": 0.8635,
+  "pEatFwd": 0.6177,
+  "pEatRev": 0.2274,
+  "pEatAvg": 0.42255
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "drotrax traxzor-textured thing",
+  "pNoul": 0.5864,
+  "pEatFwd": 0.3889,
+  "pEatRev": 0.1863,
+  "pEatAvg": 0.2876
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "vulkel traxnub-textured bit",
+  "pNoul": 0.6329,
+  "pEatFwd": 0.5801,
+  "pEatRev": 0.2283,
+  "pEatAvg": 0.4042
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "keldro quenzor-shaped bit",
+  "pNoul": 0.8307,
+  "pEatFwd": 0.5589,
+  "pEatRev": 0.2509,
+  "pEatAvg": 0.4049
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "siffyar nubkel-textured thing",
+  "pNoul": 0.8584,
+  "pEatFwd": 0.4921,
+  "pEatRev": 0.2503,
+  "pEatAvg": 0.3712
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "kelquen kelkel-colored piece",
+  "pNoul": 0.8092,
+  "pEatFwd": 0.4699,
+  "pEatRev": 0.2509,
+  "pEatAvg": 0.3604
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "quennub zorquen-colored thing",
+  "pNoul": 0.8243,
+  "pEatFwd": 0.6024,
+  "pEatRev": 0.2321,
+  "pEatAvg": 0.41725
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "siffnub phoblim-shaped lump",
+  "pNoul": 0.8124,
+  "pEatFwd": 0.4533,
+  "pEatRev": 0.1678,
+  "pEatAvg": 0.31055
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "mepyar kelkel-shaped piece",
+  "pNoul": 0.7863,
+  "pEatFwd": 0.498,
+  "pEatRev": 0.1887,
+  "pEatAvg": 0.34335
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "blimkel zortrax-colored bit",
+  "pNoul": 0.6501,
+  "pEatFwd": 0.6767,
+  "pEatRev": 0.3115,
+  "pEatAvg": 0.4941
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "zorblim kelsiff-shaped lump",
+  "pNoul": 0.8585,
+  "pEatFwd": 0.5368,
+  "pEatRev": 0.221,
+  "pEatAvg": 0.3789
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "blimsiff mepnub-shaped thing",
+  "pNoul": 0.7437,
+  "pEatFwd": 0.6197,
+  "pEatRev": 0.2634,
+  "pEatAvg": 0.44155
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "phovul siffkel-shaped piece",
+  "pNoul": 0.7386,
+  "pEatFwd": 0.4678,
+  "pEatRev": 0.1797,
+  "pEatAvg": 0.32375
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "keltrax phokel-textured thing",
+  "pNoul": 0.8405,
+  "pEatFwd": 0.577,
+  "pEatRev": 0.2722,
+  "pEatAvg": 0.4246
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "siffquen droblim-textured piece",
+  "pNoul": 0.7662,
+  "pEatFwd": 0.4216,
+  "pEatRev": 0.2308,
+  "pEatAvg": 0.3262
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "mepblim yartrax-textured lump",
+  "pNoul": 0.8741,
+  "pEatFwd": 0.642,
+  "pEatRev": 0.3088,
+  "pEatAvg": 0.47540000000000004
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "traxyar vulblim-colored bit",
+  "pNoul": 0.5381,
+  "pEatFwd": 0.3955,
+  "pEatRev": 0.1288,
+  "pEatAvg": 0.26215
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "quenvul quensiff-colored lump",
+  "pNoul": 0.5834,
+  "pEatFwd": 0.305,
+  "pEatRev": 0.1531,
+  "pEatAvg": 0.22905
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "drosiff quenyar-colored thing",
+  "pNoul": 0.8401,
+  "pEatFwd": 0.605,
+  "pEatRev": 0.2248,
+  "pEatAvg": 0.4149
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "phodro keldro-textured piece",
+  "pNoul": 0.6999,
+  "pEatFwd": 0.5056,
+  "pEatRev": 0.2249,
+  "pEatAvg": 0.36525
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "traxmep mepblim-shaped bit",
+  "pNoul": 0.845,
+  "pEatFwd": 0.6205,
+  "pEatRev": 0.2749,
+  "pEatAvg": 0.4477
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "zormep kelsiff-textured lump",
+  "pNoul": 0.8113,
+  "pEatFwd": 0.5146,
+  "pEatRev": 0.2435,
+  "pEatAvg": 0.37905
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "dromep kelnub-textured lump",
+  "pNoul": 0.8082,
+  "pEatFwd": 0.4325,
+  "pEatRev": 0.2462,
+  "pEatAvg": 0.33935
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "blimtrax blimblim-textured bit",
+  "pNoul": 0.7634,
+  "pEatFwd": 0.5935,
+  "pEatRev": 0.2908,
+  "pEatAvg": 0.44215000000000004
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "zorquen vulquen-textured bit",
+  "pNoul": 0.8279,
+  "pEatFwd": 0.5583,
+  "pEatRev": 0.218,
+  "pEatAvg": 0.38815
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "droquen kelkel-shaped piece",
+  "pNoul": 0.7407,
+  "pEatFwd": 0.3293,
+  "pEatRev": 0.1548,
+  "pEatAvg": 0.24205
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "phomep blimvul-colored thing",
+  "pNoul": 0.809,
+  "pEatFwd": 0.6603,
+  "pEatRev": 0.2463,
+  "pEatAvg": 0.4533
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "droblim vulzor-shaped lump",
+  "pNoul": 0.8369,
+  "pEatFwd": 0.3754,
+  "pEatRev": 0.1281,
+  "pEatAvg": 0.25175000000000003
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "vulblim nubtrax-colored bit",
+  "pNoul": 0.8257,
+  "pEatFwd": 0.6661,
+  "pEatRev": 0.3497,
+  "pEatAvg": 0.5079
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "blimsiff zormep-shaped piece",
+  "pNoul": 0.7758,
+  "pEatFwd": 0.581,
+  "pEatRev": 0.229,
+  "pEatAvg": 0.40499999999999997
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "vulnub quenzor-shaped thing",
+  "pNoul": 0.8594,
+  "pEatFwd": 0.5978,
+  "pEatRev": 0.2205,
+  "pEatAvg": 0.40915
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "blimquen vulzor-colored thing",
+  "pNoul": 0.8247,
+  "pEatFwd": 0.3311,
+  "pEatRev": 0.1188,
+  "pEatAvg": 0.22495
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "vulyar vulkel-colored bit",
+  "pNoul": 0.7247,
+  "pEatFwd": 0.6671,
+  "pEatRev": 0.3076,
+  "pEatAvg": 0.48735
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "siffkel yarquen-textured bit",
+  "pNoul": 0.8254,
+  "pEatFwd": 0.5292,
+  "pEatRev": 0.2947,
+  "pEatAvg": 0.41195000000000004
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "zorvul zorzor-colored thing",
+  "pNoul": 0.8667,
+  "pEatFwd": 0.6018,
+  "pEatRev": 0.2819,
+  "pEatAvg": 0.44184999999999997
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "kelsiff traxsiff-colored piece",
+  "pNoul": 0.726,
+  "pEatFwd": 0.4866,
+  "pEatRev": 0.1721,
+  "pEatAvg": 0.32935
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "yarsiff keldro-shaped bit",
+  "pNoul": 0.8191,
+  "pEatFwd": 0.5759,
+  "pEatRev": 0.2675,
+  "pEatAvg": 0.42169999999999996
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "photrax traxmep-colored thing",
+  "pNoul": 0.8453,
+  "pEatFwd": 0.4937,
+  "pEatRev": 0.1492,
+  "pEatAvg": 0.32145
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "dromep zorquen-colored lump",
+  "pNoul": 0.8415,
+  "pEatFwd": 0.4981,
+  "pEatRev": 0.166,
+  "pEatAvg": 0.33205
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "yarpho vuldro-colored lump",
+  "pNoul": 0.838,
+  "pEatFwd": 0.5474,
+  "pEatRev": 0.1906,
+  "pEatAvg": 0.369
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "blimyar drokel-shaped bit",
+  "pNoul": 0.8285,
+  "pEatFwd": 0.5804,
+  "pEatRev": 0.2566,
+  "pEatAvg": 0.4185
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "nubtrax phovul-colored piece",
+  "pNoul": 0.8018,
+  "pEatFwd": 0.5776,
+  "pEatRev": 0.295,
+  "pEatAvg": 0.4363
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "quenquen vulsiff-colored bit",
+  "pNoul": 0.614,
+  "pEatFwd": 0.5077,
+  "pEatRev": 0.2174,
+  "pEatAvg": 0.36255000000000004
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "mepmep kelmep-colored lump",
+  "pNoul": 0.8424,
+  "pEatFwd": 0.5304,
+  "pEatRev": 0.2106,
+  "pEatAvg": 0.3705
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "vultrax mepquen-colored bit",
+  "pNoul": 0.8155,
+  "pEatFwd": 0.5138,
+  "pEatRev": 0.216,
+  "pEatAvg": 0.3649
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "droblim siffvul-shaped thing",
+  "pNoul": 0.7816,
+  "pEatFwd": 0.3955,
+  "pEatRev": 0.1384,
+  "pEatAvg": 0.26695
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "traxkel zorblim-textured lump",
+  "pNoul": 0.6787,
+  "pEatFwd": 0.5255,
+  "pEatRev": 0.1905,
+  "pEatAvg": 0.358
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "quendro nubzor-textured lump",
+  "pNoul": 0.7151,
+  "pEatFwd": 0.395,
+  "pEatRev": 0.1789,
+  "pEatAvg": 0.28695000000000004
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "vulvul yartrax-colored thing",
+  "pNoul": 0.8542,
+  "pEatFwd": 0.486,
+  "pEatRev": 0.217,
+  "pEatAvg": 0.3515
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "yarpho nubdro-textured piece",
+  "pNoul": 0.8624,
+  "pEatFwd": 0.5652,
+  "pEatRev": 0.3029,
+  "pEatAvg": 0.43405000000000005
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "quenvul phonub-shaped thing",
+  "pNoul": 0.8183,
+  "pEatFwd": 0.4736,
+  "pEatRev": 0.1836,
+  "pEatAvg": 0.3286
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "zorpho kelyar-textured thing",
+  "pNoul": 0.8583,
+  "pEatFwd": 0.5186,
+  "pEatRev": 0.212,
+  "pEatAvg": 0.36529999999999996
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "kelkel nubzor-shaped thing",
+  "pNoul": 0.8577,
+  "pEatFwd": 0.5946,
+  "pEatRev": 0.2242,
+  "pEatAvg": 0.4094
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "blimzor zorquen-shaped bit",
+  "pNoul": 0.8506,
+  "pEatFwd": 0.6321,
+  "pEatRev": 0.2782,
+  "pEatAvg": 0.45515
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "blimdro siffkel-colored lump",
+  "pNoul": 0.7506,
+  "pEatFwd": 0.5271,
+  "pEatRev": 0.2224,
+  "pEatAvg": 0.37475
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "yarkel yartrax-textured bit",
+  "pNoul": 0.7857,
+  "pEatFwd": 0.5903,
+  "pEatRev": 0.3015,
+  "pEatAvg": 0.4459
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "zorsiff blimpho-shaped lump",
+  "pNoul": 0.8753,
+  "pEatFwd": 0.5519,
+  "pEatRev": 0.2147,
+  "pEatAvg": 0.3833
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "yarkel blimpho-shaped piece",
+  "pNoul": 0.8243,
+  "pEatFwd": 0.5443,
+  "pEatRev": 0.2628,
+  "pEatAvg": 0.40354999999999996
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "vulblim vultrax-shaped thing",
+  "pNoul": 0.8803,
+  "pEatFwd": 0.4659,
+  "pEatRev": 0.1961,
+  "pEatAvg": 0.33099999999999996
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "traxpho yarsiff-textured piece",
+  "pNoul": 0.8515,
+  "pEatFwd": 0.4205,
+  "pEatRev": 0.1443,
+  "pEatAvg": 0.2824
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "blimsiff yarvul-colored thing",
+  "pNoul": 0.793,
+  "pEatFwd": 0.6147,
+  "pEatRev": 0.2626,
+  "pEatAvg": 0.43865
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "blimnub quenmep-textured bit",
+  "pNoul": 0.6605,
+  "pEatFwd": 0.5361,
+  "pEatRev": 0.283,
+  "pEatAvg": 0.40954999999999997
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "nubnub quenzor-textured lump",
+  "pNoul": 0.8436,
+  "pEatFwd": 0.4093,
+  "pEatRev": 0.177,
+  "pEatAvg": 0.29315
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "siffvul yarblim-shaped thing",
+  "pNoul": 0.8534,
+  "pEatFwd": 0.5792,
+  "pEatRev": 0.2479,
+  "pEatAvg": 0.41355000000000003
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "yarsiff vulpho-shaped bit",
+  "pNoul": 0.8197,
+  "pEatFwd": 0.5464,
+  "pEatRev": 0.2129,
+  "pEatAvg": 0.37965
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "siffsiff siffblim-shaped thing",
+  "pNoul": 0.8476,
+  "pEatFwd": 0.5361,
+  "pEatRev": 0.2347,
+  "pEatAvg": 0.3854
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "vulblim siffzor-textured piece",
+  "pNoul": 0.7394,
+  "pEatFwd": 0.5575,
+  "pEatRev": 0.2628,
+  "pEatAvg": 0.41015
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "blimkel siffvul-textured thing",
+  "pNoul": 0.8387,
+  "pEatFwd": 0.6239,
+  "pEatRev": 0.2553,
+  "pEatAvg": 0.4396
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "traxblim nubblim-colored bit",
+  "pNoul": 0.6479,
+  "pEatFwd": 0.665,
+  "pEatRev": 0.4108,
+  "pEatAvg": 0.5379
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "mepquen nubyar-shaped bit",
+  "pNoul": 0.8449,
+  "pEatFwd": 0.6668,
+  "pEatRev": 0.3418,
+  "pEatAvg": 0.5043
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "blimpho meptrax-textured piece",
+  "pNoul": 0.8756,
+  "pEatFwd": 0.4899,
+  "pEatRev": 0.1994,
+  "pEatAvg": 0.34465
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "drozor quenzor-textured piece",
+  "pNoul": 0.8062,
+  "pEatFwd": 0.4443,
+  "pEatRev": 0.1824,
+  "pEatAvg": 0.31335
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "drovul phoquen-textured bit",
+  "pNoul": 0.4328,
+  "pEatFwd": 0.4329,
+  "pEatRev": 0.2184,
+  "pEatAvg": 0.32565
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "dromep blimmep-colored bit",
+  "pNoul": 0.5801,
+  "pEatFwd": 0.6612,
+  "pEatRev": 0.3327,
+  "pEatAvg": 0.49695
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "mepdro blimtrax-shaped lump",
+  "pNoul": 0.8518,
+  "pEatFwd": 0.4158,
+  "pEatRev": 0.1751,
+  "pEatAvg": 0.29545
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "phovul vulmep-colored piece",
+  "pNoul": 0.8327,
+  "pEatFwd": 0.52,
+  "pEatRev": 0.2438,
+  "pEatAvg": 0.3819
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "dronub blimmep-textured bit",
+  "pNoul": 0.8108,
+  "pEatFwd": 0.4493,
+  "pEatRev": 0.2328,
+  "pEatAvg": 0.34104999999999996
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "zorvul blimzor-shaped bit",
+  "pNoul": 0.8684,
+  "pEatFwd": 0.6547,
+  "pEatRev": 0.3155,
+  "pEatAvg": 0.4851
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "yarquen traxvul-textured bit",
+  "pNoul": 0.6666,
+  "pEatFwd": 0.4825,
+  "pEatRev": 0.2065,
+  "pEatAvg": 0.3445
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "traxmep drozor-shaped piece",
+  "pNoul": 0.7971,
+  "pEatFwd": 0.4604,
+  "pEatRev": 0.1767,
+  "pEatAvg": 0.31855
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "kelkel traxpho-colored lump",
+  "pNoul": 0.8334,
+  "pEatFwd": 0.3909,
+  "pEatRev": 0.1509,
+  "pEatAvg": 0.27090000000000003
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "phodro siffnub-colored bit",
+  "pNoul": 0.3228,
+  "pEatFwd": 0.6365,
+  "pEatRev": 0.3052,
+  "pEatAvg": 0.47085
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "siffzor kelquen-colored piece",
+  "pNoul": 0.8097,
+  "pEatFwd": 0.5804,
+  "pEatRev": 0.3011,
+  "pEatAvg": 0.44075
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "dromep vulvul-textured bit",
+  "pNoul": 0.7775,
+  "pEatFwd": 0.4356,
+  "pEatRev": 0.2237,
+  "pEatAvg": 0.32965
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "droyar traxvul-textured piece",
+  "pNoul": 0.2725,
+  "pEatFwd": 0.3378,
+  "pEatRev": 0.1544,
+  "pEatAvg": 0.24609999999999999
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "blimquen yarquen-colored thing",
+  "pNoul": 0.8508,
+  "pEatFwd": 0.2983,
+  "pEatRev": 0.1334,
+  "pEatAvg": 0.21585
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "kelsiff keltrax-textured bit",
+  "pNoul": 0.7977,
+  "pEatFwd": 0.6215,
+  "pEatRev": 0.2535,
+  "pEatAvg": 0.4375
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "siffdro quenkel-colored thing",
+  "pNoul": 0.7852,
+  "pEatFwd": 0.5605,
+  "pEatRev": 0.238,
+  "pEatAvg": 0.39925
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "blimquen mepkel-colored bit",
+  "pNoul": 0.6436,
+  "pEatFwd": 0.4521,
+  "pEatRev": 0.225,
+  "pEatAvg": 0.33855
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "traxmep vulnub-colored lump",
+  "pNoul": 0.7301,
+  "pEatFwd": 0.5561,
+  "pEatRev": 0.1548,
+  "pEatAvg": 0.35545000000000004
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "phodro drodro-shaped thing",
+  "pNoul": 0.8588,
+  "pEatFwd": 0.5599,
+  "pEatRev": 0.2234,
+  "pEatAvg": 0.39164999999999994
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "drovul mepzor-textured bit",
+  "pNoul": 0.1901,
+  "pEatFwd": 0.4006,
+  "pEatRev": 0.2074,
+  "pEatAvg": 0.304
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "nubmep quenyar-shaped thing",
+  "pNoul": 0.8535,
+  "pEatFwd": 0.6211,
+  "pEatRev": 0.2801,
+  "pEatAvg": 0.4506
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "blimvul traxdro-textured piece",
+  "pNoul": 0.597,
+  "pEatFwd": 0.5133,
+  "pEatRev": 0.1666,
+  "pEatAvg": 0.33995
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "drovul zorquen-colored piece",
+  "pNoul": 0.8428,
+  "pEatFwd": 0.472,
+  "pEatRev": 0.2277,
+  "pEatAvg": 0.34985
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "phosiff nubsiff-colored lump",
+  "pNoul": 0.8044,
+  "pEatFwd": 0.5721,
+  "pEatRev": 0.2973,
+  "pEatAvg": 0.43470000000000003
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "drokel siffsiff-colored lump",
+  "pNoul": 0.7146,
+  "pEatFwd": 0.369,
+  "pEatRev": 0.1977,
+  "pEatAvg": 0.28335
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "traxquen quenkel-shaped lump",
+  "pNoul": 0.8205,
+  "pEatFwd": 0.2725,
+  "pEatRev": 0.1115,
+  "pEatAvg": 0.192
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "phopho yarsiff-colored lump",
+  "pNoul": 0.7155,
+  "pEatFwd": 0.4395,
+  "pEatRev": 0.1332,
+  "pEatAvg": 0.28635
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "zorquen traxnub-colored bit",
+  "pNoul": 0.788,
+  "pEatFwd": 0.5889,
+  "pEatRev": 0.1991,
+  "pEatAvg": 0.394
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "quenyar vulkel-shaped piece",
+  "pNoul": 0.828,
+  "pEatFwd": 0.5394,
+  "pEatRev": 0.2286,
+  "pEatAvg": 0.384
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "phoblim blimblim-textured thing",
+  "pNoul": 0.8653,
+  "pEatFwd": 0.6077,
+  "pEatRev": 0.2571,
+  "pEatAvg": 0.4324
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "drovul traxnub-colored lump",
+  "pNoul": 0.6867,
+  "pEatFwd": 0.3035,
+  "pEatRev": 0.1164,
+  "pEatAvg": 0.20995
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "kelvul siffvul-textured thing",
+  "pNoul": 0.8391,
+  "pEatFwd": 0.5636,
+  "pEatRev": 0.327,
+  "pEatAvg": 0.44530000000000003
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "siffkel traxkel-colored lump",
+  "pNoul": 0.4462,
+  "pEatFwd": 0.4323,
+  "pEatRev": 0.1471,
+  "pEatAvg": 0.2897
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "dropho yarvul-colored lump",
+  "pNoul": 0.8038,
+  "pEatFwd": 0.3276,
+  "pEatRev": 0.1279,
+  "pEatAvg": 0.22775
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "traxsiff yaryar-textured lump",
+  "pNoul": 0.583,
+  "pEatFwd": 0.3424,
+  "pEatRev": 0.1326,
+  "pEatAvg": 0.2375
+ },
+ {
+  "kind": "nonsense",
+  "edible": true,
+  "text": "vultrax yardro-textured thing",
+  "pNoul": 0.854,
+  "pEatFwd": 0.5151,
+  "pEatRev": 0.1823,
+  "pEatAvg": 0.3487
+ },
+ {
+  "kind": "nonsense",
+  "edible": false,
+  "text": "siffzor phomep-shaped piece",
+  "pNoul": 0.8133,
+  "pEatFwd": 0.5528,
+  "pEatRev": 0.2327,
+  "pEatAvg": 0.39275
+ }
+]

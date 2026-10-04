@@ -1,0 +1,33 @@
+{
+  "name": "reproduction-controls-01",
+  "purpose": "Descriptive ecology integration with reproduction and mutation restored. Not a heldout learning-benefit test. Seeds and world fixed before this run; all deaths and descendants retained.",
+  "modes": [
+    "no-laya",
+    "rule"
+  ],
+  "seeds": [
+    43,
+    47,
+    53
+  ],
+  "learning": {
+    "fusion": "features"
+  },
+  "world": {
+    "width": 16,
+    "height": 12,
+    "initialAgents": 8,
+    "initialEnergy": 32,
+    "initialFood": 200,
+    "supplyAmount": 12,
+    "metabolism": 0.012,
+    "foodDecay": 0.003,
+    "diffusion": 0.002,
+    "reproduction": true,
+    "mutation": true,
+    "maxAgents": 24,
+    "maxAge": 2400,
+    "horizon": 1200,
+    "phaseTicks": 400
+  }
+}

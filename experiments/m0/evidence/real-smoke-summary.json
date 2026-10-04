@@ -1,0 +1,17 @@
+{
+  "model": {
+    "provider": "laya",
+    "sdk": "0.3.21",
+    "repo": "convaiinnovations/laya-multilingual",
+    "revision": "e4e9ddf21a7b1903b7acffd8814ad4307bf63a67",
+    "requested_device": "mps",
+    "actual_device": "mps",
+    "cpu_fallback_count": 0,
+    "template": "local-foraging-en-v1",
+    "load_seconds": 111.45750141696772
+  },
+  "steps": 12,
+  "peak_rss_bytes": 997146624,
+  "bridge_calls": 26,
+  "bridge_seconds": 0.60062045493396
+}

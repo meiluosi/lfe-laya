@@ -1,0 +1,19 @@
+{
+  "version": "m0-budget-v1",
+  "scope": "M0 measurements and initial M1 budget; M1 multi-agent ecology not implemented",
+  "checkpoint": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+  "repo": "convaiinnovations/laya",
+  "template": "local-foraging-en-v2",
+  "m0_action_cadence": "one decision per executed step",
+  "measured_joint_independent_instances": [
+    1,
+    8
+  ],
+  "m1_initial_population": 8,
+  "m1_logical_steps_per_sim_second": 10,
+  "m1_decision_interval_sim_steps": 10,
+  "wall_clock_realtime_guarantee": false,
+  "advance_policy": "wait for complete decision boundary; no silent rule fallback",
+  "training_config": "experiments/m0/config/learning.json",
+  "joint_evidence": "experiments/m0/evidence/joint-probe.json"
+}

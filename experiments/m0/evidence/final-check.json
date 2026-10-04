@@ -1,0 +1,10 @@
+{
+  "markdown_links_resolve": true,
+  "built_viewer_matches_source": true,
+  "formal_transitions": 8066,
+  "formal_trajectories": 27,
+  "world_tests": 7,
+  "python_tests": 8,
+  "model_gates": "exploratory only; see analysis.json",
+  "status": "M0 acceptance evidence checked; full ecology remains future scope"
+}

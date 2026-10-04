@@ -1,0 +1,1731 @@
+{
+  "status": "completed",
+  "pilot": false,
+  "elapsed_seconds": 3033.389972957957,
+  "model": {
+    "provider": "laya",
+    "sdk": "0.3.21",
+    "repo": "convaiinnovations/laya",
+    "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+    "requested_device": "mps",
+    "actual_device": "mps",
+    "cpu_fallback_count": 0,
+    "template": "local-foraging-en-v2",
+    "load_seconds": 19.64559608302079,
+    "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12"
+  },
+  "bridge_calls": 16463,
+  "bridge_seconds": 42.667873449099716,
+  "online": [
+    {
+      "id": "online-101-rule",
+      "seed": 101,
+      "mode": "rule",
+      "steps": 360,
+      "reward": 1.5579999999999805,
+      "eaten": 106.83999999999875,
+      "death": false,
+      "initial_parameters": null,
+      "update_log": [],
+      "final_parameters": null,
+      "mean_reward_by_stage": [
+        0.01248333333333335,
+        0.0005000000000000033,
+        1.295260195396016e-17
+      ],
+      "stage_observed_steps": [
+        120,
+        120,
+        120
+      ],
+      "window_mean_rewards": {
+        "0": 0.07640000000000004,
+        "1": 1.734723475976807e-18,
+        "2": 2.4286128663675298e-18,
+        "3": 1.734723475976807e-18,
+        "4": -0.0014999999999999844,
+        "5": 1.734723475976807e-18,
+        "6": 1.734723475976807e-18,
+        "7": 1.734723475976807e-18,
+        "8": 0.004499999999999959,
+        "9": 2.0816681711721684e-18,
+        "10": 6.938893903907229e-19,
+        "11": -0.0014999999999999836,
+        "12": 1.734723475976807e-18,
+        "13": 1.734723475976807e-18,
+        "14": 1.734723475976807e-18,
+        "15": 1.734723475976807e-18,
+        "16": 1.734723475976807e-18,
+        "17": 1.734723475976807e-18
+      }
+    },
+    {
+      "id": "online-101-fixed-current",
+      "seed": 101,
+      "mode": "fixed-current",
+      "steps": 132,
+      "reward": -3.3999999999999977,
+      "eaten": 15.0,
+      "death": true,
+      "initial_parameters": null,
+      "update_log": [],
+      "final_parameters": null,
+      "mean_reward_by_stage": [
+        -0.017050000000000003,
+        -0.11283333333333334,
+        null
+      ],
+      "stage_observed_steps": [
+        120,
+        12,
+        0
+      ],
+      "window_mean_rewards": {
+        "0": 0.0477000000000002,
+        "1": -0.029999999999999978,
+        "2": -0.030000000000000065,
+        "3": -0.030000000000000065,
+        "4": -0.030000000000000065,
+        "5": -0.03000000000000001,
+        "6": -0.11283333333333334
+      }
+    },
+    {
+      "id": "online-101-fixed-memory",
+      "seed": 101,
+      "mode": "fixed-memory",
+      "steps": 132,
+      "reward": -3.3999999999999977,
+      "eaten": 15.0,
+      "death": true,
+      "initial_parameters": null,
+      "update_log": [],
+      "final_parameters": null,
+      "mean_reward_by_stage": [
+        -0.017050000000000003,
+        -0.11283333333333334,
+        null
+      ],
+      "stage_observed_steps": [
+        120,
+        12,
+        0
+      ],
+      "window_mean_rewards": {
+        "0": 0.0477000000000002,
+        "1": -0.029999999999999978,
+        "2": -0.030000000000000065,
+        "3": -0.030000000000000065,
+        "4": -0.030000000000000065,
+        "5": -0.03000000000000001,
+        "6": -0.11283333333333334
+      }
+    },
+    {
+      "id": "online-101-B",
+      "seed": 101,
+      "mode": "B",
+      "steps": 360,
+      "reward": 1.4859999999999998,
+      "eaten": 103.24000000000001,
+      "death": false,
+      "initial_parameters": "3302ba4f583c7acd2018e5eb38a01013f00a234303064f00afd562b754c1f713",
+      "update_log": [
+        {
+          "batch_id": "online-101-B:update:0",
+          "input_revision": 0,
+          "revision": 1,
+          "samples": 32,
+          "before": "3302ba4f583c7acd2018e5eb38a01013f00a234303064f00afd562b754c1f713",
+          "after": "a2e2d908c7f8051538af26756d14793db9a47a8801ab0262ba7831cc74ee33ac",
+          "milliseconds": 141.5164999780245
+        },
+        {
+          "batch_id": "online-101-B:update:1",
+          "input_revision": 1,
+          "revision": 2,
+          "samples": 32,
+          "before": "a2e2d908c7f8051538af26756d14793db9a47a8801ab0262ba7831cc74ee33ac",
+          "after": "5e3d80d8d076848a507ab98a7dd4b307ddf08a12b5d50a62f1be855cd18e82f1",
+          "milliseconds": 46.13074997905642
+        },
+        {
+          "batch_id": "online-101-B:update:2",
+          "input_revision": 2,
+          "revision": 3,
+          "samples": 32,
+          "before": "5e3d80d8d076848a507ab98a7dd4b307ddf08a12b5d50a62f1be855cd18e82f1",
+          "after": "f0bc2cbb430bfd8e805a5430341366ad3a9e6de6016cf33aa8bfc16c768fa147",
+          "milliseconds": 77.50604097964242
+        },
+        {
+          "batch_id": "online-101-B:update:3",
+          "input_revision": 3,
+          "revision": 4,
+          "samples": 32,
+          "before": "f0bc2cbb430bfd8e805a5430341366ad3a9e6de6016cf33aa8bfc16c768fa147",
+          "after": "c1f4efe48aa7f8cfd25e506062dc5ab180b36b90b8e5e0f0d0040d86cc4eb957",
+          "milliseconds": 67.48245900962502
+        },
+        {
+          "batch_id": "online-101-B:update:4",
+          "input_revision": 4,
+          "revision": 5,
+          "samples": 32,
+          "before": "c1f4efe48aa7f8cfd25e506062dc5ab180b36b90b8e5e0f0d0040d86cc4eb957",
+          "after": "f752ccf9581d44c2220700a6420f7f8165ab9f2595602c257aa633449d53e8e0",
+          "milliseconds": 66.21191604062915
+        },
+        {
+          "batch_id": "online-101-B:update:5",
+          "input_revision": 5,
+          "revision": 6,
+          "samples": 32,
+          "before": "f752ccf9581d44c2220700a6420f7f8165ab9f2595602c257aa633449d53e8e0",
+          "after": "f4fa3ce1f6b5710394c29d676de4204a1245bdc3dfabc76c4bef63fdd8a7f1a4",
+          "milliseconds": 120.35033304709941
+        },
+        {
+          "batch_id": "online-101-B:update:6",
+          "input_revision": 6,
+          "revision": 7,
+          "samples": 32,
+          "before": "f4fa3ce1f6b5710394c29d676de4204a1245bdc3dfabc76c4bef63fdd8a7f1a4",
+          "after": "e55bd1dc041ca483853091436e330b47c604e13e60f156aadf9a378a8c09998b",
+          "milliseconds": 18.370207981206477
+        },
+        {
+          "batch_id": "online-101-B:update:7",
+          "input_revision": 7,
+          "revision": 8,
+          "samples": 32,
+          "before": "e55bd1dc041ca483853091436e330b47c604e13e60f156aadf9a378a8c09998b",
+          "after": "911dc2097af5f5e362ba8941e07cf56867ea89e4947c7791791abfcd3e18df3f",
+          "milliseconds": 34.953749971464276
+        },
+        {
+          "batch_id": "online-101-B:update:8",
+          "input_revision": 8,
+          "revision": 9,
+          "samples": 32,
+          "before": "911dc2097af5f5e362ba8941e07cf56867ea89e4947c7791791abfcd3e18df3f",
+          "after": "a3e733803a7ddff73a5d9c5514cae61e2d3759a1061cd61f96e24179d36d7582",
+          "milliseconds": 60.49170804908499
+        },
+        {
+          "batch_id": "online-101-B:update:9",
+          "input_revision": 9,
+          "revision": 10,
+          "samples": 32,
+          "before": "a3e733803a7ddff73a5d9c5514cae61e2d3759a1061cd61f96e24179d36d7582",
+          "after": "c575522fa730714786ccc117fb803ac374761564c1d915d71a97ab9b6b07f680",
+          "milliseconds": 57.92783299693838
+        },
+        {
+          "batch_id": "online-101-B:update:10",
+          "input_revision": 10,
+          "revision": 11,
+          "samples": 32,
+          "before": "c575522fa730714786ccc117fb803ac374761564c1d915d71a97ab9b6b07f680",
+          "after": "8d5fd45b3b01610c99cf2dc84c0a6a963e170ce7075b61e7ba8933ac84c9c7f6",
+          "milliseconds": 343.728625040967
+        },
+        {
+          "batch_id": "online-101-B:final",
+          "input_revision": 11,
+          "revision": 12,
+          "samples": 8,
+          "before": "8d5fd45b3b01610c99cf2dc84c0a6a963e170ce7075b61e7ba8933ac84c9c7f6",
+          "after": "7b436615974a5ce786f70cea427d4d695d5b731e7091c011e6303fb5e2ca2b12",
+          "milliseconds": 142.00312498724088
+        }
+      ],
+      "final_parameters": "7b436615974a5ce786f70cea427d4d695d5b731e7091c011e6303fb5e2ca2b12",
+      "mean_reward_by_stage": [
+        -0.004966666666666748,
+        0.0036666666666666033,
+        0.013683333333333481
+      ],
+      "stage_observed_steps": [
+        120,
+        120,
+        120
+      ],
+      "window_mean_rewards": {
+        "0": -0.0032000000000000756,
+        "1": -0.027300000000000074,
+        "2": -0.0005000000000000785,
+        "3": 0.0003999999999999169,
+        "4": 0.02809999999999992,
+        "5": -0.027300000000000074,
+        "6": -0.02820000000000005,
+        "7": 0.02629999999999998,
+        "8": -0.0005000000000000444,
+        "9": 0.02359999999999993,
+        "10": -0.024600000000000084,
+        "11": 0.025399999999999923,
+        "12": -0.025500000000000078,
+        "13": 0.05309999999999991,
+        "14": 0.05360000000000105,
+        "15": 0.005399999999999957,
+        "16": -0.005999999999999941,
+        "17": 0.001499999999999984
+      }
+    },
+    {
+      "id": "online-101-no-laya",
+      "seed": 101,
+      "mode": "no-laya",
+      "steps": 360,
+      "reward": 1.5579999999999918,
+      "eaten": 102.87999999999971,
+      "death": false,
+      "initial_parameters": "3302ba4f583c7acd2018e5eb38a01013f00a234303064f00afd562b754c1f713",
+      "update_log": [
+        {
+          "batch_id": "online-101-no-laya:update:0",
+          "input_revision": 0,
+          "revision": 1,
+          "samples": 32,
+          "before": "3302ba4f583c7acd2018e5eb38a01013f00a234303064f00afd562b754c1f713",
+          "after": "268675b631cdbe66f0310829b060316441fa2cc8781a30b1c95ac0e6ab48edc1",
+          "milliseconds": 29.35204200912267
+        },
+        {
+          "batch_id": "online-101-no-laya:update:1",
+          "input_revision": 1,
+          "revision": 2,
+          "samples": 32,
+          "before": "268675b631cdbe66f0310829b060316441fa2cc8781a30b1c95ac0e6ab48edc1",
+          "after": "64407b188e14ae3c6773baadbce5518fb0290250c16a45d2ef8eb8eafba797a1",
+          "milliseconds": 70.29549998696893
+        },
+        {
+          "batch_id": "online-101-no-laya:update:2",
+          "input_revision": 2,
+          "revision": 3,
+          "samples": 32,
+          "before": "64407b188e14ae3c6773baadbce5518fb0290250c16a45d2ef8eb8eafba797a1",
+          "after": "e298d97f3dcd56b0ca801ae32e42ada58e43f7c4bde1d298eb5b3774655a82bd",
+          "milliseconds": 22.776040947064757
+        },
+        {
+          "batch_id": "online-101-no-laya:update:3",
+          "input_revision": 3,
+          "revision": 4,
+          "samples": 32,
+          "before": "e298d97f3dcd56b0ca801ae32e42ada58e43f7c4bde1d298eb5b3774655a82bd",
+          "after": "5b3cabf92f2d4d5c9ca1cc329c81681212db38d7089bb3120e7226a2dd3f1e80",
+          "milliseconds": 33.08566700434312
+        },
+        {
+          "batch_id": "online-101-no-laya:update:4",
+          "input_revision": 4,
+          "revision": 5,
+          "samples": 32,
+          "before": "5b3cabf92f2d4d5c9ca1cc329c81681212db38d7089bb3120e7226a2dd3f1e80",
+          "after": "c5b256292c92471b6c6fe1354d17b86ee06e4141c2b43c6d509279d8b777782a",
+          "milliseconds": 91.63741598604247
+        },
+        {
+          "batch_id": "online-101-no-laya:update:5",
+          "input_revision": 5,
+          "revision": 6,
+          "samples": 32,
+          "before": "c5b256292c92471b6c6fe1354d17b86ee06e4141c2b43c6d509279d8b777782a",
+          "after": "6e7cd3f5df7da6c4245c0c9cf4f52d2429c247e0282a4946dbd435157e30f6da",
+          "milliseconds": 15.724874974694103
+        },
+        {
+          "batch_id": "online-101-no-laya:update:6",
+          "input_revision": 6,
+          "revision": 7,
+          "samples": 32,
+          "before": "6e7cd3f5df7da6c4245c0c9cf4f52d2429c247e0282a4946dbd435157e30f6da",
+          "after": "9173bf30fc9fd8d5f79503d08e03207a51c8a2aa9c3a62d7023a9b5c0a4354b1",
+          "milliseconds": 19.509624980855733
+        },
+        {
+          "batch_id": "online-101-no-laya:update:7",
+          "input_revision": 7,
+          "revision": 8,
+          "samples": 32,
+          "before": "9173bf30fc9fd8d5f79503d08e03207a51c8a2aa9c3a62d7023a9b5c0a4354b1",
+          "after": "d75ae0251a4cb2d14d8d8a810cd8abf42f39391a3130ebdf71e023cd31128373",
+          "milliseconds": 52.54500004230067
+        },
+        {
+          "batch_id": "online-101-no-laya:update:8",
+          "input_revision": 8,
+          "revision": 9,
+          "samples": 32,
+          "before": "d75ae0251a4cb2d14d8d8a810cd8abf42f39391a3130ebdf71e023cd31128373",
+          "after": "25d8e13d5152ef378b52b4e0967e22cb4dad07fb852c00962dd374f7a2c61a0e",
+          "milliseconds": 35.6512910220772
+        },
+        {
+          "batch_id": "online-101-no-laya:update:9",
+          "input_revision": 9,
+          "revision": 10,
+          "samples": 32,
+          "before": "25d8e13d5152ef378b52b4e0967e22cb4dad07fb852c00962dd374f7a2c61a0e",
+          "after": "fb494d9289b7e58290a21c114a41ea7373251ce8585d4114e8bc7f876725d734",
+          "milliseconds": 61.193083005491644
+        },
+        {
+          "batch_id": "online-101-no-laya:update:10",
+          "input_revision": 10,
+          "revision": 11,
+          "samples": 32,
+          "before": "fb494d9289b7e58290a21c114a41ea7373251ce8585d4114e8bc7f876725d734",
+          "after": "1c2a0ce8de592b503dd5d3b054cdde398f185bf7b362789cef6a9c0c276df53b",
+          "milliseconds": 144.09891597460955
+        },
+        {
+          "batch_id": "online-101-no-laya:final",
+          "input_revision": 11,
+          "revision": 12,
+          "samples": 8,
+          "before": "1c2a0ce8de592b503dd5d3b054cdde398f185bf7b362789cef6a9c0c276df53b",
+          "after": "81a3effba7c08984d0efdb4a04619c1ccea7bab486ee416a9add128a7baecec1",
+          "milliseconds": 55.55637500947341
+        }
+      ],
+      "final_parameters": "81a3effba7c08984d0efdb4a04619c1ccea7bab486ee416a9add128a7baecec1",
+      "mean_reward_by_stage": [
+        0.0033666666666665847,
+        0.008866666666666754,
+        0.0007499999999999942
+      ],
+      "stage_observed_steps": [
+        120,
+        120,
+        120
+      ],
+      "window_mean_rewards": {
+        "0": -0.0032000000000000756,
+        "1": -0.027300000000000074,
+        "2": -0.0005000000000000785,
+        "3": 0.0003999999999999169,
+        "4": 0.027199999999999926,
+        "5": 0.023599999999999923,
+        "6": -0.02820000000000007,
+        "7": 0.026299999999999924,
+        "8": -0.02640000000000008,
+        "9": 0.07539999999999998,
+        "10": 0.0016000000000008546,
+        "11": 0.004499999999999923,
+        "12": -0.013799999999999845,
+        "13": 0.018299999999999806,
+        "14": -0.004499999999999955,
+        "15": 0.005999999999999943,
+        "16": -0.007499999999999929,
+        "17": 0.005999999999999943
+      }
+    },
+    {
+      "id": "online-101-frozen-B",
+      "seed": 101,
+      "mode": "frozen-B",
+      "steps": 360,
+      "reward": 0.2160000000000002,
+      "eaten": 92.69999999999962,
+      "death": false,
+      "initial_parameters": "3302ba4f583c7acd2018e5eb38a01013f00a234303064f00afd562b754c1f713",
+      "update_log": [],
+      "final_parameters": "3302ba4f583c7acd2018e5eb38a01013f00a234303064f00afd562b754c1f713",
+      "mean_reward_by_stage": [
+        0.01154999999999995,
+        0.0006833333333333991,
+        -0.010433333333333255
+      ],
+      "stage_observed_steps": [
+        120,
+        120,
+        120
+      ],
+      "window_mean_rewards": {
+        "0": -0.0032000000000000756,
+        "1": -0.027300000000000074,
+        "2": -0.0005000000000000785,
+        "3": 0.0003999999999999169,
+        "4": 0.0003999999999999197,
+        "5": 0.09950000000000007,
+        "6": -0.028199999999999715,
+        "7": 0.026300000000000028,
+        "8": 0.010500000000000006,
+        "9": -0.005999999999999941,
+        "10": -0.004799999999999932,
+        "11": 0.006299999999999919,
+        "12": -0.012899999999999847,
+        "13": 0.017399999999999808,
+        "14": -0.01649999999999984,
+        "15": -0.023699999999999777,
+        "16": 0.0004000000000002264,
+        "17": -0.027300000000000074
+      }
+    },
+    {
+      "id": "online-102-rule",
+      "seed": 102,
+      "mode": "rule",
+      "steps": 360,
+      "reward": 1.5579999999999794,
+      "eaten": 107.19999999999897,
+      "death": false,
+      "initial_parameters": null,
+      "update_log": [],
+      "final_parameters": null,
+      "mean_reward_by_stage": [
+        0.012983333333333347,
+        -0.00024999999999999003,
+        0.0002499999999999992
+      ],
+      "stage_observed_steps": [
+        120,
+        120,
+        120
+      ],
+      "window_mean_rewards": {
+        "0": 0.07640000000000004,
+        "1": 1.734723475976807e-18,
+        "2": -0.0009999999999994445,
+        "3": 0.002499999999999433,
+        "4": 1.734723475976807e-18,
+        "5": 1.734723475976807e-18,
+        "6": 1.734723475976807e-18,
+        "7": -0.0004999999999997212,
+        "8": 0.0004999999999997253,
+        "9": -0.0004999999999997212,
+        "10": -0.0014999999999991663,
+        "11": 0.0004999999999989062,
+        "12": -0.002999999999999971,
+        "13": 0.00010000000000108117,
+        "14": 0.0013999999999989043,
+        "15": 0.002700000000001594,
+        "16": 0.000299999999998379,
+        "17": 1.734723475976807e-18
+      }
+    },
+    {
+      "id": "online-102-fixed-current",
+      "seed": 102,
+      "mode": "fixed-current",
+      "steps": 132,
+      "reward": -3.399999999999996,
+      "eaten": 15.0,
+      "death": true,
+      "initial_parameters": null,
+      "update_log": [],
+      "final_parameters": null,
+      "mean_reward_by_stage": [
+        -0.017050000000000065,
+        -0.11283333333333274,
+        null
+      ],
+      "stage_observed_steps": [
+        120,
+        12,
+        0
+      ],
+      "window_mean_rewards": {
+        "0": -0.004100000000000075,
+        "1": -0.030000000000000065,
+        "2": -0.004100000000000075,
+        "3": -0.030000000000000065,
+        "4": -0.004100000000000064,
+        "5": -0.03000000000000001,
+        "6": -0.11283333333333274
+      }
+    },
+    {
+      "id": "online-102-fixed-memory",
+      "seed": 102,
+      "mode": "fixed-memory",
+      "steps": 150,
+      "reward": -3.399999999999996,
+      "eaten": 20.0,
+      "death": true,
+      "initial_parameters": null,
+      "update_log": [],
+      "final_parameters": null,
+      "mean_reward_by_stage": [
+        -0.012733333333333393,
+        -0.062399999999999775,
+        null
+      ],
+      "stage_observed_steps": [
+        120,
+        30,
+        0
+      ],
+      "window_mean_rewards": {
+        "0": 0.02180000000000001,
+        "1": -0.004100000000000075,
+        "2": -0.030000000000000065,
+        "3": -0.030000000000000065,
+        "4": -0.004100000000000075,
+        "5": -0.030000000000000065,
+        "6": -0.03,
+        "7": -0.12719999999999934
+      }
+    },
+    {
+      "id": "online-102-B",
+      "seed": 102,
+      "mode": "B",
+      "steps": 360,
+      "reward": 1.5879999999999872,
+      "eaten": 99.21999999999946,
+      "death": false,
+      "initial_parameters": "91eb70f5125a2bed21867910642b5a7a7c75b95d6bdf5a6717a1e54b46848ac7",
+      "update_log": [
+        {
+          "batch_id": "online-102-B:update:0",
+          "input_revision": 0,
+          "revision": 1,
+          "samples": 32,
+          "before": "91eb70f5125a2bed21867910642b5a7a7c75b95d6bdf5a6717a1e54b46848ac7",
+          "after": "64b00ca86a7f1f3d5b1eca8edc96c77c5ecbfddb6b5a72bc1e6575877630d65c",
+          "milliseconds": 35.94249999150634
+        },
+        {
+          "batch_id": "online-102-B:update:1",
+          "input_revision": 1,
+          "revision": 2,
+          "samples": 32,
+          "before": "64b00ca86a7f1f3d5b1eca8edc96c77c5ecbfddb6b5a72bc1e6575877630d65c",
+          "after": "20fcd35587d506465930994edc89ab41be1e955ee8c3e9e433736b06c594d084",
+          "milliseconds": 39.733125013299286
+        },
+        {
+          "batch_id": "online-102-B:update:2",
+          "input_revision": 2,
+          "revision": 3,
+          "samples": 32,
+          "before": "20fcd35587d506465930994edc89ab41be1e955ee8c3e9e433736b06c594d084",
+          "after": "e2fad020caf2e7a420ce475aff71747c181c989250ad9fa821a3bb261a38449d",
+          "milliseconds": 27.43483299855143
+        },
+        {
+          "batch_id": "online-102-B:update:3",
+          "input_revision": 3,
+          "revision": 4,
+          "samples": 32,
+          "before": "e2fad020caf2e7a420ce475aff71747c181c989250ad9fa821a3bb261a38449d",
+          "after": "99f036d3511c64e032aa292263cf7f71582f41aea26392d8b81ea639ee2ed8e7",
+          "milliseconds": 23.729209031444043
+        },
+        {
+          "batch_id": "online-102-B:update:4",
+          "input_revision": 4,
+          "revision": 5,
+          "samples": 32,
+          "before": "99f036d3511c64e032aa292263cf7f71582f41aea26392d8b81ea639ee2ed8e7",
+          "after": "441f7bfff1d433195d2e00f8120e653875924de5946242bb3325db01adecbb70",
+          "milliseconds": 67.37620802596211
+        },
+        {
+          "batch_id": "online-102-B:update:5",
+          "input_revision": 5,
+          "revision": 6,
+          "samples": 32,
+          "before": "441f7bfff1d433195d2e00f8120e653875924de5946242bb3325db01adecbb70",
+          "after": "0b56ccf236a4913a7a9579afab828a73dd6c22b3938141b68985402684ced673",
+          "milliseconds": 19.14641697658226
+        },
+        {
+          "batch_id": "online-102-B:update:6",
+          "input_revision": 6,
+          "revision": 7,
+          "samples": 32,
+          "before": "0b56ccf236a4913a7a9579afab828a73dd6c22b3938141b68985402684ced673",
+          "after": "61967f6179981121ea1a4cdb030d46fb135df1734c735d2a4dc3b3c5965eac98",
+          "milliseconds": 23.51295796688646
+        },
+        {
+          "batch_id": "online-102-B:update:7",
+          "input_revision": 7,
+          "revision": 8,
+          "samples": 32,
+          "before": "61967f6179981121ea1a4cdb030d46fb135df1734c735d2a4dc3b3c5965eac98",
+          "after": "d857fcebbc586c0c8e617bd78baa67f16c6707fa6690e0a890ba0d785ccd1c4b",
+          "milliseconds": 26.21462498791516
+        },
+        {
+          "batch_id": "online-102-B:update:8",
+          "input_revision": 8,
+          "revision": 9,
+          "samples": 32,
+          "before": "d857fcebbc586c0c8e617bd78baa67f16c6707fa6690e0a890ba0d785ccd1c4b",
+          "after": "1db192dcf4d37df723ceda3b419cb7f7b5d60e15429534b1d8ea083a34e67b92",
+          "milliseconds": 45.91583402361721
+        },
+        {
+          "batch_id": "online-102-B:update:9",
+          "input_revision": 9,
+          "revision": 10,
+          "samples": 32,
+          "before": "1db192dcf4d37df723ceda3b419cb7f7b5d60e15429534b1d8ea083a34e67b92",
+          "after": "83b093c40421937368c554d54592675ddaf2fb525e3d70fdc144c4f21c2df2cd",
+          "milliseconds": 66.1627920344472
+        },
+        {
+          "batch_id": "online-102-B:update:10",
+          "input_revision": 10,
+          "revision": 11,
+          "samples": 32,
+          "before": "83b093c40421937368c554d54592675ddaf2fb525e3d70fdc144c4f21c2df2cd",
+          "after": "5ca5d6733eb5977d3cca212481259d4111c693782c14cc339b2ccc758b1858e9",
+          "milliseconds": 149.78279202478006
+        },
+        {
+          "batch_id": "online-102-B:final",
+          "input_revision": 11,
+          "revision": 12,
+          "samples": 8,
+          "before": "5ca5d6733eb5977d3cca212481259d4111c693782c14cc339b2ccc758b1858e9",
+          "after": "0022a564c815f8d2644c5a547f33256929cf1876a55d834d7527430a5874d835",
+          "milliseconds": 59.69029199331999
+        }
+      ],
+      "final_parameters": "0022a564c815f8d2644c5a547f33256929cf1876a55d834d7527430a5874d835",
+      "mean_reward_by_stage": [
+        0.003233333333333388,
+        0.008999999999999956,
+        0.0009999999999999903
+      ],
+      "stage_observed_steps": [
+        120,
+        120,
+        120
+      ],
+      "window_mean_rewards": {
+        "0": -0.0014000000000000793,
+        "1": -0.027300000000000074,
+        "2": 0.04949999999999993,
+        "3": 0.05500000000000027,
+        "4": -0.029099999999999716,
+        "5": -0.0273,
+        "6": 0.050400000000000125,
+        "7": 0.006599999999999576,
+        "8": -3.4694469519536144e-19,
+        "9": 0.0018000000000000002,
+        "10": 1.2143064331837649e-18,
+        "11": -0.004799999999999968,
+        "12": 0.005999999999999945,
+        "13": -3.4694469519536144e-19,
+        "14": 3.4694469519536144e-19,
+        "15": 0.0,
+        "16": -0.0014999999999999853,
+        "17": 0.0014999999999999862
+      }
+    },
+    {
+      "id": "online-102-no-laya",
+      "seed": 102,
+      "mode": "no-laya",
+      "steps": 360,
+      "reward": 1.5879999999999912,
+      "eaten": 104.0799999999997,
+      "death": false,
+      "initial_parameters": "91eb70f5125a2bed21867910642b5a7a7c75b95d6bdf5a6717a1e54b46848ac7",
+      "update_log": [
+        {
+          "batch_id": "online-102-no-laya:update:0",
+          "input_revision": 0,
+          "revision": 1,
+          "samples": 32,
+          "before": "91eb70f5125a2bed21867910642b5a7a7c75b95d6bdf5a6717a1e54b46848ac7",
+          "after": "2b99f002ead1eef5c9e239cc3efaf0634371bada32ce50c9b7e862886d09eb81",
+          "milliseconds": 15.892750001512468
+        },
+        {
+          "batch_id": "online-102-no-laya:update:1",
+          "input_revision": 1,
+          "revision": 2,
+          "samples": 32,
+          "before": "2b99f002ead1eef5c9e239cc3efaf0634371bada32ce50c9b7e862886d09eb81",
+          "after": "a25e0e211440166b6a2bc5fcea7fede42d786edd0fe2814610e91662dc0c4800",
+          "milliseconds": 36.91908298060298
+        },
+        {
+          "batch_id": "online-102-no-laya:update:2",
+          "input_revision": 2,
+          "revision": 3,
+          "samples": 32,
+          "before": "a25e0e211440166b6a2bc5fcea7fede42d786edd0fe2814610e91662dc0c4800",
+          "after": "83e9533e256343bafbec7a9b12167b85968201e230112c5c6703051bbccc8900",
+          "milliseconds": 26.69254201464355
+        },
+        {
+          "batch_id": "online-102-no-laya:update:3",
+          "input_revision": 3,
+          "revision": 4,
+          "samples": 32,
+          "before": "83e9533e256343bafbec7a9b12167b85968201e230112c5c6703051bbccc8900",
+          "after": "2dbd15f0774876e8a530d46cb30301d4b9d20581f52d8f53bb6754e900fdd8a8",
+          "milliseconds": 29.66816700063646
+        },
+        {
+          "batch_id": "online-102-no-laya:update:4",
+          "input_revision": 4,
+          "revision": 5,
+          "samples": 32,
+          "before": "2dbd15f0774876e8a530d46cb30301d4b9d20581f52d8f53bb6754e900fdd8a8",
+          "after": "41a02f6d7a324e85136d5a49fec36eeecfd07147a4781c86ad7d24894b40bae1",
+          "milliseconds": 59.432415990158916
+        },
+        {
+          "batch_id": "online-102-no-laya:update:5",
+          "input_revision": 5,
+          "revision": 6,
+          "samples": 32,
+          "before": "41a02f6d7a324e85136d5a49fec36eeecfd07147a4781c86ad7d24894b40bae1",
+          "after": "80580ea57f9aaf999294eb76fff463d69daa079a677b2b95499453babb41ea2b",
+          "milliseconds": 27.8082910226658
+        },
+        {
+          "batch_id": "online-102-no-laya:update:6",
+          "input_revision": 6,
+          "revision": 7,
+          "samples": 32,
+          "before": "80580ea57f9aaf999294eb76fff463d69daa079a677b2b95499453babb41ea2b",
+          "after": "c8fec8d80b4e0819f1c080400ae358d2062440ed7994d6f4e1fe435cf8ebdda4",
+          "milliseconds": 14.250875043217093
+        },
+        {
+          "batch_id": "online-102-no-laya:update:7",
+          "input_revision": 7,
+          "revision": 8,
+          "samples": 32,
+          "before": "c8fec8d80b4e0819f1c080400ae358d2062440ed7994d6f4e1fe435cf8ebdda4",
+          "after": "72fd5b6b426a6ff83b6460c73215be299628cdab73aa809316cd0ceb5435cdfd",
+          "milliseconds": 28.761958004906774
+        },
+        {
+          "batch_id": "online-102-no-laya:update:8",
+          "input_revision": 8,
+          "revision": 9,
+          "samples": 32,
+          "before": "72fd5b6b426a6ff83b6460c73215be299628cdab73aa809316cd0ceb5435cdfd",
+          "after": "709579a4ec42285c2da42b25ceb4ab5eaabcf066618a49cc871ad82ae6954f9b",
+          "milliseconds": 53.83820895804092
+        },
+        {
+          "batch_id": "online-102-no-laya:update:9",
+          "input_revision": 9,
+          "revision": 10,
+          "samples": 32,
+          "before": "709579a4ec42285c2da42b25ceb4ab5eaabcf066618a49cc871ad82ae6954f9b",
+          "after": "07667c7782e094d0bcdc9802249d34f7690ad8c387bdc51d5dff0133be5ac7a1",
+          "milliseconds": 44.83220900874585
+        },
+        {
+          "batch_id": "online-102-no-laya:update:10",
+          "input_revision": 10,
+          "revision": 11,
+          "samples": 32,
+          "before": "07667c7782e094d0bcdc9802249d34f7690ad8c387bdc51d5dff0133be5ac7a1",
+          "after": "20d56bff03f0f49c9af6efd25301ad29a7cfa96a4962b68e15c7f1367a66e9e5",
+          "milliseconds": 36.281000007875264
+        },
+        {
+          "batch_id": "online-102-no-laya:final",
+          "input_revision": 11,
+          "revision": 12,
+          "samples": 8,
+          "before": "20d56bff03f0f49c9af6efd25301ad29a7cfa96a4962b68e15c7f1367a66e9e5",
+          "after": "d2e22730ddbd0212d9e459a80bdd3eafe14f9119037b36793712f6f6046282cb",
+          "milliseconds": 95.73008300503716
+        }
+      ],
+      "final_parameters": "d2e22730ddbd0212d9e459a80bdd3eafe14f9119037b36793712f6f6046282cb",
+      "mean_reward_by_stage": [
+        -0.010483333333333416,
+        0.02271666666666675,
+        0.000999999999999991
+      ],
+      "stage_observed_steps": [
+        120,
+        120,
+        120
+      ],
+      "window_mean_rewards": {
+        "0": -0.0014000000000000793,
+        "1": -0.027300000000000074,
+        "2": 0.04949999999999993,
+        "3": -0.027300000000000074,
+        "4": -0.028200000000000076,
+        "5": -0.02820000000000005,
+        "6": 0.02539999999999996,
+        "7": 0.048599999999999935,
+        "8": 0.05130000000000008,
+        "9": 0.01580000000000052,
+        "10": -0.0026999999999999585,
+        "11": -0.002100000000000009,
+        "12": 0.005999999999999943,
+        "13": 0.0,
+        "14": 6.938893903907229e-19,
+        "15": -1.3877787807814458e-18,
+        "16": -0.0014999999999999836,
+        "17": 0.0014999999999999903
+      }
+    },
+    {
+      "id": "online-102-frozen-B",
+      "seed": 102,
+      "mode": "frozen-B",
+      "steps": 360,
+      "reward": 1.5879999999999914,
+      "eaten": 106.23999999999972,
+      "death": false,
+      "initial_parameters": "91eb70f5125a2bed21867910642b5a7a7c75b95d6bdf5a6717a1e54b46848ac7",
+      "update_log": [],
+      "final_parameters": "91eb70f5125a2bed21867910642b5a7a7c75b95d6bdf5a6717a1e54b46848ac7",
+      "mean_reward_by_stage": [
+        0.0014833333333333838,
+        0.005099999999999906,
+        0.006650000000000046
+      ],
+      "stage_observed_steps": [
+        120,
+        120,
+        120
+      ],
+      "window_mean_rewards": {
+        "0": -0.0014000000000000793,
+        "1": -0.027300000000000074,
+        "2": 0.04949999999999993,
+        "3": 0.04540000000000038,
+        "4": -0.029099999999999765,
+        "5": -0.02820000000000007,
+        "6": -0.027300000000000074,
+        "7": 0.023599999999999923,
+        "8": 0.02450000000000003,
+        "9": -0.01870000000000033,
+        "10": 0.005799999999999912,
+        "11": 0.022699999999999994,
+        "12": 0.039900000000000255,
+        "13": 1.3877787807814458e-18,
+        "14": 6.938893903907229e-19,
+        "15": 0.0,
+        "16": -0.0014999999999999836,
+        "17": 0.0014999999999999903
+      }
+    },
+    {
+      "id": "online-103-rule",
+      "seed": 103,
+      "mode": "rule",
+      "steps": 360,
+      "reward": 1.5879999999999808,
+      "eaten": 107.13999999999876,
+      "death": false,
+      "initial_parameters": null,
+      "update_log": [],
+      "final_parameters": null,
+      "mean_reward_by_stage": [
+        0.012733333333333346,
+        0.0005000000000000014,
+        1.295260195396016e-17
+      ],
+      "stage_observed_steps": [
+        120,
+        120,
+        120
+      ],
+      "window_mean_rewards": {
+        "0": 0.07490000000000005,
+        "1": 0.002999999999999973,
+        "2": 1.734723475976807e-18,
+        "3": 1.734723475976807e-18,
+        "4": -0.0014999999999999853,
+        "5": 1.734723475976807e-18,
+        "6": 2.4286128663675298e-18,
+        "7": 0.002999999999999973,
+        "8": 2.0816681711721684e-18,
+        "9": 2.0816681711721684e-18,
+        "10": 2.0816681711721684e-18,
+        "11": 2.0816681711721684e-18,
+        "12": 2.0816681711721684e-18,
+        "13": 2.0816681711721684e-18,
+        "14": 2.0816681711721684e-18,
+        "15": 2.0816681711721684e-18,
+        "16": 2.0816681711721684e-18,
+        "17": 2.0816681711721684e-18
+      }
+    },
+    {
+      "id": "online-103-fixed-current",
+      "seed": 103,
+      "mode": "fixed-current",
+      "steps": 98,
+      "reward": -3.399999999999997,
+      "eaten": 5.0,
+      "death": true,
+      "initial_parameters": null,
+      "update_log": [],
+      "final_parameters": null,
+      "mean_reward_by_stage": [
+        -0.034693877551020415,
+        null,
+        null
+      ],
+      "stage_observed_steps": [
+        98,
+        0,
+        0
+      ],
+      "window_mean_rewards": {
+        "0": -0.004100000000000075,
+        "1": -0.030000000000000065,
+        "2": -0.030000000000000065,
+        "3": -0.030000000000000034,
+        "4": -0.08433333333333307
+      }
+    },
+    {
+      "id": "online-103-fixed-memory",
+      "seed": 103,
+      "mode": "fixed-memory",
+      "steps": 115,
+      "reward": -3.3999999999999964,
+      "eaten": 10.0,
+      "death": true,
+      "initial_parameters": null,
+      "update_log": [],
+      "final_parameters": null,
+      "mean_reward_by_stage": [
+        -0.029565217391304348,
+        null,
+        null
+      ],
+      "stage_observed_steps": [
+        115,
+        0,
+        0
+      ],
+      "window_mean_rewards": {
+        "0": 0.02179999999999998,
+        "1": -0.030000000000000065,
+        "2": -0.030000000000000065,
+        "3": -0.030000000000000065,
+        "4": -0.03000000000000002,
+        "5": -0.095733333333333
+      }
+    },
+    {
+      "id": "online-103-B",
+      "seed": 103,
+      "mode": "B",
+      "steps": 360,
+      "reward": 1.5879999999999848,
+      "eaten": 100.83999999999929,
+      "death": false,
+      "initial_parameters": "5d7d5a339d0ab91a447fd2b026285829f505097f413f4bd3df6940367e0b9c2f",
+      "update_log": [
+        {
+          "batch_id": "online-103-B:update:0",
+          "input_revision": 0,
+          "revision": 1,
+          "samples": 32,
+          "before": "5d7d5a339d0ab91a447fd2b026285829f505097f413f4bd3df6940367e0b9c2f",
+          "after": "4f84c7ae10519692117cd46d1451c4590da9f8d98648e0575fff8fae52f3ec99",
+          "milliseconds": 22.283333004452288
+        },
+        {
+          "batch_id": "online-103-B:update:1",
+          "input_revision": 1,
+          "revision": 2,
+          "samples": 32,
+          "before": "4f84c7ae10519692117cd46d1451c4590da9f8d98648e0575fff8fae52f3ec99",
+          "after": "123fb114f90cccf2151db70db5db9b4785049dd66f38cda4d59ef352dad30c1b",
+          "milliseconds": 26.618042029440403
+        },
+        {
+          "batch_id": "online-103-B:update:2",
+          "input_revision": 2,
+          "revision": 3,
+          "samples": 32,
+          "before": "123fb114f90cccf2151db70db5db9b4785049dd66f38cda4d59ef352dad30c1b",
+          "after": "f06c778802aca9f99402dc67400ffd4c0831261e112f5c03fa13d5c357053fab",
+          "milliseconds": 55.00091699650511
+        },
+        {
+          "batch_id": "online-103-B:update:3",
+          "input_revision": 3,
+          "revision": 4,
+          "samples": 32,
+          "before": "f06c778802aca9f99402dc67400ffd4c0831261e112f5c03fa13d5c357053fab",
+          "after": "1ec7a344baac68cb21d98f3ab0925439dffe12b5ea2512ac5808893216964886",
+          "milliseconds": 64.36225003562868
+        },
+        {
+          "batch_id": "online-103-B:update:4",
+          "input_revision": 4,
+          "revision": 5,
+          "samples": 32,
+          "before": "1ec7a344baac68cb21d98f3ab0925439dffe12b5ea2512ac5808893216964886",
+          "after": "0aeb3978d144b07ef1deb09112cfc9597f7b8d23d0fd1dd2cf5f6868fc6dfba1",
+          "milliseconds": 45.25637498591095
+        },
+        {
+          "batch_id": "online-103-B:update:5",
+          "input_revision": 5,
+          "revision": 6,
+          "samples": 32,
+          "before": "0aeb3978d144b07ef1deb09112cfc9597f7b8d23d0fd1dd2cf5f6868fc6dfba1",
+          "after": "b27ccd92e93060f4b49ba77ec39fb2f4b93591d31ae405deb85145a008dc39fd",
+          "milliseconds": 14.877540990710258
+        },
+        {
+          "batch_id": "online-103-B:update:6",
+          "input_revision": 6,
+          "revision": 7,
+          "samples": 32,
+          "before": "b27ccd92e93060f4b49ba77ec39fb2f4b93591d31ae405deb85145a008dc39fd",
+          "after": "b217b84dee20c3262ce38c85df1ae8c94380915c76e7dc3053ee944108f88312",
+          "milliseconds": 10.764542035758495
+        },
+        {
+          "batch_id": "online-103-B:update:7",
+          "input_revision": 7,
+          "revision": 8,
+          "samples": 32,
+          "before": "b217b84dee20c3262ce38c85df1ae8c94380915c76e7dc3053ee944108f88312",
+          "after": "d6200f55e1550876e5826d4cee40b6bd4219e6dd7f0ea9d038fba6c867043ce1",
+          "milliseconds": 30.408874968998134
+        },
+        {
+          "batch_id": "online-103-B:update:8",
+          "input_revision": 8,
+          "revision": 9,
+          "samples": 32,
+          "before": "d6200f55e1550876e5826d4cee40b6bd4219e6dd7f0ea9d038fba6c867043ce1",
+          "after": "3ee87c73cd0bf82bd6198f223349a2577e5862f7b394f632cb7f3e227aa04b47",
+          "milliseconds": 30.36400000564754
+        },
+        {
+          "batch_id": "online-103-B:update:9",
+          "input_revision": 9,
+          "revision": 10,
+          "samples": 32,
+          "before": "3ee87c73cd0bf82bd6198f223349a2577e5862f7b394f632cb7f3e227aa04b47",
+          "after": "61587f12f90a7a0b82c053b97fff618fb96af1cda1ab09fa7ab972e775473f3c",
+          "milliseconds": 53.118292009457946
+        },
+        {
+          "batch_id": "online-103-B:update:10",
+          "input_revision": 10,
+          "revision": 11,
+          "samples": 32,
+          "before": "61587f12f90a7a0b82c053b97fff618fb96af1cda1ab09fa7ab972e775473f3c",
+          "after": "d125b4508ca3e8f137fc43bb3474221d8d71fd8faae83845e2be5d705203529e",
+          "milliseconds": 205.7341249892488
+        },
+        {
+          "batch_id": "online-103-B:final",
+          "input_revision": 11,
+          "revision": 12,
+          "samples": 8,
+          "before": "d125b4508ca3e8f137fc43bb3474221d8d71fd8faae83845e2be5d705203529e",
+          "after": "7bd3109d6527a11cb48fb5af5deb917bd5f0f6bae1481233bb34242a380f862a",
+          "milliseconds": 74.60616703610867
+        }
+      ],
+      "final_parameters": "7bd3109d6527a11cb48fb5af5deb917bd5f0f6bae1481233bb34242a380f862a",
+      "mean_reward_by_stage": [
+        0.009500000000000093,
+        0.002983333333333252,
+        0.000749999999999993
+      ],
+      "stage_observed_steps": [
+        120,
+        120,
+        120
+      ],
+      "window_mean_rewards": {
+        "0": -0.024600000000000084,
+        "1": 0.02719999999999992,
+        "2": 0.026299999999999917,
+        "3": 0.05050000000000025,
+        "4": -0.02459999999999972,
+        "5": 0.002200000000000276,
+        "6": -0.023699999999999853,
+        "7": 0.03439999999999943,
+        "8": 0.011099999999999884,
+        "9": -0.0029999999999999667,
+        "10": -0.008399999999999925,
+        "11": 0.007499999999999929,
+        "12": 0.002999999999999974,
+        "13": -0.005999999999999943,
+        "14": 0.004499999999999957,
+        "15": 0.0029999999999999723,
+        "16": 6.938893903907229e-19,
+        "17": 0.0
+      }
+    },
+    {
+      "id": "online-103-no-laya",
+      "seed": 103,
+      "mode": "no-laya",
+      "steps": 360,
+      "reward": 1.5879999999999854,
+      "eaten": 100.8399999999993,
+      "death": false,
+      "initial_parameters": "5d7d5a339d0ab91a447fd2b026285829f505097f413f4bd3df6940367e0b9c2f",
+      "update_log": [
+        {
+          "batch_id": "online-103-no-laya:update:0",
+          "input_revision": 0,
+          "revision": 1,
+          "samples": 32,
+          "before": "5d7d5a339d0ab91a447fd2b026285829f505097f413f4bd3df6940367e0b9c2f",
+          "after": "792b82e378b200b5b55d97984d9fbf4a06bcef20c3beaea6a40f76dc9f7034d7",
+          "milliseconds": 15.677625022362918
+        },
+        {
+          "batch_id": "online-103-no-laya:update:1",
+          "input_revision": 1,
+          "revision": 2,
+          "samples": 32,
+          "before": "792b82e378b200b5b55d97984d9fbf4a06bcef20c3beaea6a40f76dc9f7034d7",
+          "after": "2d9c83aefb6f868d7969106a60bdced556f424a4e181988b161b798567b0c103",
+          "milliseconds": 25.80050000688061
+        },
+        {
+          "batch_id": "online-103-no-laya:update:2",
+          "input_revision": 2,
+          "revision": 3,
+          "samples": 32,
+          "before": "2d9c83aefb6f868d7969106a60bdced556f424a4e181988b161b798567b0c103",
+          "after": "abe4e17b97f132b7d1e7c772d44a59fc58cd9dbd1a48af1c38bfe5f830fd7b81",
+          "milliseconds": 35.51925002830103
+        },
+        {
+          "batch_id": "online-103-no-laya:update:3",
+          "input_revision": 3,
+          "revision": 4,
+          "samples": 32,
+          "before": "abe4e17b97f132b7d1e7c772d44a59fc58cd9dbd1a48af1c38bfe5f830fd7b81",
+          "after": "8a8af45b7ca47958fef4887818b7dbb61b13cd94de2331c88b04941ed78ef461",
+          "milliseconds": 25.166250008624047
+        },
+        {
+          "batch_id": "online-103-no-laya:update:4",
+          "input_revision": 4,
+          "revision": 5,
+          "samples": 32,
+          "before": "8a8af45b7ca47958fef4887818b7dbb61b13cd94de2331c88b04941ed78ef461",
+          "after": "20c56f5e428e4b47a5c55e12b08a64217fa26c5077bbcb8d81f7453d176bcac1",
+          "milliseconds": 31.065958028193563
+        },
+        {
+          "batch_id": "online-103-no-laya:update:5",
+          "input_revision": 5,
+          "revision": 6,
+          "samples": 32,
+          "before": "20c56f5e428e4b47a5c55e12b08a64217fa26c5077bbcb8d81f7453d176bcac1",
+          "after": "8fe3e06cad2de6c4511790466164f54bed19665750fe354a28e8d8ca0a41227b",
+          "milliseconds": 13.328875007573515
+        },
+        {
+          "batch_id": "online-103-no-laya:update:6",
+          "input_revision": 6,
+          "revision": 7,
+          "samples": 32,
+          "before": "8fe3e06cad2de6c4511790466164f54bed19665750fe354a28e8d8ca0a41227b",
+          "after": "4be0f3319c99759fa3d6d0206ef51872c356025cecb607a78b52ff67539a0ad3",
+          "milliseconds": 22.27675000904128
+        },
+        {
+          "batch_id": "online-103-no-laya:update:7",
+          "input_revision": 7,
+          "revision": 8,
+          "samples": 32,
+          "before": "4be0f3319c99759fa3d6d0206ef51872c356025cecb607a78b52ff67539a0ad3",
+          "after": "783ad0bd9546ae0f5cda231cec04ae3e377bbaa99fd0290d44f8540556a95e92",
+          "milliseconds": 30.16999998362735
+        },
+        {
+          "batch_id": "online-103-no-laya:update:8",
+          "input_revision": 8,
+          "revision": 9,
+          "samples": 32,
+          "before": "783ad0bd9546ae0f5cda231cec04ae3e377bbaa99fd0290d44f8540556a95e92",
+          "after": "05b8ef954d83af72d1279d45b3dcb5b8b827122ed56cf8d54da0e4418644b205",
+          "milliseconds": 31.080208020284772
+        },
+        {
+          "batch_id": "online-103-no-laya:update:9",
+          "input_revision": 9,
+          "revision": 10,
+          "samples": 32,
+          "before": "05b8ef954d83af72d1279d45b3dcb5b8b827122ed56cf8d54da0e4418644b205",
+          "after": "c340b5f676e7e17fe8368434170c81fe6de2e3d7d8d51be4684d7f159e54e017",
+          "milliseconds": 52.1835419931449
+        },
+        {
+          "batch_id": "online-103-no-laya:update:10",
+          "input_revision": 10,
+          "revision": 11,
+          "samples": 32,
+          "before": "c340b5f676e7e17fe8368434170c81fe6de2e3d7d8d51be4684d7f159e54e017",
+          "after": "523b5207f023d4a2f0069262faa367385bfebdd858689fa748b41e66e22762fe",
+          "milliseconds": 45.6388330203481
+        },
+        {
+          "batch_id": "online-103-no-laya:final",
+          "input_revision": 11,
+          "revision": 12,
+          "samples": 8,
+          "before": "523b5207f023d4a2f0069262faa367385bfebdd858689fa748b41e66e22762fe",
+          "after": "abb1105cb8b7f6bd967219378ec9e6ad65e7324a76ac67e702245071692e17a2",
+          "milliseconds": 111.18175002047792
+        }
+      ],
+      "final_parameters": "abb1105cb8b7f6bd967219378ec9e6ad65e7324a76ac67e702245071692e17a2",
+      "mean_reward_by_stage": [
+        0.009500000000000093,
+        0.002983333333333253,
+        0.0007499999999999935
+      ],
+      "stage_observed_steps": [
+        120,
+        120,
+        120
+      ],
+      "window_mean_rewards": {
+        "0": -0.024600000000000084,
+        "1": 0.02719999999999992,
+        "2": 0.026299999999999917,
+        "3": 0.05050000000000025,
+        "4": -0.02459999999999972,
+        "5": 0.002200000000000276,
+        "6": -0.023699999999999853,
+        "7": 0.03439999999999943,
+        "8": 0.011099999999999884,
+        "9": -0.0029999999999999667,
+        "10": 0.0020999999999999743,
+        "11": -0.0029999999999999697,
+        "12": 0.002999999999999974,
+        "13": -0.005999999999999943,
+        "14": 0.004499999999999957,
+        "15": 0.002999999999999973,
+        "16": -3.4694469519536144e-19,
+        "17": 0.0
+      }
+    },
+    {
+      "id": "online-103-frozen-B",
+      "seed": 103,
+      "mode": "frozen-B",
+      "steps": 360,
+      "reward": 1.4720000000000093,
+      "eaten": 99.85999999999959,
+      "death": false,
+      "initial_parameters": "5d7d5a339d0ab91a447fd2b026285829f505097f413f4bd3df6940367e0b9c2f",
+      "update_log": [],
+      "final_parameters": "5d7d5a339d0ab91a447fd2b026285829f505097f413f4bd3df6940367e0b9c2f",
+      "mean_reward_by_stage": [
+        0.01193333333333335,
+        -0.006933333333333236,
+        0.007266666666666763
+      ],
+      "stage_observed_steps": [
+        120,
+        120,
+        120
+      ],
+      "window_mean_rewards": {
+        "0": -0.024600000000000084,
+        "1": 0.02719999999999992,
+        "2": 0.025399999999999923,
+        "3": 0.05039999999999996,
+        "4": -0.02459999999999972,
+        "5": 0.017800000000000128,
+        "6": -0.009899999999999878,
+        "7": 0.006899999999999909,
+        "8": 0.01019999999999989,
+        "9": -0.005699999999999927,
+        "10": -0.017599999999999512,
+        "11": -0.025499999999999884,
+        "12": 0.024500000000000195,
+        "13": 0.01739999999999921,
+        "14": 0.001499999999999984,
+        "15": 0.005999999999999945,
+        "16": 6.938893903907229e-19,
+        "17": -0.005799999999998774
+      }
+    }
+  ],
+  "heldout": [
+    {
+      "id": "heldout-701-B",
+      "seed": 701,
+      "mode": "B",
+      "steps": 360,
+      "reward": 1.557999999999985,
+      "eaten": 92.7999999999991,
+      "death": false,
+      "initial_parameters": "7b436615974a5ce786f70cea427d4d695d5b731e7091c011e6303fb5e2ca2b12",
+      "update_log": [],
+      "final_parameters": "7b436615974a5ce786f70cea427d4d695d5b731e7091c011e6303fb5e2ca2b12",
+      "mean_reward_by_stage": [
+        0.012483333333333345,
+        -0.002949999999999969,
+        0.0034499999999999696
+      ],
+      "stage_observed_steps": [
+        120,
+        120,
+        120
+      ],
+      "window_mean_rewards": {
+        "0": 0.05309999999999991,
+        "1": 0.02480000000000011,
+        "2": -0.01889999999999979,
+        "3": 0.01859999999999982,
+        "4": 0.00029999999999997634,
+        "5": -0.002999999999999971,
+        "6": 0.0014999999999999853,
+        "7": 0.0029999999999999727,
+        "8": -0.0020999999999999712,
+        "9": -0.010499999999999902,
+        "10": 0.009899999999999912,
+        "11": -0.01949999999999981,
+        "12": 0.022199999999999775,
+        "13": -0.013799999999999845,
+        "14": 0.012299999999999865,
+        "15": -0.005699999999999932,
+        "16": -0.010199999999999886,
+        "17": 0.015899999999999824
+      }
+    },
+    {
+      "id": "heldout-701-no-laya",
+      "seed": 701,
+      "mode": "no-laya",
+      "steps": 360,
+      "reward": 1.5579999999999847,
+      "eaten": 96.7599999999992,
+      "death": false,
+      "initial_parameters": "81a3effba7c08984d0efdb4a04619c1ccea7bab486ee416a9add128a7baecec1",
+      "update_log": [],
+      "final_parameters": "81a3effba7c08984d0efdb4a04619c1ccea7bab486ee416a9add128a7baecec1",
+      "mean_reward_by_stage": [
+        0.012483333333333346,
+        -0.002949999999999969,
+        0.0034499999999999687
+      ],
+      "stage_observed_steps": [
+        120,
+        120,
+        120
+      ],
+      "window_mean_rewards": {
+        "0": 0.028099999999999913,
+        "1": 0.024500000000000022,
+        "2": 0.00040000000000027947,
+        "3": 0.02369999999999984,
+        "4": 0.0011999999999999743,
+        "5": -0.002999999999999971,
+        "6": 0.0014999999999999853,
+        "7": 0.0029999999999999706,
+        "8": -0.00299999999999997,
+        "9": 0.0023999999999999876,
+        "10": -0.016099999999999528,
+        "11": -0.005500000000000252,
+        "12": 0.022199999999999775,
+        "13": -0.001499999999999983,
+        "14": 3.4694469519536144e-19,
+        "15": 0.0014999999999999875,
+        "16": -0.01109999999999989,
+        "17": 0.009599999999999902
+      }
+    },
+    {
+      "id": "heldout-701-frozen-B",
+      "seed": 701,
+      "mode": "frozen-B",
+      "steps": 360,
+      "reward": 0.3080000000000044,
+      "eaten": 93.61999999999958,
+      "death": false,
+      "initial_parameters": "3302ba4f583c7acd2018e5eb38a01013f00a234303064f00afd562b754c1f713",
+      "update_log": [],
+      "final_parameters": "3302ba4f583c7acd2018e5eb38a01013f00a234303064f00afd562b754c1f713",
+      "mean_reward_by_stage": [
+        0.011983333333333342,
+        -0.001499999999999981,
+        -0.00791666666666654
+      ],
+      "stage_observed_steps": [
+        120,
+        120,
+        120
+      ],
+      "window_mean_rewards": {
+        "0": -0.003200000000000077,
+        "1": -0.0014000000000000778,
+        "2": 0.025399999999999923,
+        "3": 0.00039999999999993914,
+        "4": 0.025400000000000155,
+        "5": 0.02530000000000023,
+        "6": -0.028199999999999715,
+        "7": 0.026300000000000063,
+        "8": 0.007899999999999602,
+        "9": -0.023699999999999756,
+        "10": 0.01379999999999989,
+        "11": -0.005099999999999978,
+        "12": -0.0023999999999999477,
+        "13": 0.01739999999999981,
+        "14": -0.01649999999999984,
+        "15": -0.0190999999999995,
+        "16": 0.0004000000000002786,
+        "17": -0.02730000000000004
+      }
+    },
+    {
+      "id": "heldout-702-B",
+      "seed": 702,
+      "mode": "B",
+      "steps": 360,
+      "reward": 1.5279999999999818,
+      "eaten": 96.27999999999906,
+      "death": false,
+      "initial_parameters": "0022a564c815f8d2644c5a547f33256929cf1876a55d834d7527430a5874d835",
+      "update_log": [],
+      "final_parameters": "0022a564c815f8d2644c5a547f33256929cf1876a55d834d7527430a5874d835",
+      "mean_reward_by_stage": [
+        0.012883333333333346,
+        0.00034999999999999566,
+        -0.0004999999999999945
+      ],
+      "stage_observed_steps": [
+        120,
+        120,
+        120
+      ],
+      "window_mean_rewards": {
+        "0": 0.07340000000000005,
+        "1": -0.008399999999999892,
+        "2": 0.0024000000000004495,
+        "3": -0.0006000000000004838,
+        "4": 0.011099999999999891,
+        "5": -0.0005999999999999872,
+        "6": 0.002099999999999977,
+        "7": -0.004499999999999955,
+        "8": -0.007199999999999919,
+        "9": 0.010199999999999891,
+        "10": 0.0014999999999999862,
+        "11": 0.0,
+        "12": -0.016799999999999815,
+        "13": 0.016799999999999822,
+        "14": -0.0014999999999999855,
+        "15": -0.0005999999999999868,
+        "16": 0.0020999999999999795,
+        "17": -0.0029999999999999706
+      }
+    },
+    {
+      "id": "heldout-702-no-laya",
+      "seed": 702,
+      "mode": "no-laya",
+      "steps": 360,
+      "reward": 1.473999999999982,
+      "eaten": 99.87999999999911,
+      "death": false,
+      "initial_parameters": "d2e22730ddbd0212d9e459a80bdd3eafe14f9119037b36793712f6f6046282cb",
+      "update_log": [],
+      "final_parameters": "d2e22730ddbd0212d9e459a80bdd3eafe14f9119037b36793712f6f6046282cb",
+      "mean_reward_by_stage": [
+        0.012300000000000056,
+        0.0009333333333332795,
+        -0.0009499999999999875
+      ],
+      "stage_observed_steps": [
+        120,
+        120,
+        120
+      ],
+      "window_mean_rewards": {
+        "0": 0.05040000000000011,
+        "1": -0.022799999999999924,
+        "2": 0.023600000000000156,
+        "3": 0.02069999999999973,
+        "4": 0.0032999999999999835,
+        "5": -0.0013999999999997207,
+        "6": -0.01420000000000012,
+        "7": 0.012100000000000149,
+        "8": 0.0025999999999996963,
+        "9": 0.0035999999999999587,
+        "10": 0.0014999999999999875,
+        "11": 1.3877787807814458e-18,
+        "12": -0.02639999999999972,
+        "13": 0.02489999999999974,
+        "14": 3.4694469519536144e-19,
+        "15": -0.0005999999999999857,
+        "16": 0.0020999999999999743,
+        "17": -0.00569999999999993
+      }
+    },
+    {
+      "id": "heldout-702-frozen-B",
+      "seed": 702,
+      "mode": "frozen-B",
+      "steps": 360,
+      "reward": 0.9759999999999981,
+      "eaten": 101.1999999999999,
+      "death": false,
+      "initial_parameters": "91eb70f5125a2bed21867910642b5a7a7c75b95d6bdf5a6717a1e54b46848ac7",
+      "update_log": [],
+      "final_parameters": "91eb70f5125a2bed21867910642b5a7a7c75b95d6bdf5a6717a1e54b46848ac7",
+      "mean_reward_by_stage": [
+        -0.002150000000000037,
+        0.004566666666666584,
+        0.005716666666666834
+      ],
+      "stage_observed_steps": [
+        120,
+        120,
+        120
+      ],
+      "window_mean_rewards": {
+        "0": -0.0014000000000000793,
+        "1": -0.027300000000000074,
+        "2": 0.04949999999999993,
+        "3": 0.023600000000000138,
+        "4": -0.029100000000000032,
+        "5": -0.02820000000000007,
+        "6": -0.027300000000000074,
+        "7": 0.04949999999999995,
+        "8": -0.025500000000000078,
+        "9": 0.0021999999999999186,
+        "10": 0.005799999999999912,
+        "11": 0.022699999999999925,
+        "12": 0.06490000000000067,
+        "13": 1.3877787807814458e-18,
+        "14": 6.938893903907229e-19,
+        "15": -0.004099999999999712,
+        "16": 0.002599999999999732,
+        "17": -0.029099999999999716
+      }
+    },
+    {
+      "id": "heldout-703-B",
+      "seed": 703,
+      "mode": "B",
+      "steps": 360,
+      "reward": 1.5639999999999898,
+      "eaten": 102.93999999999954,
+      "death": false,
+      "initial_parameters": "7bd3109d6527a11cb48fb5af5deb917bd5f0f6bae1481233bb34242a380f862a",
+      "update_log": [],
+      "final_parameters": "7bd3109d6527a11cb48fb5af5deb917bd5f0f6bae1481233bb34242a380f862a",
+      "mean_reward_by_stage": [
+        0.0026166666666665923,
+        0.010616666666666741,
+        -0.00019999999999999695
+      ],
+      "stage_observed_steps": [
+        120,
+        120,
+        120
+      ],
+      "window_mean_rewards": {
+        "0": 0.023599999999999923,
+        "1": -0.0014000000000000793,
+        "2": -0.027300000000000074,
+        "3": -0.0014000000000000772,
+        "4": -0.027300000000000074,
+        "5": 0.04949999999999993,
+        "6": -0.02640000000000008,
+        "7": 0.07720000000000005,
+        "8": 0.011400000000000469,
+        "9": 0.0014999999999999862,
+        "10": -0.005999999999999943,
+        "11": 0.0059999999999999455,
+        "12": -0.0026999999999999602,
+        "13": -0.0003000000000000096,
+        "14": -0.010499999999999902,
+        "15": 0.010499999999999902,
+        "16": -3.4694469519536144e-19,
+        "17": 0.0017999999999999989
+      }
+    },
+    {
+      "id": "heldout-703-no-laya",
+      "seed": 703,
+      "mode": "no-laya",
+      "steps": 107,
+      "reward": -3.3999999999999977,
+      "eaten": 5.0,
+      "death": true,
+      "initial_parameters": "abb1105cb8b7f6bd967219378ec9e6ad65e7324a76ac67e702245071692e17a2",
+      "update_log": [],
+      "final_parameters": "abb1105cb8b7f6bd967219378ec9e6ad65e7324a76ac67e702245071692e17a2",
+      "mean_reward_by_stage": [
+        -0.03177570093457943,
+        null,
+        null
+      ],
+      "stage_observed_steps": [
+        107,
+        0,
+        0
+      ],
+      "window_mean_rewards": {
+        "0": -0.0014000000000000793,
+        "1": -0.027300000000000074,
+        "2": -0.027300000000000074,
+        "3": -0.027300000000000046,
+        "4": -0.026399999999999986,
+        "5": -0.17228571428571351
+      }
+    },
+    {
+      "id": "heldout-703-frozen-B",
+      "seed": 703,
+      "mode": "frozen-B",
+      "steps": 360,
+      "reward": 1.406000000000001,
+      "eaten": 100.09999999999965,
+      "death": false,
+      "initial_parameters": "5d7d5a339d0ab91a447fd2b026285829f505097f413f4bd3df6940367e0b9c2f",
+      "update_log": [],
+      "final_parameters": "5d7d5a339d0ab91a447fd2b026285829f505097f413f4bd3df6940367e0b9c2f",
+      "mean_reward_by_stage": [
+        0.0008499999999999217,
+        0.009183333333333439,
+        0.0016833333333334108
+      ],
+      "stage_observed_steps": [
+        120,
+        120,
+        120
+      ],
+      "window_mean_rewards": {
+        "0": -0.024600000000000084,
+        "1": -0.02460000000000003,
+        "2": 0.02539999999999993,
+        "3": 0.05039999999999991,
+        "4": -0.024600000000000084,
+        "5": 0.003099999999999915,
+        "6": 0.001299999999999918,
+        "7": 0.052200000000000094,
+        "8": 0.020200000000000426,
+        "9": 0.0005999999999999915,
+        "10": -0.0014999999999999857,
+        "11": -0.017699999999999813,
+        "12": -0.001399999999999719,
+        "13": 0.002299999999999722,
+        "14": 0.00040000000000028,
+        "15": -0.0013999999999997543,
+        "16": 0.019299999999999293,
+        "17": -0.009099999999999362
+      }
+    }
+  ]
+}

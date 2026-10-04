@@ -1,0 +1,37 @@
+✔ configuration rejects nonfinite, invalid bounds, unsafe budgets (2.205917ms)
+✔ barrier is atomic; duplicate, illegal, stale retries and restore cannot execute (19.133458ms)
+✔ food competition consumes only the available energy; ordering independent (3.762167ms)
+✔ movement is continuous, bounded and cannot cross obstacles (1.257167ms)
+✔ line of sight and local perception exclude hidden food, global identities and states (0.988917ms)
+✔ reproduction transfers energy once; child starts fresh and birth costs close ledger (1.784875ms)
+✔ simultaneous reproduction at capacity rejects once without creating energy (8.753667ms)
+✔ death returns only stored energy and does not act again; truncated differs from terminal (3.488208ms)
+✔ interventions are accounted, invalidate requests and reject occupied obstacles atomically (3.73125ms)
+✔ seeded actions replay the exact shared world; no renderer clock is used (1873.578375ms)
+✔ bad restore is atomic, snapshots and branch references are independent (9.624792ms)
+✔ bounded long-run fields, population, memory and lineage; at least one multi-generation ecology (4415.18575ms)
+✔ random control uses same candidates and leaves environmental RNG untouched until execution (1.726791ms)
+✔ frequent render snapshot reads do not change simulation RNG or outcomes (1378.1555ms)
+✔ preview execution retains the committed world and produces exactly the later accepted result (6.767ms)
+✔ partial decisions never advance; retry targets only failed IDs and applies once (33.396042ms)
+✔ pause retains successful replies; explicit single step later commits without another inference (8.679708ms)
+✔ reset during inference rejects late old-world result; current world progresses independently (11.25875ms)
+✔ intervention invalidates full batch; stale inference cannot act on new resources (13.333125ms)
+✔ invalid intervention preserves in-flight round; invalid or duplicated response cannot partially commit (3.418333ms)
+✔ stale retry response and nonfinite output are rejected; explicit fallback records true provider (4.103042ms)
+✔ capacity stops before next execution and exports complete recorded prefix (27.608208ms)
+✔ mixed mode, environment interventions, and strict replay validate every execution (162.366041ms)
+✔ branches share the starting world and RNG by value, with exactly one declared change (72.183917ms)
+✔ learning feedback timeout retries only commit; mutations and incomplete export are blocked (34.201959ms)
+✔ learning pause retains staged proposal; cancellation is confirmed before world can change (9.755417ms)
+✔ learning cancellation invalidates a late prepare reply and never commits it (5.795792ms)
+✔ empty replay cannot certify a changed final world (2.475084ms)
+✔ replay evidence contains only consumed recorded rounds, never future learning (36.981542ms)
+ℹ tests 29
+ℹ suites 0
+ℹ pass 29
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7951.239417
