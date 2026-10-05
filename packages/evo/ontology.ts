@@ -3,13 +3,13 @@
 import dialects from './ontology/dialects.json' with { type: 'json' };
 import vader from './ontology/vader-lexicon.json' with { type: 'json' };
 
-export type Dialect = 'train' | 'test';
+export type Dialect = 'train' | 'test' | 'heldout';
 export type Tier = 'nutritive' | 'mild' | 'strong' | 'lethal';
 /** 池中的一条：描述 + 隐藏属性（只供世界生成和度量使用，永远不进入个体的输入）。 */
 export type PoolEntry = { text: string; dialect: Dialect; tier: Tier; factor: number; cuePolarity: number; clauses: number };
 type Field = 'look' | 'smell' | 'feel' | 'place' | 'signs';
 type DialectSpec = { categories: string[]; clauses: Record<Field, { pos: string[]; neg: string[]; neu: string[] }>; negations: { pos: string[]; neg: string[] }; templates: { '2': string[]; '3': string[] } };
-const SPEC = dialects as unknown as { fields: Field[]; train: DialectSpec; test: DialectSpec };
+const SPEC = dialects as unknown as { fields: Field[]; train: DialectSpec; test: DialectSpec; heldout: DialectSpec };
 
 export const TIER_FACTOR: Record<Tier, number> = { nutritive: 1, mild: -0.4, strong: -1, lethal: -4 };
 function rng(seed: number) { let s = seed >>> 0 || 1; return () => { s = (s + 0x6D2B79F5) >>> 0; let t = s; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
@@ -30,7 +30,7 @@ export function generateEntry(r: () => number, dialect: Dialect, opt: { rho0?: n
     if (r() < uninformative) { parts.push(pick(r, bank.neu)); continue; }
     const consistent = r() < rho0, pos = toxic ? !consistent : consistent;   // pos=线索指向“可以吃”
     // 测试方言偶尔用否定句表达（词典难以理解）
-    if (dialect === 'test' && spec.negations.pos.length && r() < .25) parts.push(pick(r, pos ? spec.negations.pos : spec.negations.neg)); else parts.push(pick(r, pos ? bank.pos : bank.neg));
+    if (dialect !== 'train' && spec.negations.pos.length && r() < .25) parts.push(pick(r, pos ? spec.negations.pos : spec.negations.neg)); else parts.push(pick(r, pos ? bank.pos : bank.neg));
     polarity += pos ? 1 : -1;
   }
   const cat = pick(r, spec.categories), template = pick(r, spec.templates[n === 3 ? '3' : '2']), fill = (t: string) => t.replace('{cat}', cat).replace('{Cat}', cap(cat)).replace(/\{c(\d)\}/g, (_, i) => parts[+i - 1] ?? '').replace(/\{C(\d)\}/g, (_, i) => cap(parts[+i - 1] ?? ''));
@@ -39,7 +39,7 @@ export function generateEntry(r: () => number, dialect: Dialect, opt: { rho0?: n
 }
 /** 池：n 条互不相同的描述。同一 (dialect, n, seed) 总是得到同一池。 */
 export function generatePool(dialect: Dialect, n: number, seed: number, opt: Parameters<typeof generateEntry>[2] = {}): PoolEntry[] {
-  const r = rng(seed * 2654435761 + (dialect === 'test' ? 7 : 3)), seen = new Set<string>(), out: PoolEntry[] = [];
+  const r = rng(seed * 2654435761 + (dialect === 'test' ? 7 : dialect === 'heldout' ? 11 : 3)), seen = new Set<string>(), out: PoolEntry[] = [];
   for (let guard = 0; out.length < n && guard < n * 40; guard++) { const e = generateEntry(r, dialect, opt); if (!seen.has(e.text) && e.text.length <= 240 && /^[ -~]+$/.test(e.text)) { seen.add(e.text); out.push(e); } }
   if (out.length < n) throw Error('pool_exhausted');
   return out;
