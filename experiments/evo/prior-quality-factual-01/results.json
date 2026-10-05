@@ -1,0 +1,86 @@
+{
+  "protocol": "docs/PREREGISTRATION_05.md",
+  "dialect": "factual",
+  "n": 4000,
+  "primary": {
+    "id": "H1",
+    "claim": "Laya 的 AUC 比 VADER 高至少 0.1，且 95% CI 下界 > 0",
+    "diff": 0.1915,
+    "ci95": [
+      0.1703,
+      0.2117
+    ],
+    "pOneSided": 0,
+    "supported": true
+  },
+  "secondary": {
+    "layaMinusGeneric": {
+      "diff": 0.2396,
+      "ci95": [
+        0.2204,
+        0.258
+      ],
+      "pOneSided": 0
+    },
+    "layaMinusShuffled": {
+      "diff": 0.2606,
+      "ci95": [
+        0.2377,
+        0.2839
+      ],
+      "pOneSided": 0
+    }
+  },
+  "rows": {
+    "Laya": {
+      "aucAll": 0.7746,
+      "accAll": 0.7055,
+      "aucInformative": 0.8106,
+      "accInformative": 0.7384
+    },
+    "VADER": {
+      "aucAll": 0.5831,
+      "accAll": 0.5595,
+      "aucInformative": 0.5904,
+      "accInformative": 0.5654
+    },
+    "作者自写通用词典": {
+      "aucAll": 0.535,
+      "accAll": 0.4843,
+      "aucInformative": 0.5381,
+      "accInformative": 0.4827
+    },
+    "打乱的Laya": {
+      "aucAll": 0.514,
+      "accAll": 0.508,
+      "aucInformative": 0.515,
+      "accInformative": 0.5085
+    }
+  },
+  "correctRateByTier": {
+    "nutritive": {
+      "Laya": 0.679,
+      "VADER": 0.377,
+      "作者自写通用词典": 0.112,
+      "打乱的Laya": 0.485
+    },
+    "mild": {
+      "Laya": 0.728,
+      "VADER": 0.747,
+      "作者自写通用词典": 0.872,
+      "打乱的Laya": 0.535
+    },
+    "strong": {
+      "Laya": 0.728,
+      "VADER": 0.752,
+      "作者自写通用词典": 0.88,
+      "打乱的Laya": 0.544
+    },
+    "lethal": {
+      "Laya": 0.761,
+      "VADER": 0.747,
+      "作者自写通用词典": 0.85,
+      "打乱的Laya": 0.488
+    }
+  }
+}
