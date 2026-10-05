@@ -7,10 +7,11 @@ import { trainLexicon, genericLexiconScore, vaderLexiconScore } from './ontology
 export type Priors = Map<string, number>;
 export const loadPool = (dialect: Dialect): PoolEntry[] => JSON.parse(readFileSync(new URL(`./pools/${dialect}.json`, import.meta.url), 'utf8'));
 /** 注册并返回池；名字 = 方言名 */
-export function registerPools(): Record<'train' | 'test', PoolEntry[]> & { heldout?: PoolEntry[] } {
-  const out: Record<'train' | 'test', PoolEntry[]> & { heldout?: PoolEntry[] } = { train: loadPool('train'), test: loadPool('test') };
+export function registerPools(): Record<'train' | 'test', PoolEntry[]> & { heldout?: PoolEntry[]; factual?: PoolEntry[] } {
+  const out: Record<'train' | 'test', PoolEntry[]> & { heldout?: PoolEntry[]; factual?: PoolEntry[] } = { train: loadPool('train'), test: loadPool('test') };
   for (const d of ['train', 'test'] as const) registerPool(d, out[d] as PoolEntryLike[]);
   if (existsSync(new URL('./pools/heldout.json', import.meta.url))) { out.heldout = loadPool('heldout'); registerPool('heldout', out.heldout as PoolEntryLike[]); }   // 留出池：只在预注册评估中使用
+  if (existsSync(new URL('./pools/factual.json', import.meta.url))) { out.factual = loadPool('factual'); registerPool('factual', out.factual as PoolEntryLike[]); }   // W5 新方言（需要理解的事实线索）：只在预注册评估中使用
   return out;
 }
 /** Laya 先验表（pEat，两个选项顺序平均）。尚未算完的条目缺失，缺失的在控制器里按“无语义”处理。 */

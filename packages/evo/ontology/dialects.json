@@ -1,464 +1,623 @@
 {
-  "note": "两套互不相交的描述‘方言’。train：直白、词汇常见；test：由作者另写，更口语/比喻/转折，含否定句、复合句式和不同的名词。每个线索字段有 pos（与营养一致）、neg（与有毒一致）、neu（无信息）三类短语。全部为可见 ASCII。生成器与词表独立于任何模型输出，不根据 Laya 的反应调整。 heldout：第三套方言（野外笔记体），2026-10-05 为预注册留出评估盲写，写作时未查看任何实验结果，也未对照 Laya 的反应调整。",
-  "fields": [
-    "look",
-    "smell",
-    "feel",
-    "place",
-    "signs"
+ "note": "两套互不相交的描述‘方言’。train：直白、词汇常见；test：由作者另写，更口语/比喻/转折，含否定句、复合句式和不同的名词。每个线索字段有 pos（与营养一致）、neg（与有毒一致）、neu（无信息）三类短语。全部为可见 ASCII。生成器与词表独立于任何模型输出，不根据 Laya 的反应调整。 heldout：第三套方言（野外笔记体），2026-10-05 为预注册留出评估盲写，写作时未查看任何实验结果，也未对照 Laya 的反应调整。",
+ "fields": [
+  "look",
+  "smell",
+  "feel",
+  "place",
+  "signs"
+ ],
+ "train": {
+  "categories": [
+   "berry",
+   "fruit",
+   "nut",
+   "seed",
+   "leaf",
+   "root",
+   "mushroom",
+   "bud",
+   "moss",
+   "pod",
+   "sap",
+   "nectar"
   ],
-  "train": {
-    "categories": [
-      "berry",
-      "fruit",
-      "nut",
-      "seed",
-      "leaf",
-      "root",
-      "mushroom",
-      "bud",
-      "moss",
-      "pod",
-      "sap",
-      "nectar"
+  "clauses": {
+   "look": {
+    "pos": [
+     "bright and plump",
+     "glossy and firm",
+     "deep golden",
+     "clean and unblemished",
+     "richly colored",
+     "smooth and full",
+     "rosy and round",
+     "evenly ripe",
+     "fresh green",
+     "healthy and bright"
     ],
-    "clauses": {
-      "look": {
-        "pos": [
-          "bright and plump",
-          "glossy and firm",
-          "deep golden",
-          "clean and unblemished",
-          "richly colored",
-          "smooth and full",
-          "rosy and round",
-          "evenly ripe",
-          "fresh green",
-          "healthy and bright"
-        ],
-        "neg": [
-          "dull and shriveled",
-          "covered in dark spots",
-          "mottled with mold",
-          "gray and wilted",
-          "slimy and discolored",
-          "cracked and oozing",
-          "blackened at the edges",
-          "sickly yellow-green",
-          "withered and brown",
-          "streaked with pale fungus"
-        ],
-        "neu": [
-          "medium-sized",
-          "oval",
-          "small and round",
-          "somewhat elongated",
-          "clustered in twos"
-        ]
-      },
-      "smell": {
-        "pos": [
-          "sweet-smelling",
-          "fragrant",
-          "smells of honey",
-          "pleasantly earthy",
-          "faintly of vanilla",
-          "fresh and clean-smelling",
-          "warm nutty scent",
-          "smells like ripe fruit"
-        ],
-        "neg": [
-          "foul-smelling",
-          "reeking of rot",
-          "sharp chemical stench",
-          "sour and rancid",
-          "smells of decay",
-          "acrid and biting odor",
-          "putrid",
-          "smells like spoiled milk"
-        ],
-        "neu": [
-          "barely any smell",
-          "faint grassy scent",
-          "smells of damp soil"
-        ]
-      },
-      "feel": {
-        "pos": [
-          "soft and juicy",
-          "firm but tender",
-          "crisp",
-          "creamy inside",
-          "moist and springy",
-          "tender"
-        ],
-        "neg": [
-          "slimy",
-          "mushy and sticky",
-          "gritty and dry",
-          "greasy and sticky",
-          "rubbery",
-          "powdery and clammy"
-        ],
-        "neu": [
-          "slightly fuzzy",
-          "light",
-          "waxy skin"
-        ]
-      },
-      "place": {
-        "pos": [
-          "growing in clean sunlit soil",
-          "beside clear running water",
-          "on a healthy vine",
-          "in a tidy meadow"
-        ],
-        "neg": [
-          "growing on a rotting log",
-          "beside a stagnant pool",
-          "in a patch of dead leaves and filth",
-          "on a decaying carcass"
-        ],
-        "neu": [
-          "at the edge of a clearing",
-          "under a shrub",
-          "among stones"
-        ]
-      },
-      "signs": {
-        "pos": [
-          "bees hover around it",
-          "birds peck at it eagerly",
-          "other creatures feed on it safely"
-        ],
-        "neg": [
-          "flies swarm over it",
-          "dead insects lie beneath it",
-          "no animal will go near it",
-          "ants carry away the corpse"
-        ],
-        "neu": [
-          "a few beetles pass by",
-          "an old nest nearby"
-        ]
-      }
-    },
-    "negations": {
-      "pos": [],
-      "neg": []
-    },
-    "templates": {
-      "2": [
-        "A {cat}, {c1}, {c2}.",
-        "{Cat}: {c1}; {c2}.",
-        "Here is a {cat}: {c1}, {c2}."
-      ],
-      "3": [
-        "A {cat}, {c1}, {c2}, {c3}.",
-        "{Cat}: {c1}; {c2}; {c3}."
-      ]
-    }
+    "neg": [
+     "dull and shriveled",
+     "covered in dark spots",
+     "mottled with mold",
+     "gray and wilted",
+     "slimy and discolored",
+     "cracked and oozing",
+     "blackened at the edges",
+     "sickly yellow-green",
+     "withered and brown",
+     "streaked with pale fungus"
+    ],
+    "neu": [
+     "medium-sized",
+     "oval",
+     "small and round",
+     "somewhat elongated",
+     "clustered in twos"
+    ]
+   },
+   "smell": {
+    "pos": [
+     "sweet-smelling",
+     "fragrant",
+     "smells of honey",
+     "pleasantly earthy",
+     "faintly of vanilla",
+     "fresh and clean-smelling",
+     "warm nutty scent",
+     "smells like ripe fruit"
+    ],
+    "neg": [
+     "foul-smelling",
+     "reeking of rot",
+     "sharp chemical stench",
+     "sour and rancid",
+     "smells of decay",
+     "acrid and biting odor",
+     "putrid",
+     "smells like spoiled milk"
+    ],
+    "neu": [
+     "barely any smell",
+     "faint grassy scent",
+     "smells of damp soil"
+    ]
+   },
+   "feel": {
+    "pos": [
+     "soft and juicy",
+     "firm but tender",
+     "crisp",
+     "creamy inside",
+     "moist and springy",
+     "tender"
+    ],
+    "neg": [
+     "slimy",
+     "mushy and sticky",
+     "gritty and dry",
+     "greasy and sticky",
+     "rubbery",
+     "powdery and clammy"
+    ],
+    "neu": [
+     "slightly fuzzy",
+     "light",
+     "waxy skin"
+    ]
+   },
+   "place": {
+    "pos": [
+     "growing in clean sunlit soil",
+     "beside clear running water",
+     "on a healthy vine",
+     "in a tidy meadow"
+    ],
+    "neg": [
+     "growing on a rotting log",
+     "beside a stagnant pool",
+     "in a patch of dead leaves and filth",
+     "on a decaying carcass"
+    ],
+    "neu": [
+     "at the edge of a clearing",
+     "under a shrub",
+     "among stones"
+    ]
+   },
+   "signs": {
+    "pos": [
+     "bees hover around it",
+     "birds peck at it eagerly",
+     "other creatures feed on it safely"
+    ],
+    "neg": [
+     "flies swarm over it",
+     "dead insects lie beneath it",
+     "no animal will go near it",
+     "ants carry away the corpse"
+    ],
+    "neu": [
+     "a few beetles pass by",
+     "an old nest nearby"
+    ]
+   }
   },
-  "test": {
-    "categories": [
-      "drupe",
-      "tuber",
-      "bulb",
-      "lichen",
-      "gourd",
-      "kernel",
-      "frond",
-      "sprout",
-      "catkin",
-      "rhizome",
-      "resin bead",
-      "capsule"
-    ],
-    "clauses": {
-      "look": {
-        "pos": [
-          "plump as a harvest moon",
-          "skin tight and lacquered like polished amber",
-          "blushing the color of a summer sunset",
-          "not a blemish to be seen",
-          "flesh visible through a thin translucent rind",
-          "heavy and brimming",
-          "freshly dew-kissed",
-          "ripened to a deep, even hue"
-        ],
-        "neg": [
-          "puckered like an old man's hand",
-          "speckled with an angry rash of black",
-          "bruised purple-gray and sagging",
-          "wearing a fur of grayish-green fuzz",
-          "weeping a cloudy yellow fluid",
-          "collapsing in on itself",
-          "stained, as if left out in a bog",
-          "pitted and shot through with holes"
-        ],
-        "neu": [
-          "squat and knobbly",
-          "about the size of a thumb",
-          "banded faintly in cream",
-          "two-toned"
-        ]
-      },
-      "smell": {
-        "pos": [
-          "breathes out something like warm bread and cinnamon",
-          "carries the scent of a meadow after rain",
-          "its perfume is soft and caramel-like",
-          "hints of toasted almonds",
-          "the aroma is green and wholesome"
-        ],
-        "neg": [
-          "a sickly-sweet stench like something long dead",
-          "stings the nose like vinegar and ammonia",
-          "gives off a whiff of wet dog and old socks",
-          "the odor is eggy and sulfurous",
-          "smells as though it has been fermenting in a swamp"
-        ],
-        "neu": [
-          "has almost no odor to speak of",
-          "smells faintly of stone",
-          "a hint of dust"
-        ]
-      },
-      "feel": {
-        "pos": [
-          "yields gently under a fingertip",
-          "snaps cleanly with a satisfying crunch",
-          "has a silken, buttery give",
-          "cool and plump, never sticky",
-          "springs right back when pressed"
-        ],
-        "neg": [
-          "slides apart into slick threads",
-          "feels like cold porridge left overnight",
-          "leaves a tacky film on the skin",
-          "crumbles to a chalky, foul-feeling dust",
-          "hot and spongy to the touch"
-        ],
-        "neu": [
-          "coarse-grained",
-          "surprisingly lightweight",
-          "faintly velvety"
-        ]
-      },
-      "place": {
-        "pos": [
-          "found beside a spring bubbling from clean rock",
-          "ripening on a sunlit slope far from any marsh",
-          "cradled in the crook of a healthy old tree",
-          "tucked in a bed of fresh clover"
-        ],
-        "neg": [
-          "festering in the crevice of a rotted stump",
-          "half-sunk in a scummy puddle",
-          "bedded among bones and carrion",
-          "clinging to a wall slick with green slime"
-        ],
-        "neu": [
-          "nestled between two roots",
-          "at the foot of a boulder",
-          "on open ground"
-        ]
-      },
-      "signs": {
-        "pos": [
-          "a flock of finches is feasting on its neighbors, none the worse",
-          "foraging mice come back for more",
-          "small animals bring it back to their burrows"
-        ],
-        "neg": [
-          "a cloud of gnats hangs over it",
-          "the grass around it is dead and brown",
-          "a half-dead rodent lay twitching nearby",
-          "even the flies avoid it"
-        ],
-        "neu": [
-          "a spider has strung a web nearby",
-          "faint tracks lead past it"
-        ]
-      }
-    },
-    "negations": {
-      "pos": [
-        "not the least bit spoiled",
-        "no hint of rot anywhere",
-        "nothing sickly about its color",
-        "not at all the kind that turns the stomach"
-      ],
-      "neg": [
-        "far from fresh",
-        "nothing wholesome about it",
-        "hardly what you would call healthy",
-        "not a thing you would want near your mouth"
-      ]
-    },
-    "templates": {
-      "2": [
-        "It is a {cat}. {C1}, and {c2}.",
-        "You notice a {cat}. {C1}; {c2}.",
-        "A {cat} lies ahead. {C1}. {C2}.",
-        "Found: one {cat}. {C1}, and also {c2}."
-      ],
-      "3": [
-        "A {cat} lies ahead. {C1}. {C2}. {C3}.",
-        "It is a {cat}. {C1}; {c2}; {c3}.",
-        "You notice a {cat}. {C1}, {c2}, and {c3}."
-      ]
-    }
+  "negations": {
+   "pos": [],
+   "neg": []
   },
-  "heldout": {
-    "categories": [
-      "husk",
-      "pip",
-      "thistle-head",
-      "wort",
-      "morel-cap",
-      "corm",
-      "spadix",
-      "burr",
-      "knob",
-      "fig",
-      "sloe",
-      "pith-ball"
-    ],
-    "clauses": {
-      "look": {
-        "pos": [
-          "glossy as wet slate",
-          "firm, unbroken skin",
-          "even, saturated color throughout",
-          "no pitting, no soft spots",
-          "bloom intact on the skin",
-          "full and evenly rounded",
-          "color bright to the stem",
-          "skin taut over solid flesh"
-        ],
-        "neg": [
-          "skin sloughing off in patches",
-          "water-soaked and translucent in places",
-          "scabbed over with rust-colored crust",
-          "sunken, dark and glistening",
-          "one side collapsed and brown",
-          "crusted with a white powdery bloom of mold",
-          "greasy-looking, uneven color",
-          "split and weeping"
-        ],
-        "neu": [
-          "knuckle-sized",
-          "slightly lopsided",
-          "pale at the stem end",
-          "ridged along one side"
-        ]
-      },
-      "smell": {
-        "pos": [
-          "clean, faintly sweet, like cut grass and apples",
-          "smells of sun-warmed straw and honey",
-          "mild, nutty, pleasant",
-          "a bright, juicy aroma",
-          "a fresh bread-like smell when crushed"
-        ],
-        "neg": [
-          "rank, like a cellar flooded long ago",
-          "a burnt-plastic sharpness at the nose",
-          "the smell of a rotting fish heap",
-          "sour milk and old meat",
-          "an eye-watering sulfur reek"
-        ],
-        "neu": [
-          "nearly scentless",
-          "smells of nothing but dust",
-          "a light smell of resin"
-        ]
-      },
-      "feel": {
-        "pos": [
-          "springy, then gives cleanly",
-          "dry-skinned but moist and dense within",
-          "cool and heavy for its size",
-          "tender flesh, no stringiness",
-          "breaks with a clean, crisp snap"
-        ],
-        "neg": [
-          "turns to paste under the thumb",
-          "weeping and slick like raw egg white",
-          "tough, stringy and unpleasantly warm",
-          "dust-dry and hollow, flaking apart",
-          "leaves a bitter, numbing film on the fingers"
-        ],
-        "neu": [
-          "slightly rough",
-          "waxy at the base",
-          "fine-haired"
-        ]
-      },
-      "place": {
-        "pos": [
-          "growing high on a dry, airy ridge",
-          "set among clean pebbles beside a brook",
-          "on a vigorous young shoot",
-          "in loose, sunny, well-drained soil"
-        ],
-        "neg": [
-          "jammed in the muck of a dead pond edge",
-          "growing out of a heap of rotting feathers",
-          "in a damp, airless hollow thick with mold",
-          "coiled around a half-eaten carcass"
-        ],
-        "neu": [
-          "tucked behind a fallen branch",
-          "at the base of a thorn bush",
-          "beside a flat stone"
-        ]
-      },
-      "signs": {
-        "pos": [
-          "grazers have taken bites and carried on unharmed",
-          "bees visit it repeatedly",
-          "the fruit-bats nest right above it"
-        ],
-        "neg": [
-          "a ring of dead beetles circles it",
-          "carrion flies crowd the surface",
-          "the nearest animals keep a wide berth",
-          "tiny bones lie scattered under it"
-        ],
-        "neu": [
-          "an ant trail crosses nearby",
-          "old droppings far off"
-        ]
-      }
-    },
-    "negations": {
-      "pos": [
-        "no sign of spoilage whatsoever",
-        "nothing about it suggests sickness",
-        "not rotten, not even slightly",
-        "free of any rot"
-      ],
-      "neg": [
-        "nowhere near what you would call fresh",
-        "wholesome it is not",
-        "you would not trust it",
-        "scarcely a thing fit to eat"
-      ]
-    },
-    "templates": {
-      "2": [
-        "Field note: {cat}. {C1}; {c2}.",
-        "Specimen - {cat}. {C1}. {C2}.",
-        "Noted a {cat}: {c1}, also {c2}.",
-        "{Cat} (specimen). {C1}, and {c2}."
-      ],
-      "3": [
-        "Field note: {cat}. {C1}; {c2}; {c3}.",
-        "Specimen - {cat}. {C1}. {C2}. {C3}.",
-        "Noted a {cat}: {c1}, also {c2}, and {c3}."
-      ]
-    }
+  "templates": {
+   "2": [
+    "A {cat}, {c1}, {c2}.",
+    "{Cat}: {c1}; {c2}.",
+    "Here is a {cat}: {c1}, {c2}."
+   ],
+   "3": [
+    "A {cat}, {c1}, {c2}, {c3}.",
+    "{Cat}: {c1}; {c2}; {c3}."
+   ]
   }
+ },
+ "test": {
+  "categories": [
+   "drupe",
+   "tuber",
+   "bulb",
+   "lichen",
+   "gourd",
+   "kernel",
+   "frond",
+   "sprout",
+   "catkin",
+   "rhizome",
+   "resin bead",
+   "capsule"
+  ],
+  "clauses": {
+   "look": {
+    "pos": [
+     "plump as a harvest moon",
+     "skin tight and lacquered like polished amber",
+     "blushing the color of a summer sunset",
+     "not a blemish to be seen",
+     "flesh visible through a thin translucent rind",
+     "heavy and brimming",
+     "freshly dew-kissed",
+     "ripened to a deep, even hue"
+    ],
+    "neg": [
+     "puckered like an old man's hand",
+     "speckled with an angry rash of black",
+     "bruised purple-gray and sagging",
+     "wearing a fur of grayish-green fuzz",
+     "weeping a cloudy yellow fluid",
+     "collapsing in on itself",
+     "stained, as if left out in a bog",
+     "pitted and shot through with holes"
+    ],
+    "neu": [
+     "squat and knobbly",
+     "about the size of a thumb",
+     "banded faintly in cream",
+     "two-toned"
+    ]
+   },
+   "smell": {
+    "pos": [
+     "breathes out something like warm bread and cinnamon",
+     "carries the scent of a meadow after rain",
+     "its perfume is soft and caramel-like",
+     "hints of toasted almonds",
+     "the aroma is green and wholesome"
+    ],
+    "neg": [
+     "a sickly-sweet stench like something long dead",
+     "stings the nose like vinegar and ammonia",
+     "gives off a whiff of wet dog and old socks",
+     "the odor is eggy and sulfurous",
+     "smells as though it has been fermenting in a swamp"
+    ],
+    "neu": [
+     "has almost no odor to speak of",
+     "smells faintly of stone",
+     "a hint of dust"
+    ]
+   },
+   "feel": {
+    "pos": [
+     "yields gently under a fingertip",
+     "snaps cleanly with a satisfying crunch",
+     "has a silken, buttery give",
+     "cool and plump, never sticky",
+     "springs right back when pressed"
+    ],
+    "neg": [
+     "slides apart into slick threads",
+     "feels like cold porridge left overnight",
+     "leaves a tacky film on the skin",
+     "crumbles to a chalky, foul-feeling dust",
+     "hot and spongy to the touch"
+    ],
+    "neu": [
+     "coarse-grained",
+     "surprisingly lightweight",
+     "faintly velvety"
+    ]
+   },
+   "place": {
+    "pos": [
+     "found beside a spring bubbling from clean rock",
+     "ripening on a sunlit slope far from any marsh",
+     "cradled in the crook of a healthy old tree",
+     "tucked in a bed of fresh clover"
+    ],
+    "neg": [
+     "festering in the crevice of a rotted stump",
+     "half-sunk in a scummy puddle",
+     "bedded among bones and carrion",
+     "clinging to a wall slick with green slime"
+    ],
+    "neu": [
+     "nestled between two roots",
+     "at the foot of a boulder",
+     "on open ground"
+    ]
+   },
+   "signs": {
+    "pos": [
+     "a flock of finches is feasting on its neighbors, none the worse",
+     "foraging mice come back for more",
+     "small animals bring it back to their burrows"
+    ],
+    "neg": [
+     "a cloud of gnats hangs over it",
+     "the grass around it is dead and brown",
+     "a half-dead rodent lay twitching nearby",
+     "even the flies avoid it"
+    ],
+    "neu": [
+     "a spider has strung a web nearby",
+     "faint tracks lead past it"
+    ]
+   }
+  },
+  "negations": {
+   "pos": [
+    "not the least bit spoiled",
+    "no hint of rot anywhere",
+    "nothing sickly about its color",
+    "not at all the kind that turns the stomach"
+   ],
+   "neg": [
+    "far from fresh",
+    "nothing wholesome about it",
+    "hardly what you would call healthy",
+    "not a thing you would want near your mouth"
+   ]
+  },
+  "templates": {
+   "2": [
+    "It is a {cat}. {C1}, and {c2}.",
+    "You notice a {cat}. {C1}; {c2}.",
+    "A {cat} lies ahead. {C1}. {C2}.",
+    "Found: one {cat}. {C1}, and also {c2}."
+   ],
+   "3": [
+    "A {cat} lies ahead. {C1}. {C2}. {C3}.",
+    "It is a {cat}. {C1}; {c2}; {c3}.",
+    "You notice a {cat}. {C1}, {c2}, and {c3}."
+   ]
+  }
+ },
+ "heldout": {
+  "categories": [
+   "husk",
+   "pip",
+   "thistle-head",
+   "wort",
+   "morel-cap",
+   "corm",
+   "spadix",
+   "burr",
+   "knob",
+   "fig",
+   "sloe",
+   "pith-ball"
+  ],
+  "clauses": {
+   "look": {
+    "pos": [
+     "glossy as wet slate",
+     "firm, unbroken skin",
+     "even, saturated color throughout",
+     "no pitting, no soft spots",
+     "bloom intact on the skin",
+     "full and evenly rounded",
+     "color bright to the stem",
+     "skin taut over solid flesh"
+    ],
+    "neg": [
+     "skin sloughing off in patches",
+     "water-soaked and translucent in places",
+     "scabbed over with rust-colored crust",
+     "sunken, dark and glistening",
+     "one side collapsed and brown",
+     "crusted with a white powdery bloom of mold",
+     "greasy-looking, uneven color",
+     "split and weeping"
+    ],
+    "neu": [
+     "knuckle-sized",
+     "slightly lopsided",
+     "pale at the stem end",
+     "ridged along one side"
+    ]
+   },
+   "smell": {
+    "pos": [
+     "clean, faintly sweet, like cut grass and apples",
+     "smells of sun-warmed straw and honey",
+     "mild, nutty, pleasant",
+     "a bright, juicy aroma",
+     "a fresh bread-like smell when crushed"
+    ],
+    "neg": [
+     "rank, like a cellar flooded long ago",
+     "a burnt-plastic sharpness at the nose",
+     "the smell of a rotting fish heap",
+     "sour milk and old meat",
+     "an eye-watering sulfur reek"
+    ],
+    "neu": [
+     "nearly scentless",
+     "smells of nothing but dust",
+     "a light smell of resin"
+    ]
+   },
+   "feel": {
+    "pos": [
+     "springy, then gives cleanly",
+     "dry-skinned but moist and dense within",
+     "cool and heavy for its size",
+     "tender flesh, no stringiness",
+     "breaks with a clean, crisp snap"
+    ],
+    "neg": [
+     "turns to paste under the thumb",
+     "weeping and slick like raw egg white",
+     "tough, stringy and unpleasantly warm",
+     "dust-dry and hollow, flaking apart",
+     "leaves a bitter, numbing film on the fingers"
+    ],
+    "neu": [
+     "slightly rough",
+     "waxy at the base",
+     "fine-haired"
+    ]
+   },
+   "place": {
+    "pos": [
+     "growing high on a dry, airy ridge",
+     "set among clean pebbles beside a brook",
+     "on a vigorous young shoot",
+     "in loose, sunny, well-drained soil"
+    ],
+    "neg": [
+     "jammed in the muck of a dead pond edge",
+     "growing out of a heap of rotting feathers",
+     "in a damp, airless hollow thick with mold",
+     "coiled around a half-eaten carcass"
+    ],
+    "neu": [
+     "tucked behind a fallen branch",
+     "at the base of a thorn bush",
+     "beside a flat stone"
+    ]
+   },
+   "signs": {
+    "pos": [
+     "grazers have taken bites and carried on unharmed",
+     "bees visit it repeatedly",
+     "the fruit-bats nest right above it"
+    ],
+    "neg": [
+     "a ring of dead beetles circles it",
+     "carrion flies crowd the surface",
+     "the nearest animals keep a wide berth",
+     "tiny bones lie scattered under it"
+    ],
+    "neu": [
+     "an ant trail crosses nearby",
+     "old droppings far off"
+    ]
+   }
+  },
+  "negations": {
+   "pos": [
+    "no sign of spoilage whatsoever",
+    "nothing about it suggests sickness",
+    "not rotten, not even slightly",
+    "free of any rot"
+   ],
+   "neg": [
+    "nowhere near what you would call fresh",
+    "wholesome it is not",
+    "you would not trust it",
+    "scarcely a thing fit to eat"
+   ]
+  },
+  "templates": {
+   "2": [
+    "Field note: {cat}. {C1}; {c2}.",
+    "Specimen - {cat}. {C1}. {C2}.",
+    "Noted a {cat}: {c1}, also {c2}.",
+    "{Cat} (specimen). {C1}, and {c2}."
+   ],
+   "3": [
+    "Field note: {cat}. {C1}; {c2}; {c3}.",
+    "Specimen - {cat}. {C1}. {C2}. {C3}.",
+    "Noted a {cat}: {c1}, also {c2}, and {c3}."
+   ]
+  }
+ },
+ "factual": {
+  "categories": [
+   "tuber",
+   "bulb",
+   "frond",
+   "gourd",
+   "rhizome",
+   "nutlet",
+   "bracket",
+   "drupe",
+   "pod",
+   "corm",
+   "shoot",
+   "lichen"
+  ],
+  "clauses": {
+   "look": {
+    "pos": [
+     "close kin of the common parsnip",
+     "the same pale flesh as a garden marrow",
+     "shaped like the chestnuts sold at autumn markets",
+     "resembles the cress that shepherds gather",
+     "cut ends turn no darker than a cut potato",
+     "pith as white as a boiled egg",
+     "seed pattern matches the field bean",
+     "leaf outline copies the garden beet"
+    ],
+    "neg": [
+     "close kin of hemlock root",
+     "the same mottled pattern as the grave-cap",
+     "shaped like the nightshade berry on old herbals",
+     "umbels of the sort that fill the hemlock marsh",
+     "cut ends blacken within a minute",
+     "pith stained the color of rust",
+     "seed pattern matches the castor bean",
+     "resembles the root that herbalists lock away"
+    ],
+    "neu": [
+     "about as long as a finger",
+     "growing in pairs",
+     "roughly oval",
+     "no larger than a thumbnail"
+    ]
+   },
+   "smell": {
+    "pos": [
+     "carries the scent of toasted barley",
+     "a faint hay smell after rain",
+     "smells like rye baking",
+     "a note of roasted chestnut",
+     "the scent of garden peas"
+    ],
+    "neg": [
+     "carries the scent of bitter almond oil",
+     "a smell like carbolic soap",
+     "smells of the tanners vats",
+     "a note of sulfur from a spent match",
+     "smells of old mouse nests"
+    ],
+    "neu": [
+     "scent is slight",
+     "smell fades by noon",
+     "hardly any odor"
+    ]
+   },
+   "feel": {
+    "pos": [
+     "boiling turns it soft and floury",
+     "slices like a raw turnip",
+     "crunches like a raw bean",
+     "peels in one strip like a banana",
+     "flesh gives way like a ripe pear"
+    ],
+    "neg": [
+     "boiling leaves it as hard as before",
+     "leaves a numb patch on the lip",
+     "milky sap that stings the fingertips",
+     "the juice raises welts on bare skin",
+     "rubs off as a fine powder that itches"
+    ],
+    "neu": [
+     "dry to the touch",
+     "cool and slightly damp",
+     "light for its size"
+    ]
+   },
+   "place": {
+    "pos": [
+     "grows beside the spring where flocks drink",
+     "found in the kitchen gardens of the lowland farms",
+     "carpets the meadow grazed by goats",
+     "sold at the harbor market by the sackful",
+     "a root crop along the irrigated terrace"
+    ],
+    "neg": [
+     "grows on the slag heaps behind the old smelter",
+     "found where the tannery drained into the ditch",
+     "carpets the clearing above the burned chapel",
+     "rooted in the soil beneath the lead mine spoil",
+     "grows where the dye works emptied its vats"
+    ],
+    "neu": [
+     "found on the north slope",
+     "grows in the shade of a wall",
+     "turns up near the trail"
+    ]
+   },
+   "signs": {
+    "pos": [
+     "deer have eaten the tops down to the stalks",
+     "the children of the valley eat it raw",
+     "field mice stash it in their burrows",
+     "bees work the flowers all morning",
+     "the miller hens put on weight with it"
+    ],
+    "neg": [
+     "the herd leaves it standing even in a lean winter",
+     "old shepherds drive the flock away from it",
+     "hornets avoid the flowers entirely",
+     "the foxes sniff it and walk on",
+     "the apothecary lists it among the sleeping drafts"
+    ],
+    "neu": [
+     "an old stone marker stands nearby",
+     "a few snail shells lie around",
+     "the stalk is hollow"
+    ]
+   }
+  },
+  "negations": {
+   "pos": [
+    "no herbalist has ever warned against it",
+    "nothing in the old records marks it as harmful",
+    "the old gardeners never kept it from the table",
+    "not once has a feeding trial gone wrong",
+    "nothing about it troubles the grazing herds",
+    "the valley cooks have never thrown it out"
+   ],
+   "neg": [
+    "no shepherd would let a flock near it",
+    "not a plant the herbals call safe",
+    "the old gardeners kept it out of the kitchen",
+    "no feeding trial has ended well",
+    "nothing grazes near it",
+    "the valley cooks have never let it past the door"
+   ]
+  },
+  "templates": {
+   "2": [
+    "{Cat}, per the field guide: {c1}; {c2}.",
+    "Entry - {cat}. {C1}, {c2}.",
+    "Guide listing for {cat}: {c1} and {c2}."
+   ],
+   "3": [
+    "{Cat} (guide entry): {c1}; {c2}; {c3}.",
+    "Listing - {cat}. {C1}. {C2}, and {c3}."
+   ]
+  }
+ }
 }

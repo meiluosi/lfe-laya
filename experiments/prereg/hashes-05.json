@@ -1,0 +1,8 @@
+{
+ "packages/evo/pools/factual.json": "39e0a9683c8d2f7adb926ce3602afcb0fcfbaf93fb5be67c640d28361ab2eb36",
+ "experiments/evo/laya-prior-v2/factual.jsonl": "f85891d6108e97804ce7b0a6cee60e5fe567c3214d593082e98b3c9a78604c1e",
+ "packages/evo/prior-quality-pool.ts": "5b030f812de966cc5de60e1c815f5fe25f7b102639fda0b015744bc1f3c745f9",
+ "packages/evo/ontology/dialects.json": "320d977a00192425b50fa5fbd534023ad15563689b48642d274e13bd2f3424e1",
+ "packages/evo/ontology.ts": "fa9735fb4f44bbe20f75551b494e50391b99fb7b5137f84ddcda298dcaa2bd3b",
+ "packages/evo/ontology/vader-lexicon.json": "2048bfaaca51179e677bc29d8ce3fb9bd087838b6a0f4ea236df7b18ff11dce8"
+}
