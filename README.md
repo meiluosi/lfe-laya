@@ -44,6 +44,8 @@ npm run dev
 | [工程与性能优化](docs/OPTIMIZATION.md) | 优化目标、原则、基线与进度；验证用 `scripts/verify.sh` |
 | [前端重设计](docs/FRONTEND_REDESIGN.md) | 观察台：时间轴为主、语义缩放、画布内故事卡；切片与验收 |
 | [路线 D：进化 + 终身学习](docs/EVOLUTION.md) | Laya 作系统 1；诊断证据、架构与切片 |
+| [研究综述](docs/RESEARCH_SUMMARY.md) | 面向论文与公开阅读的总结：主要结果、限制、复现与大纲 |
+| [世界复杂度](docs/WORLD_COMPLEXITY.md) · [预注册 02](docs/PREREGISTRATION_02.md) | 复杂度阶梯与闸门；留出评估的冻结协议与结果 |
 | [Agent 工作约定](AGENTS.md) | 后续编码时的项目规则 |
 
 ## 当前建议
