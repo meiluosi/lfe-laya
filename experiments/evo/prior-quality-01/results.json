@@ -1,0 +1,36 @@
+{
+  "purpose": "先验质量：测试方言池（4000 条）上区分营养/有毒的能力；informative = 至少有一条有信息的线索",
+  "n": 4000,
+  "rows": {
+    "Laya（固定，缓存的真实输出）": {
+      "aucAll": 0.881,
+      "accAll": 0.774,
+      "aucInformative": 0.921,
+      "accInformative": 0.813
+    },
+    "VADER 词典（独立来源）": {
+      "aucAll": 0.687,
+      "accAll": 0.615,
+      "aucInformative": 0.714,
+      "accInformative": 0.631
+    },
+    "作者自写通用词典（可能偏有利）": {
+      "aucAll": 0.755,
+      "accAll": 0.659,
+      "aucInformative": 0.785,
+      "accInformative": 0.677
+    },
+    "训练方言上训练的词典": {
+      "aucAll": 0.633,
+      "accAll": 0.586,
+      "aucInformative": 0.655,
+      "accInformative": 0.598
+    },
+    "打乱的 Laya（对照）": {
+      "aucAll": 0.514,
+      "accAll": 0.505,
+      "aucInformative": 0.512,
+      "accInformative": 0.501
+    }
+  }
+}

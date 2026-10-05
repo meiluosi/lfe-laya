@@ -20,3 +20,8 @@ test('golden worlds are unchanged', () => {
   if (process.env.GOLDEN_PRINT) console.log(JSON.stringify(actual));
   else assert.deepEqual(actual, GOLDEN);
 });
+
+test('stateHash is bit-identical to the original per-character definition, including surrogate pairs', async () => {
+  const original = state => { let a = 2166136261, b = 5381; for (const char of JSON.stringify(state)) { a = Math.imul(a ^ char.charCodeAt(0), 16777619); b = Math.imul(b, 33) ^ char.charCodeAt(0); } return (a >>> 0).toString(16).padStart(8, '0') + (b >>> 0).toString(16).padStart(8, '0'); };
+  for (const sample of [{ a: 1 }, 'plain ascii', { text: '中文 and emoji \u{1F34E}\u{1F347} mixed', n: [1, 2, 3] }, { lone: '\ud800', pair: '🍎', tail: '\udc00' }, '']) assert.equal(stateHash(sample), original(sample), JSON.stringify(sample));
+});

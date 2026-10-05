@@ -1,0 +1,380 @@
+{
+  "purpose": "食物种类数 K 扫描（测试划分新描述词；开发评估）。hand-coded 规则骨架 + 个体经验；oracle 仅度量上限。",
+  "seeds": 24,
+  "inv0-K8": {
+    "blind": {
+      "fitness": 0.354,
+      "toxicBites": 723,
+      "vsNoPrior": {
+        "diff": -0.3685,
+        "lo": -0.3969,
+        "hi": -0.3387
+      }
+    },
+    "无先验（全试+经验）": {
+      "fitness": 0.722,
+      "toxicBites": 187,
+      "vsNoPrior": {
+        "diff": 0,
+        "lo": 0,
+        "hi": 0
+      }
+    },
+    "软先验（全试，先吃Laya看好的）": {
+      "fitness": 0.719,
+      "toxicBites": 183,
+      "vsNoPrior": {
+        "diff": -0.0031,
+        "lo": -0.0295,
+        "hi": 0.0203
+      }
+    },
+    "硬先验（Laya否决）": {
+      "fitness": 0.68,
+      "toxicBites": 76,
+      "vsNoPrior": {
+        "diff": -0.0419,
+        "lo": -0.0829,
+        "hi": -0.0044
+      }
+    },
+    "oracle": {
+      "fitness": 0.764,
+      "toxicBites": 0,
+      "vsNoPrior": {
+        "diff": 0.0418,
+        "lo": 0.0121,
+        "hi": 0.0736
+      }
+    }
+  },
+  "inv0-K16": {
+    "blind": {
+      "fitness": 0.3,
+      "toxicBites": 742,
+      "vsNoPrior": {
+        "diff": -0.3906,
+        "lo": -0.4276,
+        "hi": -0.3547
+      }
+    },
+    "无先验（全试+经验）": {
+      "fitness": 0.691,
+      "toxicBites": 338,
+      "vsNoPrior": {
+        "diff": 0,
+        "lo": 0,
+        "hi": 0
+      }
+    },
+    "软先验（全试，先吃Laya看好的）": {
+      "fitness": 0.696,
+      "toxicBites": 326,
+      "vsNoPrior": {
+        "diff": 0.0058,
+        "lo": -0.0271,
+        "hi": 0.0418
+      }
+    },
+    "硬先验（Laya否决）": {
+      "fitness": 0.724,
+      "toxicBites": 86,
+      "vsNoPrior": {
+        "diff": 0.0336,
+        "lo": -0.0122,
+        "hi": 0.0787
+      }
+    },
+    "oracle": {
+      "fitness": 0.75,
+      "toxicBites": 0,
+      "vsNoPrior": {
+        "diff": 0.0593,
+        "lo": 0.0209,
+        "hi": 0.0913
+      }
+    }
+  },
+  "inv0-K32": {
+    "blind": {
+      "fitness": 0.27,
+      "toxicBites": 698,
+      "vsNoPrior": {
+        "diff": -0.3473,
+        "lo": -0.3719,
+        "hi": -0.3203
+      }
+    },
+    "无先验（全试+经验）": {
+      "fitness": 0.617,
+      "toxicBites": 614,
+      "vsNoPrior": {
+        "diff": 0,
+        "lo": 0,
+        "hi": 0
+      }
+    },
+    "软先验（全试，先吃Laya看好的）": {
+      "fitness": 0.613,
+      "toxicBites": 591,
+      "vsNoPrior": {
+        "diff": -0.0037,
+        "lo": -0.0342,
+        "hi": 0.0319
+      }
+    },
+    "硬先验（Laya否决）": {
+      "fitness": 0.68,
+      "toxicBites": 122,
+      "vsNoPrior": {
+        "diff": 0.0624,
+        "lo": 0.034,
+        "hi": 0.0913
+      }
+    },
+    "oracle": {
+      "fitness": 0.73,
+      "toxicBites": 0,
+      "vsNoPrior": {
+        "diff": 0.1133,
+        "lo": 0.0778,
+        "hi": 0.1475
+      }
+    }
+  },
+  "inv0-K48": {
+    "blind": {
+      "fitness": 0.296,
+      "toxicBites": 708,
+      "vsNoPrior": {
+        "diff": -0.3311,
+        "lo": -0.3643,
+        "hi": -0.2989
+      }
+    },
+    "无先验（全试+经验）": {
+      "fitness": 0.627,
+      "toxicBites": 799,
+      "vsNoPrior": {
+        "diff": 0,
+        "lo": 0,
+        "hi": 0
+      }
+    },
+    "软先验（全试，先吃Laya看好的）": {
+      "fitness": 0.605,
+      "toxicBites": 740,
+      "vsNoPrior": {
+        "diff": -0.0224,
+        "lo": -0.0484,
+        "hi": 0.004
+      }
+    },
+    "硬先验（Laya否决）": {
+      "fitness": 0.715,
+      "toxicBites": 158,
+      "vsNoPrior": {
+        "diff": 0.0883,
+        "lo": 0.0429,
+        "hi": 0.1339
+      }
+    },
+    "oracle": {
+      "fitness": 0.763,
+      "toxicBites": 0,
+      "vsNoPrior": {
+        "diff": 0.1357,
+        "lo": 0.0989,
+        "hi": 0.1743
+      }
+    }
+  },
+  "inv0.25-K8": {
+    "blind": {
+      "fitness": 0.364,
+      "toxicBites": 597,
+      "vsNoPrior": {
+        "diff": -0.2659,
+        "lo": -0.3196,
+        "hi": -0.2081
+      }
+    },
+    "无先验（全试+经验）": {
+      "fitness": 0.63,
+      "toxicBites": 191,
+      "vsNoPrior": {
+        "diff": 0,
+        "lo": 0,
+        "hi": 0
+      }
+    },
+    "软先验（全试，先吃Laya看好的）": {
+      "fitness": 0.64,
+      "toxicBites": 182,
+      "vsNoPrior": {
+        "diff": 0.0099,
+        "lo": -0.0025,
+        "hi": 0.0211
+      }
+    },
+    "硬先验（Laya否决）": {
+      "fitness": 0.464,
+      "toxicBites": 109,
+      "vsNoPrior": {
+        "diff": -0.1664,
+        "lo": -0.2531,
+        "hi": -0.0846
+      }
+    },
+    "oracle": {
+      "fitness": 0.674,
+      "toxicBites": 0,
+      "vsNoPrior": {
+        "diff": 0.0434,
+        "lo": 0.0193,
+        "hi": 0.0665
+      }
+    }
+  },
+  "inv0.25-K16": {
+    "blind": {
+      "fitness": 0.306,
+      "toxicBites": 738,
+      "vsNoPrior": {
+        "diff": -0.3182,
+        "lo": -0.3667,
+        "hi": -0.2654
+      }
+    },
+    "无先验（全试+经验）": {
+      "fitness": 0.624,
+      "toxicBites": 365,
+      "vsNoPrior": {
+        "diff": 0,
+        "lo": 0,
+        "hi": 0
+      }
+    },
+    "软先验（全试，先吃Laya看好的）": {
+      "fitness": 0.61,
+      "toxicBites": 362,
+      "vsNoPrior": {
+        "diff": -0.0143,
+        "lo": -0.0398,
+        "hi": 0.0105
+      }
+    },
+    "硬先验（Laya否决）": {
+      "fitness": 0.493,
+      "toxicBites": 173,
+      "vsNoPrior": {
+        "diff": -0.1305,
+        "lo": -0.1849,
+        "hi": -0.0826
+      }
+    },
+    "oracle": {
+      "fitness": 0.686,
+      "toxicBites": 0,
+      "vsNoPrior": {
+        "diff": 0.0622,
+        "lo": 0.0342,
+        "hi": 0.0931
+      }
+    }
+  },
+  "inv0.25-K32": {
+    "blind": {
+      "fitness": 0.332,
+      "toxicBites": 705,
+      "vsNoPrior": {
+        "diff": -0.3876,
+        "lo": -0.4382,
+        "hi": -0.3396
+      }
+    },
+    "无先验（全试+经验）": {
+      "fitness": 0.72,
+      "toxicBites": 577,
+      "vsNoPrior": {
+        "diff": 0,
+        "lo": 0,
+        "hi": 0
+      }
+    },
+    "软先验（全试，先吃Laya看好的）": {
+      "fitness": 0.705,
+      "toxicBites": 583,
+      "vsNoPrior": {
+        "diff": -0.0142,
+        "lo": -0.0446,
+        "hi": 0.0191
+      }
+    },
+    "硬先验（Laya否决）": {
+      "fitness": 0.545,
+      "toxicBites": 199,
+      "vsNoPrior": {
+        "diff": -0.1746,
+        "lo": -0.2401,
+        "hi": -0.106
+      }
+    },
+    "oracle": {
+      "fitness": 0.773,
+      "toxicBites": 0,
+      "vsNoPrior": {
+        "diff": 0.0533,
+        "lo": 0.0259,
+        "hi": 0.0807
+      }
+    }
+  },
+  "inv0.25-K48": {
+    "blind": {
+      "fitness": 0.332,
+      "toxicBites": 749,
+      "vsNoPrior": {
+        "diff": -0.2995,
+        "lo": -0.3508,
+        "hi": -0.2524
+      }
+    },
+    "无先验（全试+经验）": {
+      "fitness": 0.632,
+      "toxicBites": 789,
+      "vsNoPrior": {
+        "diff": 0,
+        "lo": 0,
+        "hi": 0
+      }
+    },
+    "软先验（全试，先吃Laya看好的）": {
+      "fitness": 0.624,
+      "toxicBites": 763,
+      "vsNoPrior": {
+        "diff": -0.0082,
+        "lo": -0.0481,
+        "hi": 0.0293
+      }
+    },
+    "硬先验（Laya否决）": {
+      "fitness": 0.469,
+      "toxicBites": 291,
+      "vsNoPrior": {
+        "diff": -0.1631,
+        "lo": -0.2338,
+        "hi": -0.0983
+      }
+    },
+    "oracle": {
+      "fitness": 0.736,
+      "toxicBites": 0,
+      "vsNoPrior": {
+        "diff": 0.1047,
+        "lo": 0.0608,
+        "hi": 0.1487
+      }
+    }
+  }
+}

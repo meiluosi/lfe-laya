@@ -15,6 +15,7 @@ test('semantic contract fixture matches the live TS simulator output and carries
   assert.deepEqual(JSON.parse(JSON.stringify(build(true))), semanticFixture, '语义世界请求已变化：运行 node scripts/gen_contract_fixture.mjs');
   assert.ok(semanticFixture.requests.some(r => r.observation.local.some(c => c.desc)), '需要含食物描述的样本'); assert.ok(semanticFixture.requests.some(r => r.observation.memory.some(m => m.desc)));
   assert.ok(!/factor/.test(JSON.stringify(semanticFixture)), '隐藏真值不能进入请求');
+  assert.ok(semanticFixture.requests.some(r => r.observation.sensation !== undefined), '延迟世界的夹具需要含自身感受的样本');
 });
 test('fixture covers diverse request shapes', () => {
   assert.ok(fixture.requests.length >= 8);

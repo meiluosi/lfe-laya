@@ -14,6 +14,8 @@ export type Observation = {
   local: { dx: number; dy: number; food: number; blocked: boolean; /** 语义世界：该格食物的自然语言描述 */ desc?: string }[];
   neighbors: { dx: number; dy: number; shape: number }[];
   memory: { dx: number; dy: number; food: number; stepsAgo: number; desc?: string }[];
+  /** 延迟世界：个体此刻的自身感受（语言描述），如“胃里绞痛”。 */
+  sensation?: string;
 };
 export type Identity = {
   protocol: string; runId: string; generation: number; epoch: number;

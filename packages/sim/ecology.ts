@@ -27,12 +27,16 @@ export const DEFAULT_CONFIG: Config = {
 export type SemanticKind = { description: string; factor: number };
 /** 漂移（可选）：按 everyTicks 分阶段，奇数阶段里 flip 中的种类真实影响取反（A/B/A）。个体只能从自己的经历里察觉。 */
 export type SemanticDrift = { everyTicks: number; flip: number[] };
-export type SemanticConfig = { kinds: SemanticKind[]; drift?: SemanticDrift };
+/** 延迟（可选）：吃下后，营养/毒性在 ticks 个模拟步之后才作用于个体；其间这部分能量记为“在途”。个体生效时会有一句自身感受的语言描述。 */
+export type SemanticDelay = { ticks: number };
+export type SemanticConfig = { kinds: SemanticKind[]; drift?: SemanticDrift; delay?: SemanticDelay };
 export type Memory = { x: number; y: number; food: number; tick: number; desc?: string };
 export type Agent = {
   id: string; parentId: string | null; generation: number; born: number; x: number; y: number;
   heading: number; energy: number; traits: Traits; shape: number; lastBirth: number;
   memory: Memory[]; lastAction: Action; lastRejected: boolean;
+  /** 仅延迟世界：尚未生效的效果（amount>0 为在途收益，<0 为将要承受的伤害）与当前的自身感受。 */
+  pending?: { due: number; amount: number }[]; felt?: { until: number; text: string };
 };
 export type Event = { seq: number; tick: number; kind: string; agentId?: string; targetId?: string; amount?: number; reason?: string };
 export type Lineage = { id: string; parentId: string | null; generation: number; born: number; died: number | null; shape: number };
@@ -62,20 +66,25 @@ const traitBounds: Record<keyof Traits, readonly [number, number]> = { size: [.8
 /** Stable diagnostic hash; exports additionally use file SHA-256. Never a security boundary. */
 export function stateHash(state: unknown): string {
   let a = 2166136261, b = 5381;
-  for (const char of JSON.stringify(state)) {
-    a = Math.imul(a ^ char.charCodeAt(0), 16777619); b = Math.imul(b, 33) ^ char.charCodeAt(0);
+  const text = JSON.stringify(state);
+  // 与 `for (const char of text)` + `char.charCodeAt(0)` 逐位等价（代理对只取高位代码单元），但不为每个字符分配字符串。
+  for (let i = 0; i < text.length; i++) {
+    const c = text.charCodeAt(i);
+    a = Math.imul(a ^ c, 16777619); b = Math.imul(b, 33) ^ c;
+    if (c >= 0xD800 && c <= 0xDBFF) { const d = text.charCodeAt(i + 1); if (d >= 0xDC00 && d <= 0xDFFF) i++; }
   }
   return (a >>> 0).toString(16).padStart(8, '0') + (b >>> 0).toString(16).padStart(8, '0');
 }
 function validateSemantic(c: Config): void {
   const sem = c.semantic!;
-  if (!sem || typeof sem !== 'object' || !Array.isArray(sem.kinds) || sem.kinds.length < 1 || sem.kinds.length > 64 || Object.keys(sem).some(k => k !== 'kinds' && k !== 'drift')) throw Error('invalid_semantic');
+  if (!sem || typeof sem !== 'object' || !Array.isArray(sem.kinds) || sem.kinds.length < 1 || sem.kinds.length > 64 || Object.keys(sem).some(k => k !== 'kinds' && k !== 'drift' && k !== 'delay')) throw Error('invalid_semantic');
+  if (sem.delay !== undefined && (!sem.delay || Object.keys(sem.delay).length !== 1 || !Number.isInteger(sem.delay.ticks) || sem.delay.ticks < 1 || sem.delay.ticks > 600)) throw Error('invalid_semantic_delay');
   if (sem.drift !== undefined) {
     const d = sem.drift;
     if (!d || Object.keys(d).length !== 2 || !Number.isInteger(d.everyTicks) || d.everyTicks < 100 || !Array.isArray(d.flip) || d.flip.length < 1 || new Set(d.flip).size !== d.flip.length || d.flip.some(i => !Number.isInteger(i) || i < 0 || i >= sem.kinds.length)) throw Error('invalid_semantic_drift');
   }
   if (new Set(sem.kinds.map(k => k.description)).size !== sem.kinds.length) throw Error('invalid_semantic_duplicate');
-  for (const k of sem.kinds) if (!k || Object.keys(k).length !== 2 || typeof k.description !== 'string' || !/^[ -~]{1,80}$/.test(k.description) || !Number.isFinite(k.factor) || k.factor < -1 || k.factor > 1) throw Error('invalid_semantic_kind');
+  for (const k of sem.kinds) if (!k || Object.keys(k).length !== 2 || typeof k.description !== 'string' || !/^[ -~]{1,240}$/.test(k.description) || !Number.isFinite(k.factor) || k.factor < -8 || k.factor > 1) throw Error('invalid_semantic_kind');   // 负得越多越毒；< -1 的种类可以一口致命
   // 种类按格记录，扩散会混合不同种类；死亡返还的能量没有对应种类，所以两者都必须关闭。
   if (c.diffusion !== 0 || c.deathReturn !== 0) throw Error('semantic_requires_no_diffusion_or_death_return');
 }
@@ -149,7 +158,7 @@ export class Ecology {
     }
     const agent: Agent = { id: `life-${s.nextId++}`, parentId: parent?.id ?? null, generation: parent ? parent.generation + 1 : 0,
       born: s.tick, x, y, energy, traits, shape: parent?.shape ?? (s.nextId - 1) % 3, heading: parent?.heading ?? 0,
-      lastBirth: s.tick, memory: [], lastAction: 'rest', lastRejected: false };
+      lastBirth: s.tick, memory: [], lastAction: 'rest', lastRejected: false, ...(s.config.semantic?.delay ? { pending: [] } : {}) };
     s.agents.push(agent); s.lineage.push({ id: agent.id, parentId: agent.parentId, generation: agent.generation, born: s.tick, died: null, shape: agent.shape });
     return agent;
   }
@@ -223,7 +232,8 @@ export class Ecology {
         heading: a.heading, lastAction: a.lastAction, lastRejected: a.lastRejected,
         costs: { metabolismPerTick: this.metabolism(a), movementPerUnit: c.moveCost * a.traits.size, decisionTicks: c.decisionTicks, bitePerTick: c.bite },
         local: this.local(a), neighbors: s.agents.filter(b => b.id !== a.id && Math.hypot(b.x - a.x, b.y - a.y) <= a.traits.perception && this.clearPath(a.x, a.y, b.x, b.y)).slice(0, 8).map(b => ({ dx: b.x - a.x, dy: b.y - a.y, shape: b.shape })),
-        memory: a.memory.map(m => ({ dx: m.x - a.x, dy: m.y - a.y, food: m.food, stepsAgo: s.tick - m.tick, ...(m.desc ? { desc: m.desc } : {}) })) }, candidates };
+        memory: a.memory.map(m => ({ dx: m.x - a.x, dy: m.y - a.y, food: m.food, stepsAgo: s.tick - m.tick, ...(m.desc ? { desc: m.desc } : {}) })),
+        ...(a.felt && a.felt.until > s.tick ? { sensation: a.felt.text } : {}) }, candidates };
   }
   inspect(): Request[] { const hash = stateHash(this.state); return this.state.agents.map(a => this.inspectAgent(a, hash)); }
   requests(): Request[] {
@@ -263,10 +273,24 @@ export class Ecology {
       }
     }
   }
+  /** 把到期的延迟效果作用于个体：收益受容量限制（溢出记损耗），伤害受剩余能量限制；并更新自身感受。 */
+  private settle(a: Agent): void {
+    const s = this.state; if (!a.pending?.length) return;
+    const due = a.pending.filter(p => p.due <= s.tick); if (!due.length) return;
+    a.pending = a.pending.filter(p => p.due > s.tick);
+    for (const p of due) {
+      if (p.amount > 0) { const got = Math.min(p.amount, this.capacity(a) - a.energy); a.energy += got; s.ledger.overflow += p.amount - got; s.metrics.eaten += got; a.felt = { until: s.tick + 30, text: 'a warm wave of strength spreads through your body' }; }
+      else {
+        const harm = Math.min(a.energy, -p.amount), share = -p.amount / this.capacity(a); a.energy -= harm; s.ledger.semanticLoss! += harm;
+        a.felt = { until: s.tick + 30, text: share < .1 ? 'a dull ache stirs in your belly' : share < .3 ? 'sharp cramps twist your stomach and your skin turns clammy' : 'your vision swims and your legs give way beneath you' };
+      }
+    }
+  }
   private die(a: Agent, reason: string): void {
     const s = this.state, cell = this.cell(a.x, a.y), returned = a.energy * s.config.deathReturn;
     const stored = Math.min(returned, s.config.cellCapacity - s.food[cell]);
     s.food[cell] += stored; s.ledger.deathLoss += a.energy - stored; a.energy = 0;
+    if (a.pending) { for (const p of a.pending) if (p.amount > 0) s.ledger.deathLoss += p.amount; a.pending = []; }   // 在途收益随死亡丢失
     s.metrics.deaths++; s.lineage.find(l => l.id === a.id)!.died = s.tick;
     this.emit('died', { agentId: a.id, reason, amount: stored });
   }
@@ -311,11 +335,18 @@ export class Ecology {
             // 语义食物：真实影响由模拟器按种类结算。吃下的食物量一律从场中消失；个体得到 amount*factor（可为负）。
             const idx = s.kinds[cell], drift = c.semantic!.drift, flipped = !!drift && Math.floor(s.tick / drift.everyTicks) % 2 === 1 && drift.flip.includes(idx);
             const factor = c.semantic!.kinds[idx].factor * (flipped ? -1 : 1); s.food[cell] -= amount;
-            if (factor >= 0) { a.energy += amount * factor; s.ledger.semanticLoss! += amount * (1 - factor); s.metrics.eaten += amount * factor; this.emit('ate', { agentId: a.id, amount: amount * factor }); }
+            if (a.pending) {
+              // 延迟世界：食物立即从场中消失；效果在 delay.ticks 之后才作用于个体，其间收益记为“在途”。
+              const due = s.tick + c.semantic!.delay!.ticks;
+              if (factor >= 0) { a.pending.push({ due, amount: amount * factor }); s.ledger.semanticLoss! += amount * (1 - factor); this.emit('ate', { agentId: a.id, amount: amount * factor }); }
+              else { a.pending.push({ due, amount: -(amount * -factor) }); s.ledger.semanticLoss! += amount; this.emit('ate', { agentId: a.id, amount: amount * -factor, reason: 'toxic' }); }
+            }
+            else if (factor >= 0) { a.energy += amount * factor; s.ledger.semanticLoss! += amount * (1 - factor); s.metrics.eaten += amount * factor; this.emit('ate', { agentId: a.id, amount: amount * factor }); }
             else { const harm = Math.min(a.energy, amount * -factor); a.energy -= harm; s.ledger.semanticLoss! += amount + harm; this.emit('ate', { agentId: a.id, amount: harm, reason: 'toxic' }); }
           }
           else { s.food[cell] -= amount; a.energy += amount; s.metrics.eaten += amount; this.emit('ate', { agentId: a.id, amount }); }
         }
+        if (a.pending) this.settle(a);
         this.spend(a, this.metabolism(a), 'metabolism');
         s.metrics.agentTicks++; if (a.energy < this.capacity(a) * .25) s.metrics.lowEnergyTicks++;
         if (a.energy <= 1e-10 || s.tick - a.born >= c.maxAge) this.die(a, a.energy <= 1e-10 ? 'starvation' : 'age');
@@ -398,7 +429,8 @@ export class Ecology {
     if (s.events.some((e, i) => !Number.isInteger(e.seq) || e.seq !== s.nextEvent - s.events.length + i || !Number.isInteger(e.tick) || e.tick < 0 || e.tick > s.tick || typeof e.kind !== 'string' || (e.amount !== undefined && (!Number.isFinite(e.amount) || e.amount < 0)))) throw Error('invalid_events');
     if (Object.keys(s.ledger).sort().join() !== (c.semantic ? 'deathLoss,decay,initial,metabolism,movement,overflow,reproduction,semanticLoss,supplied' : 'deathLoss,decay,initial,metabolism,movement,overflow,reproduction,supplied') || Object.keys(s.metrics).sort().join() !== 'agentTicks,births,deaths,distance,eaten,lineageCapHits,lowEnergyTicks,populationCapHits,rejected' || Object.values(s.ledger).some(n => !Number.isFinite(n) || n < -1e-8) || Object.values(s.metrics).some(n => !Number.isFinite(n) || n < 0)) throw Error('invalid_accounting');
     const { initial, supplied, ...losses } = s.ledger;
-    const error = sum(s.food) + sum(s.agents.map(a => a.energy)) + sum(Object.values(losses)) - initial - supplied;
+    const inTransit = sum(s.agents.map(a => sum((a.pending ?? []).filter(p => p.amount > 0).map(p => p.amount))));
+    const error = sum(s.food) + sum(s.agents.map(a => a.energy)) + inTransit + sum(Object.values(losses)) - initial - supplied;
     if (Math.abs(error) > 1e-7 * Math.max(1, initial + supplied)) throw Error(`energy_ledger:${error}`);
   }
 }

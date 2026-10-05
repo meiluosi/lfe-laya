@@ -52,6 +52,8 @@ export const oracleRule: SemanticFactory = (kinds, semantic) => {
 };
 
 export type ExplorerOptions = {
+  /** veto：Laya 明确坏的不去碰（默认）；none：完全不用先验，全部先试、凭自己的经验否决；soft：全部先试，但追逐目标时优先 Laya 判断更好的（只排序，不否决）。 */
+  mode?: 'veto' | 'none' | 'soft' | 'adaptive';
   goodAt?: number; badAt?: number;
   /** 先验来源：laya = 缓存的 Laya；oracleNonsense = 无语义词用真值、其余用 Laya；oracleSensible = 有语义词用真值、无语义词留给探索；oracleAll = 全部真值（应等于预言机）。仅用于差距拆解。 */
   prior?: 'laya' | 'oracleNonsense' | 'oracleSensible' | 'oracleAll';
@@ -61,6 +63,8 @@ export type ExplorerOptions = {
   forget?: number;
   /** 每个决策里，已被经验否决的食物以此概率被放行再试一次（让个体有机会发现环境变了）。0 = 永不重试。 */
   retry?: number;
+  /** 延迟信用分配：吃的当下不记经验；之后出现明显的能量冲击时，归因到窗口（模拟步）内吃过的种类。0/缺省 = 即时记录。 */
+  creditWindow?: number;
 };
 export const explorerRule = (priors: Priors, opt: ExplorerOptions = {}): SemanticFactory => kinds => {
   const goodAt = opt.goodAt ?? .5, badAt = opt.badAt ?? .3, truth = new Map(kinds.map(k => [k.description, (k.factor + 1) / 2]));
@@ -71,29 +75,46 @@ export const explorerRule = (priors: Priors, opt: ExplorerOptions = {}): Semanti
     return priors.get(d) ?? .36;
   };
   void nonsense;
-  const exp = new Map<string, Map<string, { n: number; sum: number }>>(), shared = new Map<string, { n: number; sum: number }>(), pending = new Map<string, { desc?: string; metabolism: number }>();
+  const exp = new Map<string, Map<string, { n: number; sum: number }>>(), shared = new Map<string, { n: number; sum: number }>(), pending = new Map<string, { desc?: string; metabolism: number; tick: number }>(), meals = new Map<string, { desc: string; tick: number }[]>();
   const stat = (id: string, d: string) => opt.share ? shared.get(d) : exp.get(id)?.get(d);
   let nowTick = 0, nowId = '';
   const retryDraw = (id: string, d: string) => { let x = 2166136261; for (const ch of `${id}:${d}:${nowTick}`) x = Math.imul(x ^ ch.charCodeAt(0), 16777619); x ^= x >>> 15; x = Math.imul(x, 0x2c1b3c6d); x ^= x >>> 12; return (x >>> 0) / 4294967296; };
+  /** 自适应信任：个体统计“先验的判断与自己亲历的后果一致”的比例（Beta(2,1) 起点，略偏信任）。只用该个体自己的经历。 */
+  const agree = new Map<string, { ok: number; n: number }>();
+  const reliability = (id: string) => { const a = agree.get(id); return ((a?.ok ?? 0) + 2) / ((a?.n ?? 0) + 3); };
   const keepFor = (id: string) => (d: string | undefined) => {
     if (d === undefined) return true;
     const e = stat(id, d); if (e && e.n > 0) return e.sum / e.n > 0 || (opt.retry ? retryDraw(id, d) < opt.retry : false);
-    const p = priorOf(d); return p >= goodAt || p >= badAt;
+    if (opt.mode === 'none' || opt.mode === 'soft') return true;
+    const p = priorOf(d);
+    if (opt.mode === 'adaptive') return p >= badAt || reliability(id) < .7;   // 先验被自己的经验证明靠不住时，退回全试
+    return p >= goodAt || p >= badAt;
   };
+  const boost = (q: Request): Request => opt.mode !== 'soft' ? q : { ...q, observation: { ...q.observation, local: q.observation.local.map(c => c.desc && c.food > .05 ? { ...c, food: c.food * (1 + 2 * Math.max(0, priorOf(c.desc) - .45)) } : c) } };
   const controller = ((q: Request, seed: number) => {
     nowTick = q.identity.tick; nowId = q.identity.agentId; void nowId;
-    const id = q.identity.agentId, proposal = ruleProposal(filterRequest(q, keepFor(id)), seed);
+    const id = q.identity.agentId, proposal = ruleProposal(boost(filterRequest(q, keepFor(id))), seed);
     const here = q.observation.local.find(c => Math.hypot(c.dx, c.dy) < .5 && !c.blocked);
-    pending.set(id, { desc: proposal.action === 'eat' ? here?.desc : undefined, metabolism: q.observation.costs.metabolismPerTick * q.observation.costs.decisionTicks });
+    pending.set(id, { desc: proposal.action === 'eat' ? here?.desc : undefined, metabolism: q.observation.costs.metabolismPerTick * q.observation.costs.decisionTicks, tick: q.identity.tick });
     return proposal;
   }) as Controller;
+  const recordBelief = (agentId: string, desc: string, x: number) => {
+    if (opt.mode === 'adaptive' && Math.abs(x) > .25) { const pr = priorOf(desc), a = agree.get(agentId) ?? { ok: 0, n: 0 }; a.n++; if ((pr >= .5) === (x > 0)) a.ok++; agree.set(agentId, a); }
+    const target = (opt.share ? shared : (exp.get(agentId) ?? (exp.set(agentId, new Map()), exp.get(agentId)!))) as Map<string, { n: number; sum: number }>;
+    const e = target.get(desc) ?? { n: 0, sum: 0 }, keep = 1 - (opt.forget ?? 0); e.n = e.n * keep + 1; e.sum = e.sum * keep + x; target.set(desc, e);
+  };
   controller.feedback = outcomes => {
     for (const o of outcomes) {
-      const p = pending.get(o.agentId); pending.delete(o.agentId); if (!p?.desc || o.action !== 'eat') continue;
+      const p = pending.get(o.agentId); pending.delete(o.agentId);
+      if (opt.creditWindow && p) {
+        const gain = o.energyAfter - o.energyBefore + p.metabolism, list = (meals.get(o.agentId) ?? []).filter(m => p.tick - m.tick <= opt.creditWindow!);
+        if (o.action === 'eat' && p.desc) list.push({ desc: p.desc, tick: p.tick });      // 先登记这顿饭；如果这一步本身就有明显冲击（延迟为 0 或很短），下面一并归因
+        if (Math.abs(gain) > 1.2 && list.length) { const x = Math.max(-1, Math.min(1, gain / 3)) / Math.sqrt(list.length); for (const m of list) recordBelief(o.agentId, m.desc, Math.max(-1, Math.min(1, x * Math.sqrt(list.length)))); list.length = 0; }   // 冲击出现：归因到窗口内吃过的种类
+        meals.set(o.agentId, list); continue;
+      }
+      if (!p?.desc || o.action !== 'eat') continue;
       const gain = o.energyAfter - o.energyBefore + p.metabolism, x = Math.max(-1, Math.min(1, gain / 3));
-      const target = opt.share ? shared : (exp.get(o.agentId) ?? (exp.set(o.agentId, new Map()), exp.get(o.agentId)!)) as Map<string, { n: number; sum: number }>;
-      const e = (target as Map<string, { n: number; sum: number }>).get(p.desc) ?? { n: 0, sum: 0 };
-      const keep = 1 - (opt.forget ?? 0); e.n = e.n * keep + 1; e.sum = e.sum * keep + x; (target as Map<string, { n: number; sum: number }>).set(p.desc, e);
+      recordBelief(o.agentId, p.desc, x);
     }
   };
   return controller;

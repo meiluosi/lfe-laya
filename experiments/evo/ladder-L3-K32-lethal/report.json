@@ -1,0 +1,109 @@
+{
+  "purpose": "关卡闸门判定（开发评估；测试方言；手写控制器）",
+  "level": {
+    "K": 32,
+    "inversion": 0,
+    "drift": false,
+    "harmCap": 4,
+    "delay": 0,
+    "seeds": 24,
+    "dialect": "test",
+    "priorsLoaded": 4000
+  },
+  "means": {
+    "blind": {
+      "fitness": 0.267,
+      "toxicBites": 651,
+      "survival": 0.377
+    },
+    "oracle": {
+      "fitness": 0.721,
+      "toxicBites": 0,
+      "survival": 0.953
+    },
+    "learner": {
+      "fitness": 0.562,
+      "toxicBites": 563,
+      "survival": 0.708
+    },
+    "laya·硬": {
+      "fitness": 0.509,
+      "toxicBites": 117,
+      "survival": 0.725
+    },
+    "laya·自适应": {
+      "fitness": 0.573,
+      "toxicBites": 453,
+      "survival": 0.725
+    },
+    "shuffled·硬": {
+      "fitness": 0.29,
+      "toxicBites": 269,
+      "survival": 0.411
+    },
+    "shuffled·自适应": {
+      "fitness": 0.575,
+      "toxicBites": 574,
+      "survival": 0.703
+    },
+    "generic词典·硬": {
+      "fitness": 0.526,
+      "toxicBites": 287,
+      "survival": 0.733
+    },
+    "generic词典·自适应": {
+      "fitness": 0.603,
+      "toxicBites": 460,
+      "survival": 0.76
+    },
+    "trained词典·硬": {
+      "fitness": 0.335,
+      "toxicBites": 199,
+      "survival": 0.477
+    },
+    "trained词典·自适应": {
+      "fitness": 0.558,
+      "toxicBites": 570,
+      "survival": 0.678
+    }
+  },
+  "gates": [
+    {
+      "gate": "G1 信息有价值",
+      "rule": "oracle − blind ≥ 0.35",
+      "value": 0.454,
+      "pass": true
+    },
+    {
+      "gate": "G2 经验不够",
+      "rule": "learner ≤ 0.85 × oracle",
+      "value": 0.779,
+      "pass": true
+    },
+    {
+      "gate": "G3 先验有用",
+      "rule": "laya·自适应 − learner ≥ +0.05 且 CI 下界 > 0",
+      "value": "0.011 [-0.033, 0.058]",
+      "pass": false
+    },
+    {
+      "gate": "G4 增益来自语义",
+      "rule": "shuffled·自适应 ≤ learner + 0.01",
+      "value": 0.014,
+      "pass": false
+    },
+    {
+      "gate": "G5 增益来自 Laya 的广度",
+      "rule": "laya·自适应 − generic词典·自适应 ≥ +0.04",
+      "value": "-0.030 [-0.076, 0.014]",
+      "pass": false
+    },
+    {
+      "gate": "G6 仍有余量",
+      "rule": "最好控制器 ≤ 0.9 × oracle",
+      "value": 0.836,
+      "pass": true
+    }
+  ],
+  "allPass": false
+}

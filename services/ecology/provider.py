@@ -23,8 +23,10 @@ def encode(request, memory=True):
     if set(identity) != {'protocol', 'runId', 'generation', 'epoch', 'decisionId', 'attemptId', 'tick', 'snapshotId', 'agentId'} or identity['protocol'] != 'ecology-decision-v1':
         raise ValueError('identity_schema')
     o = request['observation']
-    if set(o) != {'energy', 'capacity', 'age', 'traits', 'heading', 'lastAction', 'lastRejected', 'costs', 'local', 'neighbors', 'memory'}:
+    if set(o) - {'sensation'} != {'energy', 'capacity', 'age', 'traits', 'heading', 'lastAction', 'lastRejected', 'costs', 'local', 'neighbors', 'memory'}:
         raise ValueError('observation_schema')
+    if 'sensation' in o and not (isinstance(o['sensation'], str) and re.fullmatch(r'[ -~]{1,240}', o['sensation'])):
+        raise ValueError('sensation')
     finite = lambda x: isinstance(x, (int, float)) and not isinstance(x, bool) and math.isfinite(x)
     if not all(finite(o[k]) for k in ('energy', 'capacity', 'age', 'heading')) or o['capacity'] <= 0 or not 0 <= o['energy'] <= o['capacity'] or o['age'] < 0:
         raise ValueError('self_state')
@@ -36,7 +38,7 @@ def encode(request, memory=True):
         raise ValueError('costs')
     if not 1 <= o['costs']['decisionTicks'] <= 100 or not 1 <= len(o['local']) <= 49 or len(o['memory']) > 16 or len(o['neighbors']) > 8:
         raise ValueError('observation_budget')
-    desc_ok = lambda d: isinstance(d, str) and re.fullmatch(r'[ -~]{1,80}', d) is not None   # 语义世界的食物描述：可见 ASCII，≤80 字符
+    desc_ok = lambda d: isinstance(d, str) and re.fullmatch(r'[ -~]{1,240}', d) is not None   # 语义世界的食物描述：可见 ASCII，≤240 字符
     for cell in o['local']:
         if set(cell) - {'desc'} != {'dx', 'dy', 'food', 'blocked'} or ('desc' in cell and (not desc_ok(cell['desc']) or cell['blocked'])) or not all(finite(cell[k]) for k in ('dx', 'dy', 'food')) or cell['food'] < 0 or abs(cell['dx']) + abs(cell['dy']) > o['traits']['perception'] + 1e-7 or type(cell['blocked']) is not bool or (cell['blocked'] and cell['food'] != 0):
             raise ValueError('local_cell')
@@ -66,6 +68,7 @@ def encode(request, memory=True):
             f"Each decision lasts {costs['decisionTicks']} ticks. Resting consumes {costs['metabolismPerTick'] * costs['decisionTicks']:.3f} energy. Moving also costs {costs['movementPerUnit']:.3f} per unit. Rest does not restore energy.",
             f"Eating transfers up to {costs['bitePerTick']:.2f} food energy per tick into your body. You must reach food before eating. Other creatures may consume it first.",
             f"Your last action was {o['lastAction']}; execution was {'blocked or depleted' if o['lastRejected'] else 'not rejected'}." ]
+    if o.get('sensation'): text.append(f"You feel {o['sensation']}.")
     food = [c for c in o['local'] if not c['blocked'] and c['food'] >= .01]
     # 明确量化精度；未显示的 <0.01 能量并非不可观察，原始观测仍完整记录。
     text.append('Visible food (rounded to 0.01; amounts below 0.01 omitted): ' + ('; '.join(f"{c['food']:.2f} of {c['desc']} at {location(c['dx'], c['dy'])}" if 'desc' in c else f"{c['food']:.2f} at {location(c['dx'], c['dy'])}" for c in food) if food else 'none above 0.01') + '.')

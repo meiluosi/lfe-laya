@@ -24,8 +24,8 @@ const eatAt = (kind, energy = 20) => {
 };
 
 test('semantic configuration is validated strictly', () => {
-  for (const bad of [{ semantic: { kinds: [] } }, { semantic: { kinds: [{ description: 'a', factor: 2 }] } }, { semantic: { kinds: [{ description: 'a', factor: 1 }, { description: 'a', factor: 0 }] } },
-    { semantic: { kinds: [{ description: 'ré', factor: 1 }] } }, { semantic: { kinds: [{ description: 'x'.repeat(81), factor: 1 }] } }, { semantic: { kinds: KINDS, extra: 1 } },
+  for (const bad of [{ semantic: { kinds: [] } }, { semantic: { kinds: [{ description: 'a', factor: 2 }] } }, { semantic: { kinds: [{ description: 'a', factor: -9 }] } }, { semantic: { kinds: [{ description: 'a', factor: 1 }, { description: 'a', factor: 0 }] } },
+    { semantic: { kinds: [{ description: 'ré', factor: 1 }] } }, { semantic: { kinds: [{ description: 'x'.repeat(241), factor: 1 }] } }, { semantic: { kinds: KINDS, extra: 1 } },
     { diffusion: .01 }, { deathReturn: .5 }]) assert.throws(() => make(bad), /invalid_semantic|semantic_requires|config_schema|invalid_config/, JSON.stringify(bad).slice(0, 60));
 });
 test('disabled by default: no kinds, no semantic ledger, config has no semantic key', () => {
@@ -77,4 +77,67 @@ test('drift flips the real effect of chosen kinds in odd phases only (A/B/A), ke
     assert.ok(Math.abs(residual(w.snapshot())) < 1e-6); return w.snapshot().agents[0].energy - before;
   };
   assert.ok(gain(0) > 1, '阶段 0：有益'); assert.ok(gain(200) < -1, '阶段 1：反转为有毒'); assert.ok(gain(400) > 1, '阶段 2：恢复（A/B/A）');
+});
+
+test('a lethal kind (factor below -1) can kill in one bite; the ledger stays closed and the death is real', () => {
+  const lethal = [{ description: 'ripe and sweet berry', factor: 1 }, { description: 'deadly black bulb', factor: -6 }];
+  const w = make({ initialAgents: 1, initialFood: 0, semantic: { kinds: lethal } });
+  edit(w, s => { const a = s.agents[0], cell = Math.floor(a.y) * s.config.width + Math.floor(a.x); s.food[cell] = 5; s.kinds[cell] = 1; a.energy = 8; });
+  const q = w.requests()[0]; const r = w.step([{ identity: q.identity, action: 'eat', provider: 'test-only' }]);
+  assert.ok(r.accepted); assert.equal(w.snapshot().agents.length, 0, '一口致命'); assert.ok(r.events.some(e => e.kind === 'died')); assert.ok(Math.abs(residual(w.snapshot())) < 1e-6);
+  const strong = make({ initialAgents: 1, initialFood: 0, semantic: { kinds: lethal } });
+  edit(strong, s => { const a = s.agents[0], cell = Math.floor(a.y) * s.config.width + Math.floor(a.x); s.food[cell] = .5; s.kinds[cell] = 1; a.energy = 39; });
+  const q2 = strong.requests()[0]; strong.step([{ identity: q2.identity, action: 'eat', provider: 'test-only' }]); assert.equal(strong.snapshot().agents.length, 1, '同样的毒量对能量充足且食物很少的个体不致命');
+});
+
+// ---- W6：延迟后果与自身感受 ----
+const residualWithTransit = s => { const { initial, supplied, ...losses } = s.ledger; const transit = s.agents.reduce((n, a) => n + (a.pending ?? []).filter(p => p.amount > 0).reduce((m, p) => m + p.amount, 0), 0); return s.food.reduce((a, b) => a + b, 0) + s.agents.reduce((a, b) => a + b.energy, 0) + transit + Object.values(losses).reduce((a, b) => a + b, 0) - initial - supplied; };
+const delayWorld = (factor, energy = 20, ticks = 20) => {
+  const kinds = [{ description: 'ripe and sweet berry', factor: 1 }, { description: 'deadly black bulb', factor }];
+  const w = make({ initialAgents: 1, initialFood: 0, semantic: { kinds, delay: { ticks } } });
+  const s = w.snapshot(); const a = s.agents[0], cell = Math.floor(a.y) * s.config.width + Math.floor(a.x); s.food[cell] = 6; s.kinds[cell] = 1; a.energy = energy;
+  const { initial, supplied, ...losses } = s.ledger; s.ledger.initial = s.food.reduce((x, y) => x + y, 0) + a.energy + Object.values(losses).reduce((x, y) => x + y, 0) - supplied; w.restore(s); return w;
+};
+const round = (w, action) => { const q = w.requests()[0]; const r = w.step([{ identity: q.identity, action, provider: 'test-only' }]); assert.ok(r.accepted); assert.ok(Math.abs(residualWithTransit(w.snapshot())) < 1e-6, `账本在途 ${residualWithTransit(w.snapshot())}`); return r; };
+test('delay validation is strict', () => {
+  for (const delay of [{ ticks: 0 }, { ticks: 601 }, { ticks: 1.5 }, { ticks: 5, extra: 1 }, 7]) assert.throws(() => make({ semantic: { kinds: structuredClone(KINDS), delay } }), /invalid_semantic_delay/);
+});
+test('with delay, a bite has no effect until the delay passes; the ledger holds the in-transit energy; harm then lands', () => {
+  const w = delayWorld(-1); const start = w.snapshot().agents[0].energy;
+  round(w, 'eat'); const afterBite = w.snapshot().agents[0].energy;
+  assert.ok(Math.abs(afterBite - start) < 1.5, `刚吃完（10 步内）几乎没有变化：${start} → ${afterBite}`); assert.ok(w.snapshot().agents[0].pending.some(p => p.amount < 0), '有待承受的伤害');
+  assert.equal(w.requests()[0].observation.sensation, undefined, '此时还没有感受');
+  round(w, 'rest'); round(w, 'rest');
+  const after = w.snapshot().agents[0].energy; assert.ok(after < start - 2, `延迟之后受到伤害：${start} → ${after}`);
+  assert.match(w.requests()[0].observation.sensation ?? '', /ache|cramps|vision/, '生效后出现自身感受');
+  for (let i = 0; i < 5; i++) round(w, 'rest'); assert.equal(w.requests()[0].observation.sensation, undefined, '感受会消退');
+});
+test('with delay, a nutritious bite pays out later, and a death before the payout loses the energy in transit (ledger stays closed)', () => {
+  const w = delayWorld(-1); const s = w.snapshot(); const a = s.agents[0], cell = Math.floor(a.y) * s.config.width + Math.floor(a.x); s.kinds[cell] = 0; s.food[cell] = 6;
+  { const { initial, supplied, ...losses } = s.ledger; s.ledger.initial = s.food.reduce((x, y) => x + y, 0) + a.energy + Object.values(losses).reduce((x, y) => x + y, 0) - supplied; } w.restore(s);
+  const start = w.snapshot().agents[0].energy; round(w, 'eat'); const mid = w.snapshot().agents[0].energy; assert.ok(mid < start + 0.5, '收益还在途中');
+  round(w, 'rest'); round(w, 'rest'); assert.ok(w.snapshot().agents[0].energy > start + 1, '延迟之后获得收益');
+  // 在途收益随死亡丢失
+  const d = delayWorld(-1, 0.4, 500); const t = d.snapshot(), b = t.agents[0], cell2 = Math.floor(b.y) * t.config.width + Math.floor(b.x); t.kinds[cell2] = 0; t.food[cell2] = 6;
+  { const { initial, supplied, ...losses } = t.ledger; t.ledger.initial = t.food.reduce((x, y) => x + y, 0) + b.energy + Object.values(losses).reduce((x, y) => x + y, 0) - supplied; } d.restore(t);
+  const before = d.snapshot().ledger.deathLoss; round(d, 'eat');
+  for (let i = 0; i < 30 && d.snapshot().agents.length; i++) { const q = d.requests()[0]; d.step([{ identity: q.identity, action: 'rest', provider: 'test-only' }]); assert.ok(Math.abs(residualWithTransit(d.snapshot())) < 1e-6); }
+  assert.equal(d.snapshot().agents.length, 0, '饿死了'); assert.ok(d.snapshot().ledger.deathLoss > before, '在途收益记入死亡损耗');
+});
+test('delay worlds replay deterministically and never expose the hidden factor', async () => {
+  const kinds = structuredClone(KINDS), cfg = { ...BASE, seed: 12, runId: 'delay-replay', semantic: { kinds, delay: { ticks: 20 } } };
+  const s = new Session(cfg, async () => { throw Error('none'); }); s.changeMode('rule'); s.resume(); for (let i = 0; i < 60; i++) await s.advance(true);
+  const rec = s.export(), r = new Replay(rec); r.seek(r.total); assert.equal(stateHash(r.world.snapshot()), stateHash(s.world.snapshot()));
+  assert.ok(!/factor/.test(JSON.stringify(s.world.requests())));
+});
+
+import { explorerRule, blindRule, runSemanticWorld as runForCredit } from '../packages/evo/semantic-run.ts';
+test('credit assignment: with no delay it matches immediate recording; with delay immediate recording collapses and credit assignment recovers', () => {
+  const none = new Map(), seeds = Array.from({ length: 10 }, (_, i) => 400 + i);
+  const mean = (delay, f) => seeds.map(seed => runForCredit({ seed, options: { split: 'test', delay: delay || undefined } }, f).fitness).reduce((a, b) => a + b, 0) / seeds.length;
+  const immediate = explorerRule(none, { mode: 'none' }), credit = explorerRule(none, { mode: 'none', creditWindow: 60 });
+  const d0 = { blind: mean(0, blindRule), immediate: mean(0, immediate), credit: mean(0, credit) };
+  assert.ok(d0.immediate > d0.blind + .1, `无延迟：学习应明显好于盲规则 ${JSON.stringify(d0)}`); assert.ok(d0.credit > d0.blind + .1, `无延迟时延迟归因不能退化成盲规则 ${JSON.stringify(d0)}`);
+  const d20 = { blind: mean(20, blindRule), immediate: mean(20, immediate), credit: mean(20, credit) };
+  assert.ok(d20.credit > d20.immediate + .05, `延迟 20：延迟归因应胜过即时记录 ${JSON.stringify(d20)}`);
 });

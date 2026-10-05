@@ -7,7 +7,7 @@ import { uniform } from './policy.ts';
 import type { Priors } from './semantic-run.ts';
 
 /** prior='oracle' 仅用于容量诊断：把真实 factor 当作先验，检验策略结构/进化能否利用完美信息。个体永远拿不到这个信息。 */
-export type SemCondition = { prior: 'none' | 'laya' | 'oracle'; learning: boolean };
+export type SemCondition = { prior: 'none' | 'laya' | 'oracle' | 'shuffled' | 'vader'; learning: boolean };
 export const SEM_HIDDEN = 10, N_ACTIONS = ACTIONS.length, SECTORS = 4, PER_SECTOR = 5, N_BASE = 7, N_SEM_FEATURES = N_BASE + SECTORS * PER_SECTOR;
 export const SEM_INNATE_SIZE_V1 = SEM_HIDDEN * N_SEM_FEATURES + SEM_HIDDEN + N_ACTIONS * SEM_HIDDEN + N_ACTIONS + 2;   // 旧版：... + logTemperature + logTrust
 /** 当前版本再加一个先天基因：好奇心（对没吃过的食物的探索加成，随经验衰减）。旧版基因组（长度 SEM_INNATE_SIZE_V1）仍可加载，好奇心视为 0。 */
@@ -21,7 +21,7 @@ export class FoodBeliefs {
   readonly experience = new Map<string, { n: number; sum: number }>();
   readonly cond: SemCondition; readonly priors: Priors; readonly trust: number; readonly curiosity: number;
   constructor(cond: SemCondition, priors: Priors, trust: number, curiosity = 0) { this.cond = cond; this.priors = priors; this.trust = trust; this.curiosity = curiosity; }
-  prior(desc: string): number { if (this.cond.prior === 'none') return 0; const p = this.priors.get(desc); return p === undefined ? NONSENSE_DEFAULT_V0 : 2 * p - 1; }
+  prior(desc: string): number { if (this.cond.prior === 'none' || this.cond.prior === 'shuffled' || this.cond.prior === 'vader') return 0; const p = this.priors.get(desc); return p === undefined ? NONSENSE_DEFAULT_V0 : 2 * p - 1; }
   value(desc: string | undefined): number {
     if (desc === undefined) return .5;                          // 非语义食物：视为中性偏好
     const v0 = this.prior(desc); if (!this.cond.learning) return v0;

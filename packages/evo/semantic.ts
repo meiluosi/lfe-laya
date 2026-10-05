@@ -6,8 +6,12 @@ import vocabulary from './semantic-vocab.json' with { type: 'json' };
 
 const VOCAB = vocabulary as { nouns: Record<string, string[]>; good: Record<string, string[]>; bad: Record<string, string[]>; syllables: string[]; nonsenseSuffix: string[]; nonsenseNouns: string[] };
 export type Split = 'train' | 'test';
-export type SemanticOptions = { split: Split; /** 漂移：每 everyTicks 切换阶段；fraction 是被反转的种类比例（按世界种子确定性选取） */ drift?: { everyTicks: number; fraction: number }; /** 常识线索被反转（描述与真实影响相反）的比例 */ inversion?: number; sensible?: number; nonsense?: number };
-export const DEFAULT_SEMANTIC: Required<Omit<SemanticOptions, 'split' | 'drift'>> = { inversion: 0, sensible: 6, nonsense: 2 };
+/** 词池注册表：node 入口（脚本、worker）注册池后，世界选项里用名字引用。池里的隐藏属性只用于生成世界，不进入个体的输入。 */
+export type PoolEntryLike = { text: string; factor: number; tier: string };
+const POOLS = new Map<string, PoolEntryLike[]>();
+export const registerPool = (name: string, entries: PoolEntryLike[]) => { POOLS.set(name, entries); };
+export type SemanticOptions = { /** 延迟后果（模拟步数）；缺省为即时 */ delay?: number; /** 使用已注册的词池（生成式本体）而不是内置小词表；K 由 sensible 决定（nonsense 不再单独加） */ pool?: string; /** 池模式下是否限制危害：factor 下限（默认 -1，等 W4 放开后可设到 -4） */ harmCap?: number; split: Split; /** 漂移：每 everyTicks 切换阶段；fraction 是被反转的种类比例（按世界种子确定性选取） */ drift?: { everyTicks: number; fraction: number }; /** 常识线索被反转（描述与真实影响相反）的比例 */ inversion?: number; sensible?: number; nonsense?: number };
+export const DEFAULT_SEMANTIC: Required<Omit<SemanticOptions, 'split' | 'drift' | 'pool' | 'harmCap' | 'delay'>> = { inversion: 0, sensible: 6, nonsense: 2 };
 
 function rng(seed: number) { let s = seed >>> 0 || 1; return () => { s = (s + 0x6D2B79F5) >>> 0; let t = s; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
 const pick = <T>(r: () => number, xs: T[]): T => xs[Math.floor(r() * xs.length)];
@@ -20,6 +24,7 @@ export const NONSENSE_POOL: string[] = (() => {
 })();
 /** 该世界的食物种类。同一 (seed, options) 总是得到同一结果。 */
 export function makeKinds(seed: number, opt: SemanticOptions): SemanticKind[] {
+  if (opt.pool) return makeKindsFromPool(seed, opt);
   const o = { ...DEFAULT_SEMANTIC, ...opt }, r = rng(seed * 2654435761), kinds: SemanticKind[] = [], used = new Set<string>();
   const add = (description: string, factor: number) => { if (!used.has(description)) { used.add(description); kinds.push({ description, factor }); } };
   for (let i = 0; kinds.length < o.sensible && i < 500; i++) {
@@ -42,7 +47,21 @@ export function makeDrift(seed: number, kinds: SemanticKind[], drift: { everyTic
   const r = rng(seed * 40503 + 17), order = kinds.map((_, i) => i).sort(() => r() - .5), n = Math.max(1, Math.round(kinds.length * drift.fraction));
   return { everyTicks: drift.everyTicks, flip: order.slice(0, n).sort((a, b) => a - b) };
 }
-export const semanticConfig = (seed: number, opt: SemanticOptions) => { const kinds = makeKinds(seed, opt); return { ...SEMANTIC_BASE, semantic: { kinds, ...(opt.drift ? { drift: makeDrift(seed, kinds, opt.drift) } : {}) } }; };
+export const semanticConfig = (seed: number, opt: SemanticOptions) => { const kinds = makeKinds(seed, opt); return { ...SEMANTIC_BASE, semantic: { kinds, ...(opt.drift ? { drift: makeDrift(seed, kinds, opt.drift) } : {}), ...(opt.delay ? { delay: { ticks: opt.delay } } : {}) } }; };
 
 /** 观察台等界面用的完整语义世界配置（8 个个体、无繁殖；供给与训练场景一致）。 */
 export const semanticPreset = (seed: number, opt: Partial<SemanticOptions> = {}) => ({ ...BASE, ...SCENARIOS.semantic, ...semanticConfig(seed, { split: 'test', inversion: 0, ...opt }), seed });
+
+/** 从词池抽 K 种食物：一半营养、一半有毒（按层级自然分布），再按 inversion 概率把真实影响反转（描述与事实相反）。 */
+function makeKindsFromPool(seed: number, opt: SemanticOptions): SemanticKind[] {
+  const pool = POOLS.get(opt.pool!); if (!pool) throw Error(`pool_not_registered:${opt.pool}`);
+  const o = { ...DEFAULT_SEMANTIC, ...opt }, r = rng(seed * 2654435761 + 99), K = o.sensible, cap = opt.harmCap ?? 1;
+  const nutritive = pool.filter(e => e.factor > 0), toxic = pool.filter(e => e.factor < 0), kinds: SemanticKind[] = [], used = new Set<string>();
+  for (let guard = 0; kinds.length < K && guard < K * 50; guard++) {
+    const wantGood = kinds.length % 2 === 0, e = pick(r, wantGood ? nutritive : toxic); if (used.has(e.text)) continue; used.add(e.text);
+    let factor = e.factor; if (r() < o.inversion) factor = factor > 0 ? -(r() < .5 ? .4 : 1) : .7;
+    kinds.push({ description: e.text, factor: Math.max(-cap, factor) });
+  }
+  if (kinds.length < K) throw Error('pool_too_small');
+  return kinds;
+}

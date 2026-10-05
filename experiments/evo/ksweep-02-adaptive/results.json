@@ -1,0 +1,228 @@
+{
+  "purpose": "食物种类数 K 扫描（测试划分新描述词；开发评估）。hand-coded 规则骨架 + 个体经验；oracle 仅度量上限。",
+  "seeds": 24,
+  "inv0-K32": {
+    "blind": {
+      "fitness": 0.27,
+      "toxicBites": 698,
+      "vsNoPrior": {
+        "diff": -0.3473,
+        "lo": -0.3722,
+        "hi": -0.3195
+      }
+    },
+    "无先验（全试+经验）": {
+      "fitness": 0.617,
+      "toxicBites": 614,
+      "vsNoPrior": {
+        "diff": 0,
+        "lo": 0,
+        "hi": 0
+      }
+    },
+    "软先验（全试，先吃Laya看好的）": {
+      "fitness": 0.613,
+      "toxicBites": 591,
+      "vsNoPrior": {
+        "diff": -0.0037,
+        "lo": -0.0362,
+        "hi": 0.0302
+      }
+    },
+    "硬先验（Laya否决）": {
+      "fitness": 0.68,
+      "toxicBites": 122,
+      "vsNoPrior": {
+        "diff": 0.0624,
+        "lo": 0.0328,
+        "hi": 0.091
+      }
+    },
+    "自适应信任": {
+      "fitness": 0.657,
+      "toxicBites": 267,
+      "vsNoPrior": {
+        "diff": 0.0394,
+        "lo": 0.0031,
+        "hi": 0.0744
+      }
+    },
+    "oracle": {
+      "fitness": 0.73,
+      "toxicBites": 0,
+      "vsNoPrior": {
+        "diff": 0.1133,
+        "lo": 0.0795,
+        "hi": 0.1483
+      }
+    }
+  },
+  "inv0-K48": {
+    "blind": {
+      "fitness": 0.296,
+      "toxicBites": 708,
+      "vsNoPrior": {
+        "diff": -0.3311,
+        "lo": -0.3638,
+        "hi": -0.2966
+      }
+    },
+    "无先验（全试+经验）": {
+      "fitness": 0.627,
+      "toxicBites": 799,
+      "vsNoPrior": {
+        "diff": 0,
+        "lo": 0,
+        "hi": 0
+      }
+    },
+    "软先验（全试，先吃Laya看好的）": {
+      "fitness": 0.605,
+      "toxicBites": 740,
+      "vsNoPrior": {
+        "diff": -0.0224,
+        "lo": -0.0498,
+        "hi": 0.003
+      }
+    },
+    "硬先验（Laya否决）": {
+      "fitness": 0.715,
+      "toxicBites": 158,
+      "vsNoPrior": {
+        "diff": 0.0883,
+        "lo": 0.0442,
+        "hi": 0.1345
+      }
+    },
+    "自适应信任": {
+      "fitness": 0.685,
+      "toxicBites": 297,
+      "vsNoPrior": {
+        "diff": 0.0576,
+        "lo": 0.0181,
+        "hi": 0.0974
+      }
+    },
+    "oracle": {
+      "fitness": 0.763,
+      "toxicBites": 0,
+      "vsNoPrior": {
+        "diff": 0.1357,
+        "lo": 0.0972,
+        "hi": 0.1731
+      }
+    }
+  },
+  "inv0.25-K32": {
+    "blind": {
+      "fitness": 0.332,
+      "toxicBites": 705,
+      "vsNoPrior": {
+        "diff": -0.3876,
+        "lo": -0.4383,
+        "hi": -0.3378
+      }
+    },
+    "无先验（全试+经验）": {
+      "fitness": 0.72,
+      "toxicBites": 577,
+      "vsNoPrior": {
+        "diff": 0,
+        "lo": 0,
+        "hi": 0
+      }
+    },
+    "软先验（全试，先吃Laya看好的）": {
+      "fitness": 0.705,
+      "toxicBites": 583,
+      "vsNoPrior": {
+        "diff": -0.0142,
+        "lo": -0.0461,
+        "hi": 0.0211
+      }
+    },
+    "硬先验（Laya否决）": {
+      "fitness": 0.545,
+      "toxicBites": 199,
+      "vsNoPrior": {
+        "diff": -0.1746,
+        "lo": -0.2398,
+        "hi": -0.1106
+      }
+    },
+    "自适应信任": {
+      "fitness": 0.671,
+      "toxicBites": 504,
+      "vsNoPrior": {
+        "diff": -0.0485,
+        "lo": -0.0877,
+        "hi": -0.0089
+      }
+    },
+    "oracle": {
+      "fitness": 0.773,
+      "toxicBites": 0,
+      "vsNoPrior": {
+        "diff": 0.0533,
+        "lo": 0.0262,
+        "hi": 0.0816
+      }
+    }
+  },
+  "inv0.25-K48": {
+    "blind": {
+      "fitness": 0.332,
+      "toxicBites": 749,
+      "vsNoPrior": {
+        "diff": -0.2995,
+        "lo": -0.3504,
+        "hi": -0.2533
+      }
+    },
+    "无先验（全试+经验）": {
+      "fitness": 0.632,
+      "toxicBites": 789,
+      "vsNoPrior": {
+        "diff": 0,
+        "lo": 0,
+        "hi": 0
+      }
+    },
+    "软先验（全试，先吃Laya看好的）": {
+      "fitness": 0.624,
+      "toxicBites": 763,
+      "vsNoPrior": {
+        "diff": -0.0082,
+        "lo": -0.0487,
+        "hi": 0.0288
+      }
+    },
+    "硬先验（Laya否决）": {
+      "fitness": 0.469,
+      "toxicBites": 291,
+      "vsNoPrior": {
+        "diff": -0.1631,
+        "lo": -0.2343,
+        "hi": -0.0987
+      }
+    },
+    "自适应信任": {
+      "fitness": 0.604,
+      "toxicBites": 741,
+      "vsNoPrior": {
+        "diff": -0.0278,
+        "lo": -0.0695,
+        "hi": 0.0119
+      }
+    },
+    "oracle": {
+      "fitness": 0.736,
+      "toxicBites": 0,
+      "vsNoPrior": {
+        "diff": 0.1047,
+        "lo": 0.0606,
+        "hi": 0.1474
+      }
+    }
+  }
+}

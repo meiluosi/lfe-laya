@@ -3,7 +3,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { Ecology } from '../packages/sim/ecology.ts';
 import { validateProposal } from '../packages/protocol/ecology.ts';
-import { structuredCohort, decodeGenes, updateBelief, STRUCTURED_GENES } from '../packages/evo/structured.ts';
+import { structuredCohort, decodeGenes, updateBelief, STRUCTURED_GENES, STRUCTURED_GENES_V1 } from '../packages/evo/structured.ts';
 import { runSemanticWorld, semanticWorldConfig, loadPriors } from '../packages/evo/semantic-run.ts';
 
 const priors = loadPriors(), GOOD = 'ripe and sweet berry';
@@ -16,7 +16,10 @@ const worldWithFoodHere = (desc, energy = 20) => {
 test('genes decode within bounds and the size is checked', () => {
   const d = decodeGenes([100, 100, 100, 100, 100]); assert.ok(d.trust <= Math.exp(4) + 1e-9 && d.curiosity === 1.5 && d.tau === 1 && d.forget === .5 && d.retry === .2);
   const e = decodeGenes([-100, -100, -100, -100, -100]); assert.ok(e.trust >= Math.exp(-2) - 1e-9 && e.curiosity === 0 && e.tau === -1 && e.forget === 0 && e.retry === 0);
-  assert.throws(() => decodeGenes([1, 2]), /genome_size/); assert.equal(STRUCTURED_GENES, 5);
+  assert.throws(() => decodeGenes([1, 2]), /genome_size/); assert.equal(STRUCTURED_GENES_V1, 5); assert.equal(STRUCTURED_GENES, 9);
+  const v2 = decodeGenes([0, 0, 0, 0, 0, 100, 100, 100, 1000]); assert.deepEqual([v2.scale, v2.bias, v2.risk, v2.credit], [3, 1, 1, 150]);
+  const lo = decodeGenes([0, 0, 0, 0, 0, -100, -100, -100, -1000]); assert.deepEqual([lo.scale, lo.bias, lo.risk, lo.credit], [0, -1, 0, 0]);
+  const old = decodeGenes([0, 0, 0, 0, 0]); assert.deepEqual([old.scale, old.bias, old.risk, old.credit], [1, 0, 0, 0], '旧版 5 基因仍可加载，新基因取中性值');
 });
 test('proposals are legal and reproducible; beliefs belong to the individual; hidden truth never reaches the agent', () => {
   const genes = [Math.log(3), .3, -.3, .05, .02], cohort = structuredCohort(genes, 'laya', priors), w = new Ecology(semanticWorldConfig({ seed: 21, options: { split: 'test', inversion: .25 } }));
@@ -57,4 +60,21 @@ test('prior none vs laya differ on a food Laya judges clearly good or bad', () =
   const w = new Ecology(semanticWorldConfig({ seed: 8, options: { split: 'test' } })); let differ = 0;
   for (let i = 0; i < 60 && !w.done(); i++) { const rs = w.requests(); for (const r of rs) if (none(r, 8).action !== laya(r, 8).action) differ++; w.step(rs.map(r => laya(r, 8))); }
   assert.ok(differ > 0, '两种先验设置应产生不同的行为');
+});
+
+test('v2 genes: calibration changes how a prior is used; risk gates exploration of unknown food; credit window learns from delayed shocks', () => {
+  const GOOD2 = 'ripe and sweet berry';
+  const cfg = { ...semanticWorldConfig({ seed: 5, options: { split: 'test' } }), initialAgents: 1, initialFood: 0, semantic: { kinds: [{ description: GOOD2, factor: 1 }, { description: 'rotten and foul-smelling berry', factor: -1 }], delay: { ticks: 20 } } };
+  const setup = genes => {
+    const w = new Ecology(cfg), s = w.snapshot(), a = s.agents[0], cell = Math.floor(a.y) * s.config.width + Math.floor(a.x);
+    s.food[cell] = 5; s.kinds[cell] = 0; s.ledger.initial += 5; w.restore(s);
+    const q = w.requests()[0], c = structuredCohort(genes, 'laya', priors); return { c, q, at: (tick, energy) => ({ ...q, identity: { ...q.identity, tick }, observation: { ...q.observation, energy: energy ?? q.observation.energy } }) };
+  };
+  // 校准：把先验压到很低（斜率 0、偏置 -1），原本喜欢的食物被否决；斜率 1 偏置 0 则会吃
+  assert.equal(setup([Math.log(3), 0, .1, 0, 0, 1, 0, 0, 0]).c(setup([Math.log(3), 0, .1, 0, 0, 1, 0, 0, 0]).q, 5).action, 'eat');
+  const low = setup([Math.log(3), 0, .1, 0, 0, 0, -1, 0, 0]); assert.notEqual(low.c(low.q, 5).action, 'eat');
+  // 风险：对没吃过的食物，能量低于 risk 门槛时失去好奇心加成
+  const gene = [Math.log(3), 1.0, -.1, 0, 0, 0, -1, .5, 0];   // 先验被压成 -1 → 价值 = -1 + 好奇心 1.0 = 0 ≥ τ=-0.1 才会尝；risk=0.5
+  const rich = setup(gene), weak = setup(gene);
+  assert.equal(rich.c(rich.at(0, 38), 5).action, 'eat', '能量充足：好奇心驱动去尝'); assert.notEqual(weak.c(weak.at(0, 6), 5).action, 'eat', '能量不足：不去冒险');
 });
