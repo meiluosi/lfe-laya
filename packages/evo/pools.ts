@@ -20,6 +20,12 @@ export function loadLayaPriors(dialect: Dialect): Priors {
   if (existsSync(path)) for (const line of readFileSync(path, 'utf8').split('\n')) if (line) { const j = JSON.parse(line); m.set(j.text, j.pEat); }
   return m;
 }
+/** Laya 编码器对描述的缓存向量（PCA 32 维、L2 归一化；只依赖文本）。W5b 层次信念用。 */
+export function loadEmbeddings(dialect: Dialect): Map<string, Float32Array> {
+  const path = new URL(`../../experiments/evo/laya-embed-v1/${dialect}.jsonl`, import.meta.url), m = new Map<string, Float32Array>();
+  if (existsSync(path)) for (const line of readFileSync(path, 'utf8').split('\n')) if (line) { const j = JSON.parse(line); m.set(j.text, Float32Array.from(j.v)); }
+  return m;
+}
 /** 以函数充当先验表（词典、打乱、加噪等对照）。get 返回 [0,1] 的“可以吃”概率。 */
 export class FnPriors extends Map<string, number> { fn: (t: string) => number; constructor(fn: (t: string) => number) { super(); this.fn = fn; } override get(t: string) { return this.fn(t); } override has() { return true; } }
 export const lexiconPrior = (lex: (t: string) => number): Priors => new FnPriors(t => (lex(t) + 1) / 2);
