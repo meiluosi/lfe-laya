@@ -60,4 +60,4 @@
 ## 9. 冻结记录
 
 - 协议冻结提交：本文件所在提交（信息以“预注册 04 冻结协议”开头）。
-- 基因组哈希：训练完成后写入 `experiments/prereg/genome-hashes-04.json` 并提交，之后才运行评估。
+- 基因组哈希（24 个训练全部完成后写入，评估前提交）：已写入 `experiments/prereg/genome-hashes-04.json` 并提交，之后才运行评估。
