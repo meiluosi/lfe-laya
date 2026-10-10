@@ -1,0 +1,13 @@
+LFE / Laya Life Lab
+Copyright 2026 冯宇 (Feng Yu)
+
+本项目代码以 Apache License 2.0 发布（见 LICENSE）。
+方言文本、词池与实验数据的许可见 DATA_LICENSE.md。
+
+第三方组件（均保留其各自许可）：
+- Laya 决策模型（Apache-2.0，Convai Innovations / Nandakishor M）：本仓库不分发模型权重，
+  使用者需自行从其官方渠道获取并遵守其许可。本项目对 Laya 的输出（先验与嵌入缓存）是
+  以固定权重推理得到的派生数据，随实验数据发布。
+- VADER 情感词表（MIT，C.J. Hutto 与 E.E. Gilbert）：packages/evo/ontology/vader-lexicon.json，
+  许可文件见 packages/evo/ontology/vader-LICENSE.txt。
+- 前端与工具链依赖（Three.js、React、Vite 等）：各自许可见 package-lock.json 中列出的包。
