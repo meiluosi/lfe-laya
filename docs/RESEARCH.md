@@ -76,3 +76,21 @@
 - [A Study of Plasticity Loss in On-Policy Deep Reinforcement Learning](https://arxiv.org/abs/2405.19153) 研究持续训练中的可塑性丧失与缓解方法。持续更新不能保证持续进步，相关方法仍需在本项目验证。
 
 项目选择是工程假设：共享固定 Laya 并让每个个体的小策略独立学习，以控制资源并保留个体经历差异。这不是上述项目已经证明的结论。路线、奖励、对照和成长展示见 [持续学习方案](LEARNING.md)。
+
+## 10. 面向论文的补充检索（2026-10-11，初步，非系统综述）
+
+检索方式：网络检索 5 次（Baldwin 效应与进化智能体、语言模型先验与强化学习、Jev/Laya 的现有用法、欺骗性提示）。结果不构成穷尽性检索，写论文前须按 `docs/PUBLICATION_PLAN.md` 做系统检索并更新本节。
+
+| 方向 | 代表工作 | 与本项目的关系 |
+| --- | --- | --- |
+| 进化 + 学习（Baldwin 效应） | [Evolving Self-taught Neural Networks](https://arxiv.org/pdf/1906.08854)；[Embodied Intelligence via Learning and Evolution](https://arxiv.org/pdf/2102.02202)；Ackley & Littman 的经典人工生命实验 | 先天 / 后天框架与 2×2 消融思路的来源，这部分不是新的 |
+| 语言模型作为强化学习先验 | [Efficient Reinforcement Learning with Large Language Model Priors](https://arxiv.org/pdf/2410.07927)（ICLR 2025）；[Cache-Efficient Posterior Sampling for RL with LLM-Derived Priors](https://arxiv.org/pdf/2505.07274)；[Toward Efficient Exploration by LLM Agents](https://dilipa.github.io/papers/psrl_llms.pdf) | **最接近的工作**：LLM 作为动作先验，提高样本效率。区别：它们没有进化，没有“先天 / 后天 / 感知”三来源的分离，也没有测先验被欺骗时的代价 |
+| 常识知识与文本强化学习 | [Text-based RL Agents with Commonsense Knowledge](https://ojs.aaai.org/index.php/AAAI/article/view/17090)；[自然语言强化学习综述](https://arxiv.org/pdf/1906.03926) | 用知识图谱而非预训练模型；提出过“语言中的人类先验” |
+| LLM 智能体的终身学习 | [Lifelong Learning of LLM-based Agents: A Roadmap](https://arxiv.org/pdf/2501.07278)；[LifelongAgentBench](https://arxiv.org/abs/2505.11942) | 讨论更新智能体本身，不涉及进化 |
+| Jev / Laya 的现有用法 | 游戏演示（Doom、Tetris、Flappy；[Laya Playground](https://github.com/wdobry/laya-playground)）；[渗透测试智能体中作为“系统一”决策层](https://arxiv.org/pdf/2609.28940) | 单智能体、直接调用或任务微调；未见进化或终身学习研究 |
+
+观察：
+1. 未检索到“固定的预训练决策模型 + 进化出的使用方式 + 个体终身学习，并分离度量三个来源”的受控研究；但 LLM 先验 + 强化学习是活跃方向，须在论文中把 Yan et al. 等工作作为主要对比对象。
+2. 未检索到“先验被欺骗时的代价”的系统测量；这是本项目的一个切入点（硬先验在 25% 欺骗下有害，自适应信任可缓解）。
+3. Laya 模型卡与二手来源称其是需要任务微调的底座、零样本接近随机；本项目发现固定 Laya 在食物描述的语义判断上零样本即有较高区分力（AUC 0.775–0.909，见 RESEARCH_SUMMARY）。这需要谨慎表述，并披露选项顺序偏差及其处理（两种顺序取平均）。
+4. 新颖性表述建议：“据我们检索所及，尚未见到……”，不使用“首个”。
