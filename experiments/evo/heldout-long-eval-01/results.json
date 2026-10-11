@@ -1,0 +1,669 @@
+{
+  "protocol": "docs/PREREGISTRATION_04.md",
+  "dialect": "heldout",
+  "dry": false,
+  "runs": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18
+  ],
+  "worldsPerCell": 32,
+  "cells": [
+    {
+      "id": "inv25-delay0",
+      "inversion": 0.25,
+      "delay": 0
+    },
+    {
+      "id": "inv40-delay0",
+      "inversion": 0.4,
+      "delay": 0
+    },
+    {
+      "id": "inv25-delay40",
+      "inversion": 0.25,
+      "delay": 40
+    },
+    {
+      "id": "inv40-delay40",
+      "inversion": 0.4,
+      "delay": 40
+    }
+  ],
+  "K": 32,
+  "harmCap": 4,
+  "seedBase": 170000,
+  "primary": [
+    {
+      "id": "H1",
+      "claim": "延迟 40 世界里 laya 优于 none",
+      "statistic": 0.0322,
+      "threshold": 0.04,
+      "effectOk": false,
+      "p": 0.0039,
+      "holmAlpha": 0.0167,
+      "supported": false,
+      "perSeed": [
+        0.0285,
+        0.031,
+        0.0294,
+        0.03,
+        0.0184,
+        0.0637,
+        0.0267,
+        0.0297
+      ]
+    },
+    {
+      "id": "H3",
+      "claim": "先验的价值随延迟增加（D40 − D0）",
+      "statistic": 0.1429,
+      "threshold": 0.03,
+      "effectOk": true,
+      "p": 0.0039,
+      "holmAlpha": 0.025,
+      "supported": false,
+      "perSeed": [
+        0.1287,
+        0.1306,
+        0.0811,
+        0.1437,
+        0.1446,
+        0.2128,
+        0.1462,
+        0.1557
+      ]
+    },
+    {
+      "id": "H2",
+      "claim": "laya 个体的跨种子标准差不大于 none 的 0.67 倍",
+      "statistic": 2.2118,
+      "threshold": 0.67,
+      "effectOk": false,
+      "p": 0.9258,
+      "holmAlpha": 0.05,
+      "supported": false,
+      "perSeed": [
+        -0.0358,
+        -0.0342,
+        -0.0111,
+        -0.0418,
+        -0.0539,
+        -0.0427,
+        -0.0464,
+        -0.0481
+      ]
+    }
+  ],
+  "secondary": {
+    "layaMinusVader": {
+      "delay40": [
+        0.0413,
+        0.05,
+        0.026,
+        0.0421,
+        0.0051,
+        0.0321,
+        0.0356,
+        0.0451
+      ],
+      "delay0": [
+        0.0348,
+        0.0434,
+        0.051,
+        0.0194,
+        -0.0886,
+        0.0046,
+        0.0077,
+        0.0293
+      ]
+    },
+    "layaMinusNoneByCell": {
+      "inv25-delay0": [
+        -0.076,
+        -0.0623,
+        -0.0394,
+        -0.0769,
+        -0.1048,
+        -0.1351,
+        -0.092,
+        -0.0952
+      ],
+      "inv40-delay0": [
+        -0.1243,
+        -0.1368,
+        -0.0639,
+        -0.1504,
+        -0.1476,
+        -0.163,
+        -0.147,
+        -0.1568
+      ],
+      "inv25-delay40": [
+        0.0908,
+        0.0965,
+        0.0705,
+        0.093,
+        0.0863,
+        0.1406,
+        0.094,
+        0.0941
+      ],
+      "inv40-delay40": [
+        -0.0339,
+        -0.0344,
+        -0.0117,
+        -0.0329,
+        -0.0496,
+        -0.0132,
+        -0.0406,
+        -0.0347
+      ]
+    },
+    "sdAcrossSeeds": {
+      "laya": 0.0185,
+      "none": 0.0084,
+      "vader": 0.0235
+    },
+    "meanFitness": {
+      "laya": 0.4047,
+      "none": 0.444,
+      "vader": 0.3811
+    }
+  },
+  "cellMeans": {
+    "inv25-delay0": {
+      "laya-11": {
+        "fitness": 0.531,
+        "toxicBites": 416,
+        "survival": 0.7
+      },
+      "laya-12": {
+        "fitness": 0.554,
+        "toxicBites": 465,
+        "survival": 0.714
+      },
+      "laya-13": {
+        "fitness": 0.578,
+        "toxicBites": 681,
+        "survival": 0.691
+      },
+      "laya-14": {
+        "fitness": 0.532,
+        "toxicBites": 403,
+        "survival": 0.707
+      },
+      "laya-15": {
+        "fitness": 0.496,
+        "toxicBites": 379,
+        "survival": 0.661
+      },
+      "laya-16": {
+        "fitness": 0.482,
+        "toxicBites": 351,
+        "survival": 0.657
+      },
+      "laya-17": {
+        "fitness": 0.523,
+        "toxicBites": 398,
+        "survival": 0.702
+      },
+      "laya-18": {
+        "fitness": 0.521,
+        "toxicBites": 410,
+        "survival": 0.694
+      },
+      "none-11": {
+        "fitness": 0.607,
+        "toxicBites": 725,
+        "survival": 0.668
+      },
+      "none-12": {
+        "fitness": 0.617,
+        "toxicBites": 739,
+        "survival": 0.674
+      },
+      "none-13": {
+        "fitness": 0.618,
+        "toxicBites": 827,
+        "survival": 0.667
+      },
+      "none-14": {
+        "fitness": 0.609,
+        "toxicBites": 768,
+        "survival": 0.671
+      },
+      "none-15": {
+        "fitness": 0.6,
+        "toxicBites": 733,
+        "survival": 0.67
+      },
+      "none-16": {
+        "fitness": 0.617,
+        "toxicBites": 777,
+        "survival": 0.682
+      },
+      "none-17": {
+        "fitness": 0.615,
+        "toxicBites": 725,
+        "survival": 0.679
+      },
+      "none-18": {
+        "fitness": 0.616,
+        "toxicBites": 739,
+        "survival": 0.682
+      },
+      "vader-11": {
+        "fitness": 0.459,
+        "toxicBites": 516,
+        "survival": 0.611
+      },
+      "vader-12": {
+        "fitness": 0.477,
+        "toxicBites": 535,
+        "survival": 0.598
+      },
+      "vader-13": {
+        "fitness": 0.519,
+        "toxicBites": 554,
+        "survival": 0.669
+      },
+      "vader-14": {
+        "fitness": 0.48,
+        "toxicBites": 521,
+        "survival": 0.62
+      },
+      "vader-15": {
+        "fitness": 0.566,
+        "toxicBites": 590,
+        "survival": 0.687
+      },
+      "vader-16": {
+        "fitness": 0.471,
+        "toxicBites": 527,
+        "survival": 0.625
+      },
+      "vader-17": {
+        "fitness": 0.474,
+        "toxicBites": 540,
+        "survival": 0.617
+      },
+      "vader-18": {
+        "fitness": 0.46,
+        "toxicBites": 475,
+        "survival": 0.612
+      }
+    },
+    "inv40-delay0": {
+      "laya-11": {
+        "fitness": 0.389,
+        "toxicBites": 476,
+        "survival": 0.523
+      },
+      "laya-12": {
+        "fitness": 0.403,
+        "toxicBites": 494,
+        "survival": 0.54
+      },
+      "laya-13": {
+        "fitness": 0.488,
+        "toxicBites": 683,
+        "survival": 0.588
+      },
+      "laya-14": {
+        "fitness": 0.387,
+        "toxicBites": 475,
+        "survival": 0.522
+      },
+      "laya-15": {
+        "fitness": 0.376,
+        "toxicBites": 457,
+        "survival": 0.512
+      },
+      "laya-16": {
+        "fitness": 0.377,
+        "toxicBites": 443,
+        "survival": 0.521
+      },
+      "laya-17": {
+        "fitness": 0.38,
+        "toxicBites": 455,
+        "survival": 0.518
+      },
+      "laya-18": {
+        "fitness": 0.376,
+        "toxicBites": 482,
+        "survival": 0.511
+      },
+      "none-11": {
+        "fitness": 0.513,
+        "toxicBites": 707,
+        "survival": 0.591
+      },
+      "none-12": {
+        "fitness": 0.539,
+        "toxicBites": 720,
+        "survival": 0.597
+      },
+      "none-13": {
+        "fitness": 0.552,
+        "toxicBites": 790,
+        "survival": 0.615
+      },
+      "none-14": {
+        "fitness": 0.537,
+        "toxicBites": 733,
+        "survival": 0.6
+      },
+      "none-15": {
+        "fitness": 0.524,
+        "toxicBites": 714,
+        "survival": 0.589
+      },
+      "none-16": {
+        "fitness": 0.54,
+        "toxicBites": 745,
+        "survival": 0.599
+      },
+      "none-17": {
+        "fitness": 0.527,
+        "toxicBites": 696,
+        "survival": 0.596
+      },
+      "none-18": {
+        "fitness": 0.533,
+        "toxicBites": 711,
+        "survival": 0.601
+      },
+      "vader-11": {
+        "fitness": 0.391,
+        "toxicBites": 528,
+        "survival": 0.53
+      },
+      "vader-12": {
+        "fitness": 0.393,
+        "toxicBites": 570,
+        "survival": 0.525
+      },
+      "vader-13": {
+        "fitness": 0.445,
+        "toxicBites": 578,
+        "survival": 0.582
+      },
+      "vader-14": {
+        "fitness": 0.4,
+        "toxicBites": 523,
+        "survival": 0.535
+      },
+      "vader-15": {
+        "fitness": 0.483,
+        "toxicBites": 617,
+        "survival": 0.612
+      },
+      "vader-16": {
+        "fitness": 0.379,
+        "toxicBites": 557,
+        "survival": 0.513
+      },
+      "vader-17": {
+        "fitness": 0.413,
+        "toxicBites": 532,
+        "survival": 0.547
+      },
+      "vader-18": {
+        "fitness": 0.378,
+        "toxicBites": 513,
+        "survival": 0.52
+      }
+    },
+    "inv25-delay40": {
+      "laya-11": {
+        "fitness": 0.364,
+        "toxicBites": 547,
+        "survival": 0.502
+      },
+      "laya-12": {
+        "fitness": 0.382,
+        "toxicBites": 605,
+        "survival": 0.524
+      },
+      "laya-13": {
+        "fitness": 0.346,
+        "toxicBites": 786,
+        "survival": 0.451
+      },
+      "laya-14": {
+        "fitness": 0.373,
+        "toxicBites": 540,
+        "survival": 0.519
+      },
+      "laya-15": {
+        "fitness": 0.363,
+        "toxicBites": 497,
+        "survival": 0.504
+      },
+      "laya-16": {
+        "fitness": 0.369,
+        "toxicBites": 454,
+        "survival": 0.518
+      },
+      "laya-17": {
+        "fitness": 0.372,
+        "toxicBites": 538,
+        "survival": 0.518
+      },
+      "laya-18": {
+        "fitness": 0.369,
+        "toxicBites": 516,
+        "survival": 0.514
+      },
+      "none-11": {
+        "fitness": 0.273,
+        "toxicBites": 811,
+        "survival": 0.353
+      },
+      "none-12": {
+        "fitness": 0.286,
+        "toxicBites": 819,
+        "survival": 0.368
+      },
+      "none-13": {
+        "fitness": 0.275,
+        "toxicBites": 878,
+        "survival": 0.357
+      },
+      "none-14": {
+        "fitness": 0.28,
+        "toxicBites": 858,
+        "survival": 0.359
+      },
+      "none-15": {
+        "fitness": 0.277,
+        "toxicBites": 805,
+        "survival": 0.353
+      },
+      "none-16": {
+        "fitness": 0.228,
+        "toxicBites": 819,
+        "survival": 0.309
+      },
+      "none-17": {
+        "fitness": 0.278,
+        "toxicBites": 777,
+        "survival": 0.365
+      },
+      "none-18": {
+        "fitness": 0.275,
+        "toxicBites": 795,
+        "survival": 0.356
+      },
+      "vader-11": {
+        "fitness": 0.306,
+        "toxicBites": 528,
+        "survival": 0.424
+      },
+      "vader-12": {
+        "fitness": 0.305,
+        "toxicBites": 535,
+        "survival": 0.42
+      },
+      "vader-13": {
+        "fitness": 0.323,
+        "toxicBites": 581,
+        "survival": 0.446
+      },
+      "vader-14": {
+        "fitness": 0.306,
+        "toxicBites": 520,
+        "survival": 0.418
+      },
+      "vader-15": {
+        "fitness": 0.336,
+        "toxicBites": 646,
+        "survival": 0.452
+      },
+      "vader-16": {
+        "fitness": 0.312,
+        "toxicBites": 528,
+        "survival": 0.428
+      },
+      "vader-17": {
+        "fitness": 0.311,
+        "toxicBites": 542,
+        "survival": 0.426
+      },
+      "vader-18": {
+        "fitness": 0.31,
+        "toxicBites": 489,
+        "survival": 0.429
+      }
+    },
+    "inv40-delay40": {
+      "laya-11": {
+        "fitness": 0.331,
+        "toxicBites": 540,
+        "survival": 0.464
+      },
+      "laya-12": {
+        "fitness": 0.339,
+        "toxicBites": 587,
+        "survival": 0.469
+      },
+      "laya-13": {
+        "fitness": 0.356,
+        "toxicBites": 825,
+        "survival": 0.465
+      },
+      "laya-14": {
+        "fitness": 0.329,
+        "toxicBites": 532,
+        "survival": 0.464
+      },
+      "laya-15": {
+        "fitness": 0.316,
+        "toxicBites": 511,
+        "survival": 0.449
+      },
+      "laya-16": {
+        "fitness": 0.31,
+        "toxicBites": 475,
+        "survival": 0.438
+      },
+      "laya-17": {
+        "fitness": 0.316,
+        "toxicBites": 517,
+        "survival": 0.447
+      },
+      "laya-18": {
+        "fitness": 0.324,
+        "toxicBites": 536,
+        "survival": 0.455
+      },
+      "none-11": {
+        "fitness": 0.365,
+        "toxicBites": 910,
+        "survival": 0.447
+      },
+      "none-12": {
+        "fitness": 0.373,
+        "toxicBites": 913,
+        "survival": 0.459
+      },
+      "none-13": {
+        "fitness": 0.367,
+        "toxicBites": 1011,
+        "survival": 0.446
+      },
+      "none-14": {
+        "fitness": 0.362,
+        "toxicBites": 968,
+        "survival": 0.451
+      },
+      "none-15": {
+        "fitness": 0.365,
+        "toxicBites": 903,
+        "survival": 0.447
+      },
+      "none-16": {
+        "fitness": 0.324,
+        "toxicBites": 997,
+        "survival": 0.42
+      },
+      "none-17": {
+        "fitness": 0.357,
+        "toxicBites": 884,
+        "survival": 0.444
+      },
+      "none-18": {
+        "fitness": 0.358,
+        "toxicBites": 899,
+        "survival": 0.44
+      },
+      "vader-11": {
+        "fitness": 0.307,
+        "toxicBites": 671,
+        "survival": 0.424
+      },
+      "vader-12": {
+        "fitness": 0.316,
+        "toxicBites": 685,
+        "survival": 0.439
+      },
+      "vader-13": {
+        "fitness": 0.326,
+        "toxicBites": 679,
+        "survival": 0.451
+      },
+      "vader-14": {
+        "fitness": 0.312,
+        "toxicBites": 668,
+        "survival": 0.43
+      },
+      "vader-15": {
+        "fitness": 0.333,
+        "toxicBites": 752,
+        "survival": 0.447
+      },
+      "vader-16": {
+        "fitness": 0.304,
+        "toxicBites": 670,
+        "survival": 0.417
+      },
+      "vader-17": {
+        "fitness": 0.306,
+        "toxicBites": 682,
+        "survival": 0.421
+      },
+      "vader-18": {
+        "fitness": 0.293,
+        "toxicBites": 608,
+        "survival": 0.411
+      }
+    }
+  }
+}
