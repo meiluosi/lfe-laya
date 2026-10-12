@@ -1,0 +1,42 @@
+{
+  "purpose": "语义世界：先天参数进化（2×2 对照之一）",
+  "condition": {
+    "prior": "laya",
+    "learning": true
+  },
+  "generations": 40,
+  "pop": 24,
+  "sigma": 0.25,
+  "lr": 0.1,
+  "seed": 26,
+  "agent": "structured",
+  "hier": false,
+  "inversions": [
+    0.25,
+    0.4
+  ],
+  "delayAll": false,
+  "drift": false,
+  "pool": true,
+  "K": 32,
+  "harmCap": 4,
+  "delay": 0,
+  "innateSize": 9,
+  "training": "每代 6 个训练划分世界（种子 50000+gen*10+i，常识反转比例按 0 / 0 / 0.25 循环）",
+  "report": "测试划分（全新描述词）12 个世界，种子 40000+，反转比例交替 0 / 0.25，仅报告",
+  "source": {
+    "packages/evo/structured.ts": "5d1d4f8d25b0b839d1905a9f291a3b74a41aeea3ef674442b6bd4d4fa5ce983a",
+    "packages/evo/pools.ts": "d5077d7c9d6202a1f2c875bcc26581ef963e17544c00835c4a691b4136177655",
+    "packages/evo/ontology.ts": "fa9735fb4f44bbe20f75551b494e50391b99fb7b5137f84ddcda298dcaa2bd3b",
+    "packages/evo/ontology/dialects.json": "320d977a00192425b50fa5fbd534023ad15563689b48642d274e13bd2f3424e1",
+    "packages/evo/sempolicy.ts": "dc72110a86ec3d8ed8d2e7fe6c818bd2d204911a626c90b227d754f1aaedb61d",
+    "packages/evo/semantic.ts": "3b9b6aa95f06b875e880e70e9bec0057cab130e5cfa0c6e61ba5b68a0fad44c6",
+    "packages/evo/semantic-run.ts": "cce43c2b0bd7f6296c3e011401fa9ab04e730bb33f44266ae14a729822692fc5",
+    "packages/evo/semantic-worker.ts": "d320b77e07bbfbc79f29ae703356e74ad9e6a29556bb1ce5339953457366a928",
+    "packages/evo/semantic-evolve.ts": "e03fa15dfb2484bae9fd76cebf6172490b9655ddbd0b546163c96d5874dddcf2",
+    "packages/evo/semantic-vocab.json": "2daf25c3459894771049a492038289ef8205df52fc4414ad2cab436e33247a23",
+    "experiments/evo/laya-prior-v1.json": "3730c2137c702acfe8b6e0e03b31f2f935cb879730ae5a30129cfdad139b0a1b",
+    "packages/sim/ecology.ts": "909b9f064dedcdda0ca8424625f8fd10c878b642d4ded16a4f48f73f1733ccd9",
+    "packages/sim/controllers.ts": "af7f478d7ef283c038575ba297d60f75dbfbac4bc7291e03931219907ee44140"
+  }
+}
