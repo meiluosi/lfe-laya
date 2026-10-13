@@ -11,3 +11,9 @@ Copyright 2026 冯宇 (Feng Yu)
 - VADER 情感词表（MIT，C.J. Hutto 与 E.E. Gilbert）：packages/evo/ontology/vader-lexicon.json，
   许可文件见 packages/evo/ontology/vader-LICENSE.txt。
 - 前端与工具链依赖（Three.js、React、Vite 等）：各自许可见 package-lock.json 中列出的包。
+
+依赖的许可概况（均为宽松许可；以各自发行包内的许可文件为准）：
+- 前端直接依赖：React、React DOM、Pixi.js、Vite、@types/*（MIT）；ECharts、Dexie、Playwright Core、TypeScript（Apache-2.0）。
+  传递依赖中有 lightningcss（MPL-2.0，Vite 的构建期依赖，不随成品分发）与 tslib（0BSD）；未发现 GPL / AGPL 类依赖。
+- Python 依赖：torch（BSD 类）、laya（Apache-2.0）、numpy、fastapi、pydantic、gymnasium、stable-baselines3、sb3-contrib（MIT / BSD / Apache-2.0）；
+  版本见 requirements.txt。

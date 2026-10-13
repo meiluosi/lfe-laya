@@ -94,3 +94,20 @@
 2. 未检索到“先验被欺骗时的代价”的系统测量；这是本项目的一个切入点（硬先验在 25% 欺骗下有害，自适应信任可缓解）。
 3. Laya 模型卡与二手来源称其是需要任务微调的底座、零样本接近随机；本项目发现固定 Laya 在食物描述的语义判断上零样本即有较高区分力（AUC 0.775–0.909，见 RESEARCH_SUMMARY）。这需要谨慎表述，并披露选项顺序偏差及其处理（两种顺序取平均）。
 4. 新颖性表述建议：“据我们检索所及，尚未见到……”，不使用“首个”。
+
+## 11. 补充检索（第二轮，2026-10-13）
+
+仍是初步检索（网络检索 9 次累计），部分条目来自二手摘要；**引用前须逐条核对原文**。目的：补足第 10 节没有覆盖的四个方面。
+
+| 方面 | 工作 | 与本项目的关系 |
+| --- | --- | --- |
+| 进化 + 基础模型 | [Evolution through Large Models](https://arxiv.org/pdf/2206.08896)（Lehman et al., 2022）：用代码 LLM 作为遗传编程的变异算子 | 与我们的方向相反：它让 LLM 做变异；我们让固定模型做先验、进化决定如何使用。可作为“进化与基础模型结合”的背景 |
+| 进化学习强化学习的复现 | [Salimans et al., Evolution Strategies as a Scalable Alternative to RL](https://arxiv.org/abs/1703.03864)；[Roupassov-Ruiz & Zuo, 2026，对 1992 年 ALife 进化 + 学习测试平台的开源重现与生存分析](https://arxiv.org/abs/2601.04365) | 我们使用 OpenAI-ES；后者是与我们的“进化 + 学习 + 生存”设计最近的复现类工作，可对比其生存分析指标 |
+| 错误 / 误导性语言先验 | [Arumugam & Griffiths, Toward Efficient Exploration by LLM Agents](https://arxiv.org/pdf/2504.20997)（附录讨论先验设定错误）；[Navigating Noisy Feedback: RL with Error-Prone Language Models](https://arxiv.org/html/2410.17389v1)；[Certified Predictive Value-of-Advice Gating](https://arxiv.org/pdf/2609.29548) | 它们讨论语言模型建议出错时的处理（门控、不确定性加权、仅在根节点注入）。我们的结果是：先验在即时反馈世界里中性、延迟世界里有益、强欺骗削弱收益，并有自适应信任 |
+| 延迟后果的学习（生物学类比） | Garcia 效应 / 条件性味觉厌恶：食物与数十分钟后的不适也能建立联想（Garcia & Koelling, 1966；Kalat & Rozin, 1973）；演化解释是它提高对延迟毒性的生存率 | 与我们的“延迟信用窗口”基因高度相似，是极好的生物学动机：延迟后果下，先验 + 专门的信用分配机制才有价值。可在讨论里作类比，但不能声称我们的模型模拟了生物机制 |
+| 预注册 | [The pre-registration experiment: an alternative publication model for machine learning research](https://neurips.cc/virtual/2020/workshop/16158)（NeurIPS 2020 研讨会） | 机器学习中预注册的先例；我们没有检索到预注册的 ALife / 进化强化学习研究 |
+
+补充观察：
+1. 未检索到“先验被误导（欺骗）时的代价”在进化个体上的受控测量；Arumugam & Griffiths 的附录是最接近的讨论，但对象是 LLM 智能体而非进化个体。
+2. Garcia 效应的类比有价值但需谨慎：其机制（味觉特异性、后味痕迹）与我们的信用窗口是不同层面的，二者只在“延迟后果需要被归因于此前吃过的食物”这一点上相同。
+3. 仍未检索：层次 / 相似度共享信念（我们的层次信念无增益，属负面结果，不需要对比文献）；Jev / Laya 之外的“系统一”决策模型（可在论文相关工作中简述）。

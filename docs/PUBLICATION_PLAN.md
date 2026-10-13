@@ -20,7 +20,7 @@
 
 ## 3. 论文前的工作清单
 
-- [ ] 系统文献检索（arXiv / Semantic Scholar / Hugging Face / GitHub），补进 `docs/RESEARCH.md` §10，并核对每条引用。
+- [ ] 系统文献检索：已做两轮网络检索（`docs/RESEARCH.md` §10、§11），尚需在 arXiv / Semantic Scholar / GitHub 上更系统地检索并**逐条核对原文**后再引用。
 - [ ] 预注册 04 评估完成并记录；按结果决定叙事。
 - [ ] W5b：层次信念的预注册评估（laya+hier / laya / none+hier / none，事实方言）。
 - [ ] W9 消融：先验 × 学习 × 进化的 2×2×2。
@@ -33,7 +33,7 @@
 
 - [x] **许可证（用户已决定，2026-10-11）**：代码 Apache-2.0（`LICENSE`）；方言、词池、实验数据与文档 CC BY 4.0（`DATA_LICENSE.md`）；VADER 保留 MIT；`NOTICE` 列出第三方。
 - [x] 第三方声明（NOTICE，已写；前端依赖的许可仍需逐个核对）：Laya（Apache-2.0）、VADER（MIT）、Three.js 等前端依赖；说明模型权重不随仓库分发，给出下载与许可说明。
-- [ ] 清理：本机路径与个人信息（`/Users/...`）、`.env`、令牌、虚拟环境、缓存；`scripts/prepare_publish.py` 的大文件过滤再跑一遍；`experiments/RAW_DATA_MANIFEST.json` 更新。
+- [x] 清理（已做，2026-10-13）：本机路径与个人信息已从 6 个证据日志中清除（替换为 `<repo>`），仓库内未发现令牌或邮箱；`requirements.txt`、`REPRODUCE.md`、前端依赖许可核对（全部宽松许可，lightningcss 为 MPL-2.0 的构建期依赖）。仍需：（`/Users/...`）、`.env`、令牌、虚拟环境、缓存；`scripts/prepare_publish.py` 的大文件过滤再跑一遍；`experiments/RAW_DATA_MANIFEST.json` 更新。
 - [ ] 复现说明：一页 `REPRODUCE.md`，从安装到跑出论文中每张表的命令、预期耗时与机器要求（Apple Silicon / MPS；Laya 先验已缓存，复现评估不需要模型）。
 - [ ] README 重写面向外部读者：项目是什么、主要结果（含负面）、已知限制、如何引用（CITATION.cff）、如何贡献。
 - [ ] 把旧的 P0 原型与 M0 记录标明为历史，避免误解为正式结果。
