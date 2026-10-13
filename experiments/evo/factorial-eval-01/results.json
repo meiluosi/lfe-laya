@@ -1,0 +1,460 @@
+{
+  "protocol": "docs/PREREGISTRATION_06.md",
+  "dry": false,
+  "worldsPerCell": 32,
+  "K": 32,
+  "harmCap": 4,
+  "inversions": [
+    0.25,
+    0.4
+  ],
+  "regimes": [
+    {
+      "id": "d0",
+      "delay": 0
+    },
+    {
+      "id": "d40",
+      "delay": 40
+    }
+  ],
+  "seeds": [
+    21,
+    22,
+    23,
+    24,
+    25,
+    26
+  ],
+  "primaryPool": "heldout",
+  "analysis": {
+    "heldout": {
+      "primary": [
+        {
+          "id": "H1",
+          "claim": "匹配训练（延迟 0）下 laya 不比 none 差超过 0.04（非劣效）",
+          "statistic": 0.0154,
+          "threshold": -0.04,
+          "effectOk": true,
+          "p": 0.0156,
+          "holmReject": true,
+          "supported": true,
+          "perSeed": [
+            0.1031,
+            -0.0168,
+            0.0073,
+            0.005,
+            -0.0073,
+            0.0009
+          ]
+        },
+        {
+          "id": "H2",
+          "claim": "匹配训练（延迟 40）下 laya 优于 none 至少 0.04",
+          "statistic": 0.0485,
+          "threshold": 0.04,
+          "effectOk": true,
+          "p": 0.0156,
+          "holmReject": true,
+          "supported": true,
+          "perSeed": [
+            0.0656,
+            0.0389,
+            0.0087,
+            0.0181,
+            0.0854,
+            0.0746
+          ]
+        },
+        {
+          "id": "H3",
+          "claim": "层次信念在欺骗 0.40 的世界里让 laya 个体提高至少 0.03",
+          "statistic": 0.0004,
+          "threshold": 0.03,
+          "effectOk": false,
+          "p": 0.4219,
+          "holmReject": false,
+          "supported": false,
+          "perSeed": [
+            -0.0045,
+            0.0079,
+            -0.0058,
+            0.0041,
+            0,
+            0.001
+          ]
+        }
+      ],
+      "factorialMeans": {
+        "laya-flat-d0": {
+          "inv0.25": 0.56,
+          "inv0.4": 0.477
+        },
+        "laya-hier-d0": {
+          "inv0.25": 0.568,
+          "inv0.4": 0.481
+        },
+        "none-flat-d0": {
+          "inv0.25": 0.548,
+          "inv0.4": 0.459
+        },
+        "none-hier-d0": {
+          "inv0.25": 0.565,
+          "inv0.4": 0.485
+        },
+        "laya-flat-d40": {
+          "inv0.25": 0.401,
+          "inv0.4": 0.34
+        },
+        "laya-hier-d40": {
+          "inv0.25": 0.395,
+          "inv0.4": 0.337
+        },
+        "none-flat-d40": {
+          "inv0.25": 0.328,
+          "inv0.4": 0.317
+        },
+        "none-hier-d40": {
+          "inv0.25": 0.332,
+          "inv0.4": 0.319
+        }
+      },
+      "effects": {
+        "hierOnNone": {
+          "d0": 0.0219,
+          "d40": 0.0035
+        },
+        "hierOnLaya": {
+          "d0-inv0.25": 0.0076,
+          "d0-inv0.4": 0.004,
+          "d40-inv0.25": -0.0061,
+          "d40-inv0.4": -0.0031
+        },
+        "layaMinusNoneHier": {
+          "d0": -0.0007,
+          "d40": 0.0404
+        },
+        "layaMinusNoneFlatByInv": {
+          "d0-inv0.25": 0.0126,
+          "d0-inv0.4": 0.0182,
+          "d40-inv0.25": 0.0733,
+          "d40-inv0.4": 0.0237
+        }
+      },
+      "perSeedMeans": {
+        "laya-flat-d0-21": 0.5127,
+        "laya-flat-d0-22": 0.5168,
+        "laya-flat-d0-23": 0.5345,
+        "laya-flat-d0-24": 0.5169,
+        "laya-flat-d0-25": 0.5139,
+        "laya-flat-d0-26": 0.5179,
+        "laya-flat-d40-21": 0.3731,
+        "laya-flat-d40-22": 0.3756,
+        "laya-flat-d40-23": 0.3487,
+        "laya-flat-d40-24": 0.3562,
+        "laya-flat-d40-25": 0.3909,
+        "laya-flat-d40-26": 0.3806,
+        "laya-hier-d0-21": 0.5144,
+        "laya-hier-d0-22": 0.5416,
+        "laya-hier-d0-23": 0.5176,
+        "laya-hier-d0-24": 0.5354,
+        "laya-hier-d0-25": 0.5195,
+        "laya-hier-d0-26": 0.5189,
+        "laya-hier-d40-21": 0.3628,
+        "laya-hier-d40-22": 0.3708,
+        "laya-hier-d40-23": 0.3638,
+        "laya-hier-d40-24": 0.3518,
+        "laya-hier-d40-25": 0.3736,
+        "laya-hier-d40-26": 0.3748,
+        "none-flat-d0-21": 0.4096,
+        "none-flat-d0-22": 0.5336,
+        "none-flat-d0-23": 0.5272,
+        "none-flat-d0-24": 0.512,
+        "none-flat-d0-25": 0.5211,
+        "none-flat-d0-26": 0.517,
+        "none-flat-d40-21": 0.3075,
+        "none-flat-d40-22": 0.3367,
+        "none-flat-d40-23": 0.34,
+        "none-flat-d40-24": 0.3381,
+        "none-flat-d40-25": 0.3055,
+        "none-flat-d40-26": 0.306,
+        "none-hier-d0-21": 0.5246,
+        "none-hier-d0-22": 0.5127,
+        "none-hier-d0-23": 0.5186,
+        "none-hier-d0-24": 0.5231,
+        "none-hier-d0-25": 0.5338,
+        "none-hier-d0-26": 0.539,
+        "none-hier-d40-21": 0.3518,
+        "none-hier-d40-22": 0.3058,
+        "none-hier-d40-23": 0.3336,
+        "none-hier-d40-24": 0.3397,
+        "none-hier-d40-25": 0.2865,
+        "none-hier-d40-26": 0.3376
+      },
+      "toxicBites": {
+        "laya-flat-d0-21": 706,
+        "laya-flat-d0-22": 653,
+        "laya-flat-d0-23": 792,
+        "laya-flat-d0-24": 703,
+        "laya-flat-d0-25": 674,
+        "laya-flat-d0-26": 730,
+        "laya-flat-d40-21": 511,
+        "laya-flat-d40-22": 632,
+        "laya-flat-d40-23": 366,
+        "laya-flat-d40-24": 435,
+        "laya-flat-d40-25": 590,
+        "laya-flat-d40-26": 522,
+        "laya-hier-d0-21": 626,
+        "laya-hier-d0-22": 719,
+        "laya-hier-d0-23": 816,
+        "laya-hier-d0-24": 807,
+        "laya-hier-d0-25": 689,
+        "laya-hier-d0-26": 661,
+        "laya-hier-d40-21": 502,
+        "laya-hier-d40-22": 507,
+        "laya-hier-d40-23": 577,
+        "laya-hier-d40-24": 381,
+        "laya-hier-d40-25": 507,
+        "laya-hier-d40-26": 504,
+        "none-flat-d0-21": 885,
+        "none-flat-d0-22": 708,
+        "none-flat-d0-23": 759,
+        "none-flat-d0-24": 635,
+        "none-flat-d0-25": 631,
+        "none-flat-d0-26": 617,
+        "none-flat-d40-21": 584,
+        "none-flat-d40-22": 980,
+        "none-flat-d40-23": 908,
+        "none-flat-d40-24": 986,
+        "none-flat-d40-25": 592,
+        "none-flat-d40-26": 600,
+        "none-hier-d0-21": 784,
+        "none-hier-d0-22": 706,
+        "none-hier-d0-23": 697,
+        "none-hier-d0-24": 700,
+        "none-hier-d0-25": 730,
+        "none-hier-d0-26": 675,
+        "none-hier-d40-21": 967,
+        "none-hier-d40-22": 601,
+        "none-hier-d40-23": 928,
+        "none-hier-d40-24": 943,
+        "none-hier-d40-25": 728,
+        "none-hier-d40-26": 997
+      }
+    },
+    "factual": {
+      "primary": [
+        {
+          "id": "H1",
+          "claim": "匹配训练（延迟 0）下 laya 不比 none 差超过 0.04（非劣效）",
+          "statistic": 0.0231,
+          "threshold": -0.04,
+          "effectOk": true,
+          "p": 0.0156,
+          "holmReject": true,
+          "supported": true,
+          "perSeed": [
+            0.1093,
+            0.0019,
+            0.0012,
+            0.012,
+            0.0055,
+            0.0087
+          ]
+        },
+        {
+          "id": "H2",
+          "claim": "匹配训练（延迟 40）下 laya 优于 none 至少 0.04",
+          "statistic": 0.024,
+          "threshold": 0.04,
+          "effectOk": false,
+          "p": 0.0938,
+          "holmReject": false,
+          "supported": false,
+          "perSeed": [
+            0.0543,
+            0.0048,
+            -0.0246,
+            -0.0031,
+            0.068,
+            0.0446
+          ]
+        },
+        {
+          "id": "H3",
+          "claim": "层次信念在欺骗 0.40 的世界里让 laya 个体提高至少 0.03",
+          "statistic": -0.0126,
+          "threshold": 0.03,
+          "effectOk": false,
+          "p": 0.9844,
+          "holmReject": false,
+          "supported": false,
+          "perSeed": [
+            0.0029,
+            -0.0145,
+            -0.0185,
+            -0.0216,
+            -0.0041,
+            -0.0201
+          ]
+        }
+      ],
+      "factorialMeans": {
+        "laya-flat-d0": {
+          "inv0.25": 0.513,
+          "inv0.4": 0.542
+        },
+        "laya-hier-d0": {
+          "inv0.25": 0.52,
+          "inv0.4": 0.546
+        },
+        "none-flat-d0": {
+          "inv0.25": 0.49,
+          "inv0.4": 0.519
+        },
+        "none-hier-d0": {
+          "inv0.25": 0.518,
+          "inv0.4": 0.542
+        },
+        "laya-flat-d40": {
+          "inv0.25": 0.392,
+          "inv0.4": 0.351
+        },
+        "laya-hier-d40": {
+          "inv0.25": 0.373,
+          "inv0.4": 0.323
+        },
+        "none-flat-d40": {
+          "inv0.25": 0.348,
+          "inv0.4": 0.348
+        },
+        "none-hier-d40": {
+          "inv0.25": 0.343,
+          "inv0.4": 0.363
+        }
+      },
+      "effects": {
+        "hierOnNone": {
+          "d0": 0.0254,
+          "d40": 0.0053
+        },
+        "hierOnLaya": {
+          "d0-inv0.25": 0.0071,
+          "d0-inv0.4": 0.0032,
+          "d40-inv0.25": -0.0193,
+          "d40-inv0.4": -0.0285
+        },
+        "layaMinusNoneHier": {
+          "d0": 0.0028,
+          "d40": -0.0052
+        },
+        "layaMinusNoneFlatByInv": {
+          "d0-inv0.25": 0.0225,
+          "d0-inv0.4": 0.0236,
+          "d40-inv0.25": 0.0448,
+          "d40-inv0.4": 0.0032
+        }
+      },
+      "perSeedMeans": {
+        "laya-flat-d0-21": 0.5053,
+        "laya-flat-d0-22": 0.5321,
+        "laya-flat-d0-23": 0.533,
+        "laya-flat-d0-24": 0.5395,
+        "laya-flat-d0-25": 0.5197,
+        "laya-flat-d0-26": 0.5359,
+        "laya-flat-d40-21": 0.3797,
+        "laya-flat-d40-22": 0.3835,
+        "laya-flat-d40-23": 0.3415,
+        "laya-flat-d40-24": 0.3828,
+        "laya-flat-d40-25": 0.3826,
+        "laya-flat-d40-26": 0.361,
+        "laya-hier-d0-21": 0.5338,
+        "laya-hier-d0-22": 0.5499,
+        "laya-hier-d0-23": 0.5148,
+        "laya-hier-d0-24": 0.5261,
+        "laya-hier-d0-25": 0.5403,
+        "laya-hier-d0-26": 0.5317,
+        "laya-hier-d40-21": 0.359,
+        "laya-hier-d40-22": 0.3491,
+        "laya-hier-d40-23": 0.3248,
+        "laya-hier-d40-24": 0.3345,
+        "laya-hier-d40-25": 0.3763,
+        "laya-hier-d40-26": 0.3441,
+        "none-flat-d0-21": 0.396,
+        "none-flat-d0-22": 0.5302,
+        "none-flat-d0-23": 0.5318,
+        "none-flat-d0-24": 0.5275,
+        "none-flat-d0-25": 0.5142,
+        "none-flat-d0-26": 0.5272,
+        "none-flat-d40-21": 0.3253,
+        "none-flat-d40-22": 0.3787,
+        "none-flat-d40-23": 0.3661,
+        "none-flat-d40-24": 0.3859,
+        "none-flat-d40-25": 0.3146,
+        "none-flat-d40-26": 0.3164,
+        "none-hier-d0-21": 0.5224,
+        "none-hier-d0-22": 0.5009,
+        "none-hier-d0-23": 0.5505,
+        "none-hier-d0-24": 0.5376,
+        "none-hier-d0-25": 0.5312,
+        "none-hier-d0-26": 0.5369,
+        "none-hier-d40-21": 0.3756,
+        "none-hier-d40-22": 0.3203,
+        "none-hier-d40-23": 0.3809,
+        "none-hier-d40-24": 0.3693,
+        "none-hier-d40-25": 0.2897,
+        "none-hier-d40-26": 0.3827
+      },
+      "toxicBites": {
+        "laya-flat-d0-21": 711,
+        "laya-flat-d0-22": 675,
+        "laya-flat-d0-23": 822,
+        "laya-flat-d0-24": 741,
+        "laya-flat-d0-25": 703,
+        "laya-flat-d0-26": 761,
+        "laya-flat-d40-21": 748,
+        "laya-flat-d40-22": 865,
+        "laya-flat-d40-23": 559,
+        "laya-flat-d40-24": 682,
+        "laya-flat-d40-25": 820,
+        "laya-flat-d40-26": 727,
+        "laya-hier-d0-21": 669,
+        "laya-hier-d0-22": 738,
+        "laya-hier-d0-23": 848,
+        "laya-hier-d0-24": 819,
+        "laya-hier-d0-25": 713,
+        "laya-hier-d0-26": 706,
+        "laya-hier-d40-21": 743,
+        "laya-hier-d40-22": 668,
+        "laya-hier-d40-23": 863,
+        "laya-hier-d40-24": 555,
+        "laya-hier-d40-25": 763,
+        "laya-hier-d40-26": 652,
+        "none-flat-d0-21": 889,
+        "none-flat-d0-22": 720,
+        "none-flat-d0-23": 788,
+        "none-flat-d0-24": 643,
+        "none-flat-d0-25": 639,
+        "none-flat-d0-26": 623,
+        "none-flat-d40-21": 601,
+        "none-flat-d40-22": 975,
+        "none-flat-d40-23": 888,
+        "none-flat-d40-24": 980,
+        "none-flat-d40-25": 594,
+        "none-flat-d40-26": 605,
+        "none-hier-d0-21": 819,
+        "none-hier-d0-22": 710,
+        "none-hier-d0-23": 725,
+        "none-hier-d0-24": 722,
+        "none-hier-d0-25": 737,
+        "none-hier-d0-26": 701,
+        "none-hier-d40-21": 971,
+        "none-hier-d40-22": 602,
+        "none-hier-d40-23": 915,
+        "none-hier-d40-24": 944,
+        "none-hier-d40-25": 711,
+        "none-hier-d40-26": 990
+      }
+    }
+  }
+}
