@@ -10,8 +10,8 @@ export type Split = 'train' | 'test';
 export type PoolEntryLike = { text: string; factor: number; tier: string };
 const POOLS = new Map<string, PoolEntryLike[]>();
 export const registerPool = (name: string, entries: PoolEntryLike[]) => { POOLS.set(name, entries); };
-export type SemanticOptions = { /** 延迟后果（模拟步数）；缺省为即时 */ delay?: number; /** 使用已注册的词池（生成式本体）而不是内置小词表；K 由 sensible 决定（nonsense 不再单独加） */ pool?: string; /** 池模式下是否限制危害：factor 下限（默认 -1，等 W4 放开后可设到 -4） */ harmCap?: number; split: Split; /** 漂移：每 everyTicks 切换阶段；fraction 是被反转的种类比例（按世界种子确定性选取） */ drift?: { everyTicks: number; fraction: number }; /** 常识线索被反转（描述与真实影响相反）的比例 */ inversion?: number; /** W7 成熟周期与季节（可选）：cues 为语言线索模式；phrases 选择阶段短语的措辞（A 训练用、B 评估用）；poolLimit 只用池的前 N 条（为了能预先缓存先验） */ ripening?: { seasonTicks: number; cues: 'language' | 'shuffled' | 'off'; phrases: 'A' | 'B'; poolLimit?: number }; sensible?: number; nonsense?: number };
-export const DEFAULT_SEMANTIC: Required<Omit<SemanticOptions, 'split' | 'drift' | 'pool' | 'harmCap' | 'delay' | 'ripening'>> = { inversion: 0, sensible: 6, nonsense: 2 };
+export type SemanticOptions = { /** 延迟后果（模拟步数）；缺省为即时 */ delay?: number; /** 使用已注册的词池（生成式本体）而不是内置小词表；K 由 sensible 决定（nonsense 不再单独加） */ pool?: string; /** 池模式下是否限制危害：factor 下限（默认 -1，等 W4 放开后可设到 -4） */ harmCap?: number; split: Split; /** 漂移：每 everyTicks 切换阶段；fraction 是被反转的种类比例（按世界种子确定性选取） */ drift?: { everyTicks: number; fraction: number }; /** 常识线索被反转（描述与真实影响相反）的比例 */ inversion?: number; /** W7 成熟周期与季节（可选）：cues 为语言线索模式；phrases 选择阶段短语的措辞（A 训练用、B 评估用）；poolLimit 只用池的前 N 条（为了能预先缓存先验） */ ripening?: { seasonTicks: number; cues: 'language' | 'shuffled' | 'off'; phrases: 'A' | 'B'; poolLimit?: number }; /** W8b 社会观察（可选）：邻居的外观与最近进食；phrases 选择外观措辞（A 训练用、B 评估用） */ social?: { cues: 'language' | 'shuffled' | 'off'; phrases: 'A' | 'B'; window?: number; lookTicks?: number }; sensible?: number; nonsense?: number };
+export const DEFAULT_SEMANTIC: Required<Omit<SemanticOptions, 'split' | 'drift' | 'pool' | 'harmCap' | 'delay' | 'ripening' | 'social'>> = { inversion: 0, sensible: 6, nonsense: 2 };
 
 function rng(seed: number) { let s = seed >>> 0 || 1; return () => { s = (s + 0x6D2B79F5) >>> 0; let t = s; t = Math.imul(t ^ (t >>> 15), t | 1); t ^= t + Math.imul(t ^ (t >>> 7), t | 61); return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
 const pick = <T>(r: () => number, xs: T[]): T => xs[Math.floor(r() * xs.length)];
@@ -51,17 +51,33 @@ export const SEASON_CUES: Record<'A' | 'B', string[][]> = {
   A: [['buds are opening on the hedges', 'new shoots push up through the soil'], ['the days are long and the sun is high', 'the heat hangs over the fields'], ['the days are growing short and the leaves are turning', 'geese are flying south overhead'], ['frost lies on the ground each morning', 'the ponds have frozen over']],
   B: [['meltwater runs down the hillside', 'the first swallows return'], ['the nights are short and warm', 'the meadow hums with bees'], ['mist hangs in the valley at dawn', 'the harvest is being gathered in'], ['snow covers the high ground', 'the days are at their shortest']],
 };
-export const RIPENING_MULTIPLIERS = [.2, 1, -.4, -1];
+/** 第一版（[.2, 1, -.4, -1]）在开发期预实验里过于苛刻（多数时候吃营养类食物也有害，进化先找到“什么都不吃”）；第二版放缓：青涩 ×0.3、成熟 ×1、过熟 ×0.4、腐败 ×−0.8。 */
+export const RIPENING_MULTIPLIERS = [.3, 1, .4, -.8];
 export function makeRipening(seed: number, kinds: SemanticKind[], opt: NonNullable<SemanticOptions['ripening']>) {
   const r = rng(seed * 7919 + 3);
   return { seasonTicks: opt.seasonTicks, offsets: kinds.map(() => Math.floor(r() * 4)), perishable: kinds.map(k => k.factor > 0), multipliers: RIPENING_MULTIPLIERS.slice(), cues: opt.cues, stageText: STAGE_PHRASES[opt.phrases].slice(), seasonText: SEASON_CUES[opt.phrases].map(a => a.slice()) };
+}
+/** W8b 邻居外观措辞（作者撰写，写作时没有看过 Laya 的任何输出）。A 用于训练，B 用于评估，检验对换说法的泛化。 */
+export const LOOK_PHRASES: Record<'A' | 'B', { harm: string[]; boost: string[]; calm: string[] }> = {
+  A: { harm: ['doubled over, clutching its belly', 'pale and shaking all over', 'retching and unsteady on its feet', 'slumped on the ground, groaning'],
+       boost: ['bright-eyed and full of energy', 'standing tall with a spring in its step', 'glowing and strong after its meal', 'moving briskly, looking revitalised'],
+       calm: ['going about its business', 'wandering slowly', 'pausing to look around', 'resting quietly'] },
+  B: { harm: ['bent over and moaning', 'sweating and trembling', 'staggering, one hand on its stomach', 'curled up and miserable'],
+       boost: ['full of vigour', 'strong and alert', 'practically bouncing', 'visibly restored'],
+       calm: ['idling nearby', 'ambling along', 'looking about calmly', 'sitting still'] },
+};
+/** 个体读邻居外观时使用的文本：把外观包装成“一种食物的描述”，交给与食物相同的先验（Laya / 词典）去判断；只依赖文本。 */
+export const lookText = (phrase: string) => `a food that a nearby creature just ate; the creature now looks ${phrase}`;
+export function makeSocial(opt: NonNullable<SemanticOptions['social']>) {
+  const b = LOOK_PHRASES[opt.phrases];
+  return { cues: opt.cues, window: opt.window ?? 300, lookTicks: opt.lookTicks ?? 60, harmText: b.harm.slice(), boostText: b.boost.slice(), calmText: b.calm.slice() };
 }
 export const SEMANTIC_BASE = { diffusion: 0, deathReturn: 0 };
 export function makeDrift(seed: number, kinds: SemanticKind[], drift: { everyTicks: number; fraction: number }): { everyTicks: number; flip: number[] } {
   const r = rng(seed * 40503 + 17), order = kinds.map((_, i) => i).sort(() => r() - .5), n = Math.max(1, Math.round(kinds.length * drift.fraction));
   return { everyTicks: drift.everyTicks, flip: order.slice(0, n).sort((a, b) => a - b) };
 }
-export const semanticConfig = (seed: number, opt: SemanticOptions) => { const kinds = makeKinds(seed, opt); return { ...SEMANTIC_BASE, semantic: { kinds, ...(opt.drift ? { drift: makeDrift(seed, kinds, opt.drift) } : {}), ...(opt.ripening ? { ripening: makeRipening(seed, kinds, opt.ripening) } : {}), ...(opt.delay ? { delay: { ticks: opt.delay } } : {}) } }; };
+export const semanticConfig = (seed: number, opt: SemanticOptions) => { const kinds = makeKinds(seed, opt); return { ...SEMANTIC_BASE, semantic: { kinds, ...(opt.drift ? { drift: makeDrift(seed, kinds, opt.drift) } : {}), ...(opt.ripening ? { ripening: makeRipening(seed, kinds, opt.ripening) } : {}), ...(opt.social ? { social: makeSocial(opt.social) } : {}), ...(opt.delay ? { delay: { ticks: opt.delay } } : {}) } }; };
 
 /** 观察台等界面用的完整语义世界配置（8 个个体、无繁殖；供给与训练场景一致）。 */
 export const semanticPreset = (seed: number, opt: Partial<SemanticOptions> = {}) => ({ ...BASE, ...SCENARIOS.semantic, ...semanticConfig(seed, { split: 'test', inversion: 0, ...opt }), seed });
