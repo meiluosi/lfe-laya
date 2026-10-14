@@ -61,5 +61,5 @@ node packages/evo/semantic-evolve.ts experiments/evo/f9-<laya|none|vader>-<s> \
 
 ## 9. 冻结记录
 
-- 协议冻结提交：本文件所在提交（信息以“预注册 09 冻结协议”开头）。
+- 协议冻结提交：本文件所在提交（信息以“预注册 09 冻结协议”开头）；训练与评估使用该提交的代码（已合并到主分支）。
 - 基因组哈希：训练完成后写入 `experiments/prereg/genome-hashes-09.json` 并提交，之后才运行评估。
