@@ -1,8 +1,8 @@
-node_modules/
+node_modules
 dist/
 .venv/
 .tools/
-.models/
+.models
 .runtime/
 __pycache__/
 .pytest_cache/

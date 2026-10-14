@@ -12,10 +12,12 @@ export type Observation = {
   heading: number; lastAction: Action; lastRejected: boolean;
   costs: { metabolismPerTick: number; movementPerUnit: number; decisionTicks: number; bitePerTick: number };
   local: { dx: number; dy: number; food: number; blocked: boolean; /** 语义世界：该格食物的自然语言描述 */ desc?: string }[];
-  neighbors: { dx: number; dy: number; shape: number }[];
+  neighbors: { dx: number; dy: number; shape: number; /** 社会观察世界（W8b）：邻居的可见外观与最近吃过的东西（语言描述） */ look?: string; ate?: string[] }[];
   memory: { dx: number; dy: number; food: number; stepsAgo: number; desc?: string }[];
   /** 延迟世界：个体此刻的自身感受（语言描述），如“胃里绞痛”。 */
   sensation?: string;
+  /** 成熟周期世界（W7）：环境级的季节提示（语言描述），不说明价值。 */
+  season?: string;
 };
 export type Identity = {
   protocol: string; runId: string; generation: number; epoch: number;

@@ -29,7 +29,15 @@ export type SemanticKind = { description: string; factor: number };
 export type SemanticDrift = { everyTicks: number; flip: number[] };
 /** 延迟（可选）：吃下后，营养/毒性在 ticks 个模拟步之后才作用于个体；其间这部分能量记为“在途”。个体生效时会有一句自身感受的语言描述。 */
 export type SemanticDelay = { ticks: number };
-export type SemanticConfig = { kinds: SemanticKind[]; drift?: SemanticDrift; delay?: SemanticDelay };
+/** 成熟周期（W7，可选）：季节 s(t)=⌊t/seasonTicks⌋ mod 4；种类 k 的阶段 = (s + offsets[k]) mod 4（0 青涩 1 成熟 2 过熟 3 腐败）。
+ *  perishable 的种类，结算因子 = 种类因子 × multipliers[阶段]（隐藏真值）；其余种类不随阶段变化。cues 控制语言线索：language 显示真实的阶段短语与季节提示，
+ *  shuffled 显示错配的（阶段 +2），off 不显示任何线索（价值仍随阶段变化）。阶段完全由 tick 决定，不增加状态。 */
+export type SemanticRipening = { seasonTicks: number; offsets: number[]; perishable: boolean[]; multipliers: number[]; cues: 'language' | 'shuffled' | 'off'; stageText: string[]; seasonText: string[][] };
+/** 社会观察（W8b，可选）：视野内邻居的可见状态以语言描述（look）出现，并列出它最近吃过的东西（ate，可见的行为）。不共享参数、信念或内部经验。
+ *  look 由邻居最近一次明显的后果（≥0.3 能量的收益或伤害，约半口的强度；延迟世界里在生效时）决定，持续 lookTicks；否则为平静的描述。cues：language 真实，shuffled 把受害与受益互换，off 不显示。 */
+const LOOK_THRESHOLD = 0.3;
+export type SemanticSocial = { cues: 'language' | 'shuffled' | 'off'; window: number; lookTicks: number; harmText: string[]; boostText: string[]; calmText: string[] };
+export type SemanticConfig = { kinds: SemanticKind[]; drift?: SemanticDrift; delay?: SemanticDelay; ripening?: SemanticRipening; social?: SemanticSocial };
 export type Memory = { x: number; y: number; food: number; tick: number; desc?: string };
 export type Agent = {
   id: string; parentId: string | null; generation: number; born: number; x: number; y: number;
@@ -37,6 +45,8 @@ export type Agent = {
   memory: Memory[]; lastAction: Action; lastRejected: boolean;
   /** 仅延迟世界：尚未生效的效果（amount>0 为在途收益，<0 为将要承受的伤害）与当前的自身感受。 */
   pending?: { due: number; amount: number }[]; felt?: { until: number; text: string };
+  /** 仅社会观察世界：最近吃过的东西（显示的描述与时间）与最近一次明显后果的外观。 */
+  social?: { ate: { desc: string; tick: number }[]; look?: { until: number; kind: 'harm' | 'boost' } };
 };
 export type Event = { seq: number; tick: number; kind: string; agentId?: string; targetId?: string; amount?: number; reason?: string };
 export type Lineage = { id: string; parentId: string | null; generation: number; born: number; died: number | null; shape: number };
@@ -75,9 +85,27 @@ export function stateHash(state: unknown): string {
   }
   return (a >>> 0).toString(16).padStart(8, '0') + (b >>> 0).toString(16).padStart(8, '0');
 }
+function validateSocial(r: SemanticSocial): void {
+  const bank = (a: unknown) => Array.isArray(a) && a.length >= 1 && a.length <= 4 && a.every(t => typeof t === 'string' && /^[ -~]{1,80}$/.test(t));
+  if (!r || typeof r !== 'object' || Object.keys(r).sort().join() !== 'boostText,calmText,cues,harmText,lookTicks,window') throw Error('invalid_semantic_social');
+  if (!['language', 'shuffled', 'off'].includes(r.cues) || !Number.isInteger(r.window) || r.window < 20 || r.window > 2000 || !Number.isInteger(r.lookTicks) || r.lookTicks < 10 || r.lookTicks > 500 || !bank(r.harmText) || !bank(r.boostText) || !bank(r.calmText)) throw Error('invalid_semantic_social');
+}
+function validateRipening(sem: SemanticConfig): void {
+  const r = sem.ripening!, n = sem.kinds.length, text = (s: unknown, max: number) => typeof s === 'string' && s.length >= 1 && s.length <= max && /^[ -~]+$/.test(s);
+  if (!r || typeof r !== 'object' || Object.keys(r).sort().join() !== 'cues,multipliers,offsets,perishable,seasonText,seasonTicks,stageText') throw Error('invalid_semantic_ripening');
+  if (!Number.isInteger(r.seasonTicks) || r.seasonTicks < 50 || r.seasonTicks > 5000 || !['language', 'shuffled', 'off'].includes(r.cues)) throw Error('invalid_semantic_ripening');
+  if (!Array.isArray(r.offsets) || r.offsets.length !== n || r.offsets.some(o => !Number.isInteger(o) || o < 0 || o > 3)) throw Error('invalid_semantic_ripening');
+  if (!Array.isArray(r.perishable) || r.perishable.length !== n || r.perishable.some(p => typeof p !== 'boolean')) throw Error('invalid_semantic_ripening');
+  if (!Array.isArray(r.multipliers) || r.multipliers.length !== 4 || r.multipliers.some(m => !Number.isFinite(m) || m < -8 || m > 1)) throw Error('invalid_semantic_ripening');
+  if (!Array.isArray(r.stageText) || r.stageText.length !== 4 || r.stageText.some(t => !text(t, 40))) throw Error('invalid_semantic_ripening');
+  if (!Array.isArray(r.seasonText) || r.seasonText.length !== 4 || r.seasonText.some(a => !Array.isArray(a) || a.length < 1 || a.length > 4 || a.some(t => !text(t, 120)))) throw Error('invalid_semantic_ripening');
+  if (sem.kinds.some(k => k.description.length + 1 + 40 > 240)) throw Error('invalid_semantic_ripening');   // 描述 + 阶段短语必须仍在 240 个 ASCII 字符以内
+}
 function validateSemantic(c: Config): void {
   const sem = c.semantic!;
-  if (!sem || typeof sem !== 'object' || !Array.isArray(sem.kinds) || sem.kinds.length < 1 || sem.kinds.length > 64 || Object.keys(sem).some(k => k !== 'kinds' && k !== 'drift' && k !== 'delay')) throw Error('invalid_semantic');
+  if (!sem || typeof sem !== 'object' || !Array.isArray(sem.kinds) || sem.kinds.length < 1 || sem.kinds.length > 64 || Object.keys(sem).some(k => k !== 'kinds' && k !== 'drift' && k !== 'delay' && k !== 'ripening' && k !== 'social')) throw Error('invalid_semantic');
+  if (sem.social !== undefined) validateSocial(sem.social);
+  if (sem.ripening !== undefined) validateRipening(sem);
   if (sem.delay !== undefined && (!sem.delay || Object.keys(sem.delay).length !== 1 || !Number.isInteger(sem.delay.ticks) || sem.delay.ticks < 1 || sem.delay.ticks > 600)) throw Error('invalid_semantic_delay');
   if (sem.drift !== undefined) {
     const d = sem.drift;
@@ -158,7 +186,7 @@ export class Ecology {
     }
     const agent: Agent = { id: `life-${s.nextId++}`, parentId: parent?.id ?? null, generation: parent ? parent.generation + 1 : 0,
       born: s.tick, x, y, energy, traits, shape: parent?.shape ?? (s.nextId - 1) % 3, heading: parent?.heading ?? 0,
-      lastBirth: s.tick, memory: [], lastAction: 'rest', lastRejected: false, ...(s.config.semantic?.delay ? { pending: [] } : {}) };
+      lastBirth: s.tick, memory: [], lastAction: 'rest', lastRejected: false, ...(s.config.semantic?.delay ? { pending: [] } : {}), ...(s.config.semantic?.social ? { social: { ate: [] } } : {}) };
     s.agents.push(agent); s.lineage.push({ id: agent.id, parentId: agent.parentId, generation: agent.generation, born: s.tick, died: null, shape: agent.shape });
     return agent;
   }
@@ -180,6 +208,34 @@ export class Ecology {
       s.ledger.overflow += chunk - received; remaining -= chunk;
     }
   }
+  /** 成熟周期：当前季节（0–3）与种类 idx 的阶段。无 ripening 时阶段恒为 1（成熟）且不影响任何结算。 */
+  private season(): number { const r = this.state.config.semantic?.ripening; return r ? Math.floor(this.state.tick / r.seasonTicks) % 4 : 0; }
+  private stage(idx: number): number { const r = this.state.config.semantic!.ripening!; return (this.season() + r.offsets[idx]) % 4; }
+  private describe(idx: number): string {
+    const sem = this.state.config.semantic!, r = sem.ripening, base = sem.kinds[idx].description;
+    if (!r || r.cues === 'off') return base;
+    return `${base} ${r.stageText[(this.stage(idx) + (r.cues === 'shuffled' ? 2 : 0)) % 4]}`;
+  }
+  private seasonCue(): string | undefined {
+    const r = this.state.config.semantic?.ripening; if (!r || r.cues === 'off') return undefined;
+    const s = (this.season() + (r.cues === 'shuffled' ? 2 : 0)) % 4, alts = r.seasonText[s]; let x = 2166136261;
+    for (const ch of `${this.state.config.runId}:${Math.floor(this.state.tick / r.seasonTicks)}`) x = Math.imul(x ^ ch.charCodeAt(0), 16777619);
+    return alts[(x >>> 0) % alts.length];
+  }
+  /** 社会观察：邻居 b 的可见外观与最近吃过的东西。 */
+  private seen(b: Agent): { look?: string; ate?: string[] } {
+    const soc = this.state.config.semantic?.social; if (!soc || soc.cues === 'off' || !b.social) return {};
+    const t = this.state.tick; let kind: 'harm' | 'boost' | 'calm' = b.social.look && b.social.look.until > t ? b.social.look.kind : 'calm';
+    if (soc.cues === 'shuffled' && kind !== 'calm') kind = kind === 'harm' ? 'boost' : 'harm';
+    const bank = kind === 'harm' ? soc.harmText : kind === 'boost' ? soc.boostText : soc.calmText; let x = 2166136261;
+    for (const ch of `${this.state.config.runId}:${b.id}:${Math.floor(t / soc.lookTicks)}`) x = Math.imul(x ^ ch.charCodeAt(0), 16777619);
+    const ate = b.social.ate.filter(m => t - m.tick <= soc.window).slice(-3).reverse().map(m => m.desc);
+    return { look: bank[(x >>> 0) % bank.length], ...(ate.length ? { ate } : {}) };
+  }
+  private noteEffect(a: Agent, effect: number): void {   // 明显的后果（收益或伤害 ≥ LOOK_THRESHOLD 能量，约半口的强度）改变外观
+    const soc = this.state.config.semantic?.social; if (!soc || !a.social || Math.abs(effect) < LOOK_THRESHOLD) return;
+    a.social.look = { until: this.state.tick + soc.lookTicks, kind: effect > 0 ? 'boost' : 'harm' };
+  }
   private local(a: Agent): Observation['local'] {
     const s = this.state, c = s.config, r = Math.floor(a.traits.perception), cells: Observation['local'] = [];
     const cx = Math.floor(a.x), cy = Math.floor(a.y);
@@ -187,7 +243,7 @@ export class Ecology {
       if (Math.abs(x + .5 - a.x) + Math.abs(y + .5 - a.y) > a.traits.perception + 1e-9 || !this.clearPath(a.x, a.y, x + .5, y + .5, true)) continue;
       const wall = this.blocked(x + .5, y + .5);
       const idx = y * c.width + x, cell: Observation['local'][number] = { dx: x + .5 - a.x, dy: y + .5 - a.y, blocked: wall, food: wall ? 0 : s.food[idx] };
-      if (s.kinds && !wall && s.food[idx] > .05 && s.kinds[idx] >= 0) cell.desc = c.semantic!.kinds[s.kinds[idx]].description;
+      if (s.kinds && !wall && s.food[idx] > .05 && s.kinds[idx] >= 0) cell.desc = this.describe(s.kinds[idx]);
       cells.push(cell);
     }
     return cells;
@@ -231,9 +287,9 @@ export class Ecology {
       observation: { energy: a.energy, capacity: this.capacity(a), age: s.tick - a.born, traits: clone(a.traits),
         heading: a.heading, lastAction: a.lastAction, lastRejected: a.lastRejected,
         costs: { metabolismPerTick: this.metabolism(a), movementPerUnit: c.moveCost * a.traits.size, decisionTicks: c.decisionTicks, bitePerTick: c.bite },
-        local: this.local(a), neighbors: s.agents.filter(b => b.id !== a.id && Math.hypot(b.x - a.x, b.y - a.y) <= a.traits.perception && this.clearPath(a.x, a.y, b.x, b.y)).slice(0, 8).map(b => ({ dx: b.x - a.x, dy: b.y - a.y, shape: b.shape })),
+        local: this.local(a), neighbors: s.agents.filter(b => b.id !== a.id && Math.hypot(b.x - a.x, b.y - a.y) <= a.traits.perception && this.clearPath(a.x, a.y, b.x, b.y)).slice(0, 8).map(b => ({ dx: b.x - a.x, dy: b.y - a.y, shape: b.shape, ...this.seen(b) })),
         memory: a.memory.map(m => ({ dx: m.x - a.x, dy: m.y - a.y, food: m.food, stepsAgo: s.tick - m.tick, ...(m.desc ? { desc: m.desc } : {}) })),
-        ...(a.felt && a.felt.until > s.tick ? { sensation: a.felt.text } : {}) }, candidates };
+        ...(a.felt && a.felt.until > s.tick ? { sensation: a.felt.text } : {}), ...(this.seasonCue() ? { season: this.seasonCue()! } : {}) }, candidates };
   }
   inspect(): Request[] { const hash = stateHash(this.state); return this.state.agents.map(a => this.inspectAgent(a, hash)); }
   requests(): Request[] {
@@ -279,9 +335,9 @@ export class Ecology {
     const due = a.pending.filter(p => p.due <= s.tick); if (!due.length) return;
     a.pending = a.pending.filter(p => p.due > s.tick);
     for (const p of due) {
-      if (p.amount > 0) { const got = Math.min(p.amount, this.capacity(a) - a.energy); a.energy += got; s.ledger.overflow += p.amount - got; s.metrics.eaten += got; a.felt = { until: s.tick + 30, text: 'a warm wave of strength spreads through your body' }; }
+      if (p.amount > 0) { const got = Math.min(p.amount, this.capacity(a) - a.energy); a.energy += got; s.ledger.overflow += p.amount - got; s.metrics.eaten += got; a.felt = { until: s.tick + 30, text: 'a warm wave of strength spreads through your body' }; this.noteEffect(a, got); }
       else {
-        const harm = Math.min(a.energy, -p.amount), share = -p.amount / this.capacity(a); a.energy -= harm; s.ledger.semanticLoss! += harm;
+        const harm = Math.min(a.energy, -p.amount), share = -p.amount / this.capacity(a); a.energy -= harm; s.ledger.semanticLoss! += harm; this.noteEffect(a, -harm);
         a.felt = { until: s.tick + 30, text: share < .1 ? 'a dull ache stirs in your belly' : share < .3 ? 'sharp cramps twist your stomach and your skin turns clammy' : 'your vision swims and your legs give way beneath you' };
       }
     }
@@ -334,15 +390,16 @@ export class Ecology {
           else if (s.kinds && s.kinds[cell] >= 0) {
             // 语义食物：真实影响由模拟器按种类结算。吃下的食物量一律从场中消失；个体得到 amount*factor（可为负）。
             const idx = s.kinds[cell], drift = c.semantic!.drift, flipped = !!drift && Math.floor(s.tick / drift.everyTicks) % 2 === 1 && drift.flip.includes(idx);
-            const factor = c.semantic!.kinds[idx].factor * (flipped ? -1 : 1); s.food[cell] -= amount;
+            const rip = c.semantic!.ripening, factor = c.semantic!.kinds[idx].factor * (rip && rip.perishable[idx] ? rip.multipliers[this.stage(idx)] : 1) * (flipped ? -1 : 1); s.food[cell] -= amount;
+            if (a.social) { const d = this.describe(idx), last = a.social.ate[a.social.ate.length - 1]; if (last && last.desc === d) last.tick = s.tick; else { a.social.ate.push({ desc: d, tick: s.tick }); if (a.social.ate.length > 6) a.social.ate.shift(); } }   // 一次决策里连续的几口算同一餐
             if (a.pending) {
               // 延迟世界：食物立即从场中消失；效果在 delay.ticks 之后才作用于个体，其间收益记为“在途”。
               const due = s.tick + c.semantic!.delay!.ticks;
               if (factor >= 0) { a.pending.push({ due, amount: amount * factor }); s.ledger.semanticLoss! += amount * (1 - factor); this.emit('ate', { agentId: a.id, amount: amount * factor }); }
               else { a.pending.push({ due, amount: -(amount * -factor) }); s.ledger.semanticLoss! += amount; this.emit('ate', { agentId: a.id, amount: amount * -factor, reason: 'toxic' }); }
             }
-            else if (factor >= 0) { a.energy += amount * factor; s.ledger.semanticLoss! += amount * (1 - factor); s.metrics.eaten += amount * factor; this.emit('ate', { agentId: a.id, amount: amount * factor }); }
-            else { const harm = Math.min(a.energy, amount * -factor); a.energy -= harm; s.ledger.semanticLoss! += amount + harm; this.emit('ate', { agentId: a.id, amount: harm, reason: 'toxic' }); }
+            else if (factor >= 0) { a.energy += amount * factor; s.ledger.semanticLoss! += amount * (1 - factor); s.metrics.eaten += amount * factor; this.noteEffect(a, amount * factor); this.emit('ate', { agentId: a.id, amount: amount * factor }); }
+            else { const harm = Math.min(a.energy, amount * -factor); a.energy -= harm; s.ledger.semanticLoss! += amount + harm; this.noteEffect(a, -harm); this.emit('ate', { agentId: a.id, amount: harm, reason: 'toxic' }); }
           }
           else { s.food[cell] -= amount; a.energy += amount; s.metrics.eaten += amount; this.emit('ate', { agentId: a.id, amount }); }
         }

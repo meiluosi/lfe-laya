@@ -43,7 +43,16 @@ export const randomPolicy: SemanticFactory = () => (q, seed) => randomProposal(q
 export const layaRule = (priors: Priors, threshold = .5): SemanticFactory => () => (q, seed) => ruleProposal(filterRequest(q, d => d === undefined || (priors.get(d) ?? 0) >= threshold), seed);
 /** 预言机：知道每种食物的真实影响（上限，不可用于个体）。 */
 export const oracleRule: SemanticFactory = (kinds, semantic) => {
-  const drift = semantic?.drift;
+  const drift = semantic?.drift, rip = semantic?.ripening;
+  if (rip) {   // W7：显示的描述随阶段变化；预言机知道每个描述对应的种类与当前阶段（上限，不可用于个体）
+    const shown = new Map<string, number>();
+    kinds.forEach((k, i) => { for (let st = 0; st < 4; st++) shown.set(rip.cues === 'off' ? k.description : `${k.description} ${rip.stageText[(st + (rip.cues === 'shuffled' ? 2 : 0)) % 4]}`, i); });
+    return (q, seed) => {
+      const tick = q.identity.tick, flipped = !!drift && Math.floor(tick / drift.everyTicks) % 2 === 1, season = Math.floor(tick / rip.seasonTicks) % 4;
+      const good = (d: string) => { const i = shown.get(d); if (i === undefined) return true; const f = kinds[i].factor * (rip.perishable[i] ? rip.multipliers[(season + rip.offsets[i]) % 4] : 1) * (flipped && drift!.flip.includes(i) ? -1 : 1); return f > 0; };
+      return ruleProposal(filterRequest(q, d => d === undefined || good(d)), seed);
+    };
+  }
   return (q, seed) => {
     const flipped = !!drift && Math.floor(q.identity.tick / drift.everyTicks) % 2 === 1;
     const good = new Set(kinds.filter((k, i) => (flipped && drift!.flip.includes(i) ? -k.factor : k.factor) > 0).map(k => k.description));
