@@ -48,7 +48,7 @@ def encode(request, memory=True):
         if set(item) - {'desc'} != {'dx', 'dy', 'food', 'stepsAgo'} or ('desc' in item and not desc_ok(item['desc'])) or not all(finite(v) for k, v in item.items() if k != 'desc') or item['food'] < 0 or item['stepsAgo'] < 0:
             raise ValueError('memory')
     for item in o['neighbors']:
-        if set(item) != {'dx', 'dy', 'shape'} or not all(finite(v) for v in item.values()) or item['shape'] not in (0, 1, 2) or math.hypot(item['dx'], item['dy']) > o['traits']['perception'] + 1e-7:
+        if set(item) - {'look', 'ate'} != {'dx', 'dy', 'shape'} or not all(finite(item[k]) for k in ('dx', 'dy', 'shape')) or item['shape'] not in (0, 1, 2) or ('look' in item and not (isinstance(item['look'], str) and re.fullmatch(r'[ -~]{1,80}', item['look']))) or ('ate' in item and not (isinstance(item['ate'], list) and 1 <= len(item['ate']) <= 3 and all(isinstance(t, str) and re.fullmatch(r'[ -~]{1,240}', t) for t in item['ate']))) or math.hypot(item['dx'], item['dy']) > o['traits']['perception'] + 1e-7:
             raise ValueError('neighbor')
     candidates = request['candidates']
     if not 1 <= len(candidates) <= 7 or len({c['id'] for c in candidates}) != len(candidates) or 'rest' not in {c['id'] for c in candidates}:
@@ -77,7 +77,12 @@ def encode(request, memory=True):
     text.append('Visible food (rounded to 0.01; amounts below 0.01 omitted): ' + ('; '.join(f"{c['food']:.2f} of {c['desc']} at {location(c['dx'], c['dy'])}" if 'desc' in c else f"{c['food']:.2f} at {location(c['dx'], c['dy'])}" for c in food) if food else 'none above 0.01') + '.')
     walls = [c for c in o['local'] if c['blocked']]
     if walls: text.append('Visible walls: ' + '; '.join(location(c['dx'], c['dy']) for c in walls) + '.')
-    if o['neighbors']: text.append('Nearby creatures: ' + '; '.join(location(n['dx'], n['dy']) for n in o['neighbors']) + '.')
+    if o['neighbors']:
+        def creature(n):
+            s = location(n['dx'], n['dy'])
+            if 'look' in n: s += f" (it looks {n['look']}" + (f"; it recently ate: {' | '.join(n['ate'])}" if 'ate' in n else '') + ')'
+            return s
+        text.append('Nearby creatures: ' + '; '.join(creature(n) for n in o['neighbors']) + '.')
     if memory and o['memory']:
         text.append('Remembered food may be gone: ' + '; '.join((f"{m['food']:.2f} of {m['desc']} at {location(m['dx'], m['dy'])}, {m['stepsAgo']} ticks ago" if 'desc' in m else f"{m['food']:.2f} at {location(m['dx'], m['dy'])}, {m['stepsAgo']} ticks ago") for m in o['memory']) + '.')
     labels = {f'option_{i}': c['id'] for i, c in enumerate(candidates)}
