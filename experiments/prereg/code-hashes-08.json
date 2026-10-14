@@ -1,0 +1,13 @@
+{
+ "packages/evo/factual-train-eval.ts": "624e2c11e62d603e032ed833f7ec85071e6719b5458f4ed9c4e3a186ec2fe1cc",
+ "packages/evo/structured.ts": "5d1d4f8d25b0b839d1905a9f291a3b74a41aeea3ef674442b6bd4d4fa5ce983a",
+ "packages/evo/semantic-run.ts": "cce43c2b0bd7f6296c3e011401fa9ab04e730bb33f44266ae14a729822692fc5",
+ "packages/evo/pools.ts": "5ae4496816f8f54e4dc42018f2522dca767966e90943eff78629b65f76a64270",
+ "packages/evo/pools/factual-train.json": "dcd5816a44c486cb0205ad4b48135ab9c072b8895531bb482528b04b6c988288",
+ "packages/evo/pools/factual.json": "39e0a9683c8d2f7adb926ce3602afcb0fcfbaf93fb5be67c640d28361ab2eb36",
+ "packages/evo/pools/heldout.json": "6fdb8561333d84a11b9dfe75b32bad428056b3ff0e46e1d7f158587e7d0b3a8f",
+ "experiments/evo/laya-prior-v2/factual-train.jsonl": "a771f3541e7a1e8425f31c93ddf275badc9978a3fe6e72b7b7fc570df36157dc",
+ "experiments/evo/laya-prior-v2/factual.jsonl": "f85891d6108e97804ce7b0a6cee60e5fe567c3214d593082e98b3c9a78604c1e",
+ "experiments/evo/laya-prior-v2/heldout.jsonl": "81684880e8a917f50456eb699d1960e46994029adf90e5a866088507ca2364ac",
+ "packages/evo/ontology/vader-lexicon.json": "2048bfaaca51179e677bc29d8ce3fb9bd087838b6a0f4ea236df7b18ff11dce8"
+}
