@@ -1,0 +1,254 @@
+{
+  "protocol": "docs/PREREGISTRATION_08.md",
+  "dry": false,
+  "worldsPerCell": 32,
+  "K": 32,
+  "harmCap": 4,
+  "delay": 80,
+  "inversions": [
+    0.25,
+    0.4
+  ],
+  "seeds": [
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38
+  ],
+  "primary": [
+    {
+      "id": "H1",
+      "claim": "事实方言训练使事实方言上的 laya − vader 差距比情感方言训练大至少 0.02",
+      "statistic": -0.0015,
+      "threshold": 0.02,
+      "effectOk": false,
+      "p": 0.6289,
+      "holmReject": false,
+      "supported": false,
+      "perSeed": [
+        0.0186,
+        0.0008,
+        -0.0148,
+        -0.0032,
+        0.0091,
+        -0.0133,
+        -0.0004,
+        -0.0089
+      ]
+    },
+    {
+      "id": "H2",
+      "claim": "事实方言训练下，事实方言上 laya 优于 none 至少 0.05",
+      "statistic": 0.0323,
+      "threshold": 0.05,
+      "effectOk": false,
+      "p": 0.0039,
+      "holmReject": true,
+      "supported": false,
+      "perSeed": [
+        0.0358,
+        0.0479,
+        0.0381,
+        0.0262,
+        0.0361,
+        0.0297,
+        0.0277,
+        0.017
+      ]
+    },
+    {
+      "id": "H3",
+      "claim": "迁移（非劣效）：事实方言训练的个体在留出方言上 laya − vader > -0.02",
+      "statistic": 0.0621,
+      "threshold": -0.02,
+      "effectOk": true,
+      "p": 0.0039,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        0.0663,
+        0.0635,
+        0.0631,
+        0.0509,
+        0.0706,
+        0.0637,
+        0.0568,
+        0.0621
+      ]
+    }
+  ],
+  "secondary": {
+    "factual": {
+      "layaMinusVader": {
+        "sentiment": [
+          0.0172,
+          0.044,
+          0.03,
+          0.0168,
+          0.0198,
+          0.0397,
+          0.0369,
+          0.0298
+        ],
+        "factual": [
+          0.0358,
+          0.0447,
+          0.0152,
+          0.0136,
+          0.029,
+          0.0265,
+          0.0365,
+          0.0208
+        ]
+      },
+      "layaMinusNone": {
+        "sentiment": [
+          0.0247,
+          0.0569,
+          0.0241,
+          0.0253,
+          0.0426,
+          0.0498,
+          0.044,
+          0.03
+        ],
+        "factual": [
+          0.0358,
+          0.0479,
+          0.0381,
+          0.0262,
+          0.0361,
+          0.0297,
+          0.0277,
+          0.017
+        ]
+      },
+      "vaderMinusNone": {
+        "sentiment": [
+          0.0075,
+          0.0129,
+          -0.0059,
+          0.0085,
+          0.0228,
+          0.0101,
+          0.0071,
+          0.0002
+        ],
+        "factual": [
+          0,
+          0.0032,
+          0.0229,
+          0.0126,
+          0.0072,
+          0.0032,
+          -0.0087,
+          -0.0038
+        ]
+      },
+      "means": {
+        "sentiment-laya": 0.2954,
+        "sentiment-none": 0.2582,
+        "sentiment-vader": 0.2661,
+        "factual-laya": 0.292,
+        "factual-none": 0.2597,
+        "factual-vader": 0.2643
+      },
+      "toxicBites": {
+        "sentiment-laya": 567,
+        "sentiment-none": 736,
+        "sentiment-vader": 583,
+        "factual-laya": 519,
+        "factual-none": 740,
+        "factual-vader": 814
+      }
+    },
+    "heldout": {
+      "layaMinusVader": {
+        "sentiment": [
+          0.0305,
+          0.0294,
+          0.0358,
+          0.0283,
+          0.0169,
+          0.0273,
+          0.0088,
+          0.0399
+        ],
+        "factual": [
+          0.0663,
+          0.0635,
+          0.0631,
+          0.0509,
+          0.0706,
+          0.0637,
+          0.0568,
+          0.0621
+        ]
+      },
+      "layaMinusNone": {
+        "sentiment": [
+          0.0737,
+          0.0761,
+          0.0617,
+          0.0754,
+          0.074,
+          0.0681,
+          0.0799,
+          0.0765
+        ],
+        "factual": [
+          0.0663,
+          0.073,
+          0.0727,
+          0.0737,
+          0.0801,
+          0.0765,
+          0.0729,
+          0.0588
+        ]
+      },
+      "vaderMinusNone": {
+        "sentiment": [
+          0.0433,
+          0.0467,
+          0.0259,
+          0.0471,
+          0.0572,
+          0.0408,
+          0.0711,
+          0.0365
+        ],
+        "factual": [
+          0,
+          0.0095,
+          0.0095,
+          0.0228,
+          0.0095,
+          0.0128,
+          0.0161,
+          -0.0033
+        ]
+      },
+      "means": {
+        "sentiment-laya": 0.334,
+        "sentiment-none": 0.2608,
+        "sentiment-vader": 0.3069,
+        "factual-laya": 0.3333,
+        "factual-none": 0.2616,
+        "factual-vader": 0.2712
+      },
+      "toxicBites": {
+        "sentiment-laya": 386,
+        "sentiment-none": 753,
+        "sentiment-vader": 607,
+        "factual-laya": 338,
+        "factual-none": 749,
+        "factual-vader": 873
+      }
+    }
+  }
+}
