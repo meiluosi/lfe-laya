@@ -16,6 +16,8 @@ export type Observation = {
   memory: { dx: number; dy: number; food: number; stepsAgo: number; desc?: string }[];
   /** 延迟世界：个体此刻的自身感受（语言描述），如“胃里绞痛”。 */
   sensation?: string;
+  /** 成熟周期世界（W7）：环境级的季节提示（语言描述），不说明价值。 */
+  season?: string;
 };
 export type Identity = {
   protocol: string; runId: string; generation: number; epoch: number;

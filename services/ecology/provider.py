@@ -23,10 +23,12 @@ def encode(request, memory=True):
     if set(identity) != {'protocol', 'runId', 'generation', 'epoch', 'decisionId', 'attemptId', 'tick', 'snapshotId', 'agentId'} or identity['protocol'] != 'ecology-decision-v1':
         raise ValueError('identity_schema')
     o = request['observation']
-    if set(o) - {'sensation'} != {'energy', 'capacity', 'age', 'traits', 'heading', 'lastAction', 'lastRejected', 'costs', 'local', 'neighbors', 'memory'}:
+    if set(o) - {'sensation', 'season'} != {'energy', 'capacity', 'age', 'traits', 'heading', 'lastAction', 'lastRejected', 'costs', 'local', 'neighbors', 'memory'}:
         raise ValueError('observation_schema')
     if 'sensation' in o and not (isinstance(o['sensation'], str) and re.fullmatch(r'[ -~]{1,240}', o['sensation'])):
         raise ValueError('sensation')
+    if 'season' in o and not (isinstance(o['season'], str) and re.fullmatch(r'[ -~]{1,120}', o['season'])):
+        raise ValueError('season')
     finite = lambda x: isinstance(x, (int, float)) and not isinstance(x, bool) and math.isfinite(x)
     if not all(finite(o[k]) for k in ('energy', 'capacity', 'age', 'heading')) or o['capacity'] <= 0 or not 0 <= o['energy'] <= o['capacity'] or o['age'] < 0:
         raise ValueError('self_state')
@@ -68,6 +70,7 @@ def encode(request, memory=True):
             f"Each decision lasts {costs['decisionTicks']} ticks. Resting consumes {costs['metabolismPerTick'] * costs['decisionTicks']:.3f} energy. Moving also costs {costs['movementPerUnit']:.3f} per unit. Rest does not restore energy.",
             f"Eating transfers up to {costs['bitePerTick']:.2f} food energy per tick into your body. You must reach food before eating. Other creatures may consume it first.",
             f"Your last action was {o['lastAction']}; execution was {'blocked or depleted' if o['lastRejected'] else 'not rejected'}." ]
+    if o.get('season'): text.append(f"The season: {o['season']}.")
     if o.get('sensation'): text.append(f"You feel {o['sensation']}.")
     food = [c for c in o['local'] if not c['blocked'] and c['food'] >= .01]
     # 明确量化精度；未显示的 <0.01 能量并非不可观察，原始观测仍完整记录。
