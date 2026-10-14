@@ -19,7 +19,7 @@ export function registerPools(): Record<'train' | 'test', PoolEntry[]> & { heldo
 /** Laya 先验表（pEat，两个选项顺序平均）。尚未算完的条目缺失，缺失的在控制器里按“无语义”处理。 */
 export function loadLayaPriors(dialect: Dialect): Priors {
   const path = new URL(`../../experiments/evo/laya-prior-v2/${dialect}.jsonl`, import.meta.url), m: Priors = new Map();
-  if (existsSync(path)) for (const line of readFileSync(path, 'utf8').split('\n')) if (line) { const j = JSON.parse(line); m.set(j.text, j.pEat); }
+  for (const p of [path, ...['A', 'B'].map(s => new URL(`../../experiments/evo/laya-prior-v2/${dialect}-ripe-${s}.jsonl`, import.meta.url))]) if (existsSync(p)) for (const line of readFileSync(p, 'utf8').split('\n')) if (line) { const j = JSON.parse(line); m.set(j.text, j.pEat); }   // W7：阶段化描述的先验表一并载入
   return m;
 }
 /** Laya 编码器对描述的缓存向量（PCA 32 维、L2 归一化；只依赖文本）。W5b 层次信念用。 */
