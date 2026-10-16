@@ -53,20 +53,34 @@ const sorted = hyps.slice().sort((a, b) => a.p - b.p || a.id.localeCompare(b.id)
 sorted.forEach((h, i) => { const r = !stop && h.p < 0.05 / (sorted.length - i); if (!r) stop = true; reject.set(h.id, r); });
 const verdicts = hyps.map(h => ({ id: h.id, claim: h.claim, statistic: r4(h.stat), threshold: h.thr, effectOk: h.stat >= h.thr, p: r4(h.p), holmReject: reject.get(h.id)!, supported: reject.get(h.id)! && h.stat >= h.thr, perSeed: h.d.map(r4) }));
 
-// 世界覆盖完整性检查：每单元应有 8 种子 × 32 世界 = 256 条，且 seq 为完整 0..31
-const coverage: Record<string, unknown> = {}; const problems: string[] = [];
-for (const pool of POOL_IDS) for (const p of PRIORS) for (const s of SEEDS) for (const c of CUES) for (const inv of INVERSIONS) {
+// 世界覆盖完整性检查：
+//   --full（正式评估）：按协议网格（2 池 × 3 先验 × 8 种子 × 3 线索 × 2 欺骗，每单元 32 世界）逐格校验，
+//     缺任何一格就报错退出——避免把不完整的分片结果当成正式结论。
+//   默认（开发空跑）：按数据里实际出现的池与种子推断规模，只报告问题。
+const FULL = process.argv.includes('--full');
+const FULL_POOLS = ['heldout', 'factual'], FULL_SEEDS = [41, 42, 43, 44, 45, 46, 47, 48];
+const checkPools = FULL ? FULL_POOLS : POOL_IDS, checkSeeds = FULL ? FULL_SEEDS : SEEDS;
+const problems: string[] = [];
+let observed = 0, expectedWorlds = 0;
+for (const pool of checkPools) for (const p of PRIORS) for (const s of checkSeeds) for (const c of CUES) for (const inv of INVERSIONS) {
+  expectedWorlds += 32;
   const cell = fits[pool]?.[`${p}-${s}`]?.[`${c}|${inv}`] ?? [];
   const seqs = new Set(cell.map(r => r.seq));
-  if (cell.length !== 32 || seqs.size !== 32) problems.push(`${pool}|${p}-${s}|${c}|${inv}: n=${cell.length}, seq=${seqs.size}`);
+  observed += cell.length;
+  if (cell.length !== 32 || seqs.size !== 32) problems.push(`${pool}|${p}-${s}|${c}|${inv}: n=${cell.length}, 唯一 seq=${seqs.size}`);
 }
-coverage.expectedCells = POOL_IDS.length * PRIORS.length * SEEDS.length * CUES.length * INVERSIONS.length;
-coverage.expectedWorlds = coverage.expectedCells * 32;
-coverage.observedWorlds = rows.length;
-coverage.duplicatesDropped = dup;
-coverage.problems = problems;
-coverage.shardFiles = files.length;
-coverage.shardsExpected = expected;
+const coverage = {
+  mode: FULL ? 'full' : 'dev',
+  expectedCells: checkPools.length * PRIORS.length * checkSeeds.length * CUES.length * INVERSIONS.length,
+  expectedWorlds, observedWorlds: observed, duplicatesDropped: dup,
+  shardFiles: files.length, shardsExpected: expected,
+  ok: problems.length === 0 && dup === 0 && observed === expectedWorlds,
+  problems,
+};
+if (FULL && !coverage.ok) {
+  console.error(JSON.stringify({ coverage }, null, 1));
+  throw Error(`coverage_incomplete：正式评估要求完整网格，${problems.length} 个单元不完整`);
+}
 
 const secondary = Object.fromEntries(POOL_IDS.map(pool => [pool, {
   meanFitness: Object.fromEntries(PRIORS.flatMap(p => CUES.map(c => [`${p}|${c}`, r4(mean(SEEDS.map(s => score(pool, `${p}-${s}`, c))))]))),
