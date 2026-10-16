@@ -1,0 +1,257 @@
+{
+  "protocol": "docs/PREREGISTRATION_09.md",
+  "sharded": {
+    "shards": 8,
+    "files": 8
+  },
+  "worldsPerCell": 32,
+  "K": 32,
+  "harmCap": 4,
+  "inversions": [
+    0.25,
+    0.4
+  ],
+  "seeds": [
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48
+  ],
+  "pools": [
+    "factual",
+    "heldout"
+  ],
+  "coverage": {
+    "mode": "full",
+    "expectedCells": 288,
+    "expectedWorlds": 9216,
+    "observedWorlds": 9216,
+    "duplicatesDropped": 0,
+    "shardFiles": 8,
+    "shardsExpected": 8,
+    "ok": true,
+    "problems": []
+  },
+  "primary": [
+    {
+      "id": "H1",
+      "claim": "laya 个体：真实外观线索比不显示线索至少高 0.02",
+      "statistic": 0.047,
+      "threshold": 0.02,
+      "effectOk": true,
+      "p": 0.0039,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        0.0381,
+        0.0302,
+        0.0678,
+        0.0562,
+        0.0579,
+        0.041,
+        0.0464,
+        0.038
+      ]
+    },
+    {
+      "id": "H2",
+      "claim": "laya 个体：不显示线索比错配线索至少高 0.05（错误的社会信息有代价）",
+      "statistic": 0.1008,
+      "threshold": 0.05,
+      "effectOk": true,
+      "p": 0.0039,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        0.1081,
+        0.1245,
+        0.0904,
+        0.0821,
+        0.079,
+        0.1113,
+        0.106,
+        0.1051
+      ]
+    },
+    {
+      "id": "H3",
+      "claim": "社会信息的收益（真实 − 不显示）：laya 比 vader 至少多 0.01",
+      "statistic": 0.0253,
+      "threshold": 0.01,
+      "effectOk": true,
+      "p": 0.0273,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        0.0309,
+        -0.006,
+        0.0678,
+        0.011,
+        0.0579,
+        0.041,
+        0.0083,
+        -0.0091
+      ]
+    }
+  ],
+  "secondary": {
+    "factual": {
+      "meanFitness": {
+        "laya|language": 0.61,
+        "laya|off": 0.5533,
+        "laya|shuffled": 0.455,
+        "none|language": 0.559,
+        "none|off": 0.559,
+        "none|shuffled": 0.559,
+        "vader|language": 0.5164,
+        "vader|off": 0.4907,
+        "vader|shuffled": 0.442
+      },
+      "gainLanguageMinusOff": {
+        "laya": [
+          0.0641,
+          0.0463,
+          0.0791,
+          0.0576,
+          0.0519,
+          0.0391,
+          0.0493,
+          0.0664
+        ],
+        "none": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "vader": [
+          0.0332,
+          0.009,
+          0,
+          0.0729,
+          0,
+          0,
+          0.0416,
+          0.0489
+        ]
+      },
+      "layaMinusNoneLanguage": [
+        0.048,
+        0.0269,
+        0.0119,
+        0.0483,
+        0.0311,
+        0.0292,
+        0.0573,
+        0.1551
+      ],
+      "toxicBites": {
+        "laya|language": 674,
+        "laya|off": 782,
+        "laya|shuffled": 587,
+        "none|language": 743,
+        "none|off": 743,
+        "none|shuffled": 743,
+        "vader|language": 751,
+        "vader|off": 703,
+        "vader|shuffled": 662
+      },
+      "survival": {
+        "laya|language": 0.7012,
+        "laya|off": 0.6177,
+        "laya|shuffled": 0.5482,
+        "none|language": 0.6361,
+        "none|off": 0.6361,
+        "none|shuffled": 0.6361,
+        "vader|language": 0.6044,
+        "vader|off": 0.575,
+        "vader|shuffled": 0.5296
+      }
+    },
+    "heldout": {
+      "meanFitness": {
+        "laya|language": 0.6286,
+        "laya|off": 0.5817,
+        "laya|shuffled": 0.4809,
+        "none|language": 0.579,
+        "none|off": 0.579,
+        "none|shuffled": 0.579,
+        "vader|language": 0.5411,
+        "vader|off": 0.5194,
+        "vader|shuffled": 0.4742
+      },
+      "gainLanguageMinusOff": {
+        "laya": [
+          0.0381,
+          0.0302,
+          0.0678,
+          0.0562,
+          0.0579,
+          0.041,
+          0.0464,
+          0.038
+        ],
+        "none": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ],
+        "vader": [
+          0.0072,
+          0.0362,
+          0,
+          0.0451,
+          0,
+          0,
+          0.0381,
+          0.0471
+        ]
+      },
+      "layaMinusNoneLanguage": [
+        0.0189,
+        0.0305,
+        0.0162,
+        0.0287,
+        0.0444,
+        0.0534,
+        0.0382,
+        0.167
+      ],
+      "toxicBites": {
+        "laya|language": 659,
+        "laya|off": 782,
+        "laya|shuffled": 571,
+        "none|language": 751,
+        "none|off": 751,
+        "none|shuffled": 751,
+        "vader|language": 763,
+        "vader|off": 718,
+        "vader|shuffled": 686
+      },
+      "survival": {
+        "laya|language": 0.7334,
+        "laya|off": 0.6488,
+        "laya|shuffled": 0.5864,
+        "none|language": 0.659,
+        "none|off": 0.659,
+        "none|shuffled": 0.659,
+        "vader|language": 0.6348,
+        "vader|off": 0.6023,
+        "vader|shuffled": 0.5664
+      }
+    }
+  }
+}
