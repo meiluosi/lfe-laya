@@ -1,0 +1,9 @@
+{
+ "purpose": "开发期等价性验证（非确认性、不属于预注册 09 协议）：验证分片驱动与单进程 social-eval 路径逐世界一致",
+ "checkedWorlds": 36,
+ "checkedFields": 108,
+ "mismatches": 0,
+ "method": "分片驱动 --shard 1 --shards 2 --dry --seeds 2（测试方言）产生的每个世界，与 packages/evo/eval-refcheck.ts 单进程逐世界输出比对 fitness/toxicBites/survival",
+ "date": "2026-10-16",
+ "result": "等价"
+}

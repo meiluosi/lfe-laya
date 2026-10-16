@@ -55,6 +55,12 @@ node packages/evo/semantic-evolve.ts experiments/evo/f9-<laya|none|vader>-<s> \
 
 冻结后只允许修复不改变协议语义的缺陷并公开记录；评估只运行一次。
 
+**2026-10-16 记录（协议语义未变，两处程序性偏离）：**
+
+1. **基因组哈希的提交晚于训练完成。** §9 要求“训练完成后、评估前”写入并提交哈希；本次哈希（`experiments/prereg/genome-hashes-09.json`，提交 `7cb6b1f`）是在 24 次训练全部结束之后生成的，而不是在训练结束的当时。训练期间没有挑选、剔除、重训任何基因组，也没有依据中间结果改动协议：24 次训练的 `manifest.json` 中 13 个源文件的哈希完全一致，且当前工作区的这 13 个文件与训练时逐字节相同，即训练与评估用的是同一份代码。
+2. **评估改为分片并行执行。** 27648 个世界按 `seq % 8` 切成 8 个分片（`packages/evo/social-eval-shard.ts`），再用 `packages/evo/social-eval-merge.ts` 按 `packages/evo/social-eval.ts` 的同一公式重算统计。分片不改变任何协议常量、世界种子或 spec 序列；对 36 个世界 × 3 个字段（fitness / toxicBites / survival）做过单进程逐世界等价性验证，0 处不一致（`experiments/evo/social-eval-01/equivalence-check.json`）。单进程版本 `packages/evo/social-eval.ts` 未被修改，仍是协议的权威实现。
+
+
 ## 8. 评估代码
 
 `packages/evo/social-eval.ts`（分支 `w78`）；开发空跑只使用测试方言与极小规模的试训练基因组（`--dry`）。冻结前需把分支 `w78` 合并或固定到一个提交，评估与训练使用同一提交。
