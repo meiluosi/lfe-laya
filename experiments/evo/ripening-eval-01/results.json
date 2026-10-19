@@ -1,0 +1,195 @@
+{
+  "protocol": "docs/PREREGISTRATION_10.md",
+  "sharded": {
+    "shards": 8,
+    "files": 8
+  },
+  "worldsPerCell": 32,
+  "K": 16,
+  "harmCap": 4,
+  "seasonTicks": 300,
+  "poolLimit": 1000,
+  "inversions": [
+    0.25,
+    0.4
+  ],
+  "seeds": [
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58
+  ],
+  "coverage": {
+    "mode": "full",
+    "expectedWorlds": 4608,
+    "observedWorlds": 4608,
+    "duplicatesDropped": 0,
+    "shardFiles": 8,
+    "shardsExpected": 8,
+    "ok": true,
+    "problems": []
+  },
+  "primary": [
+    {
+      "id": "H1",
+      "claim": "真实线索下 laya 优于 none 至少 0.03",
+      "statistic": 0.0603,
+      "threshold": 0.03,
+      "effectOk": true,
+      "p": 0.0039,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        0.0412,
+        0.0458,
+        0.048,
+        0.1301,
+        0.048,
+        0.0437,
+        0.0825,
+        0.0435
+      ]
+    },
+    {
+      "id": "H2",
+      "claim": "laya 个体：真实线索比错配线索至少高 0.05（个体在使用阶段线索）",
+      "statistic": 0.0812,
+      "threshold": 0.05,
+      "effectOk": true,
+      "p": 0.0039,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        0.0743,
+        0.0802,
+        0.0821,
+        0.0829,
+        0.0791,
+        0.0816,
+        0.0866,
+        0.0825
+      ]
+    },
+    {
+      "id": "H3",
+      "claim": "真实线索下 laya 优于 vader 至少 0.01",
+      "statistic": 0.0054,
+      "threshold": 0.01,
+      "effectOk": false,
+      "p": 0.1328,
+      "holmReject": false,
+      "supported": false,
+      "perSeed": [
+        0.0021,
+        -0.0192,
+        0.0161,
+        0.021,
+        0.0129,
+        -0.0058,
+        0.0092,
+        0.0071
+      ]
+    }
+  ],
+  "secondary": {
+    "meanFitness": {
+      "laya|language": 0.2459,
+      "laya|off": 0.212,
+      "laya|shuffled": 0.1648,
+      "none|language": 0.1856,
+      "none|off": 0.186,
+      "none|shuffled": 0.1858,
+      "vader|language": 0.2405,
+      "vader|off": 0.1951,
+      "vader|shuffled": 0.1569
+    },
+    "cueGain": {
+      "laya": {
+        "languageMinusOff": [
+          0.0243,
+          0.0344,
+          0.0391,
+          0.0344,
+          0.0328,
+          0.0353,
+          0.0385,
+          0.0329
+        ],
+        "offMinusShuffled": [
+          0.0499,
+          0.0458,
+          0.043,
+          0.0485,
+          0.0462,
+          0.0463,
+          0.048,
+          0.0496
+        ]
+      },
+      "none": {
+        "languageMinusOff": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          -0.0032,
+          0
+        ],
+        "offMinusShuffled": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0.0014,
+          0
+        ]
+      },
+      "vader": {
+        "languageMinusOff": [
+          0.0431,
+          0.0727,
+          0.0341,
+          0.0338,
+          0.0372,
+          0.0517,
+          0.0539,
+          0.037
+        ],
+        "offMinusShuffled": [
+          0.0345,
+          0.0556,
+          0.0343,
+          0.0373,
+          0.031,
+          0.0364,
+          0.0526,
+          0.0234
+        ]
+      }
+    },
+    "toxicBites": {
+      "laya|language": 215,
+      "laya|off": 132,
+      "laya|shuffled": 240,
+      "none|language": 76,
+      "none|off": 76,
+      "none|shuffled": 76,
+      "vader|language": 179,
+      "vader|off": 64,
+      "vader|shuffled": 190
+    },
+    "neverEatsShare": {
+      "laya": 0,
+      "none": 0.75,
+      "vader": 0
+    }
+  }
+}
