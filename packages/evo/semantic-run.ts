@@ -19,6 +19,7 @@ export function semanticWorldConfig(spec: SemanticSpec) {
 }
 export function runSemanticWorld(spec: SemanticSpec, factory: SemanticFactory): EvalResult & { toxicBites: number } {
   const config = semanticWorldConfig(spec), w = new Ecology(config), controller = factory(config.semantic.kinds, config.semantic);
+  w.lean = process.env.LFE_LEAN !== '0';   // 精简模式：只读 accepted / outcomes / events；LFE_LEAN=0 回到完整模式（结果逐世界一致，见 tests/lean.test.mjs）
   let toxic = 0;
   while (!w.done()) {
     const r = w.step(w.requests().map(q => controller(q, spec.seed))); if (!r.accepted) throw Error(r.reason);

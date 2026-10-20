@@ -100,3 +100,15 @@
 - 拆分前端文件时按“原样搬运 + 类型检查 + 冒烟”进行，不在同一次改动里改行为。
 - 2026-10-02 端到端验证：重构后启动带真实 Laya 的服务，`/decide` 对 `real-smoke-01` 第 2 轮 8 条请求返回的概率与原记录逐位一致，MPS，无 CPU 降级。
 - 2026-10-02 前端重设计（观察台）已实现 T1–T6 主体，见 [FRONTEND_REDESIGN.md](FRONTEND_REDESIGN.md)；`scripts/verify.sh --ui` 现在同时运行旧版与观察台冒烟。顺带：`reset` 现在清理旧分支与其学习运行。
+
+## 精简模式（2026-10-21）：进化 / 评估的模拟速度
+
+**性能分析**（`node --cpu-prof`，4 个池世界、延迟 40、结构化个体）：`stateHash` 占 43%，`structuredClone` + `clone` 约 21%，两者合计约 64%；而进化与评估只读取 `accepted / outcomes / events`。
+
+**做法**：`Ecology.lean`（默认 `false`）。精简模式下：不计算整状态哈希（`snapshotId` 改为 `lean:<epoch>:<tick>`，每轮唯一，过期提案仍被拒绝）；`requests()` 直接返回内部数组（调用方不得修改）；`step()` 只返回 `accepted / outcomes / events`。`runSemanticWorld` 默认使用精简模式，`LFE_LEAN=0` 回到完整模式。
+
+**结果**：同一批世界，每个世界 1869 ms → 333 ms（约 5.6 倍），适应度逐位相同（`fitness sum 1.755082` 两种模式一致）。
+
+**保证**：`tests/lean.test.mjs` 对普通池世界、延迟、漂移、成熟周期、社会观察五种配置、blind / oracle / structured 三类控制器，比较 `runSemanticWorld` 的完整返回值（深度相等）；并逐轮比较两种模式下的 outcomes 与 events；黄金测试与全部原有测试通过。完整模式的行为未改变，因此已冻结的预注册评估代码仍可逐位复现。
+
+**已知问题（与精简模式无关）**：drift + 预言机 + 种子 12 在原始代码里就会抛出 `invalid_agent`（两种模式都会）。尚未查明原因；此前的漂移实验没有使用该种子。

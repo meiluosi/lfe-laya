@@ -291,11 +291,14 @@ export class Ecology {
         memory: a.memory.map(m => ({ dx: m.x - a.x, dy: m.y - a.y, food: m.food, stepsAgo: s.tick - m.tick, ...(m.desc ? { desc: m.desc } : {}) })),
         ...(a.felt && a.felt.until > s.tick ? { sensation: a.felt.text } : {}), ...(this.seasonCue() ? { season: this.seasonCue()! } : {}) }, candidates };
   }
-  inspect(): Request[] { const hash = stateHash(this.state); return this.state.agents.map(a => this.inspectAgent(a, hash)); }
+  /** 精简模式（仅供进化 / 评估等只读 outcomes 与 events 的调用方）：不计算整个状态的哈希（snapshotId 改为 lean:<epoch>:<tick>，每轮唯一），
+   *  requests() 直接返回内部数组（调用方不得修改），step() 只返回 accepted / outcomes / events。世界动力学与随机数序列与默认模式完全一致（tests/lean.test.mjs 逐世界核对）。 */
+  lean = false;
+  inspect(): Request[] { const hash = this.lean ? `lean:${this.state.epoch}:${this.state.tick}` : stateHash(this.state); return this.state.agents.map(a => this.inspectAgent(a, hash)); }
   requests(): Request[] {
     if (this.done()) throw Error('world_done');
     if (!this.pending) this.pending = this.inspect();
-    return clone(this.pending);
+    return this.lean ? this.pending : clone(this.pending);
   }
   retry(agentId?: string): Request[] {
     const requests = this.requests();
@@ -365,7 +368,7 @@ export class Ecology {
       const reason = validateProposal(request, byId.get(request.identity.agentId)!);
       if (reason) return { accepted: false, reason };
     }
-    const s = this.state, c = s.config, beforeHash = stateHash(s), requests = clone(this.pending), startTick = s.tick;
+    const s = this.state, c = s.config, beforeHash = this.lean ? '' : stateHash(s), requests = this.lean ? this.pending : clone(this.pending), startTick = s.tick;
     this.roundEvents = [];
     const outcomes: Outcome[] = s.agents.map(a => ({ agentId: a.id, action: byId.get(a.id)!.action, startTick: s.tick, endTick: s.tick,
       energyBefore: a.energy, energyAfter: a.energy, reward: 0, rewards: [], terminated: false, truncated: false, rejected: false }));
@@ -434,6 +437,7 @@ export class Ecology {
     for (const o of outcomes) o.truncated = !o.terminated && s.tick >= c.horizon;
     this.refreshMemories(); this.pending = null; this.attempts.clear(); this.assertValid();
     const events = this.roundEvents; this.roundEvents = null;
+    if (this.lean) return { accepted: true, outcomes, events };
     return { accepted: true, requests, proposals: requests.map(r => clone(byId.get(r.identity.agentId)!)), outcomes,
       events, beforeHash, afterHash: stateHash(s), snapshot: this.snapshot() };
   }
