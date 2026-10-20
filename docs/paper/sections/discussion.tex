@@ -1,2 +1,34 @@
 \section{Discussion}
-\todo{Write after Results. Plan: PLAN.md, Discussion P1--P5 and Limitations (all items).}
+\label{sec:discussion}
+
+\paragraph{The value of a frozen prior is conditional.}
+Across eight pre-registered comparisons the prior helped when consequences were delayed and its benefit grew with the delay (Section~\ref{sec:res-delay}); it was not harmful, but not demonstrably useful either, when feedback was immediate; and it added nothing when experience-only individuals could already solve the task (Section~\ref{sec:res-fair}). The same pattern explains why a seemingly large early effect did not replicate (Section~\ref{sec:res-null}) and why an apparent harm without delay appeared under mismatched training (Section~\ref{sec:res-delay}). We therefore read the prior as a way to avoid costly experiments, whose worth rises with the cost of an experiment: a delayed consequence means that the creature cannot learn from one meal which food made it ill, so a trusted prior replaces trial and error that would otherwise be expensive or fatal.
+
+\paragraph{What evolution learns is how much to trust.}
+The genomes do not contain the knowledge in the prior; they contain how strongly to rely on it and how to combine it with experience. This is why the trust learned for the frozen model carried over to a dialect it had not been trained on, whereas the trust learned for a sentiment lexicon did not (Section~\ref{sec:res-lexicon}): the lexicon's reliability depends on the dialect, the frozen model's did not in our experiments. We have not tested this explanation directly, and the lexicon's disadvantage disappears when the text can be read by sentiment alone (Section~\ref{sec:res-cues}).
+
+\paragraph{Cues are used, but the manipulation must be read with care.}
+Individuals with a prior gained from true neighbour appearances and true stage phrases and lost when they were mismatched, while individuals without a prior ignored them. A mismatch, however, relabels a cue consistently; individuals whose beliefs are keyed on the literal text are unaffected by it, which is why the cost of a mismatch measures reliance on the \emph{meaning} of the cue rather than on the cue as such.
+
+\paragraph{Implications.}
+For a designer of agents that combine a pretrained model with learning, the practical message is conditional: use a frozen prior when experimentation is costly, delayed or dangerous and when the model's judgements are reliable for the text at hand; do not expect it to help in worlds where trial and error suffices; and do not take an advantage over a sentiment lexicon as evidence of understanding unless the texts require knowledge that sentiment does not carry.
+
+\paragraph{Relation to the Baldwin effect.}
+Our design separates the genome from the frozen model and allows the contribution of each to be varied, which is the setting in which one could ask whether evolution can assimilate what a frozen model knows. We have run only a development-phase experiment on this question and do not draw conclusions here.
+
+\section{Limitations}
+\label{sec:limitations}
+\begin{itemize}
+\item \textbf{Simulation and templated scenarios.} The world is a simulated grid with templated food scenarios; the results concern the behaviour of evolved agents in this ecology, not real organisms or open-ended language.
+\item \textbf{Author-written dialects.} All four dialects were written by one author. They are independent of any model output, but they are still one person's natural language; the factual dialect in particular encodes the author's idea of ``world knowledge''.
+\item \textbf{Hand-tuned world difficulty and thresholds.} Effect-size thresholds were set from development-phase results, and the difficulty of the ripening world was adjusted during development. This may favour individuals that have a prior. Two comparisons (pre-registrations 04 and 08) show a small effect in a certain direction that missed its threshold; the tiered reading in Table~\ref{tab:tiers} makes this visible.
+\item \textbf{Structured individuals.} Individuals are a rule skeleton with nine or ten evolved parameters; the prior enters through one term of a belief update. Results may differ for other individuals, including neural policies.
+\item \textbf{The frozen model is used as a cache.} \laya{} is not called in the simulation loop, and it is an encoder with a fine-tuned decision head rather than a generative language model; we do not claim that the findings extend to generative models. Its model card describes it as a base to be specialised, and we observe high zero-shot discrimination only for our food-description task, after averaging over two option orders to remove its preference for the first option.
+\item \textbf{Small numbers of seeds and rough intervals.} Most comparisons use six or eight training seeds; intervals over seeds are rough. The exact sign-flip test can reach $p=1/256$ at best with eight seeds.
+\item \textbf{Reuse of evaluation pools and multiple testing.} The held-out field-notes pool was evaluated in several pre-registrations (summary statistics only, never used for tuning), and hypothesis tests are not corrected across pre-registrations.
+\item \textbf{$\texttt{laya}-\texttt{none}$ is not a fair learning comparison.} An individual without a prior cannot read the descriptions at all; in two ripening worlds most of them evolved never to eat. The comparison that treats both sides fairly is the one in Section~\ref{sec:res-fair}.
+\item \textbf{Procedural deviations.} They are listed in Section~\ref{sec:protocol}.
+\item \textbf{Throughput.} Our measurements do not support extrapolation to larger populations or to calling a large model at every decision.
+\end{itemize}
+\section{Reproducibility and data}
+All code, the four dialects and their generated pools, the cached model judgements and embeddings, the evolved genomes with their hashes, and the raw results of every pre-registered evaluation are in the project repository (code under Apache-2.0, text and data under CC BY 4.0). The evaluation scripts refuse to run if a genome hash differs from the committed one, and the cached judgements make every evaluation reproducible without running the model.
