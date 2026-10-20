@@ -26,6 +26,7 @@ def tier_en(t):
     return t.replace('；', '; ')
 seen = {}; main_rows, all_rows = [], []
 for r in rows:
+    r = r[:10]
     if r[8] == '次要': continue
     k = seen.get(r[0], 0); seen[r[0]] = k + 1; lab = LABELS[r[0]][k]
     line = (r[0], lab, r[2], r3(r[3]), f'[{r3(r[4])}, {r3(r[5])}]', f'{r[6]:.4f}', '' if r[7] is None else f'{r[7]:+.2f}', FORMAL.get(r[8], r[8]), tier_en(r[9]))

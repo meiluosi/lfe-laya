@@ -17,7 +17,7 @@ export function loadPriors(path = new URL('../../experiments/evo/laya-prior-v1.j
 export function semanticWorldConfig(spec: SemanticSpec) {
   return { ...BASE, ...SCENARIOS[spec.scenario ?? 'semantic'], ...semanticConfig(spec.seed, spec.options), seed: spec.seed, runId: `sem-${spec.options.split}-${spec.seed}` };
 }
-export function runSemanticWorld(spec: SemanticSpec, factory: SemanticFactory): EvalResult & { toxicBites: number } {
+export function runSemanticWorld(spec: SemanticSpec, factory: SemanticFactory): EvalResult & { toxicBites: number; lifetimes: { t: number; died: boolean }[] } {
   const config = semanticWorldConfig(spec), w = new Ecology(config), controller = factory(config.semantic.kinds, config.semantic);
   w.lean = process.env.LFE_LEAN !== '0';   // 精简模式：只读 accepted / outcomes / events；LFE_LEAN=0 回到完整模式（结果逐世界一致，见 tests/lean.test.mjs）
   let toxic = 0;
@@ -29,7 +29,8 @@ export function runSemanticWorld(spec: SemanticSpec, factory: SemanticFactory): 
   const s = w.snapshot(), n = config.initialAgents, cap = s.config.capacity;
   const survival = s.metrics.agentTicks / (n * config.horizon), lowEnergy = s.metrics.lowEnergyTicks / s.metrics.agentTicks;
   const energyFraction = s.agents.reduce((a, x) => a + x.energy / (cap * x.traits.size), 0) / n;
-  return { survival, lowEnergy, energyFraction, living: s.agents.length, deaths: s.metrics.deaths, toxicBites: toxic, fitness: FITNESS_WEIGHTS.survival * survival + FITNESS_WEIGHTS.energy * energyFraction };
+  const lifetimes = s.lineage.map(l => ({ t: (l.died ?? s.tick) - l.born, died: l.died !== null && l.died !== undefined }));   // 生存分析：每个个体的寿命，存活者在地平线处删失
+  return { survival, lowEnergy, energyFraction, living: s.agents.length, deaths: s.metrics.deaths, toxicBites: toxic, lifetimes, fitness: FITNESS_WEIGHTS.survival * survival + FITNESS_WEIGHTS.energy * energyFraction };
 }
 /** 把不想要的食物从个体的观测里“抹掉”，再交给无语义的规则控制器。 */
 export function filterRequest(q: Request, keep: (desc: string | undefined) => boolean): Request {

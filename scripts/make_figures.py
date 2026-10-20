@@ -118,8 +118,38 @@ def fig_auc():
         for i, ln in enumerate(name.split('\n')): s.text(gx + 90, H - B + 40 + i * 15, ln, 12, 'middle')
     s.save('fig4_auc.svg')
 
+
+# ---------- Figure 5: training progress on a fixed test sample (convergence check) ----------
+def fig_training():
+    panels = [('Delay 40 (pre-reg. 07)', 'f7-{p}-d40-{s}', range(31, 39)), ('Delay 80 (pre-reg. 07)', 'f7-{p}-d80-{s}', range(31, 39))]
+    W, H, T, B, L = 800, 380, 70, 54, 56; s = Svg(W, H); s.text(20, 28, 'Training progress on a fixed test sample', 15, weight='bold')
+    s.text(20, 46, 'Fitness of the evolving mean genome every 10 generations; line = mean over 8 seeds, band = min to max.', 12, fill=C['gray'])
+    pw = (W - L - 30) / 2; ymax = 0.5; Y = lambda v: T + (1 - v / ymax) * (H - T - B)
+    for pi, (title, pat, seeds) in enumerate(panels):
+        x0 = L + pi * (pw + 20); X = lambda g: x0 + (g - 1) / 39 * (pw - 30); s.text(x0 + (pw - 30) / 2, T - 12, title, 12, 'middle', weight='bold')
+        for v in [0, 0.1, 0.2, 0.3, 0.4, 0.5]: s.line(x0, Y(v), x0 + pw - 30, Y(v), C['ink'] if v == 0 else C['grid']); (pi == 0) and s.text(x0 - 6, Y(v) + 4, f'{v:.1f}', 10, 'end', C['gray'])
+        for g in [1, 10, 20, 30, 40]: s.text(X(g), H - B + 16, str(g), 10, 'middle', C['gray'])
+        for pr in ['laya', 'none', 'vader']:
+            runs = {}
+            for sd in seeds:
+                f = ROOT / 'experiments' / 'evo' / pat.format(p=pr, s=sd) / 'generations.jsonl'
+                if f.exists():
+                    for l in f.read_text().splitlines():
+                        if l.strip():
+                            r = json.loads(l)
+                            if 'testSampled' in r: runs.setdefault(r['generation'] + 1, []).append(r['testSampled']['fitness'])
+            gs = sorted(runs)
+            if not gs: continue
+            lo = [min(runs[g]) for g in gs]; hi = [max(runs[g]) for g in gs]; mn = [sum(runs[g]) / len(runs[g]) for g in gs]
+            pts = ' '.join(f'{X(g):.1f},{Y(h):.1f}' for g, h in zip(gs, hi)) + ' ' + ' '.join(f'{X(g):.1f},{Y(l):.1f}' for g, l in zip(reversed(gs), reversed(lo)))
+            s.add(f'<polygon points="{pts}" fill="{C[pr]}" opacity="0.18"/>'); s.add('<polyline points="' + ' '.join(f'{X(g):.1f},{Y(m):.1f}' for g, m in zip(gs, mn)) + f'" fill="none" stroke="{C[pr]}" stroke-width="2"/>')
+            for g, m in zip(gs, mn): s.circle(X(g), Y(m), 3.5, C[pr])
+            s.text(X(gs[-1]) - 4, Y(mn[-1]) - 8, pr, 11, 'end', C[pr])
+        s.text(x0 + (pw - 30) / 2, H - 14, 'generation', 11, 'middle')
+    s.text(14, (T + H - B) / 2, 'fitness (fixed test sample)', 11, 'middle', rot=-90); s.save('fig5_training.svg')
+
 if __name__ == '__main__':
-    fig_forest(); fig_delay(); fig_cues(); fig_auc()
+    fig_forest(); fig_delay(); fig_cues(); fig_auc(); fig_training()
     if shutil.which('rsvg-convert'):   # arXiv / LaTeX 需要 PDF；有 rsvg-convert 时一并生成
         for svg in sorted(OUT.glob('*.svg')): subprocess.run(['rsvg-convert', '-f', 'pdf', '-o', str(svg.with_suffix('.pdf')), str(svg)], check=True)
     print('wrote', *sorted(p.name for p in OUT.iterdir()))

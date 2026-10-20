@@ -21,6 +21,10 @@ def sign_p(xs, shift=0.0):
         if s / n >= obs - 1e-12: ge += 1
     return ge / (1 << n)
 
+T975 = {2: 4.303, 3: 3.182, 4: 2.776, 5: 2.571, 6: 2.447, 7: 2.365}   # 双侧 95% t 临界值（自由度 = n−1）
+def t_interval(xs):
+    n = len(xs); m = sum(xs) / n; sd = (sum((v - m) ** 2 for v in xs) / (n - 1)) ** .5; h = T975[n - 1] * sd / n ** .5; return m - h, m + h
+
 def tier(mean, lo, hi, thr, noninf=False):
     if noninf: return '非劣效确认（区间下界 > 阈值）' if lo > thr else ('非劣效不定' if hi > thr else '劣于阈值')
     if lo > 0 and all_pos[0]: d = '方向确认'
@@ -33,7 +37,7 @@ def tier(mean, lo, hi, thr, noninf=False):
 rows = []
 def add(prereg, label, xs, thr, formal, noninf=False):
     mean, lo, hi = boot(xs); all_pos[0] = all(v > 0 for v in xs)
-    rows.append((prereg, label, len(xs), mean, lo, hi, sign_p(xs, thr if noninf else 0.0), thr, formal, tier(mean, lo, hi, thr, noninf)))
+    rows.append((prereg, label, len(xs), mean, lo, hi, sign_p(xs, thr if noninf else 0.0), thr, formal, tier(mean, lo, hi, thr, noninf), t_interval(xs) if len(xs) - 1 in T975 else (None, None)))
 all_pos = [False]
 
 r = load('heldout-long-eval-01'); P = {h['id']: h for h in r['primary']}
@@ -78,10 +82,11 @@ for h in r['primary']:
 
 print('# 效应量总表（事后、探索性）\n')
 print('> 本表不改变任何已冻结的正式结论。它把“方向是否确认”和“幅度是否达到预设阈值”分开报告，数据来自各预注册的 `results.json`（种子层面），区间为种子间百分位 bootstrap（20000 次）；方向 p 为符号翻转精确检验（非劣效行为相对阈值）。**区间只有 3–8 个种子，应视为粗略。**\n')
-print('| 预注册 | 比较 | 种子数 | 均值 | 95% 区间 | 方向 p | 阈值 | 正式结论 | 分类 |')
-print('| --- | --- | --- | --- | --- | --- | --- | --- | --- |')
-for p, l, n, m, lo, hi, sp, thr, f, t in rows:
-    print(f"| {p} | {l} | {n} | {m:+.4f} | [{lo:+.4f}, {hi:+.4f}] | {sp:.4f} | {'' if thr is None else f'{thr:+.2f}'} | {f} | {t} |")
+print('| 预注册 | 比较 | 种子数 | 均值 | 95% 区间（bootstrap） | 95% t 区间 | 方向 p | 阈值 | 正式结论 | 分类 |')
+print('| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |')
+for p, l, n, m, lo, hi, sp, thr, f, t, ti in rows:
+    tt = '' if ti[0] is None else f'[{ti[0]:+.4f}, {ti[1]:+.4f}]'
+    print(f"| {p} | {l} | {n} | {m:+.4f} | [{lo:+.4f}, {hi:+.4f}] | {tt} | {sp:.4f} | {'' if thr is None else f'{thr:+.2f}'} | {f} | {t} |")
 print('\n说明：预注册 02 只有 1 个训练种子，不在表中；预注册 04 的稳定性假设（H2，标准差比）不是差值，未列入。')
 print('''
 ## 解读（事后）
