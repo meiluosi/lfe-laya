@@ -38,3 +38,12 @@ test('in lean mode each round still gets a unique snapshot id, so stale proposal
   assert.ok(w.step(stale).accepted); const q1 = w.requests(); ids.push(q1[0].identity.snapshotId); assert.notEqual(ids[0], ids[1]);
   assert.equal(w.step(stale).accepted, false, '上一轮的提案不能用于新一轮');
 });
+
+// 回归：漂移把 harmCap>1 的有害种类（如 -4）翻成有益时，曾使 oracleRule 在种子 12 上吃出超过容量的能量（invalid_agent）。
+// 现在食物提供的能量不超过食物本身，容量与账目不变量保持；默认 harmCap=1 的世界不受影响。
+test('drift flipping a harmful kind with harmCap>1 cannot create energy beyond food or capacity', () => {
+  const options = { ...common, drift: { everyTicks: 600, fraction: .5 } };
+  for (const lean of [true, false]) assert.doesNotThrow(() => run(lean, options, oracleRule, 12), `oracle/12 lean=${lean}`);
+  const cfg = semanticWorldConfig({ seed: 12, options }), w = new Ecology(cfg), ctl = oracleRule(cfg.semantic.kinds, cfg.semantic);
+  while (!w.done()) { w.step(w.requests().map(q => ctl(q, 12))); for (const a of w.state.agents) assert.ok(a.energy <= w.capacity(a) + 1e-8); }
+});
