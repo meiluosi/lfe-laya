@@ -1,0 +1,15 @@
+{
+ "packages/evo/social-eval.ts": "772a625522d5f52d22649eab926ada002cd3132358acf22b5e6f500813f768a1",
+ "packages/evo/structured-social.ts": "ed264ac486a1c372cd8498d3e684e0ac11ffe5d2fd35a31f8a309ce23ca5de49",
+ "packages/evo/structured.ts": "5d1d4f8d25b0b839d1905a9f291a3b74a41aeea3ef674442b6bd4d4fa5ce983a",
+ "packages/evo/semantic-run.ts": "76eb93685bf1b913bc8fb52c00cfad0005d608206d60276522cd22ba0ba6ba89",
+ "packages/evo/semantic.ts": "e145c3269136c0ce42caa94733616d500f13f8f815fc994f8b974688f9755ae1",
+ "packages/evo/pools.ts": "1803273e1552087214555b78e90ea0f79a9b55ed5cfb10a43798715a0ff5186d",
+ "packages/sim/ecology.ts": "161d8de0acaa0f4c325246fdf67e3e9ceabe13d44ca04fc5908f3e7f3e7c2892",
+ "packages/evo/pools/heldout.json": "6fdb8561333d84a11b9dfe75b32bad428056b3ff0e46e1d7f158587e7d0b3a8f",
+ "packages/evo/pools/factual.json": "39e0a9683c8d2f7adb926ce3602afcb0fcfbaf93fb5be67c640d28361ab2eb36",
+ "experiments/evo/laya-prior-v2/heldout.jsonl": "81684880e8a917f50456eb699d1960e46994029adf90e5a866088507ca2364ac",
+ "experiments/evo/laya-prior-v2/factual.jsonl": "f85891d6108e97804ce7b0a6cee60e5fe567c3214d593082e98b3c9a78604c1e",
+ "experiments/evo/laya-prior-v2/looks.jsonl": "9502f48b67f85a87923760cac1e2a7ea0c9cb35d2852f5b9e99b14c9cad2e092",
+ "packages/evo/ontology/vader-lexicon.json": "2048bfaaca51179e677bc29d8ce3fb9bd087838b6a0f4ea236df7b18ff11dce8"
+}
