@@ -1,6 +1,9 @@
 """论文表格（LaTeX）：复用 scripts/effect_sizes.py 的种子层面数据，输出英文标签的 booktabs 表。
 用法：python3 scripts/make_tables.py → docs/paper/tables/*.tex。数字全部来自 experiments/evo/*/results.json。"""
-import io, contextlib, runpy
+import io, contextlib, runpy, math
+def r3(x):
+    v = math.copysign(math.floor(abs(x) * 1000 + 0.5) / 1000, x)
+    return f'{x:+.4f}' if v == 0 and x != 0 else f'{v:+.3f}'   # 舍入到 0 但并不为 0 时多给一位，避免符号被吞掉   # 四舍五入（远离零），避免 -0.0005 显示成 -0.000
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]; OUT = ROOT / 'docs' / 'paper' / 'tables'; OUT.mkdir(parents=True, exist_ok=True)
 with contextlib.redirect_stdout(io.StringIO()):
@@ -25,16 +28,16 @@ seen = {}; main_rows, all_rows = [], []
 for r in rows:
     if r[8] == '次要': continue
     k = seen.get(r[0], 0); seen[r[0]] = k + 1; lab = LABELS[r[0]][k]
-    line = (r[0], lab, r[2], f'{r[3]:+.3f}', f'[{r[4]:+.3f}, {r[5]:+.3f}]', f'{r[6]:.4f}', '' if r[7] is None else f'{r[7]:+.2f}', FORMAL.get(r[8], r[8]), tier_en(r[9]))
+    line = (r[0], lab, r[2], r3(r[3]), f'[{r3(r[4])}, {r3(r[5])}]', f'{r[6]:.4f}', '' if r[7] is None else f'{r[7]:+.2f}', FORMAL.get(r[8], r[8]), tier_en(r[9]))
     all_rows.append(line)
     if r[0] != '03': main_rows.append(line)
 def table(lines, caption, label):
-    head = '\\begin{table}[t]\\centering\\small\\caption{' + caption + '}\\label{' + label + '}\n\\begin{tabular}{@{}llrrrrll@{}}\\toprule\nPre-reg. & Comparison & $n$ & Mean & 95\\% interval & $p$ & Threshold & Formal outcome \\\\\\midrule\n'
+    head = '\\begin{table}[t]\\centering\\small\\caption{' + caption + '}\\label{' + label + '}\n\\resizebox{\\textwidth}{!}{\\begin{tabular}{@{}llrrrrll@{}}\\toprule\nPre-reg. & Comparison & $n$ & Mean & 95\\% interval & $p$ & Threshold & Formal outcome \\\\\\midrule\n'
     body = ''.join(f'{a} & {b} & {c} & {d} & {e} & {f} & {g} & {h} \\\\\n' for a, b, c, d, e, f, g, h, _ in lines)
-    return head + body + '\\bottomrule\\end{tabular}\\end{table}\n'
+    return head + body + '\\bottomrule\\end{tabular}}\\end{table}\n'
 (OUT / 'table_confirmatory.tex').write_text(table(main_rows, 'Confirmatory comparisons (pre-registrations 04--11). Mean and 95\\% percentile bootstrap interval over training seeds; $p$ is the exact one-sided sign-flip test (non-inferiority rows are tested against the margin). Threshold is the pre-registered effect size.', 'tab:confirmatory'))
 (OUT / 'table_all_tiers.tex').write_text(table(all_rows, 'All confirmatory comparisons including pre-registration 03, with the tiered reading of each result in the last column of the supplementary table.', 'tab:all'))
-tiers = '\\begin{table}[t]\\centering\\small\\caption{Tiered reading of every confirmatory comparison. ``Direction confirmed'' means all seeds agree in sign (exact sign-flip $p=2^{-n}$); ``magnitude confirmed'' means the lower bound of the seed-level interval is at or above the pre-registered threshold; ``unclear'' means the interval contains it.}\\label{tab:tiers}\n\\begin{tabular}{@{}llrl@{}}\\toprule\nPre-reg. & Comparison & Mean & Tiered reading \\\\\\midrule\n' + ''.join(f'{l[0]} & {l[1]} & {l[3]} & {l[8]} \\\\\n' for l in all_rows) + '\\bottomrule\\end{tabular}\\end{table}\n'
+tiers = '\\begin{table}[t]\\centering\\small\\caption{Tiered reading of every confirmatory comparison. ``Direction confirmed'' means all seeds agree in sign (exact sign-flip $p=2^{-n}$); ``magnitude confirmed'' means the lower bound of the seed-level interval is at or above the pre-registered threshold; ``unclear'' means the interval contains it.}\\label{tab:tiers}\n\\begin{tabular}{@{}lp{0.5\\textwidth}rp{0.27\\textwidth}@{}}\\toprule\nPre-reg. & Comparison & Mean & Tiered reading \\\\\\midrule\n' + ''.join(f'{l[0]} & {l[1]} & {l[3]} & {l[8]} \\\\\n' for l in all_rows) + '\\bottomrule\\end{tabular}\\end{table}\n'
 (OUT / 'table_tiers.tex').write_text(tiers)
 (OUT / 'tiers.txt').write_text('\n'.join(f'{l[0]}\t{l[1]}\t{l[8]}' for l in all_rows) + '\n')
 print('rows', len(main_rows), len(all_rows))

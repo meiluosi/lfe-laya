@@ -30,9 +30,9 @@ The frozen model is \laya{} (a ModernBERT-large encoder with a fine-tuned two-la
 
 \subsection{Individuals and genomes}
 \label{sec:individuals}
-Individuals are \emph{structured}: a fixed rule skeleton moves toward allowed food and eats (a rule that was validated before any evolution), and the genome controls how the individual treats priors and experience. An individual keeps a belief for each description it has eaten, $b=(n,\sigma)$, updated with the realised energy gain $x=\mathrm{clip}(\mathrm{gain}/3,-1,1)$ and with a forgetting rate. The value of a description $d$ is
+Individuals are \emph{structured}: a fixed rule skeleton moves toward allowed food and eats (a rule that was validated before any evolution), and the genome controls how the individual treats priors and experience. An individual keeps a belief for each description it has eaten, $(n,s)$ (the number of experiences and their sum), updated with the realised energy gain $x=\mathrm{clip}(\mathrm{gain}/3,-1,1)$ and with a forgetting rate. The value of a description $d$ is
 \begin{equation}
-v(d)=\frac{n_0\,v_0(d)+\sum x}{n_0+n}+\frac{c}{1+n},\qquad v_0(d)=\mathrm{clip}\bigl(a\,(2p_d-1)+b_0\bigr),
+v(d)=\frac{n_0\,v_0(d)+s}{n_0+n}+\frac{c}{1+n},\qquad v_0(d)=\mathrm{clip}\bigl(a\,(2p_d-1)+b_0\bigr),
 \end{equation}
 where $n_0=e^{g_1}$ is the trust in the prior (a pseudo-count), $c$ a curiosity bonus, and $a,b_0$ a calibration slope and bias applied to the prior $p_d$. Foods with $v<\tau$ are vetoed (hidden from the skeleton), except for a retry probability. Further genes set the forgetting rate, the minimum energy fraction required before trying an unseen food, and, in delayed worlds, a \emph{credit window}: when a large energy shock arrives, the individual credits it to every kind eaten in the preceding window (up to 150 ticks). The base genome has nine genes; social individuals have one more (the weight of social evidence, Section~\ref{sec:ecology}).
 

@@ -44,12 +44,12 @@ def fig_forest():
         ('', 'fair ripening (true - mismatched)', p11['H2']['perSeed'], 0.05, 'laya'),
         ('No effect', 'hierarchical belief (laya, flat vs hier)', p6['H3']['perSeed'], 0.03, 'gray'),
     ]
-    groups = sum(1 for r in rows if r[0]); W, L, R, T = 1080, 380, 230, 76; H = T + 28 * len(rows) + 22 * groups + 56
+    groups = sum(1 for r in rows if r[0]); W, L, R, T = 800, 290, 215, 76; H = T + 28 * len(rows) + 22 * groups + 56
     s = Svg(W, H); xmin, xmax = -0.06, 0.12
     X = lambda v: L + (v - xmin) / (xmax - xmin) * (W - L - R)
-    s.text(20, 30, 'Seed-level effects (fitness scale): mean and bootstrap 95% interval over training seeds', 15, weight='bold')
-    s.text(20, 50, 'Red dashed tick = pre-registered effect threshold. Small dots = individual training seeds.', 12, fill=C['gray'])
-    s.text(W - R + 24, T - 14, 'mean [95% interval]', 11, fill=C['gray'])
+    s.text(20, 30, 'Seed-level effects (fitness scale)', 15, weight='bold')
+    s.text(20, 50, 'Mean and bootstrap 95% interval over training seeds; red tick = pre-registered threshold.', 12, fill=C['gray'])
+    s.text(W - R + 18, T - 14, 'mean [95% interval]', 11, fill=C['gray'])
     for v in [-0.05, 0, 0.05, 0.10]:
         s.line(X(v), T - 8, X(v), H - 40, C['ink'] if v == 0 else C['grid'], 1.2 if v == 0 else 1); s.text(X(v), H - 22, f'{v:+.2f}', 11, 'middle', C['gray'])
     y = T
@@ -58,7 +58,7 @@ def fig_forest():
         m, lo, hi = boot(xs); s.text(L - 12, y + 4, label, 12, 'end')
         s.line(X(lo), y, X(hi), y, C[col], 3)
         for v in xs: s.circle(X(v) + random.uniform(-2, 2), y + random.uniform(-6, 6), 2.6, C[col], .35)
-        s.circle(X(m), y, 5, C[col]); s.text(W - R + 24, y + 4, f'{m:+.3f}  [{lo:+.3f}, {hi:+.3f}]', 11, fill=C['gray'])
+        s.circle(X(m), y, 5, C[col]); s.text(W - R + 18, y + 4, f'{m:+.3f} [{lo:+.3f}, {hi:+.3f}]', 11, fill=C['gray'])
         if thr is not None: s.line(X(thr), y - 9, X(thr), y + 9, C['bad'], 1.5, '3 2')
         y += 28
     s.save('fig1_forest.svg')
@@ -89,19 +89,19 @@ def fig_cues():
     soc = load('social-eval-01')['secondary']['heldout']['meanFitness']
     panels = [('Social looks (09)', {k: v for k, v in soc.items()}, 'language', 'off', 'shuffled'), ('Ripening, hard world (10)', load('ripening-eval-01')['secondary']['meanFitness'], 'language', 'off', 'shuffled'),
               ('Ripening, fair world K=4 (11)', load('ripening11-eval-01')['secondary']['meanFitness'], 'language', 'off', 'shuffled')]
-    W, H, T, B = 1000, 430, 80, 70; s = Svg(W, H); s.text(20, 28, 'Cue manipulation: true, absent, or mismatched', 15, weight='bold')
-    s.text(20, 46, 'Mean fitness over 8 training seeds. Mismatch relabels the cue consistently, so experience-only individuals (none) are unaffected; prior-reading individuals lose.', 12, fill=C['gray'])
-    pw = (W - 60) / 3; cond = [('language', 'true', 1.0), ('off', 'absent', .55), ('shuffled', 'mismatched', .25)]
+    W, H, T, B = 800, 400, 90, 70; s = Svg(W, H); s.text(20, 28, 'Cue manipulation: true, absent, or mismatched', 15, weight='bold')
+    s.text(20, 46, 'Mean fitness over 8 training seeds; mismatch relabels the cue consistently.', 12, fill=C['gray'])
+    pw = (W - 40) / 3; cond = [('language', 'true', 1.0), ('off', 'absent', .55), ('shuffled', 'mismatched', .25)]
     for pi, (title, mf, *_) in enumerate(panels):
         x0 = 40 + pi * pw; vals = [v for k, v in mf.items()]; ymax = max(vals) * 1.18
-        Y = lambda v: T + (1 - v / ymax) * (H - T - B); s.text(x0 + pw / 2 - 10, T - 14, title, 13, 'middle', weight='bold'); s.line(x0, Y(0), x0 + pw - 20, Y(0), C['ink'])
+        Y = lambda v: T + (1 - v / ymax) * (H - T - B); s.text(x0 + pw / 2 - 6, T - 14, title, 12, 'middle', weight='bold'); s.line(x0, Y(0), x0 + pw - 20, Y(0), C['ink'])
         for gi, p in enumerate(['laya', 'none', 'vader']):
-            gx = x0 + 14 + gi * (pw - 20) / 3
+            gx = x0 + 6 + gi * (pw - 12) / 3
             for ci, (c, lab, op) in enumerate(cond):
-                v = mf[f'{p}|{c}']; bx = gx + ci * 22
-                s.rect(bx, Y(v), 19, Y(0) - Y(v), C[p], op); s.text(bx + 9.5, Y(v) - 4, f'{v:.2f}', 9, 'middle', C['gray'])
-            s.text(gx + 33, Y(0) + 18, p, 12, 'middle')
-    for i, (c, lab, op) in enumerate(cond): s.rect(40 + i * 120, H - 28, 12, 12, C['ink'], op); s.text(58 + i * 120, H - 18, lab + ' cue', 11)
+                v = mf[f'{p}|{c}']; bx = gx + ci * 24
+                s.rect(bx, Y(v), 22, Y(0) - Y(v), C[p], op); s.text(bx + 11, Y(v) - 4, f'{v:.2f}', 10, 'middle', C['gray'])
+            s.text(gx + 36, Y(0) + 18, p, 12, 'middle')
+    for i, (c, lab, op) in enumerate(cond): s.rect(40 + i * 130, H - 28, 12, 12, C['ink'], op); s.text(58 + i * 130, H - 18, lab + ' cue', 11)
     s.save('fig3_cues.svg')
 
 # ---------- Figure 4: quality of the prior (AUC, nutritious vs. toxic) ----------

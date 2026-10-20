@@ -45,3 +45,4 @@ __pycache__/
 /experiments/m0/evidence/experiment-01/online-decisions.jsonl
 /public/m0/latest.json
 # <<< prepare_publish <<<
+docs/paper/build/
