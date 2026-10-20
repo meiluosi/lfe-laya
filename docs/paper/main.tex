@@ -1,0 +1,42 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{xcolor}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{hyperref}
+\usepackage{caption}
+\setlength{\parskip}{0.4em}
+% Citations are placeholders until verified: \unv{} prints a visible flag (see docs/paper/OUTLINE.md, section 5).
+\newcommand{\unv}[1]{\textcolor{red}{[UNVERIFIED: #1]}}
+\newcommand{\todo}[1]{\textcolor{blue}{[TODO: #1]}}
+\newcommand{\laya}{\textsc{Laya}}
+
+\title{When does a frozen pretrained decision model help evolved agents?\\
+\large Pre-registered evidence from a consequence-delay ecology}
+\author{Feng Yu\\Independent researcher}
+\date{Draft \today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+\todo{Write after Results are final; ${\approx}200$ words; no ``first'' claims; state the conditional nature of the result and the limitations.}
+\end{abstract}
+
+\input{sections/introduction}
+\input{sections/related}
+\input{sections/methods}
+\input{sections/protocol}
+\input{sections/results}
+\input{sections/discussion}
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+
+\appendix
+\input{sections/appendix}
+\end{document}

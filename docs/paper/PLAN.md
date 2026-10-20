@@ -97,7 +97,13 @@ A 全部预注册协议摘要与程序性偏离；B 效应量总表；C 世界�
 | Laya 不是生成式模型，结论能否推广到 LLM | 不推广；明确是编码器 + 决策头；模型替换调研为后续工作 | §3.3、§7 |
 | 与 Yan et al. 等工作的区别 | 我们分离三来源、测先验出错 / 不必要的代价、用预注册 | §2.2、§6 |
 
-## E. 待做（按顺序）
+## E. 进度（2026-10-21）
+
+- 已起草（LaTeX，`docs/paper/main.tex` 与 `sections/`）：Methods、Evaluation protocol、Results；表格与图由脚本生成（`scripts/make_tables.py`、`scripts/make_figures.py`）。Introduction / Related work / Discussion / Abstract 尚为占位，引用均为 `\unv{}` 标记。
+- 未编译：本机有 `tectonic`，但首次编译需要下载 LaTeX 宏包，等待用户确认。
+- 数字核对：Results 中的每个数字已对照 `results.json` / `EFFECT_SIZES.md` 逐项核对一次。
+
+## F. 待做（按顺序）
 
 1. 你确认 §A（引用格式、arXiv 类别）与 §B（贡献声明）。
 2. 方法与结果章先行（证据最稳固）；用 `academic-paper` 的 outline / full 模式写，`draft_writer` 的 Phase 4a/4b 与评估器 6a/6b 合约不被绕过。

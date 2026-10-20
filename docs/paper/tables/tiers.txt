@@ -1,0 +1,23 @@
+04	Delay 40: laya $-$ none (mismatched training)	direction confirmed; magnitude unclear
+04	Prior value grows with delay (D40 $-$ D0)	direction confirmed; magnitude confirmed
+06	Delay 0: laya $-$ none (non-inferiority)	non-inferiority confirmed
+06	Delay 40: laya $-$ none (matched training)	direction confirmed; magnitude unclear
+06	Hierarchical belief, laya (deception 0.40)	direction unclear; magnitude below threshold
+07	Factual dialect, delay 40: laya $-$ vader	direction confirmed; magnitude confirmed
+07	Held-out dialect, delay 80: laya $-$ none	direction confirmed; magnitude confirmed
+07	Prior value grows with delay (d80 $-$ d40)	direction confirmed; magnitude confirmed
+08	Gap widening: (laya $-$ vader) factual vs.\ sentiment training	direction unclear; magnitude below threshold
+08	Factual training: laya $-$ none (factual dialect)	direction confirmed; magnitude below threshold
+08	Transfer: factual-trained, held-out dialect, laya $-$ vader (non-inferiority)	non-inferiority confirmed
+09	Social looks: true $-$ absent (laya)	direction confirmed; magnitude confirmed
+09	Social looks: absent $-$ mismatched (laya)	direction confirmed; magnitude confirmed
+09	Social gain: laya $-$ vader	direction unclear; magnitude unclear
+10	Ripening: laya $-$ none (true cues)	direction confirmed; magnitude confirmed
+10	Ripening: true $-$ mismatched (laya)	direction confirmed; magnitude confirmed
+10	Ripening: laya $-$ vader	direction unclear; magnitude unclear
+11	Fair ripening ($K{=}4$): laya $-$ none	direction unclear; magnitude unclear
+11	Fair ripening: true $-$ mismatched (laya)	direction confirmed; magnitude confirmed
+11	Fair ripening: laya $-$ vader	direction unclear; magnitude below threshold
+03	laya $-$ shuffled (3 seeds)	direction confirmed
+03	laya $-$ none (3 seeds)	direction confirmed
+03	laya $-$ vader (3 seeds)	direction unclear
