@@ -5,6 +5,7 @@ import { structuredCohort } from './structured.ts';
 import { structuredHierCohort } from './structured-hier.ts';
 import { structuredSocialCohort } from './structured-social.ts';
 import { structuredHeadCohort } from './structured-head.ts';
+import { distilledPrior } from './distill.ts';
 import { registerPools, loadEmbeddings, loadLayaPriors, shuffledPrior, vaderPrior, type Priors } from './pools.ts';
 
 const priors = loadPriors();
@@ -13,7 +14,7 @@ const poolPriors = new Map<string, Priors>();
 /** 结构化个体的先验来源：随世界的方言（训练/测试）取对应的 Laya 缓存表；shuffled 是打乱的 Laya；vader 是独立词典。 */
 function priorsFor(source: string, split: string): Priors {
   const key = `${source}:${split}`; let m = poolPriors.get(key);
-  if (!m) { const laya = loadLayaPriors(split as 'train' | 'test'); m = source === 'laya' ? laya : source === 'shuffled' ? shuffledPrior(laya, 3) : source === 'vader' ? vaderPrior() : new Map(); poolPriors.set(key, m); }
+  if (!m) { const laya = loadLayaPriors(split as 'train' | 'test'); m = source === 'laya' ? laya : source === 'shuffled' ? shuffledPrior(laya, 3) : source === 'vader' ? vaderPrior() : source === 'distilled' ? distilledPrior(split) : new Map(); poolPriors.set(key, m); }
   return m;
 }
 const embCache = new Map<string, Map<string, Float32Array>>();
