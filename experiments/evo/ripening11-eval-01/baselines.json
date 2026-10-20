@@ -1,0 +1,47 @@
+{
+  "protocol": "docs/PREREGISTRATION_11.md",
+  "note": "描述性基线，不计入假设族；同一批评估世界（种子 270000 起，每单元 32 世界）",
+  "K": 4,
+  "harmCap": 4,
+  "seasonTicks": 300,
+  "inversions": [
+    0.25,
+    0.4
+  ],
+  "rows": {
+    "blind": {
+      "language": {
+        "fitness": 0.1622,
+        "toxicBites": 499,
+        "survival": 0.2292
+      },
+      "off": {
+        "fitness": 0.1622,
+        "toxicBites": 499,
+        "survival": 0.2292
+      },
+      "shuffled": {
+        "fitness": 0.1622,
+        "toxicBites": 499,
+        "survival": 0.2292
+      }
+    },
+    "oracle": {
+      "language": {
+        "fitness": 0.4285,
+        "toxicBites": 0,
+        "survival": 0.5917
+      },
+      "off": {
+        "fitness": 0.4285,
+        "toxicBites": 0,
+        "survival": 0.5917
+      },
+      "shuffled": {
+        "fitness": 0.4285,
+        "toxicBites": 0,
+        "survival": 0.5917
+      }
+    }
+  }
+}
