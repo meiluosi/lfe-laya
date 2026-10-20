@@ -2,7 +2,7 @@
 用法：python3 scripts/make_figures.py   → docs/paper/figures/*.svg
 图中文字用英文（arXiv 默认英文）；SVG 转 PDF/PNG 需要额外工具（rsvg-convert / inkscape / matplotlib 等），见 docs/paper/OUTLINE.md。
 """
-import json, random, html
+import json, random, html, shutil, subprocess
 from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]; OUT = ROOT / 'docs' / 'paper' / 'figures'; OUT.mkdir(parents=True, exist_ok=True)
 random.seed(7)
@@ -119,4 +119,7 @@ def fig_auc():
     s.save('fig4_auc.svg')
 
 if __name__ == '__main__':
-    fig_forest(); fig_delay(); fig_cues(); fig_auc(); print('wrote', *sorted(p.name for p in OUT.glob('*.svg')))
+    fig_forest(); fig_delay(); fig_cues(); fig_auc()
+    if shutil.which('rsvg-convert'):   # arXiv / LaTeX 需要 PDF；有 rsvg-convert 时一并生成
+        for svg in sorted(OUT.glob('*.svg')): subprocess.run(['rsvg-convert', '-f', 'pdf', '-o', str(svg.with_suffix('.pdf')), str(svg)], check=True)
+    print('wrote', *sorted(p.name for p in OUT.iterdir()))
