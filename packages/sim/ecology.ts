@@ -393,7 +393,8 @@ export class Ecology {
           else if (s.kinds && s.kinds[cell] >= 0) {
             // 语义食物：真实影响由模拟器按种类结算。吃下的食物量一律从场中消失；个体得到 amount*factor（可为负）。
             const idx = s.kinds[cell], drift = c.semantic!.drift, flipped = !!drift && Math.floor(s.tick / drift.everyTicks) % 2 === 1 && drift.flip.includes(idx);
-            const rip = c.semantic!.ripening, factor = c.semantic!.kinds[idx].factor * (rip && rip.perishable[idx] ? rip.multipliers[this.stage(idx)] : 1) * (flipped ? -1 : 1); s.food[cell] -= amount;
+            const rip = c.semantic!.ripening; let factor = c.semantic!.kinds[idx].factor * (rip && rip.perishable[idx] ? rip.multipliers[this.stage(idx)] : 1) * (flipped ? -1 : 1); s.food[cell] -= amount;
+            if (factor > 1) factor = 1;   // 漂移把有害种类（|factor| 可达 harmCap）翻成有益时，食物提供的能量不得多于食物本身（否则凭空造能、超出容量）
             if (a.social) { const d = this.describe(idx), last = a.social.ate[a.social.ate.length - 1]; if (last && last.desc === d) last.tick = s.tick; else { a.social.ate.push({ desc: d, tick: s.tick }); if (a.social.ate.length > 6) a.social.ate.shift(); } }   // 一次决策里连续的几口算同一餐
             if (a.pending) {
               // 延迟世界：食物立即从场中消失；效果在 delay.ticks 之后才作用于个体，其间收益记为“在途”。
