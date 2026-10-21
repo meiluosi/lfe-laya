@@ -28,7 +28,8 @@ export type SemanticKind = { description: string; factor: number };
 /** 漂移（可选）：按 everyTicks 分阶段，奇数阶段里 flip 中的种类真实影响取反（A/B/A）。个体只能从自己的经历里察觉。 */
 export type SemanticDrift = { everyTicks: number; flip: number[] };
 /** 延迟（可选）：吃下后，营养/毒性在 ticks 个模拟步之后才作用于个体；其间这部分能量记为“在途”。个体生效时会有一句自身感受的语言描述。 */
-export type SemanticDelay = { ticks: number };
+/** 延迟后果。spread 缺省为固定延迟；mode 'jitter'：每一口的延迟在 ticks±spread 内均匀取整（由 个体、时刻、种类 的哈希决定，不消耗随机数源）；mode 'kind'：每个种类固定为 ticks−spread 或 ticks+spread（由种类序号的哈希决定）。 */
+export type SemanticDelay = { ticks: number; spread?: number; mode?: 'jitter' | 'kind' };
 /** 成熟周期（W7，可选）：季节 s(t)=⌊t/seasonTicks⌋ mod 4；种类 k 的阶段 = (s + offsets[k]) mod 4（0 青涩 1 成熟 2 过熟 3 腐败）。
  *  perishable 的种类，结算因子 = 种类因子 × multipliers[阶段]（隐藏真值）；其余种类不随阶段变化。cues 控制语言线索：language 显示真实的阶段短语与季节提示，
  *  shuffled 显示错配的（阶段 +2），off 不显示任何线索（价值仍随阶段变化）。阶段完全由 tick 决定，不增加状态。 */
@@ -106,7 +107,7 @@ function validateSemantic(c: Config): void {
   if (!sem || typeof sem !== 'object' || !Array.isArray(sem.kinds) || sem.kinds.length < 1 || sem.kinds.length > 64 || Object.keys(sem).some(k => k !== 'kinds' && k !== 'drift' && k !== 'delay' && k !== 'ripening' && k !== 'social')) throw Error('invalid_semantic');
   if (sem.social !== undefined) validateSocial(sem.social);
   if (sem.ripening !== undefined) validateRipening(sem);
-  if (sem.delay !== undefined && (!sem.delay || Object.keys(sem.delay).length !== 1 || !Number.isInteger(sem.delay.ticks) || sem.delay.ticks < 1 || sem.delay.ticks > 600)) throw Error('invalid_semantic_delay');
+  if (sem.delay !== undefined && (!sem.delay || Object.keys(sem.delay).some(k => k !== 'ticks' && k !== 'spread' && k !== 'mode') || !Number.isInteger(sem.delay.ticks) || sem.delay.ticks < 1 || sem.delay.ticks > 600 || (sem.delay.spread === undefined) !== (sem.delay.mode === undefined) || (sem.delay.spread !== undefined && (!Number.isInteger(sem.delay.spread) || sem.delay.spread < 1 || sem.delay.spread >= sem.delay.ticks || sem.delay.ticks + sem.delay.spread > 600 || (sem.delay.mode !== 'jitter' && sem.delay.mode !== 'kind'))))) throw Error('invalid_semantic_delay');
   if (sem.drift !== undefined) {
     const d = sem.drift;
     if (!d || Object.keys(d).length !== 2 || !Number.isInteger(d.everyTicks) || d.everyTicks < 100 || !Array.isArray(d.flip) || d.flip.length < 1 || new Set(d.flip).size !== d.flip.length || d.flip.some(i => !Number.isInteger(i) || i < 0 || i >= sem.kinds.length)) throw Error('invalid_semantic_drift');
@@ -333,6 +334,13 @@ export class Ecology {
     }
   }
   /** 把到期的延迟效果作用于个体：收益受容量限制（溢出记损耗），伤害受剩余能量限制；并更新自身感受。 */
+  /** 一口的延迟（步数）：固定，或按 spread/mode 由确定性哈希决定（不使用随机数源，回放不受影响）。 */
+  private delayOf(a: Agent, idx: number): number {
+    const d = this.state.config.semantic!.delay!; if (d.spread === undefined) return d.ticks;
+    let x = 2166136261; for (const ch of d.mode === 'kind' ? `kind:${idx}` : `${a.id}:${this.state.tick}:${idx}`) x = Math.imul(x ^ ch.charCodeAt(0), 16777619);
+    x ^= x >>> 15; x = Math.imul(x, 0x2c1b3c6d); x ^= x >>> 12; const u = (x >>> 0) / 4294967296;
+    return d.mode === 'kind' ? d.ticks + (u < .5 ? -d.spread : d.spread) : d.ticks - d.spread + Math.floor(u * (2 * d.spread + 1));
+  }
   private settle(a: Agent): void {
     const s = this.state; if (!a.pending?.length) return;
     const due = a.pending.filter(p => p.due <= s.tick); if (!due.length) return;
@@ -398,7 +406,7 @@ export class Ecology {
             if (a.social) { const d = this.describe(idx), last = a.social.ate[a.social.ate.length - 1]; if (last && last.desc === d) last.tick = s.tick; else { a.social.ate.push({ desc: d, tick: s.tick }); if (a.social.ate.length > 6) a.social.ate.shift(); } }   // 一次决策里连续的几口算同一餐
             if (a.pending) {
               // 延迟世界：食物立即从场中消失；效果在 delay.ticks 之后才作用于个体，其间收益记为“在途”。
-              const due = s.tick + c.semantic!.delay!.ticks;
+              const due = s.tick + this.delayOf(a, idx);
               if (factor >= 0) { a.pending.push({ due, amount: amount * factor }); s.ledger.semanticLoss! += amount * (1 - factor); this.emit('ate', { agentId: a.id, amount: amount * factor }); }
               else { a.pending.push({ due, amount: -(amount * -factor) }); s.ledger.semanticLoss! += amount; this.emit('ate', { agentId: a.id, amount: amount * -factor, reason: 'toxic' }); }
             }
