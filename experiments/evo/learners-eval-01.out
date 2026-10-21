@@ -1,0 +1,338 @@
+heldout  laya-plain-d40-81      0.377
+heldout  laya-plain-d40-82      0.388
+heldout  laya-plain-d40-83      0.378
+heldout  laya-plain-d40-84      0.388
+heldout  laya-plain-d40-85      0.390
+heldout  laya-plain-d40-86      0.408
+heldout  laya-plain-d40-87      0.331
+heldout  laya-plain-d40-88      0.409
+heldout  laya-plain-d80-81      0.343
+heldout  laya-plain-d80-82      0.359
+heldout  laya-plain-d80-83      0.345
+heldout  laya-plain-d80-84      0.363
+heldout  laya-plain-d80-85      0.357
+heldout  laya-plain-d80-86      0.344
+heldout  laya-plain-d80-87      0.345
+heldout  laya-plain-d80-88      0.340
+heldout  laya-lag-d40-81        0.524
+heldout  laya-lag-d40-82        0.545
+heldout  laya-lag-d40-83        0.412
+heldout  laya-lag-d40-84        0.478
+heldout  laya-lag-d40-85        0.534
+heldout  laya-lag-d40-86        0.368
+heldout  laya-lag-d40-87        0.499
+heldout  laya-lag-d40-88        0.491
+heldout  laya-lag-d80-81        0.461
+heldout  laya-lag-d80-82        0.457
+heldout  laya-lag-d80-83        0.477
+heldout  laya-lag-d80-84        0.467
+heldout  laya-lag-d80-85        0.469
+heldout  laya-lag-d80-86        0.474
+heldout  laya-lag-d80-87        0.438
+heldout  laya-lag-d80-88        0.452
+heldout  laya-safety-d40-81     0.407
+heldout  laya-safety-d40-82     0.416
+heldout  laya-safety-d40-83     0.384
+heldout  laya-safety-d40-84     0.402
+heldout  laya-safety-d40-85     0.412
+heldout  laya-safety-d40-86     0.398
+heldout  laya-safety-d40-87     0.381
+heldout  laya-safety-d40-88     0.373
+heldout  laya-safety-d80-81     0.350
+heldout  laya-safety-d80-82     0.341
+heldout  laya-safety-d80-83     0.343
+heldout  laya-safety-d80-84     0.342
+heldout  laya-safety-d80-85     0.352
+heldout  laya-safety-d80-86     0.341
+heldout  laya-safety-d80-87     0.349
+heldout  laya-safety-d80-88     0.346
+heldout  laya-bayes-d40-81      0.359
+heldout  laya-bayes-d40-82      0.398
+heldout  laya-bayes-d40-83      0.386
+heldout  laya-bayes-d40-84      0.346
+heldout  laya-bayes-d40-85      0.390
+heldout  laya-bayes-d40-86      0.380
+heldout  laya-bayes-d40-87      0.357
+heldout  laya-bayes-d40-88      0.357
+heldout  laya-bayes-d80-81      0.342
+heldout  laya-bayes-d80-82      0.350
+heldout  laya-bayes-d80-83      0.350
+heldout  laya-bayes-d80-84      0.345
+heldout  laya-bayes-d80-85      0.340
+heldout  laya-bayes-d80-86      0.333
+heldout  laya-bayes-d80-87      0.345
+heldout  laya-bayes-d80-88      0.330
+heldout  none-plain-d40-81      0.385
+heldout  none-plain-d40-82      0.373
+heldout  none-plain-d40-83      0.346
+heldout  none-plain-d40-84      0.345
+heldout  none-plain-d40-85      0.357
+heldout  none-plain-d40-86      0.364
+heldout  none-plain-d40-87      0.341
+heldout  none-plain-d40-88      0.326
+heldout  none-plain-d80-81      0.254
+heldout  none-plain-d80-82      0.254
+heldout  none-plain-d80-83      0.254
+heldout  none-plain-d80-84      0.271
+heldout  none-plain-d80-85      0.271
+heldout  none-plain-d80-86      0.255
+heldout  none-plain-d80-87      0.264
+heldout  none-plain-d80-88      0.254
+heldout  none-lag-d40-81        0.424
+heldout  none-lag-d40-82        0.520
+heldout  none-lag-d40-83        0.499
+heldout  none-lag-d40-84        0.504
+heldout  none-lag-d40-85        0.507
+heldout  none-lag-d40-86        0.518
+heldout  none-lag-d40-87        0.495
+heldout  none-lag-d40-88        0.505
+heldout  none-lag-d80-81        0.456
+heldout  none-lag-d80-82        0.460
+heldout  none-lag-d80-83        0.452
+heldout  none-lag-d80-84        0.467
+heldout  none-lag-d80-85        0.359
+heldout  none-lag-d80-86        0.460
+heldout  none-lag-d80-87        0.433
+heldout  none-lag-d80-88        0.456
+heldout  none-safety-d40-81     0.303
+heldout  none-safety-d40-82     0.328
+heldout  none-safety-d40-83     0.339
+heldout  none-safety-d40-84     0.365
+heldout  none-safety-d40-85     0.364
+heldout  none-safety-d40-86     0.338
+heldout  none-safety-d40-87     0.358
+heldout  none-safety-d40-88     0.335
+heldout  none-safety-d80-81     0.264
+heldout  none-safety-d80-82     0.254
+heldout  none-safety-d80-83     0.254
+heldout  none-safety-d80-84     0.254
+heldout  none-safety-d80-85     0.255
+heldout  none-safety-d80-86     0.270
+heldout  none-safety-d80-87     0.275
+heldout  none-safety-d80-88     0.254
+heldout  none-bayes-d40-81      0.381
+heldout  none-bayes-d40-82      0.337
+heldout  none-bayes-d40-83      0.327
+heldout  none-bayes-d40-84      0.323
+heldout  none-bayes-d40-85      0.357
+heldout  none-bayes-d40-86      0.352
+heldout  none-bayes-d40-87      0.369
+heldout  none-bayes-d40-88      0.310
+heldout  none-bayes-d80-81      0.257
+heldout  none-bayes-d80-82      0.278
+heldout  none-bayes-d80-83      0.265
+heldout  none-bayes-d80-84      0.281
+heldout  none-bayes-d80-85      0.262
+heldout  none-bayes-d80-86      0.266
+heldout  none-bayes-d80-87      0.267
+heldout  none-bayes-d80-88      0.276
+factual  laya-plain-d40-81      0.329
+factual  laya-plain-d40-82      0.365
+factual  laya-plain-d40-83      0.335
+factual  laya-plain-d40-84      0.338
+factual  laya-plain-d40-85      0.393
+factual  laya-plain-d40-86      0.340
+factual  laya-plain-d40-87      0.322
+factual  laya-plain-d40-88      0.383
+factual  laya-plain-d80-81      0.298
+factual  laya-plain-d80-82      0.311
+factual  laya-plain-d80-83      0.309
+factual  laya-plain-d80-84      0.293
+factual  laya-plain-d80-85      0.306
+factual  laya-plain-d80-86      0.302
+factual  laya-plain-d80-87      0.339
+factual  laya-plain-d80-88      0.312
+factual  laya-lag-d40-81        0.521
+factual  laya-lag-d40-82        0.563
+factual  laya-lag-d40-83        0.371
+factual  laya-lag-d40-84        0.460
+factual  laya-lag-d40-85        0.551
+factual  laya-lag-d40-86        0.317
+factual  laya-lag-d40-87        0.488
+factual  laya-lag-d40-88        0.481
+factual  laya-lag-d80-81        0.456
+factual  laya-lag-d80-82        0.418
+factual  laya-lag-d80-83        0.427
+factual  laya-lag-d80-84        0.463
+factual  laya-lag-d80-85        0.465
+factual  laya-lag-d80-86        0.452
+factual  laya-lag-d80-87        0.429
+factual  laya-lag-d80-88        0.442
+factual  laya-safety-d40-81     0.387
+factual  laya-safety-d40-82     0.373
+factual  laya-safety-d40-83     0.336
+factual  laya-safety-d40-84     0.353
+factual  laya-safety-d40-85     0.367
+factual  laya-safety-d40-86     0.347
+factual  laya-safety-d40-87     0.346
+factual  laya-safety-d40-88     0.344
+factual  laya-safety-d80-81     0.338
+factual  laya-safety-d80-82     0.295
+factual  laya-safety-d80-83     0.315
+factual  laya-safety-d80-84     0.298
+factual  laya-safety-d80-85     0.302
+factual  laya-safety-d80-86     0.298
+factual  laya-safety-d80-87     0.311
+factual  laya-safety-d80-88     0.313
+factual  laya-bayes-d40-81      0.340
+factual  laya-bayes-d40-82      0.352
+factual  laya-bayes-d40-83      0.336
+factual  laya-bayes-d40-84      0.337
+factual  laya-bayes-d40-85      0.343
+factual  laya-bayes-d40-86      0.340
+factual  laya-bayes-d40-87      0.332
+factual  laya-bayes-d40-88      0.326
+factual  laya-bayes-d80-81      0.323
+factual  laya-bayes-d80-82      0.295
+factual  laya-bayes-d80-83      0.308
+factual  laya-bayes-d80-84      0.306
+factual  laya-bayes-d80-85      0.298
+factual  laya-bayes-d80-86      0.335
+factual  laya-bayes-d80-87      0.330
+factual  laya-bayes-d80-88      0.338
+factual  none-plain-d40-81      0.380
+factual  none-plain-d40-82      0.374
+factual  none-plain-d40-83      0.343
+factual  none-plain-d40-84      0.344
+factual  none-plain-d40-85      0.376
+factual  none-plain-d40-86      0.389
+factual  none-plain-d40-87      0.341
+factual  none-plain-d40-88      0.337
+factual  none-plain-d80-81      0.279
+factual  none-plain-d80-82      0.279
+factual  none-plain-d80-83      0.279
+factual  none-plain-d80-84      0.281
+factual  none-plain-d80-85      0.263
+factual  none-plain-d80-86      0.273
+factual  none-plain-d80-87      0.276
+factual  none-plain-d80-88      0.279
+factual  none-lag-d40-81        0.437
+factual  none-lag-d40-82        0.536
+factual  none-lag-d40-83        0.524
+factual  none-lag-d40-84        0.521
+factual  none-lag-d40-85        0.507
+factual  none-lag-d40-86        0.536
+factual  none-lag-d40-87        0.520
+factual  none-lag-d40-88        0.536
+factual  none-lag-d80-81        0.455
+factual  none-lag-d80-82        0.439
+factual  none-lag-d80-83        0.442
+factual  none-lag-d80-84        0.449
+factual  none-lag-d80-85        0.359
+factual  none-lag-d80-86        0.457
+factual  none-lag-d80-87        0.440
+factual  none-lag-d80-88        0.427
+factual  none-safety-d40-81     0.287
+factual  none-safety-d40-82     0.333
+factual  none-safety-d40-83     0.337
+factual  none-safety-d40-84     0.386
+factual  none-safety-d40-85     0.375
+factual  none-safety-d40-86     0.343
+factual  none-safety-d40-87     0.367
+factual  none-safety-d40-88     0.330
+factual  none-safety-d80-81     0.274
+factual  none-safety-d80-82     0.279
+factual  none-safety-d80-83     0.279
+factual  none-safety-d80-84     0.279
+factual  none-safety-d80-85     0.278
+factual  none-safety-d80-86     0.270
+factual  none-safety-d80-87     0.278
+factual  none-safety-d80-88     0.279
+factual  none-bayes-d40-81      0.379
+factual  none-bayes-d40-82      0.353
+factual  none-bayes-d40-83      0.355
+factual  none-bayes-d40-84      0.330
+factual  none-bayes-d40-85      0.379
+factual  none-bayes-d40-86      0.344
+factual  none-bayes-d40-87      0.365
+factual  none-bayes-d40-88      0.309
+factual  none-bayes-d80-81      0.261
+factual  none-bayes-d80-82      0.267
+factual  none-bayes-d80-83      0.269
+factual  none-bayes-d80-84      0.267
+factual  none-bayes-d80-85      0.276
+factual  none-bayes-d80-86      0.269
+factual  none-bayes-d80-87      0.276
+factual  none-bayes-d80-88      0.265
+[
+ {
+  "id": "H1",
+  "claim": "延迟 80：none-safety 优于 none-plain 至少 0.05",
+  "statistic": 0.0003,
+  "threshold": 0.05,
+  "effectOk": false,
+  "p": 0.5,
+  "holmReject": false,
+  "supported": false,
+  "perSeed": [
+   0.0102,
+   0,
+   0,
+   -0.0177,
+   -0.0168,
+   0.0154,
+   0.0111,
+   0
+  ]
+ },
+ {
+  "id": "H2",
+  "claim": "延迟 80：none-bayes 优于 none-plain 至少 0.05",
+  "statistic": 0.0095,
+  "threshold": 0.05,
+  "effectOk": false,
+  "p": 0.0234,
+  "holmReject": false,
+  "supported": false,
+  "perSeed": [
+   0.0035,
+   0.0245,
+   0.0113,
+   0.0093,
+   -0.0098,
+   0.0115,
+   0.0035,
+   0.0219
+  ]
+ },
+ {
+  "id": "H3",
+  "claim": "延迟 80：先验优势在 safety 学习器下比 plain 小至少 0.03（(laya−none)plain − (laya−none)safety）",
+  "statistic": 0.0041,
+  "threshold": 0.03,
+  "effectOk": false,
+  "p": 0.1445,
+  "holmReject": false,
+  "supported": false,
+  "perSeed": [
+   0.0027,
+   0.0179,
+   0.0016,
+   0.0039,
+   -0.0118,
+   0.0185,
+   0.0064,
+   -0.0061
+  ]
+ },
+ {
+  "id": "H4",
+  "claim": "延迟 80：先验优势在 bayes 学习器下比 plain 小至少 0.03",
+  "statistic": 0.0169,
+  "threshold": 0.03,
+  "effectOk": false,
+  "p": 0.0039,
+  "holmReject": true,
+  "supported": false,
+  "perSeed": [
+   0.0042,
+   0.034,
+   0.006,
+   0.0278,
+   0.0067,
+   0.0217,
+   0.0027,
+   0.0322
+  ]
+ }
+]

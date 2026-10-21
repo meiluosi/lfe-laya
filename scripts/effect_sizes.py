@@ -85,6 +85,11 @@ add('13', '强学习器：none-lag − none-plain（延迟 80）', P['H1']['perS
 add('13', '强学习器：laya-lag − none-lag（延迟 80）', P['H2a']['perSeed'], 0.02, '不成立')
 add('13', '强学习器：none-lag 相对 laya-lag 非劣效（延迟 80，> −0.02）', P['H2b']['perSeed'], -0.02, '不成立', noninf=True)
 add('13', '强学习器：laya-lag − laya-plain（延迟 80）', P['H3']['perSeed'], 0.03, '成立')
+r = load('learners-eval-01'); P = {h['id']: h for h in r['primary']}
+add('14', '另两种学习器：none-safety − none-plain（延迟 80）', P['H1']['perSeed'], 0.05, '不成立')
+add('14', '另两种学习器：none-bayes − none-plain（延迟 80）', P['H2']['perSeed'], 0.05, '不成立')
+add('14', '另两种学习器：先验优势在 safety 下的缩小（延迟 80）', P['H3']['perSeed'], 0.03, '不成立')
+add('14', '另两种学习器：先验优势在 bayes 下的缩小（延迟 80）', P['H4']['perSeed'], 0.03, '不成立（Holm 拒绝，效应量未达）')
 r = load('heldout-rep-eval-01')
 for h in r['primary']:
     xs = [p['diff'] for p in h['perRun']]; add('03', f"{h['id']} {h['claim']}（3 个训练种子）", xs, None, '不成立（交集检验）')
