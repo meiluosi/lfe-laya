@@ -1,0 +1,14 @@
+{
+  "note": "语义食物词表。训练/测试词汇互不重叠：评估世界里的描述词对进化过程是全新的。好/坏短语由常识情感决定真实影响；nonsense 无语义，真值随机。",
+  "nouns": { "train": ["berry", "fruit", "nectar", "seed", "leaf", "root"], "test": ["sap", "mushroom", "bud", "moss", "pollen", "petal"] },
+  "good": {
+    "train": ["ripe and sweet", "fresh and juicy", "plump and fragrant", "golden and warm-smelling", "soft, sweet-smelling", "clean and nutritious", "glossy, firm and ripe", "honey-scented", "tender and fresh"],
+    "test": ["sun-warmed and sugary", "crisp and wholesome", "rich and creamy", "bright, plump and aromatic", "dewy and flavorful", "full of healthy juice", "smooth, ripe and delicious", "gently sweet and soft", "freshly picked and pure"]
+  },
+  "bad": {
+    "train": ["rotten and foul-smelling", "moldy and slimy", "bitter and withered", "covered in poisonous spots", "shriveled, sour and decayed", "oozing a sharp chemical stench", "dull, spoiled and fuzzy with mold", "bright with warning stripes and acrid", "putrid and crawling with maggots"],
+    "test": ["sour-smelling and mushy", "blackened and fermented", "stinking and covered in sticky pus", "oily with a toxic sheen", "festering and rotting", "spongy, moldy and reeking", "burning bitter and venomous", "decomposing and swarming with flies", "greenish, slimy and putrid"]
+  },
+  "syllables": ["zor", "blim", "quen", "trax", "vul", "mep", "dro", "siff", "kel", "nub", "yar", "pho"],
+  "nonsenseSuffix": ["colored", "textured", "shaped"], "nonsenseNouns": ["lump", "thing", "bit", "piece"]
+}

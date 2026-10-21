@@ -1,0 +1,1582 @@
+{
+ "template": "semantic-prior-v1",
+ "model": {
+  "provider": "laya",
+  "sdk": "0.3.21",
+  "repo": "convaiinnovations/laya",
+  "revision": "55cf4c4ebb4ebe31b2550e8bdf3bd21b99753851",
+  "requested_device": "mps",
+  "actual_device": "mps",
+  "cpu_fallback_count": 0,
+  "template": "ecology-local-en-v1",
+  "load_seconds": 43.8211202500388,
+  "tokenizer_runtime_sha256": "50044de60daaa73df97d262e15a40d4faf0160e7d742df64b377877a1320dd12",
+  "observation_precision": "food:0.01, distance:0.1; raw observation retained"
+ },
+ "descriptorsSha256": "19ec6e702a3d395a2a1b3c9f85566a80be40347b3e19ac6ec5a10ba783a2b82e",
+ "seconds": 56.1,
+ "orders": [
+  "eat,avoid",
+  "avoid,eat"
+ ],
+ "report": {
+  "train": {
+   "n": 108,
+   "auc": 1.0,
+   "accuracy@0.5": 0.9722,
+   "meanPEatEdible": 0.694,
+   "meanPEatHarmful": 0.201
+  },
+  "test": {
+   "n": 108,
+   "auc": 1.0,
+   "accuracy@0.5": 0.9259,
+   "meanPEatEdible": 0.635,
+   "meanPEatHarmful": 0.201
+  },
+  "nonsense": {
+   "n": 40,
+   "meanPEat": 0.361,
+   "stdev": 0.064
+  }
+ },
+ "priors": {
+  "ripe and sweet berry": {
+   "split": "train",
+   "pEatForward": 0.7956,
+   "pEatReverse": 0.7014,
+   "pEat": 0.7484999999999999
+  },
+  "ripe and sweet fruit": {
+   "split": "train",
+   "pEatForward": 0.7485,
+   "pEatReverse": 0.7518,
+   "pEat": 0.7501500000000001
+  },
+  "ripe and sweet nectar": {
+   "split": "train",
+   "pEatForward": 0.8319,
+   "pEatReverse": 0.836,
+   "pEat": 0.83395
+  },
+  "ripe and sweet seed": {
+   "split": "train",
+   "pEatForward": 0.6424,
+   "pEatReverse": 0.51,
+   "pEat": 0.5762
+  },
+  "ripe and sweet leaf": {
+   "split": "train",
+   "pEatForward": 0.765,
+   "pEatReverse": 0.7442,
+   "pEat": 0.7545999999999999
+  },
+  "ripe and sweet root": {
+   "split": "train",
+   "pEatForward": 0.7577,
+   "pEatReverse": 0.7314,
+   "pEat": 0.74455
+  },
+  "fresh and juicy berry": {
+   "split": "train",
+   "pEatForward": 0.836,
+   "pEatReverse": 0.7564,
+   "pEat": 0.7962
+  },
+  "fresh and juicy fruit": {
+   "split": "train",
+   "pEatForward": 0.8158,
+   "pEatReverse": 0.7233,
+   "pEat": 0.76955
+  },
+  "fresh and juicy nectar": {
+   "split": "train",
+   "pEatForward": 0.8425,
+   "pEatReverse": 0.8537,
+   "pEat": 0.8481000000000001
+  },
+  "fresh and juicy seed": {
+   "split": "train",
+   "pEatForward": 0.5584,
+   "pEatReverse": 0.5258,
+   "pEat": 0.5421
+  },
+  "fresh and juicy leaf": {
+   "split": "train",
+   "pEatForward": 0.6758,
+   "pEatReverse": 0.644,
+   "pEat": 0.6598999999999999
+  },
+  "fresh and juicy root": {
+   "split": "train",
+   "pEatForward": 0.7063,
+   "pEatReverse": 0.6821,
+   "pEat": 0.6942
+  },
+  "plump and fragrant berry": {
+   "split": "train",
+   "pEatForward": 0.7585,
+   "pEatReverse": 0.6582,
+   "pEat": 0.70835
+  },
+  "plump and fragrant fruit": {
+   "split": "train",
+   "pEatForward": 0.804,
+   "pEatReverse": 0.7207,
+   "pEat": 0.7623500000000001
+  },
+  "plump and fragrant nectar": {
+   "split": "train",
+   "pEatForward": 0.7367,
+   "pEatReverse": 0.6982,
+   "pEat": 0.71745
+  },
+  "plump and fragrant seed": {
+   "split": "train",
+   "pEatForward": 0.6231,
+   "pEatReverse": 0.4436,
+   "pEat": 0.53335
+  },
+  "plump and fragrant leaf": {
+   "split": "train",
+   "pEatForward": 0.5992,
+   "pEatReverse": 0.3886,
+   "pEat": 0.4939
+  },
+  "plump and fragrant root": {
+   "split": "train",
+   "pEatForward": 0.7084,
+   "pEatReverse": 0.4992,
+   "pEat": 0.6038
+  },
+  "golden and warm-smelling berry": {
+   "split": "train",
+   "pEatForward": 0.7862,
+   "pEatReverse": 0.6371,
+   "pEat": 0.71165
+  },
+  "golden and warm-smelling fruit": {
+   "split": "train",
+   "pEatForward": 0.8003,
+   "pEatReverse": 0.6697,
+   "pEat": 0.735
+  },
+  "golden and warm-smelling nectar": {
+   "split": "train",
+   "pEatForward": 0.8325,
+   "pEatReverse": 0.8262,
+   "pEat": 0.82935
+  },
+  "golden and warm-smelling seed": {
+   "split": "train",
+   "pEatForward": 0.5672,
+   "pEatReverse": 0.4174,
+   "pEat": 0.4923
+  },
+  "golden and warm-smelling leaf": {
+   "split": "train",
+   "pEatForward": 0.5827,
+   "pEatReverse": 0.4464,
+   "pEat": 0.5145500000000001
+  },
+  "golden and warm-smelling root": {
+   "split": "train",
+   "pEatForward": 0.6247,
+   "pEatReverse": 0.4223,
+   "pEat": 0.5235000000000001
+  },
+  "soft, sweet-smelling berry": {
+   "split": "train",
+   "pEatForward": 0.8025,
+   "pEatReverse": 0.6447,
+   "pEat": 0.7236
+  },
+  "soft, sweet-smelling fruit": {
+   "split": "train",
+   "pEatForward": 0.8068,
+   "pEatReverse": 0.6605,
+   "pEat": 0.7336499999999999
+  },
+  "soft, sweet-smelling nectar": {
+   "split": "train",
+   "pEatForward": 0.7645,
+   "pEatReverse": 0.6691,
+   "pEat": 0.7168
+  },
+  "soft, sweet-smelling seed": {
+   "split": "train",
+   "pEatForward": 0.629,
+   "pEatReverse": 0.5083,
+   "pEat": 0.56865
+  },
+  "soft, sweet-smelling leaf": {
+   "split": "train",
+   "pEatForward": 0.675,
+   "pEatReverse": 0.4486,
+   "pEat": 0.5618000000000001
+  },
+  "soft, sweet-smelling root": {
+   "split": "train",
+   "pEatForward": 0.6876,
+   "pEatReverse": 0.5486,
+   "pEat": 0.6181
+  },
+  "clean and nutritious berry": {
+   "split": "train",
+   "pEatForward": 0.9059,
+   "pEatReverse": 0.8649,
+   "pEat": 0.8854
+  },
+  "clean and nutritious fruit": {
+   "split": "train",
+   "pEatForward": 0.9308,
+   "pEatReverse": 0.8677,
+   "pEat": 0.89925
+  },
+  "clean and nutritious nectar": {
+   "split": "train",
+   "pEatForward": 0.9316,
+   "pEatReverse": 0.8015,
+   "pEat": 0.8665499999999999
+  },
+  "clean and nutritious seed": {
+   "split": "train",
+   "pEatForward": 0.8732,
+   "pEatReverse": 0.7492,
+   "pEat": 0.8111999999999999
+  },
+  "clean and nutritious leaf": {
+   "split": "train",
+   "pEatForward": 0.9101,
+   "pEatReverse": 0.7333,
+   "pEat": 0.8217
+  },
+  "clean and nutritious root": {
+   "split": "train",
+   "pEatForward": 0.9251,
+   "pEatReverse": 0.8562,
+   "pEat": 0.8906499999999999
+  },
+  "glossy, firm and ripe berry": {
+   "split": "train",
+   "pEatForward": 0.7851,
+   "pEatReverse": 0.5985,
+   "pEat": 0.6918
+  },
+  "glossy, firm and ripe fruit": {
+   "split": "train",
+   "pEatForward": 0.6119,
+   "pEatReverse": 0.472,
+   "pEat": 0.5419499999999999
+  },
+  "glossy, firm and ripe nectar": {
+   "split": "train",
+   "pEatForward": 0.802,
+   "pEatReverse": 0.7744,
+   "pEat": 0.7882
+  },
+  "glossy, firm and ripe seed": {
+   "split": "train",
+   "pEatForward": 0.5064,
+   "pEatReverse": 0.5344,
+   "pEat": 0.5204
+  },
+  "glossy, firm and ripe leaf": {
+   "split": "train",
+   "pEatForward": 0.7127,
+   "pEatReverse": 0.5301,
+   "pEat": 0.6214
+  },
+  "glossy, firm and ripe root": {
+   "split": "train",
+   "pEatForward": 0.6379,
+   "pEatReverse": 0.5975,
+   "pEat": 0.6177
+  },
+  "honey-scented berry": {
+   "split": "train",
+   "pEatForward": 0.7563,
+   "pEatReverse": 0.5242,
+   "pEat": 0.64025
+  },
+  "honey-scented fruit": {
+   "split": "train",
+   "pEatForward": 0.8071,
+   "pEatReverse": 0.605,
+   "pEat": 0.7060500000000001
+  },
+  "honey-scented nectar": {
+   "split": "train",
+   "pEatForward": 0.6709,
+   "pEatReverse": 0.3296,
+   "pEat": 0.5002500000000001
+  },
+  "honey-scented seed": {
+   "split": "train",
+   "pEatForward": 0.5977,
+   "pEatReverse": 0.3713,
+   "pEat": 0.48450000000000004
+  },
+  "honey-scented leaf": {
+   "split": "train",
+   "pEatForward": 0.7082,
+   "pEatReverse": 0.4089,
+   "pEat": 0.55855
+  },
+  "honey-scented root": {
+   "split": "train",
+   "pEatForward": 0.7054,
+   "pEatReverse": 0.4549,
+   "pEat": 0.58015
+  },
+  "tender and fresh berry": {
+   "split": "train",
+   "pEatForward": 0.8723,
+   "pEatReverse": 0.8212,
+   "pEat": 0.84675
+  },
+  "tender and fresh fruit": {
+   "split": "train",
+   "pEatForward": 0.8581,
+   "pEatReverse": 0.8254,
+   "pEat": 0.84175
+  },
+  "tender and fresh nectar": {
+   "split": "train",
+   "pEatForward": 0.8747,
+   "pEatReverse": 0.8918,
+   "pEat": 0.8832500000000001
+  },
+  "tender and fresh seed": {
+   "split": "train",
+   "pEatForward": 0.6635,
+   "pEatReverse": 0.6276,
+   "pEat": 0.6455500000000001
+  },
+  "tender and fresh leaf": {
+   "split": "train",
+   "pEatForward": 0.7609,
+   "pEatReverse": 0.7719,
+   "pEat": 0.7664
+  },
+  "tender and fresh root": {
+   "split": "train",
+   "pEatForward": 0.806,
+   "pEatReverse": 0.7706,
+   "pEat": 0.7883
+  },
+  "rotten and foul-smelling berry": {
+   "split": "train",
+   "pEatForward": 0.4368,
+   "pEatReverse": 0.1957,
+   "pEat": 0.31625000000000003
+  },
+  "rotten and foul-smelling fruit": {
+   "split": "train",
+   "pEatForward": 0.4275,
+   "pEatReverse": 0.2631,
+   "pEat": 0.3453
+  },
+  "rotten and foul-smelling nectar": {
+   "split": "train",
+   "pEatForward": 0.3291,
+   "pEatReverse": 0.1811,
+   "pEat": 0.2551
+  },
+  "rotten and foul-smelling seed": {
+   "split": "train",
+   "pEatForward": 0.1589,
+   "pEatReverse": 0.1228,
+   "pEat": 0.14085
+  },
+  "rotten and foul-smelling leaf": {
+   "split": "train",
+   "pEatForward": 0.3304,
+   "pEatReverse": 0.1816,
+   "pEat": 0.256
+  },
+  "rotten and foul-smelling root": {
+   "split": "train",
+   "pEatForward": 0.3071,
+   "pEatReverse": 0.1327,
+   "pEat": 0.21989999999999998
+  },
+  "moldy and slimy berry": {
+   "split": "train",
+   "pEatForward": 0.1153,
+   "pEatReverse": 0.0635,
+   "pEat": 0.08940000000000001
+  },
+  "moldy and slimy fruit": {
+   "split": "train",
+   "pEatForward": 0.0961,
+   "pEatReverse": 0.061,
+   "pEat": 0.07855000000000001
+  },
+  "moldy and slimy nectar": {
+   "split": "train",
+   "pEatForward": 0.0742,
+   "pEatReverse": 0.0568,
+   "pEat": 0.0655
+  },
+  "moldy and slimy seed": {
+   "split": "train",
+   "pEatForward": 0.1121,
+   "pEatReverse": 0.0957,
+   "pEat": 0.10389999999999999
+  },
+  "moldy and slimy leaf": {
+   "split": "train",
+   "pEatForward": 0.1395,
+   "pEatReverse": 0.1196,
+   "pEat": 0.12955
+  },
+  "moldy and slimy root": {
+   "split": "train",
+   "pEatForward": 0.1476,
+   "pEatReverse": 0.1385,
+   "pEat": 0.14305
+  },
+  "bitter and withered berry": {
+   "split": "train",
+   "pEatForward": 0.3919,
+   "pEatReverse": 0.2983,
+   "pEat": 0.3451
+  },
+  "bitter and withered fruit": {
+   "split": "train",
+   "pEatForward": 0.395,
+   "pEatReverse": 0.2376,
+   "pEat": 0.3163
+  },
+  "bitter and withered nectar": {
+   "split": "train",
+   "pEatForward": 0.1835,
+   "pEatReverse": 0.1471,
+   "pEat": 0.1653
+  },
+  "bitter and withered seed": {
+   "split": "train",
+   "pEatForward": 0.1796,
+   "pEatReverse": 0.1676,
+   "pEat": 0.1736
+  },
+  "bitter and withered leaf": {
+   "split": "train",
+   "pEatForward": 0.3489,
+   "pEatReverse": 0.2334,
+   "pEat": 0.29115
+  },
+  "bitter and withered root": {
+   "split": "train",
+   "pEatForward": 0.3559,
+   "pEatReverse": 0.2357,
+   "pEat": 0.2958
+  },
+  "covered in poisonous spots berry": {
+   "split": "train",
+   "pEatForward": 0.1741,
+   "pEatReverse": 0.0882,
+   "pEat": 0.13115
+  },
+  "covered in poisonous spots fruit": {
+   "split": "train",
+   "pEatForward": 0.2018,
+   "pEatReverse": 0.139,
+   "pEat": 0.1704
+  },
+  "covered in poisonous spots nectar": {
+   "split": "train",
+   "pEatForward": 0.274,
+   "pEatReverse": 0.1096,
+   "pEat": 0.19180000000000003
+  },
+  "covered in poisonous spots seed": {
+   "split": "train",
+   "pEatForward": 0.2154,
+   "pEatReverse": 0.1153,
+   "pEat": 0.16535
+  },
+  "covered in poisonous spots leaf": {
+   "split": "train",
+   "pEatForward": 0.1859,
+   "pEatReverse": 0.1103,
+   "pEat": 0.1481
+  },
+  "covered in poisonous spots root": {
+   "split": "train",
+   "pEatForward": 0.2479,
+   "pEatReverse": 0.1163,
+   "pEat": 0.1821
+  },
+  "shriveled, sour and decayed berry": {
+   "split": "train",
+   "pEatForward": 0.3004,
+   "pEatReverse": 0.1386,
+   "pEat": 0.2195
+  },
+  "shriveled, sour and decayed fruit": {
+   "split": "train",
+   "pEatForward": 0.2059,
+   "pEatReverse": 0.1243,
+   "pEat": 0.1651
+  },
+  "shriveled, sour and decayed nectar": {
+   "split": "train",
+   "pEatForward": 0.0689,
+   "pEatReverse": 0.0678,
+   "pEat": 0.06835
+  },
+  "shriveled, sour and decayed seed": {
+   "split": "train",
+   "pEatForward": 0.1495,
+   "pEatReverse": 0.0977,
+   "pEat": 0.12359999999999999
+  },
+  "shriveled, sour and decayed leaf": {
+   "split": "train",
+   "pEatForward": 0.1634,
+   "pEatReverse": 0.1187,
+   "pEat": 0.14105
+  },
+  "shriveled, sour and decayed root": {
+   "split": "train",
+   "pEatForward": 0.2456,
+   "pEatReverse": 0.1523,
+   "pEat": 0.19895000000000002
+  },
+  "oozing a sharp chemical stench berry": {
+   "split": "train",
+   "pEatForward": 0.3757,
+   "pEatReverse": 0.1389,
+   "pEat": 0.2573
+  },
+  "oozing a sharp chemical stench fruit": {
+   "split": "train",
+   "pEatForward": 0.2446,
+   "pEatReverse": 0.1461,
+   "pEat": 0.19535000000000002
+  },
+  "oozing a sharp chemical stench nectar": {
+   "split": "train",
+   "pEatForward": 0.3265,
+   "pEatReverse": 0.1319,
+   "pEat": 0.22920000000000001
+  },
+  "oozing a sharp chemical stench seed": {
+   "split": "train",
+   "pEatForward": 0.22,
+   "pEatReverse": 0.1077,
+   "pEat": 0.16385
+  },
+  "oozing a sharp chemical stench leaf": {
+   "split": "train",
+   "pEatForward": 0.2024,
+   "pEatReverse": 0.0921,
+   "pEat": 0.14725
+  },
+  "oozing a sharp chemical stench root": {
+   "split": "train",
+   "pEatForward": 0.1985,
+   "pEatReverse": 0.0975,
+   "pEat": 0.14800000000000002
+  },
+  "dull, spoiled and fuzzy with mold berry": {
+   "split": "train",
+   "pEatForward": 0.343,
+   "pEatReverse": 0.2514,
+   "pEat": 0.2972
+  },
+  "dull, spoiled and fuzzy with mold fruit": {
+   "split": "train",
+   "pEatForward": 0.3944,
+   "pEatReverse": 0.3367,
+   "pEat": 0.36555
+  },
+  "dull, spoiled and fuzzy with mold nectar": {
+   "split": "train",
+   "pEatForward": 0.3102,
+   "pEatReverse": 0.288,
+   "pEat": 0.2991
+  },
+  "dull, spoiled and fuzzy with mold seed": {
+   "split": "train",
+   "pEatForward": 0.2913,
+   "pEatReverse": 0.3023,
+   "pEat": 0.2968
+  },
+  "dull, spoiled and fuzzy with mold leaf": {
+   "split": "train",
+   "pEatForward": 0.3268,
+   "pEatReverse": 0.3299,
+   "pEat": 0.32835000000000003
+  },
+  "dull, spoiled and fuzzy with mold root": {
+   "split": "train",
+   "pEatForward": 0.2923,
+   "pEatReverse": 0.3186,
+   "pEat": 0.30545
+  },
+  "bright with warning stripes and acrid berry": {
+   "split": "train",
+   "pEatForward": 0.4094,
+   "pEatReverse": 0.1661,
+   "pEat": 0.28775
+  },
+  "bright with warning stripes and acrid fruit": {
+   "split": "train",
+   "pEatForward": 0.3555,
+   "pEatReverse": 0.1622,
+   "pEat": 0.25885
+  },
+  "bright with warning stripes and acrid nectar": {
+   "split": "train",
+   "pEatForward": 0.3675,
+   "pEatReverse": 0.1424,
+   "pEat": 0.25495
+  },
+  "bright with warning stripes and acrid seed": {
+   "split": "train",
+   "pEatForward": 0.3174,
+   "pEatReverse": 0.108,
+   "pEat": 0.2127
+  },
+  "bright with warning stripes and acrid leaf": {
+   "split": "train",
+   "pEatForward": 0.3391,
+   "pEatReverse": 0.1445,
+   "pEat": 0.24180000000000001
+  },
+  "bright with warning stripes and acrid root": {
+   "split": "train",
+   "pEatForward": 0.3042,
+   "pEatReverse": 0.1165,
+   "pEat": 0.21035
+  },
+  "putrid and crawling with maggots berry": {
+   "split": "train",
+   "pEatForward": 0.2219,
+   "pEatReverse": 0.0795,
+   "pEat": 0.1507
+  },
+  "putrid and crawling with maggots fruit": {
+   "split": "train",
+   "pEatForward": 0.1888,
+   "pEatReverse": 0.1015,
+   "pEat": 0.14515
+  },
+  "putrid and crawling with maggots nectar": {
+   "split": "train",
+   "pEatForward": 0.092,
+   "pEatReverse": 0.0572,
+   "pEat": 0.0746
+  },
+  "putrid and crawling with maggots seed": {
+   "split": "train",
+   "pEatForward": 0.138,
+   "pEatReverse": 0.0735,
+   "pEat": 0.10575000000000001
+  },
+  "putrid and crawling with maggots leaf": {
+   "split": "train",
+   "pEatForward": 0.1619,
+   "pEatReverse": 0.0834,
+   "pEat": 0.12265
+  },
+  "putrid and crawling with maggots root": {
+   "split": "train",
+   "pEatForward": 0.164,
+   "pEatReverse": 0.0971,
+   "pEat": 0.13055
+  },
+  "sun-warmed and sugary sap": {
+   "split": "test",
+   "pEatForward": 0.5547,
+   "pEatReverse": 0.3559,
+   "pEat": 0.4553
+  },
+  "sun-warmed and sugary mushroom": {
+   "split": "test",
+   "pEatForward": 0.6762,
+   "pEatReverse": 0.4495,
+   "pEat": 0.5628500000000001
+  },
+  "sun-warmed and sugary bud": {
+   "split": "test",
+   "pEatForward": 0.6815,
+   "pEatReverse": 0.6246,
+   "pEat": 0.65305
+  },
+  "sun-warmed and sugary moss": {
+   "split": "test",
+   "pEatForward": 0.6946,
+   "pEatReverse": 0.5004,
+   "pEat": 0.5974999999999999
+  },
+  "sun-warmed and sugary pollen": {
+   "split": "test",
+   "pEatForward": 0.6961,
+   "pEatReverse": 0.3481,
+   "pEat": 0.5221
+  },
+  "sun-warmed and sugary petal": {
+   "split": "test",
+   "pEatForward": 0.6859,
+   "pEatReverse": 0.6156,
+   "pEat": 0.6507499999999999
+  },
+  "crisp and wholesome sap": {
+   "split": "test",
+   "pEatForward": 0.8079,
+   "pEatReverse": 0.672,
+   "pEat": 0.73995
+  },
+  "crisp and wholesome mushroom": {
+   "split": "test",
+   "pEatForward": 0.7988,
+   "pEatReverse": 0.8127,
+   "pEat": 0.80575
+  },
+  "crisp and wholesome bud": {
+   "split": "test",
+   "pEatForward": 0.8646,
+   "pEatReverse": 0.7008,
+   "pEat": 0.7827
+  },
+  "crisp and wholesome moss": {
+   "split": "test",
+   "pEatForward": 0.9177,
+   "pEatReverse": 0.6967,
+   "pEat": 0.8071999999999999
+  },
+  "crisp and wholesome pollen": {
+   "split": "test",
+   "pEatForward": 0.8812,
+   "pEatReverse": 0.7705,
+   "pEat": 0.82585
+  },
+  "crisp and wholesome petal": {
+   "split": "test",
+   "pEatForward": 0.7722,
+   "pEatReverse": 0.4483,
+   "pEat": 0.61025
+  },
+  "rich and creamy sap": {
+   "split": "test",
+   "pEatForward": 0.6599,
+   "pEatReverse": 0.3752,
+   "pEat": 0.51755
+  },
+  "rich and creamy mushroom": {
+   "split": "test",
+   "pEatForward": 0.6306,
+   "pEatReverse": 0.5233,
+   "pEat": 0.5769500000000001
+  },
+  "rich and creamy bud": {
+   "split": "test",
+   "pEatForward": 0.7263,
+   "pEatReverse": 0.7011,
+   "pEat": 0.7137
+  },
+  "rich and creamy moss": {
+   "split": "test",
+   "pEatForward": 0.7127,
+   "pEatReverse": 0.3871,
+   "pEat": 0.5499
+  },
+  "rich and creamy pollen": {
+   "split": "test",
+   "pEatForward": 0.677,
+   "pEatReverse": 0.427,
+   "pEat": 0.552
+  },
+  "rich and creamy petal": {
+   "split": "test",
+   "pEatForward": 0.6354,
+   "pEatReverse": 0.511,
+   "pEat": 0.5731999999999999
+  },
+  "bright, plump and aromatic sap": {
+   "split": "test",
+   "pEatForward": 0.6012,
+   "pEatReverse": 0.4927,
+   "pEat": 0.54695
+  },
+  "bright, plump and aromatic mushroom": {
+   "split": "test",
+   "pEatForward": 0.5173,
+   "pEatReverse": 0.2918,
+   "pEat": 0.40454999999999997
+  },
+  "bright, plump and aromatic bud": {
+   "split": "test",
+   "pEatForward": 0.5535,
+   "pEatReverse": 0.4276,
+   "pEat": 0.49055
+  },
+  "bright, plump and aromatic moss": {
+   "split": "test",
+   "pEatForward": 0.6127,
+   "pEatReverse": 0.3262,
+   "pEat": 0.46945000000000003
+  },
+  "bright, plump and aromatic pollen": {
+   "split": "test",
+   "pEatForward": 0.5844,
+   "pEatReverse": 0.3179,
+   "pEat": 0.45115000000000005
+  },
+  "bright, plump and aromatic petal": {
+   "split": "test",
+   "pEatForward": 0.5731,
+   "pEatReverse": 0.3377,
+   "pEat": 0.4554
+  },
+  "dewy and flavorful sap": {
+   "split": "test",
+   "pEatForward": 0.6021,
+   "pEatReverse": 0.5502,
+   "pEat": 0.5761499999999999
+  },
+  "dewy and flavorful mushroom": {
+   "split": "test",
+   "pEatForward": 0.5234,
+   "pEatReverse": 0.5151,
+   "pEat": 0.51925
+  },
+  "dewy and flavorful bud": {
+   "split": "test",
+   "pEatForward": 0.8554,
+   "pEatReverse": 0.8726,
+   "pEat": 0.8640000000000001
+  },
+  "dewy and flavorful moss": {
+   "split": "test",
+   "pEatForward": 0.7237,
+   "pEatReverse": 0.6854,
+   "pEat": 0.70455
+  },
+  "dewy and flavorful pollen": {
+   "split": "test",
+   "pEatForward": 0.6865,
+   "pEatReverse": 0.5807,
+   "pEat": 0.6335999999999999
+  },
+  "dewy and flavorful petal": {
+   "split": "test",
+   "pEatForward": 0.7031,
+   "pEatReverse": 0.7262,
+   "pEat": 0.71465
+  },
+  "full of healthy juice sap": {
+   "split": "test",
+   "pEatForward": 0.8628,
+   "pEatReverse": 0.6171,
+   "pEat": 0.73995
+  },
+  "full of healthy juice mushroom": {
+   "split": "test",
+   "pEatForward": 0.8795,
+   "pEatReverse": 0.6959,
+   "pEat": 0.7877
+  },
+  "full of healthy juice bud": {
+   "split": "test",
+   "pEatForward": 0.7561,
+   "pEatReverse": 0.5904,
+   "pEat": 0.67325
+  },
+  "full of healthy juice moss": {
+   "split": "test",
+   "pEatForward": 0.9442,
+   "pEatReverse": 0.7008,
+   "pEat": 0.8225
+  },
+  "full of healthy juice pollen": {
+   "split": "test",
+   "pEatForward": 0.9294,
+   "pEatReverse": 0.7294,
+   "pEat": 0.8294
+  },
+  "full of healthy juice petal": {
+   "split": "test",
+   "pEatForward": 0.8697,
+   "pEatReverse": 0.5045,
+   "pEat": 0.6871
+  },
+  "smooth, ripe and delicious sap": {
+   "split": "test",
+   "pEatForward": 0.6903,
+   "pEatReverse": 0.579,
+   "pEat": 0.6346499999999999
+  },
+  "smooth, ripe and delicious mushroom": {
+   "split": "test",
+   "pEatForward": 0.7532,
+   "pEatReverse": 0.7249,
+   "pEat": 0.73905
+  },
+  "smooth, ripe and delicious bud": {
+   "split": "test",
+   "pEatForward": 0.6083,
+   "pEatReverse": 0.6887,
+   "pEat": 0.6485
+  },
+  "smooth, ripe and delicious moss": {
+   "split": "test",
+   "pEatForward": 0.8243,
+   "pEatReverse": 0.7631,
+   "pEat": 0.7937000000000001
+  },
+  "smooth, ripe and delicious pollen": {
+   "split": "test",
+   "pEatForward": 0.746,
+   "pEatReverse": 0.5721,
+   "pEat": 0.65905
+  },
+  "smooth, ripe and delicious petal": {
+   "split": "test",
+   "pEatForward": 0.7181,
+   "pEatReverse": 0.5891,
+   "pEat": 0.6536
+  },
+  "gently sweet and soft sap": {
+   "split": "test",
+   "pEatForward": 0.5825,
+   "pEatReverse": 0.5251,
+   "pEat": 0.5538000000000001
+  },
+  "gently sweet and soft mushroom": {
+   "split": "test",
+   "pEatForward": 0.6707,
+   "pEatReverse": 0.5812,
+   "pEat": 0.62595
+  },
+  "gently sweet and soft bud": {
+   "split": "test",
+   "pEatForward": 0.6956,
+   "pEatReverse": 0.6601,
+   "pEat": 0.6778500000000001
+  },
+  "gently sweet and soft moss": {
+   "split": "test",
+   "pEatForward": 0.6342,
+   "pEatReverse": 0.491,
+   "pEat": 0.5626
+  },
+  "gently sweet and soft pollen": {
+   "split": "test",
+   "pEatForward": 0.61,
+   "pEatReverse": 0.522,
+   "pEat": 0.5660000000000001
+  },
+  "gently sweet and soft petal": {
+   "split": "test",
+   "pEatForward": 0.569,
+   "pEatReverse": 0.3723,
+   "pEat": 0.47065
+  },
+  "freshly picked and pure sap": {
+   "split": "test",
+   "pEatForward": 0.6063,
+   "pEatReverse": 0.3823,
+   "pEat": 0.49429999999999996
+  },
+  "freshly picked and pure mushroom": {
+   "split": "test",
+   "pEatForward": 0.8244,
+   "pEatReverse": 0.6055,
+   "pEat": 0.71495
+  },
+  "freshly picked and pure bud": {
+   "split": "test",
+   "pEatForward": 0.6731,
+   "pEatReverse": 0.6198,
+   "pEat": 0.64645
+  },
+  "freshly picked and pure moss": {
+   "split": "test",
+   "pEatForward": 0.8348,
+   "pEatReverse": 0.5702,
+   "pEat": 0.7025
+  },
+  "freshly picked and pure pollen": {
+   "split": "test",
+   "pEatForward": 0.7403,
+   "pEatReverse": 0.4905,
+   "pEat": 0.6154
+  },
+  "freshly picked and pure petal": {
+   "split": "test",
+   "pEatForward": 0.7654,
+   "pEatReverse": 0.5187,
+   "pEat": 0.64205
+  },
+  "sour-smelling and mushy sap": {
+   "split": "test",
+   "pEatForward": 0.3089,
+   "pEatReverse": 0.3169,
+   "pEat": 0.3129
+  },
+  "sour-smelling and mushy mushroom": {
+   "split": "test",
+   "pEatForward": 0.455,
+   "pEatReverse": 0.2505,
+   "pEat": 0.35275
+  },
+  "sour-smelling and mushy bud": {
+   "split": "test",
+   "pEatForward": 0.1982,
+   "pEatReverse": 0.2197,
+   "pEat": 0.20895
+  },
+  "sour-smelling and mushy moss": {
+   "split": "test",
+   "pEatForward": 0.3142,
+   "pEatReverse": 0.2338,
+   "pEat": 0.274
+  },
+  "sour-smelling and mushy pollen": {
+   "split": "test",
+   "pEatForward": 0.3922,
+   "pEatReverse": 0.2269,
+   "pEat": 0.30955
+  },
+  "sour-smelling and mushy petal": {
+   "split": "test",
+   "pEatForward": 0.297,
+   "pEatReverse": 0.2162,
+   "pEat": 0.2566
+  },
+  "blackened and fermented sap": {
+   "split": "test",
+   "pEatForward": 0.1955,
+   "pEatReverse": 0.0977,
+   "pEat": 0.1466
+  },
+  "blackened and fermented mushroom": {
+   "split": "test",
+   "pEatForward": 0.2083,
+   "pEatReverse": 0.0889,
+   "pEat": 0.1486
+  },
+  "blackened and fermented bud": {
+   "split": "test",
+   "pEatForward": 0.1109,
+   "pEatReverse": 0.0829,
+   "pEat": 0.0969
+  },
+  "blackened and fermented moss": {
+   "split": "test",
+   "pEatForward": 0.2213,
+   "pEatReverse": 0.1146,
+   "pEat": 0.16795
+  },
+  "blackened and fermented pollen": {
+   "split": "test",
+   "pEatForward": 0.2469,
+   "pEatReverse": 0.1206,
+   "pEat": 0.18375
+  },
+  "blackened and fermented petal": {
+   "split": "test",
+   "pEatForward": 0.2843,
+   "pEatReverse": 0.1523,
+   "pEat": 0.2183
+  },
+  "stinking and covered in sticky pus sap": {
+   "split": "test",
+   "pEatForward": 0.1925,
+   "pEatReverse": 0.0904,
+   "pEat": 0.14145
+  },
+  "stinking and covered in sticky pus mushroom": {
+   "split": "test",
+   "pEatForward": 0.2468,
+   "pEatReverse": 0.0761,
+   "pEat": 0.16144999999999998
+  },
+  "stinking and covered in sticky pus bud": {
+   "split": "test",
+   "pEatForward": 0.2099,
+   "pEatReverse": 0.0782,
+   "pEat": 0.14405
+  },
+  "stinking and covered in sticky pus moss": {
+   "split": "test",
+   "pEatForward": 0.2128,
+   "pEatReverse": 0.0956,
+   "pEat": 0.1542
+  },
+  "stinking and covered in sticky pus pollen": {
+   "split": "test",
+   "pEatForward": 0.2422,
+   "pEatReverse": 0.0878,
+   "pEat": 0.165
+  },
+  "stinking and covered in sticky pus petal": {
+   "split": "test",
+   "pEatForward": 0.19,
+   "pEatReverse": 0.0849,
+   "pEat": 0.13745000000000002
+  },
+  "oily with a toxic sheen sap": {
+   "split": "test",
+   "pEatForward": 0.4154,
+   "pEatReverse": 0.247,
+   "pEat": 0.3312
+  },
+  "oily with a toxic sheen mushroom": {
+   "split": "test",
+   "pEatForward": 0.4107,
+   "pEatReverse": 0.2028,
+   "pEat": 0.30675
+  },
+  "oily with a toxic sheen bud": {
+   "split": "test",
+   "pEatForward": 0.3781,
+   "pEatReverse": 0.2173,
+   "pEat": 0.29769999999999996
+  },
+  "oily with a toxic sheen moss": {
+   "split": "test",
+   "pEatForward": 0.4228,
+   "pEatReverse": 0.2066,
+   "pEat": 0.3147
+  },
+  "oily with a toxic sheen pollen": {
+   "split": "test",
+   "pEatForward": 0.4266,
+   "pEatReverse": 0.2105,
+   "pEat": 0.31855
+  },
+  "oily with a toxic sheen petal": {
+   "split": "test",
+   "pEatForward": 0.4351,
+   "pEatReverse": 0.2093,
+   "pEat": 0.3222
+  },
+  "festering and rotting sap": {
+   "split": "test",
+   "pEatForward": 0.1931,
+   "pEatReverse": 0.1272,
+   "pEat": 0.16015000000000001
+  },
+  "festering and rotting mushroom": {
+   "split": "test",
+   "pEatForward": 0.1942,
+   "pEatReverse": 0.133,
+   "pEat": 0.16360000000000002
+  },
+  "festering and rotting bud": {
+   "split": "test",
+   "pEatForward": 0.1268,
+   "pEatReverse": 0.1083,
+   "pEat": 0.11754999999999999
+  },
+  "festering and rotting moss": {
+   "split": "test",
+   "pEatForward": 0.1763,
+   "pEatReverse": 0.1186,
+   "pEat": 0.14745
+  },
+  "festering and rotting pollen": {
+   "split": "test",
+   "pEatForward": 0.1737,
+   "pEatReverse": 0.0926,
+   "pEat": 0.13315
+  },
+  "festering and rotting petal": {
+   "split": "test",
+   "pEatForward": 0.197,
+   "pEatReverse": 0.1495,
+   "pEat": 0.17325000000000002
+  },
+  "spongy, moldy and reeking sap": {
+   "split": "test",
+   "pEatForward": 0.1057,
+   "pEatReverse": 0.0918,
+   "pEat": 0.09875
+  },
+  "spongy, moldy and reeking mushroom": {
+   "split": "test",
+   "pEatForward": 0.1558,
+   "pEatReverse": 0.0905,
+   "pEat": 0.12315
+  },
+  "spongy, moldy and reeking bud": {
+   "split": "test",
+   "pEatForward": 0.1085,
+   "pEatReverse": 0.1152,
+   "pEat": 0.11185
+  },
+  "spongy, moldy and reeking moss": {
+   "split": "test",
+   "pEatForward": 0.1549,
+   "pEatReverse": 0.0942,
+   "pEat": 0.12455000000000001
+  },
+  "spongy, moldy and reeking pollen": {
+   "split": "test",
+   "pEatForward": 0.1457,
+   "pEatReverse": 0.1065,
+   "pEat": 0.1261
+  },
+  "spongy, moldy and reeking petal": {
+   "split": "test",
+   "pEatForward": 0.0985,
+   "pEatReverse": 0.1132,
+   "pEat": 0.10585
+  },
+  "burning bitter and venomous sap": {
+   "split": "test",
+   "pEatForward": 0.1972,
+   "pEatReverse": 0.1112,
+   "pEat": 0.1542
+  },
+  "burning bitter and venomous mushroom": {
+   "split": "test",
+   "pEatForward": 0.362,
+   "pEatReverse": 0.1531,
+   "pEat": 0.25755
+  },
+  "burning bitter and venomous bud": {
+   "split": "test",
+   "pEatForward": 0.1954,
+   "pEatReverse": 0.1138,
+   "pEat": 0.1546
+  },
+  "burning bitter and venomous moss": {
+   "split": "test",
+   "pEatForward": 0.2485,
+   "pEatReverse": 0.1251,
+   "pEat": 0.1868
+  },
+  "burning bitter and venomous pollen": {
+   "split": "test",
+   "pEatForward": 0.36,
+   "pEatReverse": 0.1488,
+   "pEat": 0.25439999999999996
+  },
+  "burning bitter and venomous petal": {
+   "split": "test",
+   "pEatForward": 0.2505,
+   "pEatReverse": 0.1364,
+   "pEat": 0.19345
+  },
+  "decomposing and swarming with flies sap": {
+   "split": "test",
+   "pEatForward": 0.3005,
+   "pEatReverse": 0.2087,
+   "pEat": 0.2546
+  },
+  "decomposing and swarming with flies mushroom": {
+   "split": "test",
+   "pEatForward": 0.4869,
+   "pEatReverse": 0.2291,
+   "pEat": 0.358
+  },
+  "decomposing and swarming with flies bud": {
+   "split": "test",
+   "pEatForward": 0.3859,
+   "pEatReverse": 0.2696,
+   "pEat": 0.32775
+  },
+  "decomposing and swarming with flies moss": {
+   "split": "test",
+   "pEatForward": 0.3936,
+   "pEatReverse": 0.2343,
+   "pEat": 0.31395
+  },
+  "decomposing and swarming with flies pollen": {
+   "split": "test",
+   "pEatForward": 0.3037,
+   "pEatReverse": 0.2057,
+   "pEat": 0.25470000000000004
+  },
+  "decomposing and swarming with flies petal": {
+   "split": "test",
+   "pEatForward": 0.3371,
+   "pEatReverse": 0.2486,
+   "pEat": 0.29285
+  },
+  "greenish, slimy and putrid sap": {
+   "split": "test",
+   "pEatForward": 0.1291,
+   "pEatReverse": 0.0814,
+   "pEat": 0.10525
+  },
+  "greenish, slimy and putrid mushroom": {
+   "split": "test",
+   "pEatForward": 0.1895,
+   "pEatReverse": 0.0812,
+   "pEat": 0.13535
+  },
+  "greenish, slimy and putrid bud": {
+   "split": "test",
+   "pEatForward": 0.149,
+   "pEatReverse": 0.1143,
+   "pEat": 0.13165
+  },
+  "greenish, slimy and putrid moss": {
+   "split": "test",
+   "pEatForward": 0.2057,
+   "pEatReverse": 0.1102,
+   "pEat": 0.15795
+  },
+  "greenish, slimy and putrid pollen": {
+   "split": "test",
+   "pEatForward": 0.191,
+   "pEatReverse": 0.0931,
+   "pEat": 0.14205
+  },
+  "greenish, slimy and putrid petal": {
+   "split": "test",
+   "pEatForward": 0.1042,
+   "pEatReverse": 0.1036,
+   "pEat": 0.10389999999999999
+  },
+  "blimquen quensiff-textured bit": {
+   "split": "nonsense",
+   "pEatForward": 0.4492,
+   "pEatReverse": 0.2034,
+   "pEat": 0.3263
+  },
+  "zordro phopho-textured bit": {
+   "split": "nonsense",
+   "pEatForward": 0.5056,
+   "pEatReverse": 0.1931,
+   "pEat": 0.34935000000000005
+  },
+  "blimkel quenzor-colored bit": {
+   "split": "nonsense",
+   "pEatForward": 0.6422,
+   "pEatReverse": 0.2777,
+   "pEat": 0.45994999999999997
+  },
+  "vuldro quenyar-colored thing": {
+   "split": "nonsense",
+   "pEatForward": 0.6518,
+   "pEatReverse": 0.2797,
+   "pEat": 0.46575
+  },
+  "mepmep mepzor-textured bit": {
+   "split": "nonsense",
+   "pEatForward": 0.5652,
+   "pEatReverse": 0.3127,
+   "pEat": 0.43895
+  },
+  "traxpho kelquen-textured thing": {
+   "split": "nonsense",
+   "pEatForward": 0.4392,
+   "pEatReverse": 0.1751,
+   "pEat": 0.30715
+  },
+  "traxblim zoryar-shaped bit": {
+   "split": "nonsense",
+   "pEatForward": 0.5244,
+   "pEatReverse": 0.2069,
+   "pEat": 0.36565
+  },
+  "zorblim droyar-colored lump": {
+   "split": "nonsense",
+   "pEatForward": 0.5661,
+   "pEatReverse": 0.2217,
+   "pEat": 0.39390000000000003
+  },
+  "nubsiff yarvul-textured piece": {
+   "split": "nonsense",
+   "pEatForward": 0.5682,
+   "pEatReverse": 0.284,
+   "pEat": 0.42610000000000003
+  },
+  "phoyar traxnub-textured piece": {
+   "split": "nonsense",
+   "pEatForward": 0.4652,
+   "pEatReverse": 0.1854,
+   "pEat": 0.32530000000000003
+  },
+  "nubsiff kelquen-shaped bit": {
+   "split": "nonsense",
+   "pEatForward": 0.5666,
+   "pEatReverse": 0.2788,
+   "pEat": 0.42269999999999996
+  },
+  "nubvul traxzor-shaped bit": {
+   "split": "nonsense",
+   "pEatForward": 0.467,
+   "pEatReverse": 0.197,
+   "pEat": 0.332
+  },
+  "traxvul yaryar-colored piece": {
+   "split": "nonsense",
+   "pEatForward": 0.4041,
+   "pEatReverse": 0.1456,
+   "pEat": 0.27485000000000004
+  },
+  "blimvul mepblim-colored thing": {
+   "split": "nonsense",
+   "pEatForward": 0.6141,
+   "pEatReverse": 0.281,
+   "pEat": 0.44755
+  },
+  "phoblim siffpho-textured thing": {
+   "split": "nonsense",
+   "pEatForward": 0.5901,
+   "pEatReverse": 0.2533,
+   "pEat": 0.42169999999999996
+  },
+  "zorzor quennub-textured bit": {
+   "split": "nonsense",
+   "pEatForward": 0.4846,
+   "pEatReverse": 0.2141,
+   "pEat": 0.34935
+  },
+  "quendro quenquen-shaped lump": {
+   "split": "nonsense",
+   "pEatForward": 0.3258,
+   "pEatReverse": 0.1309,
+   "pEat": 0.22835
+  },
+  "nubnub traxpho-textured lump": {
+   "split": "nonsense",
+   "pEatForward": 0.3529,
+   "pEatReverse": 0.1415,
+   "pEat": 0.24719999999999998
+  },
+  "yarquen meptrax-textured bit": {
+   "split": "nonsense",
+   "pEatForward": 0.584,
+   "pEatReverse": 0.2536,
+   "pEat": 0.41879999999999995
+  },
+  "mepsiff quenzor-textured piece": {
+   "split": "nonsense",
+   "pEatForward": 0.5493,
+   "pEatReverse": 0.2692,
+   "pEat": 0.40925
+  },
+  "quenmep vulquen-textured thing": {
+   "split": "nonsense",
+   "pEatForward": 0.4337,
+   "pEatReverse": 0.2184,
+   "pEat": 0.32605
+  },
+  "keltrax yarmep-textured lump": {
+   "split": "nonsense",
+   "pEatForward": 0.4683,
+   "pEatReverse": 0.2069,
+   "pEat": 0.3376
+  },
+  "traxpho traxmep-colored piece": {
+   "split": "nonsense",
+   "pEatForward": 0.4854,
+   "pEatReverse": 0.2149,
+   "pEat": 0.35015
+  },
+  "zorsiff traxmep-shaped lump": {
+   "split": "nonsense",
+   "pEatForward": 0.4511,
+   "pEatReverse": 0.147,
+   "pEat": 0.29905
+  },
+  "zorpho mepquen-textured thing": {
+   "split": "nonsense",
+   "pEatForward": 0.5205,
+   "pEatReverse": 0.1693,
+   "pEat": 0.3449
+  },
+  "quenvul traxzor-colored lump": {
+   "split": "nonsense",
+   "pEatForward": 0.3071,
+   "pEatReverse": 0.1183,
+   "pEat": 0.2127
+  },
+  "quentrax traxpho-textured bit": {
+   "split": "nonsense",
+   "pEatForward": 0.5154,
+   "pEatReverse": 0.2078,
+   "pEat": 0.3616
+  },
+  "zordro mepyar-textured piece": {
+   "split": "nonsense",
+   "pEatForward": 0.51,
+   "pEatReverse": 0.2469,
+   "pEat": 0.37845
+  },
+  "traxdro yartrax-shaped bit": {
+   "split": "nonsense",
+   "pEatForward": 0.4851,
+   "pEatReverse": 0.1875,
+   "pEat": 0.3363
+  },
+  "quenmep traxzor-colored bit": {
+   "split": "nonsense",
+   "pEatForward": 0.5074,
+   "pEatReverse": 0.1625,
+   "pEat": 0.33494999999999997
+  },
+  "phokel quendro-colored lump": {
+   "split": "nonsense",
+   "pEatForward": 0.3738,
+   "pEatReverse": 0.1541,
+   "pEat": 0.26395
+  },
+  "traxmep vulkel-shaped thing": {
+   "split": "nonsense",
+   "pEatForward": 0.472,
+   "pEatReverse": 0.1978,
+   "pEat": 0.3349
+  },
+  "nubzor quenpho-shaped thing": {
+   "split": "nonsense",
+   "pEatForward": 0.6187,
+   "pEatReverse": 0.2454,
+   "pEat": 0.43205000000000005
+  },
+  "phonub phovul-colored piece": {
+   "split": "nonsense",
+   "pEatForward": 0.5009,
+   "pEatReverse": 0.2477,
+   "pEat": 0.3743
+  },
+  "quenpho phosiff-textured bit": {
+   "split": "nonsense",
+   "pEatForward": 0.5521,
+   "pEatReverse": 0.2758,
+   "pEat": 0.41395000000000004
+  },
+  "blimzor traxnub-shaped bit": {
+   "split": "nonsense",
+   "pEatForward": 0.5326,
+   "pEatReverse": 0.2071,
+   "pEat": 0.36985
+  },
+  "quenzor kelzor-textured lump": {
+   "split": "nonsense",
+   "pEatForward": 0.4391,
+   "pEatReverse": 0.1647,
+   "pEat": 0.3019
+  },
+  "yardro vulpho-textured thing": {
+   "split": "nonsense",
+   "pEatForward": 0.5315,
+   "pEatReverse": 0.207,
+   "pEat": 0.36924999999999997
+  },
+  "blimzor mepnub-textured bit": {
+   "split": "nonsense",
+   "pEatForward": 0.5524,
+   "pEatReverse": 0.2736,
+   "pEat": 0.41300000000000003
+  },
+  "keldro blimzor-colored bit": {
+   "split": "nonsense",
+   "pEatForward": 0.649,
+   "pEatReverse": 0.2831,
+   "pEat": 0.46605
+  }
+ },
+ "note": "先验是 Laya 对描述文本的真实输出（两种顺序平均）。语义标签按常识词表；nonsense 无标签。"
+}
