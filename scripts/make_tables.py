@@ -17,6 +17,8 @@ LABELS = {  # 按 effect_sizes.py 中各预注册内的出现顺序（只含非�
  '09': ['Social looks: true $-$ absent (laya)', 'Social looks: absent $-$ mismatched (laya)', 'Social gain: laya $-$ vader'],
  '10': ['Ripening: laya $-$ none (true cues)', 'Ripening: true $-$ mismatched (laya)', 'Ripening: laya $-$ vader'],
  '11': ['Fair ripening ($K{=}4$): laya $-$ none', 'Fair ripening: true $-$ mismatched (laya)', 'Fair ripening: laya $-$ vader'],
+ '12': ['Distilled head: distilled $-$ none (held-out, delay 80)', 'Distilled head: non-inferiority to laya (held-out, delay 80)', 'Distilled head: laya $-$ distilled (factual, delay 80)'],
+ '13': ['Strong learner: none-lag $-$ none-plain (delay 80)', 'Strong learner: laya-lag $-$ none-lag (delay 80)', 'Strong learner: none-lag non-inferiority to laya-lag (delay 80)', 'Strong learner: laya-lag $-$ laya-plain (delay 80)'],
  '03': ['laya $-$ shuffled (3 seeds)', 'laya $-$ none (3 seeds)', 'laya $-$ vader (3 seeds)'],
 }
 FORMAL = {'成立': 'supported', '不成立': 'not supported', '不成立（效应量未达）': 'not supported (magnitude)', '按逐步规则不宣称（p 并列）': 'not claimed (tied $p$)', '不成立（交集检验）': 'not supported (intersection)'}
@@ -36,7 +38,7 @@ def table(lines, caption, label):
     head = '\\begin{table}[t]\\centering\\small\\caption{' + caption + '}\\label{' + label + '}\n\\resizebox{\\textwidth}{!}{\\begin{tabular}{@{}llrrrrll@{}}\\toprule\nPre-reg. & Comparison & $n$ & Mean & 95\\% interval & $p$ & Threshold & Formal outcome \\\\\\midrule\n'
     body = ''.join(f'{a} & {b} & {c} & {d} & {e} & {f} & {g} & {h} \\\\\n' for a, b, c, d, e, f, g, h, _ in lines)
     return head + body + '\\bottomrule\\end{tabular}}\\end{table}\n'
-(OUT / 'table_confirmatory.tex').write_text(table(main_rows, 'Confirmatory comparisons (pre-registrations 04--11). Mean and 95\\% percentile bootstrap interval over training seeds; $p$ is the exact one-sided sign-flip test (non-inferiority rows are tested against the margin). Threshold is the pre-registered effect size.', 'tab:confirmatory'))
+(OUT / 'table_confirmatory.tex').write_text(table(main_rows, 'Confirmatory comparisons (pre-registrations 04--13). Mean and 95\\% percentile bootstrap interval over training seeds; $p$ is the exact one-sided sign-flip test (non-inferiority rows are tested against the margin). Threshold is the pre-registered effect size.', 'tab:confirmatory'))
 (OUT / 'table_all_tiers.tex').write_text(table(all_rows, 'All confirmatory comparisons including pre-registration 03, with the tiered reading of each result in the last column of the supplementary table.', 'tab:all'))
 tiers = '\\begin{table}[t]\\centering\\small\\caption{Tiered reading of every confirmatory comparison. ``Direction confirmed'' means all seeds agree in sign (exact sign-flip $p=2^{-n}$); ``magnitude confirmed'' means the lower bound of the seed-level interval is at or above the pre-registered threshold; ``unclear'' means the interval contains it.}\\label{tab:tiers}\n\\begin{tabular}{@{}lp{0.5\\textwidth}rp{0.27\\textwidth}@{}}\\toprule\nPre-reg. & Comparison & Mean & Tiered reading \\\\\\midrule\n' + ''.join(f'{l[0]} & {l[1]} & {l[3]} & {l[8]} \\\\\n' for l in all_rows) + '\\bottomrule\\end{tabular}\\end{table}\n'
 (OUT / 'table_tiers.tex').write_text(tiers)

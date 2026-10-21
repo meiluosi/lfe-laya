@@ -1,4 +1,4 @@
-\begin{table}[t]\centering\small\caption{Confirmatory comparisons (pre-registrations 04--11). Mean and 95\% percentile bootstrap interval over training seeds; $p$ is the exact one-sided sign-flip test (non-inferiority rows are tested against the margin). Threshold is the pre-registered effect size.}\label{tab:confirmatory}
+\begin{table}[t]\centering\small\caption{Confirmatory comparisons (pre-registrations 04--13). Mean and 95\% percentile bootstrap interval over training seeds; $p$ is the exact one-sided sign-flip test (non-inferiority rows are tested against the margin). Threshold is the pre-registered effect size.}\label{tab:confirmatory}
 \resizebox{\textwidth}{!}{\begin{tabular}{@{}llrrrrll@{}}\toprule
 Pre-reg. & Comparison & $n$ & Mean & 95\% interval & $p$ & Threshold & Formal outcome \\\midrule
 04 & Delay 40: laya $-$ none (mismatched training) & 8 & +0.032 & [+0.025, +0.042] & 0.0039 & +0.04 & not supported (magnitude) \\
@@ -21,4 +21,11 @@ Pre-reg. & Comparison & $n$ & Mean & 95\% interval & $p$ & Threshold & Formal ou
 11 & Fair ripening ($K{=}4$): laya $-$ none & 8 & -0.005 & [-0.031, +0.032] & 0.5938 & +0.03 & not supported \\
 11 & Fair ripening: true $-$ mismatched (laya) & 8 & +0.079 & [+0.053, +0.097] & 0.0039 & +0.05 & supported \\
 11 & Fair ripening: laya $-$ vader & 8 & -0.014 & [-0.027, -0.0005] & 0.9492 & +0.01 & not supported \\
+12 & Distilled head: distilled $-$ none (held-out, delay 80) & 8 & +0.045 & [+0.036, +0.054] & 0.0039 & +0.03 & supported \\
+12 & Distilled head: non-inferiority to laya (held-out, delay 80) & 8 & -0.005 & [-0.011, +0.003] & 0.0039 & -0.03 & supported \\
+12 & Distilled head: laya $-$ distilled (factual, delay 80) & 8 & +0.045 & [+0.037, +0.054] & 0.0039 & +0.01 & supported \\
+13 & Strong learner: none-lag $-$ none-plain (delay 80) & 8 & +0.165 & [+0.142, +0.182] & 0.0039 & +0.10 & supported \\
+13 & Strong learner: laya-lag $-$ none-lag (delay 80) & 8 & +0.017 & [-0.004, +0.048] & 0.1914 & +0.02 & not supported \\
+13 & Strong learner: none-lag non-inferiority to laya-lag (delay 80) & 8 & -0.017 & [-0.048, +0.004] & 0.4375 & -0.02 & not supported \\
+13 & Strong learner: laya-lag $-$ laya-plain (delay 80) & 8 & +0.091 & [+0.075, +0.106] & 0.0039 & +0.03 & supported \\
 \bottomrule\end{tabular}}\end{table}
