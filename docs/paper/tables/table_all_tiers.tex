@@ -32,6 +32,11 @@ Pre-reg. & Comparison & $n$ & Mean & 95\% interval & $p$ & Threshold & Formal ou
 14 & Other learners: none-bayes $-$ none-plain (delay 80) & 8 & +0.009 & [+0.002, +0.016] & 0.0234 & +0.05 & not supported \\
 14 & Other learners: shrinkage of the prior advantage under safety (delay 80) & 8 & +0.004 & [-0.003, +0.011] & 0.1445 & +0.03 & not supported \\
 14 & Other learners: shrinkage of the prior advantage under bayes (delay 80) & 8 & +0.017 & [+0.008, +0.026] & 0.0039 & +0.03 & 不成立（Holm 拒绝，效应量未达） \\
+15 & Variable delay (trained at fixed delay): none-lag $-$ none-plain, jitter & 8 & +0.112 & [+0.085, +0.143] & 0.0039 & +0.03 & 成立（训练缺陷） \\
+15 & Variable delay (trained at fixed delay): none-lag $-$ none-plain, per kind & 8 & -0.017 & [-0.030, -0.006] & 0.9883 & +0.03 & 不成立（训练缺陷） \\
+15 & Variable delay (trained at fixed delay): laya-lag $-$ laya-plain, jitter & 8 & +0.088 & [+0.062, +0.112] & 0.0039 & +0.03 & 成立（训练缺陷） \\
+15 & Variable delay (trained at fixed delay): laya-lag $-$ laya-plain, per kind & 8 & -0.097 & [-0.113, -0.080] & 1.0000 & +0.03 & 不成立（训练缺陷） \\
+15 & Variable delay (trained at fixed delay): laya-lag $-$ none-lag, pooled & 8 & +0.029 & [+0.014, +0.044] & 0.0078 & +0.02 & 成立（训练缺陷） \\
 03 & laya $-$ shuffled (3 seeds) & 3 & +0.066 & [+0.012, +0.147] & 0.1250 &  & not supported (intersection) \\
 03 & laya $-$ none (3 seeds) & 3 & +0.067 & [+0.011, +0.150] & 0.1250 &  & not supported (intersection) \\
 03 & laya $-$ vader (3 seeds) & 3 & +0.012 & [-0.010, +0.031] & 0.2500 &  & not supported (intersection) \\

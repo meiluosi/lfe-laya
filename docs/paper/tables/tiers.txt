@@ -29,6 +29,11 @@
 14	Other learners: none-bayes $-$ none-plain (delay 80)	direction unclear; magnitude below threshold
 14	Other learners: shrinkage of the prior advantage under safety (delay 80)	direction unclear; magnitude below threshold
 14	Other learners: shrinkage of the prior advantage under bayes (delay 80)	direction confirmed; magnitude below threshold
+15	Variable delay (trained at fixed delay): none-lag $-$ none-plain, jitter	direction confirmed; magnitude confirmed
+15	Variable delay (trained at fixed delay): none-lag $-$ none-plain, per kind	direction unclear; magnitude below threshold
+15	Variable delay (trained at fixed delay): laya-lag $-$ laya-plain, jitter	direction confirmed; magnitude confirmed
+15	Variable delay (trained at fixed delay): laya-lag $-$ laya-plain, per kind	direction unclear; magnitude below threshold
+15	Variable delay (trained at fixed delay): laya-lag $-$ none-lag, pooled	direction unclear; magnitude unclear
 03	laya $-$ shuffled (3 seeds)	direction confirmed
 03	laya $-$ none (3 seeds)	direction confirmed
 03	laya $-$ vader (3 seeds)	direction unclear

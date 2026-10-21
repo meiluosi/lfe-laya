@@ -90,6 +90,12 @@ add('14', '另两种学习器：none-safety − none-plain（延迟 80）', P['H
 add('14', '另两种学习器：none-bayes − none-plain（延迟 80）', P['H2']['perSeed'], 0.05, '不成立')
 add('14', '另两种学习器：先验优势在 safety 下的缩小（延迟 80）', P['H3']['perSeed'], 0.03, '不成立')
 add('14', '另两种学习器：先验优势在 bayes 下的缩小（延迟 80）', P['H4']['perSeed'], 0.03, '不成立（Holm 拒绝，效应量未达）')
+r = load('variable-delay-eval-01'); P = {h['id']: h for h in r['primary']}
+add('15', '延迟不固定（固定延迟训练）：抖动下 none-lag − none-plain', P['H1']['perSeed'], 0.03, '成立（训练缺陷）')
+add('15', '延迟不固定（固定延迟训练）：按种类下 none-lag − none-plain', P['H2']['perSeed'], 0.03, '不成立（训练缺陷）')
+add('15', '延迟不固定（固定延迟训练）：抖动下 laya-lag − laya-plain', P['H3']['perSeed'], 0.03, '成立（训练缺陷）')
+add('15', '延迟不固定（固定延迟训练）：按种类下 laya-lag − laya-plain', P['H4']['perSeed'], 0.03, '不成立（训练缺陷）')
+add('15', '延迟不固定（固定延迟训练）：两制度平均 laya-lag − none-lag', P['H5']['perSeed'], 0.02, '成立（训练缺陷）')
 r = load('heldout-rep-eval-01')
 for h in r['primary']:
     xs = [p['diff'] for p in h['perRun']]; add('03', f"{h['id']} {h['claim']}（3 个训练种子）", xs, None, '不成立（交集检验）')

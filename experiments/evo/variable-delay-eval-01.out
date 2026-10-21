@@ -1,0 +1,230 @@
+heldout  laya-plain-j60-101     0.347
+heldout  laya-plain-j60-102     0.391
+heldout  laya-plain-j60-103     0.378
+heldout  laya-plain-j60-104     0.387
+heldout  laya-plain-j60-105     0.355
+heldout  laya-plain-j60-106     0.382
+heldout  laya-plain-j60-107     0.353
+heldout  laya-plain-j60-108     0.359
+heldout  laya-plain-k60-101     0.375
+heldout  laya-plain-k60-102     0.399
+heldout  laya-plain-k60-103     0.376
+heldout  laya-plain-k60-104     0.406
+heldout  laya-plain-k60-105     0.383
+heldout  laya-plain-k60-106     0.399
+heldout  laya-plain-k60-107     0.371
+heldout  laya-plain-k60-108     0.372
+heldout  laya-lag-j60-101       0.475
+heldout  laya-lag-j60-102       0.446
+heldout  laya-lag-j60-103       0.473
+heldout  laya-lag-j60-104       0.407
+heldout  laya-lag-j60-105       0.474
+heldout  laya-lag-j60-106       0.452
+heldout  laya-lag-j60-107       0.481
+heldout  laya-lag-j60-108       0.449
+heldout  laya-lag-k60-101       0.276
+heldout  laya-lag-k60-102       0.274
+heldout  laya-lag-k60-103       0.307
+heldout  laya-lag-k60-104       0.282
+heldout  laya-lag-k60-105       0.266
+heldout  laya-lag-k60-106       0.330
+heldout  laya-lag-k60-107       0.304
+heldout  laya-lag-k60-108       0.272
+heldout  none-plain-j60-101     0.317
+heldout  none-plain-j60-102     0.343
+heldout  none-plain-j60-103     0.277
+heldout  none-plain-j60-104     0.310
+heldout  none-plain-j60-105     0.318
+heldout  none-plain-j60-106     0.276
+heldout  none-plain-j60-107     0.309
+heldout  none-plain-j60-108     0.369
+heldout  none-plain-k60-101     0.275
+heldout  none-plain-k60-102     0.289
+heldout  none-plain-k60-103     0.271
+heldout  none-plain-k60-104     0.272
+heldout  none-plain-k60-105     0.281
+heldout  none-plain-k60-106     0.247
+heldout  none-plain-k60-107     0.271
+heldout  none-plain-k60-108     0.316
+heldout  none-lag-j60-101       0.380
+heldout  none-lag-j60-102       0.457
+heldout  none-lag-j60-103       0.471
+heldout  none-lag-j60-104       0.386
+heldout  none-lag-j60-105       0.451
+heldout  none-lag-j60-106       0.427
+heldout  none-lag-j60-107       0.400
+heldout  none-lag-j60-108       0.444
+heldout  none-lag-k60-101       0.258
+heldout  none-lag-k60-102       0.265
+heldout  none-lag-k60-103       0.258
+heldout  none-lag-k60-104       0.265
+heldout  none-lag-k60-105       0.263
+heldout  none-lag-k60-106       0.257
+heldout  none-lag-k60-107       0.263
+heldout  none-lag-k60-108       0.259
+factual  laya-plain-j60-101     0.293
+factual  laya-plain-j60-102     0.336
+factual  laya-plain-j60-103     0.334
+factual  laya-plain-j60-104     0.325
+factual  laya-plain-j60-105     0.310
+factual  laya-plain-j60-106     0.304
+factual  laya-plain-j60-107     0.295
+factual  laya-plain-j60-108     0.299
+factual  laya-plain-k60-101     0.289
+factual  laya-plain-k60-102     0.312
+factual  laya-plain-k60-103     0.326
+factual  laya-plain-k60-104     0.310
+factual  laya-plain-k60-105     0.302
+factual  laya-plain-k60-106     0.308
+factual  laya-plain-k60-107     0.292
+factual  laya-plain-k60-108     0.293
+factual  laya-lag-j60-101       0.402
+factual  laya-lag-j60-102       0.400
+factual  laya-lag-j60-103       0.423
+factual  laya-lag-j60-104       0.319
+factual  laya-lag-j60-105       0.418
+factual  laya-lag-j60-106       0.377
+factual  laya-lag-j60-107       0.409
+factual  laya-lag-j60-108       0.400
+factual  laya-lag-k60-101       0.263
+factual  laya-lag-k60-102       0.271
+factual  laya-lag-k60-103       0.285
+factual  laya-lag-k60-104       0.282
+factual  laya-lag-k60-105       0.266
+factual  laya-lag-k60-106       0.310
+factual  laya-lag-k60-107       0.269
+factual  laya-lag-k60-108       0.267
+factual  none-plain-j60-101     0.275
+factual  none-plain-j60-102     0.331
+factual  none-plain-j60-103     0.246
+factual  none-plain-j60-104     0.289
+factual  none-plain-j60-105     0.286
+factual  none-plain-j60-106     0.246
+factual  none-plain-j60-107     0.293
+factual  none-plain-j60-108     0.331
+factual  none-plain-k60-101     0.284
+factual  none-plain-k60-102     0.316
+factual  none-plain-k60-103     0.268
+factual  none-plain-k60-104     0.290
+factual  none-plain-k60-105     0.290
+factual  none-plain-k60-106     0.252
+factual  none-plain-k60-107     0.297
+factual  none-plain-k60-108     0.315
+factual  none-lag-j60-101       0.338
+factual  none-lag-j60-102       0.415
+factual  none-lag-j60-103       0.406
+factual  none-lag-j60-104       0.340
+factual  none-lag-j60-105       0.423
+factual  none-lag-j60-106       0.389
+factual  none-lag-j60-107       0.360
+factual  none-lag-j60-108       0.406
+factual  none-lag-k60-101       0.261
+factual  none-lag-k60-102       0.267
+factual  none-lag-k60-103       0.264
+factual  none-lag-k60-104       0.270
+factual  none-lag-k60-105       0.271
+factual  none-lag-k60-106       0.262
+factual  none-lag-k60-107       0.257
+factual  none-lag-k60-108       0.263
+[
+ {
+  "id": "H1",
+  "claim": "抖动延迟（j60）：none-lag 优于 none-plain 至少 0.03",
+  "statistic": 0.1122,
+  "threshold": 0.03,
+  "effectOk": true,
+  "p": 0.0039,
+  "holmReject": true,
+  "supported": true,
+  "perSeed": [
+   0.063,
+   0.1137,
+   0.1937,
+   0.0765,
+   0.1333,
+   0.1509,
+   0.0911,
+   0.0757
+  ]
+ },
+ {
+  "id": "H2",
+  "claim": "按种类延迟（k60）：none-lag 优于 none-plain 至少 0.03",
+  "statistic": -0.0167,
+  "threshold": 0.03,
+  "effectOk": false,
+  "p": 0.9883,
+  "holmReject": false,
+  "supported": false,
+  "perSeed": [
+   -0.0171,
+   -0.0241,
+   -0.0124,
+   -0.0064,
+   -0.0181,
+   0.0096,
+   -0.0075,
+   -0.0573
+  ]
+ },
+ {
+  "id": "H3",
+  "claim": "抖动延迟（j60）：laya-lag 优于 laya-plain 至少 0.03",
+  "statistic": 0.088,
+  "threshold": 0.03,
+  "effectOk": true,
+  "p": 0.0039,
+  "holmReject": true,
+  "supported": true,
+  "perSeed": [
+   0.1283,
+   0.0548,
+   0.0958,
+   0.0199,
+   0.1183,
+   0.0699,
+   0.128,
+   0.0892
+  ]
+ },
+ {
+  "id": "H4",
+  "claim": "按种类延迟（k60）：laya-lag 优于 laya-plain 至少 0.03",
+  "statistic": -0.0966,
+  "threshold": 0.03,
+  "effectOk": false,
+  "p": 1,
+  "holmReject": false,
+  "supported": false,
+  "perSeed": [
+   -0.0999,
+   -0.1254,
+   -0.0694,
+   -0.1241,
+   -0.1176,
+   -0.0694,
+   -0.0664,
+   -0.1004
+  ]
+ },
+ {
+  "id": "H5",
+  "claim": "两种制度平均：laya-lag 优于 none-lag 至少 0.02（延迟不固定时先验是否重新有价值）",
+  "statistic": 0.0288,
+  "threshold": 0.02,
+  "effectOk": true,
+  "p": 0.0078,
+  "holmReject": true,
+  "supported": true,
+  "perSeed": [
+   0.0565,
+   -0.0011,
+   0.0255,
+   0.0183,
+   0.0128,
+   0.0486,
+   0.0613,
+   0.0085
+  ]
+ }
+]
