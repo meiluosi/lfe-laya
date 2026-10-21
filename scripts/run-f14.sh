@@ -28,12 +28,10 @@ for p in laya none; do for l in safety bayes; do for d in 40 80; do for s in 81 
   [ -f "experiments/evo/f14-$p-$l-d$d-$s/final.json" ] || todo+=("$p:$l:$d:$s")
 done; done; done; done
 echo "待运行 ${#todo[@]} 个，并发 $CONC"
-running=0
 for t in "${todo[@]}"; do
   IFS=: read -r p l d s <<< "$t"
   run_one "$p" "$l" "$d" "$s" &
-  running=$((running+1))
-  if [ "$running" -ge "$CONC" ]; then wait -n; running=$((running-1)); fi
+  while [ "$(jobs -rp | wc -l)" -ge "$CONC" ]; do sleep 5; done
 done
 wait
 echo "全部完成 $(date '+%F %T')"
