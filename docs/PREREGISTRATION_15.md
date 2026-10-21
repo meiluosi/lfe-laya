@@ -58,6 +58,8 @@ node packages/evo/semantic-evolve.ts experiments/evo/f15-<laya|none>-<plain|lag>
 
 冻结后只允许修复不改变协议语义的缺陷并公开记录；评估只运行一次。
 
+公开记录的运行事故：磁盘写满使 none-lag-k60 的 8 个运行（种子 101–108）在第 ~20 代崩溃（无 final.json）。删除这些不完整目录与日志后，以同一命令从头重跑（确定性，同种子同世界）；其余 56 个运行不受影响，没有挑选或剔除任何基因组。
+
 ## 8. 评估代码
 
 `packages/evo/variable-delay-eval.ts`（由预注册 13 的评估器改造）；开发空跑只使用测试方言与极小规模的试训练基因组（`--dry`，已通过）。
