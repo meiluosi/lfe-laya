@@ -37,6 +37,11 @@ Pre-reg. & Comparison & $n$ & Mean & 95\% interval & $p$ & Threshold & Formal ou
 15 & Variable delay (trained at fixed delay): laya-lag $-$ laya-plain, jitter & 8 & +0.088 & [+0.062, +0.112] & 0.0039 & +0.03 & 成立（训练缺陷） \\
 15 & Variable delay (trained at fixed delay): laya-lag $-$ laya-plain, per kind & 8 & -0.097 & [-0.113, -0.080] & 1.0000 & +0.03 & 不成立（训练缺陷） \\
 15 & Variable delay (trained at fixed delay): laya-lag $-$ none-lag, pooled & 8 & +0.029 & [+0.014, +0.044] & 0.0078 & +0.02 & 成立（训练缺陷） \\
+16 & Variable delay (matched training): none-lag $-$ none-plain, jitter & 8 & +0.076 & [+0.063, +0.093] & 0.0039 & +0.03 & supported \\
+16 & Variable delay (matched training): none-lag $-$ none-plain, per kind & 8 & -0.008 & [-0.038, +0.014] & 0.6328 & +0.03 & not supported \\
+16 & Variable delay (matched training): laya-lag $-$ laya-plain, jitter & 8 & +0.041 & [+0.024, +0.061] & 0.0039 & +0.03 & supported \\
+16 & Variable delay (matched training): laya-lag $-$ laya-plain, per kind & 8 & +0.002 & [-0.006, +0.011] & 0.3281 & +0.03 & not supported \\
+16 & Variable delay (matched training): laya-lag $-$ none-lag, pooled & 8 & +0.002 & [-0.006, +0.012] & 0.3984 & +0.02 & not supported \\
 03 & laya $-$ shuffled (3 seeds) & 3 & +0.066 & [+0.012, +0.147] & 0.1250 &  & not supported (intersection) \\
 03 & laya $-$ none (3 seeds) & 3 & +0.067 & [+0.011, +0.150] & 0.1250 &  & not supported (intersection) \\
 03 & laya $-$ vader (3 seeds) & 3 & +0.012 & [-0.010, +0.031] & 0.2500 &  & not supported (intersection) \\

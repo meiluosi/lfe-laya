@@ -34,6 +34,11 @@
 15	Variable delay (trained at fixed delay): laya-lag $-$ laya-plain, jitter	direction confirmed; magnitude confirmed
 15	Variable delay (trained at fixed delay): laya-lag $-$ laya-plain, per kind	direction unclear; magnitude below threshold
 15	Variable delay (trained at fixed delay): laya-lag $-$ none-lag, pooled	direction unclear; magnitude unclear
+16	Variable delay (matched training): none-lag $-$ none-plain, jitter	direction confirmed; magnitude confirmed
+16	Variable delay (matched training): none-lag $-$ none-plain, per kind	direction unclear; magnitude below threshold
+16	Variable delay (matched training): laya-lag $-$ laya-plain, jitter	direction confirmed; magnitude unclear
+16	Variable delay (matched training): laya-lag $-$ laya-plain, per kind	direction unclear; magnitude below threshold
+16	Variable delay (matched training): laya-lag $-$ none-lag, pooled	direction unclear; magnitude below threshold
 03	laya $-$ shuffled (3 seeds)	direction confirmed
 03	laya $-$ none (3 seeds)	direction confirmed
 03	laya $-$ vader (3 seeds)	direction unclear

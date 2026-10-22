@@ -1,0 +1,479 @@
+{
+  "protocol": "docs/PREREGISTRATION_16.md",
+  "dry": false,
+  "worldsPerCell": 32,
+  "K": 32,
+  "harmCap": 4,
+  "inversions": [
+    0.25,
+    0.4
+  ],
+  "seeds": [
+    111,
+    112,
+    113,
+    114,
+    115,
+    116,
+    117,
+    118
+  ],
+  "primary": [
+    {
+      "id": "H1",
+      "claim": "抖动延迟（j60）：none-lag 优于 none-plain 至少 0.03",
+      "statistic": 0.0758,
+      "threshold": 0.03,
+      "effectOk": true,
+      "p": 0.0039,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        0.0707,
+        0.0755,
+        0.0596,
+        0.0582,
+        0.0522,
+        0.1271,
+        0.0848,
+        0.0786
+      ]
+    },
+    {
+      "id": "H2",
+      "claim": "按种类延迟（k60）：none-lag 优于 none-plain 至少 0.03",
+      "statistic": -0.0083,
+      "threshold": 0.03,
+      "effectOk": false,
+      "p": 0.6328,
+      "holmReject": false,
+      "supported": false,
+      "perSeed": [
+        0.0174,
+        0.0171,
+        -0.1011,
+        -0.0095,
+        0.0116,
+        0.0189,
+        0.0148,
+        -0.0354
+      ]
+    },
+    {
+      "id": "H3",
+      "claim": "抖动延迟（j60）：laya-lag 优于 laya-plain 至少 0.03",
+      "statistic": 0.0412,
+      "threshold": 0.03,
+      "effectOk": true,
+      "p": 0.0039,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        0.0481,
+        0.0347,
+        0.0214,
+        0.0918,
+        0.0156,
+        0.0397,
+        0.0717,
+        0.0063
+      ]
+    },
+    {
+      "id": "H4",
+      "claim": "按种类延迟（k60）：laya-lag 优于 laya-plain 至少 0.03",
+      "statistic": 0.0022,
+      "threshold": 0.03,
+      "effectOk": false,
+      "p": 0.3281,
+      "holmReject": false,
+      "supported": false,
+      "perSeed": [
+        0.0001,
+        0.0263,
+        0.0122,
+        -0.0042,
+        -0.0035,
+        -0.0186,
+        -0.0016,
+        0.0068
+      ]
+    },
+    {
+      "id": "H5",
+      "claim": "两种制度平均：laya-lag 优于 none-lag 至少 0.02（延迟不固定时先验是否重新有价值）",
+      "statistic": 0.0022,
+      "threshold": 0.02,
+      "effectOk": false,
+      "p": 0.3945,
+      "holmReject": false,
+      "supported": false,
+      "perSeed": [
+        -0.0135,
+        -0.0039,
+        0.034,
+        0.0063,
+        -0.0055,
+        0.0039,
+        -0.0043,
+        0.0003
+      ]
+    }
+  ],
+  "evolvedLag": {
+    "laya-lag-j60-111": {
+      "lag": 57,
+      "width": 28
+    },
+    "laya-lag-j60-112": {
+      "lag": 61,
+      "width": 28
+    },
+    "laya-lag-j60-113": {
+      "lag": 67,
+      "width": 15
+    },
+    "laya-lag-j60-114": {
+      "lag": 55,
+      "width": 34
+    },
+    "laya-lag-j60-115": {
+      "lag": 52,
+      "width": 28
+    },
+    "laya-lag-j60-116": {
+      "lag": 52,
+      "width": 25
+    },
+    "laya-lag-j60-117": {
+      "lag": 51,
+      "width": 25
+    },
+    "laya-lag-j60-118": {
+      "lag": 44,
+      "width": 15
+    },
+    "laya-lag-k60-111": {
+      "lag": 34,
+      "width": 26
+    },
+    "laya-lag-k60-112": {
+      "lag": 31,
+      "width": 25
+    },
+    "laya-lag-k60-113": {
+      "lag": 27,
+      "width": 17
+    },
+    "laya-lag-k60-114": {
+      "lag": 42,
+      "width": 14
+    },
+    "laya-lag-k60-115": {
+      "lag": 45,
+      "width": 17
+    },
+    "laya-lag-k60-116": {
+      "lag": 67,
+      "width": 18
+    },
+    "laya-lag-k60-117": {
+      "lag": 21,
+      "width": 31
+    },
+    "laya-lag-k60-118": {
+      "lag": 84,
+      "width": 21
+    },
+    "none-lag-j60-111": {
+      "lag": 62,
+      "width": 29
+    },
+    "none-lag-j60-112": {
+      "lag": 56,
+      "width": 30
+    },
+    "none-lag-j60-113": {
+      "lag": 52,
+      "width": 21
+    },
+    "none-lag-j60-114": {
+      "lag": 51,
+      "width": 23
+    },
+    "none-lag-j60-115": {
+      "lag": 55,
+      "width": 25
+    },
+    "none-lag-j60-116": {
+      "lag": 49,
+      "width": 31
+    },
+    "none-lag-j60-117": {
+      "lag": 53,
+      "width": 27
+    },
+    "none-lag-j60-118": {
+      "lag": 58,
+      "width": 31
+    },
+    "none-lag-k60-111": {
+      "lag": 28,
+      "width": 14
+    },
+    "none-lag-k60-112": {
+      "lag": 28,
+      "width": 22
+    },
+    "none-lag-k60-113": {
+      "lag": 27,
+      "width": 19
+    },
+    "none-lag-k60-114": {
+      "lag": 28,
+      "width": 26
+    },
+    "none-lag-k60-115": {
+      "lag": 83,
+      "width": 19
+    },
+    "none-lag-k60-116": {
+      "lag": 96,
+      "width": 22
+    },
+    "none-lag-k60-117": {
+      "lag": 30,
+      "width": 19
+    },
+    "none-lag-k60-118": {
+      "lag": 24,
+      "width": 20
+    }
+  },
+  "secondary": {
+    "heldout": {
+      "means": {
+        "laya-plain-j60": 0.3722,
+        "laya-plain-k60": 0.3941,
+        "laya-lag-j60": 0.4134,
+        "laya-lag-k60": 0.3963,
+        "none-plain-j60": 0.3432,
+        "none-plain-k60": 0.3946,
+        "none-lag-j60": 0.419,
+        "none-lag-k60": 0.3863
+      },
+      "toxicBites": {
+        "laya-plain-j60": 721,
+        "laya-plain-k60": 615,
+        "laya-lag-j60": 918,
+        "laya-lag-k60": 565,
+        "none-plain-j60": 990,
+        "none-plain-k60": 1044,
+        "none-lag-j60": 1029,
+        "none-lag-k60": 1022
+      },
+      "layaMinusNone": {
+        "plain-j60": [
+          -0.0029,
+          0.0555,
+          0.0088,
+          -0.0238,
+          0.0667,
+          0.0939,
+          0.0123,
+          0.0218
+        ],
+        "plain-k60": [
+          0.0157,
+          -0.0317,
+          -0.0158,
+          -0.0024,
+          -0.0261,
+          0.0389,
+          0.0086,
+          0.009
+        ],
+        "lag-j60": [
+          -0.0254,
+          0.0147,
+          -0.0294,
+          0.0098,
+          0.0301,
+          0.0065,
+          -0.0008,
+          -0.0506
+        ],
+        "lag-k60": [
+          -0.0015,
+          -0.0225,
+          0.0975,
+          0.0029,
+          -0.0411,
+          0.0013,
+          -0.0078,
+          0.0512
+        ]
+      },
+      "lagMinusPlain": {
+        "laya-j60": [
+          0.0481,
+          0.0347,
+          0.0214,
+          0.0918,
+          0.0156,
+          0.0397,
+          0.0717,
+          0.0063
+        ],
+        "laya-k60": [
+          0.0001,
+          0.0263,
+          0.0122,
+          -0.0042,
+          -0.0035,
+          -0.0186,
+          -0.0016,
+          0.0068
+        ],
+        "none-j60": [
+          0.0707,
+          0.0755,
+          0.0596,
+          0.0582,
+          0.0522,
+          0.1271,
+          0.0848,
+          0.0786
+        ],
+        "none-k60": [
+          0.0174,
+          0.0171,
+          -0.1011,
+          -0.0095,
+          0.0116,
+          0.0189,
+          0.0148,
+          -0.0354
+        ]
+      },
+      "references": {
+        "blind-j60": 0.2546,
+        "oracle-j60": 0.5482,
+        "blind-k60": 0.2988,
+        "oracle-k60": 0.5738
+      }
+    },
+    "factual": {
+      "means": {
+        "laya-plain-j60": 0.3694,
+        "laya-plain-k60": 0.3085,
+        "laya-lag-j60": 0.4423,
+        "laya-lag-k60": 0.3161,
+        "none-plain-j60": 0.4047,
+        "none-plain-k60": 0.287,
+        "none-lag-j60": 0.4751,
+        "none-lag-k60": 0.2868
+      },
+      "toxicBites": {
+        "laya-plain-j60": 854,
+        "laya-plain-k60": 696,
+        "laya-lag-j60": 1018,
+        "laya-lag-k60": 677,
+        "none-plain-j60": 1025,
+        "none-plain-k60": 856,
+        "none-lag-j60": 1067,
+        "none-lag-k60": 844
+      },
+      "layaMinusNone": {
+        "plain-j60": [
+          -0.083,
+          -0.0275,
+          -0.0603,
+          -0.0266,
+          0.0017,
+          0.0032,
+          -0.0392,
+          -0.0512
+        ],
+        "plain-k60": [
+          0.0422,
+          0.0264,
+          0.0425,
+          -0.0091,
+          0.0294,
+          0.056,
+          -0.0375,
+          0.0227
+        ],
+        "lag-j60": [
+          -0.0687,
+          -0.0173,
+          -0.0596,
+          -0.014,
+          0.0288,
+          -0.026,
+          -0.0174,
+          -0.0884
+        ],
+        "lag-k60": [
+          0.0407,
+          0.0381,
+          0.1231,
+          0.0084,
+          0.0155,
+          0.0198,
+          -0.0487,
+          0.0376
+        ]
+      },
+      "lagMinusPlain": {
+        "laya-j60": [
+          0.0787,
+          0.0737,
+          0.0336,
+          0.073,
+          0.0912,
+          0.1023,
+          0.0899,
+          0.041
+        ],
+        "laya-k60": [
+          0.0119,
+          0.0134,
+          0.029,
+          0.0219,
+          -0.0155,
+          -0.0169,
+          0.0168,
+          -0.0002
+        ],
+        "none-j60": [
+          0.0644,
+          0.0635,
+          0.0329,
+          0.0603,
+          0.0641,
+          0.1315,
+          0.0681,
+          0.0782
+        ],
+        "none-k60": [
+          0.0134,
+          0.0017,
+          -0.0516,
+          0.0045,
+          -0.0016,
+          0.0193,
+          0.0279,
+          -0.015
+        ]
+      },
+      "references": {
+        "blind-j60": 0.2896,
+        "oracle-j60": 0.5683,
+        "blind-k60": 0.2357,
+        "oracle-k60": 0.5467
+      }
+    }
+  }
+}

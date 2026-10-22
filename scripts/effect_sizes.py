@@ -96,6 +96,12 @@ add('15', '延迟不固定（固定延迟训练）：按种类下 none-lag − n
 add('15', '延迟不固定（固定延迟训练）：抖动下 laya-lag − laya-plain', P['H3']['perSeed'], 0.03, '成立（训练缺陷）')
 add('15', '延迟不固定（固定延迟训练）：按种类下 laya-lag − laya-plain', P['H4']['perSeed'], 0.03, '不成立（训练缺陷）')
 add('15', '延迟不固定（固定延迟训练）：两制度平均 laya-lag − none-lag', P['H5']['perSeed'], 0.02, '成立（训练缺陷）')
+r = load('matched-delay-eval-01'); P = {h['id']: h for h in r['primary']}
+add('16', '延迟不固定（匹配训练）：抖动下 none-lag − none-plain', P['H1']['perSeed'], 0.03, '成立')
+add('16', '延迟不固定（匹配训练）：按种类下 none-lag − none-plain', P['H2']['perSeed'], 0.03, '不成立')
+add('16', '延迟不固定（匹配训练）：抖动下 laya-lag − laya-plain', P['H3']['perSeed'], 0.03, '成立')
+add('16', '延迟不固定（匹配训练）：按种类下 laya-lag − laya-plain', P['H4']['perSeed'], 0.03, '不成立')
+add('16', '延迟不固定（匹配训练）：两制度平均 laya-lag − none-lag', P['H5']['perSeed'], 0.02, '不成立')
 r = load('heldout-rep-eval-01')
 for h in r['primary']:
     xs = [p['diff'] for p in h['perRun']]; add('03', f"{h['id']} {h['claim']}（3 个训练种子）", xs, None, '不成立（交集检验）')
