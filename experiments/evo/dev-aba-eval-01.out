@@ -1,0 +1,7 @@
+test     laya-plain-201     aba-off fit 0.725 sav -0.11 | abc-off fit 0.730 sav -0.04
+test     laya-plain-202     aba-off fit 0.732 sav -0.06 | abc-off fit 0.744 sav -0.01
+test     laya-dual-201      aba-off fit 0.732 sav 0.03 | abc-off fit 0.759 sav -0.01
+test     laya-dual-202      aba-off fit 0.717 sav -0.02 | abc-off fit 0.763 sav 0.06
+test     laya-regime-201    aba-off fit 0.809 sav 0.17 | abc-off fit 0.747 sav -0.08
+test     laya-regime-202    aba-off fit 0.810 sav 0.22 | abc-off fit 0.716 sav -0.08
+[{"id":"H1","stat":0.2783,"thr":0.1,"p":0.25,"supported":false},{"id":"H2","stat":null,"thr":0.15,"p":0,"supported":false},{"id":"H3","stat":null,"thr":0.05,"p":0,"supported":false},{"id":"H4","stat":-0.0055,"thr":-0.02,"p":0.5,"supported":false},{"id":"H5","stat":null,"thr":0.02,"p":0,"supported":false},{"id":"H6","stat":0.0812,"thr":0.02,"p":0.25,"supported":false}]

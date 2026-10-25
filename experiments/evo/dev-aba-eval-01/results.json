@@ -1,0 +1,255 @@
+{
+  "protocol": "dev",
+  "dev": true,
+  "worldsPerCell": 16,
+  "K": 6,
+  "harmCap": 1,
+  "phase": 1200,
+  "window": 200,
+  "seeds": [
+    201,
+    202
+  ],
+  "primary": [
+    {
+      "id": "H1",
+      "claim": "aba、无线索、laya：regime 的节省比 plain 高至少 0.1（只靠预测误差推断环境）",
+      "statistic": 0.2783,
+      "threshold": 0.1,
+      "effectOk": true,
+      "p": 0.25,
+      "holmReject": false,
+      "supported": false,
+      "perSeed": [
+        0.2742,
+        0.2825
+      ]
+    },
+    {
+      "id": "H2",
+      "claim": "aba、真实线索、laya：cue 的节省比 plain 高至少 0.15",
+      "statistic": null,
+      "threshold": 0.15,
+      "effectOk": false,
+      "p": 0,
+      "holmReject": true,
+      "supported": false,
+      "perSeed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "H3",
+      "claim": "aba、真实线索、laya：cue 的节省比 regime 高至少 0.05（明说比推断更快）",
+      "statistic": null,
+      "threshold": 0.05,
+      "effectOk": false,
+      "p": 0,
+      "holmReject": true,
+      "supported": false,
+      "perSeed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "H4",
+      "claim": "abc（全新规则）、无线索、laya：regime 的适应度不比 plain 差超过 0.02（非劣效）",
+      "statistic": -0.0055,
+      "threshold": -0.02,
+      "effectOk": true,
+      "p": 0.5,
+      "holmReject": false,
+      "supported": false,
+      "perSeed": [
+        0.0169,
+        -0.0279
+      ]
+    },
+    {
+      "id": "H5",
+      "claim": "aba、随机线索、laya：plain 的适应度比 cue 高至少 0.02（误导线索有代价）",
+      "statistic": null,
+      "threshold": 0.02,
+      "effectOk": false,
+      "p": 0,
+      "holmReject": true,
+      "supported": false,
+      "perSeed": [
+        null,
+        null
+      ]
+    },
+    {
+      "id": "H6",
+      "claim": "aba、无线索、laya：regime 的适应度比 plain 高至少 0.02",
+      "statistic": 0.0812,
+      "threshold": 0.02,
+      "effectOk": true,
+      "p": 0.25,
+      "holmReject": false,
+      "supported": false,
+      "perSeed": [
+        0.0839,
+        0.0785
+      ]
+    }
+  ],
+  "cells": {
+    "test": {
+      "laya-plain-201": {
+        "aba-off": {
+          "fitness": 0.7248,
+          "A1e": 0.7112,
+          "A1l": 0.7674,
+          "Be": 0.7607,
+          "Bl": 0.8418,
+          "A2e": 0.605,
+          "A2l": 0.8663,
+          "toxic": 830.8125,
+          "savings": -0.1063
+        },
+        "abc-off": {
+          "fitness": 0.7299,
+          "A1e": 0.7682,
+          "A1l": 0.7716,
+          "Be": 0.7561,
+          "Bl": 0.8839,
+          "A2e": 0.7312,
+          "A2l": 0.7627,
+          "toxic": 780.25,
+          "savings": -0.037
+        }
+      },
+      "laya-plain-202": {
+        "aba-off": {
+          "fitness": 0.732,
+          "A1e": 0.7156,
+          "A1l": 0.7665,
+          "Be": 0.7684,
+          "Bl": 0.8519,
+          "A2e": 0.6555,
+          "A2l": 0.9096,
+          "toxic": 765.0625,
+          "savings": -0.0601
+        },
+        "abc-off": {
+          "fitness": 0.7437,
+          "A1e": 0.7683,
+          "A1l": 0.7751,
+          "Be": 0.7689,
+          "Bl": 0.8685,
+          "A2e": 0.7588,
+          "A2l": 0.8068,
+          "toxic": 736.375,
+          "savings": -0.0094
+        }
+      },
+      "laya-dual-201": {
+        "aba-off": {
+          "fitness": 0.7325,
+          "A1e": 0.6586,
+          "A1l": 0.7094,
+          "Be": 0.7353,
+          "Bl": 0.8243,
+          "A2e": 0.6933,
+          "A2l": 0.8645,
+          "toxic": 965.375,
+          "savings": 0.0347
+        },
+        "abc-off": {
+          "fitness": 0.7594,
+          "A1e": 0.6892,
+          "A1l": 0.7641,
+          "Be": 0.7785,
+          "Bl": 0.8386,
+          "A2e": 0.6774,
+          "A2l": 0.7874,
+          "toxic": 970.8125,
+          "savings": -0.0118
+        }
+      },
+      "laya-dual-202": {
+        "aba-off": {
+          "fitness": 0.7169,
+          "A1e": 0.6375,
+          "A1l": 0.7131,
+          "Be": 0.7496,
+          "Bl": 0.8337,
+          "A2e": 0.6139,
+          "A2l": 0.8744,
+          "toxic": 935.5625,
+          "savings": -0.0236
+        },
+        "abc-off": {
+          "fitness": 0.7626,
+          "A1e": 0.6718,
+          "A1l": 0.7682,
+          "Be": 0.7746,
+          "Bl": 0.8508,
+          "A2e": 0.7333,
+          "A2l": 0.7192,
+          "toxic": 951.9375,
+          "savings": 0.0615
+        }
+      },
+      "laya-regime-201": {
+        "aba-off": {
+          "fitness": 0.8087,
+          "A1e": 0.6143,
+          "A1l": 0.7241,
+          "Be": 0.7845,
+          "Bl": 0.8265,
+          "A2e": 0.7822,
+          "A2l": 0.9044,
+          "toxic": 946.4375,
+          "savings": 0.1679
+        },
+        "abc-off": {
+          "fitness": 0.7467,
+          "A1e": 0.6497,
+          "A1l": 0.7627,
+          "Be": 0.7936,
+          "Bl": 0.8373,
+          "A2e": 0.5689,
+          "A2l": 0.8238,
+          "toxic": 1102.4375,
+          "savings": -0.0808
+        }
+      },
+      "laya-regime-202": {
+        "aba-off": {
+          "fitness": 0.8105,
+          "A1e": 0.6193,
+          "A1l": 0.7572,
+          "Be": 0.7653,
+          "Bl": 0.8216,
+          "A2e": 0.8416,
+          "A2l": 0.8991,
+          "toxic": 935.125,
+          "savings": 0.2224
+        },
+        "abc-off": {
+          "fitness": 0.7158,
+          "A1e": 0.6367,
+          "A1l": 0.7526,
+          "Be": 0.772,
+          "Bl": 0.8726,
+          "A2e": 0.5548,
+          "A2l": 0.7581,
+          "toxic": 1178.1875,
+          "savings": -0.0818
+        }
+      }
+    }
+  },
+  "references": {
+    "test": {
+      "blindFitness-aba-off": 0.3236,
+      "blindSavings-aba-off": -0.005,
+      "blindFitness-abc-off": 0.3413,
+      "blindSavings-abc-off": -0.1459
+    }
+  }
+}

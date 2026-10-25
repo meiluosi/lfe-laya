@@ -17,20 +17,23 @@ export function loadPriors(path = new URL('../../experiments/evo/laya-prior-v1.j
 export function semanticWorldConfig(spec: SemanticSpec) {
   return { ...BASE, ...SCENARIOS[spec.scenario ?? 'semantic'], ...semanticConfig(spec.seed, spec.options), seed: spec.seed, runId: `sem-${spec.options.split}-${spec.seed}` };
 }
-export function runSemanticWorld(spec: SemanticSpec, factory: SemanticFactory): EvalResult & { toxicBites: number; lifetimes: { t: number; died: boolean }[] } {
+export function runSemanticWorld(spec: SemanticSpec, factory: SemanticFactory, windowTicks = 0): EvalResult & { toxicBites: number; lifetimes: { t: number; died: boolean }[]; windows?: { good: number[]; bad: number[] } } {
   const config = semanticWorldConfig(spec), w = new Ecology(config), controller = factory(config.semantic.kinds, config.semantic);
   w.lean = process.env.LFE_LEAN !== '0';   // 精简模式：只读 accepted / outcomes / events；LFE_LEAN=0 回到完整模式（结果逐世界一致，见 tests/lean.test.mjs）
   let toxic = 0;
+  const windows = windowTicks > 0 ? { good: new Array(Math.ceil(config.horizon / windowTicks)).fill(0), bad: new Array(Math.ceil(config.horizon / windowTicks)).fill(0) } : undefined;   // 可选：按时间窗口统计吃到营养 / 有害食物的次数（A/B/A 度量用，不改变任何运行结果）
   while (!w.done()) {
+    const t0 = windows ? w.state.tick : 0;
     const r = w.step(w.requests().map(q => controller(q, spec.seed))); if (!r.accepted) throw Error(r.reason);
     toxic += r.events!.filter(e => e.kind === 'ate' && e.reason === 'toxic').length;
+    if (windows) { const k = Math.min(windows.good.length - 1, Math.floor(t0 / windowTicks)); for (const e of r.events!) if (e.kind === 'ate') (e.reason === 'toxic' ? windows.bad : windows.good)[k]++; }
     if (controller.feedback) controller.feedback(r.outcomes!.map(o => ({ agentId: o.agentId, reward: o.reward, terminated: o.terminated, energyBefore: o.energyBefore, energyAfter: o.energyAfter, action: o.action })), new Map((w.done() ? [] : w.requests()).map(q => [q.identity.agentId, q])));
   }
   const s = w.snapshot(), n = config.initialAgents, cap = s.config.capacity;
   const survival = s.metrics.agentTicks / (n * config.horizon), lowEnergy = s.metrics.lowEnergyTicks / s.metrics.agentTicks;
   const energyFraction = s.agents.reduce((a, x) => a + x.energy / (cap * x.traits.size), 0) / n;
   const lifetimes = s.lineage.map(l => ({ t: (l.died ?? s.tick) - l.born, died: l.died !== null && l.died !== undefined }));   // 生存分析：每个个体的寿命，存活者在地平线处删失
-  return { survival, lowEnergy, energyFraction, living: s.agents.length, deaths: s.metrics.deaths, toxicBites: toxic, lifetimes, fitness: FITNESS_WEIGHTS.survival * survival + FITNESS_WEIGHTS.energy * energyFraction };
+  return { survival, lowEnergy, energyFraction, living: s.agents.length, deaths: s.metrics.deaths, toxicBites: toxic, lifetimes, ...(windows ? { windows } : {}), fitness: FITNESS_WEIGHTS.survival * survival + FITNESS_WEIGHTS.energy * energyFraction };
 }
 /** 把不想要的食物从个体的观测里“抹掉”，再交给无语义的规则控制器。 */
 export function filterRequest(q: Request, keep: (desc: string | undefined) => boolean): Request {
