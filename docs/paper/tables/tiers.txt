@@ -39,6 +39,12 @@
 16	Variable delay (matched training): laya-lag $-$ laya-plain, jitter	direction confirmed; magnitude unclear
 16	Variable delay (matched training): laya-lag $-$ laya-plain, per kind	direction unclear; magnitude below threshold
 16	Variable delay (matched training): laya-lag $-$ none-lag, pooled	direction unclear; magnitude below threshold
+17	Retention: regime $-$ plain savings (A/B/A, no cue)	direction confirmed; magnitude confirmed
+17	Retention: cue $-$ plain savings (A/B/A, true cue)	direction confirmed; magnitude confirmed
+17	Retention: cue $-$ regime savings (A/B/A, true cue)	direction confirmed; magnitude confirmed
+17	New rule: regime non-inferior to plain (A/B/C, no cue)	non-inferiority confirmed
+17	Random cue: plain $-$ cue fitness (A/B/A)	direction unclear; magnitude below threshold
+17	Retention: regime $-$ plain fitness (A/B/A, no cue)	direction confirmed; magnitude confirmed
 03	laya $-$ shuffled (3 seeds)	direction confirmed
 03	laya $-$ none (3 seeds)	direction confirmed
 03	laya $-$ vader (3 seeds)	direction unclear
