@@ -1,0 +1,53 @@
+{
+  "purpose": "语义世界：先天参数进化（2×2 对照之一）",
+  "condition": {
+    "prior": "laya",
+    "learning": true
+  },
+  "generations": 40,
+  "pop": 24,
+  "sigma": 0.25,
+  "lr": 0.1,
+  "seed": 211,
+  "agent": "structured",
+  "hier": false,
+  "social": false,
+  "head": false,
+  "learner": "regime",
+  "worldBase": 21150000,
+  "socialCues": "language",
+  "inversions": [
+    0
+  ],
+  "delayAll": false,
+  "trainPool": "train",
+  "ripening": false,
+  "cues": "language",
+  "seasonTicks": 200,
+  "ripeLimit": 3000,
+  "drift": false,
+  "pool": true,
+  "K": 6,
+  "harmCap": 1,
+  "delay": 0,
+  "delaySpread": 0,
+  "delayMode": "jitter",
+  "innateSize": 9,
+  "training": "每代 6 个训练划分世界（种子 50000+gen*10+i，常识反转比例按 0 / 0 / 0.25 循环）",
+  "report": "测试划分（全新描述词）12 个世界，种子 40000+，反转比例交替 0 / 0.25，仅报告",
+  "source": {
+    "packages/evo/structured.ts": "5d1d4f8d25b0b839d1905a9f291a3b74a41aeea3ef674442b6bd4d4fa5ce983a",
+    "packages/evo/pools.ts": "1803273e1552087214555b78e90ea0f79a9b55ed5cfb10a43798715a0ff5186d",
+    "packages/evo/ontology.ts": "fa9735fb4f44bbe20f75551b494e50391b99fb7b5137f84ddcda298dcaa2bd3b",
+    "packages/evo/ontology/dialects.json": "320d977a00192425b50fa5fbd534023ad15563689b48642d274e13bd2f3424e1",
+    "packages/evo/sempolicy.ts": "6613671f726309996c4eddadb74dfe687622846568bcd482781ca3b4c6cfb48d",
+    "packages/evo/semantic.ts": "e1907c1ab9549291cadaf34a518a144998f9d437215d5ebd666293eda9f60621",
+    "packages/evo/semantic-run.ts": "1bd08dfd34c4330487b5292e5a683b8734335823b4ff37aa8b05dc3415ce26c7",
+    "packages/evo/semantic-worker.ts": "76b504fe6c7e00272c1bca8a3063138301e379346acb008a224f5f8d5248b747",
+    "packages/evo/semantic-evolve.ts": "341002e54b88dd24a169e61b549183872acc374c05386131b0f8cd2ece5889c6",
+    "packages/evo/semantic-vocab.json": "2daf25c3459894771049a492038289ef8205df52fc4414ad2cab436e33247a23",
+    "experiments/evo/laya-prior-v1.json": "3730c2137c702acfe8b6e0e03b31f2f935cb879730ae5a30129cfdad139b0a1b",
+    "packages/sim/ecology.ts": "de201d36afa4e457781f46ec40682ef5f7694db6a54e243b081781398a8c953f",
+    "packages/sim/controllers.ts": "af7f478d7ef283c038575ba297d60f75dbfbac4bc7291e03931219907ee44140"
+  }
+}

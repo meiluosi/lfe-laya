@@ -66,3 +66,5 @@ node packages/evo/semantic-evolve.ts experiments/evo/f17-<laya|none>-<plain|dual
 
 - 协议冻结提交：本文件所在提交（信息以“预注册 17 冻结协议”开头）。
 - 基因组哈希：训练完成后写入 `experiments/prereg/genome-hashes-17.json` 并提交，之后才运行评估。
+
+训练完成记录（2026-10-26）：64 个运行均正常结束（无崩溃，无重跑）；基因组长度符合预期（plain 9、dual 13、regime 12、cue 9），64 个哈希互不相同。哈希已写入 `experiments/prereg/genome-hashes-17.json`，之后才运行评估。
