@@ -1,0 +1,42 @@
+{"text": "The air is warm and still, and the ground is dry.", "state": "A", "split": "train", "p": [0.915, 0.2266, 0.1684, 0.2822, 0.2477]}
+{"text": "It is a hot, windless day and the soil is parched.", "state": "A", "split": "train", "p": [0.6734, 0.6305, 0.1496, 0.652, 0.3843]}
+{"text": "Warm stillness hangs over dusty, cracked earth.", "state": "A", "split": "train", "p": [0.9421, 0.7841, 0.0707, 0.6897, 0.3849]}
+{"text": "No breeze stirs; the sun is warm and the dirt is bone dry.", "state": "A", "split": "train", "p": [0.8978, 0.2273, 0.0525, 0.1452, 0.0955]}
+{"text": "The weather is mild and calm with dry ground underfoot.", "state": "A", "split": "train", "p": [0.9017, 0.2808, 0.241, 0.1849, 0.14]}
+{"text": "Dry, sunny and quiet, with hardly a breath of wind.", "state": "A", "split": "train", "p": [0.8264, 0.0979, 0.2158, 0.2213, 0.1393]}
+{"text": "Balmy and motionless; the earth underfoot is arid.", "state": "A", "split": "eval", "p": [0.6787, 0.2354, 0.2439, 0.4585, 0.311]}
+{"text": "A sultry hush lies over the parched land.", "state": "A", "split": "eval", "p": [0.4453, 0.5647, 0.3472, 0.705, 0.3697]}
+{"text": "Not a leaf moves in the heat, and the dust is dry.", "state": "A", "split": "eval", "p": [0.5454, 0.2495, 0.3167, 0.4861, 0.2757]}
+{"text": "Sunlight beats down on baked, thirsty soil.", "state": "A", "split": "eval", "p": [0.7456, 0.8052, 0.9261, 0.5969, 0.451]}
+{"text": "The atmosphere is warm and tranquil and the terrain is desiccated.", "state": "A", "split": "eval", "p": [0.8175, 0.4321, 0.1614, 0.4262, 0.2132]}
+{"text": "Dry heat and utter calm.", "state": "A", "split": "eval", "p": [0.6749, 0.1206, 0.1015, 0.163, 0.2212]}
+{"text": "A cold wind is blowing and the ground is wet.", "state": "B", "split": "train", "p": [0.124, 0.9266, 0.9503, 0.8504, 0.2581]}
+{"text": "It is chilly and gusty, and the soil is soaked.", "state": "B", "split": "train", "p": [0.0906, 0.9469, 0.9165, 0.7996, 0.3054]}
+{"text": "Cold gusts sweep over muddy, sodden earth.", "state": "B", "split": "train", "p": [0.02, 0.9804, 0.9664, 0.8825, 0.893]}
+{"text": "Rain-cooled air rushes past and the dirt is damp.", "state": "B", "split": "train", "p": [0.3548, 0.9373, 0.7668, 0.716, 0.2104]}
+{"text": "The weather is cool and windy with wet ground underfoot.", "state": "B", "split": "train", "p": [0.3348, 0.9669, 0.9197, 0.7299, 0.2461]}
+{"text": "Cold, blustery and damp.", "state": "B", "split": "train", "p": [0.0884, 0.9292, 0.7868, 0.8467, 0.4278]}
+{"text": "Frigid squalls lash the waterlogged terrain.", "state": "B", "split": "eval", "p": [0.3274, 0.9588, 0.8518, 0.8377, 0.8684]}
+{"text": "A biting draft whips across the drenched land.", "state": "B", "split": "eval", "p": [0.0551, 0.9098, 0.9603, 0.845, 0.6441]}
+{"text": "The breeze is icy and the earth is saturated.", "state": "B", "split": "eval", "p": [0.2091, 0.8881, 0.8473, 0.8616, 0.8892]}
+{"text": "Stormy chill; puddles everywhere.", "state": "B", "split": "eval", "p": [0.2811, 0.9487, 0.8355, 0.7436, 0.5377]}
+{"text": "Raw, blowy weather over boggy soil.", "state": "B", "split": "eval", "p": [0.386, 0.8829, 0.9392, 0.7988, 0.5247]}
+{"text": "Brisk polar air, and the ground squelches.", "state": "B", "split": "eval", "p": [0.1447, 0.7226, 0.9039, 0.67, 0.5252]}
+{"text": "Thick mist hangs low and the light is strange.", "state": "C", "split": "train", "p": [0.388, 0.8453, 0.617, 0.8665, 0.9796]}
+{"text": "A heavy fog lies over everything and the light is eerie.", "state": "C", "split": "train", "p": [0.1963, 0.7925, 0.678, 0.8963, 0.8444]}
+{"text": "Low cloud clings to the ground and the daylight looks odd.", "state": "C", "split": "train", "p": [0.6469, 0.6659, 0.3113, 0.7529, 0.9556]}
+{"text": "Everything is shrouded in haze under a pale, uncanny glow.", "state": "C", "split": "train", "p": [0.6651, 0.8006, 0.4964, 0.9065, 0.9675]}
+{"text": "The mist is dense and the light is dim and unusual.", "state": "C", "split": "train", "p": [0.4753, 0.8373, 0.6521, 0.8779, 0.9533]}
+{"text": "Fog and a weird, murky light.", "state": "C", "split": "train", "p": [0.2151, 0.9306, 0.6446, 0.9178, 0.9608]}
+{"text": "A dense vapour blankets the area, casting peculiar illumination.", "state": "C", "split": "eval", "p": [0.5423, 0.9472, 0.6791, 0.8359, 0.9297]}
+{"text": "Murk drifts through the air and the brightness feels unnatural.", "state": "C", "split": "eval", "p": [0.5351, 0.7504, 0.527, 0.8398, 0.9281]}
+{"text": "Visibility is poor in the swirling gloom with an otherworldly shimmer.", "state": "C", "split": "eval", "p": [0.1925, 0.9167, 0.904, 0.9241, 0.9659]}
+{"text": "Cloud has settled at ground level and the sunlight is ghostly.", "state": "C", "split": "eval", "p": [0.2855, 0.8618, 0.4466, 0.8001, 0.8974]}
+{"text": "Shrouded in a milky haze, bathed in odd light.", "state": "C", "split": "eval", "p": [0.7256, 0.717, 0.4074, 0.8317, 0.9361]}
+{"text": "Smoky-looking fog; the glow seems wrong.", "state": "C", "split": "eval", "p": [0.3047, 0.6863, 0.5701, 0.8834, 0.8]}
+{"text": "A distant bird calls twice.", "state": "noise", "split": "noise", "p": [0.2411, 0.4067, 0.6069, 0.4918, 0.6545]}
+{"text": "Somewhere a branch creaks.", "state": "noise", "split": "noise", "p": [0.5375, 0.6002, 0.8792, 0.6985, 0.5449]}
+{"text": "The shadows of the rocks are long.", "state": "noise", "split": "noise", "p": [0.2952, 0.6373, 0.6809, 0.7983, 0.3511]}
+{"text": "A faint smell of something sweet drifts past.", "state": "noise", "split": "noise", "p": [0.7728, 0.5503, 0.3744, 0.6069, 0.3226]}
+{"text": "Small insects hum near the ground.", "state": "noise", "split": "noise", "p": [0.7358, 0.5927, 0.5087, 0.6398, 0.288]}
+{"text": "An old path winds between the stones.", "state": "noise", "split": "noise", "p": [0.7157, 0.5497, 0.8431, 0.6496, 0.2121]}

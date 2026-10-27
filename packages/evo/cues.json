@@ -1,0 +1,16 @@
+{
+  "note": "作者撰写的环境线索句子（设计见 docs/DESIGN_SEMANTIC_CONTEXT.md §6）。三个环境状态 A（暖、静、干）/ B（冷、风、湿）/ C（雾、怪异的光）；train 为训练用，eval 为评估用（措辞与 train 不同，包含词汇不重叠的说法）；noise 与状态无关，用于随机线索。可能偏向 Laya，须披露。",
+  "A": {
+    "train": ["The air is warm and still, and the ground is dry.", "It is a hot, windless day and the soil is parched.", "Warm stillness hangs over dusty, cracked earth.", "No breeze stirs; the sun is warm and the dirt is bone dry.", "The weather is mild and calm with dry ground underfoot.", "Dry, sunny and quiet, with hardly a breath of wind."],
+    "eval": ["Balmy and motionless; the earth underfoot is arid.", "A sultry hush lies over the parched land.", "Not a leaf moves in the heat, and the dust is dry.", "Sunlight beats down on baked, thirsty soil.", "The atmosphere is warm and tranquil and the terrain is desiccated.", "Dry heat and utter calm."]
+  },
+  "B": {
+    "train": ["A cold wind is blowing and the ground is wet.", "It is chilly and gusty, and the soil is soaked.", "Cold gusts sweep over muddy, sodden earth.", "Rain-cooled air rushes past and the dirt is damp.", "The weather is cool and windy with wet ground underfoot.", "Cold, blustery and damp."],
+    "eval": ["Frigid squalls lash the waterlogged terrain.", "A biting draft whips across the drenched land.", "The breeze is icy and the earth is saturated.", "Stormy chill; puddles everywhere.", "Raw, blowy weather over boggy soil.", "Brisk polar air, and the ground squelches."]
+  },
+  "C": {
+    "train": ["Thick mist hangs low and the light is strange.", "A heavy fog lies over everything and the light is eerie.", "Low cloud clings to the ground and the daylight looks odd.", "Everything is shrouded in haze under a pale, uncanny glow.", "The mist is dense and the light is dim and unusual.", "Fog and a weird, murky light."],
+    "eval": ["A dense vapour blankets the area, casting peculiar illumination.", "Murk drifts through the air and the brightness feels unnatural.", "Visibility is poor in the swirling gloom with an otherworldly shimmer.", "Cloud has settled at ground level and the sunlight is ghostly.", "Shrouded in a milky haze, bathed in odd light.", "Smoky-looking fog; the glow seems wrong."]
+  },
+  "noise": ["A distant bird calls twice.", "Somewhere a branch creaks.", "The shadows of the rocks are long.", "A faint smell of something sweet drifts past.", "Small insects hum near the ground.", "An old path winds between the stones."]
+}

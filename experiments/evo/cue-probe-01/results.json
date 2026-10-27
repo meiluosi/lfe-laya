@@ -1,0 +1,47 @@
+{
+ "laya": {
+  "nearest_centroid_acc": 0.3333333333333333,
+  "pair_auc_train_x_eval": 0.4903549382716049,
+  "own_centroid_cos_min": -0.7121031931989764,
+  "own_centroid_cos_mean": 0.2695356490512808,
+  "other_centroid_cos_max": 0.8373732221598514,
+  "other_centroid_cos_mean": 0.3739118382895052,
+  "noise_best_centroid_cos_mean": 0.7068022379529902,
+  "noise_best_centroid_cos_max": 0.8340904755140156,
+  "state_centroid_cos": {
+   "AB": 0.8174703466968358,
+   "AC": 0.740750613240595,
+   "BC": 0.6463721638912896
+  }
+ },
+ "bow": {
+  "nearest_centroid_acc": 0.5,
+  "pair_auc_train_x_eval": 0.5374014060356653,
+  "own_centroid_cos_min": 0.0,
+  "own_centroid_cos_mean": 0.34149330551510637,
+  "other_centroid_cos_max": 0.6593754800113167,
+  "other_centroid_cos_mean": 0.3300079954625929,
+  "noise_best_centroid_cos_mean": 0.20113027797440794,
+  "noise_best_centroid_cos_max": 0.3009658797264659,
+  "state_centroid_cos": {
+   "AB": 0.7386372779231147,
+   "AC": 0.652774338378667,
+   "BC": 0.6083614677795194
+  }
+ },
+ "shuffled": {
+  "nearest_centroid_acc": 0.3333333333333333,
+  "pair_auc_train_x_eval": 0.4876543209876543,
+  "own_centroid_cos_min": -0.46127663830462984,
+  "own_centroid_cos_mean": 0.4263000270373769,
+  "other_centroid_cos_max": 0.8233156282108749,
+  "other_centroid_cos_mean": 0.5906644650255023,
+  "noise_best_centroid_cos_mean": 0.6583087383583447,
+  "noise_best_centroid_cos_max": 0.7788718209919197,
+  "state_centroid_cos": {
+   "AB": 0.8565537931487015,
+   "AC": 0.7065123885906277,
+   "BC": 0.6883891067292829
+  }
+ }
+}

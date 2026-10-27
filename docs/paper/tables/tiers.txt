@@ -45,6 +45,14 @@
 17	New rule: regime non-inferior to plain (A/B/C, no cue)	non-inferiority confirmed
 17	Random cue: plain $-$ cue fitness (A/B/A)	direction unclear; magnitude below threshold
 17	Retention: regime $-$ plain fitness (A/B/A, no cue)	direction confirmed; magnitude confirmed
+18	Retention bounds: regime non-inferior to plain fitness (partial reversal)	non-inferiority confirmed
+18	Retention bounds: regime $-$ plain savings (partial reversal)	direction confirmed; magnitude confirmed
+18	Retention bounds: regime $-$ plain savings (A/B/A/B/A)	direction confirmed; magnitude confirmed
+18	Retention bounds: regime $-$ plain relearning (A/B/A/B/A)	direction unclear; magnitude unclear
+18	Retention bounds: regime $-$ plain savings (long stay)	direction confirmed; magnitude unclear
+18	Retention bounds: regime $-$ plain fitness (A/B/A/B/A)	direction confirmed; magnitude confirmed
+18	Retention bounds: cue $-$ regime savings (A/B/A/B/A, true cue)	direction confirmed; magnitude confirmed
+18	Retention bounds: cue $-$ plain savings (long stay, true cue)	direction confirmed; magnitude confirmed
 03	laya $-$ shuffled (3 seeds)	direction confirmed
 03	laya $-$ none (3 seeds)	direction confirmed
 03	laya $-$ vader (3 seeds)	direction unclear

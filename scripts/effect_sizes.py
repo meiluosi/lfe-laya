@@ -109,6 +109,15 @@ add('17', '保留：真实线索下 cue 节省 − regime 节省（A/B/A）', P[
 add('17', '全新规则：regime 相对 plain 非劣效（A/B/C，无线索，> −0.03）', P['H4']['perSeed'], -0.03, '成立', noninf=True)
 add('17', '随机线索：plain 适应度 − cue 适应度（A/B/A）', P['H5']['perSeed'], 0.02, '不成立（方向相反）')
 add('17', '保留：无线索下 regime 适应度 − plain 适应度（A/B/A）', P['H6']['perSeed'], 0.04, '成立')
+r = load('retention-eval-01'); P = {h['id']: h for h in r['primary']}
+add('18', '保留的边界：部分反转下 regime 相对 plain 非劣效（适应度，> −0.03）', P['H1']['perSeed'], -0.03, '成立', noninf=True)
+add('18', '保留的边界：部分反转下 regime 节省 − plain 节省', P['H2']['perSeed'], 0.05, '成立')
+add('18', '保留的边界：多次反转下 regime 节省 − plain 节省（A/B/A/B/A）', P['H3']['perSeed'], 0.15, '成立')
+add('18', '保留的边界：多次反转下 regime 再学习 − plain 再学习', P['H4']['perSeed'], 0.05, '不成立（幅度未达）')
+add('18', '保留的边界：长停留后 regime 节省 − plain 节省（A/B/B/B/A）', P['H5']['perSeed'], 0.20, '不成立（方向确认，幅度未达）')
+add('18', '保留的边界：多次反转下 regime 适应度 − plain 适应度', P['H6']['perSeed'], 0.04, '成立')
+add('18', '保留的边界：多次反转、真实线索下 cue 节省 − regime 节省', P['H7']['perSeed'], 0.05, '成立')
+add('18', '保留的边界：长停留、真实线索下 cue 节省 − plain 节省', P['H8']['perSeed'], 0.20, '成立')
 r = load('heldout-rep-eval-01')
 for h in r['primary']:
     xs = [p['diff'] for p in h['perRun']]; add('03', f"{h['id']} {h['claim']}（3 个训练种子）", xs, None, '不成立（交集检验）')
