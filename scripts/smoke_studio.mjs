@@ -100,6 +100,10 @@ await withPage(async ({ page, base, problems, browserName }) => {
   await page.getByLabel('大脑模式').selectOption('evolved:ctx-regime');
   const adapt = page.getByTestId('adapt-panel'); await adapt.waitFor({ timeout: 10000 });
   assert.match(await adapt.innerText(), /适应与保留/); assert.equal(await adapt.locator('.band').count(), 3, 'A/B/A 应有三个阶段');
+  await page.getByLabel('播种场景').selectOption('abab-off'); await page.getByRole('button', { name: '重新播种' }).click();
+  await page.waitForFunction(() => document.querySelectorAll('.adapt .band').length === 5, null, { timeout: 10000 });
+  await page.getByLabel('播种场景').selectOption('aba-off'); await page.getByRole('button', { name: '重新播种' }).click();
+  await page.waitForFunction(() => document.querySelectorAll('.adapt .band').length === 3, null, { timeout: 10000 });
   await page.getByRole('button', { name: '关闭实验抽屉' }).click();
   await page.getByRole('button', { name: '16×' }).click(); await page.getByRole('button', { name: '播放', exact: true }).click();
   await page.waitForFunction(() => document.querySelectorAll('.adapt .win').length >= 3, null, { timeout: 60000 });
