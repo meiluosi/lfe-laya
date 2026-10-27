@@ -47,3 +47,12 @@ test('true cue: one sentence per phase, and A/B/A repeats the A sentence on retu
   assert.ok([...cuesByPhase('aba', 'off', 100).values()].every(v => v.size === 1 && v.has(undefined)));
   const abc = cuesByPhase('abc', 'true', 100); assert.equal(new Set([0, 1, 2].map(ph => [...abc.get(ph)][0])).size, 3);
 });
+
+import { makeDrift, makeKinds } from '../packages/evo/semantic.ts';
+test('retention patterns: half flips a strict subset, abab alternates, long holds B for three phases, horizon applies', () => {
+  const opt = { split: 'test', pool: 'test', sensible: 6, harmCap: 1, inversion: 0 }, kinds = makeKinds(91, opt), mk = pattern => makeDrift(91, kinds, { everyTicks: 1200, fraction: 1, pattern });
+  const half = mk('half'); assert.deepEqual(half.schedule, [0, 1, 0]); assert.equal(half.states[1].length, 3); assert.ok(half.states[1].length < kinds.length);
+  assert.deepEqual(mk('abab').schedule, [0, 1, 0, 1, 0]); assert.deepEqual(mk('long').schedule, [0, 1, 1, 1, 0]); assert.equal(mk('abab').states[1].length, kinds.length);
+  assert.equal(semanticWorldConfig({ seed: 91, options: { ...opt, horizon: 6000, drift: { everyTicks: 1200, fraction: 1, pattern: 'abab' } } }).horizon, 6000);
+  assert.equal(semanticWorldConfig({ seed: 91, options: opt }).horizon, 3600);
+});
