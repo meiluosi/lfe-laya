@@ -23,7 +23,7 @@ export function runSemanticWorld(spec: SemanticSpec, factory: SemanticFactory, w
   let toxic = 0;
   const windows = windowTicks > 0 ? { good: new Array(Math.ceil(config.horizon / windowTicks)).fill(0), bad: new Array(Math.ceil(config.horizon / windowTicks)).fill(0) } : undefined;   // 可选：按时间窗口统计吃到营养 / 有害食物的次数（A/B/A 度量用，不改变任何运行结果）
   while (!w.done()) {
-    const t0 = windows ? w.state.tick : 0;
+    const t0 = windows ? w.tick : 0;
     const r = w.step(w.requests().map(q => controller(q, spec.seed))); if (!r.accepted) throw Error(r.reason);
     toxic += r.events!.filter(e => e.kind === 'ate' && e.reason === 'toxic').length;
     if (windows) { const k = Math.min(windows.good.length - 1, Math.floor(t0 / windowTicks)); for (const e of r.events!) if (e.kind === 'ate') (e.reason === 'toxic' ? windows.bad : windows.good)[k]++; }
@@ -36,12 +36,8 @@ export function runSemanticWorld(spec: SemanticSpec, factory: SemanticFactory, w
   return { survival, lowEnergy, energyFraction, living: s.agents.length, deaths: s.metrics.deaths, toxicBites: toxic, lifetimes, ...(windows ? { windows } : {}), fitness: FITNESS_WEIGHTS.survival * survival + FITNESS_WEIGHTS.energy * energyFraction };
 }
 /** 把不想要的食物从个体的观测里“抹掉”，再交给无语义的规则控制器。 */
-export function filterRequest(q: Request, keep: (desc: string | undefined) => boolean): Request {
-  const o = q.observation;
-  return { ...q, observation: { ...o,
-    local: o.local.map(c => (c.food > .05 && !keep(c.desc)) ? { dx: c.dx, dy: c.dy, blocked: c.blocked, food: 0 } : c),
-    memory: o.memory.filter(m => keep(m.desc)) } };
-}
+export { filterRequest } from './filter.ts';
+import { filterRequest } from './filter.ts';
 export const blindRule: SemanticFactory = () => (q, seed) => ruleProposal(q, seed);
 export const randomPolicy: SemanticFactory = () => (q, seed) => randomProposal(q, seed);
 /** 用 Laya 先验的规则：只追逐 Laya 判断“可以吃”的食物（P(吃) ≥ 阈值）；未知描述按 0 处理。 */

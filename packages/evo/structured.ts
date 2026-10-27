@@ -3,7 +3,8 @@
 // v0 是系统 1（缓存的 Laya）对描述词的先验价值。预言机/隐藏真值从不进入。
 import { ruleProposal } from '../sim/controllers.ts';
 import type { Proposal, Request } from '../protocol/ecology.ts';
-import { filterRequest, type Priors } from './semantic-run.ts';
+import { filterRequest } from './filter.ts';
+import type { Priors } from './semantic-run.ts';
 import { NONSENSE_DEFAULT_V0 } from './sempolicy.ts';
 
 export const STRUCTURED_GENES_V1 = 5, STRUCTURED_GENES = 9;

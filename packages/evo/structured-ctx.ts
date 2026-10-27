@@ -7,7 +7,8 @@
 //    返回旧环境时，旧表能把预测做对，于是切回并恢复已有的知识。额外基因：theta∈[.15,1.2]、rate∈[.05,.5]、margin∈[0,.3]。
 import { ruleProposal } from '../sim/controllers.ts';
 import type { Proposal, Request } from '../protocol/ecology.ts';
-import { filterRequest, type Priors } from './semantic-run.ts';
+import { filterRequest } from './filter.ts';
+import type { Priors } from './semantic-run.ts';
 import { NONSENSE_DEFAULT_V0 } from './sempolicy.ts';
 import { decodeGenes as decodeBase, STRUCTURED_GENES as BASE_GENES, updateBelief, type StructuredPrior as Prior } from './structured.ts';
 
@@ -27,7 +28,7 @@ export type CtxCohort = ((q: Request, seed: number) => Proposal) & { feedback: F
 
 function build(kind: 'dual' | 'regime', genes: ArrayLike<number>, prior: Prior, priors: Priors): CtxCohort {
   const p = kind === 'dual' ? decodeDualGenes(genes) : decodeRegimeGenes(genes) as ReturnType<typeof decodeDualGenes> & ReturnType<typeof decodeRegimeGenes>;
-  const d2 = p as ReturnType<typeof decodeDualGenes>, r2 = p as ReturnType<typeof decodeRegimeGenes>;
+  const d2 = p as unknown as ReturnType<typeof decodeDualGenes>, r2 = p as unknown as ReturnType<typeof decodeRegimeGenes>;
   // 每个个体：dual 用 [fast 表, slow 表]；regime 用至多 4 张表。误差滑动平均与当前表序号也是个体的后天状态。
   type St = { tables: Map<string, Belief>[]; err: number[]; cur: number };
   const states = new Map<string, St>(), pending = new Map<string, { desc?: string; metabolism: number }>();

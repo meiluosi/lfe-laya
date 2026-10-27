@@ -94,6 +94,19 @@ await withPage(async ({ page, base, problems, browserName }) => {
   await page.getByRole('button', { name: '实验', exact: true }).click(); await page.getByLabel('播种场景').selectOption('ecology'); await page.getByRole('button', { name: '重新播种' }).click();
   await legend.waitFor({ state: 'detached' }); await page.getByRole('button', { name: '关闭实验抽屉' }).click();
 
+  // 适应与保留：A/B/A 反转场景 + 环境分段记忆基因组 → 面板出现，窗口柱随运行增加；普通生态场景下面板不出现
+  await page.getByRole('button', { name: '实验', exact: true }).click();
+  await page.getByLabel('播种场景').selectOption('aba-off'); await page.getByRole('button', { name: '重新播种' }).click();
+  await page.getByLabel('大脑模式').selectOption('evolved:ctx-regime');
+  const adapt = page.getByTestId('adapt-panel'); await adapt.waitFor({ timeout: 10000 });
+  assert.match(await adapt.innerText(), /适应与保留/); assert.equal(await adapt.locator('.band').count(), 3, 'A/B/A 应有三个阶段');
+  await page.getByRole('button', { name: '关闭实验抽屉' }).click();
+  await page.getByRole('button', { name: '16×' }).click(); await page.getByRole('button', { name: '播放', exact: true }).click();
+  await page.waitForFunction(() => document.querySelectorAll('.adapt .win').length >= 3, null, { timeout: 60000 });
+  await page.getByRole('button', { name: '暂停', exact: true }).click();
+  await page.getByRole('button', { name: '实验', exact: true }).click(); await page.getByLabel('播种场景').selectOption('ecology'); await page.getByRole('button', { name: '重新播种' }).click();
+  await adapt.waitFor({ state: 'detached' }); await page.getByRole('button', { name: '关闭实验抽屉' }).click();
+
   // 窄屏：无横向溢出，播放控件可见
   await page.setViewportSize({ width: 390, height: 844 }); await page.waitForTimeout(300);
   assert.ok(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth) <= 0, '窄屏横向溢出');

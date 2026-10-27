@@ -141,6 +141,8 @@ export function validateConfig(c: Config): void {
 
 export class Ecology {
   private state: Snapshot;
+  /** 当前模拟步（只读；评估代码按时间窗口统计时使用） */
+  get tick(): number { return this.state.tick; }
   private pending: Request[] | null = null;
   private attempts = new Map<string, number>();
   private generation = 0;
