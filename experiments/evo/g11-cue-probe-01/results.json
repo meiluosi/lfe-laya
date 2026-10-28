@@ -1,0 +1,22 @@
+{
+ "llm": {
+  "acc": 1,
+  "pair_auc": 1,
+  "eval_vs_noise_auc": 1
+ },
+ "jaccard_baseline": {
+  "acc": 0.5,
+  "pair_auc": 0.562,
+  "eval_vs_noise_auc": 0.824
+ },
+ "shuffled_llm": {
+  "acc": 0.444,
+  "pair_auc": 0.545,
+  "eval_vs_noise_auc": 0.644
+ },
+ "nan_pairs": 0,
+ "pairs": 432,
+ "model": "deepseek-flash",
+ "pass": true,
+ "misclassified": []
+}
