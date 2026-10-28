@@ -1,0 +1,165 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{booktabs,amsmath,amssymb,hyperref,array,tabularx}
+\usepackage[numbers]{natbib}
+\newcommand{\todo}[1]{\textbf{[TODO: #1]}}
+\newcommand{\unverified}{\textbf{[UNVERIFIED]}}
+
+\title{Learning, Forgetting and Recovery in Evolved Agents with a Frozen Language-Model Prior:\\ Preregistered Studies, Including the Negative Results}
+\author{Feng Yu\\ Independent researcher}
+\date{DRAFT --- \today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We study simulated foragers whose decision layer is evolved (innate), whose beliefs are learned within a lifetime (acquired), and whose perception of foods described only in natural language is supplied by a frozen pretrained decision model (Laya; perceptual). The three sources are separately attributable because the frozen model is never trained. Across eighteen preregistered evaluations we report two groups of findings. \emph{First}, the frozen prior is worth having only in some worlds: its fitness value grows with consequence delay (delay 40: $+0.049$; delay 80: $+0.073$, 8/8 seeds), is about zero under immediate feedback, and is zero ($-0.005$) in a world simple enough for experience-based learning; it beats a sentiment lexicon only when descriptions require world knowledge. \emph{Second}, we return to the original question of lifetime learning: after the world's rules reverse and later return (A/B/A), an ordinary learner is worse the second time it meets A (savings $-0.07$), whereas an agent that keeps separate belief tables per inferred environment, switching on prediction error, saves $+0.15$ ($+0.21$ over the ordinary learner, 8/8 seeds). The advantage holds in partial reversals, repeated reversals and after a long stay in B, but two magnitude thresholds were missed. A learner keyed on a visible environment cue saves most when the cue is present and collapses when it is absent, and probes show that the frozen model does not read such cues reliably. The individual-level advantage did \emph{not} translate into a detectable population-level advantage when agents reproduce (establishment $+0.016$, population size $+2.8\%$, recovery ratio $-0.011$), and a small probe with heritable mutation found no detectable direction of genetic selection. An early large effect also failed to replicate across training seeds. We report all negative results and the limits of the design.
+\end{abstract}
+
+\section{Introduction}
+Pretrained language models carry broad world knowledge, and recent work uses them as priors or guides for decision-making agents \citep{yan2025efficient,du2023guiding,ahn2022saycan}. Whether such a prior is actually worth having is rarely isolated: a gain may come from the model's knowledge, from the agent's own learning, from a better-tuned decision rule, or from any informative signal at all, including a simple lexicon.
+
+We study this question in a setting where the three possible sources can be pulled apart. Agents are produced by evolution, which sets an innate decision layer; they learn within a lifetime, which sets acquired beliefs; and they perceive the world partly through a frozen pretrained model that acts as a fast ``System~1'' intuition. The frozen model is never trained and its weights are not evolved, so the innate genome, the acquired beliefs and the perceptual prior are separately attributable. The world supplies the problem worth learning: foods are described only in natural language, and the simulator can add delayed consequences, lethal items, deceptive descriptions, social cues and ripeness cycles, each off by default.
+
+Because learning can itself make a prior redundant, and because an early large effect in our own work did not survive repetition (Section~\ref{sec:results}), we preregistered each confirmatory evaluation, evaluated on held-out dialects, repeated training seeds, and report every result including the unsupported hypotheses. The paper characterises \emph{when} the prior pays rather than asserting that it does.
+
+A second question is closer to what a lifetime learner is for: can an individual learn from consequences, adapt when the environment changes, and keep or recover what it knew when the old environment returns? Ordinary incremental learners overwrite old knowledge when the world changes. We test whether an innate memory structure evolved together with the decision layer, and requiring no change to the frozen model, fixes this, whether it helps when agents reproduce, and whether the frozen model can supply the missing context signal.
+
+\paragraph{Contributions (claims supported by preregistered evidence only).}
+\begin{enumerate}
+  \item A ladder of world complexity with gates (generated ontology; lethal, delayed and deceptive consequences) in which innate, acquired and perceptual contributions can be separated.
+  \item Evidence that a fixed model discriminates unseen phrasings and knowledge-dependent descriptions without fine-tuning, together with its option-order bias and our handling of it.
+  \item A characterisation of \emph{when} the prior pays: delay, deception, and learnability.
+  \item A measure of retention (savings) in reversal worlds and evidence that an environment-table memory evolved by evolution strategies, switching on prediction error without any cue, turns negative savings of an ordinary learner into positive savings, including under partial, repeated and long reversals not seen in training.
+  \item Negative and bounding results: the individual-level advantage did not produce a detectable population-level advantage in reproducing populations; a heritable-mutation probe found no detectable selection direction; cue-keyed memory depends on the cue being present; the frozen model did not read environment cues in two preregistered-style probes.
+  \item Methodology: preregistration, held-out dialects, repeated seeds, and honest reporting of non-replication.
+\end{enumerate}
+\emph{Not claimed:} that the prior reliably raises fitness in general; that Laya beats a lexicon on fitness in general; that Laya understands environmental change; that memory structure is favoured by selection; any ``first'' claim.
+
+\section{Related Work}
+\paragraph{Language-model priors for decision making.} \citet{yan2025efficient} treat a language model as a prior over actions and combine it with reinforcement learning by Bayesian inference, reporting large gains in sample efficiency. \citet{du2023guiding} use a language model to suggest goals that shape exploration during pretraining, and \citet{ahn2022saycan} ground a language model's proposals in the value functions of pretrained robotic skills so that suggestions are feasible. These works ask how to use the model's knowledge; we ask when a frozen model's prior is worth anything once the decision layer is evolved and the agent also learns, and we include a lexicon baseline and a shuffled-prior control.
+
+\paragraph{Evolution and lifetime learning.} \citet{hinton1987learning} showed in simulation that learning can guide evolution, a result usually described as the Baldwin effect; \citet{fontanari2017revival} argue that this simulation demonstrated that the ability to learn is easily selected for, and give a direct demonstration of the effect. Later work evolves learners in richer settings: \citet{gupta2021embodied} evolve embodied agent morphologies that learn control and report evidence of a morphological Baldwin effect; \citet{le2019evolving} combine evolution with self-teaching networks in a foraging simulation; \citet{fernando2018meta} evolve initial parameters and hyperparameters that learning then adjusts, with learned weights not inherited, which is the same inheritance rule we use for acquired beliefs. In these works the starting point of learning is evolved or random; in ours a pretrained model supplies part of the agent's perception and stays fixed. We optimise the genome with evolution strategies \citep{salimans2017evolution}. Language models have also been used inside the evolutionary loop as mutation operators \citep{lehman2022evolution}, a different role from the one studied here.
+
+\paragraph{Forgetting and context.} Neural networks trained on a sequence of tasks tend to overwrite earlier knowledge; \citet{kirkpatrick2017overcoming} reduce this by slowing learning on weights that mattered for earlier tasks. In animal learning, context-dependent behaviour such as the return of a response after extinction in a different context has been modelled by inferring latent causes \citep{gershman2010context}. Our environment-table learner is a simple heuristic in this spirit (a new belief table is opened when prediction error is high), with its few parameters evolved; we do not compare it with those methods, and we make no claim that it is optimal.
+
+\paragraph{Lexicons and methodology.} We use the VADER sentiment lexicon \citep{hutto2014vader} as an independent prior that reads affect words but has no world knowledge. Our design separates hypothesis generation from testing by preregistration \citep{nosek2018preregistration}.
+
+\paragraph{Scope of the search.} Related work was collected by web search on 2026-10-21 (language-model priors for RL, Baldwin effect and evolved learners, evolution plus language models) and by reading each cited abstract; it is not exhaustive. We did not locate prior work that evolves agents on top of a frozen pretrained decision model while attributing innate, acquired and perceptual contributions separately, but we make no priority claim.
+
+\section{World and Method}
+\paragraph{World.} The simulator owns all state; the model only proposes actions. Foods carry hidden attributes (nutritious, mildly toxic, strongly toxic, lethal) rendered into text by a generator. Lethality, delayed consequences and deception (description opposite to truth) are switchable and off by default. Hidden truth is used only to measure upper bounds and never enters an agent's input.
+
+\paragraph{Three sources.} (i)~\emph{Perceptual}: fixed Laya \citep{laya2026} returns an eat probability per description, cached by text; never trained. (ii)~\emph{Innate}: a genome of nine decision-layer genes (trust, curiosity, temperature, forgetting, retry, calibration slope/bias, risk threshold, delayed-credit window), evolved by evolution strategies; Laya weights are not evolved. (iii)~\emph{Acquired}: per-kind belief updates within a lifetime, with a credit window for delayed outcomes; not inherited.
+
+\paragraph{Learners with context memory.} Beyond the ordinary learner (\emph{plain}), we evolve (a)~\emph{dual}: a fast and a slow belief set mixed by prediction error (13 genes); (b)~\emph{regime}: up to four environment belief tables, with a new table opened or an old one selected from prediction error, using three extra genes (opening threshold, rate, switching margin; 12 genes), no cue; (c)~\emph{cue}: beliefs keyed on a visible environment cue sentence used only as a label (9 genes). Beliefs start empty at birth and are never inherited. Individuals see only their own state, limited memory and local observations; the hidden environment state is used only by the observer.
+
+\paragraph{Reversal worlds and savings.} Six foods ($K=6$; half nutritious, half toxic), hazard cap 1, 8 individuals, 1200 ticks per phase. State A is the original; B reverses every food's effect; C reverses a random half. Worlds are A/B/A, A/B/C, and, for boundary tests, half-reversal (A/B$'$/A), repeated (A/B/A/B/A) and long stay (A/B/B/B/A). The metric in a 200-tick window is the share of nutritious foods among foods eaten; \emph{early} means the first two windows of a phase; \emph{savings} $=$ early share in the last A phase $-$ early share in the first A phase. Fitness is as above. Agents were trained on A/B/A and A/B/C worlds with a true cue, with 64 independent evolutions (preregistration 17); boundary and population tests reuse the frozen genomes without retraining.
+
+\paragraph{Reproducing populations.} For the population test, the simulator's reproduction is switched on (supply 20, birth threshold 26, 16 initial individuals, maximum age 2400, cooldown 150; chosen by a degraded calibration rule because no candidate met the pre-written criterion). Reproduction is a fixed instinct, not a gene. A child inherits the parent's \emph{innate type}; acquired beliefs start empty. Types are assigned by the test harness via lineage and are never an individual's input.
+
+\paragraph{Conditions and metric.} Prior $\in\{$Laya, none, shuffled Laya, VADER lexicon$\}$. Fitness $=0.7\times$ survival fraction $+0.3\times$ final cohort energy fraction. The evaluated cohort is eight individuals without reproduction (except in the population test); the number of food kinds $K$ and the hazard cap differ by protocol and are given in each preregistration (for example $K=32$, cap 4 in preregistration 07; $K=6$, cap 1 in preregistrations 17--19). Each evaluation uses new world seeds not used in training.
+
+\section{Evaluation Design}
+Gates G1--G6 for world complexity; preregistered protocols (\texttt{docs/PREREGISTRATION\_02}--\texttt{11}) frozen by git commit before evaluation; held-out dialects written blind to training dialects; independent training seeds; intersection tests with Holm correction where stated. Directional confirmation and magnitude confirmation are reported separately (Table~\ref{tab:effects}).
+
+\section{Results}\label{sec:results}
+\subsection{An early large effect did not replicate}
+In preregistration 02 (one training seed), evolved Laya beat no-prior by $+0.144$ [0.119, 0.168] and shuffled prior by $+0.155$, but not VADER ($+0.012$ [$-0.009$, 0.033]; H3 not supported). With three training seeds (preregistration 03) H1--H3 all failed the three-seed criterion (H1 per-seed: $+0.150$, $+0.011$, $+0.039$). The large effect came mainly from evolutionary bias in the no-prior and shuffled arms of seed~1.
+
+\subsection{Value depends on delay}
+\begin{table}[h]\centering\small
+\begin{tabular}{@{}llrrl@{}}\toprule
+Prereg & Comparison & Mean & 95\% CI & Verdict\\\midrule
+06 & delay 0, Laya$-$none (non-inferiority $>-0.04$) & $+0.0154$ & [$-0.0076$, $+0.0520$] & supported\\
+06 & delay 40, Laya$-$none (matched training) & $+0.0486$ & [$+0.0248$, $+0.0709$] & supported\\
+07 & held-out, delay 80, Laya$-$none & $+0.0732$ & [$+0.0691$, $+0.0765$] & supported\\
+07 & value grows with delay (d80$-$d40) & $+0.0350$ & [$+0.0247$, $+0.0459$] & supported\\
+06 & hierarchical belief, deception 0.40 & $+0.0005$ & [$-0.0033$, $+0.0043$] & not supported\\\bottomrule
+\end{tabular}
+\caption{\label{tab:effects}Fitness differences (seed-level bootstrap CI), 6--8 training seeds. Source: \texttt{docs/EFFECT\_SIZES.md}. Under mismatched train/eval regimes (prereg~04) the prior appeared harmful at delay 0; matched training removed this ($+0.015$), so that harm was a train--eval mismatch artefact.}
+\end{table}
+
+\subsection{Prior versus lexicon}
+On a fact dialect (neutral tone: related species, origin, animal behaviour), Laya AUC is $0.775$ versus $0.583$ for VADER ($\Delta=+0.192$ [0.170, 0.212]). In fitness, Laya$-$VADER is $+0.050$ (8/8 seeds, delay 40). Social observation of neighbours' visible appearance gives $+0.025$ (8/8; wording B, unseen in training). But on ripeness-stage phrases a lexicon can read, Laya$-$VADER is $+0.005$ (not supported). The difference converts to fitness only when understanding is required.
+
+\subsection{When the world is learnable the prior is worth nothing}
+With $K=4$ kinds (preregistration 11) Laya$-$none $=-0.0049$ (threshold $+0.03$; not supported). The no-prior agents rarely refuse to eat (12.5\% vs.\ 75\% at $K=16$), fitness $0.315$ against a blind rule $0.162$ and an oracle $0.429$: the first fair comparison, and the prior's net value is zero. The no-prior agents gain from finer observation granularity (ripeness phrases), Laya agents from semantics; the two mechanisms cancel.
+
+\subsection{Transfer}
+Trained on the fact dialect, Laya agents transfer to the held-out dialect (Laya$-$VADER $+0.0621$, 8/8) while lexicon agents do not.
+
+
+\subsection{Retention: an environment-table memory saves, an ordinary learner does not}
+\begin{table}[h]\centering\small
+\begin{tabular}{@{}lp{7.2cm}p{3.4cm}p{3.2cm}@{}}\toprule
+Prereg & Comparison (held-out dialect, 8 seeds) & Mean [CI] & Verdict\\\midrule
+17 & A/B/A, no cue: regime$-$plain savings & $+0.215$ [$+0.164$, $+0.271$] & supported (8/8)\\
+17 & A/B/A, true cue: cue$-$plain savings & $+0.345$ [$+0.304$, $+0.392$] & supported (8/8)\\
+17 & A/B/A, true cue: cue$-$regime savings & $+0.126$ [$+0.089$, $+0.167$] & supported (8/8)\\
+17 & A/B/C, no cue: regime fitness non-inferior ($>-0.03$) & $+0.024$ [$+0.011$, $+0.038$] & supported\\
+17 & A/B/A, no cue: regime$-$plain fitness & $+0.084$ [$+0.062$, $+0.106$] & supported (8/8)\\
+17 & A/B/A, random cue: plain fitness $-$ cue fitness ($\ge+0.02$) & $-0.159$ & \emph{not supported} (opposite)\\
+18 & half reversal: regime$-$plain savings & $+0.104$ [$+0.058$, $+0.153$] & supported (8/8)\\
+18 & half reversal: regime fitness non-inferior ($>-0.03$) & $+0.005$ [$-0.016$, $+0.024$] & supported\\
+18 & repeated A/B/A/B/A: regime$-$plain savings & $+0.205$ [$+0.163$, $+0.253$] & supported (8/8)\\
+18 & repeated: regime$-$plain fitness & $+0.115$ [$+0.094$, $+0.135$] & supported (8/8)\\
+18 & repeated: regime$-$plain relearning ($\ge+0.05$) & $+0.043$ & \emph{not supported} (magnitude)\\
+18 & long stay A/B/B/B/A: regime$-$plain savings ($\ge+0.20$) & $+0.167$ [$+0.117$, $+0.231$] & \emph{not supported} (direction yes, magnitude no)\\\bottomrule
+\end{tabular}
+\caption{\label{tab:retention}Retention results, seed-level bootstrap CI. Sources: \texttt{docs/PREREGISTRATION\_17.md} \S10, \texttt{docs/PREREGISTRATION\_18.md} \S9, \texttt{docs/EFFECT\_SIZES.md}. In the A/B/A world an ordinary learner's savings are $-0.07$ (no cue), the environment-table learner's $+0.15$, the dual learner's $+0.03$.}
+\end{table}
+The ordinary learner is worse when A returns than the first time it met A, because experience in B has overwritten its beliefs. A learner that infers the environment from prediction error and keeps separate tables turns this negative savings into a positive one, and the genome evolved a low threshold, i.e.\ it opens new tables readily. The advantage holds in worlds that differ from training: partial reversal, repeated reversal, and a long stay in B (savings $+0.07$, $+0.15$, $+0.18$ against about zero or negative for the ordinary learner). Two preregistered magnitudes were missed (relearning after the second reversal, $+0.043$ vs.\ $+0.05$; long-stay savings $+0.167$ vs.\ $+0.20$) and are recorded as such without changing thresholds. With a true cue, the cue-keyed learner saves most ($+0.27$) and reaches fitness $0.95$, but it depends on the cue being present: with the cue off its fitness is $0.41$ in A/B/A and about $0.25$ in repeated and long worlds, far below the ordinary learner. We expected a random cue to mislead it; instead it scored $0.96$ (hypothesis not supported). A possible reason, \emph{not tested}, is that a changing sentence is itself a change signal that causes a fresh table to be opened. Finally, in this small learnable world the frozen prior added nothing (Laya$-$none fitness $-0.019$ for plain, $-0.034$ for regime), consistent with the earlier finding that the prior has no net value when experience suffices.
+
+\subsection{The frozen model did not read environment cues}
+We tried to let the frozen model supply the missing context signal, i.e.\ to recognise that two differently worded weather sentences describe the same environment. In a first probe, mean-pooled hidden-state vectors of three states $\times$ six training and six evaluation sentences (written before looking at results, evaluation wordings with no lexical overlap) gave nearest-centroid accuracy $0.33$ (chance $0.33$) and cross-wording AUC $0.49$; a bag-of-words baseline was no better ($0.50$, $0.54$). In a second probe, five fixed yes/no questions put to the frozen model gave accuracy $0.833$ and AUC $0.894$, below both pre-set gates ($0.9$), with a keyword baseline at $0.611$ and $0.762$ and shuffled features at chance. By the pre-written rules the line was stopped; thresholds were not changed and the sentences were not rewritten to pass. The probes use 18 evaluation sentences and one author-written sentence set, so they are weak evidence; they do not show that no way of reading such cues exists.
+
+\subsection{In reproducing populations the individual-level advantage did not carry over}
+Using the frozen plain and regime genomes unchanged, populations of one innate type reproduce in A/B/A/B/A and A/B$'$/A worlds (48 worlds per seed, type and pattern, paired world seeds, held-out dialect, 8 seeds; preregistration 19). Establishment means that the population is alive at the horizon with at least 20 births.
+\begin{table}[h]\centering\small
+\begin{tabular}{@{}p{6.4cm}p{3.4cm}rl@{}}\toprule
+Hypothesis & Statistic (threshold) & $p$ & Verdict\\\midrule
+H1 repeated: establishment regime$-$plain & $+0.016$ ($\ge+0.08$) & 0.242 & not supported\\
+H2 repeated: relative population size & $+2.8\%$ ($\ge+10\%$) & 0.188 & not supported\\
+H3 repeated: recovery ratio & $-0.011$ ($\ge+0.05$) & 0.770 & not supported\\
+H4 half: population size non-inferior ($>-1.5$) & $-0.059$ & 0.0039 & supported\\\bottomrule
+\end{tabular}
+\caption{\label{tab:ecology}Population-level results (preregistration 19, \texttt{docs/PREREGISTRATION\_19.md} \S9). Means over 8 seeds: establishment $0.805$ (plain) vs.\ $0.820$ (regime) in repeated worlds; population size $9.54$ vs.\ $9.80$; per-seed differences have both signs.}
+\end{table}
+The environment-table memory that saved old knowledge at the individual level gave no detectable advantage in population establishment, size or recovery. A possible reason, \emph{not tested}, is that persistence is dominated by accumulating enough energy to reproduce, so differences of a few percentage points in correct feeding are absorbed by food supply and the birth threshold. Descriptive, not confirmatory: in mixed populations the final share of one type was spread from near 0 to near 1 and was no less dispersed than in a neutral control with two labels on one genome (the control used the plain genome rather than the regime genome stated in the protocol; deviation recorded), so drift dominates and mixed shares cannot be read as selection.
+
+\subsection{A heritable-mutation probe found no selection direction}
+In a small development-stage probe (not preregistered; two development genomes per type, 24 worlds per cell, training worlds), a child's genome was the parent's plus Gaussian noise ($\sigma\in\{0,0.15,0.5\}$), acquired beliefs not inherited. For each world we took the mean genome of individuals of generation $\ge2$ minus the founder genome, scaled by the noise, and measured the mean pairwise cosine of these displacement vectors across worlds. A value near zero means no common direction. The criterion written beforehand was a value $\ge0.20$ above a permutation null to indicate selection, and $<0.10$ to indicate none; all eight cells gave $\le0.045$ (one slightly above its null). Populations reached about ten generations, so time was not the limit. At $\sigma=0.5$ mutation itself began to reduce establishment and population size. This indicates no detectable selection direction \emph{in this world and genome representation}; it does not exclude selection elsewhere (\texttt{docs/G8B\_PROBE.md}).
+\section{Discussion}
+\paragraph{Where the frozen prior pays.} Across protocols that differ in design, the prior's fitness value ordered itself as learnable world ($-0.005$), immediate feedback ($+0.015$), delay 40 ($+0.049$) and delay 80 ($+0.073$). This ordering is descriptive across different preregistered protocols, not one confirmatory test. A stronger delay-aware credit assignment shrinks the delay advantage to $+0.017$ (interval including zero), so the finding should be stated as the prior's value relative to a weak learner under delay. The prior helps where understanding is required and experience is scarce or slow.
+
+\paragraph{Where the original question is answered.} Within a lifetime, learning, adaptation and recovery are achievable in a controlled small world: individuals learn which foods are good, adapt after a reversal, and an environment-table memory keeps old knowledge for when the old environment returns. The credit for retention belongs to the innate memory structure, not to the frozen model, whose prior added nothing in these worlds. The cue-keyed learner shows the trade-off: it saves most with a true cue and fails without it.
+
+\paragraph{What did not follow.} The individual-level advantage did not become a detectable population-level advantage, and a mutation probe did not find a selection direction. We cannot tell whether this reflects the simplified reproduction (a fixed instinct), the degraded calibration, the small population, or a genuine lack of selection pressure. The population test was designed to answer whether retention matters for survival; in this world the answer is that we could not detect it.
+
+\paragraph{The frozen model and context.} Two probes did not find a reliable way for the frozen model to recognise that differently worded sentences name the same environment. Our statement is therefore limited to: the frozen model reads food descriptions well enough to matter when understanding is required, but we did not obtain evidence that it understands environmental change.
+
+\section{Limitations}
+\begin{itemize}
+  \item Dialects are written by one author; the controller thresholds were chosen in development; the held-out phrase pool was evaluated repeatedly (prereg 02, 03, 04; only aggregates inspected, not used for tuning); the fact-dialect pool was evaluated once.
+  \item Small seed counts (6--8); intervals are across-seed percentile bootstrap.
+  \item Templated food scenes; the prior is used only for ``edible or not''. Simulation only; not a claim about real organisms or open worlds.
+  \item Laya$-$none contrasts contain a ``can read vs.\ cannot read'' component (no-prior agents ignore external cues), so they are not fair learning comparisons.
+  \item Laya is a 421M-parameter model with cached priors; throughput is not extrapolated.
+  \item The cross-protocol ladder in the discussion is post hoc.
+  \item Reversal worlds have six foods and one or two reversals; the environment-table learner holds at most four tables, so table-full behaviour is an implementation detail, not a memory capacity of living organisms. Genomes were trained in three-phase worlds, so longer or more frequent reversals are out-of-distribution tests.
+  \item The reproducing-population parameters come from a degraded calibration; reproduction is a fixed instinct; the long-stay population world was not evaluable (establishment 0 in development) and mixed-population shares are dominated by drift; the mutation probe has two development seeds and one world.
+  \item Several explanations (random-cue success, collapse without cues, absence of a population effect) are hypotheses that were not tested.
+  \item The held-out dialect pool was evaluated by preregistrations 17--19 as well; none of these results were used to tune training.
+\end{itemize}
+
+\section{Reproducibility and Disclosure}
+Code is released under Apache-2.0 and data (dialects, word pools, experiment outputs, documents) under CC BY 4.0; the Laya weights are not redistributed (Apache-2.0 upstream, revision recorded in the repository). Each confirmatory result has a frozen protocol (\texttt{docs/PREREGISTRATION\_02} to \texttt{19}) whose git commit precedes training and evaluation, genome hashes committed before evaluation, and raw outputs under \texttt{experiments/}; \texttt{REPRODUCE.md} lists the commands. The cached Laya priors make evaluation reproducible without the model. Deviations are recorded in each protocol's deviations section, including one interrupted-and-rerun evaluation (preregistration 18) and one control that used a different genome than the protocol stated (preregistration 19).
+
+\paragraph{AI assistance.} The simulator code, experiment scripts, analysis and a draft of this text were produced with substantial assistance from an AI coding assistant (Claude, Anthropic) working under the author's direction; the author set the research questions and decisions, reviewed protocols and results, and is responsible for the content. All numbers trace to the repository's raw results. References were checked at the metadata level against publisher or arXiv pages; the specific claims attributed to each were checked against abstracts or search summaries, not full texts (\texttt{refs.bib} records the status per entry).
+
+\paragraph{Funding and interests.} No funding; no competing interests. \todo{Confirm with the author before submission: contact details, arXiv category and licence.}
+
+\bibliographystyle{plainnat}
+\bibliography{refs}
+\end{document}
