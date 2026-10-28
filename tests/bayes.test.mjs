@@ -1,21 +1,33 @@
-// 后验采样个体：基因解码；temp = 0 时等价于 curiosity = 0、retry = 0 的 v2 个体；采样确定且随不确定度缩小；信念只属于个体。
+// G11c 贝叶斯环境推断学习器：基因界、缓存传感器矩阵的性质、关闭传感器时不依赖线索、预言机传感器下回到旧环境时切回旧表、确定性。
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import { Ecology } from '../packages/sim/ecology.ts';
-import { structuredCohort } from '../packages/evo/structured.ts';
-import { structuredBayesCohort, decodeBayesGenes, BAYES_GENES } from '../packages/evo/structured-bayes.ts';
-import { semanticWorldConfig, loadPriors } from '../packages/evo/semantic-run.ts';
+import { semanticWorldConfig } from '../packages/evo/semantic-run.ts';
+import { registerPools, loadLayaPriors } from '../packages/evo/pools.ts';
+import { structuredBayesCohort, decodeBayesGenes, BAYES_GENES, CUE_STATE } from '../packages/evo/structured-bayes.ts';
 
-const priors = loadPriors(), V2 = [Math.log(3), 0, -.3, .05, 0, 1, 0, .3, 0];   // curiosity = 0，retry = 0
-test('bayes genes decode within bounds', () => { assert.equal(BAYES_GENES, 10); assert.throws(() => decodeBayesGenes(V2), /genome_size/); assert.equal(decodeBayesGenes([...V2, 100]).temp, 3); assert.equal(decodeBayesGenes([...V2, -1]).temp, 0); });
-test('with temp = 0 the individual behaves exactly like the v2 individual without curiosity and retry', () => {
-  const cfg = () => semanticWorldConfig({ seed: 33, options: { split: 'test', inversion: .25 } }), a = structuredCohort(V2, 'laya', priors), b = structuredBayesCohort([...V2, 0], 'laya', priors), w1 = new Ecology(cfg()), w2 = new Ecology(cfg());
-  const fb = (c, res) => c.feedback(res.outcomes.map(o => ({ agentId: o.agentId, reward: o.reward, terminated: o.terminated, energyBefore: o.energyBefore, energyAfter: o.energyAfter, action: o.action })), new Map());
-  for (let i = 0; i < 120 && !w1.done(); i++) { const p1 = w1.requests().map(r => a(r, 33)), p2 = w2.requests().map(r => b(r, 33)); assert.deepEqual(p1.map(p => p.action), p2.map(p => p.action)); fb(a, w1.step(p1)); fb(b, w2.step(p2)); }
+registerPools(); const priors = loadLayaPriors('test'), base = JSON.parse(readFileSync('experiments/evo/dev-aba-laya-plain-201/final.json', 'utf8')).innate, g = [...base, .7, .02, .3, .9, .5];
+const sim = JSON.parse(readFileSync('packages/evo/cue-sim.json', 'utf8'));
+const world = (cue, seed = 600001) => new Ecology(semanticWorldConfig({ seed, options: { split: 'test', pool: 'test', sensible: 6, harmCap: 1, inversion: 0, horizon: 3600, drift: { everyTicks: 1200, fraction: 1, pattern: 'aba', cue } } }));
+const play = (w, c, onTick = () => {}) => { while (!w.done()) { const reqs = w.requests(), r = w.step(reqs.map(q => c(q, 1))); c.feedback(r.outcomes.map(o => ({ agentId: o.agentId, reward: o.reward, terminated: o.terminated, energyBefore: o.energyBefore, energyAfter: o.energyAfter, action: o.action })), new Map()); onTick(w, reqs); } return w.snapshot(); };
+test('genes decode within bounds and the size is checked', () => {
+  assert.equal(BAYES_GENES, 14); assert.throws(() => decodeBayesGenes(base), /genome_size/);
+  const d = decodeBayesGenes([...base, 99, 99, 99, 99, 99]); assert.deepEqual([d.sigma, d.hazard, d.newShare, d.rel, d.boundary], [1.5, .3, 1, .99, .95]);
+  const e = decodeBayesGenes([...base, -9, -9, -9, -9, -9]); assert.deepEqual([e.sigma, e.hazard, e.newShare, e.rel, e.boundary], [.15, .001, .05, .5, .05]);
 });
-test('with temp > 0 decisions are reproducible and differ from the deterministic ones', () => {
-  const run = temp => { const c = structuredBayesCohort([...V2, temp], 'laya', priors), w = new Ecology(semanticWorldConfig({ seed: 7, options: { split: 'test', inversion: .25 } })), acts = [];
-    for (let i = 0; i < 80 && !w.done(); i++) { const ps = w.requests().map(q => c(q, 7)); acts.push(...ps.map(p => p.action)); const r = w.step(ps); c.feedback(r.outcomes.map(o => ({ agentId: o.agentId, reward: o.reward, terminated: o.terminated, energyBefore: o.energyBefore, energyAfter: o.energyAfter, action: o.action })), new Map()); }
-    return acts.join(','); };
-  assert.equal(run(1.5), run(1.5)); assert.notEqual(run(1.5), run(0));
+test('cached sensor matrix: symmetric, unit diagonal, same-state pairs read higher than different-state pairs (no leakage into agents: state labels are only exported for controls)', () => {
+  const n = sim.sentences.length; assert.equal(n, 36); let same = [], diff = [];
+  for (let i = 0; i < n; i++) { assert.equal(sim.p[i][i], 1); for (let j = i + 1; j < n; j++) { assert.equal(sim.p[i][j], sim.p[j][i]); (sim.state[i] === sim.state[j] ? same : diff).push(sim.p[i][j]); } }
+  assert.ok(Math.min(...same) > Math.max(...diff)); assert.equal(CUE_STATE.length, n);
+});
+test('sensor off: behaviour does not depend on the cue at all (cue shown vs hidden gives identical worlds)', () => {
+  const a = play(world('paraphrase'), structuredBayesCohort(g, 'laya', priors, { sensor: false })), b = play(world('off'), structuredBayesCohort(g, 'laya', priors, { sensor: false }));
+  assert.equal(JSON.stringify(a.agents.map(x => x.energy)), JSON.stringify(b.agents.map(x => x.energy))); assert.equal(a.metrics.eaten, b.metrics.eaten);
+});
+test('oracle sensor in A/B/A: a second context opens in B and the posterior returns to the first context when A comes back; deterministic', () => {
+  const oracle = (i, j) => CUE_STATE[i] === CUE_STATE[j] ? 1 : 0, mk = () => structuredBayesCohort([...base, .7, .02, .3, .95, .9], 'laya', priors, { sensor: true, sim: oracle });
+  const run = () => { const c = mk(), w = world('paraphrase'), seen = { b: 0, a2: 0, n: 0 }; play(w, c, (ww, reqs) => { const t = ww.tick; for (const q of reqs) { const id = q.identity.agentId; if (t === 2300) { seen.n++; if (c.contexts(id) >= 2 && c.active(id) !== 0) seen.b++; } if (t === 3500) { if (c.active(id) === 0) seen.a2++; } } }); return { seen, c, w }; };
+  const r = run(), r2 = run(); assert.deepEqual(r.seen, r2.seen); assert.ok(r.seen.n > 0 && r.seen.b >= Math.ceil(r.seen.n / 2), JSON.stringify(r.seen));
+  assert.ok(r.seen.a2 >= 1, JSON.stringify(r.seen));
 });
