@@ -26,3 +26,15 @@ test('types are actually used: plain and regime populations behave differently i
   const pr = runEcology({ ...base, types: [R] }), pp = runEcology({ ...base, types: [P] });
   assert.notEqual(pr.hash, pp.hash); assert.equal(pr.phaseMean.length, 3); assert.ok(Number.isFinite(pr.recovery) && Number.isFinite(pp.recovery));
 });
+
+test('G8b probe: zero-noise mutation path equals the shared-cohort path (per-individual controllers behave the same)', () => {
+  for (const T of [P, R]) { const shared = runEcology({ ...base, types: [T] }), own = runEcology({ ...base, types: [T], mutation: { sigma: 0 } }); assert.equal(own.hash, shared.hash); assert.equal(own.births, shared.births); }
+});
+test('G8b probe: children get the parent genome plus noise, deterministically; founders keep the type genome; beliefs still start fresh', () => {
+  const spec = { ...base, types: [P], mutation: { sigma: 0.3 } }, a = runEcology(spec), b = runEcology(spec);
+  assert.equal(a.hash, b.hash); assert.deepEqual(a.genomes, b.genomes);
+  const byId = new Map(a.genomes.map(g => [g.id, g])), founders = a.genomes.filter(g => !g.parentId), kids = a.genomes.filter(g => g.parentId);
+  assert.ok(kids.length > 0 && founders.every(g => g.generation === 0 && g.genes.every((x, i) => x === genes[i])));
+  assert.ok(kids.every(k => k.generation === byId.get(k.parentId).generation + 1 && k.genes.some((x, i) => x !== byId.get(k.parentId).genes[i])));
+  const c = runEcology({ ...spec, mutation: { sigma: 0.3 }, seed: base.seed + 1 }); assert.notEqual(c.hash, a.hash);
+});
