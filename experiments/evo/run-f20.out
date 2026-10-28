@@ -1,0 +1,73 @@
+待运行 64 个，并发 8
+start experiments/evo/f20-laya-plain-221 2026-10-28 22:06:03
+start experiments/evo/f20-laya-plain-222 2026-10-28 22:06:03
+start experiments/evo/f20-laya-plain-223 2026-10-28 22:06:03
+start experiments/evo/f20-laya-plain-224 2026-10-28 22:06:03
+start experiments/evo/f20-laya-plain-225 2026-10-28 22:06:03
+start experiments/evo/f20-laya-plain-226 2026-10-28 22:06:04
+start experiments/evo/f20-laya-plain-227 2026-10-28 22:06:04
+start experiments/evo/f20-laya-plain-228 2026-10-28 22:06:04
+done  experiments/evo/f20-laya-plain-228 2026-10-28 22:52:58 rc=0
+start experiments/evo/f20-laya-plain-229 2026-10-28 22:52:59
+done  experiments/evo/f20-laya-plain-222 2026-10-28 22:55:01 rc=0
+start experiments/evo/f20-laya-plain-230 2026-10-28 22:55:01
+done  experiments/evo/f20-laya-plain-225 2026-10-28 22:55:21 rc=0
+start experiments/evo/f20-laya-plain-231 2026-10-28 22:55:21
+done  experiments/evo/f20-laya-plain-227 2026-10-28 22:55:43 rc=0
+start experiments/evo/f20-laya-plain-232 2026-10-28 22:55:46
+done  experiments/evo/f20-laya-plain-221 2026-10-28 22:55:58 rc=0
+start experiments/evo/f20-laya-plain-233 2026-10-28 22:56:01
+done  experiments/evo/f20-laya-plain-226 2026-10-28 22:56:13 rc=0
+start experiments/evo/f20-laya-plain-234 2026-10-28 22:56:17
+done  experiments/evo/f20-laya-plain-224 2026-10-28 22:56:24 rc=0
+start experiments/evo/f20-laya-plain-235 2026-10-28 22:56:27
+done  experiments/evo/f20-laya-plain-223 2026-10-28 22:57:01 rc=0
+start experiments/evo/f20-laya-plain-236 2026-10-28 22:57:02
+done  experiments/evo/f20-laya-plain-229 2026-10-28 23:27:27 rc=0
+start experiments/evo/f20-laya-regime-221 2026-10-28 23:27:29
+done  experiments/evo/f20-laya-plain-233 2026-10-28 23:30:48 rc=0
+start experiments/evo/f20-laya-regime-222 2026-10-28 23:30:51
+done  experiments/evo/f20-laya-plain-234 2026-10-28 23:31:51 rc=0
+start experiments/evo/f20-laya-regime-223 2026-10-28 23:31:52
+done  experiments/evo/f20-laya-plain-230 2026-10-28 23:32:44 rc=0
+start experiments/evo/f20-laya-regime-224 2026-10-28 23:32:47
+done  experiments/evo/f20-laya-plain-232 2026-10-28 23:33:27 rc=0
+start experiments/evo/f20-laya-regime-225 2026-10-28 23:33:29
+done  experiments/evo/f20-laya-plain-235 2026-10-28 23:33:38 rc=0
+done  experiments/evo/f20-laya-plain-236 2026-10-28 23:33:38 rc=0
+start experiments/evo/f20-laya-regime-226 2026-10-28 23:33:39
+start experiments/evo/f20-laya-regime-227 2026-10-28 23:33:39
+done  experiments/evo/f20-laya-plain-231 2026-10-28 23:34:14 rc=0
+start experiments/evo/f20-laya-regime-228 2026-10-28 23:34:15
+done  experiments/evo/f20-laya-regime-221 2026-10-29 00:21:26 rc=0
+start experiments/evo/f20-laya-regime-229 2026-10-29 00:21:27
+done  experiments/evo/f20-laya-regime-222 2026-10-29 00:26:19 rc=0
+start experiments/evo/f20-laya-regime-230 2026-10-29 00:26:23
+done  experiments/evo/f20-laya-regime-223 2026-10-29 00:27:15 rc=0
+done  experiments/evo/f20-laya-regime-224 2026-10-29 00:27:15 rc=0
+start experiments/evo/f20-laya-regime-231 2026-10-29 00:27:19
+start experiments/evo/f20-laya-regime-232 2026-10-29 00:27:19
+done  experiments/evo/f20-laya-regime-226 2026-10-29 00:27:53 rc=0
+start experiments/evo/f20-laya-regime-233 2026-10-29 00:27:54
+done  experiments/evo/f20-laya-regime-225 2026-10-29 00:27:57 rc=0
+start experiments/evo/f20-laya-regime-234 2026-10-29 00:27:59
+done  experiments/evo/f20-laya-regime-227 2026-10-29 00:28:59 rc=0
+start experiments/evo/f20-laya-regime-235 2026-10-29 00:29:04
+done  experiments/evo/f20-laya-regime-228 2026-10-29 00:30:22 rc=0
+start experiments/evo/f20-laya-regime-236 2026-10-29 00:30:24
+done  experiments/evo/f20-laya-regime-229 2026-10-29 01:04:30 rc=0
+start experiments/evo/f20-laya-cue-221 2026-10-29 01:04:33
+done  experiments/evo/f20-laya-regime-230 2026-10-29 01:08:03 rc=0
+start experiments/evo/f20-laya-cue-222 2026-10-29 01:08:03
+done  experiments/evo/f20-laya-regime-232 2026-10-29 01:08:34 rc=0
+start experiments/evo/f20-laya-cue-223 2026-10-29 01:08:38
+done  experiments/evo/f20-laya-regime-233 2026-10-29 01:08:41 rc=0
+start experiments/evo/f20-laya-cue-224 2026-10-29 01:08:43
+done  experiments/evo/f20-laya-regime-234 2026-10-29 01:08:55 rc=0
+done  experiments/evo/f20-laya-regime-231 2026-10-29 01:08:58 rc=0
+start experiments/evo/f20-laya-cue-225 2026-10-29 01:08:59
+start experiments/evo/f20-laya-cue-226 2026-10-29 01:08:59
+done  experiments/evo/f20-laya-regime-235 2026-10-29 01:09:53 rc=0
+start experiments/evo/f20-laya-cue-227 2026-10-29 01:09:54
+done  experiments/evo/f20-laya-regime-236 2026-10-29 01:11:02 rc=0
+start experiments/evo/f20-laya-cue-228 2026-10-29 01:11:04

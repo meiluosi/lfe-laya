@@ -28,3 +28,15 @@ test('LLM wording bank: 12 distinct sentences per state, no overlap with the aut
   for (const k of ['A', 'B', 'C']) { assert.equal(new Set(llm[k]).size, 12); for (const t of llm[k]) assert.ok(!setOf(author, k, true).has(t)); }
   const s = seen(mk({ cueBank: 'llm' })), truth = [0, 1, 0, 1, 0], keys = ['A', 'B', 'C']; s.forEach((t, p) => assert.ok(setOf(llm, keys[truth[p]], false).has(t)));
 });
+
+test('G13 world: dense alternation (300-tick phases) and a second cue channel; channel 1 is unchanged by adding channel 2; flaws are independent per channel', () => {
+  const mk2 = drift => new Ecology(semanticWorldConfig({ seed: 91, options: { split: 'test', pool: 'test', sensible: 6, harmCap: 1, inversion: 0, horizon: 6000, drift: { everyTicks: 300, fraction: 1, pattern: 'alt', cue: 'paraphrase', ...drift } } }));
+  const at = (w, ticks) => { const out = []; for (const t of ticks) { while (w.tick < t) w.step(w.requests().map(q => ({ identity: q.identity, action: 'rest', provider: 't', distribution: { rest: 1 } }))); out.push(w.requests()[0]?.observation.season); } return out; };
+  const ticks = Array.from({ length: 20 }, (_, i) => i * 300 + 5), single = at(mk2({}), ticks), double = at(mk2({ cue2: { bank: 'llm' } }), ticks);
+  assert.equal(single.length, 20); assert.deepEqual(double.map(x => x.split('||')[0]), single);
+  const llmAll = new Set(['A', 'B', 'C'].flatMap(k => llm[k])); double.forEach(x => assert.ok(llmAll.has(x.split('||')[1])));
+  const states = Array.from({ length: 20 }, (_, i) => i % 2); double.forEach((x, i) => assert.ok(setOf(llm, ['A', 'B'][states[i]], false).has(x.split('||')[1])));
+  const miss = at(mk2({ cue2: { bank: 'llm', flaw: { missing: 1, wrong: 0 } } }), ticks); miss.forEach((x, i) => { assert.equal(x.split('||')[1], ''); assert.equal(x.split('||')[0], single[i]); });
+  const both = at(mk2({ cueFlaw: { missing: 1, wrong: 0 }, cue2: { bank: 'llm', flaw: { missing: 1, wrong: 0 } } }), ticks); assert.ok(both.every(x => x === undefined));
+  const ind = at(mk2({ cue2: { bank: 'llm', flaw: { missing: 0, wrong: 1 } } }), ticks); ind.forEach((x, i) => { assert.equal(x.split('||')[0], single[i]); assert.ok(!setOf(llm, ['A', 'B'][states[i]], false).has(x.split('||')[1])); });
+});
