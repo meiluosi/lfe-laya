@@ -32,10 +32,14 @@ export const decodeLatentGenes = (g: ArrayLike<number>) => {
 };
 type Belief = { n: number; sum: number };
 type Feedback = (o: { agentId: string; reward: number; terminated: boolean; energyBefore: number; energyAfter: number; action: string }[], next: Map<string, Request>) => void;
-export type CtxCohort = ((q: Request, seed: number) => Proposal) & { feedback: Feedback; regimes: (id: string) => number; active: (id: string) => number };
+export type ManagedOp = { op: 'keep' } | { op: 'new' } | { op: 'switch'; to: number };
+export type CtxCohort = ((q: Request, seed: number) => Proposal) & { feedback: Feedback; regimes: (id: string) => number; active: (id: string) => number;
+  /** managed 专用（G11 双系统）：surprise = 当前表的预测误差滑动平均；predict = 第 table 张表对描述的预期（−1..1）；control = 外部（harness / 系统 2）管理信念表 */
+  surprise?: (id: string) => number; predict?: (id: string, table: number, desc: string) => number; control?: (id: string, op: ManagedOp) => boolean; seen?: (id: string, table: number) => number };
 
-function build(kind: 'dual' | 'regime' | 'latent', genes: ArrayLike<number>, prior: Prior, priors: Priors): CtxCohort {
-  const p = kind === 'dual' ? decodeDualGenes(genes) : kind === 'latent' ? decodeLatentGenes(genes) as unknown as ReturnType<typeof decodeDualGenes> : decodeRegimeGenes(genes) as ReturnType<typeof decodeDualGenes> & ReturnType<typeof decodeRegimeGenes>;
+function build(kind: 'dual' | 'regime' | 'latent' | 'managed', genes: ArrayLike<number>, prior: Prior, priors: Priors): CtxCohort {
+  if (kind === 'managed' && genes.length !== BASE_GENES) throw Error('genome_size');
+  const p = kind === 'managed' ? decodeBase(Array.from(genes)) as unknown as ReturnType<typeof decodeDualGenes> : kind === 'dual' ? decodeDualGenes(genes) : kind === 'latent' ? decodeLatentGenes(genes) as unknown as ReturnType<typeof decodeDualGenes> : decodeRegimeGenes(genes) as ReturnType<typeof decodeDualGenes> & ReturnType<typeof decodeRegimeGenes>;
   const l2 = p as unknown as ReturnType<typeof decodeLatentGenes>;
   const d2 = p as unknown as ReturnType<typeof decodeDualGenes>, r2 = p as unknown as ReturnType<typeof decodeRegimeGenes>;
   // 每个个体：dual 用 [fast 表, slow 表]；regime 用至多 4 张表。误差滑动平均与当前表序号也是个体的后天状态。
@@ -60,8 +64,18 @@ function build(kind: 'dual' | 'regime' | 'latent', genes: ArrayLike<number>, pri
     return { ...proposal, provider: `structured-${kind}-v1` };
   }) as CtxCohort;
   controller.regimes = id => st(id).tables.length; controller.active = id => st(id).cur;
+  if (kind === 'managed') {
+    controller.surprise = id => { const s = st(id); return s.err[s.cur]; };
+    controller.predict = (id, table, d) => mean(st(id).tables[table] ?? new Map(), d);
+    controller.seen = (id, table) => st(id).cnt[table] ?? 0;
+    controller.control = (id, op) => { const s = st(id); if (op.op === 'new') { if (s.tables.length >= MAX_REGIMES) return false; s.tables.push(new Map()); s.err.push(.5); s.cnt.push(0); s.cur = s.tables.length - 1; return true; } if (op.op === 'switch') { if (!Number.isInteger(op.to) || op.to < 0 || op.to >= s.tables.length || op.to === s.cur) return false; s.cur = op.to; return true; } return true; };
+  }
   const learn = (id: string, d: string, x: number) => {
     const s = st(id); x = clamp(x, -1, 1);
+    if (kind === 'managed') {   // 不做任何内部切换：只更新当前表与当前表的误差滑动平均；切换由外部 control 决定
+      s.err[s.cur] += .15 * (Math.abs(x - mean(s.tables[s.cur], d)) - s.err[s.cur]); s.cnt[s.cur] = (s.cnt[s.cur] ?? 0) + 1;
+      s.tables[s.cur].set(d, updateBelief(s.tables[s.cur].get(d), x, p.forget)); return;
+    }
     if (kind === 'latent') {
       // 粘性 CRP 的在线 MAP 近似：err[k] = 对数后验；新表候选的均值是先验（空表）
       const sig2 = 2 * l2.noise * l2.noise, ls = Math.log(l2.noise), canNew = s.tables.length < MAX_REGIMES, tot = s.cnt.reduce((a, b) => a + b, 0) + l2.kappa + (canNew ? l2.alpha : 0);
@@ -93,6 +107,7 @@ function build(kind: 'dual' | 'regime' | 'latent', genes: ArrayLike<number>, pri
 }
 export const structuredDualCohort = (g: ArrayLike<number>, prior: Prior, priors: Priors) => build('dual', g, prior, priors);
 export const structuredRegimeCohort = (g: ArrayLike<number>, prior: Prior, priors: Priors) => build('regime', g, prior, priors);
+export const structuredManagedCohort = (g: ArrayLike<number>, prior: Prior, priors: Priors) => build('managed', g, prior, priors);
 export const structuredLatentCohort = (g: ArrayLike<number>, prior: Prior, priors: Priors) => build('latent', g, prior, priors);
 
 /** 线索键控记忆：信念按（可见的环境线索句子, 描述词）保存；没有线索（或线索被关闭）时只有一张表，与 v2 完全一致。不理解线索的含义，只把它当作“这是哪个环境”的标签；线索随机或误导时，同一句下混有不同环境的经历，信念会被污染。基因同 v2（9 个）。 */
