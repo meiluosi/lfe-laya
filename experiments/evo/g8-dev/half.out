@@ -1,0 +1,6 @@
+seed 201 pure {"plain":{"est":0.5833333333333334,"pop":6,"rec":0.28},"regime":{"est":0.75,"pop":4.9,"rec":0.22}}
+seed 202 pure {"plain":{"est":0.75,"pop":5.7,"rec":0.27},"regime":{"est":0.6666666666666666,"pop":6.3,"rec":0.24}}
+201:plain-vs-regime shareFirst 0,0,0,0.4,0.5,0,1,0 bothAlive 0.16666666666666666
+201:neutral-plain shareFirst 0,0,0.5,0,0.33,0.29,1 bothAlive 0.25
+202:plain-vs-regime shareFirst 0,1,0,1,1,1,0,0 bothAlive 0
+202:neutral-plain shareFirst 0,1,0,0,1,0,0,0.6,1 bothAlive 0.08333333333333333

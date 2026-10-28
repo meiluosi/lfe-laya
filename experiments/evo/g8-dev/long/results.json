@@ -1,0 +1,66 @@
+{
+ "protocol": "dev (G8 S2)",
+ "pattern": "long",
+ "supply": 20,
+ "threshold": 26,
+ "init": 16,
+ "worlds": 12,
+ "seeds": [
+  201,
+  202
+ ],
+ "pure": {
+  "201": {
+   "plain": {
+    "established": 0,
+    "births": 35.666666666666664,
+    "meanLast2": 0.28125,
+    "recovery": 0,
+    "extinct": 1
+   },
+   "regime": {
+    "established": 0,
+    "births": 31.916666666666668,
+    "meanLast2": 0.37703598484848483,
+    "recovery": 0,
+    "extinct": 1
+   }
+  },
+  "202": {
+   "plain": {
+    "established": 0,
+    "births": 37,
+    "meanLast2": 0.2552083333333333,
+    "recovery": 0,
+    "extinct": 1
+   },
+   "regime": {
+    "established": 0,
+    "births": 28.75,
+    "meanLast2": 0.3078703703703704,
+    "recovery": 0,
+    "extinct": 1
+   }
+  }
+ },
+ "mixed": {
+  "201:plain-vs-regime": {
+   "shareFirst": [],
+   "bothAlive": 0
+  },
+  "201:neutral-plain": {
+   "shareFirst": [],
+   "bothAlive": 0
+  },
+  "202:plain-vs-regime": {
+   "shareFirst": [
+    0
+   ],
+   "bothAlive": 0
+  },
+  "202:neutral-plain": {
+   "shareFirst": [],
+   "bothAlive": 0
+  }
+ }
+}

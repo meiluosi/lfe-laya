@@ -1,0 +1,100 @@
+{
+ "protocol": "dev (G8 S2)",
+ "pattern": "half",
+ "supply": 20,
+ "threshold": 26,
+ "init": 16,
+ "worlds": 12,
+ "seeds": [
+  201,
+  202
+ ],
+ "pure": {
+  "201": {
+   "plain": {
+    "established": 0.5833333333333334,
+    "births": 37.666666666666664,
+    "meanLast2": 6.02475845410628,
+    "recovery": 0.27695499785990163,
+    "extinct": 0.4166666666666667
+   },
+   "regime": {
+    "established": 0.75,
+    "births": 32.5,
+    "meanLast2": 4.9497863247863245,
+    "recovery": 0.22011124288104222,
+    "extinct": 0.25
+   }
+  },
+  "202": {
+   "plain": {
+    "established": 0.75,
+    "births": 38.666666666666664,
+    "meanLast2": 5.729166666666668,
+    "recovery": 0.26822605286528733,
+    "extinct": 0.25
+   },
+   "regime": {
+    "established": 0.6666666666666666,
+    "births": 32.833333333333336,
+    "meanLast2": 6.3357638888888905,
+    "recovery": 0.23657778126623089,
+    "extinct": 0.3333333333333333
+   }
+  }
+ },
+ "mixed": {
+  "201:plain-vs-regime": {
+   "shareFirst": [
+    0,
+    0,
+    0,
+    0.4,
+    0.5,
+    0,
+    1,
+    0
+   ],
+   "bothAlive": 0.16666666666666666
+  },
+  "201:neutral-plain": {
+   "shareFirst": [
+    0,
+    0,
+    0.5,
+    0,
+    0.3333333333333333,
+    0.2857142857142857,
+    1
+   ],
+   "bothAlive": 0.25
+  },
+  "202:plain-vs-regime": {
+   "shareFirst": [
+    0,
+    1,
+    0,
+    1,
+    1,
+    1,
+    0,
+    0
+   ],
+   "bothAlive": 0
+  },
+  "202:neutral-plain": {
+   "shareFirst": [
+    0,
+    1,
+    0,
+    0,
+    1,
+    0,
+    0,
+    0.6,
+    1
+   ],
+   "bothAlive": 0.08333333333333333
+  }
+ }
+}
