@@ -1,0 +1,3 @@
+seed 215 abab pure {"plain":{"est":0.8125,"pop":9.8,"rec":0.56},"regime":{"est":0.8958,"pop":10.4,"rec":0.61}}
+seed 215 half pure {"plain":{"est":0.7083,"pop":8,"rec":0.38},"regime":{"est":0.6875,"pop":7.3,"rec":0.32}}
+[{"id":"H1","stat":0.0156,"thr":0.08,"p":0.2422,"supported":false},{"id":"H2","stat":0.0279,"thr":0.1,"p":0.1875,"supported":false},{"id":"H3","stat":-0.0112,"thr":0.05,"p":0.7695,"supported":false},{"id":"H4","stat":-0.0593,"thr":-1.5,"p":0.0039,"supported":true}]

@@ -1,0 +1,68 @@
+{
+ "seed": 216,
+ "pure": {
+  "abab": {
+   "plain": {
+    "established": 0.8333333333333334,
+    "births": 77.25,
+    "meanLast2": 9.54364180756844,
+    "recovery": 0.5711359117087899,
+    "extinct": 0.16666666666666666
+   },
+   "regime": {
+    "established": 0.8333333333333334,
+    "births": 75.39583333333333,
+    "meanLast2": 9.75452628968254,
+    "recovery": 0.5480000812473275,
+    "extinct": 0.16666666666666666
+   }
+  },
+  "half": {
+   "plain": {
+    "established": 0.6875,
+    "births": 37.75,
+    "meanLast2": 7.024826388888889,
+    "recovery": 0.34184712308672655,
+    "extinct": 0.3125
+   },
+   "regime": {
+    "established": 0.75,
+    "births": 35.875,
+    "meanLast2": 7.412594464869283,
+    "recovery": 0.34200759038292944,
+    "extinct": 0.25
+   }
+  }
+ },
+ "mixed": {
+  "abab:plain-vs-regime": {
+   "shareFirst": [
+    0,
+    1,
+    0,
+    0,
+    0.5,
+    0,
+    0,
+    0,
+    0
+   ],
+   "bothAlive": 0.08333333333333333
+  },
+  "abab:neutral-plain": {
+   "shareFirst": [
+    0.6666666666666666,
+    1,
+    1,
+    0.1,
+    1,
+    0,
+    0,
+    1,
+    0,
+    1
+   ],
+   "bothAlive": 0.16666666666666666
+  }
+ }
+}
