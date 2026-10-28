@@ -34,7 +34,7 @@ export function recorded(inner: LlmClient | null, path: string, model: string, m
     appendFileSync(path, JSON.stringify({ key: k, tag: r.tag, system: r.system, user: r.user, text: res.text, model: res.model, promptTokens: res.promptTokens, completionTokens: res.completionTokens, ms: res.ms }) + '\n'); return res;
   };
 }
-/** DeepSeek（OpenAI 兼容）：key 来自环境变量 LLM_API_KEY；LLM_BASE_URL 缺省 https://api.deepseek.com；LLM_MODEL 缺省 deepseek-flash。 */
+/** DeepSeek（OpenAI 兼容）：key 来自环境变量 LLM_API_KEY；LLM_BASE_URL 缺省 https://api.deepseek.com；LLM_MODEL 缺省 deepseek-flash；LLM_THINKING = enabled | disabled（本项目缺省 disabled；官方缺省是 enabled，推理 token 会占用 max_tokens，冒烟时 400 的上限导致 17/54 次返回空内容）；LLM_MAX_TOKENS 缺省 300。 */
 export function deepseekClient(maxCalls = Number(process.env.LLM_MAX_CALLS ?? 200000)): LlmClient {
   const key = process.env.LLM_API_KEY, base = process.env.LLM_BASE_URL ?? 'https://api.deepseek.com', model = process.env.LLM_MODEL ?? 'deepseek-flash'; let n = 0;
   if (!key) throw Error('LLM_API_KEY_missing');
@@ -45,7 +45,7 @@ export function deepseekClient(maxCalls = Number(process.env.LLM_MAX_CALLS ?? 20
       const t0 = performance.now();
       try {
         const res = await fetch(`${base}/chat/completions`, { method: 'POST', headers: { 'content-type': 'application/json', authorization: `Bearer ${key}` }, signal: AbortSignal.timeout(90000),
-          body: JSON.stringify({ model, messages: [{ role: 'system', content: r.system }, { role: 'user', content: r.user }], temperature: 0, max_tokens: 400, response_format: { type: 'json_object' } }) });
+          body: JSON.stringify({ model, messages: [{ role: 'system', content: r.system }, { role: 'user', content: r.user }], temperature: 0, max_tokens: Number(process.env.LLM_MAX_TOKENS ?? 300), response_format: { type: 'json_object' }, thinking: { type: process.env.LLM_THINKING ?? 'disabled' } }) });
         if (!res.ok) { lastErr = `http_${res.status}`; if (res.status === 401 || res.status === 402 || res.status === 403) throw Error(lastErr); await new Promise(x => setTimeout(x, 1000 * 2 ** attempt)); continue; }
         const j = await res.json() as { choices: { message: { content: string } }[]; model: string; usage?: { prompt_tokens: number; completion_tokens: number } };
         return { text: j.choices?.[0]?.message?.content ?? '', model: j.model ?? model, promptTokens: j.usage?.prompt_tokens ?? 0, completionTokens: j.usage?.completion_tokens ?? 0, ms: Math.round(performance.now() - t0) };
