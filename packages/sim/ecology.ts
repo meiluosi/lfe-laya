@@ -30,7 +30,9 @@ export type SemanticDrift = { everyTicks: number; flip: number[];
   /** 可选的多状态日程：states[s] 是状态 s 里取反的种类；schedule[p] 是第 p 个阶段（⌊tick/everyTicks⌋，超出则取最后一个）所处的状态。例如 A/B/A：states=[[],全部]，schedule=[0,1,0]；A/B/C：states=[[],全部,一半]，schedule=[0,1,2]。缺省回到奇偶交替。 */
   states?: number[][]; schedule?: number[];
   /** 可选的环境线索：以观测里的 season 句子出现。mode 'true'：状态 s 显示 texts[s]（同一状态总是同一句）；'random'：每个阶段随机一句，与状态无关；'off'：不显示。 */
-  cue?: { texts: string[]; mode: 'true' | 'off' | 'random' | 'paraphrase'; /** paraphrase：每个状态的一组不同措辞；同一状态每次出现换一句（不与该状态此前用过的重复），字面标签因此不再可靠 */ variants?: string[][] };
+  cue?: { texts: string[]; mode: 'true' | 'off' | 'random' | 'paraphrase'; /** paraphrase：每个状态的一组不同措辞；同一状态每次出现换一句（不与该状态此前用过的重复），字面标签因此不再可靠 */ variants?: string[][];
+    /** 可选（默认关闭，仅 true / paraphrase）：线索的缺陷。missing = 某个阶段整段不显示线索的概率；wrong = 某个阶段显示的是另一个状态的句子（误导）的概率；按（runId，阶段）哈希确定，不消耗随机数源 */
+    flaw?: { missing: number; wrong: number } };
   /** 可选（默认关闭）：反转后原本有益的种类造成的伤害系数（正数，如 4 = 每口损失 4×食量的能量，受能量封顶）；缺省为 1（普通取反）。用来让“反转后没及时调整”要命。 */
   flipHarm?: number };
 /** 延迟（可选）：吃下后，营养/毒性在 ticks 个模拟步之后才作用于个体；其间这部分能量记为“在途”。个体生效时会有一句自身感受的语言描述。 */
@@ -120,7 +122,7 @@ function validateSemantic(c: Config): void {
     const okSet = (a: unknown) => Array.isArray(a) && new Set(a).size === a.length && a.every(i => Number.isInteger(i) && i >= 0 && i < sem.kinds.length);
     if ((d.states === undefined) !== (d.schedule === undefined)) throw Error('invalid_semantic_drift');
     if (d.states !== undefined && (!Array.isArray(d.states) || d.states.length < 2 || d.states.length > 8 || !d.states.every(okSet) || !Array.isArray(d.schedule) || d.schedule.length < 1 || d.schedule.length > 64 || d.schedule.some(i => !Number.isInteger(i) || i < 0 || i >= d.states!.length))) throw Error('invalid_semantic_drift');
-    if (d.cue !== undefined && (d.states === undefined || !d.cue || Object.keys(d.cue).sort().join() !== (d.cue.mode === 'paraphrase' ? 'mode,texts,variants' : 'mode,texts') || !['true', 'off', 'random', 'paraphrase'].includes(d.cue.mode) || (d.cue.mode === 'paraphrase' && (!Array.isArray(d.cue.variants) || d.cue.variants.length !== d.states.length || d.cue.variants.some(v => !Array.isArray(v) || v.length < 2 || v.length > 24 || new Set(v).size !== v.length || v.some(t => typeof t !== 'string' || !/^[ -~]{1,120}$/.test(t))))) || !Array.isArray(d.cue.texts) || d.cue.texts.length < d.states.length || d.cue.texts.length > 8 || d.cue.texts.some(t => typeof t !== 'string' || !/^[ -~]{1,120}$/.test(t)) || new Set(d.cue.texts).size !== d.cue.texts.length)) throw Error('invalid_semantic_drift');
+    if (d.cue !== undefined && (d.states === undefined || !d.cue || Object.keys(d.cue).sort().join() !== ['mode', 'texts', ...(d.cue.mode === 'paraphrase' ? ['variants'] : []), ...(d.cue.flaw ? ['flaw'] : [])].sort().join() || (d.cue.flaw !== undefined && (!['true', 'paraphrase'].includes(d.cue.mode) || !(d.cue.flaw.missing >= 0 && d.cue.flaw.missing <= 1 && d.cue.flaw.wrong >= 0 && d.cue.flaw.wrong <= 1))) || !['true', 'off', 'random', 'paraphrase'].includes(d.cue.mode) || (d.cue.mode === 'paraphrase' && (!Array.isArray(d.cue.variants) || d.cue.variants.length !== d.states.length || d.cue.variants.some(v => !Array.isArray(v) || v.length < 2 || v.length > 24 || new Set(v).size !== v.length || v.some(t => typeof t !== 'string' || !/^[ -~]{1,120}$/.test(t))))) || !Array.isArray(d.cue.texts) || d.cue.texts.length < d.states.length || d.cue.texts.length > 8 || d.cue.texts.some(t => typeof t !== 'string' || !/^[ -~]{1,120}$/.test(t)) || new Set(d.cue.texts).size !== d.cue.texts.length)) throw Error('invalid_semantic_drift');
     if (d.cue !== undefined && sem.ripening !== undefined) throw Error('invalid_semantic_drift');
   }
   if (new Set(sem.kinds.map(k => k.description)).size !== sem.kinds.length) throw Error('invalid_semantic_duplicate');
@@ -241,10 +243,14 @@ export class Ecology {
     if (dr?.cue) {
       if (dr.cue.mode === 'off') return undefined;
       const phase = Math.floor(this.state.tick / dr.everyTicks);
-      if (dr.cue.mode === 'true') return dr.cue.texts[dr.schedule![Math.min(phase, dr.schedule!.length - 1)]];
+      const flaw = dr.cue.flaw, hz = (tag: string, p: number) => { let x = 2166136261; for (const ch of `${this.state.config.runId}:${tag}:${p}`) x = Math.imul(x ^ ch.charCodeAt(0), 16777619); x ^= x >>> 15; x = Math.imul(x, 0x2c1b3c6d); x ^= x >>> 12; return (x >>> 0) / 4294967296; };
+      const stateOf = (p: number) => dr.schedule![Math.min(p, dr.schedule!.length - 1)];
+      if (flaw && hz('cuemiss', phase) < flaw.missing) return undefined;   // 这一阶段没有线索
+      const shown = flaw && hz('cuewrong', phase) < flaw.wrong ? (stateOf(phase) + 1 + Math.floor(hz('cuewrongstate', phase) * (dr.cue.texts.length - 1))) % dr.cue.texts.length : stateOf(phase);   // 误导：显示另一个状态的句子
+      if (dr.cue.mode === 'true') return dr.cue.texts[shown];
       if (dr.cue.mode === 'paraphrase') {   // 每个阶段换一句同状态的不同措辞；同一状态再次出现时不重复此前用过的句子
         const used = new Map<number, Set<number>>(); let out = '';
-        for (let p = 0; p <= phase; p++) { const st = dr.schedule![Math.min(p, dr.schedule!.length - 1)], vs = dr.cue.variants![st], u = used.get(st) ?? new Set<number>(); let x = 2166136261; for (const ch of `${this.state.config.runId}:para:${p}`) x = Math.imul(x ^ ch.charCodeAt(0), 16777619); let k = (x >>> 0) % vs.length; while (u.has(k) && u.size < vs.length) k = (k + 1) % vs.length; u.add(k); used.set(st, u); out = vs[k]; }
+        for (let p = 0; p <= phase; p++) { const st = p === phase ? shown : stateOf(p), vs = dr.cue.variants![st], u = used.get(st) ?? new Set<number>(); let x = 2166136261; for (const ch of `${this.state.config.runId}:para:${p}`) x = Math.imul(x ^ ch.charCodeAt(0), 16777619); let k = (x >>> 0) % vs.length; while (u.has(k) && u.size < vs.length) k = (k + 1) % vs.length; u.add(k); used.set(st, u); out = vs[k]; }
         return out;
       }
       let x = 2166136261; for (const ch of `${this.state.config.runId}:cue:${phase}`) x = Math.imul(x ^ ch.charCodeAt(0), 16777619);
