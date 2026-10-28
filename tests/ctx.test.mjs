@@ -3,7 +3,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { Ecology } from '../packages/sim/ecology.ts';
 import { structuredCohort } from '../packages/evo/structured.ts';
-import { structuredDualCohort, structuredRegimeCohort, decodeDualGenes, decodeRegimeGenes, DUAL_GENES, REGIME_GENES } from '../packages/evo/structured-ctx.ts';
+import { structuredDualCohort, structuredRegimeCohort, structuredLatentCohort, decodeDualGenes, decodeRegimeGenes, decodeLatentGenes, DUAL_GENES, REGIME_GENES, LATENT_GENES } from '../packages/evo/structured-ctx.ts';
 import { semanticWorldConfig, loadPriors } from '../packages/evo/semantic-run.ts';
 import { registerPools } from '../packages/evo/pools.ts';
 
@@ -55,4 +55,16 @@ test('retention patterns: half flips a strict subset, abab alternates, long hold
   assert.deepEqual(mk('abab').schedule, [0, 1, 0, 1, 0]); assert.deepEqual(mk('long').schedule, [0, 1, 1, 1, 0]); assert.equal(mk('abab').states[1].length, kinds.length);
   assert.equal(semanticWorldConfig({ seed: 91, options: { ...opt, horizon: 6000, drift: { everyTicks: 1200, fraction: 1, pattern: 'abab' } } }).horizon, 6000);
   assert.equal(semanticWorldConfig({ seed: 91, options: opt }).horizon, 3600);
+});
+
+test('latent (sticky-CRP comparator): genes bounded; an impossible new table (alpha at minimum, kappa max, noise max) never spawns; a flipped world spawns more than one table', () => {
+  assert.equal(LATENT_GENES, 13); assert.throws(() => decodeLatentGenes(V2), /genome_size/);
+  const g = decodeLatentGenes([...V2, 99, 99, 99, 99]); assert.deepEqual([g.alpha, g.kappa, g.noise, g.decay], [3, 20, 1, .99]);
+  const run = (genes) => {
+    const cfg = semanticWorldConfig({ seed: 52, options: { split: 'test', pool: 'test', sensible: 6, harmCap: 1, inversion: 0, horizon: 3600, drift: { everyTicks: 1200, fraction: 1, pattern: 'aba', cue: 'off' } } }), w = new Ecology(cfg), c = structuredLatentCohort(genes, 'laya', priors); let maxTables = 1, trace = '';
+    while (!w.done()) { const reqs = w.requests(), res = w.step(reqs.map(r => c(r, 52))); c.feedback(res.outcomes.map(o => ({ agentId: o.agentId, reward: o.reward, terminated: o.terminated, energyBefore: o.energyBefore, energyAfter: o.energyAfter, action: o.action })), new Map()); for (const r of reqs) maxTables = Math.max(maxTables, c.regimes(r.identity.agentId)); }
+    return { maxTables, hash: w.snapshot().tick + ':' + w.snapshot().agents.map(a => a.energy.toFixed(3)).join(',') };
+  };
+  assert.equal(run([...V2, .05, 20, 1, .5]).maxTables, 1);
+  const a = run([...V2, .5, 4, .2, .9]), b = run([...V2, .5, 4, .2, .9]); assert.ok(a.maxTables > 1); assert.deepEqual(a, b);
 });
