@@ -1,5 +1,6 @@
 // G12：让 LLM 给每条线索句子（72 句：作者 36 + LLM 36）做结构化“命名”：温度 / 湿度 / 风 / 能见度 / 光线，句子没说的属性记 unknown，再给一个 2–3 个词的环境名。
-// 由描述符得到相容度矩阵 cue-sim3.json：两句已知的属性里一致的越多越相容，冲突越多越不相容，未知不惩罚（Laplace：s = (一致数 + 1)/(共同已知数 + 2)）。
+// 由描述符得到相容度矩阵 cue-sim3.json（v2）：两句共同已知的属性里，一致的属性按似然比 (0.95/0.40) 计、冲突的按 (0.05/0.60) 计（同一环境里属性一致的概率 0.95，不同环境里约 0.40），
+// s = LR/(1+LR)；没有共同已知属性 s = 0.5（未知不惩罚）。v1 用 Laplace 平滑 s = (一致数 + 1)/(共同已知数 + 2)，对比度太低：开发期实验里 desc 传感器从未触发过换环境（见 DESIGN_G11_DUAL_SYSTEM.md §19），故改为似然比校准。
 // 这是“只提到部分属性的句子”的更合理的读法：它与若干个环境相容，而不是勉强判“同一类 / 不同类”。cue-sim.json、cue-sim2.json 不动。
 // 用法：node packages/evo/build-cue-desc.ts
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -12,7 +13,7 @@ const SYSTEM = `You read one short description of the conditions around a small 
 type D = Record<keyof typeof ATTR, string> & { name: string };
 const desc: D[] = await Promise.all(base.sentences.map(async t => { const r = await llm({ tag: 'desc', system: SYSTEM, user: `Description: "${t}"` }); try { const j = JSON.parse(r.text); const o = {} as D; for (const [k, vs] of Object.entries(ATTR)) (o as Record<string, string>)[k] = (vs as readonly string[]).includes(j[k]) ? j[k] : 'unknown'; o.name = String(j.name ?? '').slice(0, 40); return o; } catch { return { temperature: 'unknown', wetness: 'unknown', wind: 'unknown', visibility: 'unknown', light: 'unknown', name: '' } as D; } }));
 const n = base.sentences.length, keys = Object.keys(ATTR) as (keyof typeof ATTR)[], p: number[][] = Array.from({ length: n }, () => new Array(n).fill(1));
-for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) { let known = 0, agree = 0; for (const k of keys) if (desc[i][k] !== 'unknown' && desc[j][k] !== 'unknown') { known++; if (desc[i][k] === desc[j][k]) agree++; } p[i][j] = p[j][i] = +((agree + 1) / (known + 2)).toFixed(3); }
+for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) { let known = 0, agree = 0; for (const k of keys) if (desc[i][k] !== 'unknown' && desc[j][k] !== 'unknown') { known++; if (desc[i][k] === desc[j][k]) agree++; } { const lr = Math.pow(.95 / .4, agree) * Math.pow(.05 / .6, known - agree); p[i][j] = p[j][i] = +(known === 0 ? .5 : lr / (1 + lr)).toFixed(3); } }
 const mean = (a: number[]) => a.reduce((x, y) => x + y, 0) / a.length; const same: number[] = [], diff: number[] = [], amb: number[] = [];
 for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) (base.state[i] === base.state[j] ? same : diff).push(p[i][j]);
 const known = desc.map(d => keys.filter(k => d[k] !== 'unknown').length), expect: Record<string, Record<string, string>> = { 0: { temperature: 'warm', wetness: 'dry', wind: 'still' }, 1: { temperature: 'cold', wetness: 'wet', wind: 'windy' }, 2: { visibility: 'foggy', light: 'strange' } };

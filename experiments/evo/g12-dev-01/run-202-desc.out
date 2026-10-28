@@ -1,0 +1,12 @@
+seed 202 author-clean         plain                      {"fitness":0.563,"savings":-0.224,"E0":0.777,"E4":0.553}
+seed 202 author-clean         desc-gene                  {"fitness":0.709,"savings":0.12,"E0":0.777,"E4":0.897}
+seed 202 author-clean         desc-online                {"fitness":0.684,"savings":0.139,"E0":0.777,"E4":0.916}
+seed 202 llm-clean            plain                      {"fitness":0.563,"savings":-0.224,"E0":0.777,"E4":0.553}
+seed 202 llm-clean            desc-gene                  {"fitness":0.682,"savings":-0.031,"E0":0.777,"E4":0.746}
+seed 202 llm-clean            desc-online                {"fitness":0.691,"savings":0.021,"E0":0.777,"E4":0.798}
+seed 202 llm-wrong.3          plain                      {"fitness":0.563,"savings":-0.224,"E0":0.777,"E4":0.553}
+seed 202 llm-wrong.3          desc-gene                  {"fitness":0.63,"savings":-0.019,"E0":0.777,"E4":0.758}
+seed 202 llm-wrong.3          desc-online                {"fitness":0.622,"savings":-0.074,"E0":0.777,"E4":0.703}
+seed 202 llm-miss.3+wrong.3   plain                      {"fitness":0.563,"savings":-0.224,"E0":0.777,"E4":0.553}
+seed 202 llm-miss.3+wrong.3   desc-gene                  {"fitness":0.579,"savings":-0.064,"E0":0.777,"E4":0.713}
+seed 202 llm-miss.3+wrong.3   desc-online                {"fitness":0.577,"savings":-0.105,"E0":0.777,"E4":0.672}

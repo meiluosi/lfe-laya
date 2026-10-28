@@ -1,0 +1,86 @@
+{
+ "seed": 201,
+ "worlds": 5,
+ "res": {
+  "author-clean": {
+   "plain": {
+    "fitness": 0.57,
+    "savings": 0.025,
+    "E0": 0.746,
+    "E4": 0.771
+   },
+   "desc-gene": {
+    "fitness": 0.674,
+    "savings": 0.186,
+    "E0": 0.746,
+    "E4": 0.932
+   },
+   "desc-online": {
+    "fitness": 0.694,
+    "savings": 0.198,
+    "E0": 0.746,
+    "E4": 0.944
+   }
+  },
+  "llm-clean": {
+   "plain": {
+    "fitness": 0.57,
+    "savings": 0.025,
+    "E0": 0.746,
+    "E4": 0.771
+   },
+   "desc-gene": {
+    "fitness": 0.615,
+    "savings": 0.163,
+    "E0": 0.746,
+    "E4": 0.908
+   },
+   "desc-online": {
+    "fitness": 0.636,
+    "savings": 0.129,
+    "E0": 0.746,
+    "E4": 0.875
+   }
+  },
+  "llm-wrong.3": {
+   "plain": {
+    "fitness": 0.57,
+    "savings": 0.025,
+    "E0": 0.746,
+    "E4": 0.771
+   },
+   "desc-gene": {
+    "fitness": 0.57,
+    "savings": 0.097,
+    "E0": 0.746,
+    "E4": 0.843
+   },
+   "desc-online": {
+    "fitness": 0.585,
+    "savings": 0.05,
+    "E0": 0.746,
+    "E4": 0.796
+   }
+  },
+  "llm-miss.3+wrong.3": {
+   "plain": {
+    "fitness": 0.57,
+    "savings": 0.025,
+    "E0": 0.746,
+    "E4": 0.771
+   },
+   "desc-gene": {
+    "fitness": 0.555,
+    "savings": 0.047,
+    "E0": 0.746,
+    "E4": 0.792
+   },
+   "desc-online": {
+    "fitness": 0.558,
+    "savings": 0.01,
+    "E0": 0.746,
+    "E4": 0.756
+   }
+  }
+ }
+}

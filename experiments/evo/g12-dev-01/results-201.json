@@ -1,0 +1,254 @@
+{
+ "seed": 201,
+ "worlds": 5,
+ "res": {
+  "author-clean": {
+   "plain": {
+    "fitness": 0.57,
+    "savings": 0.025,
+    "E0": 0.746,
+    "E4": 0.771
+   },
+   "regime": {
+    "fitness": 0.658,
+    "savings": 0.15,
+    "E0": 0.631,
+    "E4": 0.781
+   },
+   "off": {
+    "fitness": 0.57,
+    "savings": 0.025,
+    "E0": 0.746,
+    "E4": 0.771
+   },
+   "pair-gene": {
+    "fitness": 0.693,
+    "savings": 0.171,
+    "E0": 0.746,
+    "E4": 0.917
+   },
+   "pair-online": {
+    "fitness": 0.691,
+    "savings": 0.149,
+    "E0": 0.746,
+    "E4": 0.894
+   },
+   "desc-gene": {
+    "fitness": 0.57,
+    "savings": 0.025,
+    "E0": 0.746,
+    "E4": 0.771
+   },
+   "desc-online": {
+    "fitness": 0.57,
+    "savings": 0.025,
+    "E0": 0.746,
+    "E4": 0.771
+   },
+   "pair-online-think10-rest": {
+    "fitness": 0.671,
+    "savings": 0.2,
+    "E0": 0.746,
+    "E4": 0.946
+   },
+   "pair-online-think40-rest": {
+    "fitness": 0.695,
+    "savings": 0.185,
+    "E0": 0.746,
+    "E4": 0.931
+   },
+   "pair-online-think40-delay": {
+    "fitness": 0.65,
+    "savings": 0.129,
+    "E0": 0.746,
+    "E4": 0.875
+   }
+  },
+  "llm-clean": {
+   "plain": {
+    "fitness": 0.57,
+    "savings": 0.025,
+    "E0": 0.746,
+    "E4": 0.771
+   },
+   "regime": {
+    "fitness": 0.658,
+    "savings": 0.15,
+    "E0": 0.631,
+    "E4": 0.781
+   },
+   "off": {
+    "fitness": 0.57,
+    "savings": 0.025,
+    "E0": 0.746,
+    "E4": 0.771
+   },
+   "pair-gene": {
+    "fitness": 0.626,
+    "savings": -0.068,
+    "E0": 0.746,
+    "E4": 0.678
+   },
+   "pair-online": {
+    "fitness": 0.682,
+    "savings": -0.061,
+    "E0": 0.746,
+    "E4": 0.685
+   },
+   "desc-gene": {
+    "fitness": 0.57,
+    "savings": 0.025,
+    "E0": 0.746,
+    "E4": 0.771
+   },
+   "desc-online": {
+    "fitness": 0.57,
+    "savings": 0.025,
+    "E0": 0.746,
+    "E4": 0.771
+   },
+   "pair-online-think10-rest": {
+    "fitness": 0.705,
+    "savings": -0.04,
+    "E0": 0.746,
+    "E4": 0.706
+   },
+   "pair-online-think40-rest": {
+    "fitness": 0.699,
+    "savings": 0.081,
+    "E0": 0.746,
+    "E4": 0.827
+   },
+   "pair-online-think40-delay": {
+    "fitness": 0.636,
+    "savings": 0.007,
+    "E0": 0.746,
+    "E4": 0.753
+   }
+  },
+  "llm-wrong.3": {
+   "plain": {
+    "fitness": 0.57,
+    "savings": 0.025,
+    "E0": 0.746,
+    "E4": 0.771
+   },
+   "regime": {
+    "fitness": 0.658,
+    "savings": 0.15,
+    "E0": 0.631,
+    "E4": 0.781
+   },
+   "off": {
+    "fitness": 0.57,
+    "savings": 0.025,
+    "E0": 0.746,
+    "E4": 0.771
+   },
+   "pair-gene": {
+    "fitness": 0.59,
+    "savings": -0.241,
+    "E0": 0.746,
+    "E4": 0.504
+   },
+   "pair-online": {
+    "fitness": 0.579,
+    "savings": -0.189,
+    "E0": 0.746,
+    "E4": 0.557
+   },
+   "desc-gene": {
+    "fitness": 0.57,
+    "savings": 0.025,
+    "E0": 0.746,
+    "E4": 0.771
+   },
+   "desc-online": {
+    "fitness": 0.57,
+    "savings": 0.025,
+    "E0": 0.746,
+    "E4": 0.771
+   },
+   "pair-online-think10-rest": {
+    "fitness": 0.61,
+    "savings": -0.132,
+    "E0": 0.746,
+    "E4": 0.614
+   },
+   "pair-online-think40-rest": {
+    "fitness": 0.642,
+    "savings": -0.018,
+    "E0": 0.746,
+    "E4": 0.728
+   },
+   "pair-online-think40-delay": {
+    "fitness": 0.586,
+    "savings": -0.082,
+    "E0": 0.746,
+    "E4": 0.664
+   }
+  },
+  "llm-miss.3+wrong.3": {
+   "plain": {
+    "fitness": 0.57,
+    "savings": 0.025,
+    "E0": 0.746,
+    "E4": 0.771
+   },
+   "regime": {
+    "fitness": 0.658,
+    "savings": 0.15,
+    "E0": 0.631,
+    "E4": 0.781
+   },
+   "off": {
+    "fitness": 0.57,
+    "savings": 0.025,
+    "E0": 0.746,
+    "E4": 0.771
+   },
+   "pair-gene": {
+    "fitness": 0.557,
+    "savings": -0.113,
+    "E0": 0.746,
+    "E4": 0.633
+   },
+   "pair-online": {
+    "fitness": 0.579,
+    "savings": -0.04,
+    "E0": 0.746,
+    "E4": 0.705
+   },
+   "desc-gene": {
+    "fitness": 0.57,
+    "savings": 0.025,
+    "E0": 0.746,
+    "E4": 0.771
+   },
+   "desc-online": {
+    "fitness": 0.57,
+    "savings": 0.025,
+    "E0": 0.746,
+    "E4": 0.771
+   },
+   "pair-online-think10-rest": {
+    "fitness": 0.606,
+    "savings": 0.087,
+    "E0": 0.746,
+    "E4": 0.833
+   },
+   "pair-online-think40-rest": {
+    "fitness": 0.606,
+    "savings": -0.027,
+    "E0": 0.746,
+    "E4": 0.719
+   },
+   "pair-online-think40-delay": {
+    "fitness": 0.531,
+    "savings": -0.073,
+    "E0": 0.746,
+    "E4": 0.673
+   }
+  }
+ }
+}
