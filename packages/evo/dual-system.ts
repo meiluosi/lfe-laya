@@ -75,7 +75,7 @@ export function ruleDecision(c: CtxCohort, id: string, mind: Mind, nTables: numb
   if (best !== cur) return { decision: 'switch', table: best }; return nTables < 4 ? { decision: 'new' } : { decision: 'keep' };
 }
 
-export type DualSpec = { seed: number; pool: string; K: number; pattern: 'aba' | 'abab' | 'half'; cue: 'off' | 'true'; genes: number[]; priors: Priors; mode: Mode; llm?: LlmClient;
+export type DualSpec = { seed: number; pool: string; K: number; pattern: 'aba' | 'abab' | 'half'; cue: 'off' | 'true' | 'paraphrase'; genes: number[]; priors: Priors; mode: Mode; llm?: LlmClient;
   /** 触发阈值（当前表预测误差滑动平均）、冷却（tick）、每个体一生的调用上限、日志长度、笔记上限 */
   thr?: number; /** 触发器：abs = 当前表误差滑动平均 > thr（v1）；jump = 误差比自己的慢基线高出 jump 且 > thr（v2，只在意外“上升”时触发） */ trigger?: 'abs' | 'jump'; jump?: number; cooldown?: number; maxCalls?: number; logLen?: number; maxNotes?: number; windowTicks?: number; split?: 'test' | 'train' };
 export type DualResult = { fitness: number; windows: { good: number[]; bad: number[] }; calls: number; promptTokens: number; completionTokens: number; parseFails: number; decisions: Record<string, number>; applied: number; cached: number; triggers: number };
@@ -124,3 +124,75 @@ export async function runDualWorld(spec: DualSpec): Promise<DualResult> {
   res.fitness = FITNESS_WEIGHTS.survival * survival + FITNESS_WEIGHTS.energy * energy; return res;
 }
 export { ruleProposal };
+
+// ---------------------------------------------------------------------------------------------------------------------------------
+// G11b：贝叶斯引擎 + LLM 传感器（docs/DESIGN_G11_DUAL_SYSTEM.md §13）。
+// 数值证据：harness 对每个个体维护“当前处于哪个环境表”的后验（隐马尔可夫：每次经历以 h 的概率换环境；高斯似然，各表预测为均值；新环境的预测很宽）。
+// 语言证据：线索句子变化时，LLM 判断“新句子与此前见过的每句是否同一类条件”，概率经可靠度 r 折算成各环境表的似然因子并入后验——LLM 是带噪声的传感器，不是指令。
+// 条件：B（只有贝叶斯）、BL（+LLM 传感器）、BLw（传感器 30% 的查询被故意取反：检验可靠度折算下读错的代价）、BLo（预言机传感器：用隐藏的真实状态，只作上限度量，不是个体可用的）。
+export type BMode = 'B' | 'BL' | 'BLw' | 'BLo';
+export type BayesSpec = Omit<DualSpec, 'mode' | 'cue'> & { mode: BMode; cue: 'off' | 'true' | 'paraphrase'; sigma?: number; hazard?: number; reliability?: number; decide?: number; boundaryHazard?: number };
+const SAME_SYSTEM = 'You compare two short descriptions of the conditions a creature senses around it. Decide whether they describe the same kind of conditions (temperature, wetness, wind and visibility), even if the wording is very different. Reply with JSON only: {"same": <a probability between 0 and 1>}.';
+const pdf = (x: number, mu: number, sd: number) => Math.exp(-((x - mu) ** 2) / (2 * sd * sd)) / sd;
+export async function runBayesWorld(spec: BayesSpec): Promise<DualResult & { switches: number; boundaries: number }> {
+  const SIG = spec.sigma ?? .35, H = spec.hazard ?? .02, R = spec.reliability ?? .8, DEC = spec.decide ?? .6, HB = spec.boundaryHazard ?? .5, WIN = spec.windowTicks ?? 200, np = PHASES[spec.pattern];
+  if ((spec.mode === 'BL' || spec.mode === 'BLw') && !spec.llm) throw Error('llm_required');
+  const cfg = semanticWorldConfig({ seed: spec.seed, options: { split: spec.split ?? 'test', pool: spec.pool, sensible: spec.K, harmCap: 1, inversion: 0, horizon: np * 1200, drift: { everyTicks: 1200, fraction: 1, pattern: spec.pattern, cue: spec.cue } } });
+  const w = new Ecology(cfg); w.lean = true; const managed = structuredManagedCohort(spec.genes, 'laya', spec.priors), truth = cfg.semantic.drift!.schedule!;
+  type St = { post: number[]; curCue?: string; cues: { text: string; ctx: number; state: number }[]; preds?: { desc: string; p: number[] } };
+  const st = new Map<string, St>(), pend = new Map<string, { desc?: string; preds?: number[]; metabolism: number }>(), memo = new Map<string, Promise<number>>();
+  const windows = { good: new Array(Math.ceil(cfg.horizon / WIN)).fill(0), bad: new Array(Math.ceil(cfg.horizon / WIN)).fill(0) };
+  const res = { fitness: 0, windows, calls: 0, promptTokens: 0, completionTokens: 0, parseFails: 0, decisions: {} as Record<string, number>, applied: 0, cached: 0, triggers: 0, switches: 0, boundaries: 0 };
+  const S = (id: string): St => { let s = st.get(id); if (!s) { s = { post: [1, 0], cues: [] }; st.set(id, s); } return s; };   // 后验长度 = 环境表数 + 1（最后一项 = “新环境”）
+  const norm = (a: number[]) => { const t = a.reduce((x, y) => x + y, 0) || 1; return a.map(x => x / t); };
+  const decide = (id: string, s: St) => {   // 后验最大且超过 DEC、不是当前表 → 切换 / 新开
+    const nT = managed.regimes(id), cur = managed.active(id); let best = 0; s.post.forEach((p, i) => { if (p > s.post[best]) best = i; });
+    if (best === cur || s.post[best] < DEC) return;
+    if (best === nT) { if (managed.control!(id, { op: 'new' })) { res.switches++; const n2 = nT + 1, post = new Array(n2 + (n2 < 4 ? 1 : 0)).fill(0); post[n2 - 1] = 1; if (n2 < 4) post[n2] = .02; s.post = norm(post); } }
+    else if (managed.control!(id, { op: 'switch', to: best })) res.switches++;
+  };
+  const same = (a: string, b: string, mode: BMode, stA: number, stB: number): Promise<number> => {
+    if (mode === 'BLo') return Promise.resolve(stA === stB ? 1 : 0);
+    const k = a < b ? `${a}|${b}` : `${b}|${a}`; let p = memo.get(k);
+    if (!p) {
+      const ask = async (x: string, y: string) => { const r = await spec.llm!({ system: SAME_SYSTEM, user: `A: "${x}"\nB: "${y}"`, tag: 'sensor' }); res.calls++; res.promptTokens += r.promptTokens; res.completionTokens += r.completionTokens; if (r.cached) res.cached++; try { const v = Number(JSON.parse(r.text).same); return Number.isFinite(v) ? Math.max(0, Math.min(1, v)) : .5; } catch { res.parseFails++; return .5; } };
+      p = Promise.all([ask(a, b), ask(b, a)]).then(([x, y]) => (x + y) / 2); memo.set(k, p);
+    }
+    return p.then(v => { if (mode !== 'BLw') return v; let h = 2166136261 ^ spec.seed; for (const ch of `${a}|${b}`) h = Math.imul(h ^ ch.charCodeAt(0), 16777619); return ((h >>> 0) % 100) < 30 ? 1 - v : v; });
+  };
+  while (!w.done()) {
+    const t0 = w.tick, reqs = w.requests();
+    const proposals: Proposal[] = reqs.map((q: Request) => {
+      const id = q.identity.agentId, p = managed(q, spec.seed), here = q.observation.local.find(c => Math.hypot(c.dx, c.dy) < .5 && !c.blocked), nT = managed.regimes(id);
+      pend.set(id, { desc: p.action === 'eat' ? here?.desc : undefined, preds: p.action === 'eat' && here?.desc ? Array.from({ length: nT }, (_, k) => managed.predict!(id, k, here.desc!)) : undefined, metabolism: q.observation.costs.metabolismPerTick * q.observation.costs.decisionTicks }); return p;
+    });
+    const r = w.step(proposals); if (!r.accepted) throw Error(r.reason);
+    const k = Math.min(windows.good.length - 1, Math.floor(t0 / WIN)); for (const e of r.events!) if (e.kind === 'ate') (e.reason === 'toxic' ? windows.bad : windows.good)[k]++;
+    const outcomes = r.outcomes!.map(o => ({ agentId: o.agentId, reward: o.reward, terminated: o.terminated, energyBefore: o.energyBefore, energyAfter: o.energyAfter, action: o.action }));
+    managed.feedback(outcomes, new Map());
+    for (const o of outcomes) {   // 数值证据：这次经历的结果 x 在各环境表预测下的似然
+      const p = pend.get(o.agentId); if (!p?.desc || o.action !== 'eat' || !p.preds) continue; const gain = o.energyAfter - o.energyBefore + p.metabolism; if (!Number.isFinite(gain)) continue;
+      const x = Math.max(-1, Math.min(1, gain / 3)), s = S(o.agentId), nT = p.preds.length, avail = s.post.length > nT;
+      const prior = s.post.map((v, i) => (1 - H) * v + H / (nT + (avail ? 1 : 0)) * (i < nT || avail ? 1 : 0));
+      s.post = norm(prior.map((v, i) => v * (i < nT ? pdf(x, p.preds![i], SIG) : pdf(x, 0, 1)))); decide(o.agentId, s);
+    }
+    if (!w.done()) {   // 语言证据：线索句子变化的时刻
+      const sensors: Promise<void>[] = [];
+      for (const q of w.requests()) {
+        const id = q.identity.agentId, s = S(id), cue = q.observation.season; if (!cue || cue === s.curCue) continue;
+        res.boundaries++; const nT = managed.regimes(id), phase = Math.floor(w.tick / 1200), state = truth[Math.min(phase, truth.length - 1)];
+        if (s.curCue) { const e = s.cues.find(c => c.text === s.curCue); if (e) e.ctx = managed.active(id); else s.cues.push({ text: s.curCue, ctx: managed.active(id), state: truth[Math.min(Math.max(0, Math.floor((w.tick - 1) / 1200)), truth.length - 1)] }); }
+        const prev = s.cues.filter(c => c.text !== cue); s.curCue = cue; if (spec.mode !== 'B' && prev.length > 0) s.post = norm(s.post.map(v => (1 - HB) * v + HB / s.post.length));   // 线索句子变了：环境很可能换了（先验），具体是哪个交给传感器
+        if (spec.mode === 'B' || prev.length === 0) continue;   // B 不读线索；第一次见到线索没有可比较的句子
+        sensors.push(Promise.all(prev.map(c => same(cue, c.text, spec.mode, state, c.state))).then(sims => {
+          const smax = Array.from({ length: nT }, (_, kk) => Math.max(0, ...prev.filter(c => c.ctx === kk).map(c => sims[prev.indexOf(c)]))), top = Math.max(0, ...smax);
+          s.post = norm(s.post.map((v, i) => v * (i < nT ? (prev.some(c => c.ctx === i) ? R * smax[i] + (1 - R) * (1 - smax[i]) : 1) : R * (1 - top) + (1 - R) * top)));
+          decide(id, s);
+        }));
+      }
+      if (sensors.length) await Promise.all(sensors);
+    }
+  }
+  const s = w.snapshot(), n = cfg.initialAgents, cap = s.config.capacity, survival = s.metrics.agentTicks / (n * cfg.horizon), energy = s.agents.reduce((a, x) => a + x.energy / (cap * x.traits.size), 0) / n;
+  res.fitness = FITNESS_WEIGHTS.survival * survival + FITNESS_WEIGHTS.energy * energy; return res;
+}

@@ -1,5 +1,6 @@
 // S2 学习器（dual / regime）：基因解码有界；退化设置与 v2 逐动作一致；A/B/A 世界里 regime 个体回到旧环境时能切回旧信念表。
 import test from 'node:test';
+import { readFileSync } from 'node:fs';
 import assert from 'node:assert/strict';
 import { Ecology } from '../packages/sim/ecology.ts';
 import { structuredCohort } from '../packages/evo/structured.ts';
@@ -76,4 +77,14 @@ test('flipHarm (default off): identical before the first reversal, harsher after
   const off = mk(0), absent = mk(undefined), harsh = mk(4);
   assert.equal(run(off, 990), run(absent, 990)); assert.equal(run(harsh, 990), run(mk(0), 990));
   const a = run(mk(0), 1900), b = run(harsh, 1900); assert.notEqual(a, b);
+});
+
+test('paraphrase cue: the same state is worded differently each time it returns, always from that state\'s own set, deterministically; true cue repeats the same sentence', () => {
+  const mk = cue => new Ecology(semanticWorldConfig({ seed: 71, options: { split: 'test', pool: 'test', sensible: 6, harmCap: 1, inversion: 0, horizon: 6000, drift: { everyTicks: 1200, fraction: 1, pattern: 'abab', cue } } }));
+  const seen = (w) => { const out = []; for (let p = 0; p < 5; p++) { while (w.tick < p * 1200 + 5) w.step(w.requests().map(q => ({ identity: q.identity, action: 'rest', provider: 't', distribution: { rest: 1 } }))); out.push(w.requests()[0]?.observation.season); } return out; };
+  const para = seen(mk('paraphrase')), again = seen(mk('paraphrase')), tru = seen(mk('true'));
+  assert.deepEqual(para, again); assert.equal(tru[0], tru[2]); assert.equal(tru[2], tru[4]); assert.equal(tru[1], tru[3]);
+  assert.notEqual(para[0], para[2]); assert.notEqual(para[2], para[4]); assert.notEqual(para[0], para[4]); assert.notEqual(para[1], para[3]);
+  const cues = JSON.parse(readFileSync('packages/evo/cues.json', 'utf8')), setOf = k => new Set([...cues[k].train, ...cues[k].eval]);
+  assert.ok(setOf('A').has(para[0]) && setOf('A').has(para[2]) && setOf('B').has(para[1]) && setOf('B').has(para[3]));
 });
