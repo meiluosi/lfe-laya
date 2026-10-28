@@ -56,7 +56,7 @@ export function deepseekClient(maxCalls = Number(process.env.LLM_MAX_CALLS ?? 20
 }
 
 type Exp = { tick: number; desc: string; x: number; cue?: string };
-type Mind = { log: Exp[]; notes: string[]; lastCall: number; calls: number };
+type Mind = { log: Exp[]; notes: string[]; lastCall: number; calls: number; base: number };
 const word = (v: number) => v > .25 ? 'gain' : v < -.25 ? 'loss' : 'little effect';
 const SYSTEM = `You are the slow, reflective mind of a small foraging creature. Its fast instincts keep a few "memory tables" that say which foods tend to be good or bad to eat; one table is in use at a time. Sometimes the world changes: foods that used to restore energy start to cost energy (or the reverse), and sometimes an earlier situation returns. You are shown the creature's latest meals, what happened, and what each memory table expected. Decide whether the table in use still fits, whether another existing table fits the recent meals better, or whether this looks like a new situation that needs a fresh table. Reply with JSON only: {"decision":"keep"|"new"|"switch","table":<integer, only when decision is switch>,"note":"<one short sentence the creature should remember>"}.`;
 export function buildPrompt(c: CtxCohort, id: string, mind: Mind, mode: Mode, nTables: number, cur: number): LlmRequest {
@@ -77,7 +77,7 @@ export function ruleDecision(c: CtxCohort, id: string, mind: Mind, nTables: numb
 
 export type DualSpec = { seed: number; pool: string; K: number; pattern: 'aba' | 'abab' | 'half'; cue: 'off' | 'true'; genes: number[]; priors: Priors; mode: Mode; llm?: LlmClient;
   /** 触发阈值（当前表预测误差滑动平均）、冷却（tick）、每个体一生的调用上限、日志长度、笔记上限 */
-  thr?: number; cooldown?: number; maxCalls?: number; logLen?: number; maxNotes?: number; windowTicks?: number; split?: 'test' | 'train' };
+  thr?: number; /** 触发器：abs = 当前表误差滑动平均 > thr（v1）；jump = 误差比自己的慢基线高出 jump 且 > thr（v2，只在意外“上升”时触发） */ trigger?: 'abs' | 'jump'; jump?: number; cooldown?: number; maxCalls?: number; logLen?: number; maxNotes?: number; windowTicks?: number; split?: 'test' | 'train' };
 export type DualResult = { fitness: number; windows: { good: number[]; bad: number[] }; calls: number; promptTokens: number; completionTokens: number; parseFails: number; decisions: Record<string, number>; applied: number; cached: number; triggers: number };
 const PHASES = { aba: 3, abab: 5, half: 3 };
 export async function runDualWorld(spec: DualSpec): Promise<DualResult> {
@@ -88,7 +88,7 @@ export async function runDualWorld(spec: DualSpec): Promise<DualResult> {
   const managed = spec.mode === 'P' ? null : structuredManagedCohort(spec.genes, 'laya', spec.priors), plain = spec.mode === 'P' ? structuredCohort(spec.genes, 'laya', spec.priors) : null;
   const minds = new Map<string, Mind>(), pend = new Map<string, { desc?: string; cue?: string; metabolism: number }>(), windows = { good: new Array(Math.ceil(cfg.horizon / WIN)).fill(0), bad: new Array(Math.ceil(cfg.horizon / WIN)).fill(0) };
   const res: DualResult = { fitness: 0, windows, calls: 0, promptTokens: 0, completionTokens: 0, parseFails: 0, decisions: {}, applied: 0, cached: 0, triggers: 0 };
-  const mind = (id: string) => { let m = minds.get(id); if (!m) { m = { log: [], notes: [], lastCall: -1e9, calls: 0 }; minds.set(id, m); } return m; };
+  const mind = (id: string) => { let m = minds.get(id); if (!m) { m = { log: [], notes: [], lastCall: -1e9, calls: 0, base: .3 }; minds.set(id, m); } return m; };
   while (!w.done()) {
     const t0 = w.tick, reqs = w.requests();
     const proposals: Proposal[] = reqs.map((q: Request) => {
@@ -100,11 +100,13 @@ export async function runDualWorld(spec: DualSpec): Promise<DualResult> {
     const outcomes = r.outcomes!.map(o => ({ agentId: o.agentId, reward: o.reward, terminated: o.terminated, energyBefore: o.energyBefore, energyAfter: o.energyAfter, action: o.action }));
     for (const o of outcomes) { const s = pend.get(o.agentId); if (s?.desc && o.action === 'eat') { const gain = o.energyAfter - o.energyBefore + s.metabolism; if (Number.isFinite(gain)) { const m = mind(o.agentId); m.log.push({ tick: t0, desc: s.desc, x: Math.max(-1, Math.min(1, gain / 3)), ...(s.cue ? { cue: s.cue } : {}) }); if (m.log.length > LOG) m.log.shift(); } } }
     (managed ?? plain!).feedback(outcomes, new Map());
+    if (managed && spec.trigger === 'jump') for (const q of reqs) { const m = mind(q.identity.agentId); m.base += .02 * (managed.surprise!(q.identity.agentId) - m.base); }   // 慢基线：个体自己平时的误差水平
     if (managed && !w.done()) {
       const calls: Promise<void>[] = [];
       for (const q of w.requests()) {
         const id = q.identity.agentId, m = mind(id);
-        if (m.log.length < 3 || m.calls >= MAXC || w.tick - m.lastCall < COOL || managed.surprise!(id) <= THR) continue;
+        const sur = managed.surprise!(id), fire = spec.trigger === 'jump' ? sur > THR && sur - m.base > (spec.jump ?? .2) : sur > THR;
+        if (m.log.length < 3 || m.calls >= MAXC || w.tick - m.lastCall < COOL || !fire) continue;
         m.lastCall = w.tick; m.calls++; res.triggers++;
         const nT = managed.regimes(id), cur = managed.active(id);
         const apply = (d: { decision: 'keep' | 'new' | 'switch'; table?: number; note?: string } | null) => {

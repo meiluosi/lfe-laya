@@ -10,7 +10,7 @@ import { structuredRegimeCohort } from './structured-ctx.ts';
 
 const args = process.argv.slice(2), out = args[0]; if (!out) throw Error('Usage: node packages/evo/dual-probe.ts <new-output-directory> ...');
 const opt = (n: string, d: string) => args.includes(`--${n}`) ? args[args.indexOf(`--${n}`) + 1] : d;
-const SEEDS = opt('seeds', '201,202').split(',').map(Number), N = Number(opt('worlds', '8')), CONDS = opt('conds', 'P,R,T,S2,S2c,S2x').split(','), REPLAY = args.includes('--replay');
+const SEEDS = opt('seeds', '201,202').split(',').map(Number), N = Number(opt('worlds', '8')), CONDS = opt('conds', 'P,R,T,S2,S2c,S2x').split(','), REPLAY = args.includes('--replay'), TRIGGER = opt('trigger', 'abs') as 'abs' | 'jump', THR = Number(opt('thr', '0.5')), MAXC = Number(opt('maxCalls', '12'));
 mkdirSync(out, { recursive: true }); loadEnv(); registerPools(); const priors = loadLayaPriors('test');
 const needLlm = CONDS.some(c => c.startsWith('S2')), model = process.env.LLM_MODEL ?? 'deepseek-flash';
 const llm = needLlm ? recorded(REPLAY ? null : deepseekClient(), `${out}/llm-log.jsonl`, model, REPLAY ? 'replay' : 'live') : undefined;
@@ -25,11 +25,11 @@ for (const seed of SEEDS) {
     const rows = await Promise.all(Array.from({ length: N }, async (_, i) => {
       const worldSeed = 600000 + i, opts = { split: 'test' as const, pool: 'test', sensible: 6, harmCap: 1, inversion: 0, horizon: 3600, drift: { everyTicks: 1200, fraction: 1, pattern: 'aba' as const, cue: 'true' as const } };
       if (cond === 'R') { const r = runSemanticWorld({ seed: worldSeed, options: opts }, () => structuredRegimeCohort(regime, 'laya', priors), 200); return { ...score(r.windows!), fitness: r.fitness, calls: 0, promptTokens: 0, completionTokens: 0, parseFails: 0, triggers: 0, applied: 0 }; }
-      const r = await runDualWorld({ seed: worldSeed, pool: 'test', K: 6, pattern: 'aba', cue: 'true', genes: plain, priors, mode: cond as Mode, llm }); return { ...score(r.windows), fitness: r.fitness, calls: r.calls, promptTokens: r.promptTokens, completionTokens: r.completionTokens, parseFails: r.parseFails, triggers: r.triggers, applied: r.applied };
+      const r = await runDualWorld({ seed: worldSeed, pool: 'test', K: 6, pattern: 'aba', cue: 'true', genes: plain, priors, mode: cond as Mode, llm, trigger: TRIGGER, thr: THR, maxCalls: MAXC }); return { ...score(r.windows), fitness: r.fitness, calls: r.calls, promptTokens: r.promptTokens, completionTokens: r.completionTokens, parseFails: r.parseFails, triggers: r.triggers, applied: r.applied };
     }));
     const m = (k: string) => mean(rows.map(r => (r as Record<string, number>)[k]));
     res[seed][cond] = { savings: +(m('E2') - m('E0')).toFixed(4), E0: +m('E0').toFixed(3), E1: +m('E1').toFixed(3), E2: +m('E2').toFixed(3), fitness: +m('fitness').toFixed(3), callsPerWorld: +m('calls').toFixed(1), promptTokens: Math.round(rows.reduce((a, r) => a + r.promptTokens, 0)), completionTokens: Math.round(rows.reduce((a, r) => a + r.completionTokens, 0)), parseFails: rows.reduce((a, r) => a + r.parseFails, 0), triggersPerWorld: +m('triggers').toFixed(1), appliedPerWorld: +m('applied').toFixed(1) };
     console.log(`seed ${seed} ${cond.padEnd(4)}`, JSON.stringify(res[seed][cond]));
   }
 }
-writeFileSync(`${out}/results.json`, JSON.stringify({ protocol: 'dev (G11 probe)', model, seeds: SEEDS, worlds: N, conds: CONDS, res }, null, 1));
+writeFileSync(`${out}/results.json`, JSON.stringify({ protocol: 'dev (G11 probe)', model, trigger: TRIGGER, thr: THR, maxCalls: MAXC, seeds: SEEDS, worlds: N, conds: CONDS, res }, null, 1));
