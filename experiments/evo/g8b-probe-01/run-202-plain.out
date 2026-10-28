@@ -1,0 +1,3 @@
+seed 202 plain sigma 0 {"est":0.8333333333333334,"pop":9.7}
+seed 202 plain sigma 0.15 {"est":0.875,"pop":9.36}
+seed 202 plain sigma 0.5 {"est":0.75,"pop":7.2}

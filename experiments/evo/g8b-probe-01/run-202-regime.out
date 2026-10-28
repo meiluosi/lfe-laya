@@ -1,0 +1,3 @@
+seed 202 regime sigma 0 {"est":0.9166666666666666,"pop":10.03}
+seed 202 regime sigma 0.15 {"est":0.8333333333333334,"pop":8.78}
+seed 202 regime sigma 0.5 {"est":0.7083333333333334,"pop":6.77}
