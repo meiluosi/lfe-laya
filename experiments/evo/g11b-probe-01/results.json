@@ -1,0 +1,183 @@
+{
+ "protocol": "dev (G11 probe)",
+ "model": "deepseek-flash",
+ "trigger": "abs",
+ "thr": 0.5,
+ "maxCalls": 12,
+ "cue": "paraphrase",
+ "seeds": [
+  201,
+  202
+ ],
+ "worlds": 8,
+ "conds": [
+  "P",
+  "R",
+  "B",
+  "BL",
+  "BLw",
+  "BLo"
+ ],
+ "res": {
+  "201": {
+   "P": {
+    "savings": -0.1364,
+    "E0": 0.768,
+    "E1": 0.713,
+    "E2": 0.632,
+    "fitness": 0.783,
+    "callsPerWorld": 0,
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "parseFails": 0,
+    "triggersPerWorld": 0,
+    "appliedPerWorld": 0
+   },
+   "R": {
+    "savings": 0.0953,
+    "E0": 0.661,
+    "E1": 0.785,
+    "E2": 0.757,
+    "fitness": 0.864,
+    "callsPerWorld": 0,
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "parseFails": 0,
+    "triggersPerWorld": 0,
+    "appliedPerWorld": 0
+   },
+   "B": {
+    "savings": -0.1296,
+    "E0": 0.747,
+    "E1": 0.699,
+    "E2": 0.618,
+    "fitness": 0.736,
+    "callsPerWorld": 0,
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "parseFails": 0,
+    "triggersPerWorld": 21.4,
+    "appliedPerWorld": 9.3
+   },
+   "BL": {
+    "savings": 0.0528,
+    "E0": 0.747,
+    "E1": 0.8,
+    "E2": 0.8,
+    "fitness": 0.813,
+    "callsPerWorld": 6,
+    "promptTokens": 5600,
+    "completionTokens": 384,
+    "parseFails": 0,
+    "triggersPerWorld": 21.6,
+    "appliedPerWorld": 16.9
+   },
+   "BLw": {
+    "savings": -0.0158,
+    "E0": 0.747,
+    "E1": 0.788,
+    "E2": 0.732,
+    "fitness": 0.801,
+    "callsPerWorld": 6,
+    "promptTokens": 5600,
+    "completionTokens": 384,
+    "parseFails": 0,
+    "triggersPerWorld": 21.5,
+    "appliedPerWorld": 16.1
+   },
+   "BLo": {
+    "savings": 0.0638,
+    "E0": 0.747,
+    "E1": 0.815,
+    "E2": 0.811,
+    "fitness": 0.812,
+    "callsPerWorld": 0,
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "parseFails": 0,
+    "triggersPerWorld": 21.5,
+    "appliedPerWorld": 17.3
+   }
+  },
+  "202": {
+   "P": {
+    "savings": -0.1285,
+    "E0": 0.771,
+    "E1": 0.713,
+    "E2": 0.642,
+    "fitness": 0.729,
+    "callsPerWorld": 0,
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "parseFails": 0,
+    "triggersPerWorld": 0,
+    "appliedPerWorld": 0
+   },
+   "R": {
+    "savings": 0.2062,
+    "E0": 0.646,
+    "E1": 0.735,
+    "E2": 0.852,
+    "fitness": 0.863,
+    "callsPerWorld": 0,
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "parseFails": 0,
+    "triggersPerWorld": 0,
+    "appliedPerWorld": 0
+   },
+   "B": {
+    "savings": -0.0648,
+    "E0": 0.756,
+    "E1": 0.72,
+    "E2": 0.691,
+    "fitness": 0.72,
+    "callsPerWorld": 0,
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "parseFails": 0,
+    "triggersPerWorld": 20.4,
+    "appliedPerWorld": 9.4
+   },
+   "BL": {
+    "savings": 0.0284,
+    "E0": 0.756,
+    "E1": 0.786,
+    "E2": 0.785,
+    "fitness": 0.752,
+    "callsPerWorld": 6,
+    "promptTokens": 5600,
+    "completionTokens": 384,
+    "parseFails": 0,
+    "triggersPerWorld": 20.3,
+    "appliedPerWorld": 17.3
+   },
+   "BLw": {
+    "savings": -0.01,
+    "E0": 0.756,
+    "E1": 0.774,
+    "E2": 0.746,
+    "fitness": 0.758,
+    "callsPerWorld": 6,
+    "promptTokens": 5600,
+    "completionTokens": 384,
+    "parseFails": 0,
+    "triggersPerWorld": 20.1,
+    "appliedPerWorld": 16.8
+   },
+   "BLo": {
+    "savings": 0.0377,
+    "E0": 0.756,
+    "E1": 0.8,
+    "E2": 0.794,
+    "fitness": 0.764,
+    "callsPerWorld": 0,
+    "promptTokens": 0,
+    "completionTokens": 0,
+    "parseFails": 0,
+    "triggersPerWorld": 20.5,
+    "appliedPerWorld": 18.4
+   }
+  }
+ }
+}
