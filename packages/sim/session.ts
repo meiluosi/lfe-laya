@@ -8,8 +8,9 @@ import type { Proposal, Request } from '../protocol/ecology.ts';
 
 export type Mode = 'rule' | 'random' | 'laya' | 'laya-memory' | 'rule-fallback' | 'learning' | 'no-laya' | 'frozen' | 'no-laya-frozen' | `evolved:${string}`;
 /** 进化出的先天策略（可带个体后天信念）。由外部注入，会话不依赖具体实现；信念不进入记录，所以不支持分支与完整恢复。 */
-export type EvolvedController = ((request: Request, seed: number) => Proposal) & { feedback?: (outcomes: { agentId: string; reward: number; terminated: boolean; energyBefore: number; energyAfter: number; action: string }[], next: Map<string, Request>) => void };
-export type EvolvedFactory = (name: string) => EvolvedController | null;
+export type EvolvedController = ((request: Request, seed: number) => Proposal) & { /** 观察者用：这个控制器把个体分成几种先天类型（由谱系决定，不是个体的输入） */ types?: { labels: string[]; of: (agentId: string) => number }; feedback?: (outcomes: { agentId: string; reward: number; terminated: boolean; energyBefore: number; energyAfter: number; action: string }[], next: Map<string, Request>) => void };
+/** ctx.parentOf 供“按谱系分配先天类型”的控制器使用（孩子继承父母的类型）；不会交给个体。 */
+export type EvolvedFactory = (name: string, ctx?: { parentOf: (agentId: string) => string | null }) => EvolvedController | null;
 const isEvolved = (mode: Mode) => mode.startsWith('evolved:');
 export type ModelRecord = { proposal: Proposal; input: unknown; raw_output: unknown; metadata: unknown; input_sha256: string; batch_ms: number; batch_size: number; amortized_ms: number };
 export type DecisionReply = { record: ModelRecord } | { identity: Request['identity']; error: string };
@@ -59,6 +60,7 @@ export class Session {
   private provider: Provider;
   private evolvedFactory?: EvolvedFactory;
   private evolved: EvolvedController | null = null;
+  private readonly lineageCtx = { parentOf: (id: string) => this.world.snapshot().lineage.find(l => l.id === id)?.parentId ?? null };
   private changed: () => void;
 
   constructor(config: Partial<Config>, provider: Provider, changed = () => {}, maxEntries = 2000, learning?: LearningPort, evolvedFactory?: EvolvedFactory) {
@@ -88,7 +90,7 @@ export class Session {
     this.error = null; this.status = this.paused ? 'paused' : 'running';
   }
   changeMode(mode: Mode): void {
-    const evolved = isEvolved(mode) ? this.evolvedFactory?.(mode.slice(8)) ?? null : null;
+    const evolved = isEvolved(mode) ? this.evolvedFactory?.(mode.slice(8), this.lineageCtx) ?? null : null;
     if (!['rule', 'random', 'laya', 'laya-memory', 'rule-fallback', 'learning', 'no-laya', 'frozen', 'no-laya-frozen'].includes(mode) && !evolved) throw Error('invalid_mode');
     if (mode === this.mode) return;
     this.invalidate(`mode:${this.mode}->${mode}`); this.mode = mode; this.evolved = evolved; this.changed();
@@ -104,12 +106,12 @@ export class Session {
   reset(config: Partial<Config>): void {
     this.learningBoundary();
     const next = new Ecology(config); this.invalidate('reset', false); this.world = next; this.initial = next.snapshot();
-    if (isEvolved(this.mode)) this.evolved = this.evolvedFactory?.(this.mode.slice(8)) ?? null;   // 新的一生：个体信念从头开始
+    if (isEvolved(this.mode)) this.evolved = this.evolvedFactory?.(this.mode.slice(8), this.lineageCtx) ?? null;   // 新的一生：个体信念从头开始
     this.entries = []; this.attempts = []; this.recordBytes = 0; this.branch = undefined; this.lastLearning = null; this.lastUpdates.clear(); this.stopped = false; this.lastRound = null; this.paused = true; this.status = 'paused'; this.changed();
   }
   restore(snapshot: Snapshot, mode: Mode = this.mode): void {
     const next = new Ecology(snapshot.config); next.restore(snapshot);
-    this.invalidate('restore', false); this.world = next; this.initial = next.snapshot(); this.mode = mode; this.evolved = isEvolved(mode) ? this.evolvedFactory?.(mode.slice(8)) ?? null : null;
+    this.invalidate('restore', false); this.world = next; this.initial = next.snapshot(); this.mode = mode; this.evolved = isEvolved(mode) ? this.evolvedFactory?.(mode.slice(8), this.lineageCtx) ?? null : null;
     this.entries = []; this.attempts = []; this.recordBytes = 0; this.branch = undefined; this.lastLearning = null; this.lastUpdates.clear(); this.stopped = false; this.lastRound = null; this.paused = true; this.status = 'paused'; this.changed();
   }
   fork(runId: string, change: BranchChange, changed = this.changed): Session {
@@ -276,6 +278,10 @@ export class Session {
     if (this.inFlight !== null || this.records.size || this.failures.size) throw Error('save_requires_committed_boundary');
     return copy({ format: 'ecology-recording-v1', simulator: ECOLOGY_VERSION, canResumeLearning: false,
       initial: this.initial, entries: this.entries, attempts: this.attempts, final: this.world.snapshot(), mode: this.mode, complete: true, stopReason: this.stopped ? 'record_capacity' : null, ...(this.branch ? { branch: this.branch } : {}) });
+  }
+  /** 观察者信息：当前在世个体的先天类型（只有按谱系分类型的进化策略才有）。 */
+  innate(): { labels: string[]; of: Record<string, number> } | null {
+    const t = this.evolved?.types; return t ? { labels: t.labels, of: Object.fromEntries(this.world.snapshot().agents.map(a => [a.id, t.of(a.id)])) } : null;
   }
   view() { return { status: this.status, paused: this.paused, error: this.error, mode: this.mode, pending: this.inFlight !== null, ready: this.records.size + (this.preparedLearning?.proposals.length ?? 0), failed: this.failures.size + Number(this.learningError), learningTransaction: this.learningTransaction, learningCommitPending: !!this.learningFeedback, learning: this.lastLearning, learningUpdates: [...this.lastUpdates.values()], entries: this.entries.length, attempts: this.attempts.length, capacity: this.maxEntries, recordBytes: this.recordBytes, roundMilliseconds: this.roundMilliseconds }; }
 }

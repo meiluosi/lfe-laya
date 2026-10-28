@@ -57,6 +57,14 @@ function resetAdapt() { adapt.good = []; adapt.bad = []; adaptSeq = -1; }
 function addAdapt(events: { seq: number; tick: number; kind: string; reason?: string }[]) {
   for (const e of events) { if (e.seq <= adaptSeq) continue; adaptSeq = e.seq; if (e.kind !== 'ate') continue; const w = Math.floor(e.tick / ADAPT_WINDOW); while (adapt.good.length <= w) { adapt.good.push(0); adapt.bad.push(0); } (e.reason === 'toxic' ? adapt.bad : adapt.good)[w]++; }
 }
+/** 观察者统计：按先天类型每 INNATE_EVERY tick 记一次在世个体数（只读快照，高水位去重；类型来自谱系，不进入个体输入）。 */
+const INNATE_EVERY = 50; const popBy = { ticks: [] as number[], counts: [] as number[][] };
+function resetPopBy() { popBy.ticks = []; popBy.counts = []; }
+function samplePopBy(tick: number) {
+  if (replay) return; const t = session.innate(); if (!t) return;
+  if (tick % INNATE_EVERY !== 0 || (popBy.ticks.length && tick <= popBy.ticks[popBy.ticks.length - 1])) return;
+  const c = t.labels.map(() => 0); for (const v of Object.values(t.of)) c[v]++; popBy.ticks.push(tick); popBy.counts.push(c);
+}
 const statusLabels = { paused: '已暂停', running: '运行中', waiting: '等待模型决策', ready: '结果已就绪 · 已暂停', error: '模型故障 · 已暂停', done: '运行结束', 'record-full': '记录已满 · 已暂停' };
 function notify(reply?: number, error?: string) {
   if (!replay) scrubbing = false;
@@ -65,7 +73,7 @@ function notify(reply?: number, error?: string) {
   const evidence=replay ? replay.evidence() : session.evidence(), last=replay ? evidence : session.lastRound;
   self.postMessage({ kind: 'state', reply, error: error ?? v.error, snapshot, paused: replay ? replayPaused : v.paused, speed, mode: replay ? 'replay' : v.mode,
     roundMs: v.roundMilliseconds, actualRate, status: replay ? (replayPaused ? '录制回放 · 已暂停' : '录制回放') : session.world.done() ? (snapshot.agents.length ? '时限结束' : '世界已灭绝') : statusLabels[v.status],
-    history: history.slice(), adapt: { windowTicks: adapt.windowTicks, good: adapt.good.slice(), bad: adapt.bad.slice() }, hash: stateHash(snapshot), runtime: v,
+    history: history.slice(), adapt: { windowTicks: adapt.windowTicks, good: adapt.good.slice(), bad: adapt.bad.slice() }, innate: replay ? null : (() => { const t = session.innate(); return t ? { ...t, every: INNATE_EVERY, ticks: popBy.ticks.slice(), counts: popBy.counts.map(c => c.slice()) } : null; })(), hash: stateHash(snapshot), runtime: v,
     branches: [...branches.values()].map(b=>({runId:b.world.snapshot().config.runId,active:b===session,mode:b.mode,source:b.branchInfo(),ticksPerSecond:b.world.snapshot().config.ticksPerSecond,tick:b.world.snapshot().tick,living:b.world.snapshot().agents.length,energy:b.world.snapshot().agents.reduce((sum,a)=>sum+a.energy,0),births:b.world.snapshot().metrics.births,deaths:b.world.snapshot().metrics.deaths})),
     learning: replay ? replay.learningEvidence().receipt : session.lastLearning,
     lastDecisions: last?.requests?.map((r, i) => ({ request: r, proposal: last.proposals![i], outcome: last.outcomes![i], model:evidence?.records.find(m=>m.proposal.identity.agentId===r.identity.agentId)??null, policyInput:evidence?.learning?.prepared.policyInputs.find(p=>p.agentId===r.identity.agentId)??null })) ?? [],
@@ -84,7 +92,7 @@ function addHistory() {
   if (scrubbing) return;
   const s = (replay?.world ?? session.world).snapshot();
   if (history.at(-1)?.tick === s.tick) return;
-  history.push(historyPoint(s)); addAdapt(s.events);
+  history.push(historyPoint(s)); addAdapt(s.events); samplePopBy(s.tick);
   if (history.length > 400) history.shift();
 }
 async function step(single = false) {
@@ -111,12 +119,12 @@ self.onmessage = async (event: MessageEvent<{ id: number; kind: string; config?:
       if(session.view().learningTransaction) throw Error('请先完成或取消当前学习事务。');
       operationBusy=true;ownsOperation=true;
     }
-    if (q.kind === 'reset') { session.cancelPending(); const currentId=session.world.snapshot().config.runId; await learning.close(currentId); for (const id of branches.keys()) if (id!==currentId) { try { await learning.close(id); } catch { /* 旧分支的学习运行可能已不存在 */ } } branches.clear(); compareId=null; session=new Session({...q.config,runId:`interactive-${crypto.randomUUID()}`},provider,()=>notify(),2000,learning,evolvedFactory); cancelTimer(); replay = null; replaySource = null; history.length = 0; resetAdapt(); actualRate = 0; }
+    if (q.kind === 'reset') { session.cancelPending(); const currentId=session.world.snapshot().config.runId; await learning.close(currentId); for (const id of branches.keys()) if (id!==currentId) { try { await learning.close(id); } catch { /* 旧分支的学习运行可能已不存在 */ } } branches.clear(); compareId=null; session=new Session({...q.config,runId:`interactive-${crypto.randomUUID()}`},provider,()=>notify(),2000,learning,evolvedFactory); cancelTimer(); replay = null; replaySource = null; history.length = 0; resetAdapt(); resetPopBy(); actualRate = 0; }
     else if (q.kind === 'play') { if (replay) replayPaused = false; else session.resume(); schedule(); }
     else if (q.kind === 'pause') { if (replay) replayPaused = true; else session.pause(); cancelTimer(); }
     else if (q.kind === 'step') { cancelTimer(); if (replay) replayPaused = true; await step(true); }
     else if (q.kind === 'speed') { if (![1, 4, 16].includes(Number(q.value))) throw Error('invalid_speed'); speed = Number(q.value); schedule(); }
-    else if (q.kind === 'mode') { if (replay) throw Error('回放期间不能改变大脑'); await learning.configure(session.world.snapshot().config.runId,String(q.value)); session.changeMode(q.value as Mode); schedule(); }
+    else if (q.kind === 'mode') { if (replay) throw Error('回放期间不能改变大脑'); await learning.configure(session.world.snapshot().config.runId,String(q.value)); session.changeMode(q.value as Mode); resetPopBy(); schedule(); }
     else if (q.kind === 'cancel-learning') { await session.cancelLearning(); cancelTimer(); }
     else if (q.kind === 'learning-checkpoint') {
       session.pause(); session.export(); const saved = await api('checkpoint',{run_id:session.world.snapshot().config.runId,world:session.world.snapshot()});
@@ -127,7 +135,7 @@ self.onmessage = async (event: MessageEvent<{ id: number; kind: string; config?:
       const restored=await api('restore',{run_id:runId,checkpoint_id:q.value});
       if(!branches.has(session.world.snapshot().config.runId)) await learning.close(session.world.snapshot().config.runId); learning.adopt(runId,restored.no_laya);
       session=new Session({},provider,()=>notify(),2000,learning,evolvedFactory);
-      session.restore(restored.world,restored.no_laya?(restored.frozen?'no-laya-frozen':'no-laya'):restored.frozen?'frozen':'learning');replay=null;replaySource=null;history.length=0;resetAdapt();
+      session.restore(restored.world,restored.no_laya?(restored.frozen?'no-laya-frozen':'no-laya'):restored.frozen?'frozen':'learning');replay=null;replaySource=null;history.length=0;resetAdapt();resetPopBy();
       self.postMessage({kind:'notice',text:'完整状态已恢复；世界保持暂停，可继续学习。'});
     }
     else if (q.kind === 'branch') {
@@ -143,20 +151,20 @@ self.onmessage = async (event: MessageEvent<{ id: number; kind: string; config?:
         branch=new Session({},provider,()=>notify(),2000,learning,evolvedFactory);branch.restore(restored.world,change.mode);
         branch.markBranch({sourceRunId:source.final.config.runId,sourceHash:stateHash(source.final),sourceTick:source.final.tick,change,original:session.mode});
       } else branch=session.fork(runId,change,()=>notify());
-      branches.set(source.final.config.runId,session);branches.set(runId,branch);session=branch;history.length=0;resetAdapt();actualRate=0;compareId=source.final.config.runId;
+      branches.set(source.final.config.runId,session);branches.set(runId,branch);session=branch;history.length=0;resetAdapt();resetPopBy();actualRate=0;compareId=source.final.config.runId;
     }
     else if(q.kind==='switch-branch') {
       session.pause();session.export();const next=branches.get(String(q.value));if(!next)throw Error('unknown_branch');
-      compareId=session.world.snapshot().config.runId;cancelTimer();session=next;session.pause();replay=null;replaySource=null;history.length=0;resetAdapt();actualRate=0;
+      compareId=session.world.snapshot().config.runId;cancelTimer();session=next;session.pause();replay=null;replaySource=null;history.length=0;resetAdapt();resetPopBy();actualRate=0;
     }
     else if(q.kind==='comparison') {
       session.pause();session.export();self.postMessage({kind:'comparison',data:{format:'ecology-comparison-v1',runs:[...branches.values()].map(b=>b.export()),note:'各分支模拟时间可能不同；只有匹配的时间窗口才能直接比较。'}});
     }
     else if (q.kind === 'retry') { if (replay) throw Error('回放不调用模型'); session.retry(); await step(true); }
     else if (q.kind === 'intervene') { if (replay) throw Error('回放不能改变环境，请先创建分支'); session.intervene(q.command!); schedule(); }
-    else if (q.kind === 'restore') { if(isLearning(session.mode)) throw Error('继续学习需要完整学习检查点。'); session.restore(q.snapshot!); replay = null; replaySource = null; cancelTimer(); history.length = 0; resetAdapt(); }
+    else if (q.kind === 'restore') { if(isLearning(session.mode)) throw Error('继续学习需要完整学习检查点。'); session.restore(q.snapshot!); replay = null; replaySource = null; cancelTimer(); history.length = 0; resetAdapt(); resetPopBy(); }
     else if (q.kind === 'export') { self.postMessage({ kind: 'recording', reply: q.id, recording: replay ? replaySource : session.export(), purpose: q.value }); }
-    else if (q.kind === 'replay') { const next = new Replay(q.recording!); session.pause();session.cancelPending(); cancelTimer(); replay = next; replaySource = q.recording!; replayPaused = true; scrubbing = false; history.length = 0; resetAdapt(); }
+    else if (q.kind === 'replay') { const next = new Replay(q.recording!); session.pause();session.cancelPending(); cancelTimer(); replay = next; replaySource = q.recording!; replayPaused = true; scrubbing = false; history.length = 0; resetAdapt(); resetPopBy(); }
     else if (q.kind === 'scrub-open') {
       if (replay) throw Error('已在回看');
       if (session.view().learningTransaction) throw Error('请先完成或取消当前学习事务。');

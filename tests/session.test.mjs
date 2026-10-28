@@ -165,3 +165,17 @@ test('evolved mode: injected controller proposes, receives feedback, replays fro
   assert.throws(() => s.fork('branch-x', { kind: 'controller', mode: 'random' }), /进化策略/);
   assert.throws(() => s.fork('branch-y', { kind: 'environment', parameter: 'supplyAmount', value: 2 }), /进化策略/);
 });
+
+test('evolved mode: factory gets a lineage lookup, and innate() reports observer-only types for living agents', async () => {
+  let ctx = null;
+  const factory = (name, c) => { if (name !== 'typed') return null; ctx = c; const type = new Map();
+    const of = id => { if (!type.has(id)) { const p = c.parentOf(id); type.set(id, p ? of(p) : type.size % 2); } return type.get(id); };
+    return Object.assign((r, seed) => { of(r.identity.agentId); return ruleProposal(r, seed); }, { types: { labels: ['甲', '乙'], of } }); };
+  const s = new Session({ seed: 5, runId: 'typed-test', initialAgents: 4 }, async () => { throw Error('no model'); }, () => {}, 2000, undefined, factory);
+  assert.equal(s.innate(), null);
+  s.changeMode('evolved:typed'); s.resume(); for (let i = 0; i < 5; i++) await s.advance(true);
+  assert.equal(typeof ctx.parentOf, 'function'); assert.equal(ctx.parentOf('nonexistent'), null);
+  const t = s.innate(); assert.deepEqual(t.labels, ['甲', '乙']);
+  const living = s.world.snapshot().agents.map(a => a.id); assert.deepEqual(Object.keys(t.of).sort(), living.slice().sort()); assert.ok(Object.values(t.of).every(v => v === 0 || v === 1));
+  s.changeMode('rule'); assert.equal(s.innate(), null);
+});

@@ -7,7 +7,8 @@ import { useStudio } from './useStudio';
 import { modeInfo } from './modeInfo';
 import type { Tool } from './stageRenderer';
 import { modes, shapes } from '../lab/labels';
-import { evolvedGenomes, ctxGenomes, evolvedLabel } from './genomes';
+import { evolvedGenomes, ctxGenomes, evolvedLabel, MIX } from './genomes';
+import { PopPanel } from './PopPanel';
 import { EnergyHistory } from '../lab/EnergyHistory';
 import { semanticPreset } from '../../packages/evo/semantic';
 import { kindStyle } from './kinds';
@@ -39,7 +40,7 @@ export default function Studio() {
 
   const reseed = () => {
     const n = Number(seed); if (!Number.isInteger(n) || n < 1 || n > 0xffffffff) { setError('种子须为 1–4294967295 的整数'); return; }
-    send('reset', { config: { ...(preset === 'semantic' ? semanticPreset(n) : preset === 'aba-cue' || preset === 'aba-off' ? semanticPreset(n, { drift: { everyTicks: 1200, fraction: 1, pattern: 'aba', cue: preset === 'aba-cue' ? 'true' : 'off' } }) : preset === 'half-off' ? semanticPreset(n, { drift: { everyTicks: 1200, fraction: 1, pattern: 'half', cue: 'off' } }) : preset === 'abab-off' || preset === 'long-off' ? semanticPreset(n, { horizon: 6000, drift: { everyTicks: 1200, fraction: 1, pattern: preset === 'abab-off' ? 'abab' : 'long', cue: 'off' } }) : PRESETS[preset]), seed: n, runId: `interactive-${n}-${serial.current}` } }); setSelected(null); setFitKey(k => k + 1);
+    send('reset', { config: { ...(preset === 'semantic' ? semanticPreset(n) : preset === 'aba-cue' || preset === 'aba-off' ? semanticPreset(n, { drift: { everyTicks: 1200, fraction: 1, pattern: 'aba', cue: preset === 'aba-cue' ? 'true' : 'off' } }) : preset === 'breed-abab' ? { ...semanticPreset(n, { horizon: 6000, drift: { everyTicks: 1200, fraction: 1, pattern: 'abab', cue: 'off' } }), reproduction: true, maxAge: 2400, birthThreshold: 26, birthCooldown: 150, supplyAmount: 20, initialAgents: 16 } : preset === 'half-off' ? semanticPreset(n, { drift: { everyTicks: 1200, fraction: 1, pattern: 'half', cue: 'off' } }) : preset === 'abab-off' || preset === 'long-off' ? semanticPreset(n, { horizon: 6000, drift: { everyTicks: 1200, fraction: 1, pattern: preset === 'abab-off' ? 'abab' : 'long', cue: 'off' } }) : PRESETS[preset]), seed: n, runId: `interactive-${n}-${serial.current}` } }); setSelected(null); setFitKey(k => k + 1);
   };
   const commands: Command[] = useMemo(() => [
     { id: 'reseed', label: '重新播种', hint: `按“实验”抽屉中的种子与场景`, run: reseed },
@@ -84,7 +85,7 @@ export default function Studio() {
   const insets = narrow ? { top: 108, bottom: 214 + (selected ? Math.round(innerHeight * .34) : 0), left: 12, right: 12 } : { top: 64, bottom: 176, left: 24, right: 24 };
 
   return <main className="studio" data-tone={info.tone} ref={root}>
-    <Stage ref={stage} snapshot={s} selected={selected} following={following} resources={resources} trails={trails} reduceMotion={reduceMotion} tool={tool} insets={insets} fitKey={fitKey} animate={!view.paused && !replay} ghosts={compare && compare.tick !== null ? compare.agents : null}
+    <Stage ref={stage} snapshot={s} selected={selected} following={following} resources={resources} trails={trails} reduceMotion={reduceMotion} tool={tool} insets={insets} fitKey={fitKey} innate={replay ? null : view.innate?.of ?? null} animate={!view.paused && !replay} ghosts={compare && compare.tick !== null ? compare.agents : null}
       decision={decision ? { agentId: decision.request.identity.agentId, chosen: decision.proposal.action, distribution: decision.proposal.distribution } : null}
       onAnchor={anchor} onSelect={setSelected} onPlace={place} onUserCamera={() => setFollowing(false)} onFrame={(ms, zoom) => setFrame({ ms, zoom })}/>
 
@@ -102,6 +103,7 @@ export default function Studio() {
     {s.config.semantic && <aside className="legend" aria-label="食物种类图例（观察者）"><strong>食物种类</strong><small>形状与颜色是任意分配的；「真实影响」只有观察者看得到，个体只看得到描述。</small>
       <ul>{s.config.semantic.kinds.map((k, i) => { const st = kindStyle(i); return <li key={k.description}><i className={`k-${st.shape}`} style={{ background: st.css, color: st.css }}/><span>{k.description}</span><b className={k.factor > 0 ? 'pos' : k.factor < 0 ? 'neg' : ''}>{k.factor > 0 ? '+' : ''}{k.factor}</b></li>; })}</ul></aside>}
     <AdaptPanel view={view}/>
+    <PopPanel view={view}/>
     <nav className="dock" aria-label="环境工具">
       {([['observe', '观察'], ['nutrient', '营养'], ['obstacle', '障碍'], ['erase', '擦除']] as const).map(([id, name]) => <button key={id} aria-pressed={tool === id} disabled={!!replay && id !== 'observe'} onClick={() => setTool(id)}>{name}</button>)}
       <span className="dock-sep"/>
@@ -127,11 +129,11 @@ export default function Studio() {
     {drawer && <aside className="drawer" aria-label="实验">
       <div className="drawer-head"><h2>实验</h2><button onClick={() => setDrawer(false)} aria-label="关闭实验抽屉">×</button></div>
       <h3>新世界</h3>
-      <label>场景<select aria-label="播种场景" value={preset} onChange={e => setPreset(e.target.value)}><option value="ecology">繁殖生态</option><option value="l1">L1 资源变化 · 固定初始队列</option><option value="semantic">语义食物（实验性 · 新描述词）</option><option value="aba-cue">语义食物 · A/B/A 反转（环境线索开）</option><option value="aba-off">语义食物 · A/B/A 反转（无线索）</option><option value="half-off">语义食物 · 部分反转 A/B′/A（无线索）</option><option value="abab-off">语义食物 · 多次反转 A/B/A/B/A（无线索）</option><option value="long-off">语义食物 · 长停留 A/B/B/B/A（无线索）</option></select></label>
+      <label>场景<select aria-label="播种场景" value={preset} onChange={e => setPreset(e.target.value)}><option value="ecology">繁殖生态</option><option value="l1">L1 资源变化 · 固定初始队列</option><option value="semantic">语义食物（实验性 · 新描述词）</option><option value="aba-cue">语义食物 · A/B/A 反转（环境线索开）</option><option value="aba-off">语义食物 · A/B/A 反转（无线索）</option><option value="half-off">语义食物 · 部分反转 A/B′/A（无线索）</option><option value="abab-off">语义食物 · 多次反转 A/B/A/B/A（无线索）</option><option value="breed-abab">繁殖生态 · 多次反转 A/B/A/B/A（无线索，混合种群用）</option><option value="long-off">语义食物 · 长停留 A/B/B/B/A（无线索）</option></select></label>
       <label>种子<input aria-label="世界种子" value={seed} onChange={e => setSeed(e.target.value)} inputMode="numeric"/></label>
       <button onClick={reseed}>重新播种</button>
       <h3>大脑</h3>
-      <label><select aria-label="大脑模式" disabled={!!replay} value={view.mode} onChange={e => send('mode', { value: e.target.value })}>{BRAINS.map(([v, n]) => <option key={v} value={v}>{n}</option>)}{[...Object.keys(evolvedGenomes), ...Object.keys(ctxGenomes)].map(n => <option key={n} value={`evolved:${n}`}>{evolvedLabel(n)}</option>)}{replay && <option value="replay">录制回放</option>}</select></label>
+      <label><select aria-label="大脑模式" disabled={!!replay} value={view.mode} onChange={e => send('mode', { value: e.target.value })}>{BRAINS.map(([v, n]) => <option key={v} value={v}>{n}</option>)}{[...Object.keys(evolvedGenomes), ...Object.keys(ctxGenomes), ...(ctxGenomes['ctx-plain'] && ctxGenomes['ctx-regime'] ? [MIX] : [])].map(n => <option key={n} value={`evolved:${n}`}>{evolvedLabel(n)}</option>)}{replay && <option value="replay">录制回放</option>}</select></label>
       <h3>同起点对照</h3>
       {['learning', 'no-laya', 'frozen', 'no-laya-frozen'].includes(view.mode)
         ? <button disabled={!!view.runtime.learningTransaction || view.mode.endsWith('frozen') || !!replay} onClick={() => send('branch', { value: { kind: 'controller', mode: view.mode === 'no-laya' ? 'no-laya-frozen' : 'frozen' } })}>创建暂停学习的分支</button>

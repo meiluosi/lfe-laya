@@ -18,6 +18,8 @@ export type StageProps = {
   /** 画布四周被浮层占用的像素，适配视野时避开。 */
   insets: { top: number; bottom: number; left: number; right: number };
   fitKey: number;
+  /** 观察者信息：个体 id → 先天类型序号（色环）；null 表示没有分类型 */
+  innate?: Record<string, number> | null;
 };
 export type StageEvents = { onSelect: (id: string | null) => void; onPlace: (x: number, y: number) => void; onUserCamera: () => void; onFrame: (ms: number, zoom: number) => void;
   /** 每帧报告选中个体的屏幕位置（像素，相对画布）；未选中或不在场时 visible=false。 */
@@ -25,6 +27,7 @@ export type StageEvents = { onSelect: (id: string | null) => void; onPlace: (x: 
 
 /** 语义缩放阈值（每世界单位的像素数）：低于 FAR 只画简化标记，高于 NEAR 显示决策箭头。 */
 export const FAR = 26, NEAR = 56;
+export const TYPE_RING = [0xf0b35a, 0x8fd0ff];
 export const SHAPE_COLORS = [0xadd6b3, 0x90c9d8, 0xd7c493];
 /** 营养参考上限（单格）：固定值，使不同时刻/不同分支的颜色可比。 */
 export const FIELD_REF = 5;
@@ -199,6 +202,7 @@ export class StageRenderer {
     for (const a of agents) {
       if (scale < FAR) this.drawMarker(b, a, scale, a.id === p.selected);
       else this.drawAgent(b, a, s, reduce || !p.animate ? 0 : performance.now() / 60, a.id === p.selected, scale);
+      const ty = p.innate?.[a.id]; if (ty !== undefined) b.circle(a.x, a.y, scale < FAR ? Math.max(.22, 5 / scale) * 1.7 : .44 * a.traits.size * 1.35).stroke({ color: TYPE_RING[ty] ?? 0xffffff, alpha: .95, width: 2 / scale });
     }
     if (sel) this.drawAnnotations(b, sel, s, scale, p.decision?.agentId === sel.id ? p.decision : null);
     if (sel) this.events.onAnchor(ctr.x + (sel.x - this.cam.x) * scale, ctr.y + (sel.y - this.cam.y) * scale, .36 * sel.traits.size * scale, true);

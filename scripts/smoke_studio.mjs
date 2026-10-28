@@ -111,6 +111,20 @@ await withPage(async ({ page, base, problems, browserName }) => {
   await page.getByRole('button', { name: '实验', exact: true }).click(); await page.getByLabel('播种场景').selectOption('ecology'); await page.getByRole('button', { name: '重新播种' }).click();
   await adapt.waitFor({ state: 'detached' }); await page.getByRole('button', { name: '关闭实验抽屉' }).click();
 
+  // 混合种群：繁殖场景 + 混合大脑 → 种群面板出现并有两条曲线；起初两类型各半；换回普通大脑后面板消失
+  await page.getByRole('button', { name: '实验', exact: true }).click();
+  await page.getByLabel('播种场景').selectOption('breed-abab'); await page.getByRole('button', { name: '重新播种' }).click();
+  assert.equal(await page.getByTestId('pop-panel').count(), 0, '没有分类型的大脑时不应出现种群面板');
+  await page.getByLabel('大脑模式').selectOption('evolved:mix-plain-regime');
+  const pop = page.getByTestId('pop-panel'); await pop.waitFor({ timeout: 10000 });
+  assert.deepEqual([await page.getByTestId('pop-count-0').innerText(), await page.getByTestId('pop-count-1').innerText()], ['8', '8'], '初始 16 个体应各类型 8 个');
+  await page.getByRole('button', { name: '关闭实验抽屉' }).click();
+  await page.getByRole('button', { name: '16×' }).click(); await page.getByRole('button', { name: '播放', exact: true }).click();
+  await page.waitForFunction(() => document.querySelectorAll('.pop polyline').length === 2 && [...document.querySelectorAll('.pop polyline')].every(l => l.getAttribute('points').split(' ').length >= 3), null, { timeout: 60000 });
+  await page.getByRole('button', { name: '暂停', exact: true }).click();
+  await page.getByRole('button', { name: '实验', exact: true }).click(); await page.getByLabel('大脑模式').selectOption('random');
+  await pop.waitFor({ state: 'detached' }); await page.getByRole('button', { name: '关闭实验抽屉' }).click();
+
   // 窄屏：无横向溢出，播放控件可见
   await page.setViewportSize({ width: 390, height: 844 }); await page.waitForTimeout(300);
   assert.ok(await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth) <= 0, '窄屏横向溢出');
