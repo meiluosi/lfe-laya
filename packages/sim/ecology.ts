@@ -30,7 +30,9 @@ export type SemanticDrift = { everyTicks: number; flip: number[];
   /** 可选的多状态日程：states[s] 是状态 s 里取反的种类；schedule[p] 是第 p 个阶段（⌊tick/everyTicks⌋，超出则取最后一个）所处的状态。例如 A/B/A：states=[[],全部]，schedule=[0,1,0]；A/B/C：states=[[],全部,一半]，schedule=[0,1,2]。缺省回到奇偶交替。 */
   states?: number[][]; schedule?: number[];
   /** 可选的环境线索：以观测里的 season 句子出现。mode 'true'：状态 s 显示 texts[s]（同一状态总是同一句）；'random'：每个阶段随机一句，与状态无关；'off'：不显示。 */
-  cue?: { texts: string[]; mode: 'true' | 'off' | 'random' } };
+  cue?: { texts: string[]; mode: 'true' | 'off' | 'random' };
+  /** 可选（默认关闭）：反转后原本有益的种类造成的伤害系数（正数，如 4 = 每口损失 4×食量的能量，受能量封顶）；缺省为 1（普通取反）。用来让“反转后没及时调整”要命。 */
+  flipHarm?: number };
 /** 延迟（可选）：吃下后，营养/毒性在 ticks 个模拟步之后才作用于个体；其间这部分能量记为“在途”。个体生效时会有一句自身感受的语言描述。 */
 /** 延迟后果。spread 缺省为固定延迟；mode 'jitter'：每一口的延迟在 ticks±spread 内均匀取整（由 个体、时刻、种类 的哈希决定，不消耗随机数源）；mode 'kind'：每个种类固定为 ticks−spread 或 ticks+spread（由种类序号的哈希决定）。 */
 export type SemanticDelay = { ticks: number; spread?: number; mode?: 'jitter' | 'kind' };
@@ -114,7 +116,7 @@ function validateSemantic(c: Config): void {
   if (sem.delay !== undefined && (!sem.delay || Object.keys(sem.delay).some(k => k !== 'ticks' && k !== 'spread' && k !== 'mode') || !Number.isInteger(sem.delay.ticks) || sem.delay.ticks < 1 || sem.delay.ticks > 600 || (sem.delay.spread === undefined) !== (sem.delay.mode === undefined) || (sem.delay.spread !== undefined && (!Number.isInteger(sem.delay.spread) || sem.delay.spread < 1 || sem.delay.spread >= sem.delay.ticks || sem.delay.ticks + sem.delay.spread > 600 || (sem.delay.mode !== 'jitter' && sem.delay.mode !== 'kind'))))) throw Error('invalid_semantic_delay');
   if (sem.drift !== undefined) {
     const d = sem.drift;
-    if (!d || Object.keys(d).some(k => !['everyTicks', 'flip', 'states', 'schedule', 'cue'].includes(k)) || !Number.isInteger(d.everyTicks) || d.everyTicks < 100 || !Array.isArray(d.flip) || d.flip.length < 1 || new Set(d.flip).size !== d.flip.length || d.flip.some(i => !Number.isInteger(i) || i < 0 || i >= sem.kinds.length)) throw Error('invalid_semantic_drift');
+    if (!d || Object.keys(d).some(k => !['everyTicks', 'flip', 'states', 'schedule', 'cue', 'flipHarm'].includes(k)) || (d.flipHarm !== undefined && !(Number.isFinite(d.flipHarm) && d.flipHarm >= 1 && d.flipHarm <= 8)) || !Number.isInteger(d.everyTicks) || d.everyTicks < 100 || !Array.isArray(d.flip) || d.flip.length < 1 || new Set(d.flip).size !== d.flip.length || d.flip.some(i => !Number.isInteger(i) || i < 0 || i >= sem.kinds.length)) throw Error('invalid_semantic_drift');
     const okSet = (a: unknown) => Array.isArray(a) && new Set(a).size === a.length && a.every(i => Number.isInteger(i) && i >= 0 && i < sem.kinds.length);
     if ((d.states === undefined) !== (d.schedule === undefined)) throw Error('invalid_semantic_drift');
     if (d.states !== undefined && (!Array.isArray(d.states) || d.states.length < 2 || d.states.length > 8 || !d.states.every(okSet) || !Array.isArray(d.schedule) || d.schedule.length < 1 || d.schedule.length > 64 || d.schedule.some(i => !Number.isInteger(i) || i < 0 || i >= d.states!.length))) throw Error('invalid_semantic_drift');
@@ -427,6 +429,7 @@ export class Ecology {
             // 语义食物：真实影响由模拟器按种类结算。吃下的食物量一律从场中消失；个体得到 amount*factor（可为负）。
             const idx = s.kinds[cell], drift = c.semantic!.drift, flipped = this.driftFlipped(idx);
             const rip = c.semantic!.ripening; let factor = c.semantic!.kinds[idx].factor * (rip && rip.perishable[idx] ? rip.multipliers[this.stage(idx)] : 1) * (flipped ? -1 : 1); s.food[cell] -= amount;
+            if (flipped && drift?.flipHarm && c.semantic!.kinds[idx].factor > 0) factor = -drift.flipHarm;
             if (factor > 1) factor = 1;   // 漂移把有害种类（|factor| 可达 harmCap）翻成有益时，食物提供的能量不得多于食物本身（否则凭空造能、超出容量）
             if (a.social) { const d = this.describe(idx), last = a.social.ate[a.social.ate.length - 1]; if (last && last.desc === d) last.tick = s.tick; else { a.social.ate.push({ desc: d, tick: s.tick }); if (a.social.ate.length > 6) a.social.ate.shift(); } }   // 一次决策里连续的几口算同一餐
             if (a.pending) {

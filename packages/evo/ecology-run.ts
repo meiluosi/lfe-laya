@@ -13,6 +13,7 @@ export type TypeSpec = { label: string; learner: Learner; genes?: number[]; prio
 export type EcologySpec = {
   seed: number; pool: string; split: 'train' | 'test'; priors: Priors;
   pattern: 'aba' | 'abab' | 'long' | 'half'; cue: 'off' | 'true' | 'random';
+  /** 反转后原本有益的种类的伤害系数（默认关闭）；G10 致命反转世界 */ flipHarm?: number;
   supply: number; threshold: number; init: number; maxAge?: number; cooldown?: number;
   /** 初始个体按顺序轮流分配这些类型（纯种群：只有一个；混合：两个；中性对照：两个标签、同一基因组） */
   types: TypeSpec[];
@@ -43,7 +44,7 @@ const make = (t: TypeSpec, priors: Priors) => {
 };
 export function runEcology(spec: EcologySpec): EcologyResult {
   const np = PHASES[spec.pattern];
-  const cfg = { ...semanticWorldConfig({ seed: spec.seed, options: { split: spec.split, pool: spec.pool, sensible: 6, harmCap: 1, inversion: 0, horizon: np * PHASE, drift: { everyTicks: PHASE, fraction: 1, pattern: spec.pattern, cue: spec.cue } } }), reproduction: true, maxAge: spec.maxAge ?? 2400, birthThreshold: spec.threshold, birthCooldown: spec.cooldown ?? 150, supplyAmount: spec.supply, initialAgents: spec.init };
+  const cfg = { ...semanticWorldConfig({ seed: spec.seed, options: { split: spec.split, pool: spec.pool, sensible: 6, harmCap: 1, inversion: 0, horizon: np * PHASE, drift: { everyTicks: PHASE, fraction: 1, pattern: spec.pattern, cue: spec.cue, ...(spec.flipHarm ? { flipHarm: spec.flipHarm } : {}) } } }), reproduction: true, maxAge: spec.maxAge ?? 2400, birthThreshold: spec.threshold, birthCooldown: spec.cooldown ?? 150, supplyAmount: spec.supply, initialAgents: spec.init };
   const w = new Ecology(cfg), cohorts = spec.types.map(t => make(t, spec.priors));
   const typeIndex = new Map<string, number>(); let nextRoot = 0;
   const parentOf = (id: string) => w.snapshot().lineage.find(l => l.id === id)?.parentId ?? null;

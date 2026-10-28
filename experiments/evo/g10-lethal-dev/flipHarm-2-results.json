@@ -1,0 +1,143 @@
+{
+  "protocol": "dev",
+  "dev": true,
+  "worldsPerCell": 12,
+  "worldsPerMixedCell": 12,
+  "supply": 20,
+  "threshold": 26,
+  "init": 16,
+  "pool": "train",
+  "seeds": [
+    201,
+    202
+  ],
+  "primary": [
+    {
+      "id": "H1",
+      "claim": "abab：regime 建立率 − plain ≥ +0.08",
+      "statistic": 0.0417,
+      "threshold": 0.08,
+      "effectOk": false,
+      "p": 0.5,
+      "holmReject": false,
+      "supported": false,
+      "perSeed": [
+        -0.1667,
+        0.25
+      ]
+    },
+    {
+      "id": "H2",
+      "claim": "abab：regime 最后两阶段平均个体数相对 plain 的比例差 ≥ +10%（分母 max(plain, 1)）",
+      "statistic": 0.3264,
+      "threshold": 0.1,
+      "effectOk": true,
+      "p": 0.5,
+      "holmReject": false,
+      "supported": false,
+      "perSeed": [
+        -0.0947,
+        0.7475
+      ]
+    },
+    {
+      "id": "H3",
+      "claim": "abab：regime 恢复比 − plain ≥ +0.05",
+      "statistic": 0.0412,
+      "threshold": 0.05,
+      "effectOk": false,
+      "p": 0.5,
+      "holmReject": false,
+      "supported": false,
+      "perSeed": [
+        -0.0507,
+        0.1332
+      ]
+    },
+    {
+      "id": "H4",
+      "claim": "half：regime 最后两阶段平均个体数 − plain > -1.5（非劣效）",
+      "statistic": -0.0593,
+      "threshold": -1.5,
+      "effectOk": true,
+      "p": 0.25,
+      "holmReject": false,
+      "supported": false,
+      "perSeed": [
+        -0.4698,
+        0.3513
+      ]
+    }
+  ],
+  "pure": {
+    "201": {
+      "abab": {
+        "plain": {
+          "established": 0.75,
+          "births": 66.83333333333333,
+          "meanLast2": 5.404513888888888,
+          "recovery": 0.2938436031032023,
+          "extinct": 0.25
+        },
+        "regime": {
+          "established": 0.5833333333333334,
+          "births": 61.083333333333336,
+          "meanLast2": 4.892927234299516,
+          "recovery": 0.24311625306842033,
+          "extinct": 0.4166666666666667
+        }
+      },
+      "half": {
+        "plain": {
+          "established": 0.5833333333333334,
+          "births": 37.166666666666664,
+          "meanLast2": 5.199537037037037,
+          "recovery": 0.3048350425545701,
+          "extinct": 0.4166666666666667
+        },
+        "regime": {
+          "established": 0.5,
+          "births": 31,
+          "meanLast2": 4.72974537037037,
+          "recovery": 0.18947322657453947,
+          "extinct": 0.5
+        }
+      }
+    },
+    "202": {
+      "abab": {
+        "plain": {
+          "established": 0.25,
+          "births": 48,
+          "meanLast2": 2.6385732323232323,
+          "recovery": 0.14608289535318578,
+          "extinct": 0.75
+        },
+        "regime": {
+          "established": 0.5,
+          "births": 54.583333333333336,
+          "meanLast2": 4.610863095238096,
+          "recovery": 0.27924606559024373,
+          "extinct": 0.5
+        }
+      },
+      "half": {
+        "plain": {
+          "established": 0.5833333333333334,
+          "births": 36.916666666666664,
+          "meanLast2": 5.558432539682541,
+          "recovery": 0.27448353008594445,
+          "extinct": 0.4166666666666667
+        },
+        "regime": {
+          "established": 0.6666666666666666,
+          "births": 35.166666666666664,
+          "meanLast2": 5.909722222222221,
+          "recovery": 0.24178040956017854,
+          "extinct": 0.3333333333333333
+        }
+      }
+    }
+  },
+  "mixedDescriptive": {}
+}

@@ -68,3 +68,12 @@ test('latent (sticky-CRP comparator): genes bounded; an impossible new table (al
   assert.equal(run([...V2, .05, 20, 1, .5]).maxTables, 1);
   const a = run([...V2, .5, 4, .2, .9]), b = run([...V2, .5, 4, .2, .9]); assert.ok(a.maxTables > 1); assert.deepEqual(a, b);
 });
+
+test('flipHarm (default off): identical before the first reversal, harsher after; undefined/absent equals the old behaviour', async () => {
+  const { ruleProposal } = await import('../packages/sim/controllers.ts');
+  const mk = (flipHarm) => new Ecology(semanticWorldConfig({ seed: 61, options: { split: 'test', pool: 'test', sensible: 6, harmCap: 1, inversion: 0, horizon: 2000, drift: { everyTicks: 1000, fraction: 1, pattern: 'aba', cue: 'off', ...(flipHarm ? { flipHarm } : {}) } } }));
+  const run = (w, until) => { while (w.snapshot().tick < until && !w.done()) { const r = w.step(w.requests().map(q => ruleProposal(q, 61))); assert.ok(r.accepted); } const sn = w.snapshot(); return JSON.stringify([sn.agents.map(a => a.energy.toFixed(4)), sn.metrics.deaths, sn.metrics.eaten.toFixed(4), sn.ledger.semanticLoss.toFixed(4)]); };
+  const off = mk(0), absent = mk(undefined), harsh = mk(4);
+  assert.equal(run(off, 990), run(absent, 990)); assert.equal(run(harsh, 990), run(mk(0), 990));
+  const a = run(mk(0), 1900), b = run(harsh, 1900); assert.notEqual(a, b);
+});

@@ -18,6 +18,7 @@ const SEEDS = dev || !args.includes('--seeds') ? ALL_SEEDS : opt('seeds', '').sp
 if (SEEDS.some(s => !ALL_SEEDS.includes(s))) throw Error('seed_not_in_protocol');
 const N = dev ? Number(opt('worlds', '6')) : 48, NMIX = dev ? N : 12, MODE = dev ? opt('mode', 'all') : 'all';
 const SUPPLY = dev ? Number(opt('supply', '20')) : 20, THR = dev ? Number(opt('threshold', '26')) : 26, INIT = dev ? Number(opt('init', '16')) : 16;
+const FLIP = dev ? Number(opt('flipHarm', '0')) : 0;   // 开发期：反转后原本有益的种类的伤害系数（G10 致命反转世界；正式预注册 19 为 0）
 const POOL = dev ? opt('pool', 'train') : 'heldout', SPLIT = (dev ? opt('split', 'train') : 'test') as 'train' | 'test';
 const PREFIX = 'experiments/evo/f17-laya-';
 const DIRS: Record<string, string> = dev ? Object.fromEntries(opt('dirs', 'plain=experiments/evo/dev-aba-laya-plain,regime=experiments/evo/dev-aba-laya-regime').split(',').map(x => x.split('='))) : {};
@@ -39,7 +40,7 @@ function runSeed(s: number): SeedOut {
   const pure: SeedOut['pure'] = {}, mixed: SeedOut['mixed'] = {};
   for (const pattern of PATTERNS) {
     const world = (i: number) => BASE + PATTERN_OFFSET[pattern] + i;
-    const run = (types: TypeSpec[], i: number) => runEcology({ seed: world(i), pool: POOL, split: SPLIT, priors, pattern, cue: 'off', supply: SUPPLY, threshold: THR, init: INIT, types });
+    const run = (types: TypeSpec[], i: number) => runEcology({ seed: world(i), pool: POOL, split: SPLIT, priors, pattern, cue: 'off', ...(FLIP ? { flipHarm: FLIP } : {}), supply: SUPPLY, threshold: THR, init: INIT, types });
     const share = (rs: EcologyResult[], a: string) => rs.filter(r => r.finalLiving > 0).map(r => r.finalByType[a] / r.finalLiving);
     if (MODE === 'pure' || MODE === 'all') {
       pure[pattern] = {}; for (const l of LEARNERS) pure[pattern][l] = summarize(Array.from({ length: N }, (_, i) => run([spec(l, s)], i)));

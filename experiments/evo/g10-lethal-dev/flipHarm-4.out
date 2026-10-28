@@ -1,0 +1,5 @@
+seed 201 abab pure {"plain":{"est":0.1667,"pop":1.5,"rec":0.07},"regime":{"est":0.1667,"pop":1,"rec":0.05}}
+seed 201 half pure {"plain":{"est":0.5833,"pop":4.1,"rec":0.23},"regime":{"est":0.5833,"pop":3.3,"rec":0.12}}
+seed 202 abab pure {"plain":{"est":0.4167,"pop":2.7,"rec":0.16},"regime":{"est":0,"pop":0,"rec":0}}
+seed 202 half pure {"plain":{"est":0.5833,"pop":3.9,"rec":0.19},"regime":{"est":0.4167,"pop":3.6,"rec":0.15}}
+[{"id":"H1","stat":-0.2083,"thr":0.08,"p":1,"supported":false},{"id":"H2","stat":-0.6544,"thr":0.1,"p":1,"supported":false},{"id":"H3","stat":-0.0916,"thr":0.05,"p":1,"supported":false},{"id":"H4","stat":-0.5761,"thr":-1.5,"p":0.25,"supported":false}]
