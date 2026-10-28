@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 预注册 21 训练批次的运行器（可重入）：32 次独立进化，先验 laya × 学习器 {bayes,bayes-off} × 种子 221–236，
+# 预注册 21 训练批次的运行器（可重入）：32 次独立进化，先验 laya × 学习器 {benv,benv-off} × 种子 221–236，
 # 参数与 docs/PREREGISTRATION_21.md §2 的冻结命令模板逐项一致。
 # 用法：bash scripts/run-f21.sh [并发数，默认 6]
 set -u
@@ -24,7 +24,7 @@ run_one() {
 }
 
 todo=()
-for p in laya; do for l in bayes bayes-off; do for s in 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236; do
+for p in laya; do for l in benv benv-off; do for s in 221 222 223 224 225 226 227 228 229 230 231 232 233 234 235 236; do
   [ -f "experiments/evo/f21-$p-$l-$s/final.json" ] || todo+=("$p:$l:$s")
 done; done; done
 echo "待运行 ${#todo[@]} 个，并发 $CONC"
