@@ -1,0 +1,33 @@
+seed 235 mushroom K6 plain     aba-off fit 0.720 sav -0.13 | abab-off fit 0.593 sav -0.14 | half-off fit 0.629 sav -0.03
+seed 235 mushroom K6 regime    aba-off fit 0.755 sav 0.11 | abab-off fit 0.723 sav 0.05 | half-off fit 0.663 sav 0.09
+seed 235 mushroom K6 cue       aba-off fit 0.392 sav -0.28 | aba-true fit 0.832 sav 0.25 | abab-off fit 0.238 sav -0.40 | half-off fit 0.495 sav -0.19
+seed 235 mushroom K6 latent    aba-off fit 0.778 sav -0.00 | abab-off fit 0.571 sav -0.43 | half-off fit 0.631 sav -0.11
+seed 235 mushroom K12 plain    aba-off fit 0.545 sav -0.21 | abab-off fit 0.427 sav -0.18 | half-off fit 0.493 sav -0.09
+seed 235 mushroom K12 regime   aba-off fit 0.644 sav 0.22 | abab-off fit 0.612 sav 0.15 | half-off fit 0.486 sav 0.17
+seed 235 mushroom K12 cue      aba-off fit 0.385 sav -0.15 | aba-true fit 0.798 sav 0.30 | abab-off fit 0.244 sav -0.23 | half-off fit 0.437 sav -0.07
+seed 235 mushroom K12 latent   aba-off fit 0.698 sav -0.02 | abab-off fit 0.488 sav -0.30 | half-off fit 0.523 sav -0.03
+seed 235 heldout K6 plain      aba-off fit 0.745 sav -0.18 | abab-off fit 0.649 sav -0.08 | half-off fit 0.672 sav -0.00
+seed 235 heldout K6 regime     aba-off fit 0.886 sav 0.11 | abab-off fit 0.789 sav 0.15 | half-off fit 0.674 sav 0.10
+seed 235 heldout K6 cue        aba-off fit 0.444 sav -0.38 | aba-true fit 0.906 sav 0.23 | abab-off fit 0.237 sav -0.18 | half-off fit 0.516 sav -0.19
+seed 235 heldout K6 latent     aba-off fit 0.874 sav 0.02 | abab-off fit 0.610 sav -0.26 | half-off fit 0.704 sav -0.03
+seed 235 heldout K12 plain     aba-off fit 0.582 sav -0.23 | abab-off fit 0.433 sav -0.24 | half-off fit 0.632 sav -0.13
+seed 235 heldout K12 regime    aba-off fit 0.749 sav 0.21 | abab-off fit 0.684 sav 0.25 | half-off fit 0.660 sav 0.10
+seed 235 heldout K12 cue       aba-off fit 0.423 sav -0.22 | aba-true fit 0.880 sav 0.32 | abab-off fit 0.241 sav -0.41 | half-off fit 0.555 sav -0.11
+seed 235 heldout K12 latent    aba-off fit 0.757 sav 0.07 | abab-off fit 0.554 sav -0.20 | half-off fit 0.699 sav -0.06
+seed 236 mushroom K6 plain     aba-off fit 0.714 sav -0.13 | abab-off fit 0.592 sav -0.17 | half-off fit 0.631 sav -0.09
+seed 236 mushroom K6 regime    aba-off fit 0.764 sav 0.14 | abab-off fit 0.705 sav 0.04 | half-off fit 0.658 sav 0.12
+seed 236 mushroom K6 cue       aba-off fit 0.352 sav -0.75 | aba-true fit 0.953 sav 0.25 | abab-off fit 0.205 sav -0.73 | half-off fit 0.536 sav 0.26
+seed 236 mushroom K6 latent    aba-off fit 0.761 sav 0.00 | abab-off fit 0.693 sav -0.15 | half-off fit 0.669 sav -0.08
+seed 236 mushroom K12 plain    aba-off fit 0.522 sav -0.25 | abab-off fit 0.399 sav -0.18 | half-off fit 0.509 sav -0.07
+seed 236 mushroom K12 regime   aba-off fit 0.648 sav 0.18 | abab-off fit 0.598 sav 0.15 | half-off fit 0.504 sav 0.17
+seed 236 mushroom K12 cue      aba-off fit 0.331 sav -0.06 | aba-true fit 0.889 sav 0.36 | abab-off fit 0.201 sav -0.63 | half-off fit 0.467 sav 0.35
+seed 236 mushroom K12 latent   aba-off fit 0.740 sav 0.07 | abab-off fit 0.649 sav -0.20 | half-off fit 0.542 sav -0.05
+seed 236 heldout K6 plain      aba-off fit 0.768 sav -0.25 | abab-off fit 0.601 sav -0.22 | half-off fit 0.682 sav -0.15
+seed 236 heldout K6 regime     aba-off fit 0.886 sav 0.12 | abab-off fit 0.759 sav 0.16 | half-off fit 0.723 sav 0.12
+seed 236 heldout K6 cue        aba-off fit 0.359 sav -0.75 | aba-true fit 0.941 sav 0.27 | abab-off fit 0.216 sav -0.75 | half-off fit 0.504 sav 0.27
+seed 236 heldout K6 latent     aba-off fit 0.895 sav 0.02 | abab-off fit 0.713 sav -0.09 | half-off fit 0.697 sav -0.02
+seed 236 heldout K12 plain     aba-off fit 0.614 sav -0.29 | abab-off fit 0.467 sav -0.28 | half-off fit 0.614 sav -0.28
+seed 236 heldout K12 regime    aba-off fit 0.753 sav 0.24 | abab-off fit 0.678 sav 0.24 | half-off fit 0.682 sav 0.10
+seed 236 heldout K12 cue       aba-off fit 0.344 sav -0.60 | aba-true fit 0.935 sav 0.37 | abab-off fit 0.211 sav -0.64 | half-off fit 0.530 sav 0.26
+seed 236 heldout K12 latent    aba-off fit 0.824 sav 0.09 | abab-off fit 0.668 sav -0.00 | half-off fit 0.681 sav 0.01
+not all seeds present yet; no analysis

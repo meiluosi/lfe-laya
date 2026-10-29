@@ -1,0 +1,524 @@
+{
+  "protocol": "docs/PREREGISTRATION_20.md",
+  "dev": false,
+  "worldsPerCell": 24,
+  "K": [
+    6,
+    12
+  ],
+  "harmCap": 1,
+  "seeds": [
+    221,
+    222,
+    223,
+    224,
+    225,
+    226,
+    227,
+    228,
+    229,
+    230,
+    231,
+    232,
+    233,
+    234,
+    235,
+    236
+  ],
+  "primary": [
+    {
+      "id": "H1",
+      "claim": "mushroom、K=6、A/B/A 无线索：regime 节省 − plain ≥ 0.15",
+      "statistic": 0.2497,
+      "threshold": 0.15,
+      "effectOk": true,
+      "p": 0,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        0.1812,
+        0.2616,
+        0.2241,
+        0.3534,
+        0.2654,
+        0.2557,
+        0.276,
+        0.2365,
+        0.2635,
+        0.1788,
+        0.2222,
+        0.2435,
+        0.2786,
+        0.2443,
+        0.2446,
+        0.2655
+      ]
+    },
+    {
+      "id": "H2",
+      "claim": "mushroom、K=6、A/B/A/B/A：regime 节省 − plain ≥ 0.15",
+      "statistic": 0.2047,
+      "threshold": 0.15,
+      "effectOk": true,
+      "p": 0,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        0.2024,
+        0.2586,
+        0.1853,
+        0.2623,
+        0.2552,
+        0.2248,
+        0.2181,
+        0.0977,
+        0.2051,
+        0.1251,
+        0.1495,
+        0.2717,
+        0.2344,
+        0.1849,
+        0.1884,
+        0.2113
+      ]
+    },
+    {
+      "id": "H3",
+      "claim": "mushroom、K=6、部分反转：regime 节省 − plain ≥ 0.05",
+      "statistic": 0.1412,
+      "threshold": 0.05,
+      "effectOk": true,
+      "p": 0,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        0.0925,
+        0.2046,
+        0.1061,
+        0.1614,
+        0.1047,
+        0.112,
+        0.1965,
+        0.1144,
+        0.1408,
+        0.1152,
+        0.1099,
+        0.1894,
+        0.1447,
+        0.1344,
+        0.1185,
+        0.2146
+      ]
+    },
+    {
+      "id": "H4",
+      "claim": "mushroom、K=12、A/B/A：regime 节省 − plain ≥ 0.1",
+      "statistic": 0.3653,
+      "threshold": 0.1,
+      "effectOk": true,
+      "p": 0,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        0.3615,
+        0.3826,
+        0.3279,
+        0.3766,
+        0.3847,
+        0.3465,
+        0.3703,
+        0.4043,
+        0.373,
+        0.3568,
+        0.3249,
+        0.3801,
+        0.3116,
+        0.2933,
+        0.421,
+        0.4292
+      ]
+    },
+    {
+      "id": "H5",
+      "claim": "mushroom、K=6、A/B/A：regime 节省不比 latent 差超过 0.05（非劣效）",
+      "statistic": 0.1306,
+      "threshold": -0.05,
+      "effectOk": true,
+      "p": 0,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        0.0645,
+        0.1607,
+        0.1233,
+        0.1936,
+        0.1668,
+        0.1554,
+        0.1182,
+        0.1015,
+        0.1803,
+        0.0206,
+        0.1436,
+        0.1077,
+        0.1732,
+        0.1326,
+        0.1147,
+        0.133
+      ]
+    },
+    {
+      "id": "H6",
+      "claim": "mushroom、K=6、A/B/A 无线索：regime 适应度 − plain ≥ 0.04",
+      "statistic": 0.0756,
+      "threshold": 0.04,
+      "effectOk": true,
+      "p": 0,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        0.0818,
+        0.069,
+        0.0823,
+        0.1649,
+        0.0515,
+        0.0567,
+        -0.0071,
+        0.1466,
+        0.0972,
+        0.0504,
+        0.1051,
+        0.0473,
+        0.0528,
+        0.1265,
+        0.0347,
+        0.0499
+      ]
+    },
+    {
+      "id": "H7",
+      "claim": "heldout（连续性）、K=6、A/B/A 无线索：regime 节省 − plain ≥ 0.15",
+      "statistic": 0.2551,
+      "threshold": 0.15,
+      "effectOk": true,
+      "p": 0,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        0.1838,
+        0.2569,
+        0.2067,
+        0.2814,
+        0.2918,
+        0.283,
+        0.3509,
+        0.3195,
+        0.1836,
+        0.2527,
+        0.177,
+        0.2266,
+        0.23,
+        0.1768,
+        0.2884,
+        0.3726
+      ]
+    }
+  ],
+  "cellMeans": {
+    "mushroom": {
+      "K6/plain": {
+        "aba-off": {
+          "fitness": 0.6988,
+          "savings": -0.1233,
+          "E0": 0.7257
+        },
+        "abab-off": {
+          "fitness": 0.5937,
+          "savings": -0.1402,
+          "E0": 0.6947
+        },
+        "half-off": {
+          "fitness": 0.6404,
+          "savings": -0.0402,
+          "E0": 0.7195
+        }
+      },
+      "K6/regime": {
+        "aba-off": {
+          "fitness": 0.7744,
+          "savings": 0.1264,
+          "E0": 0.6433
+        },
+        "abab-off": {
+          "fitness": 0.728,
+          "savings": 0.0645,
+          "E0": 0.6224
+        },
+        "half-off": {
+          "fitness": 0.6421,
+          "savings": 0.101,
+          "E0": 0.638
+        }
+      },
+      "K6/cue": {
+        "aba-off": {
+          "fitness": 0.3709,
+          "savings": -0.5181,
+          "E0": 0.7217
+        },
+        "aba-true": {
+          "fitness": 0.8935,
+          "savings": 0.2489,
+          "E0": 0.7182
+        },
+        "abab-off": {
+          "fitness": 0.2239,
+          "savings": -0.5301,
+          "E0": 0.7026
+        },
+        "half-off": {
+          "fitness": 0.5223,
+          "savings": 0.002,
+          "E0": 0.7191
+        }
+      },
+      "K6/latent": {
+        "aba-off": {
+          "fitness": 0.7705,
+          "savings": -0.0043,
+          "E0": 0.6976
+        },
+        "abab-off": {
+          "fitness": 0.6565,
+          "savings": -0.2328,
+          "E0": 0.6756
+        },
+        "half-off": {
+          "fitness": 0.6551,
+          "savings": -0.0645,
+          "E0": 0.6957
+        }
+      },
+      "K12/plain": {
+        "aba-off": {
+          "fitness": 0.5469,
+          "savings": -0.1738,
+          "E0": 0.6366
+        },
+        "abab-off": {
+          "fitness": 0.415,
+          "savings": -0.1958,
+          "E0": 0.6306
+        },
+        "half-off": {
+          "fitness": 0.5083,
+          "savings": -0.0258,
+          "E0": 0.6362
+        }
+      },
+      "K12/regime": {
+        "aba-off": {
+          "fitness": 0.6681,
+          "savings": 0.1914,
+          "E0": 0.5627
+        },
+        "abab-off": {
+          "fitness": 0.6354,
+          "savings": 0.1468,
+          "E0": 0.5647
+        },
+        "half-off": {
+          "fitness": 0.5157,
+          "savings": 0.1668,
+          "E0": 0.5658
+        }
+      },
+      "K12/cue": {
+        "aba-off": {
+          "fitness": 0.363,
+          "savings": -0.2547,
+          "E0": 0.6125
+        },
+        "aba-true": {
+          "fitness": 0.8559,
+          "savings": 0.3281,
+          "E0": 0.6354
+        },
+        "abab-off": {
+          "fitness": 0.22,
+          "savings": -0.452,
+          "E0": 0.6161
+        },
+        "half-off": {
+          "fitness": 0.4498,
+          "savings": 0.1062,
+          "E0": 0.6146
+        }
+      },
+      "K12/latent": {
+        "aba-off": {
+          "fitness": 0.7241,
+          "savings": 0.0209,
+          "E0": 0.5953
+        },
+        "abab-off": {
+          "fitness": 0.5909,
+          "savings": -0.2113,
+          "E0": 0.6029
+        },
+        "half-off": {
+          "fitness": 0.5452,
+          "savings": -0.0256,
+          "E0": 0.5995
+        }
+      }
+    },
+    "heldout": {
+      "K6/plain": {
+        "aba-off": {
+          "fitness": 0.7875,
+          "savings": -0.1287,
+          "E0": 0.7614
+        },
+        "abab-off": {
+          "fitness": 0.6438,
+          "savings": -0.1018,
+          "E0": 0.741
+        },
+        "half-off": {
+          "fitness": 0.6766,
+          "savings": -0.0377,
+          "E0": 0.7192
+        }
+      },
+      "K6/regime": {
+        "aba-off": {
+          "fitness": 0.8847,
+          "savings": 0.1264,
+          "E0": 0.6788
+        },
+        "abab-off": {
+          "fitness": 0.764,
+          "savings": 0.1248,
+          "E0": 0.6541
+        },
+        "half-off": {
+          "fitness": 0.6819,
+          "savings": 0.0849,
+          "E0": 0.6452
+        }
+      },
+      "K6/cue": {
+        "aba-off": {
+          "fitness": 0.4092,
+          "savings": -0.5023,
+          "E0": 0.7352
+        },
+        "aba-true": {
+          "fitness": 0.9281,
+          "savings": 0.2548,
+          "E0": 0.7162
+        },
+        "abab-off": {
+          "fitness": 0.2318,
+          "savings": -0.5077,
+          "E0": 0.7244
+        },
+        "half-off": {
+          "fitness": 0.5042,
+          "savings": -0.0013,
+          "E0": 0.7117
+        }
+      },
+      "K6/latent": {
+        "aba-off": {
+          "fitness": 0.8749,
+          "savings": 0.0036,
+          "E0": 0.7083
+        },
+        "abab-off": {
+          "fitness": 0.6887,
+          "savings": -0.1387,
+          "E0": 0.6973
+        },
+        "half-off": {
+          "fitness": 0.6884,
+          "savings": -0.045,
+          "E0": 0.6803
+        }
+      },
+      "K12/plain": {
+        "aba-off": {
+          "fitness": 0.5883,
+          "savings": -0.182,
+          "E0": 0.6618
+        },
+        "abab-off": {
+          "fitness": 0.4326,
+          "savings": -0.2106,
+          "E0": 0.682
+        },
+        "half-off": {
+          "fitness": 0.6291,
+          "savings": -0.1214,
+          "E0": 0.6907
+        }
+      },
+      "K12/regime": {
+        "aba-off": {
+          "fitness": 0.7594,
+          "savings": 0.23,
+          "E0": 0.5567
+        },
+        "abab-off": {
+          "fitness": 0.7082,
+          "savings": 0.2458,
+          "E0": 0.5808
+        },
+        "half-off": {
+          "fitness": 0.6625,
+          "savings": 0.1202,
+          "E0": 0.6005
+        }
+      },
+      "K12/cue": {
+        "aba-off": {
+          "fitness": 0.3793,
+          "savings": -0.3044,
+          "E0": 0.601
+        },
+        "aba-true": {
+          "fitness": 0.907,
+          "savings": 0.3487,
+          "E0": 0.6197
+        },
+        "abab-off": {
+          "fitness": 0.2306,
+          "savings": -0.452,
+          "E0": 0.6358
+        },
+        "half-off": {
+          "fitness": 0.5458,
+          "savings": 0.0569,
+          "E0": 0.6334
+        }
+      },
+      "K12/latent": {
+        "aba-off": {
+          "fitness": 0.7951,
+          "savings": 0.0749,
+          "E0": 0.5879
+        },
+        "abab-off": {
+          "fitness": 0.6312,
+          "savings": -0.0729,
+          "E0": 0.6227
+        },
+        "half-off": {
+          "fitness": 0.6837,
+          "savings": -0.0443,
+          "E0": 0.6253
+        }
+      }
+    }
+  }
+}
