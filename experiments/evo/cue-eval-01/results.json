@@ -1,0 +1,842 @@
+{
+  "protocol": "docs/PREREGISTRATION_22.md",
+  "dev": false,
+  "worldsPerCell": 8,
+  "horizon": 4500,
+  "seeds": [
+    301,
+    302,
+    303,
+    304,
+    305,
+    306,
+    307,
+    308
+  ],
+  "primary": [
+    {
+      "id": "H1",
+      "claim": "mushroom、通道 1 不可靠（误导 / 无信息）、无第二通道：b3f1（混合史）适应度 − b3f1c（干净史）≥ 0.04（进化史含不可靠线索 → 学到怀疑）",
+      "statistic": 0.2434,
+      "threshold": 0.04,
+      "effectOk": true,
+      "p": 0.0039,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        0.1828,
+        0.2004,
+        0.1656,
+        0.2062,
+        0.1249,
+        0.2093,
+        0.564,
+        0.2942
+      ]
+    },
+    {
+      "id": "H2",
+      "claim": "mushroom、通道 1 可靠、无第二通道：b3f1 不比 b3f1c 差超过 0.03（怀疑的代价小，非劣效）",
+      "statistic": -0.0094,
+      "threshold": -0.03,
+      "effectOk": true,
+      "p": 0.0039,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        0.0136,
+        -0.0156,
+        -0.0031,
+        -0.019,
+        -0.0116,
+        -0.0013,
+        -0.0106,
+        -0.028
+      ]
+    },
+    {
+      "id": "H3",
+      "claim": "mushroom、通道 1 可靠、无第二通道：b3f1 − b3off ≥ 0.2（线索可靠时用线索有大收益）",
+      "statistic": 0.5721,
+      "threshold": 0.2,
+      "effectOk": true,
+      "p": 0.0039,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        0.6018,
+        0.0598,
+        0.7593,
+        0.5726,
+        0.5497,
+        0.5714,
+        0.7435,
+        0.719
+      ]
+    },
+    {
+      "id": "H4",
+      "claim": "mushroom、16 个组合：每个种子里 b3o2 − b3off 的最小值 > -0.05（任何制度下都不比不读线索差得多）",
+      "statistic": 0.2553,
+      "threshold": -0.05,
+      "effectOk": true,
+      "p": 0.0078,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        0.5113,
+        -0.0796,
+        0.0286,
+        0.4636,
+        0.4526,
+        0.4704,
+        0.1825,
+        0.0132
+      ]
+    },
+    {
+      "id": "H5",
+      "claim": "mushroom、无第二通道的 4 种制度均值：b3o1 − b3f1 ≥ 0.02（可靠度因世界而变时，一生内更新有额外价值）",
+      "statistic": -0.0312,
+      "threshold": 0.02,
+      "effectOk": false,
+      "p": 0.9883,
+      "holmReject": false,
+      "supported": false,
+      "perSeed": [
+        -0.0069,
+        -0.0078,
+        -0.0305,
+        0.0081,
+        -0.0112,
+        -0.1392,
+        -0.0334,
+        -0.0286
+      ]
+    },
+    {
+      "id": "H6",
+      "claim": "mushroom、通道 1 可靠、无第二通道：b3o1 不比 b3f1 差超过 0.03（不需要时一生内更新无害，非劣效）",
+      "statistic": -0.0086,
+      "threshold": -0.03,
+      "effectOk": true,
+      "p": 0.0078,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        -0.011,
+        -0.0308,
+        -0.0236,
+        0.0001,
+        -0.0147,
+        0.0149,
+        0.0101,
+        -0.0139
+      ]
+    },
+    {
+      "id": "H7",
+      "claim": "mushroom、通道 1 不可靠且通道 2 可靠：b3o2 − b3o1 ≥ 0.05（第二条独立通道带来额外收益）",
+      "statistic": 0.047,
+      "threshold": 0.05,
+      "effectOk": false,
+      "p": 0.0195,
+      "holmReject": true,
+      "supported": false,
+      "perSeed": [
+        0.0152,
+        0.0296,
+        -0.0178,
+        0.0116,
+        0.0196,
+        0.1155,
+        0.0146,
+        0.1877
+      ]
+    },
+    {
+      "id": "H8",
+      "claim": "mushroom、留出缺陷强度（通道 1 误导 0.15 / 0.45，无第二通道）：b3f1 − b3off ≥ 0.05",
+      "statistic": 0.5283,
+      "threshold": 0.05,
+      "effectOk": true,
+      "p": 0.0039,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        0.5685,
+        0.0262,
+        0.7279,
+        0.5232,
+        0.5331,
+        0.5304,
+        0.7538,
+        0.5634
+      ]
+    },
+    {
+      "id": "H9",
+      "claim": "heldout（连续性）、通道 1 可靠、无第二通道：b3f1 − b3off ≥ 0.2",
+      "statistic": 0.572,
+      "threshold": 0.2,
+      "effectOk": true,
+      "p": 0.0039,
+      "holmReject": true,
+      "supported": true,
+      "perSeed": [
+        0.6318,
+        0.0947,
+        0.7179,
+        0.5829,
+        0.5365,
+        0.5511,
+        0.7439,
+        0.7169
+      ]
+    }
+  ],
+  "cellMeans": {
+    "mushroom": {
+      "b3off": {
+        "reliable/reliable": 0.377,
+        "reliable/noisy": 0.3925,
+        "reliable/uninformative": 0.3752,
+        "reliable/absent": 0.3976,
+        "noisy/reliable": 0.4179,
+        "noisy/noisy": 0.3611,
+        "noisy/uninformative": 0.3801,
+        "noisy/absent": 0.3868,
+        "uninformative/reliable": 0.4177,
+        "uninformative/noisy": 0.3956,
+        "uninformative/uninformative": 0.4064,
+        "uninformative/absent": 0.428,
+        "absent/reliable": 0.3924,
+        "absent/noisy": 0.3786,
+        "absent/uninformative": 0.3729,
+        "absent/absent": 0.398,
+        "wrong.15/absent": 0.3762,
+        "wrong.45/absent": 0.3895
+      },
+      "b3f1": {
+        "reliable/reliable": 0.9708,
+        "reliable/noisy": 0.9431,
+        "reliable/uninformative": 0.9682,
+        "reliable/absent": 0.9698,
+        "noisy/reliable": 0.915,
+        "noisy/noisy": 0.9574,
+        "noisy/uninformative": 0.9224,
+        "noisy/absent": 0.9139,
+        "uninformative/reliable": 0.9383,
+        "uninformative/noisy": 0.9218,
+        "uninformative/uninformative": 0.9166,
+        "uninformative/absent": 0.9301,
+        "absent/reliable": 0.8178,
+        "absent/noisy": 0.8187,
+        "absent/uninformative": 0.7942,
+        "absent/absent": 0.8157,
+        "wrong.15/absent": 0.9057,
+        "wrong.45/absent": 0.9166
+      },
+      "b3f1c": {
+        "reliable/reliable": 0.9875,
+        "reliable/noisy": 0.9598,
+        "reliable/uninformative": 0.9846,
+        "reliable/absent": 0.9792,
+        "noisy/reliable": 0.7684,
+        "noisy/noisy": 0.8879,
+        "noisy/uninformative": 0.734,
+        "noisy/absent": 0.6844,
+        "uninformative/reliable": 0.7123,
+        "uninformative/noisy": 0.704,
+        "uninformative/uninformative": 0.6783,
+        "uninformative/absent": 0.6728,
+        "absent/reliable": 0.2576,
+        "absent/noisy": 0.2341,
+        "absent/uninformative": 0.2434,
+        "absent/absent": 0.2587,
+        "wrong.15/absent": 0.8221,
+        "wrong.45/absent": 0.6306
+      },
+      "b3o1": {
+        "reliable/reliable": 0.9663,
+        "reliable/noisy": 0.9426,
+        "reliable/uninformative": 0.9568,
+        "reliable/absent": 0.9612,
+        "noisy/reliable": 0.9011,
+        "noisy/noisy": 0.9497,
+        "noisy/uninformative": 0.8887,
+        "noisy/absent": 0.8959,
+        "uninformative/reliable": 0.8936,
+        "uninformative/noisy": 0.9054,
+        "uninformative/uninformative": 0.9071,
+        "uninformative/absent": 0.8957,
+        "absent/reliable": 0.7628,
+        "absent/noisy": 0.7466,
+        "absent/uninformative": 0.7479,
+        "absent/absent": 0.7519,
+        "wrong.15/absent": 0.8837,
+        "wrong.45/absent": 0.8886
+      },
+      "b3f2": {
+        "reliable/reliable": 0.9834,
+        "reliable/noisy": 0.957,
+        "reliable/uninformative": 0.979,
+        "reliable/absent": 0.9768,
+        "noisy/reliable": 0.9558,
+        "noisy/noisy": 0.9684,
+        "noisy/uninformative": 0.9207,
+        "noisy/absent": 0.9192,
+        "uninformative/reliable": 0.9579,
+        "uninformative/noisy": 0.9399,
+        "uninformative/uninformative": 0.9239,
+        "uninformative/absent": 0.9193,
+        "absent/reliable": 0.9427,
+        "absent/noisy": 0.856,
+        "absent/uninformative": 0.8685,
+        "absent/absent": 0.7982,
+        "wrong.15/absent": 0.9223,
+        "wrong.45/absent": 0.9247
+      },
+      "b3o2": {
+        "reliable/reliable": 0.9742,
+        "reliable/noisy": 0.9534,
+        "reliable/uninformative": 0.9757,
+        "reliable/absent": 0.9738,
+        "noisy/reliable": 0.9465,
+        "noisy/noisy": 0.9554,
+        "noisy/uninformative": 0.8737,
+        "noisy/absent": 0.8759,
+        "uninformative/reliable": 0.9423,
+        "uninformative/noisy": 0.9099,
+        "uninformative/uninformative": 0.8646,
+        "uninformative/absent": 0.8761,
+        "absent/reliable": 0.9071,
+        "absent/noisy": 0.7896,
+        "absent/uninformative": 0.8329,
+        "absent/absent": 0.6708,
+        "wrong.15/absent": 0.8854,
+        "wrong.45/absent": 0.8766
+      }
+    },
+    "heldout": {
+      "b3off": {
+        "reliable/reliable": 0.4152,
+        "reliable/noisy": 0.3723,
+        "reliable/uninformative": 0.3901,
+        "reliable/absent": 0.3833,
+        "noisy/reliable": 0.3868,
+        "noisy/noisy": 0.3803,
+        "noisy/uninformative": 0.4062,
+        "noisy/absent": 0.3907,
+        "uninformative/reliable": 0.3806,
+        "uninformative/noisy": 0.3875,
+        "uninformative/uninformative": 0.3882,
+        "uninformative/absent": 0.3999,
+        "absent/reliable": 0.3827,
+        "absent/noisy": 0.3874,
+        "absent/uninformative": 0.3881,
+        "absent/absent": 0.3865,
+        "wrong.15/absent": 0.3903,
+        "wrong.45/absent": 0.3537
+      },
+      "b3f1": {
+        "reliable/reliable": 0.9658,
+        "reliable/noisy": 0.981,
+        "reliable/uninformative": 0.9727,
+        "reliable/absent": 0.9552,
+        "noisy/reliable": 0.9311,
+        "noisy/noisy": 0.9535,
+        "noisy/uninformative": 0.9211,
+        "noisy/absent": 0.915,
+        "uninformative/reliable": 0.9169,
+        "uninformative/noisy": 0.9182,
+        "uninformative/uninformative": 0.9578,
+        "uninformative/absent": 0.9275,
+        "absent/reliable": 0.7967,
+        "absent/noisy": 0.7718,
+        "absent/uninformative": 0.8301,
+        "absent/absent": 0.8254,
+        "wrong.15/absent": 0.9354,
+        "wrong.45/absent": 0.9415
+      },
+      "b3f1c": {
+        "reliable/reliable": 0.9793,
+        "reliable/noisy": 0.9828,
+        "reliable/uninformative": 0.9826,
+        "reliable/absent": 0.9633,
+        "noisy/reliable": 0.7363,
+        "noisy/noisy": 0.8052,
+        "noisy/uninformative": 0.714,
+        "noisy/absent": 0.6447,
+        "uninformative/reliable": 0.6517,
+        "uninformative/noisy": 0.6353,
+        "uninformative/uninformative": 0.7754,
+        "uninformative/absent": 0.6884,
+        "absent/reliable": 0.2525,
+        "absent/noisy": 0.2384,
+        "absent/uninformative": 0.2562,
+        "absent/absent": 0.2509,
+        "wrong.15/absent": 0.7631,
+        "wrong.45/absent": 0.6967
+      },
+      "b3o1": {
+        "reliable/reliable": 0.9698,
+        "reliable/noisy": 0.9709,
+        "reliable/uninformative": 0.9626,
+        "reliable/absent": 0.9614,
+        "noisy/reliable": 0.8987,
+        "noisy/noisy": 0.937,
+        "noisy/uninformative": 0.9035,
+        "noisy/absent": 0.8975,
+        "uninformative/reliable": 0.8827,
+        "uninformative/noisy": 0.8909,
+        "uninformative/uninformative": 0.9349,
+        "uninformative/absent": 0.912,
+        "absent/reliable": 0.7431,
+        "absent/noisy": 0.7024,
+        "absent/uninformative": 0.7439,
+        "absent/absent": 0.7214,
+        "wrong.15/absent": 0.9133,
+        "wrong.45/absent": 0.9262
+      },
+      "b3f2": {
+        "reliable/reliable": 0.9834,
+        "reliable/noisy": 0.9694,
+        "reliable/uninformative": 0.9842,
+        "reliable/absent": 0.9743,
+        "noisy/reliable": 0.9314,
+        "noisy/noisy": 0.953,
+        "noisy/uninformative": 0.9281,
+        "noisy/absent": 0.9135,
+        "uninformative/reliable": 0.9628,
+        "uninformative/noisy": 0.9371,
+        "uninformative/uninformative": 0.9493,
+        "uninformative/absent": 0.924,
+        "absent/reliable": 0.9765,
+        "absent/noisy": 0.8149,
+        "absent/uninformative": 0.8855,
+        "absent/absent": 0.7926,
+        "wrong.15/absent": 0.9153,
+        "wrong.45/absent": 0.9268
+      },
+      "b3o2": {
+        "reliable/reliable": 0.9803,
+        "reliable/noisy": 0.9729,
+        "reliable/uninformative": 0.9842,
+        "reliable/absent": 0.9671,
+        "noisy/reliable": 0.8887,
+        "noisy/noisy": 0.9552,
+        "noisy/uninformative": 0.8735,
+        "noisy/absent": 0.8576,
+        "uninformative/reliable": 0.9425,
+        "uninformative/noisy": 0.9039,
+        "uninformative/uninformative": 0.9251,
+        "uninformative/absent": 0.8704,
+        "absent/reliable": 0.9647,
+        "absent/noisy": 0.7534,
+        "absent/uninformative": 0.7705,
+        "absent/absent": 0.6889,
+        "wrong.15/absent": 0.9073,
+        "wrong.45/absent": 0.8866
+      }
+    }
+  },
+  "evolvedBenv3Genes": {
+    "b3off": [
+      [
+        0.9121,
+        0.012,
+        0.2113,
+        0.4117,
+        0.8695,
+        5.755
+      ],
+      [
+        0.2039,
+        0.0231,
+        0.4095,
+        0.6839,
+        0.8824,
+        10.6167
+      ],
+      [
+        0.8012,
+        0.0021,
+        0.3589,
+        0.4053,
+        0.7822,
+        9.4107
+      ],
+      [
+        0.9139,
+        0.0284,
+        0.3144,
+        0.3306,
+        0.7118,
+        10.5411
+      ],
+      [
+        0.6192,
+        0.0285,
+        0.4336,
+        0.5003,
+        0.7494,
+        3.4476
+      ],
+      [
+        0.583,
+        0.0271,
+        0.2461,
+        0.3362,
+        0.7528,
+        6.1202
+      ],
+      [
+        0.9497,
+        0.0101,
+        0.192,
+        0.4876,
+        0.776,
+        3.5051
+      ],
+      [
+        0.7572,
+        0.0331,
+        0.0519,
+        0.4393,
+        0.7731,
+        8.0319
+      ]
+    ],
+    "b3f1": [
+      [
+        0.2539,
+        0.0156,
+        0.3793,
+        0.6652,
+        0.9127,
+        10.8627
+      ],
+      [
+        0.1016,
+        0.0109,
+        0.4242,
+        0.7872,
+        0.9406,
+        11.2056
+      ],
+      [
+        0.1631,
+        0.0232,
+        0.0818,
+        0.6304,
+        0.9398,
+        6.8631
+      ],
+      [
+        0.1425,
+        0.0243,
+        0.4528,
+        0.6852,
+        0.9686,
+        5.8287
+      ],
+      [
+        0.1734,
+        0.0487,
+        0.6207,
+        0.7232,
+        0.8513,
+        8.676
+      ],
+      [
+        0.1946,
+        0.0163,
+        0.548,
+        0.7471,
+        0.8658,
+        6.3573
+      ],
+      [
+        0.2122,
+        0.0167,
+        0.117,
+        0.7481,
+        0.9249,
+        4.5025
+      ],
+      [
+        0.4779,
+        0.0134,
+        0.2482,
+        0.9148,
+        0.8789,
+        3.2392
+      ]
+    ],
+    "b3f1c": [
+      [
+        0.4796,
+        0.0048,
+        0.33,
+        0.7087,
+        0.9914,
+        8.8291
+      ],
+      [
+        0.4846,
+        0.0058,
+        0.2561,
+        0.7478,
+        0.9634,
+        8.4478
+      ],
+      [
+        0.4337,
+        -0.0008,
+        0.0167,
+        0.7937,
+        0.9951,
+        8.2201
+      ],
+      [
+        0.5224,
+        -0.0127,
+        0.3439,
+        0.7199,
+        1.0242,
+        9.3782
+      ],
+      [
+        0.4816,
+        0.0417,
+        0.65,
+        0.8383,
+        0.9395,
+        9.6586
+      ],
+      [
+        0.5136,
+        0.0051,
+        0.3329,
+        0.5938,
+        0.9941,
+        3.0281
+      ],
+      [
+        0.8042,
+        -0.0024,
+        0.1941,
+        0.7278,
+        1.0281,
+        6.4047
+      ],
+      [
+        0.776,
+        0.0022,
+        0.4131,
+        0.7915,
+        0.9821,
+        2.966
+      ]
+    ],
+    "b3o1": [
+      [
+        0.2595,
+        0.0102,
+        0.2444,
+        0.6042,
+        0.9335,
+        11.058
+      ],
+      [
+        0.1241,
+        0.0179,
+        0.4565,
+        0.8593,
+        0.8716,
+        11.0049
+      ],
+      [
+        0.2222,
+        0.0298,
+        0.1587,
+        0.7782,
+        0.946,
+        6.8534
+      ],
+      [
+        0.1455,
+        0.0225,
+        0.4203,
+        0.6813,
+        0.9716,
+        4.7482
+      ],
+      [
+        0.1911,
+        0.0527,
+        0.6163,
+        0.7001,
+        0.87,
+        7.8071
+      ],
+      [
+        0.3469,
+        -0.0006,
+        0.4846,
+        0.8411,
+        0.9042,
+        7.4337
+      ],
+      [
+        0.3219,
+        0.018,
+        0.216,
+        0.7957,
+        0.9629,
+        5.056
+      ],
+      [
+        0.4402,
+        0.0143,
+        0.211,
+        0.9333,
+        0.8821,
+        3.4851
+      ]
+    ],
+    "b3f2": [
+      [
+        0.2188,
+        0.0078,
+        0.303,
+        0.7488,
+        0.9278,
+        9.758
+      ],
+      [
+        0.1681,
+        0.0125,
+        0.5136,
+        0.9888,
+        0.9215,
+        11.0933
+      ],
+      [
+        0.281,
+        0.0112,
+        0.1822,
+        0.7649,
+        0.9618,
+        5.102
+      ],
+      [
+        0.2892,
+        -0.0092,
+        0.3188,
+        0.8083,
+        0.9872,
+        9.7847
+      ],
+      [
+        0.2009,
+        0.0514,
+        0.5103,
+        0.8237,
+        0.9421,
+        7.3673
+      ],
+      [
+        0.1368,
+        -0.0102,
+        0.522,
+        0.8983,
+        0.9607,
+        6.3783
+      ],
+      [
+        0.2366,
+        0.014,
+        0.1211,
+        0.8265,
+        1.0014,
+        4.0961
+      ],
+      [
+        0.5661,
+        0.0207,
+        0.1244,
+        1.0247,
+        0.8669,
+        -0.6219
+      ]
+    ],
+    "b3o2": [
+      [
+        0.1711,
+        0.0091,
+        0.3856,
+        0.6629,
+        0.9479,
+        9.2796
+      ],
+      [
+        0.1611,
+        0.0128,
+        0.4038,
+        1.005,
+        0.9594,
+        11.1209
+      ],
+      [
+        0.4269,
+        0.0002,
+        0.0742,
+        0.8721,
+        0.9452,
+        5.7673
+      ],
+      [
+        0.2408,
+        0.0026,
+        0.4361,
+        0.8086,
+        1.0297,
+        10.3004
+      ],
+      [
+        0.1812,
+        0.0435,
+        0.5676,
+        0.8107,
+        0.9583,
+        9.9103
+      ],
+      [
+        0.1302,
+        -0.0048,
+        0.4743,
+        0.9792,
+        0.9274,
+        7.0461
+      ],
+      [
+        0.3542,
+        0.009,
+        0.0439,
+        0.9332,
+        1.0068,
+        5.4354
+      ],
+      [
+        0.625,
+        0.0095,
+        0.1675,
+        1.0056,
+        0.8537,
+        -0.1384
+      ]
+    ]
+  }
+}

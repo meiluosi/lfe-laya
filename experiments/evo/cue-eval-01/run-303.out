@@ -1,0 +1,13 @@
+seed 303 mushroom b3off      reliable/absent 0.230 noisy/absent 0.215 noisy/reliable 0.230
+seed 303 mushroom b3f1       reliable/absent 0.990 noisy/absent 0.952 noisy/reliable 0.930
+seed 303 mushroom b3f1c      reliable/absent 0.993 noisy/absent 0.774 noisy/reliable 0.814
+seed 303 mushroom b3o1       reliable/absent 0.966 noisy/absent 0.910 noisy/reliable 0.879
+seed 303 mushroom b3f2       reliable/absent 0.989 noisy/absent 0.942 noisy/reliable 0.981
+seed 303 mushroom b3o2       reliable/absent 0.981 noisy/absent 0.754 noisy/reliable 0.893
+seed 303 heldout b3off       reliable/absent 0.223 noisy/absent 0.206 noisy/reliable 0.212
+seed 303 heldout b3f1        reliable/absent 0.941 noisy/absent 0.947 noisy/reliable 0.940
+seed 303 heldout b3f1c       reliable/absent 0.943 noisy/absent 0.729 noisy/reliable 0.724
+seed 303 heldout b3o1        reliable/absent 0.953 noisy/absent 0.926 noisy/reliable 0.878
+seed 303 heldout b3f2        reliable/absent 0.969 noisy/absent 0.922 noisy/reliable 0.928
+seed 303 heldout b3o2        reliable/absent 0.954 noisy/absent 0.732 noisy/reliable 0.804
+not all seeds present yet; no analysis

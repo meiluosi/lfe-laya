@@ -1,0 +1,13 @@
+seed 302 mushroom b3off      reliable/absent 0.903 noisy/absent 0.978 noisy/reliable 0.960
+seed 302 mushroom b3f1       reliable/absent 0.963 noisy/absent 0.930 noisy/reliable 0.920
+seed 302 mushroom b3f1c      reliable/absent 0.978 noisy/absent 0.745 noisy/reliable 0.812
+seed 302 mushroom b3o1       reliable/absent 0.932 noisy/absent 0.923 noisy/reliable 0.954
+seed 302 mushroom b3f2       reliable/absent 0.965 noisy/absent 0.956 noisy/reliable 0.934
+seed 302 mushroom b3o2       reliable/absent 0.964 noisy/absent 0.975 noisy/reliable 0.971
+seed 302 heldout b3off       reliable/absent 0.870 noisy/absent 0.892 noisy/reliable 0.914
+seed 302 heldout b3f1        reliable/absent 0.965 noisy/absent 0.956 noisy/reliable 0.949
+seed 302 heldout b3f1c       reliable/absent 0.954 noisy/absent 0.693 noisy/reliable 0.863
+seed 302 heldout b3o1        reliable/absent 0.939 noisy/absent 0.957 noisy/reliable 0.957
+seed 302 heldout b3f2        reliable/absent 0.980 noisy/absent 0.970 noisy/reliable 0.975
+seed 302 heldout b3o2        reliable/absent 0.951 noisy/absent 0.956 noisy/reliable 0.964
+[{"id":"H1","stat":0.2434,"thr":0.04,"p":0.0039,"supported":true},{"id":"H2","stat":-0.0094,"thr":-0.03,"p":0.0039,"supported":true},{"id":"H3","stat":0.5721,"thr":0.2,"p":0.0039,"supported":true},{"id":"H4","stat":0.2553,"thr":-0.05,"p":0.0078,"supported":true},{"id":"H5","stat":-0.0312,"thr":0.02,"p":0.9883,"supported":false},{"id":"H6","stat":-0.0086,"thr":-0.03,"p":0.0078,"supported":true},{"id":"H7","stat":0.047,"thr":0.05,"p":0.0195,"supported":false},{"id":"H8","stat":0.5283,"thr":0.05,"p":0.0039,"supported":true},{"id":"H9","stat":0.572,"thr":0.2,"p":0.0039,"supported":true}]
