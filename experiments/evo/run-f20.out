@@ -71,3 +71,60 @@ done  experiments/evo/f20-laya-regime-235 2026-10-29 01:09:53 rc=0
 start experiments/evo/f20-laya-cue-227 2026-10-29 01:09:54
 done  experiments/evo/f20-laya-regime-236 2026-10-29 01:11:02 rc=0
 start experiments/evo/f20-laya-cue-228 2026-10-29 01:11:04
+done  experiments/evo/f20-laya-cue-221 2026-10-29 02:10:18 rc=0
+start experiments/evo/f20-laya-cue-229 2026-10-29 02:10:22
+done  experiments/evo/f20-laya-cue-222 2026-10-29 02:19:40 rc=0
+start experiments/evo/f20-laya-cue-230 2026-10-29 02:19:42
+done  experiments/evo/f20-laya-cue-223 2026-10-29 02:21:33 rc=0
+start experiments/evo/f20-laya-cue-231 2026-10-29 02:21:38
+done  experiments/evo/f20-laya-cue-224 2026-10-29 02:21:46 rc=0
+start experiments/evo/f20-laya-cue-232 2026-10-29 02:21:48
+done  experiments/evo/f20-laya-cue-226 2026-10-29 02:22:57 rc=0
+start experiments/evo/f20-laya-cue-233 2026-10-29 02:22:58
+done  experiments/evo/f20-laya-cue-225 2026-10-29 02:23:53 rc=0
+start experiments/evo/f20-laya-cue-234 2026-10-29 02:23:53
+done  experiments/evo/f20-laya-cue-227 2026-10-29 02:24:29 rc=0
+start experiments/evo/f20-laya-cue-235 2026-10-29 02:24:34
+done  experiments/evo/f20-laya-cue-228 2026-10-29 02:28:26 rc=0
+start experiments/evo/f20-laya-cue-236 2026-10-29 02:28:30
+done  experiments/evo/f20-laya-cue-229 2026-10-29 04:41:03 rc=0
+start experiments/evo/f20-laya-latent-221 2026-10-29 04:41:04
+done  experiments/evo/f20-laya-cue-230 2026-10-29 04:42:36 rc=0
+start experiments/evo/f20-laya-latent-222 2026-10-29 04:42:39
+done  experiments/evo/f20-laya-cue-232 2026-10-29 04:48:56 rc=0
+start experiments/evo/f20-laya-latent-223 2026-10-29 04:48:56
+done  experiments/evo/f20-laya-cue-231 2026-10-29 04:49:33 rc=0
+start experiments/evo/f20-laya-latent-224 2026-10-29 04:49:37
+done  experiments/evo/f20-laya-cue-233 2026-10-29 04:51:48 rc=0
+start experiments/evo/f20-laya-latent-225 2026-10-29 04:51:52
+done  experiments/evo/f20-laya-cue-235 2026-10-29 04:52:14 rc=0
+start experiments/evo/f20-laya-latent-226 2026-10-29 04:52:18
+done  experiments/evo/f20-laya-cue-234 2026-10-29 04:52:35 rc=0
+start experiments/evo/f20-laya-latent-227 2026-10-29 04:52:38
+done  experiments/evo/f20-laya-cue-236 2026-10-29 04:53:14 rc=0
+start experiments/evo/f20-laya-latent-228 2026-10-29 04:53:18
+done  experiments/evo/f20-laya-latent-221 2026-10-29 05:47:17 rc=0
+start experiments/evo/f20-laya-latent-229 2026-10-29 05:47:20
+done  experiments/evo/f20-laya-latent-222 2026-10-29 05:51:46 rc=0
+start experiments/evo/f20-laya-latent-230 2026-10-29 05:51:51
+done  experiments/evo/f20-laya-latent-224 2026-10-29 05:56:31 rc=0
+start experiments/evo/f20-laya-latent-231 2026-10-29 05:56:33
+done  experiments/evo/f20-laya-latent-223 2026-10-29 05:57:23 rc=0
+start experiments/evo/f20-laya-latent-232 2026-10-29 05:57:23
+done  experiments/evo/f20-laya-latent-226 2026-10-29 05:59:44 rc=0
+done  experiments/evo/f20-laya-latent-225 2026-10-29 05:59:48 rc=0
+start experiments/evo/f20-laya-latent-233 2026-10-29 05:59:49
+start experiments/evo/f20-laya-latent-234 2026-10-29 05:59:49
+done  experiments/evo/f20-laya-latent-228 2026-10-29 06:02:40 rc=0
+start experiments/evo/f20-laya-latent-235 2026-10-29 06:02:45
+done  experiments/evo/f20-laya-latent-227 2026-10-29 06:03:27 rc=0
+start experiments/evo/f20-laya-latent-236 2026-10-29 06:03:30
+done  experiments/evo/f20-laya-latent-229 2026-10-29 06:47:07 rc=0
+done  experiments/evo/f20-laya-latent-230 2026-10-29 06:49:44 rc=0
+done  experiments/evo/f20-laya-latent-232 2026-10-29 06:51:03 rc=0
+done  experiments/evo/f20-laya-latent-231 2026-10-29 06:52:32 rc=0
+done  experiments/evo/f20-laya-latent-233 2026-10-29 06:55:01 rc=0
+done  experiments/evo/f20-laya-latent-234 2026-10-29 06:55:16 rc=0
+done  experiments/evo/f20-laya-latent-235 2026-10-29 06:56:01 rc=0
+done  experiments/evo/f20-laya-latent-236 2026-10-29 06:56:34 rc=0
+全部完成 2026-10-29 06:56:34

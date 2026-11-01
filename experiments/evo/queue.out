@@ -1,0 +1,101 @@
+20 评估结束 2026-10-29 18:09:28
+21 评估结束 2026-10-29 19:13:37
+待运行 48 个，并发 8
+start experiments/evo/f22-laya-b3off-301 2026-10-29 19:13:38
+start experiments/evo/f22-laya-b3off-302 2026-10-29 19:13:38
+start experiments/evo/f22-laya-b3off-303 2026-10-29 19:13:38
+start experiments/evo/f22-laya-b3off-304 2026-10-29 19:13:38
+start experiments/evo/f22-laya-b3off-305 2026-10-29 19:13:38
+start experiments/evo/f22-laya-b3off-306 2026-10-29 19:13:38
+start experiments/evo/f22-laya-b3off-307 2026-10-29 19:13:39
+start experiments/evo/f22-laya-b3off-308 2026-10-29 19:13:39
+done  experiments/evo/f22-laya-b3off-308 2026-10-29 20:02:33 rc=0
+start experiments/evo/f22-laya-b3f1-301 2026-10-29 20:02:35
+done  experiments/evo/f22-laya-b3off-303 2026-10-29 20:02:49 rc=0
+start experiments/evo/f22-laya-b3f1-302 2026-10-29 20:02:50
+done  experiments/evo/f22-laya-b3off-307 2026-10-29 20:03:27 rc=0
+start experiments/evo/f22-laya-b3f1-303 2026-10-29 20:03:31
+done  experiments/evo/f22-laya-b3off-305 2026-10-29 20:16:22 rc=0
+start experiments/evo/f22-laya-b3f1-304 2026-10-29 20:16:23
+done  experiments/evo/f22-laya-b3off-301 2026-10-29 20:17:22 rc=0
+start experiments/evo/f22-laya-b3f1-305 2026-10-29 20:17:23
+done  experiments/evo/f22-laya-b3off-304 2026-10-29 20:18:51 rc=0
+start experiments/evo/f22-laya-b3f1-306 2026-10-29 20:18:53
+done  experiments/evo/f22-laya-b3off-302 2026-10-29 20:18:56 rc=0
+start experiments/evo/f22-laya-b3f1-307 2026-10-29 20:18:58
+done  experiments/evo/f22-laya-b3off-306 2026-10-29 20:19:58 rc=0
+start experiments/evo/f22-laya-b3f1-308 2026-10-29 20:19:59
+done  experiments/evo/f22-laya-b3f1-301 2026-10-29 22:04:30 rc=0
+start experiments/evo/f22-laya-b3f1c-301 2026-10-29 22:04:31
+done  experiments/evo/f22-laya-b3f1-303 2026-10-29 22:12:14 rc=0
+start experiments/evo/f22-laya-b3f1c-302 2026-10-29 22:12:15
+done  experiments/evo/f22-laya-b3f1-302 2026-10-29 22:29:47 rc=0
+start experiments/evo/f22-laya-b3f1c-303 2026-10-29 22:29:49
+done  experiments/evo/f22-laya-b3f1-308 2026-10-29 22:33:01 rc=0
+start experiments/evo/f22-laya-b3f1c-304 2026-10-29 22:33:03
+done  experiments/evo/f22-laya-b3f1-307 2026-10-29 22:39:26 rc=0
+start experiments/evo/f22-laya-b3f1c-305 2026-10-29 22:39:30
+done  experiments/evo/f22-laya-b3f1-304 2026-10-29 22:39:32 rc=0
+start experiments/evo/f22-laya-b3f1c-306 2026-10-29 22:39:35
+done  experiments/evo/f22-laya-b3f1-306 2026-10-29 22:42:56 rc=0
+start experiments/evo/f22-laya-b3f1c-307 2026-10-29 22:42:57
+done  experiments/evo/f22-laya-b3f1-305 2026-10-29 23:02:21 rc=0
+start experiments/evo/f22-laya-b3f1c-308 2026-10-29 23:02:23
+done  experiments/evo/f22-laya-b3f1c-301 2026-10-30 01:21:36 rc=0
+start experiments/evo/f22-laya-b3o1-301 2026-10-30 01:21:39
+done  experiments/evo/f22-laya-b3f1c-302 2026-10-30 01:50:04 rc=0
+start experiments/evo/f22-laya-b3o1-302 2026-10-30 01:50:10
+done  experiments/evo/f22-laya-b3f1c-303 2026-10-30 02:26:22 rc=0
+start experiments/evo/f22-laya-b3o1-303 2026-10-30 02:26:32
+done  experiments/evo/f22-laya-b3f1c-306 2026-10-30 02:42:34 rc=0
+start experiments/evo/f22-laya-b3o1-304 2026-10-30 02:42:39
+done  experiments/evo/f22-laya-b3f1c-304 2026-10-30 02:44:13 rc=0
+start experiments/evo/f22-laya-b3o1-305 2026-10-30 02:44:18
+done  experiments/evo/f22-laya-b3f1c-305 2026-10-30 02:54:54 rc=0
+start experiments/evo/f22-laya-b3o1-306 2026-10-30 02:55:04
+done  experiments/evo/f22-laya-b3f1c-307 2026-10-30 03:07:03 rc=0
+start experiments/evo/f22-laya-b3o1-307 2026-10-30 03:07:07
+done  experiments/evo/f22-laya-b3f1c-308 2026-10-30 03:19:52 rc=0
+start experiments/evo/f22-laya-b3o1-308 2026-10-30 03:19:53
+done  experiments/evo/f22-laya-b3o1-301 2026-10-30 05:56:42 rc=0
+start experiments/evo/f22-laya-b3f2-301 2026-10-30 05:56:47
+done  experiments/evo/f22-laya-b3o1-302 2026-10-30 07:13:16 rc=0
+start experiments/evo/f22-laya-b3f2-302 2026-10-30 07:13:22
+done  experiments/evo/f22-laya-b3o1-303 2026-10-30 07:19:23 rc=0
+start experiments/evo/f22-laya-b3f2-303 2026-10-30 07:19:32
+done  experiments/evo/f22-laya-b3o1-306 2026-10-30 07:29:51 rc=0
+start experiments/evo/f22-laya-b3f2-304 2026-10-30 07:29:59
+done  experiments/evo/f22-laya-b3o1-304 2026-10-30 07:32:30 rc=0
+start experiments/evo/f22-laya-b3f2-305 2026-10-30 07:32:36
+done  experiments/evo/f22-laya-b3o1-307 2026-10-30 07:40:44 rc=0
+start experiments/evo/f22-laya-b3f2-306 2026-10-30 07:40:48
+done  experiments/evo/f22-laya-b3o1-308 2026-10-30 07:42:38 rc=0
+start experiments/evo/f22-laya-b3f2-307 2026-10-30 07:42:41
+done  experiments/evo/f22-laya-b3o1-305 2026-10-30 08:04:45 rc=0
+start experiments/evo/f22-laya-b3f2-308 2026-10-30 08:04:52
+done  experiments/evo/f22-laya-b3f2-301 2026-10-30 10:01:42 rc=0
+start experiments/evo/f22-laya-b3o2-301 2026-10-30 10:01:48
+done  experiments/evo/f22-laya-b3f2-303 2026-10-30 10:48:28 rc=0
+start experiments/evo/f22-laya-b3o2-302 2026-10-30 10:48:29
+done  experiments/evo/f22-laya-b3f2-308 2026-10-30 10:50:39 rc=0
+start experiments/evo/f22-laya-b3o2-303 2026-10-30 10:50:40
+done  experiments/evo/f22-laya-b3f2-304 2026-10-30 10:51:41 rc=0
+start experiments/evo/f22-laya-b3o2-304 2026-10-30 10:51:45
+done  experiments/evo/f22-laya-b3f2-307 2026-10-30 10:52:50 rc=0
+start experiments/evo/f22-laya-b3o2-305 2026-10-30 10:52:50
+done  experiments/evo/f22-laya-b3f2-302 2026-10-30 10:55:17 rc=0
+start experiments/evo/f22-laya-b3o2-306 2026-10-30 10:55:21
+done  experiments/evo/f22-laya-b3f2-306 2026-10-30 10:55:41 rc=0
+start experiments/evo/f22-laya-b3o2-307 2026-10-30 10:55:46
+done  experiments/evo/f22-laya-b3f2-305 2026-10-30 10:56:45 rc=0
+start experiments/evo/f22-laya-b3o2-308 2026-10-30 10:56:46
+done  experiments/evo/f22-laya-b3o2-301 2026-10-30 12:01:24 rc=0
+done  experiments/evo/f22-laya-b3o2-308 2026-10-30 12:21:20 rc=0
+done  experiments/evo/f22-laya-b3o2-303 2026-10-30 12:22:31 rc=0
+done  experiments/evo/f22-laya-b3o2-302 2026-10-30 12:25:29 rc=0
+done  experiments/evo/f22-laya-b3o2-307 2026-10-30 12:25:57 rc=0
+done  experiments/evo/f22-laya-b3o2-304 2026-10-30 12:26:23 rc=0
+done  experiments/evo/f22-laya-b3o2-306 2026-10-30 12:27:39 rc=0
+done  experiments/evo/f22-laya-b3o2-305 2026-10-30 12:28:33 rc=0
+全部完成 2026-10-30 12:28:33
+22 训练结束 2026-10-30 12:28:33
